@@ -32,9 +32,9 @@ gulp.task('autoprefix',function(){
         you had to press save twice for that to happen
         it works okay if the .pipe is here
     */
-    .pipe(browserSync.reload({
-      stream: true
-    }))
+    // .pipe(browserSync.reload({
+    //   stream: true
+    // }))
 })
 
 /*Browser Sync*/
@@ -47,14 +47,22 @@ gulp.task('autoprefix',function(){
 //   })
 // })
 
-gulp.task('browserSync', function() {
-  browserSync({
-    server: "./"
-  })
-})
+// gulp.task('browserSync', function() {
+//   browserSync({
+//     server: "./"
+//   })
+// })
+
 
 /*Watcher*/
-gulp.task('watch',['browserSync', 'sass'], function(){
+gulp.task('watch',['sass'], function(){
+
+    browserSync.init({
+        server: "./"
+    });
+
     gulp.watch('sass/*.scss', ['sass'])
     gulp.watch('css/*.css', ['autoprefix'])
+    gulp.watch("*.html").on('change', browserSync.reload);
+    gulp.watch("postcss/*.css").on('change', browserSync.reload);
 });
