@@ -25,33 +25,7 @@ gulp.task('autoprefix',function(){
     gulp.src('css/*.css')
     .pipe(autoprefixer())
     .pipe(gulp.dest('postcss'))
-    /*This reloads browser everytime there's a change*/
-    /*
-        Note that this should be here and not above
-        Browser will not reload automatically if it's on top
-        you had to press save twice for that to happen
-        it works okay if the .pipe is here
-    */
-    // .pipe(browserSync.reload({
-    //   stream: true
-    // }))
 })
-
-/*Browser Sync*/
-// https://css-tricks.com/gulp-for-beginners/
-// gulp.task('browserSync', function() {
-//   browserSync({
-//     server: {
-//       baseDir: 'app'
-//     },
-//   })
-// })
-
-// gulp.task('browserSync', function() {
-//   browserSync({
-//     server: "./"
-//   })
-// })
 
 
 /*Watcher*/

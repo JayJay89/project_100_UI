@@ -9,6 +9,7 @@
 		<!-- Bootstrap -->
 		<link href="postcss/day1.css" rel="stylesheet">
 		<link href="postcss/normalize.css" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -17,9 +18,60 @@
 		<![endif]-->
 	</head>
 	<body>
-		<p>day1</p>
+
+		<div class="login-form">
+
+			<!-- <img class="bg-img" src="day1/bg.png" alt=""> -->
+			<div class="sec-top-tab">
+				<a href="#a" class="sign-in-tab active">sign in</a>
+				<a href="#a" class="sign-up-tab">sign up</a>
+			</div>
+
+			<div class="sec-info-input">
+				<div class="info-sign-in active">
+					<label for="username">username</label>
+					<input class="rounded" type="text">
+					<label for="password">password</label>
+					<input class="rounded" type="password">
+					<input type="checkbox"> Keep me signed in
+					<a class="sign-in rounded" href="#a">sign in</a>
+				</div>
+
+				<div class="info-sign-up">
+					<label for="username">username</label>
+					<input class="rounded" type="text">
+					<label for="email">email</label>
+					<input class="rounded" type="text">
+					<label for="password">password</label>
+					<input class="rounded" type="password">
+					<a class="sign-in rounded" href="#a">sign up</a>
+				</div>
+			</div>
+
+			<div class="sec-forgot-password">
+				<a href="#a">Forgot Password?</a>
+			</div>
+		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 		<script src="jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			$(".sec-top-tab").find("a").on("click",function(){
+				$(".sec-top-tab").find("a").removeClass('active');
+				$(this).toggleClass('active');
+			});
+
+			$(".sec-top-tab").find(".sign-in-tab").on("click",function(){
+				$(".info-sign-in").addClass('active');
+				$(".info-sign-up").removeClass('active');
+			});
+
+			$(".sec-top-tab").find(".sign-up-tab").on("click",function(){
+				$(".info-sign-up").addClass('active');
+				$(".info-sign-in").removeClass('active');
+			});
+		});
+		</script>
 	</body>
 </html>
