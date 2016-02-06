@@ -32,4 +32,6 @@ body {
           flex: 1 1 400p; }
 
 p {
-  color: black; }
+  color: black;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease; }

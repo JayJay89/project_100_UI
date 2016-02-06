@@ -1,0 +1,39 @@
+/*clear fixes*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+* {
+  box-sizing: border-box; }
+
+a {
+  color: black;
+  text-decoration: none; }
+
+body {
+  font-family: 'Montserrat', sans-serif; }
+
+.product-view-container {
+  width: 100%;
+  padding: 50px 0;
+  border: 2px solid red;
+  background: url(../day2/bg.png) no-repeat;
+  background-size: cover; }
+
+.product-view {
+  background-color: white;
+  padding: 20px 0;
+  width: 70%;
+  margin: 0 auto; }
+
+div[class^="chair"] {
+  width: 50%;
+  float: left;
+  background-color: gray; }
+
+.chair-display .arrow {
+  background-color: red; }

@@ -1,0 +1,63 @@
+to run the server 
+gulp watch
+
+Steps
+1.) Installing NPM
+    https://docs.npmjs.com/getting-started/what-is-npm
+    http://blog.teamtreehouse.com/install-node-js-npm-mac
+
+    USE brew install node
+    Don't use sudo to install them as that will cause trouble later
+    
+    What's NPM?
+    - a platform to share js codes - packages
+    - It also makes it easier for 
+
+2.) Go to Project Directory and run 
+
+    npm init 
+
+    which will create package.json
+    It'll also ask a series of question
+
+3.) Set permissions correctly 
+    https://docs.npmjs.com/getting-started/fixing-npm-permissions
+    so that you don't have to run sudo everytime
+
+4.) Installing A Build System 
+
+    Build System - Grunt, Gulp, Brunch
+    What a build system do?
+    - Reduce Repetitive Task
+    - Prefixing CSS - autoprefixers
+    - UtilitiesÏ
+        -JSHint
+        -Uglify
+    - Local Server 
+    - Live Reload
+
+    https://travismaynard.com/writing/getting-started-with-gulp
+
+        npm install -g gulp
+        gulp -v
+
+    This one install a 5mb plus file call node_modules on local and updates package.json
+
+        npm install --save-dev gulp
+
+5.) Installed Autoprefixer
+
+    npm install --save-dev gulp-autoprefixer
+
+6.) create gulpfile.js
+
+    touch gulpfile.js
+
+    The gulp file will give instructions on how to run 
+
+
+
+http://stackoverflow.com/questions/22115400/why-do-we-need-to-install-gulp-globally-and-locally
+http://blog.dwaynecrooks.com/post/110903139442/why-do-we-need-to-install-gulp-globally-and
+https://css-tricks.com/gulp-for-beginners/
+http://blog.webbb.be/command-not-found-node-npm/

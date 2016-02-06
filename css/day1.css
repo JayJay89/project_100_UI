@@ -1,3 +1,12 @@
+/*clear fixes*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
 * {
   box-sizing: border-box; }
 
