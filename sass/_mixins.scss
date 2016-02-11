@@ -20,22 +20,13 @@ $xs: 320px;
   }
 }
 
-/*clear fixes*/
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-
-/*Equal Height*/
-.eq-height {
-    overflow: hidden;
-
-    .eq-height-col {
-        margin-bottom: -99999px;
-        padding-bottom: 99999px;
+@mixin clearfix(){
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
     }
 }
