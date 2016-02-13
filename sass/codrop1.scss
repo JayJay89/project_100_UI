@@ -1,0 +1,102 @@
+@import 'all';
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.slide-container {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.image-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid red;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.image-container {
+    display: inline-block;
+    width: 60%;
+    min-width: 600px;
+    max-width: 700px;
+    position: relative;
+    overflow: hidden;
+
+    /*CSS Hover solution*/
+    // &:hover{
+    //     .tools {
+    //         top: 0%;
+    //     }
+
+    //     .nav-bar{
+    //         bottom: 0%;
+    //     } 
+    // }
+
+}
+
+.bar {
+    position: absolute;
+    background-color: rgba(#f0f0f0, 0.8);
+    width: 100%;
+    line-height: 40px;
+    opacity: 0.7;
+    cursor: pointer;
+    &:hover {
+        opacity: 1;
+    }
+    /**Transition Properties will mess*/
+    // transition: all 0.5s ease;
+}
+
+.tools {
+    // top: -100%;
+    top: 0%;
+    width: 100%; 
+    
+    ul {
+        margin: 0 auto;
+        width: 500px
+    }
+
+    li {
+        display: inline-block;
+        float:left;
+        background-color: orange;
+        padding: 0px 30px;
+        width: 100px;
+        opacity: 0.4;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.nav-bar{
+    // bottom: -100%;
+    bottom: 0%;
+
+    a {
+        padding: 0px 20px;
+        transition: all 0.5s ease;
+        &:first-child {
+            float: left;
+        }
+        &:nth-child(2) {
+            float: right;
+        }
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+            color: blue;
+        }
+    }
+}
