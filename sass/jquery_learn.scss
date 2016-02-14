@@ -1,0 +1,82 @@
+@import 'all';
+
+.container {
+    background-color: #f0f0f0;
+    height:100%;
+    padding: 50px 0px;
+
+    &--inner {
+        height: 100%;
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+section {
+    margin: 20px 0px;
+}
+
+.feedback{
+    background-color: aquamarine;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    padding: 10px;
+    background: rgba(aquamarine, 0.5);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 4px;
+
+    &--red {
+        background-color: red;
+        color: white;
+    }
+
+    &--yellow {
+        background-color: yellow;
+        color: black;
+    }
+}
+
+.input {
+    border: 0px;
+    margin: 10px;
+    border: 1px solid transparent;
+    
+    &::-webkit-input-placeholder {
+        color: black;
+    }
+    &:focus {
+        border: 1px solid blue;
+        outline: none;
+    }
+    &--red {
+        background-color: red;
+        color: white;
+    }
+
+    &--yellow {
+        background-color: yellow;
+        color: black;
+    }
+}
+
+.boxscroll {
+    height: 100px;
+    width: 300px;
+    overflow-y: scroll;
+    border: 1px solid red;
+    &--red {
+        background-color: red;
+        color: white;
+    }
+
+    &--yellow {
+        background-color: yellow;
+        color: black;
+    }
+}

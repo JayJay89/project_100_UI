@@ -39,4 +39,5 @@ gulp.task('watch',['sass'], function(){
     gulp.watch('css/*.css', ['autoprefix'])
     gulp.watch("*.html").on('change', browserSync.reload);
     gulp.watch("postcss/*.css").on('change', browserSync.reload);
+    gulp.watch("*.js").on('change', browserSync.reload);
 });
