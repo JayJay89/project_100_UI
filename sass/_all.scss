@@ -18,11 +18,11 @@ ul {
 /*clear fixes*/
 .clearfix:before,
 .clearfix:after {
-  content: " ";
-  display: table;
+    content: " ";
+    display: table;
 }
 .clearfix:after {
-  clear: both;
+    clear: both;
 }
 
 /*Equal Height*/
@@ -33,4 +33,13 @@ ul {
         margin-bottom: -99999px;
         padding-bottom: 99999px;
     }
+}
+
+/*Back Button*/
+.back-button {
+    position: fixed;
+    top: 0px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    z-index: 99999;
 }

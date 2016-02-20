@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Codrop Tut 2 - Fixed Fade Out Menu: A CSS and jQuery Tutorial</title>
+		<!-- Bootstrap -->
+		<link href="postcss/codrop2.css" rel="stylesheet">
+		<link href="postcss/normalize.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<a class="back-button" href="index.html">Back</a>
+
+		<div class="nav-bar-container">
+			<ul class="nav-bar clearfix">
+				<li class="nav-bar__list">link1</li>
+				<li class="nav-bar__list">link2</li>
+				<li class="nav-bar__list">link3</li>
+				<li class="nav-bar__list">link4</li>
+				<li class="nav-bar__list">link5</li>
+			</ul>
+		</div>
+
+		<div class="wrapper">
+			<section class="content">
+				<span class="scrollheight-feedback">scrollheight</span>
+				<h1>Title</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ipsam harum illo provident. Quaerat laudantium molestias sequi commodi reiciendis consequuntur dicta cumque laboriosam deserunt provident vero porro quis officia voluptatibus nulla qui doloribus ut repellat, distinctio quo, natus? Amet ullam aut, optio adipisci distinctio incidunt sapiente suscipit quo et. Asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam voluptas maiores, nesciunt doloremque quas distinctio aperiam dolores dolor. Ipsam est cum, veniam quod amet rem quisquam quae tempore, animi facilis temporibus odit sed. Quis eum similique doloremque quod sunt. Amet a, porro eveniet architecto minima fugiat eaque temporibus vitae vero. Suscipit delectus veniam qui recusandae sed, magni corporis laborum. Accusamus repellendus culpa commodi fugit quae aliquam, odit nostrum quam animi, nesciunt, nam nemo odio consequuntur eius voluptatibus veniam quasi dolor assumenda eaque facere nisi eum. Officia cum asperiores, soluta, voluptatum provident minus vel optio, qui numquam voluptates id placeat itaque.</p>
+				<button id="scroll-btn">scroll</button>
+				<!-- <button id="scrolldown-btn">scroll down</button> -->
+			</section>
+
+			<section class="footer">
+				bottom - Click me to scroll to top!
+			</section>
+
+		</div>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+		<script src="jquery.min.js"></script>
+		<script>
+
+			$(document).ready(function(){
+
+				$('p').on('scroll',function(){
+					$('.scrollheight-feedback').html("p's height is " + $('p').scrollTop());
+				});
+
+				$('#scroll-btn').on('click',function(){
+					if ($('p').scrollTop() == 0) {
+						$('p').animate({scrollTop: 450}, 300);
+					} else {
+						$('p').animate({scrollTop: 0}, 300);
+					};
+				});
+
+				$('.footer').on("click", function(){
+					$("html, body").animate({ scrollTop: "0px" },200);
+				});
+
+				$('.nav-bar-container').on('mouseenter',function(){
+					$(this).stop().animate({opacity: 1},0);
+				}).on('mouseleave',function(){
+					$(this).stop().animate({opacity: 0.2},0);
+				});
+
+				$(window).on('scroll', function(){
+
+					$('.scrollheight-feedback').html("window height is " + $(window).scrollTop());
+
+					var winScrollTop = $(window).scrollTop();
+
+					if (winScrollTop == 0) {
+						$('.nav-bar-container').stop().animate({opacity: 1},0);
+					} else {
+						$('.nav-bar-container').stop().animate({opacity: 0.2},0);
+					};
+				});
+			});
+		</script>
+	</body>
+</html>
