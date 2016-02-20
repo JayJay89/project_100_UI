@@ -1,0 +1,25 @@
+#trapezoid {
+  border-bottom: 100px solid red;
+  border-left: 0px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 100px;
+  background-color: #f0f0f0;
+  border-bottom-right-radius: 0px 0px;
+  border-bottom-left-radius: 0px 0px;
+  border-top-right-radius: 0px 0px;
+  border-top-left-radius: 0px 0px; }
+
+#testshape {
+  width: 100px;
+  height: 100px;
+  margin: 15px auto;
+  padding: 13px 15px;
+  color: white;
+  line-height: 1.5;
+  background: -webkit-linear-gradient(315deg, transparent 10px, #c00 0) top left, -webkit-linear-gradient(225deg, transparent 10px, #c00 0) top right, -webkit-linear-gradient(135deg, transparent 10px, #c00 0) bottom right, -webkit-linear-gradient(45deg, transparent 10px, #c00 0) bottom left;
+  background: linear-gradient(135deg, transparent 10px, #c00 0) top left, linear-gradient(225deg, transparent 10px, #c00 0) top right, linear-gradient(315deg, transparent 10px, #c00 0) bottom right, linear-gradient(45deg, transparent 10px, #c00 0) bottom left;
+  background-image: -webkit-radial-gradient(0 0 circle, rgba(204, 0, 0, 0) 14px, #c00 15px), -webkit-radial-gradient(100% 0 circle, rgba(204, 0, 0, 0) 14px, #c00 15px), -webkit-radial-gradient(100% 100% circle, rgba(204, 0, 0, 0) 14px, #c00 15px), -webkit-radial-gradient(0 100% circle, rgba(204, 0, 0, 0) 14px, #c00 15px);
+  background-image: radial-gradient(circle at 0 0, rgba(204, 0, 0, 0) 14px, #c00 15px), radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 14px, #c00 15px), radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 14px, #c00 15px), radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 14px, #c00 15px);
+  background-size: 50% 50%;
+  background-repeat: no-repeat; }

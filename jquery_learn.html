@@ -24,22 +24,43 @@
                 
                 <p class="feedback">Feedbacks!</p>
                 <section>
-                <p>Resize the window to trigger the resize handler</p>
-                <h1>Mouse and Click Events</h1>
-                    <a href="#/" class="btn btn--red" id="btn-click">Click Me!</a>
-                    <a href="#/" class="btn btn--red" id="btn-clickdown">Click Me!</a>
-                    <a href="#/" class="btn btn--red" id="btn-dblclick">Double Click Me!</a>
-                    <a href="#/" class="btn btn--red" id="btn-hover">Hover over Me!</a>
-                    <a href="#/" class="btn btn--red" id="btn-mouseover">Hover over Me!</a>
-                    <a href="#/" class="btn btn--red" id="btn-mouseout">Hover and leave!</a>
-                    <h1>Mouse and Click Events</h1>
-                    <p>The following works the same as the click button above but written using bind(). This binds 2 events mouseup and mousedown</p>
-                    <p>There is no difference between .bind('click') and .click() in jQuery? bind allows you to bind multiple events</p>
-                    <a href="#/" class="btn btn--red" id="btn-clickdownbind">Click Me!</a>
+                    <h1>Difference between click() and on(click())</h1>
+                    <p>The one used below will only assign current div the handler. Any future added div won't be given an event handler</p>
+                    <pre>
+$(div).click(function(){
+    $(this).hide();
+});
+                    </pre>
+                    <p>Hence, the following is recommended</p>
+                    <pre>
+$(div).on("click",function(){
+    $(this).hide();
+});
+                    </pre>                    
                 </section>
 
                 <section>
-                <h1>Key and Focus/Blur Events</h1>
+                    <p>Instead of using bind(), delegate(), or live(), use on()/off() instead</p>
+                </section>
+                <section>
+                    <p>Resize the window to trigger the resize handler</p>
+                    <h1>Mouse and Click Events</h1>
+                        <a href="#/" class="btn btn--red" id="btn-click">Click Me!</a>
+                        <a href="#/" class="btn btn--red" id="btn-clickdown">Click Me!</a>
+                        <a href="#/" class="btn btn--red" id="btn-dblclick">Double Click Me!</a>
+                        <a href="#/" class="btn btn--red" id="btn-hover">Hover over Me!</a>
+                        <a href="#/" class="btn btn--red" id="btn-mouseover">Hover over Me!</a>
+                        <a href="#/" class="btn btn--red" id="btn-mouseout">Hover and leave!</a>
+                        <h1>Mouse and Click Events</h1>
+                        <p>The following works the same as the click button above but written using bind(). This binds 2 events mouseup and mousedown</p>
+                        <p>There is no difference between .bind('click') and .click() in jQuery? bind allows you to bind multiple events</p>
+                        <a href="#/" class="btn btn--red" id="btn-clickdownbind">Click Me!</a>
+                        <h1>ContextMenu</h1>
+                        <a href="#/" class="btn btn--red" id="btn-contextmenu">Rightclick Me!</a>
+                </section>
+
+                <section>
+                    <h1>Key and Focus/Blur Events</h1>
                     <input class="input input--yellow" type="text" placeholder="type!" id="input-keypress">
                     <input class="input input--yellow" type="text" placeholder="type!" id="input-keyupdown">
                     <input class="input input--yellow" type="text" placeholder="focus!" id="input-focus">
@@ -49,6 +70,12 @@
 
                 </section>
 
+                <section>
+                    <h1>Select Events</h1>
+                    <input id="input-select" type="text" value="Select Me!">
+                    <div style="display: inline-block;"></div>
+                </section>
+                
                 <section>
                     <h1>Change Events</h1>
                     <select id="selector">
@@ -64,6 +91,27 @@
                 <section>
                     <h1>Scroll Events</h1>
                     <div class="boxscroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis illo consequuntur delectus nam perferendis quo, at minus reiciendis totam dolore eos cupiditate repudiandae nostrum itaque voluptatem modi magnam eius cum atque sint quam possimus hic aut? Obcaecati eligendi, excepturi recusandae?</div>
+                </section>
+
+                <section>
+                    <h1>Delegate Events</h1>
+                    <p>Note that delegate has been superseded by on() function. The point of using delegate is to assign handlers to elements which will be added in the future</p>
+                    <a href="#/" class="btn btn--red" id="btn-delegate">Create New Paragraph</a>
+                    <ul class="list-item">
+                        <li><a href="#/">Old List Item</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Trigger Events</h1>
+                    <p>Clicking on button 2 will also trigger button 1's click handler</p>
+                    <a href="#/" class="btn btn--red" id="btn-trigger-1">Click Me!</a>
+                    <a href="#/" class="btn btn--red" id="btn-trigger-2">Click Me Too!</a>
+                </section>
+
+                <section>
+                    <p>event.currentTarget is the equivalent of $(this)</p>
+                    <a href="#/" class="btn btn--red" id="btn-curTarget1">Click Me!</a>
                 </section>
 
                 <section>
