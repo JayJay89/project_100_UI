@@ -18,13 +18,63 @@
 	</head>
 	<body>
 		<a class="back-button" href="index.html">Back</a>
+		<a href="#/" id="rotate">Test Animate</a>
+				<!-- <div id="trapezoid"></div> -->
+				<!-- <div id="testshape"></div> -->
+				<!-- <div id="borderplay"></div> -->
+		<div class="container">
+			<div class="corgi">
 
-		<div class="corgi">
-			<div id="trapezoid"></div>
-			<div id="testshape"></div>
+
+
+				<div class="head">
+					<div class="ear ear--r"></div>
+					<div class="ear ear--l"></div>
+					<div class="face">
+						<div class="face__white">
+							<div class="face__orange face__orange--l"></div>
+							<div class="face__orange face__orange--r"></div>
+						</div>
+					</div>
+
+					<div class="mouth">
+						<div class="mouth__left">
+							<div class="mouth__left--round"></div>
+							<div class="mouth__left--sharp"></div>
+						</div>
+						<div class="lowerjaw"></div>
+						<div class="snout"></div>
+					</div>
+
+				</div>
+
+
+			</div>
 		</div>
+
+
+
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 		<script src="jquery.min.js"></script>
+		<script>
+
+		$(document).ready(function(){
+
+			$('#rotate').on('mousedown', function () {
+				$('.test').css("transform","rotate(360deg)");
+			}).on('mouseup', function(){
+				$('.test').css("transform","rotate(0deg)");
+			})
+
+			$('#rotate').on('mousedown', function () {
+				$('.testrev').css("transform","rotate(-360deg)");
+			}).on('mouseup', function(){
+				$('.testrev').css("transform","rotate(0deg)");
+			})
+		})
+
+
+		</script>
 	</body>
 </html>

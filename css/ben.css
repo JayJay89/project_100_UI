@@ -57,3 +57,134 @@ ul {
   background-image: radial-gradient(circle at 0 0, rgba(204, 0, 0, 0) 14px, #c00 15px), radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 14px, #c00 15px), radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 14px, #c00 15px), radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 14px, #c00 15px);
   background-size: 50% 50%;
   background-repeat: no-repeat; }
+
+#borderplay {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  background-color: lightblue;
+  border-top-right-radius: 0%;
+  border-top-left-radius: 120px 60px;
+  border-bottom-right-radius: 0%;
+  border-bottom-left-radius: 120px 60px; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #8C5A46; }
+
+#rotate {
+  background-color: #f0f0f0;
+  padding: 5px;
+  position: fixed;
+  top: 0px;
+  left: 50px; }
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.corgi {
+  height: 60vmin;
+  width: 84vmin;
+  border: 1px solid red;
+  position: relative; }
+  .corgi div {
+    position: absolute; }
+  .corgi .ear {
+    background-color: #F09F2E;
+    height: 30%;
+    width: 55%;
+    top: 5%;
+    border: 2px solid white; }
+    .corgi .ear--r {
+      right: 75%;
+      border-bottom-left-radius: 100% 90%;
+      border-top-left-radius: 10%;
+      transform-origin: 80% center; }
+    .corgi .ear--l {
+      left: 75%;
+      background-color: #D37639;
+      border-bottom-right-radius: 100% 90%;
+      border-top-right-radius: 10%;
+      transform-origin: 20% center; }
+  .corgi .head {
+    top: 4%;
+    right: 18%;
+    height: 45%;
+    width: 33%; }
+  .corgi .face {
+    background-color: #F09F2E;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 100%;
+    width: 100%; }
+  .corgi .face__white {
+    background-color: #FFFFFF;
+    width: 45%;
+    height: 77%;
+    top: -15%;
+    left: 30%;
+    overflow: hidden;
+    transform: rotate(-25deg); }
+  .corgi .face__orange {
+    background-color: #F09F2E;
+    content: " ";
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    display: block;
+    border-radius: 100%; }
+    .corgi .face__orange--l {
+      right: 65%; }
+    .corgi .face__orange--r {
+      left: 65%; }
+  .corgi .mouth {
+    border: 1px solid red;
+    display: block;
+    bottom: 0%;
+    width: 100%;
+    height: 50%;
+    left: 28%; }
+  .corgi .mouth__left {
+    background-color: #FFFFFF;
+    width: 50%;
+    height: 55%;
+    overflow: hidden; }
+  .corgi .mouth__left--round {
+    background-color: #F09F2E;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    left: -50%;
+    top: -50%; }
+  .corgi .mouth__left--sharp {
+    background-color: #F09F2E;
+    width: 35%;
+    height: 50%;
+    bottom: 0px;
+    left: -20%;
+    transform: skewX(50deg); }
+  .corgi .lowerjaw {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 71%;
+    border-radius: 50% / 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    bottom: 0%; }
+  .corgi .snout {
+    background-color: #FFFFFF;
+    right: 0%;
+    top: 0%;
+    width: 50%;
+    height: 36%;
+    border-top-right-radius: 35% 75%; }
+
+.test, .testrev {
+  transition: all 0.8s ease; }
