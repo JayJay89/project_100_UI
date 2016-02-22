@@ -24,7 +24,8 @@ p {
 }
 
 .product-view {
-    min-width: 820px;
+    min-width: 800px;
+    max-width: 920px;
     background-color: white;
     padding: $container-padding;
     width: 70%;
@@ -122,9 +123,14 @@ p {
         background-position: -16px 0px;
         width: 16px;
         height: 16px;
+        cursor: pointer;
 
         &.light {
             background-position: 0px 0px;
+        }
+
+        &:hover{
+            // background-position: 0px 0px;
         }
     }
 
@@ -144,7 +150,7 @@ p {
             font-size: $height;
             color: $font-gray;
             line-height: $height;
-            margin: 0px 50px
+            margin: 0px 25px
         }
 
         .icon-arrow {
@@ -155,12 +161,14 @@ p {
             display: inline-block;
             vertical-align: middle;
             cursor: pointer;
+            padding: 15px;
+
             &.left {
-                background-position: 0px 0px;
+                background-position: 7px 5px;
             }
 
             &.right {
-                background-position: -145px 0px;
+                background-position: -137px 5px;
             }
         }
     }

@@ -47,7 +47,8 @@ p {
   background-size: cover; }
 
 .product-view {
-  min-width: 820px;
+  min-width: 800px;
+  max-width: 920px;
   background-color: white;
   padding: 20px;
   width: 70%;
@@ -121,7 +122,8 @@ p {
   background-repeat: no-repeat;
   background-position: -16px 0px;
   width: 16px;
-  height: 16px; }
+  height: 16px;
+  cursor: pointer; }
   .chair-info .icon-star.light {
     background-position: 0px 0px; }
 
@@ -137,7 +139,7 @@ p {
     font-size: 30px;
     color: #999999;
     line-height: 30px;
-    margin: 0px 50px; }
+    margin: 0px 25px; }
   .chair-info .purchase-quantity .icon-arrow {
     background-image: url("../day2/controls.png");
     background-repeat: no-repeat;
@@ -145,11 +147,12 @@ p {
     height: 18px;
     display: inline-block;
     vertical-align: middle;
-    cursor: pointer; }
+    cursor: pointer;
+    padding: 15px; }
     .chair-info .purchase-quantity .icon-arrow.left {
-      background-position: 0px 0px; }
+      background-position: 7px 5px; }
     .chair-info .purchase-quantity .icon-arrow.right {
-      background-position: -145px 0px; }
+      background-position: -137px 5px; }
 
 .product-checkout {
   width: 100%;

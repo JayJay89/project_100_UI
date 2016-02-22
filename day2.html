@@ -50,7 +50,7 @@
 
 							<span>Quantity</span>
 							<i class="icon-arrow left"></i>
-							<span class="amount">03</span>
+							<span class="amount">00</span>
 							<i class="icon-arrow right"></i>
 
 						</div>
@@ -72,5 +72,53 @@
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 		<script src="jquery.min.js"></script>
+
+		<script>
+			$(document).ready(function(){
+
+				$('.icon-star').on('mouseenter',function(){
+					$(this).addClass('light');
+					$(this).prevAll().addClass('light');
+					$(this).nextAll().removeClass('light'); 
+				}).on('mouseout',function(){
+					$(this).removeClass('light');
+					$(this).prevAll().removeClass('light');
+				});
+
+				$('.icon-star').on('mousedown', function(){
+					$(this).addClass('light');
+					$(this).prevAll().addClass('light');
+					$(this).nextAll().removeClass('light'); 
+				});
+
+				var amts = 0;
+
+				$('.amount').html("00");
+
+				$('.icon-arrow.right').on('click',function(){
+					amts++;
+
+					if (amts < 10){
+						$('.amount').html("0" + amts);
+					} else {
+						$('.amount').html(amts);
+					}
+				});
+
+				$('.icon-arrow.left').on('click',function(){
+
+					if (amts == 0) {
+						amts = 0;
+					} else if (amts < 10) {
+						amts--;
+						$('.amount').html("0" + amts);
+					} else {
+						amts--;
+						$('.amount').html(amts);
+					}
+
+				});
+			})
+		</script>
 	</body>
 </html>
