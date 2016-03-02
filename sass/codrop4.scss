@@ -1,0 +1,49 @@
+@import 'all';
+
+.wrapper {
+    width: 100%;
+    background-color: red;
+}
+
+$img-per-row: 3;
+$right-margin: 1%;
+$image-width: (100% - ($img-per-row - 1) *($right-margin))/$img-per-row;
+
+
+.container {
+    border: 1px solid green;
+    width: 80%;
+    margin: 0 auto;
+
+    .container__img {
+        margin: $right-margin;
+        margin-left: 0px;
+        margin-top: 0px;
+        display: inline-block;
+        float: left;
+        width: $image-width;
+        height: 200px;
+        overflow: hidden;
+        cursor:pointer;
+        position: relative;
+        border: 5px solid orange;
+
+        img {
+            position: absolute;
+            top: -150px; 
+            left: -150px;
+            width: 400%;
+            transition: all 0.5s ease;
+
+            &.onhover{
+                top: 0px;
+                left: 0px;
+                width: 100%;
+            }
+        }
+
+        &:nth-child(#{$img-per-row}n){
+            margin-right: 0px;
+        }
+    }
+}
