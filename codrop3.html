@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>CoDrops 3 - CSS Tutorial:  Fancy Apple-Style Icon Slide Out Navigation</title>
+		<!-- Bootstrap -->
+		<link href="postcss/codrop3.css" rel="stylesheet">
+		<link href="postcss/normalize.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<a class="back-button" href="index.html">Back</a>
+
+		<div class="wrapper">
+
+			<nav class="nav-bar">
+				<ul class="top-nav clearfix">
+					<li>
+						<a href="#/">tab1</a>
+						<span class="icon1"></span>
+					</li>
+					<li>
+						<a href="#/">tab2</a>
+						<span class="icon2"></span>
+					</li>
+					<li>
+						<a href="#/">tab3</a>
+						<span class="icon3"></span>
+					</li>
+				</ul>
+			</nav>
+	
+
+			<h3>each()</h3>
+			<p>.each is an iterator that is used to iterate over only jQuery objects collection</p>
+
+			<div class="each-test">
+				<input type="text" value="text-box">
+				<p>Lorem ipsum dolor sit amet.</p>
+				<span>Lorem ipsum dolor sit amet.</span>
+				<p>check the console</p>
+			</div>
+		</div>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+		<script src="jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+
+				$('.top-nav li').hover(function(){
+					$( this )
+					.find('span').stop().animate({
+						'top':'70px'
+					},400)
+					.css({'zIndex':'10'});
+				},function(){
+					$( this )
+					.find('span').stop().animate({
+						'top':'0px'
+					},1000)
+					.css({'zIndex':'-1'});
+				});
+
+				$('.each-test').children().
+
+				$('.each-test').children().each(function(index, element){
+					console.log('element at index ' + index + ' is ' + (this.tagName).toLowerCase());
+				});
+
+				$('.each-test').children().each(function(index, element){
+					console.log('current element as dom object:' + element);
+				});
+
+				$('.each-test').children().each(function(index, element){
+					console.log('current element as jQuery object:' + $(this));
+				});
+			});
+		</script>
+	</body>
+</html>
+
