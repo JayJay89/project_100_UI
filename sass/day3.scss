@@ -3,12 +3,63 @@
 .wrapper {
     background: url(../day3/bg.png) no-repeat;
     width: 100%;
+    height: 100%;
     margin: 0 auto;
     position: relative;
     background-size: cover;
+    display: table;
+}
+
+
+.table-container {
+    display: table-cell;
+    margin: 0 auto;
+    vertical-align: middle;
+    text-align: center;
+    height: 100%;
 }
 
 .container {
-
+    width: 75%;
+    margin: 0 auto;
+    border: 1px solid red;
 }
 
+
+.panel__contact {
+    background-color: rgba(black, 0.5);
+    width: 50%;
+    float:left;
+    margin: 20px 0px;
+}
+
+.panel__dial {
+    background-color: white;
+    width: 50%;
+    float: right;
+    padding: 50px 0px;
+}
+
+.num__display {
+    padding: 20px 0px;
+}
+
+.num__dial {
+    .num__pads {
+        width:calc(100% / 3);
+        display: inline-block;
+        float:left;
+        display: table;
+        border: 1px solid red;
+        height: 100px;
+        > span {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+
+            span {
+                display: block;
+            }
+        }
+    }
+}
