@@ -42,7 +42,6 @@ ul {
   background: url(../day3/bg.png) no-repeat;
   width: 100%;
   height: 100%;
-  margin: 0 auto;
   position: relative;
   background-size: cover;
   display: table; }
@@ -56,34 +55,110 @@ ul {
 
 .container {
   width: 75%;
+  height: 750px;
   margin: 0 auto;
-  border: 1px solid red; }
+  max-width: 850px;
+  min-width: 700px; }
 
 .panel__contact {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   width: 50%;
   float: left;
-  margin: 20px 0px; }
+  margin: 20px 0px;
+  height: 710px; }
+
+.contact__info {
+  background-color: white;
+  margin: 10px;
+  border: 1px sold red;
+  width: 90%;
+  height: 80px;
+  margin: 20px auto; }
+  .contact__info:before, .contact__info:after {
+    content: " ";
+    display: table; }
+  .contact__info:after {
+    clear: both; }
+
+.contact__info__img {
+  float: left;
+  width: 80px;
+  height: 80px;
+  overflow: hidden; }
+  .contact__info__img img {
+    width: 140px; }
+
+.contact__info__detail {
+  padding: 22.5px 20px;
+  float: left;
+  width: calc(100% - 80px); }
+  .contact__info__detail span {
+    display: block;
+    text-align: left; }
+
+.contact__info__name {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 5px; }
+
+.contact__info__num {
+  font-size: 14px;
+  line-height: 14px;
+  color: gray; }
 
 .panel__dial {
+  height: 100%;
   background-color: white;
   width: 50%;
   float: right;
-  padding: 50px 0px; }
+  position: relative; }
 
 .num__display {
-  padding: 20px 0px; }
+  line-height: 40px;
+  height: 40px;
+  margin: 50px 20px 20px;
+  vertical-align: middle;
+  position: relative; }
+  .num__display i {
+    position: absolute;
+    width: 40px;
+    display: inline-block; }
+  .num__display .icon__plus {
+    left: 0px; }
+  .num__display .icon__cross {
+    right: 0px; }
+  .num__display span {
+    color: #63d91c;
+    display: inline-block;
+    font-size: 40px;
+    line-height: 40px; }
 
-.num__dial .num__pads {
+.num__pads {
   width: calc(100% / 3);
   display: inline-block;
   float: left;
-  display: table;
-  border: 1px solid red;
-  height: 100px; }
-  .num__dial .num__pads > span {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center; }
-    .num__dial .num__pads > span span {
+  padding: 10px 0px;
+  text-align: center; }
+  .num__pads .inner__container {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    display: inline-block;
+    padding: 14px 0px;
+    cursor: pointer;
+    transition: all 0.2s ease; }
+    .num__pads .inner__container:hover {
+      background-color: lightgray; }
+    .num__pads .inner__container span:first-child {
+      font-size: 40px;
+      line-height: 40px;
       display: block; }
+    .num__pads .inner__container span:nth-child(2) {
+      font-size: 12px;
+      line-height: 12px; }
+
+.num__call {
+  width: 100%;
+  bottom: 50px;
+  position: absolute; }
