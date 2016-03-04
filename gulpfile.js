@@ -21,11 +21,11 @@ gulp.task('sass', function () {
 
 
 /*Auto Prefixer*/
-gulp.task('autoprefix',function(){
-    gulp.src('css/*.css')
-    .pipe(autoprefixer())
-    .pipe(gulp.dest('postcss'))
-})
+// gulp.task('autoprefix',function(){
+//     gulp.src('css/*.css')
+//     .pipe(autoprefixer())
+//     .pipe(gulp.dest('postcss'))
+// });
 
 
 /*Watcher*/
@@ -36,8 +36,8 @@ gulp.task('watch',['sass'], function(){
     });
 
     gulp.watch('sass/*.scss', ['sass'])
-    gulp.watch('css/*.css', ['autoprefix'])
+    // gulp.watch('css/*.css', ['autoprefix'])
     gulp.watch("*.html").on('change', browserSync.reload);
-    gulp.watch("postcss/*.css").on('change', browserSync.reload);
+    // gulp.watch("postcss/*.css").on('change', browserSync.reload);
     gulp.watch("*.js").on('change', browserSync.reload);
 });

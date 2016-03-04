@@ -47,7 +47,7 @@ input {
   outline: none; }
 
 .rounded {
-  border-radius: 25px;
+  border-radius: 35px;
   padding: 10px 20px; }
 
 .login-form {
