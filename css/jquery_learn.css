@@ -1,34 +1,43 @@
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 body, html {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+}
 
 a {
   color: black;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 ul {
   list-style: none;
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+}
 
 /*clear fixes*/
 .clearfix:before,
 .clearfix:after {
   content: " ";
-  display: table; }
+  display: table;
+}
 
 .clearfix:after {
-  clear: both; }
+  clear: both;
+}
 
 /*Equal Height*/
 .eq-height {
-  overflow: hidden; }
-  .eq-height .eq-height-col {
-    margin-bottom: -99999px;
-    padding-bottom: 99999px; }
+  overflow: hidden;
+}
+
+.eq-height .eq-height-col {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
 
 /*Back Button*/
 .back-button {
@@ -36,20 +45,25 @@ ul {
   top: 0px;
   background-color: #f0f0f0;
   padding: 5px;
-  z-index: 99999; }
+  z-index: 99999;
+}
 
 .container {
   background-color: #f0f0f0;
   height: 100%;
-  padding: 50px 0px; }
-  .container--inner {
-    height: 100%;
-    width: 80%;
-    display: block;
-    margin: 0 auto; }
+  padding: 50px 0px;
+}
+
+.container--inner {
+  height: 100%;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
 
 section {
-  margin: 20px 0px; }
+  margin: 20px 0px;
+}
 
 .feedback {
   background-color: aquamarine;
@@ -57,43 +71,63 @@ section {
   top: 0px;
   right: 0px;
   padding: 10px;
-  background: rgba(127, 255, 212, 0.5); }
+  background: rgba(127, 255, 212, 0.5);
+}
 
 .btn {
   display: inline-block;
   padding: 10px 15px;
-  border-radius: 4px; }
-  .btn--red {
-    background-color: red;
-    color: white; }
-  .btn--yellow {
-    background-color: yellow;
-    color: black; }
+  border-radius: 4px;
+}
+
+.btn--red {
+  background-color: red;
+  color: white;
+}
+
+.btn--yellow {
+  background-color: yellow;
+  color: black;
+}
 
 .input {
   border: 0px;
   margin: 10px;
-  border: 1px solid transparent; }
-  .input::-webkit-input-placeholder {
-    color: black; }
-  .input:focus {
-    border: 1px solid blue;
-    outline: none; }
-  .input--red {
-    background-color: red;
-    color: white; }
-  .input--yellow {
-    background-color: yellow;
-    color: black; }
+  border: 1px solid transparent;
+}
+
+.input::-webkit-input-placeholder {
+  color: black;
+}
+
+.input:focus {
+  border: 1px solid blue;
+  outline: none;
+}
+
+.input--red {
+  background-color: red;
+  color: white;
+}
+
+.input--yellow {
+  background-color: yellow;
+  color: black;
+}
 
 .boxscroll {
   height: 100px;
   width: 300px;
   overflow-y: scroll;
-  border: 1px solid red; }
-  .boxscroll--red {
-    background-color: red;
-    color: white; }
-  .boxscroll--yellow {
-    background-color: yellow;
-    color: black; }
+  border: 1px solid red;
+}
+
+.boxscroll--red {
+  background-color: red;
+  color: white;
+}
+
+.boxscroll--yellow {
+  background-color: yellow;
+  color: black;
+}

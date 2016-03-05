@@ -1,34 +1,43 @@
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 body, html {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+}
 
 a {
   color: black;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 ul {
   list-style: none;
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+}
 
 /*clear fixes*/
 .clearfix:before,
 .clearfix:after {
   content: " ";
-  display: table; }
+  display: table;
+}
 
 .clearfix:after {
-  clear: both; }
+  clear: both;
+}
 
 /*Equal Height*/
 .eq-height {
-  overflow: hidden; }
-  .eq-height .eq-height-col {
-    margin-bottom: -99999px;
-    padding-bottom: 99999px; }
+  overflow: hidden;
+}
+
+.eq-height .eq-height-col {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
 
 /*Back Button*/
 .back-button {
@@ -36,20 +45,25 @@ ul {
   top: 0px;
   background-color: #f0f0f0;
   padding: 5px;
-  z-index: 99999; }
+  z-index: 99999;
+}
 
 .slide-container {
   display: table;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 .image-wrapper {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
-  border: 1px solid red; }
-  .image-wrapper img {
-    max-width: 100%; }
+  border: 1px solid red;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+}
 
 .image-container {
   display: inline-block;
@@ -58,7 +72,8 @@ ul {
   max-width: 700px;
   position: relative;
   overflow: hidden;
-  /*CSS Hover solution*/ }
+  /*CSS Hover solution*/
+}
 
 .bar {
   position: absolute;
@@ -67,36 +82,55 @@ ul {
   line-height: 40px;
   opacity: 0.7;
   cursor: pointer;
-  /**Transition Properties will mess*/ }
-  .bar:hover {
-    opacity: 1; }
+  /**Transition Properties will mess*/
+}
+
+.bar:hover {
+  opacity: 1;
+}
 
 .tools {
   top: 0%;
-  width: 100%; }
-  .tools ul {
-    margin: 0 auto;
-    width: 500px; }
-  .tools li {
-    display: inline-block;
-    float: left;
-    background-color: orange;
-    padding: 0px 30px;
-    width: 100px;
-    opacity: 0.4; }
-    .tools li:hover {
-      opacity: 1; }
+  width: 100%;
+}
+
+.tools ul {
+  margin: 0 auto;
+  width: 500px;
+}
+
+.tools li {
+  display: inline-block;
+  float: left;
+  background-color: orange;
+  padding: 0px 30px;
+  width: 100px;
+  opacity: 0.4;
+}
+
+.tools li:hover {
+  opacity: 1;
+}
 
 .nav-bar {
-  bottom: 0%; }
-  .nav-bar a {
-    padding: 0px 20px;
-    transition: all 0.5s ease;
-    opacity: 0.5; }
-    .nav-bar a:first-child {
-      float: left; }
-    .nav-bar a:nth-child(2) {
-      float: right; }
-    .nav-bar a:hover {
-      opacity: 1;
-      color: blue; }
+  bottom: 0%;
+}
+
+.nav-bar a {
+  padding: 0px 20px;
+  transition: all 0.5s ease;
+  opacity: 0.5;
+}
+
+.nav-bar a:first-child {
+  float: left;
+}
+
+.nav-bar a:nth-child(2) {
+  float: right;
+}
+
+.nav-bar a:hover {
+  opacity: 1;
+  color: blue;
+}

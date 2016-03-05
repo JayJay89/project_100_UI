@@ -1,34 +1,43 @@
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 body, html {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+}
 
 a {
   color: black;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 ul {
   list-style: none;
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+}
 
 /*clear fixes*/
 .clearfix:before,
 .clearfix:after {
   content: " ";
-  display: table; }
+  display: table;
+}
 
 .clearfix:after {
-  clear: both; }
+  clear: both;
+}
 
 /*Equal Height*/
 .eq-height {
-  overflow: hidden; }
-  .eq-height .eq-height-col {
-    margin-bottom: -99999px;
-    padding-bottom: 99999px; }
+  overflow: hidden;
+}
+
+.eq-height .eq-height-col {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
 
 /*Back Button*/
 .back-button {
@@ -36,19 +45,23 @@ ul {
   top: 0px;
   background-color: #f0f0f0;
   padding: 5px;
-  z-index: 99999; }
+  z-index: 99999;
+}
 
 body {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+}
 
 /*image width 525px * 680px*/
 input {
   border: 0px;
-  outline: none; }
+  outline: none;
+}
 
 .rounded {
   border-radius: 35px;
-  padding: 10px 20px; }
+  padding: 10px 20px;
+}
 
 .login-form {
   width: 100%;
@@ -57,13 +70,19 @@ input {
   background: url(../day1/bg.png) no-repeat;
   background-size: cover;
   padding: 50px;
-  color: white; }
-  .login-form > div {
-    margin: 50px 0px 0px 0px; }
-  @media screen and (min-width: 768px) {
-    .login-form {
-      width: 65%;
-      max-width: 525px; } }
+  color: white;
+}
+
+.login-form > div {
+  margin: 50px 0px 0px 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .login-form {
+    width: 65%;
+    max-width: 525px;
+  }
+}
 
 .sec-top-tab a {
   text-transform: uppercase;
@@ -72,84 +91,118 @@ input {
   padding-bottom: 5px;
   border-bottom: 2px solid transparent;
   margin-right: 10px;
-  transition: all 0.5s ease; }
-  .sec-top-tab a:last-child {
-    margin-right: 0px; }
-  .sec-top-tab a:hover {
-    color: white; }
-  .sec-top-tab a.active {
-    color: white;
-    border-bottom: 2px solid #1161ed; }
+  transition: all 0.5s ease;
+}
+
+.sec-top-tab a:last-child {
+  margin-right: 0px;
+}
+
+.sec-top-tab a:hover {
+  color: white;
+}
+
+.sec-top-tab a.active {
+  color: white;
+  border-bottom: 2px solid #1161ed;
+}
 
 .sec-info-input {
   min-height: 280px;
-  position: relative; }
+  position: relative;
+}
 
 .info-sign-in,
 .info-sign-up {
   transition: all 0.5s ease;
   position: absolute;
   left: -100%;
-  opacity: 0; }
-  .info-sign-in.active,
-  .info-sign-up.active {
-    position: absolute;
-    width: 100%;
-    left: 0px;
-    opacity: 1; }
-  .info-sign-in label, .info-sign-in input,
-  .info-sign-up label,
-  .info-sign-up input {
-    display: block;
-    width: 100%;
-    margin: 10px 0px; }
-  .info-sign-in label,
-  .info-sign-up label {
-    color: #92939e;
-    text-transform: uppercase;
-    font-size: 12px; }
-  .info-sign-in label + input,
-  .info-sign-up label + input {
-    background-color: transparent;
-    border: 2px solid #8d8ea0;
-    font-size: 14px;
-    transition: all 0.5s ease; }
-    .info-sign-in label + input:focus,
-    .info-sign-up label + input:focus {
-      border: 2px solid white; }
-  .info-sign-in input[type="password"],
-  .info-sign-up input[type="password"] {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 0px; }
-    .info-sign-in input[type="password"]:focus,
-    .info-sign-up input[type="password"]:focus {
-      background-color: rgba(255, 255, 255, 0.2);
-      border: 0px; }
-  .info-sign-in input[type="checkbox"],
-  .info-sign-up input[type="checkbox"] {
-    display: inline-block;
-    width: auto; }
-  .info-sign-in .sign-in,
-  .info-sign-up .sign-in {
-    display: block;
-    background-color: #1161ed;
-    text-align: center;
-    text-transform: uppercase;
-    color: white;
-    font-size: 14px;
-    transition: all 0.5s ease; }
-    .info-sign-in .sign-in:hover,
-    .info-sign-up .sign-in:hover {
-      background-color: #2776ff; }
+  opacity: 0;
+}
+
+.info-sign-in.active,
+.info-sign-up.active {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  opacity: 1;
+}
+
+.info-sign-in label, .info-sign-in input,
+.info-sign-up label,
+.info-sign-up input {
+  display: block;
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.info-sign-in label,
+.info-sign-up label {
+  color: #92939e;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.info-sign-in label + input,
+.info-sign-up label + input {
+  background-color: transparent;
+  border: 2px solid #8d8ea0;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+
+.info-sign-in label + input:focus,
+.info-sign-up label + input:focus {
+  border: 2px solid white;
+}
+
+.info-sign-in input[type="password"],
+.info-sign-up input[type="password"] {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 0px;
+}
+
+.info-sign-in input[type="password"]:focus,
+.info-sign-up input[type="password"]:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 0px;
+}
+
+.info-sign-in input[type="checkbox"],
+.info-sign-up input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+}
+
+.info-sign-in .sign-in,
+.info-sign-up .sign-in {
+  display: block;
+  background-color: #1161ed;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+
+.info-sign-in .sign-in:hover,
+.info-sign-up .sign-in:hover {
+  background-color: #2776ff;
+}
 
 .sec-forgot-password {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   text-align: center;
   padding-top: 50px;
-  margin-bottom: 0px; }
-  .sec-forgot-password a {
-    color: rgba(255, 255, 255, 0.2);
-    font-size: 14px;
-    transition: all 0.5s ease; }
-    .sec-forgot-password a:hover {
-      color: white; }
+  margin-bottom: 0px;
+}
+
+.sec-forgot-password a {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+
+.sec-forgot-password a:hover {
+  color: white;
+}

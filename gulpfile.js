@@ -10,7 +10,14 @@ var browserSync = require('browser-sync');
 /*Sass*/
 gulp.task('sass', function () {
     gulp.src('sass/*.scss')
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({
+            outputStyle: 'expanded'
+        })
+        /*Output-styles*/
+        /*
+            nested, expanded, compressed, compact
+        */
+        .on('error', sass.logError))
         .pipe(gulp.dest('css'))
 });
 

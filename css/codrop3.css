@@ -1,34 +1,43 @@
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 body, html {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+}
 
 a {
   color: black;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 ul {
   list-style: none;
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+}
 
 /*clear fixes*/
 .clearfix:before,
 .clearfix:after {
   content: " ";
-  display: table; }
+  display: table;
+}
 
 .clearfix:after {
-  clear: both; }
+  clear: both;
+}
 
 /*Equal Height*/
 .eq-height {
-  overflow: hidden; }
-  .eq-height .eq-height-col {
-    margin-bottom: -99999px;
-    padding-bottom: 99999px; }
+  overflow: hidden;
+}
+
+.eq-height .eq-height-col {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
 
 /*Back Button*/
 .back-button {
@@ -36,52 +45,67 @@ ul {
   top: 0px;
   background-color: #f0f0f0;
   padding: 5px;
-  z-index: 99999; }
+  z-index: 99999;
+}
 
 .wrapper {
   height: 100%;
   width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .nav-bar {
   width: 100%;
   text-align: center;
   display: inline-block;
-  border: 1px solid red; }
+  border: 1px solid red;
+}
 
 .top-nav {
   width: 20%;
   background-color: red;
-  display: inline-block; }
-  .top-nav li {
-    background-color: green;
-    padding: 20px;
-    float: left;
-    display: inline-block;
-    border: 1px solid red;
-    position: relative;
-    transition: all 0.5s ease;
-    cursor: pointer; }
-    .top-nav li:hover {
-      background-color: red; }
-      .top-nav li:hover span {
-        opacity: 1; }
-    .top-nav li span {
-      transition: opacity 1s ease;
-      height: 30px;
-      width: 30px;
-      padding: 20px;
-      display: block;
-      z-index: -1;
-      top: 0px;
-      position: absolute;
-      opacity: 0; }
+  display: inline-block;
+}
+
+.top-nav li {
+  background-color: green;
+  padding: 20px;
+  float: left;
+  display: inline-block;
+  border: 1px solid red;
+  position: relative;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.top-nav li:hover {
+  background-color: red;
+}
+
+.top-nav li:hover span {
+  opacity: 1;
+}
+
+.top-nav li span {
+  transition: opacity 1s ease;
+  height: 30px;
+  width: 30px;
+  padding: 20px;
+  display: block;
+  z-index: -1;
+  top: 0px;
+  position: absolute;
+  opacity: 0;
+}
 
 .icon1 {
-  background-color: green; }
+  background-color: green;
+}
 
 .icon2 {
-  background-color: red; }
+  background-color: red;
+}
 
 .icon3 {
-  background-color: blue; }
+  background-color: blue;
+}

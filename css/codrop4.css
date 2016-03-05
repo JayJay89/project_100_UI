@@ -1,34 +1,43 @@
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 body, html {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+}
 
 a {
   color: black;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 ul {
   list-style: none;
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+}
 
 /*clear fixes*/
 .clearfix:before,
 .clearfix:after {
   content: " ";
-  display: table; }
+  display: table;
+}
 
 .clearfix:after {
-  clear: both; }
+  clear: both;
+}
 
 /*Equal Height*/
 .eq-height {
-  overflow: hidden; }
-  .eq-height .eq-height-col {
-    margin-bottom: -99999px;
-    padding-bottom: 99999px; }
+  overflow: hidden;
+}
+
+.eq-height .eq-height-col {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
 
 /*Back Button*/
 .back-button {
@@ -36,37 +45,48 @@ ul {
   top: 0px;
   background-color: #f0f0f0;
   padding: 5px;
-  z-index: 99999; }
+  z-index: 99999;
+}
 
 .wrapper {
   width: 100%;
-  background-color: red; }
+  background-color: red;
+}
 
 .container {
   border: 1px solid green;
   width: 80%;
-  margin: 0 auto; }
-  .container .container__img {
-    margin: 1%;
-    margin-left: 0px;
-    margin-top: 0px;
-    display: inline-block;
-    float: left;
-    width: 32.66667%;
-    height: 200px;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-    border: 5px solid orange; }
-    .container .container__img img {
-      position: absolute;
-      top: -150px;
-      left: -150px;
-      width: 400%;
-      transition: all 0.5s ease; }
-      .container .container__img img.onhover {
-        top: 0px;
-        left: 0px;
-        width: 100%; }
-    .container .container__img:nth-child(3n) {
-      margin-right: 0px; }
+  margin: 0 auto;
+}
+
+.container .container__img {
+  margin: 1%;
+  margin-left: 0px;
+  margin-top: 0px;
+  display: inline-block;
+  float: left;
+  width: 32.66667%;
+  height: 200px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  border: 5px solid orange;
+}
+
+.container .container__img img {
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  width: 400%;
+  transition: all 0.5s ease;
+}
+
+.container .container__img img.onhover {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+.container .container__img:nth-child(3n) {
+  margin-right: 0px;
+}
