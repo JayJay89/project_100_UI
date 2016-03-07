@@ -158,6 +158,25 @@ html, body {
   width: 100%;
 }
 
+.corgi .eye {
+  background-color: #3E3954;
+  height: 7%;
+  width: 7%;
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.corgi .eye--left {
+  left: 37%;
+  top: 43%;
+}
+
+.corgi .eye--right {
+  right: 13%;
+  top: 41%;
+}
+
 .corgi .face__white {
   background-color: #FFFFFF;
   width: 45%;
@@ -186,6 +205,27 @@ html, body {
   left: 65%;
 }
 
+.corgi .face__curve {
+  background-color: #F09F2E;
+  width: 30%;
+  height: 20%;
+  right: -16%;
+  bottom: 35%;
+  overflow: hidden;
+}
+
+.corgi .face__curve:after {
+  content: "";
+  background-color: #8C5A46;
+  display: block;
+  position: absolute;
+  width: 69%;
+  height: 82%;
+  border-radius: 0% 60%;
+  top: -51%;
+  right: -13%;
+}
+
 .corgi .mouth {
   border: 1px solid red;
   display: block;
@@ -193,6 +233,29 @@ html, body {
   width: 100%;
   height: 50%;
   left: 28%;
+}
+
+.corgi .nose {
+  height: 38%;
+  width: 30%;
+  top: 10%;
+  background-color: #3E3954;
+  z-index: 1;
+  right: 0%;
+  border-bottom-right-radius: 50% 100%;
+  border-bottom-left-radius: 50% 100%;
+}
+
+.corgi .nose:after {
+  content: "";
+  width: 100%;
+  height: 30%;
+  display: block;
+  border-top-right-radius: 50% 100%;
+  border-top-left-radius: 50% 100%;
+  background-color: #3E3954;
+  position: absolute;
+  top: -25%;
 }
 
 .corgi .mouth__left {
@@ -230,6 +293,37 @@ html, body {
   bottom: 0%;
 }
 
+.corgi .lips {
+  z-index: 2;
+  height: 25%;
+  width: 35%;
+  top: 28%;
+  right: 4%;
+}
+
+.corgi .lips:before, .corgi .lips:after {
+  content: "";
+  display: block;
+  background: #FFFFFF;
+  width: 39%;
+  height: 100%;
+  border-color: #3E3954;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 20%;
+  border-top-color: transparent;
+  position: absolute;
+}
+
+.corgi .lips:after {
+  transform: rotateY(180deg);
+  left: initial;
+  right: 9%;
+}
+
 .corgi .snout {
   background-color: #FFFFFF;
   right: 0%;
@@ -237,6 +331,13 @@ html, body {
   width: 50%;
   height: 36%;
   border-top-right-radius: 35% 75%;
+}
+
+.corgi .neck {
+  border-right: solid 30px #F09F2E;
+  border-bottom: solid 30px #F09F2E;
+  border-top: solid 30px transparent;
+  border-left: solid 30px transparent;
 }
 
 .test, .testrev {
