@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/*clear fixes*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*Equal Height*/
+.eq-height {
+  overflow: hidden;
+}
+
+.eq-height .eq-height-col {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+
+/*Back Button*/
+.back-button {
+  position: fixed;
+  top: 0px;
+  background-color: #f0f0f0;
+  padding: 5px;
+  z-index: 99999;
+}
+
+.container {
+  width: 80%;
+  background-color: red;
+  margin: 0 auto;
+  height: 200px;
+}
+
+.nav {
+  height: inherit;
+}
+
+.nav li {
+  width: 25%;
+  vertical-align: middle;
+  display: inline-block;
+  background-color: green;
+  float: left;
+  height: inherit;
+  border: 1px solid red;
+  overflow: hidden;
+  position: relative;
+}
+
+.nav li a {
+  border: 1px solid blue;
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  bottom: -120px;
+}
+
+.nav li span {
+  text-align: left;
+  display: inline-block;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.nav li .box {
+  width: 80%;
+  margin: 0 auto;
+  height: 150px;
+  background-color: yellow;
+}
+
+.nav li .icon {
+  position: absolute;
+  right: 0px;
+  text-align: right;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: red;
+  bottom: 0%;
+}
