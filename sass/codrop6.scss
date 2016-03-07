@@ -1,0 +1,48 @@
+@import 'all';
+
+.wrapper{
+    position: relative;
+    padding-bottom: 200px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+
+    p {
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+.heightbox {
+    top: 0px;
+    right: 50px;
+    position: fixed;
+    padding: 10px 5px;
+    background-color: gray;
+    color: white;
+    margin : 0px;
+}
+
+#height2 {
+    top: 40px;
+}
+
+#height3 {
+    top: 80px;
+}
+
+#height4 {
+    top: 120px;
+}
+
+.sliderbox {
+    bottom: 0px;
+    right: 0px;
+    width: 500px;
+    height: 150px;
+    border: 2px solid black;
+    background-color: green;
+    position: fixed
+}
