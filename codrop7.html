@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title> </title>
+		<!-- Bootstrap -->
+		<link href="css/codrop7.css" rel="stylesheet">
+		<link href="css/normalize.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<a class="back-button" href="index.html">Back</a>
+		<div class="wrapper clearfix">
+			<div class="container">
+				<ul class="accordion clearfix">
+					<li>
+						<a href="#/">
+							<span>Title</span>
+							<div class="text-box">
+								<h1>Title</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, tempore?</p>		
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#/">
+							<span>Title</span>
+							<div class="text-box">
+								<h1>Title</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, ratione.</p>		
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#/">
+							<span>Title</span>
+							<div class="text-box">
+								<h1>Title</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, rerum!</p>		
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#/">
+							<span>Title</span>
+							<div class="text-box">
+								<h1>Title</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, voluptate?</p>		
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+		<script src="jquery.min.js"></script>
+		<script>
+			
+			$(function(){
+				$('.accordion > li').hover(
+				function(){
+					var $this = $(this);
+					// $this.stop().animate({'width':'30.5%'},300).animate({'width':'30%'},100);
+					// $('span',$this).stop().fadeOut(500);
+
+				},
+
+				function(){
+					var $this = $(this);
+					// $this.stop().animate({'width':'9.5%'},300).animate({'width':'10%'},100);
+					// $('span',$this).stop().fadeIn(500);
+				});
+			});
+
+		</script>
+	</body>
+</html>
