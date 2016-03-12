@@ -4,9 +4,9 @@ $bg__color: #8C5A46; //bg-brown
 $bg__color2: #3E3954; //bg-darkblue
 
 $main: #F09F2E;
-$main--dark: #D37639;
+$main--dark: #D27537;
 $white: #FFFFFF;
-$white--dark: #B6D8F0;
+$white--dark: #B6D8EF;
 
 $eye__blue: #3E3954; //eyes, nose --> same color
 $nose__blue: #3E3954;
@@ -16,56 +16,22 @@ $tongue__pink: #F15F55;
 $tongue__pink--light: #FF8B62;
 $tongue__pink--dark: #B63D55;
 
-#trapezoid {
-    border-bottom: 100px solid red;
-    border-left: 0px solid transparent;
-    border-right: 50px solid transparent;
-    height: 0;
-    width: 100px;
-    background-color: #f0f0f0;
-    border-bottom-right-radius: 0px 0px; 
-    border-bottom-left-radius: 0px 0px;
-    border-top-right-radius: 0px 0px; 
-    border-top-left-radius: 0px 0px;
-}
+/*z-indices*/
+$z-index-eye: 5;
+$z-index-mouth: 5;
+$z-index-face: 4;
+$z-index-head: 3;
+$z-index-ear: 3;
 
-#testshape {
-    width: 100px;
-    height: 100px;
-    margin: 15px auto;
-    padding: 13px 15px;
-    color: white;
-    line-height: 1.5;
 
-    background: 
-        linear-gradient(135deg, transparent 10px, #c00 0) top left, 
-        linear-gradient(225deg, transparent 10px, #c00 0) top right, 
-        linear-gradient(315deg, transparent 10px, #c00 0) bottom right, 
-        linear-gradient(45deg, transparent 10px, #c00 0) bottom left;
+$z-index-neck: 2;
+$z-index-body: 2;
 
-    background-image: 
-        radial-gradient(circle at 0 0, rgba(204,0,0,0) 14px, #c00 15px), 
-        radial-gradient(circle at 100% 0, rgba(204,0,0,0) 14px, #c00 15px), 
-        radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 14px, #c00 15px), 
-        radial-gradient(circle at 0 100%, rgba(204,0,0,0) 14px, #c00 15px);
+$z-index-foot-left: 3;
+$z-index-foot-right: 1;
 
-        background-size: 50% 50%;
-        background-repeat: no-repeat;
-}
+/*Animation*/
 
-#borderplay {
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    background-color: lightblue;
-
-    border-top-right-radius: 0%;
-    border-top-left-radius: 120px 60px;
-    border-bottom-right-radius: 0%;
-    border-bottom-left-radius: 120px 60px;
-}
 
 html, body {
     width: 100%;
@@ -105,19 +71,18 @@ html, body {
         background-color: $main;
         height: 30%;
         width: 55%;
-        top: 5%;
-        border: 2px solid white;
-        $ear-pos: 75%;
+        top: 7%;
+        z-index: $z-index-ear;
 
         &--r {
-            right: $ear-pos;
+            right: 75%;
             border-bottom-left-radius: 100% 90%;
             border-top-left-radius: 10%;
             transform-origin: 80% center;
         }
 
         &--l {
-            left: $ear-pos;
+            left: 70%;
             background-color: $main--dark;
             border-bottom-right-radius: 100% 90%;
             border-top-right-radius: 10%;
@@ -126,30 +91,32 @@ html, body {
     }
 
     .head {
-        top: 4%;
-        right: 18%;
-        height: 45%;
-        width: 33%;
+        top: 6%;
+        right: 10%;
+        height: 40%;
+        width: 30%;
+        z-index: $z-index-head;
     }
 
-    .face{
+    .face {
         background-color: $main;
         border-radius: 50%;
         overflow: hidden;
         height: 100%;
         width: 100%;
+        z-index: $z-index-face;
     }
 
     .eye {
         background-color: $eye__blue;
-        height: 7%;
-        width: 7%;
+        height: 6%;
+        width: 6%;
         position: absolute;
-        z-index: 1;
+        z-index: $z-index-eye;
         border-radius: 50%;
 
-        &--left{
-            left: 37%;
+        &--left {
+            left: 40%;
             top: 43%;
         }
         &--right {
@@ -164,7 +131,6 @@ html, body {
         height: 77%;
         top: -15%;
         left: 30%;
-        overflow: hidden;
         transform:rotate(-25deg);
     }
 
@@ -198,7 +164,6 @@ html, body {
         &:after {
             content:"";
             background-color: $bg__color;
-            display: block;
             position: absolute;
             width: 69%;
             height: 82%;
@@ -209,18 +174,17 @@ html, body {
     }
 
     .mouth {
-        border: 1px solid red;
-        display: block;
         bottom: 0%;
         width: 100%;
         height: 50%;
         left: 28%;
+        z-index: $z-index-mouth;
     }
 
     .nose {
         height: 38%;
         width: 30%;
-        top: 10%;
+        top: 0%;
         background-color: $nose__blue;
         z-index: 1;
         right: 0%;
@@ -268,22 +232,19 @@ html, body {
     .lowerjaw {
         background-color: $white;
         width: 100%;
-        height: 71%;
+        height: 80%;
         border-radius: 50% / 100%;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-        bottom: 0%;
+        bottom: -9%;
     }
 
-    .lips__line{
-
-    }
     .lips {
         z-index: 2;
         height: 25%;
         width: 35%;
-        top: 28%;
-        right: 4%;
+        top: 19%;
+        right: 2%;
 
         &:before, &:after {
             content: "";
@@ -319,19 +280,150 @@ html, body {
         border-top-right-radius: 35% 75%;
     }
 
-    .neck {
-        // height: 100%;
-        // width: 20%;
+    .neck__back {
+        height: 50%;
+        width: 20%;
+        transform: skewX(-20deg);
+        background-color: $main;
+        z-index: $z-index-neck;
+        right: 24%;
+        top: 9%;
+    }
 
-        // border-left: solid 30px $main;
-        // border-top: solid 30px $main;
-        // border-bottom: solid 30px transparent;
-        // border-right: solid 30px transparent;
+    .neck__front {
+        height: 50%;
+        width: 20%;
+        right: 11%;
+        top: 20%;
+        background-color: $main;
+        z-index: $z-index-neck;
+        transform: skewX(2deg);
+    }
 
-        border-right: solid 30px $main;
-        border-bottom: solid 30px $main;
-        border-top: solid 30px transparent;
-        border-left: solid 30px transparent;
+    .body {
+        height: 44%;
+        width: 77%;
+        // background-color: red;
+        background-color: $main;
+        right: 10.5%;
+        bottom: 12%;
+        border-top-left-radius: 20% 50%;
+        border-bottom-left-radius: 20% 50%;
+        border-top-right-radius: 20% 60%;
+        border-bottom-right-radius: 20% 40%;
+        // transform: skewX(-15deg);
+        z-index: $z-index-body;
+        overflow: hidden;
+    }
+
+    .body__chest  {
+        background-color: $white;
+        height: 87%;
+        width: 29%;
+        right: 5%;
+        bottom: -3%;
+        border-top-left-radius: 50% 40%;
+        border-top-right-radius: 50% 40%;
+    }
+
+    .foot {
+        height: 35%;
+        width: 9.5%;
+        bottom: 0;
+
+        &__left {
+            z-index: $z-index-foot-left;
+            background-color: $main;
+
+            &:after {
+                background-color: $white;
+            }
+
+            &:before {
+                background-color: $main;
+            }
+        }
+
+        &__right {
+            z-index: $z-index-foot-right;
+            background-color: $main--dark;
+
+            &:after {
+                background-color: $white--dark;
+            }
+
+            &:before {
+                background-color: $main--dark;
+            }
+        }
+        
+        &__back {
+            &:before {
+                transform: skewX(-10deg);
+                right: -25%;
+            }
+        }
+
+        &__front {
+            &:before {
+                transform: skewX(10deg);
+                right: 25%;
+            }
+        }
+
+        &__1 {
+            right: 37%;
+        }
+
+        &__2 {
+            right: 15%;
+
+            &:before {
+                transform: skewX(-10deg);
+                right: -25%;
+            }
+        }
+
+        &__3 {
+            left: 12.65%;
+        }
+
+        &__4 {
+            left: 31%;
+        }
+
+        &:before {
+            content:"";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: block;
+        }
+
+        &:after {
+            /*paws*/
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 125%;
+            height: 18%;
+            border-top-left-radius: 50% 100%;
+            border-top-right-radius: 50% 100%;
+        }
+    }
+
+    .tail {
+        width: 26%;
+        height: 13%;
+        background-color: $main--dark;
+        border-top-left-radius: 50% 100%;
+        border-bottom-left-radius: 50% 100%;
+        border-top-right-radius: 50% 100%;
+        border-bottom-right-radius: 50% 100%;
+        bottom: 40%;
+        left: 1%;
+        transform-origin: 80% center;
     }
 }
 

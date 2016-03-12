@@ -48,45 +48,8 @@ ul {
   z-index: 99999;
 }
 
-#trapezoid {
-  border-bottom: 100px solid red;
-  border-left: 0px solid transparent;
-  border-right: 50px solid transparent;
-  height: 0;
-  width: 100px;
-  background-color: #f0f0f0;
-  border-bottom-right-radius: 0px 0px;
-  border-bottom-left-radius: 0px 0px;
-  border-top-right-radius: 0px 0px;
-  border-top-left-radius: 0px 0px;
-}
-
-#testshape {
-  width: 100px;
-  height: 100px;
-  margin: 15px auto;
-  padding: 13px 15px;
-  color: white;
-  line-height: 1.5;
-  background: linear-gradient(135deg, transparent 10px, #c00 0) top left, linear-gradient(225deg, transparent 10px, #c00 0) top right, linear-gradient(315deg, transparent 10px, #c00 0) bottom right, linear-gradient(45deg, transparent 10px, #c00 0) bottom left;
-  background-image: radial-gradient(circle at 0 0, rgba(204, 0, 0, 0) 14px, #c00 15px), radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 14px, #c00 15px), radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 14px, #c00 15px), radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 14px, #c00 15px);
-  background-size: 50% 50%;
-  background-repeat: no-repeat;
-}
-
-#borderplay {
-  height: 100px;
-  width: 100px;
-  position: absolute;
-  left: 50%;
-  top: 10%;
-  background-color: lightblue;
-  border-top-right-radius: 0%;
-  border-top-left-radius: 120px 60px;
-  border-bottom-right-radius: 0%;
-  border-bottom-left-radius: 120px 60px;
-}
-
+/*z-indices*/
+/*Animation*/
 html, body {
   width: 100%;
   height: 100%;
@@ -124,8 +87,8 @@ html, body {
   background-color: #F09F2E;
   height: 30%;
   width: 55%;
-  top: 5%;
-  border: 2px solid white;
+  top: 7%;
+  z-index: 3;
 }
 
 .corgi .ear--r {
@@ -136,18 +99,19 @@ html, body {
 }
 
 .corgi .ear--l {
-  left: 75%;
-  background-color: #D37639;
+  left: 70%;
+  background-color: #D27537;
   border-bottom-right-radius: 100% 90%;
   border-top-right-radius: 10%;
   transform-origin: 20% center;
 }
 
 .corgi .head {
-  top: 4%;
-  right: 18%;
-  height: 45%;
-  width: 33%;
+  top: 6%;
+  right: 10%;
+  height: 40%;
+  width: 30%;
+  z-index: 3;
 }
 
 .corgi .face {
@@ -156,19 +120,20 @@ html, body {
   overflow: hidden;
   height: 100%;
   width: 100%;
+  z-index: 4;
 }
 
 .corgi .eye {
   background-color: #3E3954;
-  height: 7%;
-  width: 7%;
+  height: 6%;
+  width: 6%;
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   border-radius: 50%;
 }
 
 .corgi .eye--left {
-  left: 37%;
+  left: 40%;
   top: 43%;
 }
 
@@ -183,7 +148,6 @@ html, body {
   height: 77%;
   top: -15%;
   left: 30%;
-  overflow: hidden;
   transform: rotate(-25deg);
 }
 
@@ -217,7 +181,6 @@ html, body {
 .corgi .face__curve:after {
   content: "";
   background-color: #8C5A46;
-  display: block;
   position: absolute;
   width: 69%;
   height: 82%;
@@ -227,18 +190,17 @@ html, body {
 }
 
 .corgi .mouth {
-  border: 1px solid red;
-  display: block;
   bottom: 0%;
   width: 100%;
   height: 50%;
   left: 28%;
+  z-index: 5;
 }
 
 .corgi .nose {
   height: 38%;
   width: 30%;
-  top: 10%;
+  top: 0%;
   background-color: #3E3954;
   z-index: 1;
   right: 0%;
@@ -286,19 +248,19 @@ html, body {
 .corgi .lowerjaw {
   background-color: #FFFFFF;
   width: 100%;
-  height: 71%;
+  height: 80%;
   border-radius: 50% / 100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  bottom: 0%;
+  bottom: -9%;
 }
 
 .corgi .lips {
   z-index: 2;
   height: 25%;
   width: 35%;
-  top: 28%;
-  right: 4%;
+  top: 19%;
+  right: 2%;
 }
 
 .corgi .lips:before, .corgi .lips:after {
@@ -333,11 +295,144 @@ html, body {
   border-top-right-radius: 35% 75%;
 }
 
-.corgi .neck {
-  border-right: solid 30px #F09F2E;
-  border-bottom: solid 30px #F09F2E;
-  border-top: solid 30px transparent;
-  border-left: solid 30px transparent;
+.corgi .neck__back {
+  height: 50%;
+  width: 20%;
+  transform: skewX(-20deg);
+  background-color: #F09F2E;
+  z-index: 2;
+  right: 24%;
+  top: 9%;
+}
+
+.corgi .neck__front {
+  height: 50%;
+  width: 20%;
+  right: 11%;
+  top: 20%;
+  background-color: #F09F2E;
+  z-index: 2;
+  transform: skewX(2deg);
+}
+
+.corgi .body {
+  height: 44%;
+  width: 77%;
+  background-color: #F09F2E;
+  right: 10.5%;
+  bottom: 12%;
+  border-top-left-radius: 20% 50%;
+  border-bottom-left-radius: 20% 50%;
+  border-top-right-radius: 20% 60%;
+  border-bottom-right-radius: 20% 40%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.corgi .body__chest {
+  background-color: #FFFFFF;
+  height: 87%;
+  width: 29%;
+  right: 5%;
+  bottom: -3%;
+  border-top-left-radius: 50% 40%;
+  border-top-right-radius: 50% 40%;
+}
+
+.corgi .foot {
+  height: 35%;
+  width: 9.5%;
+  bottom: 0;
+}
+
+.corgi .foot__left {
+  z-index: 3;
+  background-color: #F09F2E;
+}
+
+.corgi .foot__left:after {
+  background-color: #FFFFFF;
+}
+
+.corgi .foot__left:before {
+  background-color: #F09F2E;
+}
+
+.corgi .foot__right {
+  z-index: 1;
+  background-color: #D27537;
+}
+
+.corgi .foot__right:after {
+  background-color: #B6D8EF;
+}
+
+.corgi .foot__right:before {
+  background-color: #D27537;
+}
+
+.corgi .foot__back:before {
+  transform: skewX(-10deg);
+  right: -25%;
+}
+
+.corgi .foot__front:before {
+  transform: skewX(10deg);
+  right: 25%;
+}
+
+.corgi .foot__1 {
+  right: 37%;
+}
+
+.corgi .foot__2 {
+  right: 15%;
+}
+
+.corgi .foot__2:before {
+  transform: skewX(-10deg);
+  right: -25%;
+}
+
+.corgi .foot__3 {
+  left: 12.65%;
+}
+
+.corgi .foot__4 {
+  left: 31%;
+}
+
+.corgi .foot:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.corgi .foot:after {
+  /*paws*/
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 125%;
+  height: 18%;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+}
+
+.corgi .tail {
+  width: 26%;
+  height: 13%;
+  background-color: #D27537;
+  border-top-left-radius: 50% 100%;
+  border-bottom-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  border-bottom-right-radius: 50% 100%;
+  bottom: 40%;
+  left: 1%;
+  transform-origin: 80% center;
 }
 
 .test, .testrev {
