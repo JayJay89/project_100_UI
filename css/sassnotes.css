@@ -61,6 +61,16 @@ ul {
   padding: 20px;
 }
 
+nav {
+  display: block;
+}
+
+nav ul li {
+  display: inline-block;
+  float: left;
+  border: 1px solid red;
+}
+
 section {
   margin-bottom: 20px;
 }
@@ -116,11 +126,9 @@ section .code:before {
 }
 
 section .left, section .right {
-  display: table;
   width: calc((100% - 30px)/2);
   margin: 0px;
   float: left;
-  min-height: 160px;
 }
 
 section .left {
@@ -129,7 +137,6 @@ section .left {
 
 section pre {
   width: 100%;
-  display: table-cell;
   vertical-align: middle;
   background-color: #ecf0f1;
   border-radius: 4px;

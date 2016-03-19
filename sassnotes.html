@@ -20,527 +20,1082 @@
         <a class="back-button" href="index.html">Back</a>
         <h1>Features</h1>
         <div class="container">
-            <section>
-                <p>
-                    You can easily experiment with SassScript using the interactive shell. run <span>sass -i</span> in the terminal
-                </p>
-            </section>
-<!--Template-->
-            <section>
-                <h1>Title</h1>
-                <p>Text</p>
-                <div class="code">
-                    <div class="left">
-                        <pre>
 
-                        </pre>
+            <nav id="navbar">
+                <ul class="clearfix">
+                    <li>Basics</li>
+                    <li>@-Rules and Directives</li>
+                    <li>Control Directives & Expressions</li>
+                    <li>Misc</li>
+                </ul>
+            </nav>
 
+            <div class="part">
+                <section>
+                    <p>
+                        You can easily experiment with SassScript using the interactive shell. run <span>sass -i</span> in the terminal
+                    </p>
+                </section>
+                <!--Nesting-->
+                <section>
+                    <h1>Nesting</h1>
+                    <p>Nested Rules</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                .main {
+                                    p {
+                                        color: red
+                                    }
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                                .main p { color:red }
+                            </pre>
+                        </div>
                     </div>
-                    <div class="right">
-                        <pre>
 
-                        </pre>
-                    </div>
-                </div>
-            </section>
-<!--Nesting-->
-            <section>
-                <h1>Nesting</h1>
-                <p>Nested Rules</p>
-                <div class="code">
-                    <div class="left">
+                    <p>Nested Properties</p>
+                    <div class="code">
+                        <div class="left">
                         <pre>
-                            .main {
-                                p {
+                            .funky {
+                                font: {
+                                    family: fantasy;
+                                    size: 30em;
+                                    weight: bold;
+                                }
+                            }
+                        </pre>
+                        </div>
+
+                        <div class="right">
+                        <pre>
+                            .funky {
+                                font-family: fantasy;
+                                font-size: 30em;
+                                font-weight: bold; 
+                            }
+                        </pre>
+                        </div>  
+                    </div>
+                </section>
+                <!--Referencing Parent Selectors-->
+                <section>
+                    <h1>Referencing Parent Selectors: &</h1>
+                    <p>
+                        & will be replaced with the parent selector as it appears in the CSS
+                    </p>
+
+                    <div class="code">
+                        <div class="left">
+                        <pre>
+                            a {
+                                &:hover {
                                     color: red
                                 }
                             }
                         </pre>
-
-                    </div>
-                    <div class="right">
+                        </div>  
+                        
+                        <div class="right">
                         <pre>
                             .main p { color:red }
                         </pre>
+                        </div>
                     </div>
-                </div>
 
-                <p>Nested Properties</p>
-                <div class="code">
-                    <div class="left">
-                    <pre>
-                        .funky {
-                            font: {
-                                family: fantasy;
-                                size: 30em;
-                                weight: bold;
+                    <div class="code">
+                        <div class="left">
+                        <pre>
+                            #main {
+                                color: black;
+                                a {
+                                    &:hover { color: red; }
+                                }
                             }
-                        }
-                    </pre>
+                        </pre>
+                        </div>
+
+                        <div class="right">
+                        <pre>
+                            #main {color: black; }
+                            #main a:hover {color: red; }
+                        </pre>
+                        </div>  
                     </div>
 
-                    <div class="right">
-                    <pre>
-                        .funky {
-                            font-family: fantasy;
-                            font-size: 30em;
-                            font-weight: bold; 
-                        }
-                    </pre>
-                    </div>  
-                </div>
-            </section>
-<!--Referencing Parent Selectors-->
-            <section>
-                <h1>Referencing Parent Selectors: &</h1>
-                <p>
-                    & will be replaced with the parent selector as it appears in the CSS
-                </p>
-
-                <div class="code">
-                    <div class="left">
-                    <pre>
-                        a {
-                            &:hover {
-                                color: red
+                    <div class="code">
+                        <div class="left">
+                        <pre>
+                            .main {
+                                .sticky & {
+                                    color: red
+                                }
                             }
-                        }
-                    </pre>
-                    </div>  
-                    
-                    <div class="right">
-                    <pre>
-                        .main p { color:red }
-                    </pre>
+                        </pre>
+                        </div>
+                        
+                        <div class="right">
+                        <pre>
+                            .sticky .main {color: red}
+                        </pre>
+                        </div>
                     </div>
-                </div>
+                </section>
+                <!--Variables-->
+                <section>
+                    <h1>Variables</h1>
+                    <div class="code">
+                        <p>
+                            Variables with the <span>!global</span> extends globally even though they are contain in a local block;
+                        </p>
 
-                <div class="code">
-                    <div class="left">
-                    <pre>
-                        #main {
-                            color: black;
-                            a {
-                                &:hover { color: red; }
+                        <div class="left">
+                        <pre>
+                            $width: 5em !global;
+
+                            .main {
+                                width: $width;
                             }
-                        }
-                    </pre>
-                    </div>
+                        </pre>
+                        </div>
 
-                    <div class="right">
-                    <pre>
-                        #main {color: black; }
-                        #main a:hover {color: red; }
-                    </pre>
-                    </div>  
-                </div>
-
-                <div class="code">
-                    <div class="left">
-                    <pre>
-                        .main {
-                            .sticky & {
-                                color: red
-                            }
-                        }
-                    </pre>
+                        <div class="right">
+                        <pre>
+                            .main {width: 5em;}
+                        </pre>
+                        </div>  
                     </div>
-                    
-                    <div class="right">
-                    <pre>
-                        .sticky .main {color: red}
-                    </pre>
-                    </div>
-                </div>
-            </section>
-<!--Variables-->
-            <section>
-                <h1>Variables</h1>
-                <div class="code">
                     <p>
-                        Variables with the <span>!global</span> extends globally even though they are contain in a local block;
+                        Variables with the <span>!default</span> won’t be re-assigned, but if it doesn’t have a value yet, it will be given one.
+                    </p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                $content: null;
+                                $content: "Non-null content" !default;
+
+                                #main {
+                                    content: $content;
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                                #main {
+                                    content: "Non-null content"; 
+                                }
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <!--List-->
+                <section>
+                    <h1>List</h1>
+                    <p>Lists are how Sass represents the values of CSS declarations like </p>
+
+                    <ul>
+                        <li>margin: 10px 15px 0 0</li>
+                        <li>font-face: Helvetica, Arial, sans-serif.</li>
+                    </ul>
+
+                    <p>
+                        Lists are just a series of other values, separated by either spaces or commas. In fact, individual values count as lists, too: they’re just lists with one item.
+                    </p>
+                </section>
+                <!--Maps-->
+                <section>
+                    <h1>Map</h1>
+                    <p>Maps represent an association between keys and values, where keys are used to look up values</p>
+                    <p>
+                        <span>
+                            $map: (key1: value1, key2: value2, key3: value3);
+                        </span>
                     </p>
 
-                    <div class="left">
-                    <pre>
-                        $width: 5em !global;
+                    <p>
+                    maps must always be surrounded by parentheses and must always be comma-separated
+                    </p>
+                </section>
+                <!--Math Operations-->
+                <section>
+                    <h1>Math Operations</h1>
+                    <p>SassScript supports the standard arithmetic operations on numbers (addition +, subtraction -, multiplication *, division /, and modulo %)</p>
+                </section>
+                <!--Interpolation-->
+                <section>
+                    <h1>Interpolation</h1>
+                    <p>You can also use SassScript variables in selectors and property names using <span>#{}</span> interpolation syntax:</p>
 
-                        .main {
-                            width: $width;
-                        }
-                    </pre>
-                    </div>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                $name: foo;
+                                $attr: border;
 
-                    <div class="right">
-                    <pre>
-                        .main {width: 5em;}
-                    </pre>
-                    </div>  
-                </div>
-                <p>
-                    Variables with the <span>!default</span> won’t be re-assigned, but if it doesn’t have a value yet, it will be given one.
-                </p>
-                <div class="code">
-                    <div class="left">
-                        <pre>
-                            $content: null;
-                            $content: "Non-null content" !default;
-
-                            #main {
-                                content: $content;
-                            }
-                        </pre>
-
-                    </div>
-                    <div class="right">
-                        <pre>
-                            #main {
-                                content: "Non-null content"; 
-                            }
-                        </pre>
-                    </div>
-                </div>
-            </section>
-<!--List-->
-            <section>
-                <h1>List</h1>
-                <p>Lists are how Sass represents the values of CSS declarations like </p>
-
-                <ul>
-                    <li>margin: 10px 15px 0 0</li>
-                    <li>font-face: Helvetica, Arial, sans-serif.</li>
-                </ul>
-
-                <p>
-                    Lists are just a series of other values, separated by either spaces or commas. In fact, individual values count as lists, too: they’re just lists with one item.
-                </p>
-            </section>
-<!--Maps-->
-            <section>
-                <h1>Map</h1>
-                <p>Maps represent an association between keys and values, where keys are used to look up values</p>
-                <p>
-                    <span>
-                        $map: (key1: value1, key2: value2, key3: value3);
-                    </span>
-                </p>
-
-                <p>
-                maps must always be surrounded by parentheses and must always be comma-separated
-                </p>
-            </section>
-<!--Math Operations-->
-            <section>
-                <h1>Math Operations</h1>
-                <p>SassScript supports the standard arithmetic operations on numbers (addition +, subtraction -, multiplication *, division /, and modulo %)</p>
-            </section>
-<!--Interpolation-->
-            <section>
-                <h1>Interpolation</h1>
-                <p>You can also use SassScript variables in selectors and property names using <span>#{}</span> interpolation syntax:</p>
-
-                <div class="code">
-                    <div class="left">
-                        <pre>
-                            $name: foo;
-                            $attr: border;
-
-                            p.#{$name} {
-                                #{$attr}-color: blue;
-                            }
-                        </pre>
-
-                    </div>
-                    <div class="right">
-                        <pre>
-                            p.foo {
-                                border-color: blue; 
-                            }
-                        </pre>
-                    </div>
-                </div>
-
-                <div class="code">
-                    <div class="left">
-                        <pre>
-                        p {
-                            $font-size: 12px;
-                            $line-height: 30px;
-                            font: #{$font-size}/#{$line-height};
-                        }
-                        </pre>
-
-                    </div>
-                    <div class="right">
-                        <pre>
-                        p {
-                            font: 12px/30px; 
-                        }
-                        </pre>
-                    </div>
-                </div>
-            </section>
-<!--@-Rules and Directives-->
-            <h1>@-Rules and Directives</h1>
-<!--@import-->
-            <section>
-                <h1>@import</h1>
-                <p>Sass extends the CSS <span>@import</span> rule to allow it to import SCSS and Sass files.</p>
-                <p>@import takes a filename to import.</p>
-
-                <div class="code">
-                    <p>valid @imports</p>
-                    <div class="left">
-                        <pre>
-                            @import "foo";
-                            @import "foo.scss";
-                        </pre>
-
-                    </div>
-                    <div class="right">
-                        <pre>
-
-                        </pre>
-                    </div>
-                </div>
-
-                <p>Nested Import</p>
-
-                <div class="code">
-                    <p>valid @imports</p>
-                    <div class="left">
-                        <pre>
-                            .example {
-                                color: red;
-                            }
-                            #main {
-                                @import "example";
-                            }
-                        </pre>
-
-                    </div>
-                    <div class="right">
-                        <pre>
-                            #main .example {
-                                color: red;
-                            }
-                        </pre>
-                    </div>
-                </div>
-            </section>
-<!--Partials-->
-            <section>
-                <h1>Partial</h1>
-                <p>If you have a SCSS or Sass file that you want to import but don’t want to compile to a CSS file, you can add an <span>underscore</span> to the beginning of the filename. This will tell Sass not to compile it to a normal CSS file.</p>
-                <p>
-                    For example, you might have _colors.scss. Then no _colors.css file would be created, and you can do
-                </p>
-                <div class="code">
-                    <div class="left">
-                        <pre>
-                            @import "colors";
-
-                            css codes...
-                        </pre>
-
-                    </div>
-                    <div class="right">
-                        <pre>
-
-                        </pre>
-                    </div>
-                </div>
-            </section>
-<!--@media-->
-            <section>
-                <h1>@media</h1>
-                <p>@media directives in Sass behave just like they do in plain CSS, with one extra capability: they can be nested in CSS rules</p>
-                <div class="code">
-                    <div class="left">
-                        <pre>
-                            .sidebar {
-                                width: 300px;
-                                @media screen and (orientation: landscape) {
-                                    width: 500px;
+                                p.#{$name} {
+                                    #{$attr}-color: blue;
                                 }
-                            }
-                        </pre>
+                            </pre>
 
+                        </div>
+                        <div class="right">
+                            <pre>
+                                p.foo {
+                                    border-color: blue; 
+                                }
+                            </pre>
+                        </div>
                     </div>
-                    <div class="right">
-                        <pre>
-                            .sidebar { width: 300px; }
 
-                            @media screen and (orientation: landscape) {
-                                .sidebar { width: 500px; }
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                            p {
+                                $font-size: 12px;
+                                $line-height: 30px;
+                                font: #{$font-size}/#{$line-height};
                             }
-                        </pre>
-                    </div>
-                </div>
-                <p> @media queries can contain SassScript expressions</p>
-                <div class="code">
-                    <div class="left">
-                        <pre>
-                            $media: screen;
-                            $feature: pixel-ratio;
-                            $value: 1.5;
+                            </pre>
 
-                            @media #{$media} and ($feature: $value) {
+                        </div>
+                        <div class="right">
+                            <pre>
+                            p {
+                                font: 12px/30px; 
+                            }
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="part">
+                <!--@-Rules and Directives-->
+                <h1>@-Rules and Directives</h1>
+                <!--@import-->
+                <section>
+                    <h1>@import</h1>
+                    <p>Sass extends the CSS <span>@import</span> rule to allow it to import SCSS and Sass files.</p>
+                    <p>@import takes a filename to import.</p>
+
+                    <div class="code">
+                        <p>valid @imports</p>
+                        <div class="left">
+                            <pre>
+                                @import "foo";
+                                @import "foo.scss";
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+
+                            </pre>
+                        </div>
+                    </div>
+
+                    <p>Nested Import</p>
+
+                    <div class="code">
+                        <p>valid @imports</p>
+                        <div class="left">
+                            <pre>
+                                .example {
+                                    color: red;
+                                }
+                                #main {
+                                    @import "example";
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                                #main .example {
+                                    color: red;
+                                }
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <!--Partials-->
+                <section>
+                    <h1>Partial</h1>
+                    <p>If you have a SCSS or Sass file that you want to import but don’t want to compile to a CSS file, you can add an <span>underscore</span> to the beginning of the filename. This will tell Sass not to compile it to a normal CSS file.</p>
+                    <p>
+                        For example, you might have _colors.scss. Then no _colors.css file would be created, and you can do
+                    </p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                @import "colors";
+
+                                css codes...
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <!--@media-->
+                <section>
+                    <h1>@media</h1>
+                    <p>@media directives in Sass behave just like they do in plain CSS, with one extra capability: they can be nested in CSS rules</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
                                 .sidebar {
-                                    width: 500px;
+                                    width: 300px;
+                                    @media screen and (orientation: landscape) {
+                                        width: 500px;
+                                    }
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                                .sidebar { width: 300px; }
+
+                                @media screen and (orientation: landscape) {
+                                    .sidebar { width: 500px; }
+                                }
+                            </pre>
+                        </div>
+                    </div>
+                    <p> @media queries can contain SassScript expressions</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                $media: screen;
+                                $feature: pixel-ratio;
+                                $value: 1.5;
+
+                                @media #{$media} and ($feature: $value) {
+                                    .sidebar {
+                                        width: 500px;
+                                    }
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            @media screen and (pixel-ratio: 1.5) 
+                            {
+                                .sidebar {
+                                    width: 500px; 
+                                } 
+                            }
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <!--@extend-->
+                <section>
+                    <h1>@extend</h1>
+                    <p>@extend allows you to extend styles from other classes</p>
+                    <p>all styles defined for .error are also applied to .seriousError</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                .error {
+                                    border: 1px #f00;
+                                    background-color: #fdd;
+                                }
+                                .seriousError {
+                                    @extend .error;
+                                    border-width: 3px;
+                                }
+                            </pre>
+                        </div>
+                        <div class="right">
+                            <pre>
+                                .error, .seriousError {
+                                    border: 1px #f00;
+                                    background-color: #fdd;
+                                }
+
+                                .seriousError {
+                                    border-width: 3px;
+                                }
+                            </pre>
+                        </div>
+                    </div>
+
+                    <p>Extending Complex Selectors</p>
+                    <p>Class selectors aren’t the only things that can be extended. It’s possible to extend any selector involving only a single element</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                a:hover {
+                                    text-decoration: underline;
+                                }
+                                .hoverlink {
+                                    @extend a:hover;
+                                }
+
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            a:hover, .hoverlink {
+                                text-decoration: underline; 
+                            }
+                            </pre>
+                        </div>
+                    </div>
+
+                    <p>@extend-Only Selectors</p>
+                    <p>
+                        Sometimes you’ll write styles for a class that you only ever want to @extend, and never want to use directly in your HTML. This is especially true when writing a Sass library, where you may provide styles for users to @extend if they need and ignore if they don’t.
+                    </p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                #context a%placeholder {
+                                    color: blue;
+                                    font-weight: bold;
+                                    font-size: 2em;
+                                }
+                                .notice {
+                                    @extend %placeholder;
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                                #context a.notice {
+                                    color: blue;
+                                    font-weight: bold;
+                                    font-size: 2em; 
+                                }
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <!--@at-root-->
+                <section>
+                    <h1>@at-root</h1>
+                    <p>The @at-root directive causes one or more rules to be emitted at the root of the document, rather than being nested beneath their parent selectors. It can either be used with a single inline selector:</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                .parent {
+                                    ...
+                                    @at-root .child { ... }
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                                .parent { ... }
+                                .child { ... }
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <!--@debug-->
+                <!--@warn-->
+            </div>
+
+            <div class="part">
+                <!--Control Directives & Expressions-->
+                <h1>Control Directives & Expressions</h1>
+                <!--@if-->
+                <section>
+                    <h1>@if</h1>
+                    <p>The <span>@if</span> directive takes a SassScript expression and uses the styles nested beneath it if the expression returns anything other than false or null:</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                p {
+                                    @if 1 + 1 == 2 { border: 1px solid;  }
+                                    @if 5 < 3      { border: 2px dotted; }
+                                    @if null       { border: 3px double; }
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                                p {
+                                    border: 1px solid; 
+                                }
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                            $type: monster;
+                            p {
+                                @if $type == ocean {
+                                    color: blue;
+                                } @else if $type == matador {
+                                    color: red;
+                                } @else if $type == monster {
+                                    color: green;
+                                } @else {
+                                    color: black;
                                 }
                             }
-                        </pre>
+                            </pre>
 
-                    </div>
-                    <div class="right">
-                        <pre>
-                        @media screen and (pixel-ratio: 1.5) 
-                        {
-                            .sidebar {
-                                width: 500px; 
-                            } 
-                        }
-                        </pre>
-                    </div>
-                </div>
-            </section>
-<!--@extend-->
-            <section>
-                <h1>@extend</h1>
-                <p>@extend allows you to extend styles from other classes</p>
-                <p>all styles defined for .error are also applied to .seriousError</p>
-                <div class="code">
-                    <div class="left">
-                        <pre>
-                            .error {
-                                border: 1px #f00;
-                                background-color: #fdd;
-                            }
-                            .seriousError {
-                                @extend .error;
-                                border-width: 3px;
-                            }
-                        </pre>
-                    </div>
-                    <div class="right">
-                        <pre>
-                            .error, .seriousError {
-                                border: 1px #f00;
-                                background-color: #fdd;
-                            }
-
-                            .seriousError {
-                                border-width: 3px;
-                            }
-                        </pre>
-                    </div>
-                </div>
-
-                <p>Extending Complex Selectors</p>
-                <p>Class selectors aren’t the only things that can be extended. It’s possible to extend any selector involving only a single element</p>
-                <div class="code">
-                    <div class="left">
-                        <pre>
-                            a:hover {
-                                text-decoration: underline;
-                            }
-                            .hoverlink {
-                                @extend a:hover;
-                            }
-
-                        </pre>
-
-                    </div>
-                    <div class="right">
-                        <pre>
-                        a:hover, .hoverlink {
-                            text-decoration: underline; 
-                        }
-                        </pre>
-                    </div>
-                </div>
-
-                <p>@extend-Only Selectors</p>
-                <p>
-                    Sometimes you’ll write styles for a class that you only ever want to @extend, and never want to use directly in your HTML. This is especially true when writing a Sass library, where you may provide styles for users to @extend if they need and ignore if they don’t.
-                </p>
-                <div class="code">
-                    <div class="left">
-                        <pre>
-                            #context a%placeholder {
-                                color: blue;
-                                font-weight: bold;
-                                font-size: 2em;
-                            }
-                            .notice {
-                                @extend %placeholder;
-                            }
-                        </pre>
-
-                    </div>
-                    <div class="right">
-                        <pre>
-                            #context a.notice {
-                                color: blue;
-                                font-weight: bold;
-                                font-size: 2em; 
-                            }
-                        </pre>
-                    </div>
-                </div>
-            </section>
-<!--@at-root-->
-            <section>
-                <h1>@at-root</h1>
-                <p>The @at-root directive causes one or more rules to be emitted at the root of the document, rather than being nested beneath their parent selectors. It can either be used with a single inline selector:</p>
-                <div class="code">
-                    <div class="left">
-                        <pre>
-                            .parent {
-                                ...
-                                @at-root .child { ... }
-                            }
-                        </pre>
-
-                    </div>
-                    <div class="right">
-                        <pre>
-                            .parent { ... }
-                            .child { ... }
-                        </pre>
-                    </div>
-                </div>
-            </section>
-<!--@debug-->
-<!--@warn-->
-
-<!--Control Directives & Expressions-->
-            <h1>Control Directives & Expressions</h1>
-<!--@if-->
-            <section>
-                <h1>@if</h1>
-                <p>The <span>@if</span> directive takes a SassScript expression and uses the styles nested beneath it if the expression returns anything other than false or null:</p>
-                <div class="code">
-                    <div class="left">
-                        <pre>
+                        </div>
+                        <div class="right">
+                            <pre>
                             p {
-                                @if 1 + 1 == 2 { border: 1px solid;  }
-                                @if 5 < 3      { border: 2px dotted; }
-                                @if null       { border: 3px double; }
+                                color: green; 
                             }
-                        </pre>
+                            </pre>
+                        </div>
+                    </div>
 
-                    </div>
-                    <div class="right">
-                        <pre>
-                            p {
-                                border: 1px solid; 
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                            @mixin text-inset($colour, $opacity: 0.7) {
+
+                              @if lightness($colour) < 50% {
+                                // if the text colour is a dark colour
+                                // we need a white shadow, bottom, right
+                                text-shadow: 1px 1px 1px rgba(#fff, $opacity);
+                              } @else {
+                                // else it must be light so we need
+                                // a black shadow, top, left
+                                text-shadow: -1px -1px 1px rgba(#000, $opacity);
+                              }
+
+                              // set the text colour
+                              color: $colour;
+
                             }
-                        </pre>
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            .inset-one {
+                              text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.3);
+                              color: #fff;
+                            }
+
+                            .inset-two {
+                              text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+                              color: #000;
+                            }
+                            </pre>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+                <!--@for-->
+                <section>
+                    <h1>@for</h1>
+                    <p>The @for directive repeatedly outputs a set of styles. For each repetition, a counter variable is used to adjust the output. </p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                @for $i from 1 through 3 {
+                                    .item-#{$i} { width: 2em * $i; }
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            .item-1 {width: 2em;}
+                            .item-2 {width: 4em;}
+                            .item-3 {width: 6em;}
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <!--@each-->
+                <section>
+                    <h1>@each</h1>
+                    <p>The @each directive usually has the form @each $var in list or map</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                @each $animal in cat, dog, ant, eel {
+                                    .#{$animal}-icon {
+                                        background-image: url('/img/#{$animal}.png');
+                                    }
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            .cat-icon {background-image: url('/img/cat.png'); }
+                            .dog-icon {background-image: url('/img/dog.png'); }
+                            .ant-icon {background-image: url('/img/ant.png'); }
+                            .eel-icon {background-image: url('/img/eel.png'); }
+                            </pre>
+                        </div>
+                    </div>
+
+                    <p>Multiple Assignments</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                            @each $animal, $color, $width in 
+                            (cat, gray, 12px),
+                            (dog, blue, 5px),
+                            (ant, white, 10px)
+                            {
+                                .#{$animal}-icon {
+                                    background-image: url('/images/#{$animal}.png');
+                                    width: $width;
+                                }
+                            }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            .cat-icon {
+                                background-image: url('/images/cat.png');
+                                width: 12px; 
+                            }
+                            .dog-icon {
+                                background-image: url('/images/dog.png');
+                                width: 5px; 
+                            }
+                            .ant-icon {
+                                background-image: url('/images/ant.png');
+                                width: 10px; 
+                            }
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <!--@while-->
+                <section>
+                    <h1>@while</h1>
+                    <p>The @while directive takes a SassScript expression and repeatedly outputs the nested styles until the statement evaluates to false</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                $i: 6;
+                                @while $i > 0 {
+                                    .item-#{$i} { width: 2em * $i; }
+                                    $i: $i - 2;
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                                .item-6 {width: 12em; }
+                                .item-4 {width: 8em; }
+                                .item-2 {width: 4em; }
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <!--@mixin-->
+                <section>
+                    <h1>@mixin</h1>
+                    <p>Mixins allow you to define styles that can be re-used throughout the stylesheet without needing to resort to non-semantic classes like .float-left. Mixin definitions can also include other mixins. </p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                @mixin large-text {
+                                    font: {
+                                        family: Arial;
+                                        size: 20px;
+                                        weight: bold;
+                                    }
+                                    color: #ff0000;
+                                }
+
+                                .page-title {
+                                    @include large-text;
+                                    padding: 4px;
+                                    margin-top: 10px;
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            .page-title {
+                                font-family: Arial;
+                                font-size: 20px;
+                                font-weight: bold;
+                                color: #ff0000;
+                                padding: 4px;
+                                margin-top: 10px; 
+                            }
+                            </pre>
+                        </div>
+                    </div>
+                    <p>Mixin Argument</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                @mixin sexy-border($color, $width) {
+                                    border: {
+                                        color: $color;
+                                        width: $width;
+                                        style: dashed;
+                                    }
+                                }
+
+                                h1 { @include sexy-border(blue, 2px); }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            h1 {
+                                border-color: blue;
+                                border-width: 2px;
+                                border-style: dashed; 
+                            }
+                            </pre>
+                        </div>
+                    </div>
+
+                    <p>Default Value</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                @mixin sexy-border($color, $width: 1in) {
+                                    border: {
+                                        color: $color;
+                                        width: $width;
+                                        style: dashed;
+                                    }
+                                }
+                                p { @include sexy-border(blue); }
+                                h1 { @include sexy-border(blue, 2in); }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            p {
+                                border-color: blue;
+                                border-width: 1in;
+                                border-style: dashed; 
+                            }
+
+                            h1 {
+                                border-color: blue;
+                                border-width: 2in;
+                                border-style: dashed; 
+                            }
+                            </pre>
+                        </div>
+                    </div>
+
+                    <p>Variable Argument</p>
+                    <p>Sometimes it makes sense for a mixin or function to take an unknown number of arguments.</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                @mixin box-shadow($shadows...) {
+                                    -moz-box-shadow: $shadows;
+                                    -webkit-box-shadow: $shadows;
+                                    box-shadow: $shadows;
+                                }
+
+                                .shadows {
+                                    @include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            .shadows {
+                                -moz-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+                                -webkit-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+                                box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+                            }
+                            </pre>
+                        </div>
+                    </div>
+
+                    <p>Mapping</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                            @mixin colors($text, $background, $border) {
+                              color: $text;
+                              background-color: $background;
+                              border-color: $border;
+                            }
+
+                            $values: #ff0000, #00ff00, #0000ff;
+                            .primary {
+                              @include colors($values...);
+                            }
+
+                            $value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
+                            .secondary {
+                              @include colors($value-map...);
+                            }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            .primary {
+                              color: #ff0000;
+                              background-color: #00ff00;
+                              border-color: #0000ff;
+                            }
+
+                            .secondary {
+                              color: #00ff00;
+                              background-color: #0000ff;
+                              border-color: #ff0000;
+                            }
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <!--@content-->
+                <section>
+                    <h1>@content</h1>
+                    <p>It is possible to pass a block of styles to the mixin for placement within the styles included by the mixin. </p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                            @mixin media($width) {
+                              @media only screen and (max-width: $width) {
+                                @content;
+                              }
+                            }
+
+                            @include media(320px) {
+                              background: red;
+                            }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            @media only screen and (max-width: 320px) {
+                              background: red;
+                            }
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                            @mixin keyframes($name) {
+                              @-webkit-keyframes #{$name} {
+                                @content;
+                              }
+
+                              @-moz-keyframes #{$name} {
+                                @content;
+                              }
+
+                              @keyframes #{$name} {
+                                @content;
+                              }
+                            }
+
+                            @include keyframes(fadeIn) {
+                              from {opacity: 0%;}
+                              to {opacity: 100%;}
+                            }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            @-webkit-keyframes fadeIn {
+                              from {opacity: 0%;}
+                              to {opacity: 100%;}
+                            }
+
+                            @-moz-keyframes fadeIn {
+                              from {opacity: 0%;}
+                              to {opacity: 100%;}
+                            }
+
+                            @keyframes fadeIn {
+                              from {opacity: 0%;}
+                              to {opacity: 100%;}
+                            }
+                            </pre>
+                        </div>
+                    </div>
+
+                    <p>Keyframes are a good example of content duplication.</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                            @mixin keyframes($name) {
+                              @-webkit-keyframes #{$name} {
+                                @content;
+                              }
+
+                              @-moz-keyframes #{$name} {
+                                @content;
+                              }
+
+                              @keyframes #{$name} {
+                                @content;
+                              }
+                            }
+
+                            @include keyframes(fadeIn) {
+                              from {opacity: 0%;}
+                              to {opacity: 100%;}
+                            }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            @-webkit-keyframes fadeIn {
+                              from {opacity: 0%;}
+                              to {opacity: 100%;}
+                            }
+
+                            @-moz-keyframes fadeIn {
+                              from {opacity: 0%;}
+                              to {opacity: 100%;}
+                            }
+
+                            @keyframes fadeIn {
+                              from {opacity: 0%;}
+                              to {opacity: 100%;}
+                            }
+                            </pre>
+                        </div>
+                    </div>
+
+                    <p>Context Specificity ???</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                            @mixin create-context($classes...) {
+                              @each $class in $classes {
+                                .#{$class} & {
+                                  @content;
+                              }
+                            }
+
+                            @mixin context--alternate-template {
+                              @include create-context(about, blog) {
+                                @content
+                              }
+                            }
+
+                            .header {
+                              height: 12em;
+                              background: red;
+
+                              @include context--alternate-template {
+                                background: green;
+                              }
+                            }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            .header {
+                              height: 12em;
+                              background: red;
+                            }
+
+                            .about .header {
+                              background: green;
+                            }
+
+                            .blog .header {
+                              background: green;
+                            }
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <!--Function Directives-->
+                <h1>Function Directives</h1>
+                <section>
+                    <h1>Function Directives</h1>
+                    <p>It is possible to define your own functions in sass and use them in any value or script context. For example:</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                $grid-width: 40px;
+                                $gutter-width: 10px;
+
+                                @function grid-width($n) {
+                                  @return $n * $grid-width + ($n - 1) * $gutter-width;
+                                }
+
+                                #sidebar { width: grid-width(5); }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                                #sidebar { width: 240px; }
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="part">
+                <!--Output Style-->
+                <section>
+                    <h1>Output Styles</h1>
+                    <p>
+                        Sass supports four different output styles.
+                        :nested,:compact,:expanded,:compressed
+                    </p>
+                    <p>
+                        In this file, the sass output can be changed in the gulp.js file
+                    </p>
+                </section>
+                <!--Template-->
+                <section>
+                    <h1>Title</h1>
+                    <p>Text</p>
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+
+                            </pre>
+                        </div>
+                    </div>
+                            </section>
+            </div>
+
         </div>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -549,6 +1104,12 @@
         <script src="js/prettypre.js"></script>
         <script>
             $( function() { $('pre').prettyPre(); } );
+
+            $(document).ready(function(){
+                $('#navbar').find('li').on('click',function(){
+                    alert('test')
+                });
+            });
         </script>
     </body>
 </html>

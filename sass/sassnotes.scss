@@ -20,6 +20,17 @@ $margin-right: 30px;
     }
 }
 
+nav {
+    display: block;
+    ul {
+        li {
+            display: inline-block;
+            float: left;
+            border: 1px solid red;
+        }
+    }
+}
+
 section {
     margin-bottom: 20px;
 
@@ -70,11 +81,10 @@ section {
     }
 
     .left, .right {
-        display: table;
         width: calc((100% - #{$margin-right})/2);
         margin: 0px;
         float: left;
-        min-height: 160px;
+        // min-height: 160px;
     }
 
     .left {
@@ -83,7 +93,6 @@ section {
 
     pre {
         width: 100%;
-        display: table-cell;
         vertical-align: middle;
         background-color: $cloud;
         border-radius: 4px;
