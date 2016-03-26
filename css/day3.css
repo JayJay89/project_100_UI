@@ -48,6 +48,15 @@ ul {
   z-index: 99999;
 }
 
+.testbox {
+  width: 200px;
+  height: 200px;
+  display: block;
+  content: "test";
+  background-color: red;
+  z-index: 1;
+}
+
 .wrapper {
   background: url(../day3/bg.png) no-repeat;
   width: 100%;

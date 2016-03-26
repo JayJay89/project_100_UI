@@ -1,8 +1,319 @@
 @import "all";
 
-.wrapper {
+$blue: #018ffd;
+$black: #343232;
+$grey: #999999;
+
+$padding: 60px;
+$h1_height: 30px;
+$logo_height: 48px;
+
+$right-margin: 20px;
+$input-padding: 10px;
+
+.testbox {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+/*Column Widths*/
+.width-50 {
+	width: 50%;
+}
+
+.width-33 {
+	width: calc(100%/3);
+}
+
+.width-66 {
+	width: calc((100%/3)*2);
+}
+
+
+.col-2 {
+	> div {
+		width: calc((100% - #{$right-margin})/2);
+		margin-right: $right-margin;
+
+		&:last-child {
+			margin: 0px;
+		}
+	}
+}
+
+
+.col-3 {
+	> div {
+		width: calc((100% - 2 * #{$right-margin})/3);
+		margin-right: $right-margin;
+
+		&:last-child {
+			margin: 0px;
+		}
+	}
+}
+
+/*icons*/ 
+[class^="icon"] {
+	background: url("../day4/d004-arrows.png") no-repeat;
+	display: inline-block;
+}
+
+.icon-right {
+	background-position: 0px 0px;
+	height: 11px;
+	width: 16px;
+}
+
+.icon-right--hover {
+	background-position: -16px 0px;
+}
+
+/*styles*/
+
+.label-grey {
+	color: $grey;
+	text-transform: uppercase;
+	font-size: 10px;
+}
+
+.cc-input-style,
+.cc-select-style  {
+	padding: $input-padding;
+	font-size: 16px;
+	line-height: normal;
+	border-radius: 4px;
+	border: 1px solid lightgrey;
+	outline: none;
+	cursor: pointer;
+	transition: all 1s ease;
+}
+
+.cc-input-style {
+	&:focus {
+		border: 1px solid $blue;
+	}
+}
+
+.cc-select-style {
+
+}
+
+
+
+/*BASE CSS*/
+.cc {
 	width: 100%;
 	height: 100vh;
 	background: url("../day4/d004-bg.png") no-repeat;
 	background-size: cover;
+
+	/*Table*/
+	display: table;
+	width: 100%;
+
+	/*Flex*/
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+
+	select {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		width: 100%;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	p, h1 {
+		display: inline-block;
+		text-transform: uppercase;
+	}
+
+	input {
+		width: 100%;
+	}
+}
+
+.cc_container {
+	/*Table*/
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.cc_bglogo {
+	display: block;
+	position: absolute;
+	right: 50%;
+	transform: translateX(50%);
+	z-index: 1;
+	opacity: 0.2;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+.cc_modal {
+	margin: 0 auto;
+	position: relative;
+	width: 80%;
+	z-index: 2;
+	max-width: 770px;
+	min-width: 600px;
+}
+
+.cc_modal_header {
+	background-color: $blue;
+	padding: $padding;
+	border-radius: 20px 20px 0px 0px;
+
+	h1 {
+		margin: 0px;
+		float: left;
+		text-align: left;
+		font-size: 28px;
+		line-height: $h1_height;
+		color: white;
+	}
+
+	.cc_modal_header_logo {
+		float: right;
+		padding: (($h1_height * 2) - $logo_height)/2 0px;
+	}
+}
+
+.cc_modal_body {
+	background-color: white;
+	padding: 40px $padding;
+	border-radius: 0px 0px 20px 20px;
+	/*row 1 and row 2*/
+	> div {
+		margin: 20px 0px;
+
+		/*Flex places all divs at btm*/
+		display: -webkit-flex;
+		display: flex;
+		-webkit-align-items: end; 
+		align-items: flex-end;
+	}
+}
+
+.cc_modal_name,
+.cc_modal_cardnum,
+.cc_modal_expiry,
+.cc_modal_expiry_month,
+.cc_modal_expiry_year,
+.cc_modal_cvv {
+	float:left;
+	text-align: left;
+	position: relative;
+}
+
+.cc-dropdown-head {
+	/*Longform*/
+	// background-color: none;
+	// background-image: url("../day4/d004-down.png");
+	// background-repeat: no-repeat;
+	// background-attachment: none;
+	// background-position:right 20px center;
+
+	/*Shorthand*/
+	// background: url("../day4/d004-down.png") no-repeat right 20px center;
+
+	background: url("../day4/d004-down.png") no-repeat;
+	/*Both below will work*/
+	background-position: 95% 50%;
+	background-position: right 20px center;
+	cursor: pointer;
+	transition: all 0.2s ease;
+
+	&.active {
+		background-color: $blue;
+
+		+ .cc-dropdown {
+			display: block;
+		}
+	}
+}
+
+.cc-dropdown {
+	position: absolute;
+	top: calc(100% + 5px);
+	width: 100%;
+	background-color: white;
+	font-size: 12px;
+	padding:$input-padding 0px;
+	display: none;
+	
+	li {
+		padding: 4px $input-padding;
+		transition: all 0.2s ease;
+
+		&:hover {
+			background-color: $blue;
+			color: white;
+		}
+	}
+}
+
+.cc_modal_cardnum_container {
+
+	input {
+		padding: 0px;
+		border: none;
+		width: 25%;
+		float: left;
+		padding-left: 10px;
+		text-align: left;
+
+		&:focus {
+			border: none;
+			outline: none;
+		}
+	}
+}
+
+.cc_complete_order {
+	border: 1px solid $blue;
+	color: white;
+	display: inline-block;
+	float :right;
+	margin-top: 25px;
+	padding: 15px;
+	text-align: left;
+	border-radius: 50px 0px 0px 50px;
+	cursor: pointer;
+
+	a {
+		color: white;
+		text-transform: uppercase;
+		margin-right: 10px;
+	}
+
+	&:hover {
+		transition: all 0.2s ease-out;
+		background-color: $blue;
+		.icon-right {
+			background-position: -16px 0px;
+		}
+	}
+}
+
+
+.cc_boxcontainer {
+	width: 20px;
+	height: 20px;
+	background-color: red;
+	display: inline-block;
 }

@@ -9,6 +9,7 @@
 		<!-- Bootstrap -->
 		<link href="css/day4.css" rel="stylesheet">
 		<link href="css/normalize.css" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -19,13 +20,158 @@
 	<body>
 		<a class="back-button" href="index.html">Back</a>
 
-		<div class="wrapper">
-			<img src="day4/d004-after.png" alt="">
+		<div class="cc">
+
+			<img class="cc_bglogo"src="day4/d004-after.png" alt="">
+
+			<div class="cc_container">
+
+				<div class="cc_modal">
+					<div class="cc_modal_header clearfix">
+						<h1>payment <br>details</h1>
+						<img class="cc_modal_header_logo" src="../day4/d004-visa.png" alt="">
+					</div>
+
+					<div class="cc_modal_body">
+
+						<div class="clearfix col-2">
+
+							<div class="cc_modal_name">
+								<label class="label-grey" for="name">cardholder's name</label>
+								<input class="cc-input-style" name="name" type="text" placeholder="Johnny Relative">
+							</div>
+
+							<div class="cc_modal_cardnum">
+								<label class="label-grey" for="cardnum">card number</label>
+								<div class="cc_modal_cardnum_container cc-input-style clearfix">
+									<input maxlength="4" id="input1" type="text" placeholder="1234">
+									<input maxlength="4" id="input2" type="text" placeholder="1234">
+									<input maxlength="4" id="input3" type="text" placeholder="1234">
+									<input maxlength="4" id="input4" type="text" placeholder="1234">
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="clearfix col-3">
+
+								<div class="cc_modal_expiry_month">
+									<label class="label-grey">expiry date</label>
+
+									<div class="cc-dropdown-head cc-select-style">January</div>
+									<ul class="cc-dropdown cc-select-style">
+										<li value="January">January</li>
+										<li value="February">February</li>
+										<li>March</li>
+										<li>April</li>
+										<li>May</li>
+										<li>June</li>
+										<li>July</li>
+										<li>August</li>
+										<li>September</li>
+										<li>October</li>
+										<li>November</li>
+										<li>December</li>
+									</ul>
+								</div>
+
+								<div class="cc_modal_expiry_year">
+
+									<div class="cc-dropdown-head cc-select-style">2016</div>
+									<ul class="cc-dropdown cc-select-style">
+										<li>2016</li>
+										<li>2017</li>
+										<li>2018</li>
+										<li>2019</li>
+										<li>2020</li>
+									</ul>
+								</div>
+
+								<div class="cc_modal_cvv">
+									<label class="label-grey" for="cvv">cvv</label>
+									<input class="cc-input-style" name="cvv" type="text" placeholder="623">
+								</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="cc_complete_order width-33 ">
+					<a href="#/">complete order</a>
+					<i class="icon-right"></i>
+				</div>
+				<!-- <div class="testbox"></div> -->
+			</div>
 		</div>
-		123
-		456
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 		<script src="jquery.min.js"></script>
+		<script>
+		/*This js applies icon-right--hover */
+			$(document).ready(function(){
+
+				// Source
+				// https://css-tricks.com/snippets/jquery/move-cursor-to-end-of-textarea-or-input/
+
+				jQuery.fn.putCursorAtEnd = function() {
+					return this.each(function() {
+					$(this).focus()
+
+					// If this function exists...
+					if (this.setSelectionRange) {
+					// ... then use it (Doesn't work in IE)
+
+					// Double the length because Opera is inconsistent about whether a carriage return is one character or two. Sigh.
+					var len = $(this).val().length * 2;
+					this.setSelectionRange(len, len);
+
+					} else {
+						// ... otherwise replace the contents with itself
+						// (Doesn't work in Google Chrome)
+						$(this).val($(this).val());
+					}
+
+					// Scroll to the bottom, in case we're in a tall textarea
+					// (Necessary for Firefox and Google Chrome)
+					this.scrollTop = 999999;
+					});
+				};
+
+				var cc_input = $('.cc_modal_cardnum_container').find('input');
+
+				cc_input.keyup(function(){
+					if (this.value.length == 4) {
+						var $next = $(this).next(cc_input);
+						$next.focus();
+					}
+				});
+
+				cc_input.putCursorAtEnd();
+
+				//dropdown
+
+				$('.cc-dropdown-head').on('click',function(){
+					$(this).toggleClass('active');
+					event.stopPropagation();
+				})
+
+
+
+				// $(".cc-dropdown-head").click(function(e){
+				//     var e=window.event||e;
+				//     $(this).addClass("active");
+				//     e.stopPropagation();
+				//   });
+
+				$(document).click(function(){
+				    $(".cc-dropdown-head").removeClass("active");
+				});
+
+			});
+		</script>
 	</body>
 </html>
+
+
+
+

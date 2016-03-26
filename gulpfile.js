@@ -36,6 +36,7 @@ gulp.task('watch',['sass'], function(){
     // gulp.watch("sass/*.scss").on('change', browserSync.reload);
     gulp.watch("*.js").on('change', browserSync.reload);
 });
+
 /*This is an example on how to watch sass only*/ 
 // gulp.task('sass:watch', function () {
 //     gulp.watch('./sass/**/*.scss', ['sass']);
