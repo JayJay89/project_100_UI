@@ -1,0 +1,216 @@
+@import 'all';
+
+$green: #d6d75b;
+$font-dark-blue: #232e3a;
+$font-gray: #999999;
+$font-blue: #3399ff;
+
+$container-padding: 20px;
+$box-padding: 40px;
+
+body {
+    font-family: 'Lato', sans-serif
+}
+
+p {
+    margin: 0px;
+}
+
+.product-view-container {
+    padding: 50px 0;
+    border: 2px solid red;
+    background: url(../day2/bg.png) no-repeat;
+    background-size: cover;
+}
+
+.product-view {
+    min-width: 800px;
+    max-width: 920px;
+    background-color: white;
+    padding: $container-padding;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.eq-height {
+    position: relative;
+}
+
+.chair-info,
+.chair-display {
+    width: 50%;
+    float: left;
+    padding: $box-padding;
+}
+
+.chair-display {
+    h1 {
+        font-size: 5.5rem;
+        margin: 0px;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .chair-type {
+        font-size: 40px;
+        text-transform: uppercase;
+        color: $font-gray;
+    }
+
+    .chair-image {
+        max-width: 100%;
+    }
+
+    .arrow-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        $triangle-size: 30px;
+        &:before {
+            
+            content: "";
+            position: absolute;
+            top:0;
+            left:0;
+            border-left: solid $triangle-size $green;
+            border-top: solid $triangle-size $green;
+            border-bottom: solid $triangle-size transparent;
+            border-right: solid $triangle-size transparent;
+        }
+
+        .arrow {
+            display: block;
+            position: relative;
+            margin-top: $triangle-size / 2;
+            margin-left: $triangle-size / 4;
+        }
+    }
+}
+
+.chair-info {
+    .chair-description {
+        font-size: 16px;
+        color: $font-gray;
+    }
+
+    .chair-status {
+        margin: 15px 0px;
+        display: block;
+    }
+
+    a {
+        color: $font-blue;
+    }
+
+    .star-rating {
+        margin-top: 50px;
+
+        > i, p {
+            display: inline-block;
+            float: left;
+            line-height: 16px;
+        }
+
+        .review-rating {
+            font-size: 16px;
+            margin-left: 10px;
+        }
+    }
+
+    .icon-star {
+        background-image: url("../day2/star.png");
+        background-repeat: no-repeat;
+        background-position: -16px 0px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+
+        &.light {
+            background-position: 0px 0px;
+        }
+
+        &:hover{
+            // background-position: 0px 0px;
+        }
+    }
+
+    .purchase-quantity {
+        $height : 30px;
+        line-height: $height;
+        margin-top: 100px;
+
+        span {
+            text-transform: uppercase;
+            line-height: $height;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+
+        .amount {
+            font-size: $height;
+            color: $font-gray;
+            line-height: $height;
+            margin: 0px 25px
+        }
+
+        .icon-arrow {
+            background-image: url("../day2/controls.png");
+            background-repeat: no-repeat;
+            width: 12px;
+            height: 18px;
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+            padding: 15px;
+
+            &.left {
+                background-position: 7px 5px;
+            }
+
+            &.right {
+                background-position: -137px 5px;
+            }
+        }
+    }
+}
+
+.product-checkout {
+    width: 100%;
+    display: block;
+    padding: 20px $container-padding 0px $container-padding;
+    position: relative;
+
+    &:before {
+        content: "";
+        border: 1px solid $font-gray;
+        border-width: 1px 0px 0px 0px;
+        position: absolute;
+        width: calc(100% + #{$container-padding} - #{$container-padding});
+        height: 1px;
+        top: 0px;
+        right: -$container-padding;
+    }
+
+
+    .price {
+        float :left;
+
+        p {
+            &:first-child {
+                text-transform: uppercase;
+                font-size: 14px
+            }
+            &:nth-child(2) {
+                font-size: 30px;
+                color: $green;
+            }
+        }
+    }
+    .add-cart {
+        font-size: 30px;
+        float: right;
+        vertical-align: middle;
+        color: $green;
+        line-height: 17px + 36px;
+    }
+}

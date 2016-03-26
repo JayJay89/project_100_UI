@@ -1,0 +1,69 @@
+@import "willy-skeleton" ;
+
+$light-grey: grey;
+
+header {
+    padding: 20px 0;
+    text-align: center;
+
+    a {
+        border-bottom: none;
+    }
+
+    nav {
+        border-bottom: 1px solid $light-grey;
+
+        ul {
+            text-align: center;
+            list-style: none;
+
+            li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+        }
+    }
+
+    .site-title {
+        margin-top: 0;
+        margin-bottom: 2rem;
+        font-weight: bold;
+        font-size: 3.6rem;
+        line-height: 1.2;
+        letter-spacing: -.1rem;
+        padding-top: 10px;
+    }
+
+    .site-description {
+        padding-bottom: 10px;
+    }
+
+    @media (#{$bp-larger-than-phablet}) {
+        #site-title { font-size: 3.6rem; }
+    }
+}
+
+article {
+    padding: 20px 0;
+
+    header {
+        padding: 0;
+    }
+
+    .read-more-link {
+        padding: 10px 0;
+    }
+}
+
+#main {
+    /* padding-bottom: 20px; */
+}
+
+footer {
+    text-align: center;
+
+    .row {
+        padding: 20px 0;
+        border-top: 1px solid $light-grey;
+    }
+}

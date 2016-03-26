@@ -1,0 +1,59 @@
+@import 'all';
+
+.container {
+    width: 80%;
+    background-color: red;
+    margin: 0 auto;
+    height: 200px;
+}
+
+.nav {
+    height: inherit;
+
+    li {
+        width: 25%;
+        vertical-align: middle;
+        display: inline-block;
+        background-color: green;
+        float: left;
+        height: inherit;
+        border: 1px solid red;
+        overflow: hidden;
+        position: relative;
+
+        a {
+            border: 1px solid blue;
+            display: inline-block;
+            width: 100%;
+            position: absolute;
+            // bottom: 0px;
+            bottom: -120px; 
+        }
+
+        span {
+            text-align: left;
+            display: inline-block;
+            font-size: 40px;
+            text-transform: uppercase;
+        }
+
+        .box {
+            width: 80%;
+            margin: 0 auto;
+            height: 150px;
+            background-color: yellow;
+        }
+
+        .icon {
+            position: absolute;
+            right: 0px;
+            text-align: right;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: red;
+            bottom: 0%;
+            // bottom: 65%;
+        }
+    }
+}

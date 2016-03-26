@@ -2,10 +2,11 @@
  
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var browserSync = require('browser-sync');
+var browserSync = require('browser-sync').create();
 
 /*Run gulp watch*/
+
+
 
 /*Sass*/
 gulp.task('sass', function () {
@@ -21,6 +22,20 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('css'))
 });
 
+
+/*Watcher*/
+gulp.task('watch',['sass'], function(){
+
+    browserSync.init({
+        server: "./"
+    });
+
+    gulp.watch('sass/*.scss', ['sass'])
+    gulp.watch("*.html").on('change', browserSync.reload);
+    gulp.watch("css/*.css").on('change', browserSync.reload);
+    // gulp.watch("sass/*.scss").on('change', browserSync.reload);
+    gulp.watch("*.js").on('change', browserSync.reload);
+});
 /*This is an example on how to watch sass only*/ 
 // gulp.task('sass:watch', function () {
 //     gulp.watch('./sass/**/*.scss', ['sass']);
@@ -35,17 +50,4 @@ gulp.task('sass', function () {
 // });
 
 
-/*Watcher*/
-gulp.task('watch',['sass'], function(){
 
-    browserSync.init({
-        server: "./"
-    });
-
-    gulp.watch('sass/*.scss', ['sass'])
-    // gulp.watch('css/*.css', ['autoprefix'])
-    gulp.watch("*.html").on('change', browserSync.reload);
-    // gulp.watch("css/*.css").on('change', browserSync.reload);
-    gulp.watch("sass/*.scss").on('change', browserSync.reload);
-    gulp.watch("*.js").on('change', browserSync.reload);
-});
