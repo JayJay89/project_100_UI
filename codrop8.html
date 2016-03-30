@@ -20,13 +20,11 @@
 		<a class="back-button" href="index.html">Back</a>
 		<!--consl = content slider-->
 		<div class="consl">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quis velit aperiam itaque deserunt veritatis, nemo vel, natus rerum tenetur dolorum in accusantium nam consequatur dolorem suscipit. Distinctio, voluptates, quis.
 
 			<div class="consl-container">
-				<ul class="consl-slider">
-
+				<ul class="consl-content-list">
 					<li>
-						<a class="consl-navlink" href="sl-1">portfolio</a>
+						<a class="consl-navlink" href="#/">portfolio</a>
 						<div class="consl-content">
 							<div class="consl-content-img"><img src="images/img1.jpg" alt=""></div>
 							<div class="consl-content-head">Our Works</div>
@@ -37,10 +35,10 @@
 					</li>
 
 					<li>
-						<a class="consl-navlink" href="sl-2">services</a>
+						<a class="consl-navlink" href="#/">services</a>
 						<div class="consl-content">
 							<div class="consl-content-img"><img src="images/img2.jpg" alt=""></div>
-							<div class="consl-content-head">Our Works</div>
+							<div class="consl-content-head">Services</div>
 							<div class="consl-content-desc">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, vel cumque nostrum at in vero ratione facere possimus consequatur mollitia.
 							</div>
@@ -48,10 +46,21 @@
 					</li>
 
 					<li>
-						<a class="consl-navlink" href="sl-3">contact</a>
+						<a class="consl-navlink" href="#/">contact</a>
 						<div class="consl-content">
 							<div class="consl-content-img"><img src="images/img3.jpg" alt=""></div>
-							<div class="consl-content-head">Our Works</div>
+							<div class="consl-content-head">Contact</div>
+							<div class="consl-content-desc">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet.
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<a class="consl-navlink" href="#/">about</a>
+						<div class="consl-content">
+							<div class="consl-content-img"><img src="images/img3.jpg" alt=""></div>
+							<div class="consl-content-head">About</div>
 							<div class="consl-content-desc">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, vel cumque nostrum at in vero ratione facere possimus consequatur mollitia.
 							</div>
@@ -59,51 +68,21 @@
 					</li>
 				</ul>
 
-				<div id="rot1">
-				    <img src="" width="800" height="300" class="bg" alt=""/>
-				    <div class="heading">
-				        <h1></h1>
-				    </div>
-				    <div class="description">
-				        <p></p>
-				    </div>    
+				<div class="consl-slider">
+					<div class="consl-slider-header">
+						<h1></h1>
+					</div>
+					<div class="consl-slider-description">
+						<p></p>
+					</div>    
 				</div>
 
 			</div>
+
 		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 		<script src="jquery.min.js"></script>
-
-		<script>
-			$(function(){
-				/* the index of the current list element */
-				var current = 1;
-
-				/* function to iterate through all the list elements */
-				var iterate = function() {
-					var i = parseInt(current + 1);
-					var lis = $('.consl-slider').children('li').length;
-					if (i > lis) i = 1;
-					display($('.consl-slider li:nth-child('+i+')'));
-				}
-
-				/* Initially display the first one */
-				display($('.consl-slider li:first'));
-
-				/* In intervals of 3 seconds jump to the next element */
-				var slidetime = setInterval(iterate,3000);
-
-				/* if the User clicks on one list item, the auto slider stops */
-				$('.consl-slider li').bind('click',function(e){
-					clearTimeout(slidetime);
-					display($(this));
-					e.preventDefault();
-				});
-
-				
-			});
-
-		</script>
+		<script src="js/codrop8-slider.js"></script>
 	</body>
 </html>

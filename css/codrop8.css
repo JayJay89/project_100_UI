@@ -64,99 +64,65 @@ ul {
 }
 
 .consl-container {
-  background-color: #222;
-  width: 800px;
-  height: 300px;
-  margin: 0px auto;
-  position: relative;
-  font-family: 'Myriad Pro',Arial,Helvetica,sans-serif;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  border: 3px solid #f0f0f0;
   overflow: hidden;
-  -moz-box-shadow: 0px 0px 10px #222;
-  -webkit-box-shadow: 0px 0px 10px #222;
-  box-shadow: 0px 0px 10px #222;
+  height: 220px;
 }
 
-img.bg {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+.consl-content {
+  display: none;
 }
 
-.consl-slider {
-  list-style: none;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  margin-top: 6px;
-  z-index: 999999;
+.consl-content-list {
+  background-color: orange;
 }
 
-.consl-slider li {
-  display: block;
-  float: left;
+.consl-content-list:before, .consl-content-list:after {
+  content: " ";
+  display: table;
+}
+
+.consl-content-list:after {
   clear: both;
-  width: 260px;
+}
+
+.consl-content-list li {
+  float: left;
+  margin-right: 10px;
 }
 
 .consl-navlink {
-  width: 230px;
-  height: 52px;
-  float: right;
-  clear: both;
-  padding-left: 10px;
-  text-decoration: none;
-  display: block;
-  line-height: 52px;
-  background-color: #222;
-  margin: 1px -20px 1px 0px;
-  opacity: 0.7;
-  color: #f0f0f0;
-  font-size: 20px;
-  outline: none;
-  border: 1px solid red;
+  color: white;
+  background-color: green;
+  display: inline-block;
+  padding: 20px 20px 10px;
+  margin-top: -10px;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .consl-navlink:hover {
+  background-color: rgba(0, 128, 0, 0.8);
+}
+
+.consl-slider {
   border: 1px solid blue;
 }
 
-.consl .heading {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 500px;
+.consl-slider-header {
+  display: inline-block;
+  border: 1px solid green;
+  margin-top: 20px;
+  padding: 5px 50px;
+  border-radius: 0px 50px 50px 0px;
 }
 
-.consl .heading h1 {
-  text-shadow: -1px 1px 1px #555;
-  font-weight: normal;
-  font-size: 46px;
-  padding: 20px;
+.consl-slider-header h1 {
+  margin: 0;
 }
 
-.consl .description {
-  width: 500px;
-  height: 80px;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  padding: 20px;
-  background-color: #222;
-  -moz-border-radius: 0px 10px 0px 0px;
-  -webkit-border-top-right-radius: 10px;
-  border-top-right-radius: 10px;
-  opacity: 0.7;
-  border-top: 2px solid #000;
-  border-right: 2px solid #000;
+.consl-slider-description {
+  padding: 20px 30px;
 }
 
-.consl .description p {
-  text-shadow: -1px 1px 1px #000;
-  text-transform: none;
-  letter-spacing: normal;
-  line-height: 26px;
+.consl-slider-description p {
+  margin: 0;
 }
