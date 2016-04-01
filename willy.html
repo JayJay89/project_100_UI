@@ -7,10 +7,10 @@
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<title> </title>
 		<!-- Bootstrap -->
-		<link href="css/willy-custom.css" rel="stylesheet">
-		<link href="css/willy-skeleton.css" rel="stylesheet">
-		<link href="css/willy-syntax-highlighting.css" rel="stylesheet">
+		<link href="css/willy.css" rel="stylesheet">
+		<!-- <link href="css/willy-skeleton.css" rel="stylesheet"> -->
 		<link href="css/normalize.css" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic,600italic,700italic,800italic,300italic' rel='stylesheet' type='text/css'>
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -21,102 +21,134 @@
 	<body>
 		<a class="back-button" href="index.html">Back</a>
 		
-		<div class="container">
-
-			<header>
-				<h1>This is header</h1>
-				<h2>This is header</h2>
-				<h3>This is header</h3>
-				<h4>This is header</h4>
-				<h5>This is header</h5>
-				<h6>This is header</h6>
-
-				<a href="#/">This is a link</a>
-
-				<nav>
-					<p>this is a navigation bar</p>
-					<ul>
-						<li><a href="#/">link-1</a></li>
-						<li><a href="#/">link-2</a></li>
-						<li><a href="#/">link-3</a></li>
-						<li><a href="#/">link-4</a></li>
-						<li><a href="#/">link-5</a></li>
-					</ul>
-				</nav>
-
-				<p class="site-title">
-					This is Site Title
-				</p>
-
-				<p class="site-description"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit optio nobis quibusdam vel facere tempore accusantium temporibus esse consequatur consequuntur, voluptatibus, veritatis ea delectus minus ducimus odio maiores mollitia aspernatur ab dolore placeat, modi perferendis voluptatum? Maxime harum quisquam, ad voluptas odit, dolor, dolores impedit consectetur, quia molestiae corporis praesentium.</p>
-			</header>
-
-			<article>
+		<div class="container wj">
 			
-			<div class="columns">
-				<div class="three column">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, repellat!
-				</div>
-				<div class="three column">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, culpa.
-				</div>
-			</div>
+			<section>
+				<h1>This is h1 header</h1>
+				<h2>This is h2 header</h2>
+				<h3>This is h3 header</h3>
+				<h4>This is h4 header</h4>
+				<h5>This is h5 header</h5>
+				<h6>This is h6 header</h6>
+			</section>
+
+			<section>
+				<p> This is a paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae delectus tenetur assumenda. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae molestias error possimus, sapiente odio tenetur quaerat, exercitationem asperiores quo fugiat provident officia laudantium repellendus eaque obcaecati accusamus, ratione dolores expedita. Voluptatem nihil magni ratione praesentium consequuntur pariatur accusamus optio eius officia libero, nisi, dolor, maxime, inventore quidem error et.</p>
+
+				<p class="indent">This is a paragraph with indent. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore mollitia praesentium voluptates perferendis sed omnis, blanditiis sequi cupiditate nobis maxime quam deleniti est id consectetur delectus fugit ex temporibus laudantium.</p>
+
+				<p>Lorem ipsum dolor sit amet, <span class="code">special</span> consectetur adipisicing elit. Repellat, officia!</p>
+			</section>
+
+			<section>
+				<p class="light">light - Lorem ipsum dolor sit amet.</p> 
+				<p class="semi-bold">semi-bold - Lorem ipsum dolor sit amet.</p> 
+				<p class="bold">bold - Lorem ipsum dolor sit amet.</p> 
+				<p class="extra-bold">extra-bold - Lorem ipsum dolor sit amet.</p> 
+
+				<p class="light italic">light italic - Lorem ipsum dolor sit amet.</p> 
+				<p class="semi-bold italic">semi-bold italic - Lorem ipsum dolor sit amet.</p> 
+				<p class="bold italic">bold italic - Lorem ipsum dolor sit amet.</p> 
+				<p class="extra-bold italic">extra-bold italic - Lorem ipsum dolor sit amet.</p> 
+			</section>
+
+			<section>
+				<pre> 
+define foobar() {
+    print "Welcome to flavor country!";
+}
+				</pre>
+			</section>
+
+			<section>
+				<blockquote cite="http://www.worldwildlife.org/who/index.html">
+					BLOCKQUOTE -  WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.
+				</blockquote>
+
+			</section>
+			<section>
+				
+				<blockquote class="type-2">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem similique et esse hic at inventore magnam officia! Aperiam magnam, iure.
+				</blockquote>
+			</section>
+			<section>
+				<a href="#/">This is a link</a>
+			</section>
+
+			<section>
+				<ul>
+					<li><a href="#/">link-1</a></li>
+					<li><a href="#/">link-2</a></li>
+					<li><a href="#/">link-3</a></li>
+					<li><a href="#/">link-4</a></li>
+					<li><a href="#/">link-5</a></li>
+				</ul>
+				<ol>
+					<li><a href="#/">link-1</a></li>
+					<li><a href="#/">link-2</a></li>
+					<li><a href="#/">link-3</a></li>
+					<li><a href="#/">link-4</a></li>
+					<li><a href="#/">link-5</a></li>
+				</ol>
+				<ol>
+					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque at libero veniam facere expedita quas accusantium fuga quasi, dolorem magnam nulla unde quaerat dolorum perferendis dolore, quibusdam praesentium. Architecto, quam?</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia vel similique fugit vero expedita voluptate, explicabo sit tempora amet cum.</li>
+				</ol>
+			</section>
+
+			<section>
+				<p>text-input</p>
+				<input type="text">
+			</section>
+	
+			<section>
+				<p>textarea</p>
+				<textarea name="" id="" cols="30" rows="10"></textarea>
+			</section>
+
+			<section>
+				<button class="btn-1">button</button>
+				<button class="btn-2">button</button>
+				<button class="btn-3">button</button>
+				<button class="btn-4">button</button>
+			</section>
+
+			<section>
+				<p>Highlight specials</p>
+				<p>This is a <span class="h-c">comment</span></p>
+				<p>This is a <span class="h-cm">multiline comment</span></p>
+				<p>This is a <span class="h-cp">comment Preproc</span></p>
+				<p>This is a <span class="h-c1">comment single</span></p>
+				<p>This is a <span class="h-cs">comment special</span></p>
+
+				<p>This is an <span class="h-err">error</span></p>
+				<p>This is an <span class="h-k">keyword</span></p>
+				<p>This is an <span class="h-o">operator</span></p>
+
+				<p>This is an <span class="h-gd">Generic Deleted</span></p>
+				<p>This is an <span class="h-gdx">Generic Deleted Specific</span></p>
+				<p>This is an <span class="h-ge">Generic Emphasis</span></p>
+				<p>This is an <span class="h-gerr">Generic Error</span></p>
+				<p>This is an <span class="h-gh">Generic Heading</span></p>
+				<p>This is an <span class="h-gi">Generic Inserted</span></p>
+				<p>This is an <span class="h-gix">Generic Inserted Specific</span></p>
+
+				<p>This is an <span class="h-go">Generic Output</span></p>
+				<p>This is an <span class="h-gp">Generic Prompt</span></p>
+				<p>This is an <span class="h-gs">Generic Strong</span></p>
+				<p>This is an <span class="h-gsub">Generic Subheading</span></p>
+				<p>This is an <span class="h-gt">Generic Traceback</span></p>
+
+				<p>This is an <span class="h-kc">Keyword Constant</span></p>
+				<p>This is an <span class="h-kd">Keyword Declaration</span></p>
+				<p>This is an <span class="h-kp">Keyword Pseudo</span></p>
+				<p>This is an <span class="h-kr">Keyword Reserved</span></p>
+				<p>This is an <span class="h-kt">Keyword Type</span></p>
 
 
-				<header>Title</header>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate ipsam vero, molestiae eligendi! Odit impedit, cupiditate ab nostrum qui necessitatibus unde, voluptas! Amet nostrum magnam aliquid quaerat provident nobis, laboriosam asperiores sint vel earum velit est sequi, dolores repellendus a, placeat eveniet. Aspernatur ex minus voluptatum nobis aut ullam accusamus.</p>
-			</article>
-
-			<p>inputs</p>
-			<input type="text">
-			<input type="submit">
-			<input type="reset">
-			<input type="button">
-
-			<p>buttons</p>
-			<button>button</button>
-			<button class="button-primary">button</button>
-
-			<p>textarea</p>
-			<textarea name="" id="" cols="30" rows="10"></textarea>
-
-			<p class="text-highlight">
-				<div class="highlight">
-					<span class="c">testing</span>
-					<span class="err">testing</span>
-					<span class="k">testing</span>
-					<span class="o">testing</span>
-
-					<span class="cm">testing</span>
-					<span class="cp">testing</span>
-					<span class="c1">testing</span>
-					<span class="cs">testing</span>
-
-					<span class="gd">testing</span>
-					<span class="gd x">testing</span>
-					<span class="ge">testing</span>
-					<span class="gr">testing</span>
-					<span class="gh">testing</span>
-					<span class="gi">testing</span>
-					<span class="gi x">testing</span>
-					<span class="go">testing</span>
-					<span class="gp">testing</span>
-					<span class="gs">testing</span>
-					<span class="gu">testing</span>
-					<span class="gt">testing</span>
-					<p>keywords</p>
-					<span class="kc">testing</span>
-					<span class="kd">testing</span>
-					<span class="kp">testing</span>
-					<span class="kr">testing</span>
-					<span class="kt">testing</span>
-				</div>
-			</p>
-			<footer>
-				<span class="row">
-					<p>this is footer.</p>
-				</span>
-			</footer>
+			</section>
+			
 		</div>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
