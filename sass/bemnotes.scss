@@ -1,0 +1,66 @@
+@import "all";
+
+h1, h2, h3, h4, h5, h6 {
+	display: block;
+}
+
+img {
+	max-width: 100%;
+}
+
+.wrapper {
+	background-color: lightblue;
+}
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+pre {
+	padding: 20px;
+	border: 1px solid gray;
+	display: inline-block;
+	border-radius: 5px;
+	background-color: white;
+}
+
+section {
+	@include clearfix();
+	border-bottom: 1px solid red;
+	padding: 50px 0px;
+}
+
+
+ul {
+	margin-left: 20px;
+	li {
+		margin: 10px 20px;
+		list-style: disc;
+		line-height: 25px;
+		span {
+			font-weight: bold;
+			font-style: italic;
+			text-decoration: underline;
+		}
+	}
+}
+
+.half{
+	width: calc((100% - 2%)/2);
+	margin-right: 2%;
+	float: left;
+
+	&:last-child {
+		margin-right: 0px;
+	}
+}
+
+.bem__intro__header {
+	margin: 20px 0px;
+
+	+span {
+		font-size: 20px;
+		font-style: italic;
+	}
+}

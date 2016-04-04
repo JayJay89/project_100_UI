@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title> BEM notes </title>
+		<!-- Bootstrap -->
+		<link href="css/bemnotes.css" rel="stylesheet">
+		<link href="css/normalize.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<a class="back-button" href="index.html">Back</a>
+		<div class="wrapper">
+			<div class="container">
+				<h1>BEM Notes</h1>
+				<img src="/images/bemnotes/medium-bem-img.png" alt="">
+
+				<section class="bem__intro">
+					<h1>BEM (Block Element Modifier)</h1>
+
+					<h2 class="bem__intro__header">Block</h2>
+					<span>.btn</span>
+					<ul class="bem__intro__points">
+						<li>A top-level abstraction of a new component</li>
+						<li>This block should be thought of as a parent</li>
+						<li>A form block and the elements inside it</li>
+						<li>Blocks may also be contained inside other blocks.</li>
+					</ul> 
+
+					<h2 class="bem__intro__header">Element</h2>
+					<span>.btn__price</span>
+					<ul class="bem__intro__points">
+						<li>Denoted by two underscores </li>
+						<li>Child items, or elements, can be placed inside blocks</li>
+						<li>An element is a part of a block that performs a certain function. </li>
+						<li>Elements are context-dependent: they only make sense in the context of the block that they belong to.</li>
+					</ul>
+
+					<h2 class="bem__intro__header">Modifiers</h2>
+					<span>.btn__price--orange</span>
+					<ul class="bem__intro__points">
+						<li>manipulate the block so that we can theme or style that particular component without inflicting changes on a completely unrelated module.</li>
+						<li>Done by appending two hyphens to the name of the block</li>
+					</ul>
+
+					<pre>
+						&lt;a class="btn btn--big btn--orange"&gt;
+						  &lt;span class="btn__price"&gt;$9.99&lt;/span&gt;
+						  &lt;span class="btn__text"&gt;Subscribe&lt;/span&gt;
+						&lt;/a&gt;
+					</pre>
+				</section>
+				
+				<section>
+					<h1>Enforcing BEM conventions</h1>
+					Proper usage of BEM’s naming convention is very easy to test and enforce, both on the CSS side and on the HTML side. 
+					The following are a few rules you can test for in a linter of your choice.
+					
+					<h2>In the CSS:</h2>
+					<ul>
+						<li>With the exception of a reset stylesheet, <span>all other files must only contain class selectors.</span></li>
+						<li>All class selectors must begin with the name of the file.</li>
+						<li>Nested selectors may only be two levels deep and must consist of a modifier class followed by an element class.</li>
+						<li>Everything is a class and nothing is nested. </li>
+					</ul>
+
+					<h2>In the HTML:</h2>
+					<ul>
+						<li>Any HTML tag with an element class must be a descendant of a tag with a block class by the same name.</li>
+						<li>Any HTML tag with a modifier class must also have a block class by the same name.</li>
+					</ul>
+
+					<p>You may find the following tools useful for enforcing BEM conventions:</p>
+
+					<ul>
+						<li>HTML Inspector</li>
+						<li>CSS Lint</li>
+						<li>Suit Conformance</li>
+						<li>PostCSS BEM Linter</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Why use BEM?</h1>
+					<ul>
+						<li>If we want to make a new style of a component, we can easily see which modifiers and children already exist. We might even realize we don't need to write any CSS in the first place because there is a pre-existing modifier that does what we need.</li>
+						<li>If we are reading the markup instead of CSS, we should be able to quickly get an idea of which element depends on another (in the previous example we can see that .btn__price depends on .btn, even if we don't know what that does just yet.)</li>
+						<li>Designers and developers can consistently name components for easier communication between team members. </li>
+						<li>That makes CSS specificity very flat and low, which is a good idea. </li>
+					</ul>
+
+					<h1>BEM doesn’t use nested selectors</h1>
+					<pre>
+						.nav .nav__listItem .btn--orange {
+						  background-color: green;
+						}
+					</pre>
+
+					<a href="http://codepen.io/team/css-tricks/pen/EaJEBZ"></a>
+					<a href="http://codepen.io/team/css-tricks/pen/RNOMzJ"></a>
+				</section>
+
+				<section>
+					<h1>Side effects in CSS</h1>
+					<p>
+						CSS is global, and every rule you write has the potential to affect entirely unrelated parts of the site. It’s this unpredictability that makes writing good CSS so hard. In computer science, you say a function has side effects if, in addition to returning a value, it also modifies some state of the outside world.
+					</p>
+
+					<p>In CSS, side effects come in three main forms:</p>
+					<ul>
+						<li>Base rule changes</li>
+						<li>Naming collisions</li>
+						<li>Subtree matches</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Base rule changes</h1>
+					<div class="half">
+						<h2>COL1</h2>
+						You create some base, foundational styles (margins, font sizes, colors, etc.), and then your components build on top of them—so they don’t have to rewrite the shared rules.
+
+						The problem is this approach only saves you time if you never change your base rules.
+
+						But in practice, site designs can and do change. 
+						You might decide to make the font size of your headings a little larger,
+						or use different default margins on your paragraphs,
+						or maybe you realize you prefer borders instead of underlines for links. 
+
+						If your components depend on base styles, then changes to those base styles will require checking your entire site to ensure everything still looks right.
+					</div>
+					<div class="half">
+						<h2>COL2</h2>
+						Strict BEM conventions require the sole use of class selectors.
+
+						You start with a global reset, and then you use blocks to style everything on the page. 
+
+						Adding a class to an element is the only way to style it, which means all styling is opt-in rather than de facto. Blocks encapsulate all of their styling and rely on no external dependencies.
+					</div>
+				</section>
+
+				<section>
+					<h1>Naming collisions</h1>
+					<div class="half">
+						<h2>COL1</h2>
+						CSS will not warn you if you use a class selector that already exists in your stylesheet. In fact, the ability to override rules is one of the features of the language. 
+
+						As a result, without a convention in place to avoid this, or a build-time check to protect yourself, there’s no good way to be sure the class you picked wasn’t already picked by someone else.
+
+						When multiple developers are committing to the same code base, the chances of two people choosing the same name and not knowing it is extremely high. This is especially true of common name choices like “button”, “content” or “title”.
+					</div>
+					<div class="half">
+						<h2>COL2</h2>
+						In BEM, every class selector is either the block name itself or uses the block name as a prefix, and the rules for each block live in their own dedicated file. 
+
+						Since file systems do not allow two files to have the same name, the OS is actually helping to prevent accidental duplication.???
+
+						If you follow all of the BEM naming conventions, and you ensure all block code resides in its own file, you will never have naming collisions.
+					</div>
+				</section>
+
+				<section>
+					<h1>Subtree matches</h1>
+					<div class="half">
+						<h2>COL1</h2>
+						Lots of developers are aware of the above two forms of CSS side effects, so you’ll often see people use a descendant combinator to limit the scope of the rules they’re writing (e.g. #homepage .header or .some-widget .title).
+
+						While this approach is slightly safer, it can still produce side effects. As I hinted at above, the appearance of safety can actually make this practice more risky.
+
+						Limiting the scope of a selector to a particular DOM subtree does guarantee that it won’t affect elements outside of that subtree. The problem is it doesn’t guarantee that it won’t unintentionally affect elements within the same subtree.
+					</div>
+					<div class="half">
+						<h2>COL2</h2>
+						The subtree matching example in the previous section used the selectors .article .title and .widget .title.
+
+						Since the class name “title” was used in both cases, there’s a risk of subtree matching. 
+
+						BEM avoids this risk by requiring that all element classes be prefixed with the block name. 
+
+						The BEM equivalents of these two title selectors would be .article__title 
+						.widget__title
+
+						 Since the class names are different, their styles won’t ever conflict, and thus it’s impossible to have unintended subtree matches.
+					</div>
+				</section>
+
+				<section>
+					Piktodev
+
+					Edit-trash exist in both grid and list view
+					Can be improve by giving it a different name
+
+					onhover__edit-trash
+					listview__edit-trash
+				</section>
+
+			</div>
+		</div>
+
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+		<script src="jquery.min.js"></script>
+		<script src="js/prettypre.js"></script>
+		<script>
+		    $( function() { $('pre').prettyPre(); } );
+
+		    $(document).ready(function(){
+		        $('#navbar').find('li').on('click',function(){
+		            alert('test')
+		        });
+		    });
+		</script>
+	</body>
+</html>

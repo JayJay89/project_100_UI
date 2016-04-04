@@ -266,7 +266,7 @@ section {
   background-color: #dfd;
 }
 
-.h-gi .x {
+.h-gix {
   color: #000;
   background-color: #afa;
 }
@@ -283,7 +283,7 @@ section {
   font-weight: bold;
 }
 
-.h-gu {
+.h-gsub {
   color: #aaa;
 }
 
@@ -310,14 +310,6 @@ section {
 .h-kt {
   color: #458;
   font-weight: bold;
-}
-
-.h-m {
-  color: #099;
-}
-
-.h-s {
-  color: #d14;
 }
 
 .h-na {
@@ -369,6 +361,14 @@ section {
 
 .h-w {
   color: #bbb;
+}
+
+.h-m {
+  color: #099;
+}
+
+.h-s {
+  color: #d14;
 }
 
 .h-mf {
