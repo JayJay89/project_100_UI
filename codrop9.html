@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title> </title>
+		<!-- Bootstrap -->
+		<link href="css/codrop9.css" rel="stylesheet">
+		<link href="css/normalize.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<a class="back-button" href="index.html">Back</a>
+		<div class="bb-wrapper">
+			<div class="bb-container">
+				
+				<div class="bb">
+					<i class="bb-home-icon"></i>
+					<h2 class="bb-title">Home</h2>
+					<div class="bb-bubble" href="#/">
+						<ul>
+							<li><a href="#/">Portfolio</a></li>
+							<li><a href="#/">Services</a></li>
+							<li><a href="#/">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+		<script src="jquery.min.js"></script>
+
+		<script>
+			$(function(){
+				$('.bb').hover(
+				function(){
+					$('.bb-bubble').stop().animate({
+						'width':'200px',
+						'height':'200px',
+						'padding-top':'90px',
+						'left': '-70px',
+						'opacity': '1.0'
+					},300,function(){
+						$('.bb-bubble').find('ul').show().animate({
+							'opacity': '1.0'
+						});
+					});
+				},function(){
+
+
+					$('.bb-bubble').find('ul').animate({
+						'opacity': '0'
+					}, 300, function(){
+						$('.bb-bubble').stop().animate({
+							'width':'52px',
+							'height':'52px',
+							'padding-top':'0px',
+							'left': '7px',
+							'opacity': '0'
+						});
+
+						$('.bb-bubble').find('ul').hide();		
+					});
+
+
+					// $('.bb-bubble').stop().animate({
+
+					// });
+
+					// ,500,function(){
+					// 	$('.bb-bubble').find('ul').hide().animate({
+					// 		'opacity': '0'
+					// 	});
+					// });
+
+
+				});
+			});
+	
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
