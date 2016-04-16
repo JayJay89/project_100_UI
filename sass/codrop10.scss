@@ -1,0 +1,36 @@
+@import "all";
+
+.rr {
+	width: 95%;
+	margin: 100px auto 100px;
+}
+
+.rr-circle {
+	background-color: green;
+	display: inline-block;
+	border-radius: 40px;
+	padding: 10px;
+	vertical-align: middle;
+	width: 68px;
+	height: 68px;
+	// width: 100%;
+
+	overflow: hidden;
+	position: relative;
+	@include clearfix;
+
+	img {
+		float: left;
+		margin-right: 10px;
+		transform: rotate(0deg);
+	}
+
+	p {
+		position: absolute;
+		display: inline-block;
+		margin: 0px;
+		line-height: 48px;
+		color: white;
+		// opacity: 0;
+	}
+}
