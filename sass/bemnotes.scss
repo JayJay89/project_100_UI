@@ -4,45 +4,39 @@ h1, h2, h3, h4, h5, h6 {
 	display: block;
 }
 
-img {
-	max-width: 100%;
-}
-
-.wrapper {
+.bem__wrapper {
 	background-color: lightblue;
 }
 
-.container {
+.bem__container {
 	width: 90%;
 	margin: 0 auto;
-}
+	padding: 20px 0px;
 
-pre {
-	padding: 20px;
-	border: 1px solid gray;
-	display: inline-block;
-	border-radius: 5px;
-	background-color: white;
-}
+	> h1 {
+		margin: 0px;
+	}
 
-section {
-	@include clearfix();
-	border-bottom: 1px solid red;
-	padding: 50px 0px;
-}
+	pre {
+		padding: 20px;
+		border: 1px solid gray;
+		display: inline-block;
+		border-radius: 5px;
+		background-color: white;
 
-
-ul {
-	margin-left: 20px;
-	li {
-		margin: 10px 20px;
-		list-style: disc;
-		line-height: 25px;
-		span {
-			font-weight: bold;
-			font-style: italic;
-			text-decoration: underline;
+		&.wrong {
+			color: red;
 		}
+	}
+
+	section {
+		@include clearfix();
+		border-bottom: 1px solid red;
+		padding: 50px 0px;
+	}
+
+	ul {
+		margin-left: 20px;
 	}
 }
 
@@ -56,11 +50,140 @@ ul {
 	}
 }
 
+.em {
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: underline;
+	color: red;
+}
+
+.bem__intro__image {
+	width: 70%;
+	border: 1px solid red;
+	margin: 0 auto;
+	display: block;
+	background-color: #f0f0f0;
+	padding: 20px;
+}
+
+.bem__style__ul {
+	margin-left: 20px;
+	li {
+		margin: 5px 20px;
+		list-style: disc;
+		line-height: 25px;
+	}
+}
+
 .bem__intro__header {
 	margin: 20px 0px;
 
 	+span {
 		font-size: 20px;
 		font-style: italic;
+	}
+}
+
+.bem__btn__example {
+	margin: 0px;
+	list-style: none;
+	line-height: normal;
+	@include clearfix;
+	div {
+		float: left;
+	}
+}
+
+.bem__btn__display{
+	width: 30%;
+
+	/* Block */
+	.btn {
+	  text-decoration: none;
+	  background-color: white;
+	  color: #888;
+	  border-radius: 5px;
+	  display: inline-block;
+	  margin: 10px;
+	  font-size: 18px;
+	  text-transform: uppercase;
+	  font-weight: 600;
+	  padding: 10px 5px;
+	}
+
+	/* Element */
+	.btn__price {
+	  background-color: white;
+	  color: #fff;
+	  padding-right: 12px;
+	  padding-left: 12px;
+	  margin-right: -10px; /* realign button text padding */
+	  font-weight: 600;
+	  background-color: #333;
+	  opacity: .4;
+	  border-radius: 5px 0 0 5px;
+	}
+
+	/* Element */
+	.btn__text {
+	  padding: 0 10px;
+	  border-radius: 0 5px 5px 0;
+	}
+
+	/* Modifier */
+	.btn--big {
+	  font-size: 28px;
+	  padding: 10px;
+	  font-weight: 400;
+	}
+
+	/* Modifier */
+	.btn--blue {
+	  border-color: #0074D9;
+	  color: white;
+	  background-color: #0074D9;
+	}
+
+	/* Modifier */
+	.btn--red {
+	  border-color: #FF4136;
+	  color: white;
+	  background-color: #FF4136;
+	}
+
+	/* Modifier */
+	.btn--green {
+	  border-color: #3D9970;
+	  color: white;
+	  background-color: #3D9970;
+	}
+}
+
+.bem__btn__code {
+	width: 70%;
+
+	pre {
+		margin: 0px;
+	}
+}
+
+.bem__proposed__change {
+	ul {
+		li {
+			span {
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+.bem__resources {
+	a {
+		display: block;
+		margin: 10px 0px;
+
+		&:hover {
+			color: red;
+		}
 	}
 }
