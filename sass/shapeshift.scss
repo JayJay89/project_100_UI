@@ -1,0 +1,65 @@
+@import "all";
+
+
+$blue: #158BC5;
+$red: #D25E51;
+$green: #1EB287;
+
+$total-steps: 3;
+
+@mixin animate ($name) {
+	@keyframes #{$name} {
+		@each $interval, $change in $animation-map {
+			#{percentage($interval/$total-steps)} {
+				@each $prop, $val in $change {
+					#{$prop}: #{$val};
+				}
+			}
+		}
+	}
+}
+
+$animation-map:(
+	0:(
+		opacity: 0, 
+		background-color: red
+	),
+
+	1:(
+		opacity: 1, 
+		background-color: yellow
+	),
+
+	2:(
+		opacity: 0, 
+		background-color: green
+	),
+
+	3:(
+		opacity: 1, 
+		background-color: red
+	),
+);
+
+@include animate ('warp-animation')
+
+.ss {
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+
+.ss-container {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.ss-shape {
+	height: 100px;
+	width: 100px;
+	background-color: $green;
+	display: inline-block;
+	animation: warp-animation 2s none infinite;
+}
+
