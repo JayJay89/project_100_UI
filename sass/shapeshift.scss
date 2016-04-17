@@ -21,23 +21,39 @@ $total-steps: 3;
 
 $animation-map:(
 	0:(
-		opacity: 0, 
-		background-color: red
+		border-radius: 0px,
+		border-top: 50px solid $green,
+		border-bottom: 50px solid $green,
+		border-left: 50px solid $green,
+		border-right: 50px solid $green,
+		transform: rotate(0deg)
 	),
 
 	1:(
-		opacity: 1, 
-		background-color: yellow
+		border-radius: 0px,
+		border-bottom: 0px solid transparent,
+		border-top: 86.6px solid $blue,
+		border-left: 50px solid transparent,
+		border-right: 50px solid transparent,
+		transform: rotate(60deg)
 	),
 
 	2:(
-		opacity: 0, 
-		background-color: green
+		border-radius: 50px,
+		border-top: 50px solid $red,
+		border-bottom: 50px solid $red,
+		border-left: 50px solid $red,
+		border-right: 50px solid $red,
+		transform: rotate(180deg)
 	),
 
 	3:(
-		opacity: 1, 
-		background-color: red
+		border-radius: 0px,
+		border-top: 50px solid $green,
+		border-bottom: 50px solid $green,
+		border-left: 50px solid $green,
+		border-right: 50px solid $green,
+		transform: rotate(360deg)
 	),
 );
 
@@ -55,11 +71,28 @@ $animation-map:(
 	text-align: center;
 }
 
+.ss-shape-container {
+	width: 200px;
+	height: 200px;
+	margin: 100px auto;
+}
+.ss-shapes {
+
+	width: 80%;
+	margin: 0 auto;
+
+	li {
+		display: inline-block;
+		width: 100%;
+		float:left;
+		border: 2px solid red;
+		height: 200px;
+	}
+}
 .ss-shape {
-	height: 100px;
-	width: 100px;
-	background-color: $green;
+	margin-top: 20px;
+	transform-origin: 50% 50%;
 	display: inline-block;
-	animation: warp-animation 2s none infinite;
+	animation: warp-animation 1.43s ease infinite;
 }
 

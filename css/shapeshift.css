@@ -59,20 +59,36 @@ ul {
 
 @keyframes warp-animation {
   0% {
-    opacity: 0;
-    background-color: red;
+    border-radius: 0px;
+    border-top: 50px solid #1EB287;
+    border-bottom: 50px solid #1EB287;
+    border-left: 50px solid #1EB287;
+    border-right: 50px solid #1EB287;
+    transform: rotate(0deg);
   }
   33.33333% {
-    opacity: 1;
-    background-color: yellow;
+    border-radius: 0px;
+    border-bottom: 0px solid transparent;
+    border-top: 86.6px solid #158BC5;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    transform: rotate(60deg);
   }
   66.66667% {
-    opacity: 0;
-    background-color: green;
+    border-radius: 50px;
+    border-top: 50px solid #D25E51;
+    border-bottom: 50px solid #D25E51;
+    border-left: 50px solid #D25E51;
+    border-right: 50px solid #D25E51;
+    transform: rotate(180deg);
   }
   100% {
-    opacity: 1;
-    background-color: red;
+    border-radius: 0px;
+    border-top: 50px solid #1EB287;
+    border-bottom: 50px solid #1EB287;
+    border-left: 50px solid #1EB287;
+    border-right: 50px solid #1EB287;
+    transform: rotate(360deg);
   }
 }
 
@@ -88,10 +104,28 @@ ul {
   text-align: center;
 }
 
-.ss-shape {
-  height: 100px;
-  width: 100px;
-  background-color: #1EB287;
+.ss-shape-container {
+  width: 200px;
+  height: 200px;
+  margin: 100px auto;
+}
+
+.ss-shapes {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.ss-shapes li {
   display: inline-block;
-  animation: warp-animation 2s none infinite;
+  width: 100%;
+  float: left;
+  border: 2px solid red;
+  height: 200px;
+}
+
+.ss-shape {
+  margin-top: 20px;
+  transform-origin: 50% 50%;
+  display: inline-block;
+  animation: warp-animation 1.43s ease infinite;
 }
