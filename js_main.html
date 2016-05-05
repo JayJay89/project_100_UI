@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title> </title>
+		<!-- Bootstrap -->
+		<link href="css/js_main.css" rel="stylesheet">
+		<link href="css/normalize.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<a class="back-button" href="index.html">Back</a>
+		<div class="js_main_container">
+			<h1>Statements</h1>
+				<p>In JavaScript, instructions are called statements and are separated by a semicolon (;).</p>
+				<p>The source text of JavaScript scripts gets scanned from left to right</p>
+				<p>semi-colon</p>
+
+			<h1>Comments</h1>
+				<pre>
+					// Comments start with two forward slash
+				</pre>
+				<pre>
+					/*
+						Multiline comments
+					*/
+				</pre>
+
+			<h1>Displaying results</h1>
+				<pre>
+					alert("popup");
+					document.write("displays on HTML page");
+					console.log("displays on console");
+				</pre>
+
+			<h1>Variables</h1>
+				<p>Variables are used to store values</p>
+				<p>Variables start with lowercase letter, dollarsign($) or underscore(_)</p>
+				<p>They are usually written in camelCase</p>
+				<p>Reserved words cannot be used</p>
+
+				<pre>
+					var y = 2;
+				</pre>
+
+				<pre>
+					var x;
+					x = 5;
+				</pre>
+
+				<p>Data Types</p>
+				<p>Strings</p>
+				<pre>
+					var myName = "JJ";
+					typeof myName --> returns "string"
+				</pre>
+
+				<p>Numbers</p>
+				<pre>
+					var year = "2014";
+					var pi = 28;
+					typeof year --> returns "number"
+				</pre>
+
+				<p>Function</p>
+				<pre>
+					var myFunc = function(){};
+					typeof myFunc --> returns "function"
+				</pre>
+
+				<p>Boolean</p>
+				<pre>
+					var isNice = true;
+					var hasCake = false;
+				</pre>
+
+				<p>Special Types</p>
+				<pre>
+					var cars --> returns "undefined"
+					person = null --> returns "null"
+				</pre>
+			
+			<h1>Increment and Decrement</h1>
+				<pre>
+					var x = 5;
+					var x = x + 1;
+				</pre>
+				<p>is the same as</p>
+				<pre>
+					x++;
+				</pre>
+			<h1>Operators</h1>
+
+				<p> == equal to </p>
+				<p> === equal value and type </p>
+				<p> != not equal to </p>
+				<p> !== not equal value or not equal type </p>
+				<p> > greater than </p>
+				<p> > less than </p>
+
+
+				<pre>
+					var strX = "5";
+					var numX = 5;
+					strX == numX; --> returns "true";
+					strX === numX --> returns "false";
+				</pre>
+		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+		<script src="jquery.min.js"></script>
+		<script src="js/prettypre.js"></script>
+		<script>
+		    $( function() { $('pre').prettyPre(); } );
+
+		    $(document).ready(function(){
+		        $('#navbar').find('li').on('click',function(){
+		            alert('test')
+		        });
+		    });
+		</script>
+	</body>
+</html>

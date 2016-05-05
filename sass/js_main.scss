@@ -1,0 +1,25 @@
+@import "all";
+
+ul {
+	display: block;
+	list-style-type: disc;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 40px;
+}
+
+pre {
+	border: 1px solid orange;
+	border-radius: 4px;
+	padding: 4px;
+	background-color: black;
+	color: lightgreen;
+}
+
+.js_main_container {
+	border: 1px solid red;
+	width: 90%;
+	margin: 0 auto;
+}

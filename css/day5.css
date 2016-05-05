@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/*clear fixes*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*Equal Height*/
+.eq-height {
+  overflow: hidden;
+}
+
+.eq-height .eq-height-col {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+
+/*Back Button*/
+.back-button {
+  position: fixed;
+  top: 0px;
+  background-color: #f0f0f0;
+  padding: 5px;
+  z-index: 99999;
+}
+
+.testbox {
+  width: 200px;
+  height: 200px;
+  display: block;
+  content: "test";
+  background-color: red;
+  z-index: 1;
+}
+
+.mp {
+  height: 100vh;
+  width: 100%;
+  background: url("../day5/bg.jpg") no-repeat;
+  background-size: cover;
+  display: table;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.mp-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.mp-container {
+  display: inline-block;
+  background-color: black;
+  padding: 40px 30px;
+  border-radius: 10px;
+  width: 425px;
+}
+
+.mp-album-cover {
+  margin-bottom: -74px;
+  position: relative;
+}
+
+.mp-album-cover:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0px;
+  background: -moz-linear-gradient(top, transparent 0%, black 90%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, transparent 0%, black 90%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, transparent 0%, black 90%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.mp-album-image {
+  max-width: 100%;
+  display: block;
+  height: 385px;
+  width: 385px;
+}
+
+.mp-song-info {
+  color: white;
+  display: block;
+  word-wrap: break-word;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 50px;
+}
+
+.mp-song-detail {
+  width: 90%;
+  float: left;
+}
+
+.mp-play-pause {
+  display: inline-block;
+  float: right;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  cursor: pointer;
+}
+
+.mp-pause-icon {
+  height: 15px;
+  display: inline-block;
+}
+
+.mp-pause-icon:hover > .bar {
+  background-color: rgba(255, 78, 112, 0.5);
+}
+
+.mp-pause-icon .bar {
+  height: 100%;
+  width: 4px;
+  background-color: #ff4e70;
+  margin-right: 3px;
+  display: inline-block;
+  float: left;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.mp-pause-icon .bar:last-child {
+  margin-right: 0px;
+}
+
+.mp-play-icon {
+  display: inline-block;
+  height: 0px;
+  width: 0px;
+  transition: border-color 0.2s ease;
+  border-right: 0px solid transparent;
+  border-left: 15px solid #ff4e70;
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+}
+
+.mp-play-icon:hover {
+  border-left: 15px solid rgba(255, 78, 112, 0.5);
+}
+
+.mp-band-name,
+.mp-album-name {
+  color: rgba(255, 255, 255, 0.2);
+  display: block;
+  text-align: left;
+  font-size: 15px;
+}
+
+.mp-song-name {
+  font-size: 35px;
+  display: block;
+  text-align: left;
+  text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mp-progress-time {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.mp-time-elapsed,
+.mp-time-remain {
+  font-size: 15px;
+}
+
+.mp-time-elapsed {
+  color: white;
+  float: left;
+}
+
+.mp-time-remain {
+  color: rgba(255, 254, 251, 0.2);
+  float: right;
+}
+
+.mp-progress-bar-container {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(255, 254, 251, 0.2);
+  position: relative;
+}
+
+.mp-progress-bar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: inherit;
+  width: 0%;
+  background-color: #ff4e70;
+}
+
+.mp-repeat-icon,
+.mp-shuffle-icon {
+  opacity: 0.2;
+}
+
+.mp-play-setting {
+  margin-top: 20px;
+}
+
+.mp-repeat-icon {
+  float: left;
+}
+
+.mp-shuffle-icon {
+  float: right;
+}

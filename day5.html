@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title> Day 5 - Music Player</title>
+		<!-- Bootstrap -->
+		<link href="css/day5.css" rel="stylesheet">
+		<link href="css/normalize.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<a class="back-button" href="index.html">Back</a>
+
+		<div class="mp">
+			<div class="mp-wrapper">
+				<div class="mp-container">
+					<div class="mp-album-cover">
+						<img class="mp-album-image" src="day5/song.jpg" alt="song">
+					</div>
+			
+					<div class="mp-song-info clearfix">
+						<div class="mp-song-detail">
+							<span class="mp-band-name">Muse</span>
+							<span class="mp-album-name">The 2nd Law</span>
+							<span class="mp-song-name">Madness</span>
+						</div>
+
+						<div class="mp-play-pause">
+							<i class="mp-pause-icon clearfix">
+								<div class="bar"></div>
+								<div class="bar"></div>
+							</i>
+
+							<i class="mp-play-icon"></i>
+						</div>
+					</div>
+
+					<div class="mp-progress">
+
+						<div class="mp-progress-time clearfix">
+							<span class="mp-time-elapsed">1:57</span>
+							<span class="mp-time-remain">4:39</span>
+						</div>
+
+						<div class="mp-progress-bar-container">
+							<div class="mp-progress-bar"></div>
+						</div>
+					</div>
+
+					<div class="mp-play-setting clearfix">
+						<img class="mp-repeat-icon"src="day5/repeat.png" alt="repeat">
+						<img class="mp-shuffle-icon"src="day5/shuffle.png" alt="shuffle">
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+		<script src="jquery.min.js"></script>
+		<script src="js/day5.js"></script>
+	</body>
+</html>
