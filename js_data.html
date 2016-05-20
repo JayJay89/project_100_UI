@@ -193,6 +193,51 @@
     </section>
 
     <section>
+      <h2>Array to Number</h2>
+
+      <div class="columns col-3">
+        <section>
+          <h2>Code</h2>
+          <pre>
+            [true,  true,  true,  false,
+            true,  true,  true,  true ,
+            true,  false, true,  false,
+            true,  false, false, true ,
+            true,  true,  true,  true ,
+            false, false, true,  true]
+          </pre>
+        </section>
+
+        <section>
+          <h2>my Solution</h2>
+          <pre>
+            function countSheeps(arrayOfSheep) {
+              var sheepCount = 0;
+              
+              for (i = 0; i < arrayOfSheep.length; i++){
+                if (arrayOfSheep[i] == true){
+                    sheepCount += 1;
+                }
+              }
+              
+              return sheepCount
+            }
+          </pre>
+        </section>
+
+        <section>
+          <h2>Solution</h2>
+          <pre>
+            function countSheeps(arrayOfSheeps) {
+              return arrayOfSheeps.filter(Boolean).length;
+            }
+          </pre>
+        </section>
+      </div>
+      <p>Consider an array of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).</p>
+    </section>
+
+    <section>
       <h1>Methods</h1>
       <!--HEADER-->
       <div class="columns">
@@ -209,6 +254,7 @@
 
       <!--ARRAY-->
       <!--join()-->
+      <h1>Array Methods</h1>
       <div class="columns">
         <section>Array.prototype.join()</section>
         <section>
@@ -280,6 +326,7 @@
       </div>
 
       <!--OBJECTS-->
+      <h1>Object Methods</h1>
       <div class="columns">
         <section>Object.prototype.toString()</section>
         <section>
@@ -300,6 +347,7 @@
 
       <!--NUMBERS-->
       <!--toFixed()-->
+      <h1>Number Methods</h1>
       <div class="columns">
         <section>Number.prototype.toFixed()</section>
         <section>
@@ -328,7 +376,44 @@
         </section>
       </div>
 
+      <!--MATH-->
+      <!--.abs()-->
+      <h1>Math Methods</h1>
+      <div class="columns">
+        <section>Math.abs()</section>
+        <section>
+          <pre>
+            Math.abs('-1');     
+            Math.abs(-2);       
+            Math.abs(null);     
+            Math.abs('');       
+            Math.abs([]);       
+            Math.abs([2]);      
+            Math.abs([1,2]);   
+            Math.abs({});      
+            Math.abs('string');
+            Math.abs();        
+          </pre>
+        </section>
+        <section>
+          <pre>
+           1
+           2
+           0
+           0
+           0
+           2
+           NaN
+           NaN
+           NaN
+           NaN
+          </pre>
+        </section>
+      </div>
+
       <!--STRINGS-->
+      <h1>String Methods</h1>
+      <h1>todo filter()</h1>
       <!--split()-->
       <div class="columns">
         <section>String.prototype.split()</section>
@@ -366,148 +451,34 @@
           </pre>
         </section>
       </div>
-      filter()
-
-    </section>
-
-    <section>
-      <h2>Array to Number</h2>
-
-      <div class="columns col-3">
+      <!--charAt()-->
+      <div class="columns">
+        <section>String.prototype.charAt()</section>
         <section>
-          <h2>Code</h2>
           <pre>
-            [true,  true,  true,  false,
-            true,  true,  true,  true ,
-            true,  false, true,  false,
-            true,  false, false, true ,
-            true,  true,  true,  true ,
-            false, false, true,  true]
+            var anyString = 'Brave new world';
           </pre>
         </section>
-
         <section>
-          <h2>my Solution</h2>
           <pre>
-            function countSheeps(arrayOfSheep) {
-              var sheepCount = 0;
-              
-              for (i = 0; i < arrayOfSheep.length; i++){
-                if (arrayOfSheep[i] == true){
-                    sheepCount += 1;
-                }
-              }
-              
-              return sheepCount
-            }
-          </pre>
-        </section>
 
-        <section>
-          <h2>Solution</h2>
-          <pre>
-            function countSheeps(arrayOfSheeps) {
-              return arrayOfSheeps.filter(Boolean).length;
-            }
           </pre>
         </section>
       </div>
-      <p>Consider an array of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).</p>
-    </section>
-
-    <section>
-      <h1>Concepts</h1>
-      <h2>Closure</h2>
-      arrow function
+      <!--replace()-->
       <div class="columns">
-        <section>Closure</section>
+        <section>String.prototype.replace()</section>
         <section>
           <pre>
-            function Person(name){
-              this.name = name;
-            }
-
-            var george = new Person (George);
-            george --> Person{name: "George"}
-            george.name --> "George"
-          </pre>
-          <p>george.name is an attribute of the george object and therefore could be access</p>
-        </section>
-        <section>
-          <pre>
-            function Person(name){
-              var name = name;
-            }
-
-            var george = new Person (George);
-            george --> Person{}
-            george.name --> undefined
-          </pre>
-          <p>
-            george.name is undefined because the attribute is undefined. var name only exist within the Person object and cannot be accessed. It is out of scope
-          </p>
-        </section>
-      </div>
-
-      <div class="columns">
-        <section>
-          A closure allows you to access that name by creating a function within the function
-        </section>
-
-        <section>
-          <pre>
-            function Person(pName, pAge){
-              var _Name = pName;
-              var _Age = pAge;
-              
-              this.getName = function(){
-                return _Name;
-              }
-              
-              this.getAge = function(){
-                return _Age;
-              }
-            }
-
-            var george = new Person ("George Orwell");
-            console.log (george);
-            console.log (george.getName);
-            console.log (george.getName());
-          </pre>
-        </section>
-
-        <section>
-          <pre>
-            Object { getName: Person/this.getName(), getAge: Person/this.getAge() }
-            function Person/this.getName()
-            George Orwell
-          </pre>
-        </section>
-      </div>
-
-      <div class="columns">
-        <section>
-          A closure allows you to access that name by creating a function within the function
-        </section>
-        <section>
-        <p>From Codewars</p>
-        <p>Given an input n, write a function always that returns a function which returns n. </p>
-
-
-        </section>
-        <section>
-          <pre>
-            function always(n) {
-              return function () { return n };
+            VOWEL REMOVER = replace any vowel with nothing
+            function shortcut(string){
+              return string.replace(/[aeiou]/g,'')
             }
           </pre>
+        </section>
+        <section>
           <pre>
-            function always(n) {
-              function always2() { 
-                return n 
-              };
-              return always2;
-            }
+
           </pre>
         </section>
       </div>

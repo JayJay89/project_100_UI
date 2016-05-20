@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title> JS - Concepts </title>
+    <!-- Bootstrap -->
+    <link href="css/general.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <a class="back-button" href="index.html">Back</a>
+    <div class="container"> 
+
+    <h1>Concepts</h1>
+    <h2>Event propagation</h2>
+
+    <section>
+      <h2>Functional Programming</h2>
+      <ul>
+        <li>At a fundamental level, functional programming specifies the use of functions as arguments. </li>
+        <li>functional programming enable you to write codes with less bugs in less time.</li>
+        <li>functions are values.</li>
+        <li>functions, just like string or variables, can be assigned to a variable.</li>
+        <li>functions, can also be passed into another function</li>
+        <li>They are referred to as Higher Order Functions, or callback functions </li>
+      </ul>
+
+      <pre>
+        var triple = function triple(x){
+          return x * 3
+        }
+
+        //Functions can be passed around like values.
+        var waffle = triple
+
+        waffle(30); // ==> 90
+      </pre>
+
+      <h2>Higher Order Functions</h2>
+      <ul>
+        <li>Higher Order functions are great for compositions</li>
+        <li>The fact that we can pass functions in to another function allows us to compose smaller functions into a bigger one</li>
+        <li>Filter() is a higher order function, it accepts another function as its argument</li>
+      </ul>
+
+      <h2>Filter()</h2>
+      <p>In this example below, we want to filter out all the cats. The usual way to do this would be to write a for loop. The other way to do this is to use the filter function. The filter uses less code and less bug. The filter function and the animal function are composed together well</p>
+      
+      <div class="columns">
+        <section></section>
+        <section>
+          <pre>
+            var animals = [
+              {name: "Meow",species: "cat"},
+              {name: "Bark",species: "dog"},
+              {name: "Feline",species: "cat"},
+              {name: "blu",species: "fish"},
+              {name: "tru",species: "cat"},
+            ]
+          </pre>
+        </section>
+
+        <section>
+          <pre>
+            USING FOR LOOP
+            var cats = [];
+            for (i = 0; i < animals.length; i++){
+              if (species === "cat") {
+                cats.push(animals[i])
+              }
+            }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section></section>
+        <section>
+          <pre>
+            USING FILTER
+            var cats = animals.filter(function(animal){
+              return animal.species === "cat"
+            })
+          </pre>
+        </section>
+        <section>
+          <pre>
+            SEPARATING the CODE
+            // this function check for animal which is a cat
+            var isCat = function(animal){
+              return animal.species === "cat"
+            }
+
+            // this function go through the array, filter out cats and put them in another array
+            var cat = animals.filter(isCat);
+          </pre>
+        </section>
+      </div>
+
+      <h2>Map()</h2>
+      <p>Map passes an array through a function and return a new set of array</p>
+
+      <div class="columns">
+        <section></section>
+        <section>
+          <pre>
+            var animals = [
+              {name: "Meow",species: "cat"},
+              {name: "Bark",species: "dog"},
+              {name: "Feline",species: "cat"},
+              {name: "blu",species: "fish"},
+              {name: "tru",species: "cat"},
+            ]
+          </pre>
+        </section>
+        <section>
+          <pre>
+            USING FOR LOOP
+            var names = [];
+            for (i = 0; i < animals.length; i++){
+              names.push(animals[i].name)
+            }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section></section>
+        <section>
+          <pre>
+            USING MAP
+            var names = animals.map(function(x){
+              return x.name + "is a" + x.species
+            })
+          </pre>
+        </section>
+        <section>
+          <pre>
+            USING ARROW FUNCTION
+            var names = animals.map(function(x){return x.name})
+            var names = animals.map((x) => x.name)
+            var names = animals.map((x) => x.name + " is a " + x.species)
+          </pre>
+        </section>
+      </div>
+      
+      <p>Note that Filter(), Map(), are list transformation tools</p>
+
+      <h2>Reduce()</h2>
+      <p>This calculates the total of the amount in orders</p>
+      <div class="columns">
+        <section></section>
+        <section>
+          <pre>
+            var orders = [
+              { amount: 250},
+              { amount: 400},
+              { amount: 100},
+              { amount: 325},
+            ]
+          </pre>
+        </section>
+        <section>
+          <pre>
+            FOR LOOP
+            var totalAmount = 0
+            for (var i = 0; i < orders.length; i++){
+              totalAmount += orders[i].amount
+            }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <pre>
+          var totalAmount = orders.reduce(function(sum, order){
+            console.log ("hello", sum, order)
+            return sum + order.amount
+          }, 0)
+
+          // 0, is the starting point
+          // sum is the first argument
+          // order will receive the iterated item, the second argument
+        </pre>
+      </div>
+
+      <div class="columns">
+        <pre>
+          var totalAmount = orders.reduce(function(sum, order){
+            console.log ("hello", sum, order)
+            return sum + order.amount
+          }, 0)
+        </pre>
+      </div>
+
+      <div class="columns">
+        <pre>
+          var totalAmount = orders.reduce(function(sum, order){return sum + order.amount}, 0)
+          var totalAmount = orders.reduce((sum, order) => {return sum + order.amount}, 0)
+        </pre>
+      </div>
+
+      <h2>Closure</h2>
+      <ul>
+        <li>In JS, functions are also closures</li>
+        <li>Closures are functions that has a access to a private variable which defined within it</li>
+        <li>(MDN) Closures are functions whose inner functions refer to independent (free) variables (variables that are used locally, but defined in an enclosing scope). In other words, the functions defined in the closure 'remember' the environment in which they were created.</li>
+      </ul>
+
+      <div class="columns">
+        <section>
+        </section>
+        <section>
+          <pre>
+            var me = 'Bruce Wayne'
+            function greetMe() {
+              console.log('Hello, ' + me + '!')
+            }
+            greetMe() // Hello, Bruce Wayne!
+          </pre>
+        </section>
+        <section>
+          <pre>
+            MDN example
+            function init() {
+              var name = "Mozilla"; // name is a local variable created by init
+              function displayName() { // displayName() is the inner function, a closure
+                alert(name); // use variable declared in the parent function    
+              }
+              displayName();    
+            }
+            init();
+          </pre>
+        </section>
+      </div>
+
+      <p>Variables which are defined within a function is only available within the scope of that function</p>
+      <p>Hence a function which had a inner function which can retrieve that var value is a closure</p>
+
+      <div class="columns">
+        <section>Closure</section>
+        <section>
+          <pre>
+            function Person(name){
+              this.name = name;
+            }
+
+            var george = new Person (George);
+            george --> Person{name: "George"}
+            george.name --> "George"
+          </pre>
+          <p>george.name is an attribute of the george object and therefore could be access</p>
+        </section>
+        <section>
+          <pre>
+            function Person(name){
+              var name = name;
+            }
+
+            var george = new Person (George);
+            george --> Person{}
+            george.name --> undefined
+          </pre>
+          <p>
+            george.name is undefined because the attribute is undefined. var name only exist within the Person object and cannot be accessed. It is out of scope
+          </p>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+          A closure allows you to access that name by creating a function within the function
+        </section>
+
+        <section>
+          <pre>
+            function Person(pName, pAge){
+              var _Name = pName;
+              var _Age = pAge;
+              
+              this.getName = function(){
+                return _Name;
+              }
+              
+              this.getAge = function(){
+                return _Age;
+              }
+            }
+
+            var george = new Person ("George Orwell");
+            console.log (george);
+            console.log (george.getName);
+            console.log (george.getName());
+          </pre>
+        </section>
+
+        <section>
+          <pre>
+            Object { getName: Person/this.getName(), getAge: Person/this.getAge() }
+            function Person/this.getName()
+            George Orwell
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+          A closure allows you to access that name by creating a function within the function
+        </section>
+        <section>
+        <p>From Codewars</p>
+        <p>Given an input n, write a function always that returns a function which returns n. </p>
+
+
+        </section>
+        <section>
+          <pre>
+            function always(n) {
+              return function () { return n };
+            }
+          </pre>
+          <pre>
+            function always(n) {
+              function always2() { 
+                return n 
+              };
+              return always2;
+            }
+          </pre>
+        </section>
+      </div>
+
+      <h2>Currying</h2>
+      <div class="columns">
+        <section>
+          Currying
+        </section>
+        
+        <section>
+          <pre>
+            USUAL FUNCTION
+            let dragon = function(name, size, element) {
+              return name + " is a " + size + " dragon that breathes " + element
+            }
+            
+            ARROW FUNCTION
+            let dragon = (name, size, element) => 
+              name + " is a " + 
+              size + " dragon that breathes " + 
+              element + "!"
+          </pre>
+        </section>
+        
+        <section>
+        </section>
+      </div>
+    </section>
+
+    <section>
+
+    </section>
+    
+    <section>
+      <h2>Ternary Operator</h2>
+
+      <div class="columns">
+        <section>Ternary Operator</section>
+        <section>
+          <pre>
+            condition ? expr1 : expr2 
+          </pre>
+        </section>
+        <section>
+          <pre>
+            if (condition) {
+              expr1
+            } else {
+              expr2
+            }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>Ternary Operator</section>
+        <section>
+          <pre>
+            function booleanToString(b){
+              return b ? 'true' : 'false';
+            }
+          </pre>
+        </section>
+        <section>
+          <pre>
+          function booleanToString(b){
+            if(b){
+              return "true";
+              }
+              else{
+              return "false";
+              }
+          }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>Ternary Operator</section>
+        <section>
+          <pre>
+            function areYouPlayingBanjo(name) {
+              if  (name[0].toLowerCase() == "r") {
+                return name + " plays banjo";    
+              } else {
+                return name + " does not play banjo";
+              }
+            }
+          </pre>
+        </section>
+        <section>
+          <pre>
+            function areYouPlayingBanjo(name) {
+              return name + (name[0].toLowerCase() == "r" ? " plays" : " does not play") + " banjo";
+            }
+          </pre>
+        </section>
+      </div>
+    </section>
+
+    <section>
+      <h2>Regular Expression</h2>
+
+      <pre>
+        var input = "123sdas45das223";
+        function processString(x){
+          var result = x.match(/as/g);
+          console.log(result);
+        }
+      </pre>
+
+      <div class="columns">
+        <section>
+          Regex
+
+        </section>
+        <section>
+          <pre>
+            x.match(/\d/)
+            x.match(/\d/g)
+            x.match(/\d+/g)
+          </pre>
+          <pre>
+            x.match(/a/)
+            x.match(/as/)
+            x.match(/as/g)
+            x.match(/([a-z])/g);
+          </pre>
+        </section>
+        <section>
+          <pre>
+            Array [ "1" ]
+            Array [ "1", "2", "3", "4", "5", "2", "2", "3" ]
+            Array [ "123", "45", "223" ]
+          </pre>
+          <pre>
+            Array [ "a" ]
+            Array [ "as" ]
+            Array [ "as", "as" ]
+            Array [ "s", "d", "a", "s", "d", "a", "s" ]
+          </pre>
+        </section>
+      </div>
+    </section>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="jquery.min.js"></script>
+    <script src="js/prettypre.js"></script>
+    <script>
+        $( function() { $('pre').prettyPre(); } );
+    </script>
+  </body>
+</html>
