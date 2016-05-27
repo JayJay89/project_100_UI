@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/*clear fixes*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*Equal Height*/
+.eq-height {
+  overflow: hidden;
+}
+
+.eq-height .eq-height-col {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+
+/*Back Button*/
+.back-button {
+  position: fixed;
+  top: 0px;
+  background-color: #f0f0f0;
+  padding: 5px;
+  z-index: 99999;
+}
+
+.testbox {
+  width: 200px;
+  height: 200px;
+  display: block;
+  content: "test";
+  background-color: red;
+  z-index: 1;
+}
+
+.cancal {
+  padding-top: 40px;
+}
+
+.cancal_point, .cancal_result {
+  position: fixed;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.cancal_point {
+  top: 50px;
+  right: 50px;
+  background-color: orange;
+}
+
+.cancal_result {
+  top: 90px;
+  right: 50px;
+  background-color: aquamarine;
+}
+
+.cancal_addnew_input {
+  background-color: red;
+  padding: 10px;
+  display: none;
+}
+
+.cancal_addnew_input.active {
+  display: block;
+}
+
+label {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid red;
+  margin: 10px 2px;
+}
+
+label > .close-label {
+  background-color: red;
+  padding: 0px 5px;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  border-radius: 50%;
+}

@@ -1,0 +1,45 @@
+@import "all";
+
+.cancal {
+    padding-top: 40px
+}
+.cancal_point, .cancal_result {
+    position: fixed;
+    padding: 5px;
+    font-size: 20px
+}
+.cancal_point {
+    top: 50px;
+    right: 50px;
+    background-color: orange;
+}
+.cancal_result {
+    top: 90px;
+    right: 50px;
+    background-color: aquamarine;
+}
+
+.cancal_addnew_input {
+    background-color: red;
+    padding: 10px;
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid red;
+    margin: 10px 2px;
+
+    > .close-label {
+        background-color: red;
+        padding: 0px 5px;
+        display: inline-block;
+        cursor: pointer;
+        color: white;
+        border-radius: 50%;
+    }
+}

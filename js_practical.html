@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title> JS - Concepts </title>
+    <!-- Bootstrap -->
+    <link href="css/general.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <a class="back-button" href="index.html">Back</a>
+    <div class="container"> 
+
+    <section>
+      <h2>Fastest Way to...</h2>
+      <!--Arrays-->
+      <div class="columns">
+        <section>
+          Return number of trues in an array
+        </section>
+        <section>
+          <pre>
+            EXPECTED RESULT
+              [true, true, false, false] ==> 2
+              [true, true, true, false] ==> 3
+          </pre>
+        </section>
+        <section>
+          <pre>
+            arr=[true, false, true, false]
+            function countSheeps(arr) {
+              return arr.filter(Boolean).length;
+            }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+          return sum of array
+        </section>
+        <section>
+          <pre>
+            Test.assertEquals(sum([]), 0);
+            Test.assertEquals(sum([1, 5.2, 4, 0, -1]), 9.2);
+          </pre>
+        </section>
+        <section>
+          <pre>
+          sum = function (numbers) {
+            "use strict";
+            return numbers.reduce(function(t, n){
+              return t + n;
+            }, 0);
+          };
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+          Find String position in array
+        </section>
+        <section>
+          <pre>
+            findNeedle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk'])
+            'found the needle at position 5'
+          </pre>
+        </section>
+        <section>
+          <pre>
+            function findNeedle(haystack) {
+              return "found the needle at position " + haystack.indexOf("needle");
+            }
+          </pre>
+        </section>
+      </div>
+
+      <!--Numbers-->
+      <div class="columns">
+        <section>
+          take any non-negative integer as a argument and return it with it's digits in descending order
+        </section>
+        <section>
+          <pre>
+          EXPECTED RESULT
+            Input: 145263 Output: 654321
+            Input: 1254859723 Output: 9875543221
+          </pre>
+        </section>
+        <section>
+          <pre>
+            function descendingOrder(n){
+              return parseInt(String(n).split('').sort().reverse().join(''))
+            }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+          Count by X
+        </section>
+        <section>
+          <pre>
+            EXPECTED RESULT
+              countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
+              countBy(2,5) === [2,4,6,8,10]
+          </pre>
+        </section>
+        <section>
+          <pre>
+          function countBy(x, n) {
+              var z = [];
+              for (i = 1; i <= n; i++) {
+                  z.push(x * i);
+              }
+              return z;
+          }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+          return string as 1010101
+        </section>
+        <section>
+          <pre>
+            EXPECTED RESULT
+            size 6 string return :'101010'.
+            size 4 string return : '1010'.
+          </pre>
+        </section>
+        <section>
+          <pre>
+          function stringy(size) {
+            var str='';
+            for( var i=1; i<=size; i++ )
+              str += i%2;
+            return str;
+          }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+          Round numbers to two decimal places.
+        </section>
+        <section>
+          <pre>
+            EXPECTED RESULT
+            5.5589 is rounded 5.56   
+            3.3424 is rounded 3.34
+          </pre>
+        </section>
+        <section>
+          <pre>
+            const twoDecimalPlaces = n =>  Number(n.toFixed(2))
+            
+            or
+
+            const twoDecimalPlaces = function(n){
+              Number(n.toFixed(2))
+            }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+          Convert number to reversed array of digits
+        </section>
+        <section>
+          <pre>
+            EXPECTED RESULT
+              348597 => [7,9,5,8,4,3]
+          </pre>
+        </section>
+        <section>
+          <pre>
+            function digitize(n){
+              return (n + '').split('').map(Number).reverse();
+            }
+
+            map(Number) ==> turns string into number
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+          Return negative
+        </section>
+        <section>
+          <pre>
+          makeNegative(1); // return -1
+          makeNegative(-5); // return -5
+          makeNegative(0); // return 0
+          </pre>
+        </section>
+        <section>
+          <pre>
+          function getGrade (s1, s2, s3) {
+            avg = (s1+s2+s3)/3;
+            if (avg < 60)  return "F";
+              else if (avg < 70) return "D";
+              else if (avg < 80) return "C";
+              else if (avg < 90) return "B";
+              else return "A";
+          }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+          Invert number
+        </section>
+        <section>
+          <pre>
+            1: -1
+            14: -14
+            -34: 34
+          </pre>
+        </section>
+        <section>
+          <pre>
+          function opposite(number) {
+            return(-number);
+          }
+          </pre>
+        </section>
+      </div>
+
+      <!--STRING-->
+      <div class="columns">
+        <section>
+          Identify first letter of string
+        </section>
+        <section>
+          <pre>
+            if first letter of string is R,r, Returns true
+          </pre>
+        </section>
+        <section>
+          <pre>
+          function isNameStartWithR(name) {
+            return (name[0].toLowerCase() == 'r' ? true : false);
+          }
+          </pre>
+        </section>
+      </div>
+
+      <!-- Multi If Else-->
+      <div class="columns">
+        <section>
+          Return grade for different score
+        </section>
+        <section>
+          <pre>
+            Numerical Score Letter Grade
+            90 <= score <= 100  'A'
+            80 <= score < 90  'B'
+            70 <= score < 80  'C'
+            60 <= score < 70  'D'
+            0 <= score < 60 'F'
+          </pre>
+        </section>
+        <section>
+          <pre>
+          function getGrade (s1, s2, s3) {
+            avg = (s1+s2+s3)/3;
+            if (avg < 60)  return "F";
+              else if (avg < 70) return "D";
+              else if (avg < 80) return "C";
+              else if (avg < 90) return "B";
+              else return "A";
+          }
+          </pre>
+          <pre>
+          function getGrade (s1, s2, s3) {
+            var s = (s1 + s2 + s3) / 3
+            return s >= 90 ? "A" : s >= 80 ? "B" : s >= 70 ? "C" : s >= 60 ? "D" : "F"
+          }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+          do func 1 if true, do func 2 if false
+        </section>
+        <section>
+          <pre>
+
+          </pre>
+        </section>
+        <section>
+          <pre>
+            function _if(bool, func1, func2) {
+              return bool ? func1() : func2();
+            }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+         ball object is given type
+         if no type is given, ball type is regular
+        </section>
+        <section>
+          <pre>
+
+          </pre>
+        </section>
+        <section>
+          <pre>
+            var Ball = function(ballType) {
+              this.ballType = ballType || 'regular';
+            };
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+          Check 2 numbers, <br>
+          if both of them are true/false together, return false; <br>
+          if both of them are different, return true
+        </section>
+        <section>
+          <pre>
+
+          </pre>
+        </section>
+        <section>
+          <pre>
+            function lovefunc(flower1, flower2){
+              return flower1 % 2 !== flower2 % 2;
+            }
+          </pre>
+        </section>
+      </div>
+      <!--REGEX-->
+      <div class="columns">
+        <section>
+          Vowel remover
+        </section>
+        <section>
+          <pre>
+            shortcut("codewars") // --> cdwrs
+            shortcut("goodbye")  // --> gdby
+          </pre>
+        </section>
+        <section>
+          <pre>
+            function shortcut(string){
+              return string.replace(/[aeiou]/g,'')
+            }
+          </pre>
+        </section>
+      </div>
+
+      <div class="columns">
+        <section>
+          Count the total number of lowercase letters in a string.
+        </section>
+        <section>
+          <pre>
+          lowercaseCount("abc"); ===> 3
+          lowercaseCount("abcABC123"); ===> 3
+          lowercaseCount("abcABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 3
+          lowercaseCount(""); ===> 0;
+          lowercaseCount("ABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 0
+          lowercaseCount("abcdefghijklmnopqrstuvwxyz"); ===> 26
+          </pre>
+        </section>
+        <section>
+          <pre>
+            function lowercaseCount(str){
+              return (str.match(/[a-z]/g) || []).length
+            }
+
+            // || sets the default value, as match returns null
+          </pre>
+        </section>
+      </div>
+    </section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="jquery.min.js"></script>
+    <script src="js/prettypre.js"></script>
+    <script>
+        $( function() { $('pre').prettyPre(); } );
+    </script>
+  </body>
+</html>
