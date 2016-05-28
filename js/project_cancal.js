@@ -41,18 +41,24 @@ $(document).ready(function(){
         var criteria = c_input.val();
         var value = v_input.val();
 
-        /*Generate new checkbox*/
         var newLabel = 
             $('<form/>', {'class': 'cancal_point_check'})
             .append(
-                $('<label/>')
-                .append (
-                    $('<input/>', {'type': 'checkbox', 'data-value':value})
-                )
+                $('<div/>')
                 .append(
                     $('<span/>', {text: criteria})
                 )
             )
+            .append(
+                $('<div/>')
+                .append(
+                    $('<label/>')
+                    .append (
+                        $('<input/>', {'type': 'checkbox', 'data-value':value})
+                    )
+                )
+            )
+
         // Generate checkbox close button
         var newLabelClose =
             $('<i/>', {'class':'close-label', text: "x"})
@@ -68,6 +74,7 @@ $(document).ready(function(){
             alert("Please input");
         } else {
             $('.cancal_addpoint_list').append( $(newLabel).append(newLabelClose));
+
         /*remove input container and input value once submmited*/
             c_container.removeClass('active');
             c_input.val('');
@@ -87,16 +94,19 @@ $(document).ready(function(){
         
         var str_temp = '';
 
-        $('form').each(function(){
-            if ($(this).find('input').is(':checked')){
-                str_temp = str_temp.concat( $(this).find('span').text() + " - " + $(this).find('input:checked').attr('data-value') +"<br>" );
+        $('.cancal_list').children().each(function() {
+
+            if ($(this).is('form')) {
+                if ($(this).find('input').is(':checked')){
+                    str_temp = str_temp.concat( $(this).find('span').text() + " = " + $(this).find('input:checked').attr('data-value') +"<br>" );
+                }
+            } else if ($(this).is('h1')){
+                str_temp = str_temp.concat("<br>" + '<b style="color:red; text-transform:uppercase; font-family: Arial">' + $(this).text() + '</b>' + "<br>");
             }
         });
 
         str_temp = str_temp.concat( $('.cancal_total_point').text() +"<br>");
         str_temp = str_temp.concat( $('.cancal_result').text() +"<br>" );
-
-        // printLog.textContent = str_temp;
 
         var x=window.open();
         x.document.open();

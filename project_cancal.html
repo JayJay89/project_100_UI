@@ -21,79 +21,289 @@
 		
 		<div class="cancal">
 
-			<div class="cancal_total_point">Result</div>
-			<div class="cancal_result">Result</div>
-			
+			<div class="cancal_total_point"></div>
+			<div class="cancal_result"></div>
+			<div class="cancal_point_guide">Result</div>
+
+
 			<div class="cancal_list">
-				<h1>Highpoints Multichoice</h1>
+				<h1>High points</h1>
 				<form class="cancal_multichoice_check">
-					<span>Criteria 1</span>
-					<input type="radio" name="group1" id="a1" data-value="1" />
-					<label for="a1"> 1</label>
-					<input type="radio" name="group1" id="a2" data-value="2" />
-					<label for="a2"> 2</label>
-					<input type="radio" name="group1" id="a3" data-value="3" />
-					<label for="a3"> 3</label>
+					<div>
+						<span>Layout management</span>
+						<ul>
+							<li>Layout management, margin, padding and placement of boxes, parents & child element arrangement.</li>
+							<li>Clearfixes, Absolute, Relative, table-cell etc</li>
+							<li>Did candidate include extraneous elements?</li>
+						</ul>
+					</div>
+					<div>
+						<input type="radio" name="group1" id="a1" data-value="1" />
+						<label for="a1"> 1</label>
+						<input type="radio" name="group1" id="a2" data-value="2" />
+						<label for="a2"> 2</label>
+						<input type="radio" name="group1" id="a3" data-value="3" />
+						<label for="a3"> 3</label>
+					</div>
+				</form>
+
+				<form class="cancal_multichoice_check">
+					<div>
+						<span>Clean code (DRY)</span>
+						<ul>
+							<li>Same CSS value is not repeated under few different classes</li>
+						</ul>
+					</div>
+					<div>
+						<input type="radio" name="group2" id="b1" data-value="1" />
+						<label for="b1"> 1</label>
+						<input type="radio" name="group2" id="b2" data-value="2" />
+						<label for="b2"> 2</label>
+						<input type="radio" name="group2" id="b3" data-value="3" />
+						<label for="b3"> 3</label>
+					</div>
+				</form>
+
+				<form class="cancal_point_check cancal_point_negative">
+					<div>
+						<span>Candidate Uses inline css</span>
+					</div>
+					<div>
+						<label>
+							<input type="checkbox" data-value="-10">
+						</label>
+					</div>
+				</form>
+
+				<form class="cancal_multichoice_check">
+					<div>
+						<span>Flexible code & layout </span>
+						<ul>
+							<li>having max-width whenever necessary</li>
+							<li>not having fix value which makes the layout rigid</li>
+							<li>code is nested too in-depth which doesn’t allow the it to be shifted easily</li>
+						</ul>
+					</div>
+					<div>
+						<input type="radio" name="group2" id="c1" data-value="1" />
+						<label for="c1"> 1</label>
+						<input type="radio" name="group2" id="c2" data-value="2" />
+						<label for="c2"> 2</label>
+						<input type="radio" name="group2" id="c3" data-value="3" />
+						<label for="c3"> 3</label>
+					</div>
+				</form>
+
+				<form class="cancal_multichoice_check">
+					<div>
+						<span>Up-to-date code (not the old school way)</span>
+						<ul>
+							<li>Clearing floats the correct way</li>
+							<li>Using table/non table in correct scenario</li>
+							<li>Using shorthand to save lines of code</li>
+						</ul>
+					</div>
+					<div>
+						<input type="radio" name="group2" id="d1" data-value="1" />
+						<label for="d1"> 1</label>
+						<input type="radio" name="group2" id="d2" data-value="2" />
+						<label for="d2"> 2</label>
+						<input type="radio" name="group2" id="d3" data-value="3" />
+						<label for="d3"> 3</label>
+					</div>
+				</form>
+
+				<form class="cancal_multichoice_check">
+					<div>
+						<span>Layout responsiveness </span>
+						<ul>
+							<li>does the candidate manage responsive layout well?</li>
+						</ul>
+					</div>
+					<div>
+						<input type="radio" name="group2" id="e1" data-value="1" />
+						<label for="e1"> 1</label>
+						<input type="radio" name="group2" id="e2" data-value="2" />
+						<label for="e2"> 2</label>
+						<input type="radio" name="group2" id="e3" data-value="3" />
+						<label for="e3"> 3</label>
+					</div>
+				</form>
+
+				<form class="cancal_multichoice_check">
+					<div>
+						<span>Knowledge on SCSS (Mixins, Variables, @extend)</span>
+						<ul>
+							<li>correct usage of mixins & variable</li>
+						</ul>
+					</div>
+					<div>
+						<input type="radio" name="group2" id="f1" data-value="1" />
+						<label for="f1"> 1</label>
+						<input type="radio" name="group2" id="f2" data-value="2" />
+						<label for="f2"> 2</label>
+						<input type="radio" name="group2" id="f3" data-value="3" />
+						<label for="f3"> 3</label>
+					</div>
+				</form>
+
+				<form class="cancal_multichoice_check">
+					<div>
+						<span>Naming for HTML, CSS, SASS </span>
+						<ul>
+							<li>Understandable and maintainable class name </li>
+							<li></li>
+						</ul>
+					</div>
+					<div>
+						<input type="radio" name="group2" id="g1" data-value="1" />
+						<label for="g1"> 1</label>
+						<input type="radio" name="group2" id="g2" data-value="2" />
+						<label for="g2"> 2</label>
+						<input type="radio" name="group2" id="g3" data-value="3" />
+						<label for="g3"> 3</label>
+					</div>
+				</form>
+
+				<form class="cancal_multichoice_check">
+					<div>
+						<span>Attentiveness to UI detail  </span>
+						<ul>
+							<li>pay attention to the UI detail & different state styling (Hover over btn colors, etc)</li>
+						</ul>
+					</div>
+					<div>
+						<input type="radio" name="group2" id="h1" data-value="1" />
+						<label for="h1"> 1</label>
+						<input type="radio" name="group2" id="h2" data-value="2" />
+						<label for="h2"> 2</label>
+						<input type="radio" name="group2" id="h3" data-value="3" />
+						<label for="h3"> 3</label>
+					</div>
+				</form>
+
+				<form class="cancal_multichoice_check">
+					<div>
+						<span>Cross browser checking</span>
+						<ul>
+							<li>Eg: - UI looks good in different browser</li>
+							<li>Eg: - Full points if candidate uses normalize.css to render his work consistently on all </li>
+						</ul>
+					</div>
+					<div>
+						<input type="radio" name="group2" id="i1" data-value="1" />
+						<label for="i1"> 1</label>
+						<input type="radio" name="group2" id="i2" data-value="2" />
+						<label for="i2"> 2</label>
+						<input type="radio" name="group2" id="i3" data-value="3" />
+						<label for="i3"> 3</label>
+					</div>
 				</form>
 
 				<form class="cancal_point_check">
-					<label>
-						<span>mocha1</span>
-						<input type="checkbox" data-value="10">
-					</label>
+					<div>
+						<span>Candidate Uses Normalize</span>
+					</div>
+					<div>
+						<label>
+							<input type="checkbox" data-value="1">
+						</label>
+					</div>
 				</form>
 
 				<form class="cancal_multichoice_check">
-					<span>Criteria 2</span>
-					<input type="radio" name="group2" id="b1" data-value="1" />
-					<label for="b1"> 1</label>
-					<input type="radio" name="group2" id="b2" data-value="2" />
-					<label for="b2"> 2</label>
-					<input type="radio" name="group2" id="b3" data-value="3" />
-					<label for="b3"> 3</label>
+					<div>
+						<span>CSS Modularity</span>
+					</div>
+					<div>
+						<input type="radio" name="group2" id="j1" data-value="1" />
+						<label for="j1"> 1</label>
+						<input type="radio" name="group2" id="j2" data-value="2" />
+						<label for="j2"> 2</label>
+						<input type="radio" name="group2" id="j3" data-value="3" />
+						<label for="j3"> 3</label>
+					</div>
 				</form>
 			</div>
 
 			<div class="cancal_list">
-				<h1>Highpoints Check</h1>
+				<h1>Bonus Points</h1>
 				<form class="cancal_point_check">
-					<label>
-						<span>mocha1</span>
-						<input type="checkbox" data-value="1">
-					</label>
+					<div>
+						<span>Clean code indentation</span>
+					</div>
+					<div>
+						<label>
+							<input type="checkbox" data-value="1">
+						</label>
+					</div>
 				</form>
 
-				<form class="cancal_point_check">
-					<label>
-						<span>mocha2</span>
-						<input type="checkbox" data-value="2">
-					</label>
+				<form class="cancal_multichoice_check">
+					<div>
+						<span>Separation on project working environment</span>
+						<ul>
+							<li>global CSS Folder management separation</li>
+						</ul>
+					</div>
+					<div>
+						<input type="radio" name="group2" id="k1" data-value="1" />
+						<label for="k1"> 1</label>
+						<input type="radio" name="group2" id="k2" data-value="2" />
+						<label for="k2"> 2</label>
+						<input type="radio" name="group2" id="k3" data-value="3" />
+						<label for="k3"> 3</label>
+					</div>
 				</form>
 
-				<form class="cancal_point_check">
-					<label>
-						<span>mocha3</span>
-						<input type="checkbox" data-value="3">
-					</label>
+				<form class="cancal_multichoice_check">
+					<div>
+						<span>Bootstrap Usage</span>
+					</div>
+					<div>
+						<input type="radio" name="group2" id="l1" data-value="1" />
+						<label for="l1"> 1</label>
+						<input type="radio" name="group2" id="l2" data-value="2" />
+						<label for="l2"> 2</label>
+						<input type="radio" name="group2" id="l3" data-value="3" />
+						<label for="l3"> 3</label>
+					</div>
 				</form>
+
+				<form class="cancal_multichoice_check">
+					<div>
+						<span>Implementation</span>
+						<ul>
+							<li>Think further on implementation and not only code according to the given assets</li>
+						</ul>
+					</div>
+					<div>
+						<input type="radio" name="group2" id="m1" data-value="1" />
+						<label for="m1"> 1</label>
+						<input type="radio" name="group2" id="m2" data-value="2" />
+						<label for="m2"> 2</label>
+						<input type="radio" name="group2" id="m3" data-value="3" />
+						<label for="m3"> 3</label>
+					</div>
+				</form>
+
+<!-- 				<form class="cancal_point_check">
+					<div>
+						<span>Did candidate include extraneous elements</span>
+					</div>
+					<div>
+						<label>
+							<input type="checkbox" data-value="1">
+						</label>
+					</div>
+				</form> -->
 			</div>	
 
 			<!--================================================================================-->
 
-			<div class="cancal_list">
-				<h1>Bonus Points Check</h1>
-				<form class="cancal_point_check">
-					<label>
-						<input type="checkbox" data-value="12">
-						<span>Cappuchinie</span>
-					</label>
-				</form>
-			</div>
-
 			<div class="cancal_list cancal_addpoint_list">
 				<h1>Additional</h1>
 			</div>
-
 
 			<button class="cancal_addnew_button">add new</button>
 

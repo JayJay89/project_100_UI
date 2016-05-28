@@ -61,17 +61,21 @@ ul {
   z-index: 1;
 }
 
+input {
+  outline: none;
+}
+
 .cancal {
-  padding-top: 40px;
+  padding: 50px 0px;
   width: 95%;
   margin: 0 auto;
 }
 
 .cancal h1 {
-  font-size: 20px;
+  font-size: 30px;
 }
 
-.cancal_total_point, .cancal_result {
+.cancal_total_point, .cancal_result, .cancal_point_guide {
   position: fixed;
   padding: 5px;
   font-size: 20px;
@@ -89,6 +93,13 @@ ul {
   background-color: aquamarine;
 }
 
+.cancal_point_guide {
+  top: 140px;
+  right: 50px;
+  background-color: orange;
+}
+
+/*POINTS*/
 .cancal_addnew_input {
   background-color: red;
   padding: 10px;
@@ -99,22 +110,57 @@ ul {
   display: block;
 }
 
-label {
-  display: inline-block;
-  cursor: pointer;
-  border: 1px solid red;
-  margin: 2px 2px;
+.cancal_multichoice_check, .cancal_point_check {
+  border-bottom: 1px solid rgba(0, 127, 84, 0.4);
 }
 
-label + .close-label {
+.cancal_multichoice_check > div, .cancal_point_check > div {
+  display: inline-block;
+}
+
+.cancal_multichoice_check > div:first-child, .cancal_point_check > div:first-child {
+  width: 35%;
+  margin-right: 3%;
+  background-color: aquamarine;
+  padding: 10px;
+}
+
+.cancal_multichoice_check > div:first-child > span, .cancal_point_check > div:first-child > span {
+  font-weight: bold;
+  display: block;
+}
+
+.cancal_multichoice_check > div:first-child > ul, .cancal_point_check > div:first-child > ul {
+  font-size: 13px;
+  padding-left: 20px;
+  display: inline-block;
+}
+
+.cancal_point_negative > div:first-child {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.cancal_point_check .close-label {
   background-color: red;
   padding: 0px 5px;
   display: inline-block;
   cursor: pointer;
   color: white;
   border-radius: 50%;
+  font-style: normal;
+  margin-left: 10px;
+  opacity: 0.5;
 }
 
-form {
-  margin: 5px 0px;
+.cancal_point_check .close-label:hover {
+  opacity: 1;
+}
+
+.cancal_multichoice_check input + label {
+  margin-right: 10px;
+}
+
+label {
+  display: inline-block;
+  cursor: pointer;
 }
