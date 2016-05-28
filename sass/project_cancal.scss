@@ -13,29 +13,40 @@ input {
     }
 }
 
-.cancal_total_point, .cancal_result, .cancal_point_guide {
+.cancal_total_point, 
+.cancal_result, 
+.cancal_point_guide,
+.cancal_point_table {
     position: fixed;
-    padding: 5px;
-    font-size: 20px
+    padding: 10px;
+    font-size: 17px;
+    border-radius: 10px;
 }
 
 .cancal_total_point {
-    top: 50px;
+    top: 2%;
     right: 50px;
     background-color: orange;
 }
 
 .cancal_result {
-    top: 90px;
+    top: 7%;
     right: 50px;
     background-color: aquamarine;
 }
 
 .cancal_point_guide {
-    top: 140px;
+    top: 12%;
     right: 50px;
     background-color: orange;
 }
+.cancal_point_table {
+    top: 17%;
+    right: 50px;
+    background-color: green;
+    color: white;
+}
+
 
 /*POINTS*/
 .cancal_addnew_input {

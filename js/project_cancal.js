@@ -11,7 +11,6 @@ $(document).ready(function(){
         var totalPoints = 0;
 
         input.each(function(){
-            // console.log($(this));
             if ($(this).is(':checked')) {
                 totalPoints = parseInt($(this).attr('data-value')) + totalPoints;
             }
@@ -20,10 +19,14 @@ $(document).ready(function(){
         });
 
         /*Display Candidate pass or fail based on points*/
-        if (totalPoints >= 5) {
-            $('.cancal_result').text("Candidate Passed");
+        if (totalPoints <= 17) {
+            $('.cancal_result').text("Strong No");
+        } else if (totalPoints <= 26) {
+            $('.cancal_result').text("No");
+        } else if (totalPoints <= 35) {
+            $('.cancal_result').text("Yes");
         } else {
-            $('.cancal_result').text("Candidate Failed");
+            $('.cancal_result').text("Strong Yes");
         }
     };
 
@@ -95,7 +98,6 @@ $(document).ready(function(){
         var str_temp = '';
 
         $('.cancal_list').children().each(function() {
-
             if ($(this).is('form')) {
                 if ($(this).find('input').is(':checked')){
                     str_temp = str_temp.concat( $(this).find('span').text() + " = " + $(this).find('input:checked').attr('data-value') +"<br>" );
@@ -113,8 +115,36 @@ $(document).ready(function(){
         x.document.write(str_temp);
         x.document.close();
     }
+    
+    var getMinMax = function (){
+
+        var maxValue = 0;
+        var minValue = 0;
+
+        $('.cancal_list').find('form').each(function() {
+            if ($(this).hasClass('cancal_multichoice_check')) {
+                maxValue += 3;
+                minValue += 1;
+            } else if ($(this).hasClass('cancal_point_negative')) {
+                maxValue += 0;
+                minValue += 0;
+            } else {
+                maxValue += parseInt($(this).find('input').attr('data-value'));
+                minValue += 0;
+            }
+        });
+
+        console.log(maxValue)
+        console.log(minValue)
+
+        $('.cancal_point_guide').text(
+            "Max Point is : " + maxValue + " " +
+            "Min Point is : " + minValue
+        );
+    }
 
     countChecked();
+    getMinMax();
     cancal_label.on('click', countChecked);
     cancal_input.on('click', countChecked);
 
