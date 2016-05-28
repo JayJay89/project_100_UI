@@ -84,30 +84,14 @@ $(document).ready(function(){
     }
 
     var printLog = function (){
-        var printLog =  document.getElementById('cancal_printlog');
-        // var printLog =  $('#cancal_printlog');
-        // $(printLog).empty();
+        
         var str_temp = '';
 
-        $('.cancal_multichoice_check').each(function(index) {
+        $('form').each(function(){
             if ($(this).find('input').is(':checked')){
-                // printLog.innerHTML += $(this).find('p').text() + " - " + $(this).find('input:checked').attr('data-value') +"<br>"
-                str_temp = str_temp.concat( $(this).find('p').text() + " - " + $(this).find('input:checked').attr('data-value') +"<br>" );
+                str_temp = str_temp.concat( $(this).find('span').text() + " - " + $(this).find('input:checked').attr('data-value') +"<br>" );
             }
         });
-
-        $('.cancal_point_check').each(function(index) {
-            // console.log(this);
-            // console.log($(this).find('span').text());
-
-            if ($(this).find('input').is(':checked')){
-                // printLog.innerHTML += $(this).find('span').text() + " - " + $(this).find('input').attr('data-value') +"<br>"
-                str_temp = str_temp.concat( $(this).find('span').text() + " - " + $(this).find('input').attr('data-value') +"<br>" );
-            }
-        });
-
-        // printLog.innerHTML += $('.cancal_total_point').text() +"<br>"
-        // printLog.innerHTML += $('.cancal_result').text() +"<br>"
 
         str_temp = str_temp.concat( $('.cancal_total_point').text() +"<br>");
         str_temp = str_temp.concat( $('.cancal_result').text() +"<br>" );

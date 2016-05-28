@@ -27,7 +27,7 @@
 			<div class="cancal_list">
 				<h1>Highpoints Multichoice</h1>
 				<form class="cancal_multichoice_check">
-					<p>Criteria 1</p>
+					<span>Criteria 1</span>
 					<input type="radio" name="group1" id="a1" data-value="1" />
 					<label for="a1"> 1</label>
 					<input type="radio" name="group1" id="a2" data-value="2" />
@@ -36,8 +36,15 @@
 					<label for="a3"> 3</label>
 				</form>
 
+				<form class="cancal_point_check">
+					<label>
+						<span>mocha1</span>
+						<input type="checkbox" data-value="10">
+					</label>
+				</form>
+
 				<form class="cancal_multichoice_check">
-					<p>Criteria 2</p>
+					<span>Criteria 2</span>
 					<input type="radio" name="group2" id="b1" data-value="1" />
 					<label for="b1"> 1</label>
 					<input type="radio" name="group2" id="b2" data-value="2" />
@@ -98,11 +105,6 @@
 
 			<!--================================================================================-->
 			<button class="cancal_print_button">print</button>
-
-			<div id="cancal_printlog">
-				
-			</div>
-
 		</div>		
 		
 
