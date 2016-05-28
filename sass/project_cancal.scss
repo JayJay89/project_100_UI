@@ -1,14 +1,21 @@
 @import "all";
 
+
+
 .cancal {
-    padding-top: 40px
+    padding-top: 40px;
+    width:95%;
+    margin: 0 auto;
+    h1 {
+        font-size: 20px;
+    }
 }
-.cancal_point, .cancal_result {
+.cancal_total_point, .cancal_result {
     position: fixed;
     padding: 5px;
     font-size: 20px
 }
-.cancal_point {
+.cancal_total_point {
     top: 50px;
     right: 50px;
     background-color: orange;
@@ -32,9 +39,9 @@ label {
     display: inline-block;
     cursor: pointer;
     border: 1px solid red;
-    margin: 10px 2px;
+    margin: 2px 2px;
 
-    > .close-label {
+    + .close-label {
         background-color: red;
         padding: 0px 5px;
         display: inline-block;
@@ -42,4 +49,8 @@ label {
         color: white;
         border-radius: 50%;
     }
+}
+
+form {
+    margin: 5px 0px;
 }

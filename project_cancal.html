@@ -21,80 +21,88 @@
 		
 		<div class="cancal">
 
-			<div class="cancal_point">Result</div>
+			<div class="cancal_total_point">Result</div>
 			<div class="cancal_result">Result</div>
 			
-			<div class="cancal_list cancal_highpoint_list">
-				<h1>Highpoints</h1>
-				<label>
-					<input type="checkbox" name="vehicle" value="value" id="chb1">
-					<span>mocha</span>
-				</label>
+			<div class="cancal_list">
+				<h1>Highpoints Multichoice</h1>
+				<form class="cancal_multichoice_check">
+					<p>Criteria 1</p>
+					<input type="radio" name="group1" id="a1" data-value="1" />
+					<label for="a1"> 1</label>
+					<input type="radio" name="group1" id="a2" data-value="2" />
+					<label for="a2"> 2</label>
+					<input type="radio" name="group1" id="a3" data-value="3" />
+					<label for="a3"> 3</label>
+				</form>
 
-				<label>
-					<input type="checkbox" name="vehicle" value="value">
-					<span>cappuchino</span>
-				</label>
-
-				<label>
-					<input type="checkbox" name="vehicle" value="value">
-					<span>coffee</span>
-				</label>
-
-				<label>
-					<input type="checkbox" name="vehicle" value="value">
-					<span>coffee</span>
-				</label>
-
-				<label>
-					<input type="checkbox" name="vehicle" value="value">
-					<span>coffee</span>
-				</label>
+				<form class="cancal_multichoice_check">
+					<p>Criteria 2</p>
+					<input type="radio" name="group2" id="b1" data-value="1" />
+					<label for="b1"> 1</label>
+					<input type="radio" name="group2" id="b2" data-value="2" />
+					<label for="b2"> 2</label>
+					<input type="radio" name="group2" id="b3" data-value="3" />
+					<label for="b3"> 3</label>
+				</form>
 			</div>
 
-			<button class="cancal_addnew_button" id="cancal_highpoint_addnew">add new</button>
+			<div class="cancal_list">
+				<h1>Highpoints Check</h1>
+				<form class="cancal_point_check">
+					<label>
+						<span>mocha1</span>
+						<input type="checkbox" data-value="1">
+					</label>
+				</form>
+
+				<form class="cancal_point_check">
+					<label>
+						<span>mocha2</span>
+						<input type="checkbox" data-value="2">
+					</label>
+				</form>
+
+				<form class="cancal_point_check">
+					<label>
+						<span>mocha3</span>
+						<input type="checkbox" data-value="3">
+					</label>
+				</form>
+			</div>	
+
+			<!--================================================================================-->
+
+			<div class="cancal_list">
+				<h1>Bonus Points Check</h1>
+				<form class="cancal_point_check">
+					<label>
+						<input type="checkbox" data-value="12">
+						<span>Cappuchinie</span>
+					</label>
+				</form>
+			</div>
+
+			<div class="cancal_list cancal_addpoint_list">
+				<h1>Additional</h1>
+			</div>
+
+
+			<button class="cancal_addnew_button">add new</button>
 
 			<div class="cancal_addnew_input ">
-				<input type="text">
+				<input class="cancal_criteria_input" type="text" placeholder="criteria input">
+				<input class="cancal_value_input" type="text" placeholder="value input">
 				<button class="cancal_highpoint_submit">Submit</button>
 			</div>
 
-			<br><br><br><br><br><br><br><br><br><br><br><br>
+			<!--================================================================================-->
+			<button class="cancal_print_button">print</button>
 
-			<div class="cancal_list cancal_bonuspoint_list">
-				<h1>Bonus</h1>
-				<label>
-					<input type="checkbox" name="vehicle" value="value" id="chb1">
-					<span>mocha</span>
-				</label>
-
-				<label>
-					<input type="checkbox" name="vehicle" value="value">
-					<span>cappuchino</span>
-				</label>
-
-				<label>
-					<input type="checkbox" name="vehicle" value="value">
-					<span>coffee</span>
-				</label>
-
-				<label>
-					<input type="checkbox" name="vehicle" value="value">
-					<span>coffee</span>
-				</label>
-
-				<label>
-					<input type="checkbox" name="vehicle" value="value">
-					<span>coffee</span>
-				</label>
+			<div id="cancal_printlog">
+				
 			</div>
 
-			<button class="cancal_addnew_button" id="cancal_bonuspoint_addnew">add new</button>
-
-			<div class="cancal_addnew_input cancal_bonuspoint_input">
-				<input type="text">
-				<button class="cancal_bonuspoint_submit">Submit</button>
-			</div>
 		</div>		
 		
 

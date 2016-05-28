@@ -2,14 +2,22 @@
 $(document).ready(function(){
 
     console.log("ready");
+    var cancal_input = $('.cancal').find('input');
+    var cancal_label = $('.cancal').find('label');
 
     var countChecked = function (){
         /*Find check inputs and add them*/
-        var highPoint = $('.cancal_highpoint_list').find('input:checked').length * 2;
-        var bonusPoint = $('.cancal_bonuspoint_list').find('input:checked').length;
-        var totalPoints = highPoint + bonusPoint;
+        var input = $('.cancal').find('form').find('input');
+        var totalPoints = 0;
 
-        $('.cancal_point').text("Candidate's point: " + totalPoints);
+        input.each(function(){
+            // console.log($(this));
+            if ($(this).is(':checked')) {
+                totalPoints = parseInt($(this).attr('data-value')) + totalPoints;
+            }
+
+            $('.cancal_total_point').text("Candidate's total point: " + totalPoints);
+        });
 
         /*Display Candidate pass or fail based on points*/
         if (totalPoints >= 5) {
@@ -26,23 +34,28 @@ $(document).ready(function(){
 
     var createCheckbox = function (){
 
-        var c_input = $(this).prev('input');
+        var c_input = $(this).siblings('.cancal_criteria_input');
+        var v_input = $(this).siblings('.cancal_value_input');
+
         var c_container = $(this).parent();
-        var reason = c_input.val();
+        var criteria = c_input.val();
+        var value = v_input.val();
 
         /*Generate new checkbox*/
         var newLabel = 
-            $('<label/>')
-            .append (
-                $('<input/>', {'type': 'checkbox'})
-            )
+            $('<form/>', {'class': 'cancal_point_check'})
             .append(
-                $('<span/>', {text: reason})
+                $('<label/>')
+                .append (
+                    $('<input/>', {'type': 'checkbox', 'data-value':value})
+                )
+                .append(
+                    $('<span/>', {text: criteria})
+                )
             )
-        
-        /*Generate checkbox close button*/
+        // Generate checkbox close button
         var newLabelClose =
-            $('<span/>', {'class':'close-label', text: "x"})
+            $('<i/>', {'class':'close-label', text: "x"})
 
         /*Delete Checkbox*/
         var deleteCheckbox = function(elem){
@@ -51,23 +64,17 @@ $(document).ready(function(){
         }
 
         /*Generate Checkbox with X if there is input*/
-        if (reason == null || reason =="") {
+        if (criteria == null || criteria =="") {
             alert("Please input");
         } else {
-            if ($(this).attr('class')==='cancal_highpoint_submit') {
-                $('.cancal_highpoint_list').append( $(newLabel).append(newLabelClose));
-            } else {
-                $('.cancal_bonuspoint_list').append( $(newLabel).append(newLabelClose));
-            }
-
+            $('.cancal_addpoint_list').append( $(newLabel).append(newLabelClose));
         /*remove input container and input value once submmited*/
             c_container.removeClass('active');
             c_input.val('');
+            v_input.val('');
         }
 
-        $('label').on('click', function(){
-            countChecked();
-        });
+        $('label').on('click', countChecked);
 
         $('.close-label').on('click', function(){
             event.stopPropagation();
@@ -76,11 +83,52 @@ $(document).ready(function(){
         });
     }
 
-    countChecked();
-    $('.cancal_addnew_button').on('click', toggleInputBox);
-    $('.cancal_addnew_input').find('button').on('click', createCheckbox)
-});
+    var printLog = function (){
+        var printLog =  document.getElementById('cancal_printlog');
+        // var printLog =  $('#cancal_printlog');
+        // $(printLog).empty();
+        var str_temp = '';
 
+        $('.cancal_multichoice_check').each(function(index) {
+            if ($(this).find('input').is(':checked')){
+                // printLog.innerHTML += $(this).find('p').text() + " - " + $(this).find('input:checked').attr('data-value') +"<br>"
+                str_temp = str_temp.concat( $(this).find('p').text() + " - " + $(this).find('input:checked').attr('data-value') +"<br>" );
+            }
+        });
+
+        $('.cancal_point_check').each(function(index) {
+            // console.log(this);
+            // console.log($(this).find('span').text());
+
+            if ($(this).find('input').is(':checked')){
+                // printLog.innerHTML += $(this).find('span').text() + " - " + $(this).find('input').attr('data-value') +"<br>"
+                str_temp = str_temp.concat( $(this).find('span').text() + " - " + $(this).find('input').attr('data-value') +"<br>" );
+            }
+        });
+
+        // printLog.innerHTML += $('.cancal_total_point').text() +"<br>"
+        // printLog.innerHTML += $('.cancal_result').text() +"<br>"
+
+        str_temp = str_temp.concat( $('.cancal_total_point').text() +"<br>");
+        str_temp = str_temp.concat( $('.cancal_result').text() +"<br>" );
+
+        // printLog.textContent = str_temp;
+
+        var x=window.open();
+        x.document.open();
+        x.document.write(str_temp);
+        x.document.close();
+    }
+
+    countChecked();
+    cancal_label.on('click', countChecked);
+    cancal_input.on('click', countChecked);
+
+    $('.cancal_addnew_button').on('click', toggleInputBox);
+    $('.cancal_addnew_input').find('button').on('click', createCheckbox) 
+    $('.cancal_print_button').on('click', printLog);
+
+});
 
 
 /*

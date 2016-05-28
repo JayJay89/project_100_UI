@@ -63,15 +63,21 @@ ul {
 
 .cancal {
   padding-top: 40px;
+  width: 95%;
+  margin: 0 auto;
 }
 
-.cancal_point, .cancal_result {
+.cancal h1 {
+  font-size: 20px;
+}
+
+.cancal_total_point, .cancal_result {
   position: fixed;
   padding: 5px;
   font-size: 20px;
 }
 
-.cancal_point {
+.cancal_total_point {
   top: 50px;
   right: 50px;
   background-color: orange;
@@ -97,14 +103,18 @@ label {
   display: inline-block;
   cursor: pointer;
   border: 1px solid red;
-  margin: 10px 2px;
+  margin: 2px 2px;
 }
 
-label > .close-label {
+label + .close-label {
   background-color: red;
   padding: 0px 5px;
   display: inline-block;
   cursor: pointer;
   color: white;
   border-radius: 50%;
+}
+
+form {
+  margin: 5px 0px;
 }
