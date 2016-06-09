@@ -364,10 +364,6 @@
         </section>
       </div>
     </section>
-
-    <section>
-
-    </section>
     
     <section>
       <h2>Ternary Operator</h2>
@@ -435,7 +431,6 @@
         </section>
       </div>
 
-
       <div class="columns">
         <section>Ternary Operator</section>
         <section>
@@ -450,7 +445,6 @@
 
         </section>
       </div>
-
     </section>
 
     <section>
@@ -496,6 +490,37 @@
           </pre>
         </section>
       </div>
+    </section>
+
+    <section>
+      <h2>Arrow Function Summarization</h2>
+
+      <div class="column">
+        <section>
+          <pre>
+            var findAverage = function (nums) {
+              var total = nums.reduce(function(a,b){
+                return a + b;
+              },0);
+              
+              return total;
+            }
+          </pre>
+        </section>
+        <section>
+          <pre>
+            var findAverage = function (nums) {
+              return nums.reduce((a,b) => (a + b),0);
+            }
+          </pre>
+        </section>
+        <section>
+          <pre>
+              var findAverage = nums => nums.reduce((a,b) => (a + b),0);
+          </pre>
+        </section>
+      </div>
+
     </section>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
