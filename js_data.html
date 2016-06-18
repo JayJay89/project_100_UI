@@ -482,6 +482,25 @@
           </pre>
         </section>
       </div>
+      <!--match()-->
+      <div class="columns">
+        <section>String.prototype.match()</section>
+        <section>
+          <pre>
+            Using match()
+          </pre>
+        </section>
+        <section>
+          <pre>
+            var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+            var regexp = /[A-E]/gi;
+            var matches_array = str.match(regexp);
+
+            console.log(matches_array);
+            // ['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e']
+          </pre>
+        </section>
+      </div>
     </section>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->

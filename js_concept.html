@@ -52,163 +52,6 @@
         <li>Filter() is a higher order function, it accepts another function as its argument</li>
       </ul>
 
-      <h2>Filter()</h2>
-      <p>In this example below, we want to filter out all the cats. The usual way to do this would be to write a for loop. The other way to do this is to use the filter function. The filter uses less code and less bug. The filter function and the animal function are composed together well</p>
-      
-      <div class="columns">
-        <section></section>
-        <section>
-          <pre>
-            var animals = [
-              {name: "Meow",species: "cat"},
-              {name: "Bark",species: "dog"},
-              {name: "Feline",species: "cat"},
-              {name: "blu",species: "fish"},
-              {name: "tru",species: "cat"},
-            ]
-          </pre>
-        </section>
-
-        <section>
-          <pre>
-            USING FOR LOOP
-            var cats = [];
-            for (i = 0; i < animals.length; i++){
-              if (species === "cat") {
-                cats.push(animals[i])
-              }
-            }
-          </pre>
-        </section>
-      </div>
-
-      <div class="columns">
-        <section></section>
-        <section>
-          <pre>
-            USING FILTER
-            var cats = animals.filter(function(animal){
-              return animal.species === "cat"
-            })
-          </pre>
-        </section>
-        <section>
-          <pre>
-            SEPARATING the CODE
-            // this function check for animal which is a cat
-            var isCat = function(animal){
-              return animal.species === "cat"
-            }
-
-            // this function go through the array, filter out cats and put them in another array
-            var cat = animals.filter(isCat);
-          </pre>
-        </section>
-      </div>
-
-      <h2>Map()</h2>
-      <p>Map passes an array through a function and return a new set of array</p>
-
-      <div class="columns">
-        <section></section>
-        <section>
-          <pre>
-            var animals = [
-              {name: "Meow",species: "cat"},
-              {name: "Bark",species: "dog"},
-              {name: "Feline",species: "cat"},
-              {name: "blu",species: "fish"},
-              {name: "tru",species: "cat"},
-            ]
-          </pre>
-        </section>
-        <section>
-          <pre>
-            USING FOR LOOP
-            var names = [];
-            for (i = 0; i < animals.length; i++){
-              names.push(animals[i].name)
-            }
-          </pre>
-        </section>
-      </div>
-
-      <div class="columns">
-        <section></section>
-        <section>
-          <pre>
-            USING MAP
-            var names = animals.map(function(x){
-              return x.name + "is a" + x.species
-            })
-          </pre>
-        </section>
-        <section>
-          <pre>
-            USING ARROW FUNCTION
-            var names = animals.map(function(x){return x.name})
-            var names = animals.map((x) => x.name)
-            var names = animals.map((x) => x.name + " is a " + x.species)
-          </pre>
-        </section>
-      </div>
-      
-      <p>Note that Filter(), Map(), are list transformation tools</p>
-
-      <h2>Reduce()</h2>
-      <p>This calculates the total of the amount in orders</p>
-      <div class="columns">
-        <section></section>
-        <section>
-          <pre>
-            var orders = [
-              { amount: 250},
-              { amount: 400},
-              { amount: 100},
-              { amount: 325},
-            ]
-          </pre>
-        </section>
-        <section>
-          <pre>
-            FOR LOOP
-            var totalAmount = 0
-            for (var i = 0; i < orders.length; i++){
-              totalAmount += orders[i].amount
-            }
-          </pre>
-        </section>
-      </div>
-
-      <div class="columns">
-        <pre>
-          var totalAmount = orders.reduce(function(sum, order){
-            console.log ("hello", sum, order)
-            return sum + order.amount
-          }, 0)
-
-          // 0, is the starting point
-          // sum is the first argument
-          // order will receive the iterated item, the second argument
-        </pre>
-      </div>
-
-      <div class="columns">
-        <pre>
-          var totalAmount = orders.reduce(function(sum, order){
-            console.log ("hello", sum, order)
-            return sum + order.amount
-          }, 0)
-        </pre>
-      </div>
-
-      <div class="columns">
-        <pre>
-          var totalAmount = orders.reduce(function(sum, order){return sum + order.amount}, 0)
-          var totalAmount = orders.reduce((sum, order) => {return sum + order.amount}, 0)
-        </pre>
-      </div>
-
       <h2>Closure</h2>
       <ul>
         <li>In JS, functions are also closures</li>
@@ -364,7 +207,42 @@
         </section>
       </div>
     </section>
-    
+
+    <section>
+      <h2>Prototype</h2>
+      <p>
+        First, every JavaScript function has a prototype property (this property is empty by default), and you attach properties and methods on this prototype property when you want to implement inheritance. 
+      </p>
+      <p>
+        Firefox and most versions of Safari and Chrome have a __proto__ “pseudo” property (an alternative syntax) that allows you to access an object’s prototype property. By finding the __proto__ of an object, you can find out where it is originated from
+      </p>
+      <p>In the example below, Harry is created using the constructor, and the Harry object inherited the getName function from person object. However, if there are a lot of new person, each of them will have their own getName function </p>
+      <pre>
+        var person = function (name, age) {
+          this.name = name;
+          this.getName = function () {
+            return name;
+          }
+        }
+        var Harry = new person;
+      </pre>
+      <p>to solve this problem, the prototype property is used. So that it's only called</p>
+      <pre>
+        person.prototype.getName = function (){
+          return name;
+        }
+      </pre>
+
+      <p>An example of using a prototype on Array</p>
+      <pre>
+        Array.prototype.all = function(p){
+          return this.reduce(function(acc, val){
+            return acc && p(val);
+          }, true);
+        }
+      </pre>
+    </section>
+
     <section>
       <h2>Ternary Operator</h2>
 
@@ -517,6 +395,61 @@
         <section>
           <pre>
               var findAverage = nums => nums.reduce((a,b) => (a + b),0);
+          </pre>
+        </section>
+      </div>
+    </section>
+
+    <section>
+      <h1>Recursion</h1>
+      <p>Recursion is a function that calls itself</p>
+
+      <div class="columns">
+        <section>
+          Recursion
+        </section>
+        <section>
+          <pre>
+            function printWorld(arg){  
+              while (arg-- > 1){
+                printWorld();
+              }
+              console.log("hello world");
+            }
+
+            printWorld(2);
+          </pre>
+          <pre>
+            function factorial(n) {
+              if (n <= 1){
+                return 1;
+              } else {
+                return n * factorial(n-1);
+              }
+            }
+
+            console.log(factorial(5));
+          </pre>
+          <pre>
+            function reverse(str) {
+              if (str.length > 1) {
+                return reverse(str.slice(1)) + str[0]
+              } else {
+                return str;
+              }
+            }
+          </pre>
+        </section>
+        <section>
+          <pre>
+            hello world
+            hello world
+          </pre>
+          <pre>
+            120
+          </pre>
+          <pre>
+            dcba
           </pre>
         </section>
       </div>

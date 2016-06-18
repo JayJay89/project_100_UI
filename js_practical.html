@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title> JS - Concepts </title>
+    <title> JS - Practicals </title>
     <!-- Bootstrap -->
     <link href="css/general.css" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
@@ -21,491 +21,775 @@
     <div class="container"> 
 
     <section>
-      <h2>Fastest Way to...</h2>
-      <!--Arrays-->
-      <div class="columns">
-        <section>
-          Return number of trues in an array
-        </section>
-        <section>
-          <pre>
+      <h2>Practical Usage</h2>
+
+      <!--Reduce-->
+      <section>
+        <h2>REDUCE</h2>
+        <div class="columns">
+          <section>
+            return sum of array
+          </section>
+          <section>
+            <pre>
             EXPECTED RESULT
-              [true, true, false, false] ==> 2
-              [true, true, true, false] ==> 3
-          </pre>
-        </section>
-        <section>
-          <pre>
-            arr=[true, false, true, false]
-            function countSheeps(arr) {
-              return arr.filter(Boolean).length;
+              [1, 5.2, 4, 0, -1] ==> 9.2
+            </pre>
+          </section>
+          <section>
+            <pre>
+            sum = function (numbers) {
+              "use strict";
+              return numbers.reduce(function(t, n){
+                return t + n;
+              }, 0);
+            };
+            </pre>
+          </section>
+        </div>
+
+        <div class="columns">
+          <section>
+            Return total of a 2d Array<br>
+            [i,j]<br>
+            i is the passenger that gets on<br>
+            j is the passenger that gets off<br>
+            Calculate total passengers in the end
+          </section>
+          <section>
+            <pre>
+            EXPECTED RESULT
+              [[2,1],[3,1],[3,0]] ==> 6
+            </pre>
+          </section>
+          <section>
+            <pre>
+            var busStops = [[2,1],[3,1],[3,0]];
+
+            var sum = function(busStops) {
+              return busStops.reduce(function(rem, [on, off]){
+                console.log ("rem is " + rem);
+                console.log ("on is " + on);
+                console.log ("off is " + off);
+                console.log ("Current is " + (rem + on - off));
+                return rem + on - off;
+              }, 0);
             }
-          </pre>
-        </section>
-      </div>
+            </pre>
+          </section>
+        </div>
 
-      <h2>REDUCE</h2>
+        <div class="columns">
+          <section>
+            Flattening a 2D array
+          </section>
+          <section>
+            <pre>
+            EXPECTED RESULT
+              [[0, 1], [2, 3], [4, 5]] ==> [0, 1, 2, 3, 4, 5]
+            </pre>
+          </section>
+          <section>
+            <pre>
+            var flattened = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
+              return a.concat(b);
+            }, []);
+            </pre>
+          </section>
+        </div>
 
-      <div class="columns">
-        <section>
-          return sum of array
-        </section>
-        <section>
-          <pre>
-          EXPECTED RESULT
-            [1, 5.2, 4, 0, -1] ==> 9.2
-          </pre>
-        </section>
-        <section>
-          <pre>
-          sum = function (numbers) {
-            "use strict";
-            return numbers.reduce(function(t, n){
-              return t + n;
-            }, 0);
-          };
-          </pre>
-        </section>
-      </div>
-
-      <div class="columns">
-        <section>
-          Return total of a 2d Array<br>
-          [i,j]<br>
-          i is the passenger that gets on<br>
-          j is the passenger that gets off<br>
-          Calculate total passengers in the end
-        </section>
-        <section>
-          <pre>
-          EXPECTED RESULT
-            [[2,1],[3,1],[3,0]] ==> 6
-          </pre>
-        </section>
-        <section>
-          <pre>
-          var busStops = [[2,1],[3,1],[3,0]];
-
-          var sum = function(busStops) {
-            return busStops.reduce(function(rem, [on, off]){
-              console.log ("rem is " + rem);
-              console.log ("on is " + on);
-              console.log ("off is " + off);
-              console.log ("Current is " + (rem + on - off));
-              return rem + on - off;
-            }, 0);
-          }
-          </pre>
-        </section>
-      </div>
-
-      <div class="columns">
-        <section>
-          Flattening a 2D array
-        </section>
-        <section>
-          <pre>
-          EXPECTED RESULT
-            [[0, 1], [2, 3], [4, 5]] ==> [0, 1, 2, 3, 4, 5]
-          </pre>
-        </section>
-        <section>
-          <pre>
-          var flattened = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
-            return a.concat(b);
-          }, []);
-          </pre>
-        </section>
-      </div>
-      <h2>END OF REDUCE</h2>
-
-      <div class="columns">
-        <section>
-          Find String position in array
-        </section>
-        <section>
-          <pre>
-            findNeedle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk'])
-            'found the needle at position 5'
-          </pre>
-        </section>
-        <section>
-          <pre>
-            function findNeedle(haystack) {
-              return "found the needle at position " + haystack.indexOf("needle");
+        <div class="columns">
+          <section>
+            All, None & Any <br>
+            As a part of this Kata, you need to create three functions that one needs to be able to call upon an array:
+          </section>
+          <section>
+            <pre>
+            EXPECTED RESULT
+              arr1.all(isGreaterThanZero) == true;
+              arr2.all(isGreaterThanZero) == false;
+              arr1.none
+            </pre>
+          </section>
+          <section>
+            <pre>
+            function isGreaterThanZero (num) {
+              return num > 0;
             }
-          </pre>
-        </section>
-      </div>
+
+            function isLessThanZero (num) {
+              return num < 0;
+            }
+
+            Array.prototype.all = function(p){
+              return this.reduce(function(acc, val){
+                return acc && p(val);
+              }, true);
+            }
+
+            Array.prototype.none = function(p){
+              return this.reduce(function(acc, val){
+                return acc && !p(val);
+              }, true);
+            }
+
+            Array.prototype.any = function(p){
+              return this.reduce(function(acc, val){
+                return acc || p(val);
+              }, false);
+            }
+
+            arr1 = [1,2,3];
+            arr2 = [-1,2,3];
+            arr3 = [-1,-2,3];
+            </pre>
+          </section>
+        </div>
+
+        <div class="columns">
+          <section>
+            Map as Reduce <br>
+            Note that this reduce does the same thing a map does
+          </section>
+          <section>
+            <pre>
+              Array [ 2, 4, 6 ]
+            </pre>
+          </section>
+          <section>
+            <pre>
+              var data = [1 ,2 ,3]
+              var doubled = data.reduce(function(acc, val){
+                acc.push(val * 2);
+                return acc;
+              }, []);
+            </pre>
+            is similar to
+            <pre>
+              var doubleMapped = data.map(function(item){
+                return item * 2;
+              });
+            </pre>
+          </section>
+        </div>
+
+        <div class="columns">
+          <section>
+            Filter as Reduce <br>
+            Note that this reduce does the same thing a filter does
+          </section>
+          <section>
+            <pre>
+              [ 2, 4, 6, 8 ]
+            </pre>
+          </section>
+          <section>
+            <pre>
+              var data = [1, 2, 3, 4, 5, 6, 7, 8]
+              var evens = data.reduce(function(acc, val){
+                if (val % 2 == 0) {
+                  acc.push(val);
+                }
+                return acc;
+              }, []);
+            </pre>
+            is similar to
+            <pre>
+              var evensMapped = data.filter(function(item){
+                return item % 2 == 0;
+              });
+            </pre>
+          </section>
+        </div>
+
+        <div class="columns">
+          <section>
+            Chaining with filter and map <br>
+          </section>
+          <section>
+            <pre>
+              [ 4, 8, 12, 16 ]
+            </pre>
+          </section>
+          <section>
+            <pre>
+              var data = [1, 2, 3, 4, 5, 6, 7, 8]
+              var DoubleFilter = data.filter(function(value){
+                return value % 2 === 0;
+              }).map(function(value){
+                return value * 2;
+              });
+            </pre>
+          </section>
+        </div>
+
+        <div class="columns">
+          <section>
+            Speed Test
+          </section>
+          <section>
+            <pre>
+              bigData: 6ms
+              bigDataReduce:4ms
+            </pre>
+          </section>
+          <section>
+            <pre>
+              var bigData = []
+              for (var i = 0; i < 100000; i++){
+                bigData[i] = i;
+              }
+
+              //Starts Timer
+              console.time('bigData');
+              var filterMappedBigData = bigData.filter(function(value){
+                return value % 2 === 0;
+              }).map(function(value){
+                return value * 2;
+              });
+              console.timeEnd('bigData');
+            </pre>
+            is slower than using reduce
+            <pre>
+              console.time('bigDataReduce');
+              var bigDataReduce = bigData.reduce(function(acc, value){
+                if (value % 2 === 0){
+                  acc.push(value * 2);
+                }
+                return acc;
+              },[]);
+              console.timeEnd('bigDataReduce');
+            </pre>
+          </section>
+        </div>
+      </section>
+
+      <!--Map-->
+      <section>
+        <h2>MAP</h2>
+        <div class="columns">
+          <section>
+            Convert number to reversed array of digits
+          </section>
+          <section>
+            <pre>
+              EXPECTED RESULT
+                348597 => [7,9,5,8,4,3]
+            </pre>
+          </section>
+          <section>
+            <pre>
+              function digitize(n){
+                return (n + '').split('').map(Number).reverse();
+              }
+
+              map(Number) ==> turns string into number
+            </pre>
+          </section>
+        </div>
+
+        <div class="columns">
+          <section>
+            Double Character
+          </section>
+          <section>
+            <pre>
+              EXPECTED RESULT
+                doubleChar("String") ==> "SSttrriinngg"
+                doubleChar("Hello World") ==> "HHeelllloo  WWoorrlldd"
+            </pre>
+          </section>
+          <section>
+            <pre>
+              var stringy = "TEST"
+              var doubleChar = function(arg){
+                return arg.split('').map(function(c){
+                  return c + c;
+                }).join('');
+              }
+            </pre>
+            <pre>
+              var doubleChar = function(arg){
+                return arg.split('').map((c) => c + c).join("");
+              }
+            </pre>
+            <pre>
+              var doubleChar = (arg) => arg.split('').map((c) => c + c).join("");
+            </pre>
+          </section>
+        </div>
+
+        <div class="columns">
+          <section>
+            Double Character
+          </section>
+          <section>
+            <pre>
+              EXPECTED RESULT
+                doubleChar("String") ==> "SSttrriinngg"
+                doubleChar("Hello World") ==> "HHeelllloo  WWoorrlldd"
+            </pre>
+          </section>
+          <section>
+            <pre>
+              var doubleChar = function(str) {
+                return str.split("").map(function(c) => {
+                  return c + c
+                }).join("");
+              };
+            </pre>
+          </section>
+        </div>
+      </section>
+
+      <!--Filter-->
+      <section>
+        <h2>FILTER</h2>
+        <div class="columns">
+            <section>
+              In this example below, we want to filter out all the cats. The usual way to do this would be to write a for loop. The other way to do this is to use the filter function. The filter uses less code and less bug. The filter function and the animal function are composed together well
+            </section>
+            <section>
+              <pre>
+                EXPECTED RESULT
+                  3
+              </pre>
+            </section>
+            <section>
+              <pre>
+                var animals = [
+                  {name: "Meow",species: "cat"},
+                  {name: "Bark",species: "dog"},
+                  {name: "Feline",species: "cat"},
+                  {name: "blu",species: "fish"},
+                  {name: "tru",species: "cat"},
+                ]
+
+                var cats = animals.filter(function(animal){
+                  return animal.species === "cat"
+                })
+
+                console.log(cats.length);
+              </pre>
+            </section>
+        </div>
+      </section>
 
       <!--Numbers-->
-      <div class="columns">
-        <section>
-          take any non-negative integer as a argument and return it with it's digits in descending order
-        </section>
-        <section>
-          <pre>
-          EXPECTED RESULT
-            Input: 145263 Output: 654321
-            Input: 1254859723 Output: 9875543221
-          </pre>
-        </section>
-        <section>
-          <pre>
-            function descendingOrder(n){
-              return parseInt(String(n).split('').sort().reverse().join(''))
-            }
-          </pre>
-        </section>
-      </div>
-
-      <div class="columns">
-        <section>
-          Count by X
-        </section>
-        <section>
-          <pre>
+      <section>
+        <div class="columns">
+          <section>
+            take any non-negative integer as a argument and return it with it's digits in descending order
+          </section>
+          <section>
+            <pre>
             EXPECTED RESULT
-              countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
-              countBy(2,5) === [2,4,6,8,10]
-          </pre>
-        </section>
-        <section>
-          <pre>
-          function countBy(x, n) {
-              var z = [];
-              for (i = 1; i <= n; i++) {
-                  z.push(x * i);
+              Input: 145263 Output: 654321
+              Input: 1254859723 Output: 9875543221
+            </pre>
+          </section>
+          <section>
+            <pre>
+              function descendingOrder(n){
+                return parseInt(String(n).split('').sort().reverse().join(''))
               }
-              return z;
-          }
-          </pre>
-        </section>
-      </div>
+            </pre>
+          </section>
+        </div>
 
-      <div class="columns">
-        <section>
-          return string as 1010101
-        </section>
-        <section>
-          <pre>
-            EXPECTED RESULT
-            size 6 string return :'101010'.
-            size 4 string return : '1010'.
-          </pre>
-        </section>
-        <section>
-          <pre>
-          function stringy(size) {
-            var str='';
-            for( var i=1; i<=size; i++ )
-              str += i%2;
-            return str;
-          }
-          </pre>
-        </section>
-      </div>
-
-      <div class="columns">
-        <section>
-          Round numbers to two decimal places.
-        </section>
-        <section>
-          <pre>
-            EXPECTED RESULT
-            5.5589 is rounded 5.56   
-            3.3424 is rounded 3.34
-          </pre>
-        </section>
-        <section>
-          <pre>
-            const twoDecimalPlaces = n =>  Number(n.toFixed(2))
-            
-            or
-
-            const twoDecimalPlaces = function(n){
-              Number(n.toFixed(2))
+        <div class="columns">
+          <section>
+            Count by X
+          </section>
+          <section>
+            <pre>
+              EXPECTED RESULT
+                countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
+                countBy(2,5) === [2,4,6,8,10]
+            </pre>
+          </section>
+          <section>
+            <pre>
+            function countBy(x, n) {
+                var z = [];
+                for (i = 1; i <= n; i++) {
+                    z.push(x * i);
+                }
+                return z;
             }
-          </pre>
-        </section>
-      </div>
+            </pre>
+          </section>
+        </div>
 
-      <h2>MAP</h2>
+        <div class="columns">
+          <section>
+            return string as 1010101
+          </section>
+          <section>
+            <pre>
+              EXPECTED RESULT
+              size 6 string return :'101010'.
+              size 4 string return : '1010'.
+            </pre>
+          </section>
+          <section>
+            <pre>
+            function stringy(size) {
+              var str='';
+              for( var i=1; i<=size; i++ )
+                str += i%2;
+              return str;
+            }
+            </pre>
+          </section>
+        </div>
 
-      <div class="columns">
-        <section>
-          Convert number to reversed array of digits
-        </section>
-        <section>
-          <pre>
+        <div class="columns">
+          <section>
+            Round numbers to two decimal places.
+          </section>
+          <section>
+            <pre>
+              EXPECTED RESULT
+              5.5589 is rounded 5.56   
+              3.3424 is rounded 3.34
+            </pre>
+          </section>
+          <section>
+            <pre>
+              const twoDecimalPlaces = n =>  Number(n.toFixed(2))
+              
+              or
+
+              const twoDecimalPlaces = function(n){
+                Number(n.toFixed(2))
+              }
+            </pre>
+          </section>
+        </div>
+
+        <div class="columns">
+          <section>
+            Return negative
+          </section>
+          <section>
+            <pre>
             EXPECTED RESULT
-              348597 => [7,9,5,8,4,3]
-          </pre>
-        </section>
-        <section>
-          <pre>
-            function digitize(n){
-              return (n + '').split('').map(Number).reverse();
+              makeNegative(1); ==> -1
+              makeNegative(-5); ==> -5
+              makeNegative(0); ==> 0
+            </pre>
+          </section>
+          <section>
+            <pre>
+            function getGrade (s1, s2, s3) {
+              avg = (s1+s2+s3)/3;
+              if (avg < 60)  return "F";
+                else if (avg < 70) return "D";
+                else if (avg < 80) return "C";
+                else if (avg < 90) return "B";
+                else return "A";
             }
+            </pre>
+          </section>
+        </div>
 
-            map(Number) ==> turns string into number
-          </pre>
-        </section>
-      </div>
-
-      <div class="columns">
-        <section>
-          Double Character
-        </section>
-        <section>
-          <pre>
+        <div class="columns">
+          <section>
+            Invert number
+          </section>
+          <section>
+            <pre>
             EXPECTED RESULT
-              doubleChar("String") ==> "SSttrriinngg"
-              doubleChar("Hello World") ==> "HHeelllloo  WWoorrlldd"
-          </pre>
-        </section>
-        <section>
-          <pre>
-            var stringy = "TEST"
-            var doubleChar = function(arg){
-              return arg.split('').map(function(c){
-                return c + c;
-              }).join('');
+              1 ==> -1
+              14 ==> -14
+              -34 ==> 34
+            </pre>
+          </section>
+          <section>
+            <pre>
+            function opposite(number) {
+              return(-number);
             }
-          </pre>
-          <pre>
-            var doubleChar = function(arg){
-              return arg.split('').map((c) => c + c).join("");
+            </pre>
+          </section>
+        </div>
+
+        <div class="columns">
+          <section>
+            Add min and max number
+          </section>
+          <section>
+            <pre>
+            EXPECTED RESULT
+              GetSum(1, 0) == 1   // 1 + 0 = 1
+              GetSum(1, 2) == 3   // 1 + 2 = 3
+              GetSum(0, 1) == 1   // 0 + 1 = 1
+              GetSum(1, 1) == 1   // 1 Since both are same
+              GetSum(-1, 0) == -1 // -1 + 0 = -1
+              GetSum(-1, 2) == 2  // -1 + 0 + 1 + 2 = 2
+            </pre>
+          </section>
+          <section>
+            <pre>
+            const GetSum = (a, b) => {
+              let min = Math.min(a, b),
+                  max = Math.max(a, b);
+              return (max - min + 1) * (min + max) / 2;
             }
-          </pre>
-          <pre>
-            var doubleChar = (arg) => arg.split('').map((c) => c + c).join("");
-          </pre>
-        </section>
-      </div>
-
-      <h2>MAP END</h2>
-      <div class="columns">
-        <section>
-          Return negative
-        </section>
-        <section>
-          <pre>
-          EXPECTED RESULT
-            makeNegative(1); ==> -1
-            makeNegative(-5); ==> -5
-            makeNegative(0); ==> 0
-          </pre>
-        </section>
-        <section>
-          <pre>
-          function getGrade (s1, s2, s3) {
-            avg = (s1+s2+s3)/3;
-            if (avg < 60)  return "F";
-              else if (avg < 70) return "D";
-              else if (avg < 80) return "C";
-              else if (avg < 90) return "B";
-              else return "A";
-          }
-          </pre>
-        </section>
-      </div>
-
-      <div class="columns">
-        <section>
-          Invert number
-        </section>
-        <section>
-          <pre>
-          EXPECTED RESULT
-            1 ==> -1
-            14 ==> -14
-            -34 ==> 34
-          </pre>
-        </section>
-        <section>
-          <pre>
-          function opposite(number) {
-            return(-number);
-          }
-          </pre>
-        </section>
-      </div>
+            </pre>
+          </section>
+        </div>
+      </section>
 
       <!--STRING-->
-      <div class="columns">
-        <section>
-          Identify first letter of string
-        </section>
-        <section>
-          <pre>
-            if first letter of string is R,r, Returns true
-          </pre>
-        </section>
-        <section>
-          <pre>
-          function isNameStartWithR(name) {
-            return (name[0].toLowerCase() == 'r' ? true : false);
-          }
-          </pre>
-        </section>
-      </div>
-
-      <!-- Multi If Else-->
-      <div class="columns">
-        <section>
-          Return grade for different score
-        </section>
-        <section>
-          <pre>
-            Numerical Score Letter Grade
-            90 <= score <= 100  'A'
-            80 <= score < 90  'B'
-            70 <= score < 80  'C'
-            60 <= score < 70  'D'
-            0 <= score < 60 'F'
-          </pre>
-        </section>
-        <section>
-          <pre>
-          function getGrade (s1, s2, s3) {
-            avg = (s1+s2+s3)/3;
-            if (avg < 60)  return "F";
-              else if (avg < 70) return "D";
-              else if (avg < 80) return "C";
-              else if (avg < 90) return "B";
-              else return "A";
-          }
-          </pre>
-          <pre>
-          function getGrade (s1, s2, s3) {
-            var s = (s1 + s2 + s3) / 3
-            return s >= 90 ? "A" : s >= 80 ? "B" : s >= 70 ? "C" : s >= 60 ? "D" : "F"
-          }
-          </pre>
-        </section>
-      </div>
-
-      <div class="columns">
-        <section>
-          do func 1 if true, do func 2 if false
-        </section>
-        <section>
-          <pre>
-
-          </pre>
-        </section>
-        <section>
-          <pre>
-            function _if(bool, func1, func2) {
-              return bool ? func1() : func2();
+      <section>
+        <h2>Strings</h2>
+        <div class="columns">
+          <section>
+            Identify first letter of string
+          </section>
+          <section>
+            <pre>
+              if first letter of string is R,r, Returns true
+            </pre>
+          </section>
+          <section>
+            <pre>
+            function isNameStartWithR(name) {
+              return (name[0].toLowerCase() == 'r' ? true : false);
             }
-          </pre>
-        </section>
-      </div>
+            </pre>
+          </section>
+        </div>
 
-      <div class="columns">
-        <section>
-         ball object is given type
-         if no type is given, ball type is regular
-        </section>
-        <section>
-          <pre>
-
-          </pre>
-        </section>
-        <section>
-          <pre>
-            var Ball = function(ballType) {
-              this.ballType = ballType || 'regular';
-            };
-          </pre>
-        </section>
-      </div>
-
-      <div class="columns">
-        <section>
-          Check 2 numbers, <br>
-          if both of them are true/false together, return false; <br>
-          if both of them are different, return true
-        </section>
-        <section>
-          <pre>
-
-          </pre>
-        </section>
-        <section>
-          <pre>
-            function lovefunc(flower1, flower2){
-              return flower1 % 2 !== flower2 % 2;
+        <div class="columns">
+          <section>
+            Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contains any char.
+          </section>
+          <section>
+            <pre>
+              XO("ooxx") => true
+              XO("xooxx") => false
+              XO("ooxXm") => true
+              XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+              XO("zzoo") => false
+            </pre>
+          </section>
+          <section>
+            <pre>
+            function XO(str) {
+              let x = str.match(/x/gi);
+              let o = str.match(/o/gi);
+              return (x && x.length) === (o && o.length);
             }
-          </pre>
-        </section>
-      </div>
+            </pre>
+          </section>
+        </div>
+
+        <!-- Multi If Else-->
+        <div class="columns">
+          <section>
+            Return grade for different score
+          </section>
+          <section>
+            <pre>
+              Numerical Score Letter Grade
+              90 <= score <= 100  'A'
+              80 <= score < 90  'B'
+              70 <= score < 80  'C'
+              60 <= score < 70  'D'
+              0 <= score < 60 'F'
+            </pre>
+          </section>
+          <section>
+            <pre>
+            function getGrade (s1, s2, s3) {
+              avg = (s1+s2+s3)/3;
+              if (avg < 60)  return "F";
+                else if (avg < 70) return "D";
+                else if (avg < 80) return "C";
+                else if (avg < 90) return "B";
+                else return "A";
+            }
+            </pre>
+            <pre>
+            function getGrade (s1, s2, s3) {
+              var s = (s1 + s2 + s3) / 3
+              return s >= 90 ? "A" : s >= 80 ? "B" : s >= 70 ? "C" : s >= 60 ? "D" : "F"
+            }
+            </pre>
+          </section>
+        </div>
+
+        <div class="columns">
+          <section>
+            do func 1 if true, do func 2 if false
+          </section>
+          <section>
+            <pre>
+
+            </pre>
+          </section>
+          <section>
+            <pre>
+              function _if(bool, func1, func2) {
+                return bool ? func1() : func2();
+              }
+            </pre>
+          </section>
+        </div>
+
+        <div class="columns">
+          <section>
+           ball object is given type
+           if no type is given, ball type is regular
+          </section>
+          <section>
+            <pre>
+
+            </pre>
+          </section>
+          <section>
+            <pre>
+              var Ball = function(ballType) {
+                this.ballType = ballType || 'regular';
+              };
+            </pre>
+          </section>
+        </div>
+
+        <div class="columns">
+          <section>
+            Check 2 numbers, <br>
+            if both of them are true/false together, return false; <br>
+            if both of them are different, return true
+          </section>
+          <section>
+            <pre>
+
+            </pre>
+          </section>
+          <section>
+            <pre>
+              function lovefunc(flower1, flower2){
+                return flower1 % 2 !== flower2 % 2;
+              }
+            </pre>
+          </section>
+        </div>
+      </section>
+
       <!--REGEX-->
-      <div class="columns">
-        <section>
-          Vowel remover
-        </section>
-        <section>
-          <pre>
-            shortcut("codewars") // --> cdwrs
-            shortcut("goodbye")  // --> gdby
-          </pre>
-        </section>
-        <section>
-          <pre>
-            function shortcut(string){
-              return string.replace(/[aeiou]/g,'')
-            }
-          </pre>
-        </section>
-      </div>
+      <section>
+        <h2>Regex</h2>
+        <div class="columns">
+          <section>
+            Vowel remover
+          </section>
+          <section>
+            <pre>
+              shortcut("codewars") // --> cdwrs
+              shortcut("goodbye")  // --> gdby
+            </pre>
+          </section>
+          <section>
+            <pre>
+              function shortcut(string){
+                return string.replace(/[aeiou]/g,'')
+              }
+            </pre>
+          </section>
+        </div>
 
-      <div class="columns">
-        <section>
-          DNA to RNA Conversion, replace all U into T
-        </section>
-        <section>
-          <pre>
-          EXPECTED RESULT
-            TTTT ==> UUUU
-            GCAT ==> GCAU
-          </pre>
-        </section>
-        <section>
-          <pre>
-            function DNAtoRNA(dna){
-              return dna.replace(/T/g, 'U');
-            }
-          </pre>
-        </section>
-      </div>
+        <div class="columns">
+          <section>
+            DNA to RNA Conversion, replace all U into T
+          </section>
+          <section>
+            <pre>
+            EXPECTED RESULT
+              TTTT ==> UUUU
+              GCAT ==> GCAU
+            </pre>
+          </section>
+          <section>
+            <pre>
+              function DNAtoRNA(dna){
+                return dna.replace(/T/g, 'U');
+              }
+            </pre>
+          </section>
+        </div>
 
-      <div class="columns">
-        <section>
-          Count the total number of lowercase letters in a string.
-        </section>
-        <section>
-          <pre>
-          lowercaseCount("abc"); ===> 3
-          lowercaseCount("abcABC123"); ===> 3
-          lowercaseCount("abcABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 3
-          lowercaseCount(""); ===> 0;
-          lowercaseCount("ABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 0
-          lowercaseCount("abcdefghijklmnopqrstuvwxyz"); ===> 26
-          </pre>
-        </section>
-        <section>
-          <pre>
-            function lowercaseCount(str){
-              return (str.match(/[a-z]/g) || []).length
-            }
+        <div class="columns">
+          <section>
+            Count the total number of lowercase letters in a string.
+          </section>
+          <section>
+            <pre>
+            lowercaseCount("abc"); ===> 3
+            lowercaseCount("abcABC123"); ===> 3
+            lowercaseCount("abcABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 3
+            lowercaseCount(""); ===> 0;
+            lowercaseCount("ABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 0
+            lowercaseCount("abcdefghijklmnopqrstuvwxyz"); ===> 26
+            </pre>
+          </section>
+          <section>
+            <pre>
+              function lowercaseCount(str){
+                return (str.match(/[a-z]/g) || []).length
+              }
 
-            // || sets the default value, as match returns null
-          </pre>
-        </section>
-      </div>
+              // || sets the default value, as match returns null
+            </pre>
+          </section>
+        </div>
+      </section>
+
+      <!--OTHERS-->
+      <section>
+        <div class="columns">
+          <section>
+            Return number of trues in an array
+          </section>
+          <section>
+            <pre>
+              EXPECTED RESULT
+                [true, true, false, false] ==> 2
+                [true, true, true, false] ==> 3
+            </pre>
+          </section>
+          <section>
+            <pre>
+              arr=[true, false, true, false]
+              function countSheeps(arr) {
+                return arr.filter(Boolean).length;
+              }
+            </pre>
+          </section>
+        </div>
+
+        <div class="columns">
+          <section>
+            Find String position in array
+          </section>
+          <section>
+            <pre>
+              findNeedle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk'])
+              'found the needle at position 5'
+            </pre>
+          </section>
+          <section>
+            <pre>
+              function findNeedle(haystack) {
+                return "found the needle at position " + haystack.indexOf("needle");
+              }
+            </pre>
+          </section>
+        </div>
+      </section>
     </section>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
