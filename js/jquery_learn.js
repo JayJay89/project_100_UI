@@ -26,6 +26,18 @@ $(document).ready(function(){
         $(".feedback").html("mouseleave()");
     });
 
+    //The shorthand for the above is this
+
+    // $("#btn-hover").hover(
+    // function(){
+    //     $(this).toggleClass('btn--yellow btn--red');
+    //     $(".feedback").html("mouseenter()");
+    // },
+    // function(){
+    //     $(this).toggleClass('btn--yellow btn--red');
+    //     $(".feedback").html("mouseleave()");
+    // });
+
     $("#btn-mouseover").mouseover(function(){
         $(this).toggleClass('btn--yellow btn--red');
         $(".feedback").html("mouseover()");

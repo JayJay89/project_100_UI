@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/*clear fixes*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*Equal Height*/
+.eq-height {
+  overflow: hidden;
+}
+
+.eq-height .eq-height-col {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+
+/*Back Button*/
+.back-button {
+  position: fixed;
+  top: 0px;
+  background-color: #f0f0f0;
+  padding: 5px;
+  z-index: 99999;
+}
+
+.testbox {
+  width: 200px;
+  height: 200px;
+  display: block;
+  content: "test";
+  background-color: red;
+  z-index: 1;
+}
+
+.sp {
+  height: 100vh;
+  position: relative;
+}
+
+.sp-gallery-container {
+  background-color: orange;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  bottom: 0px;
+}
+
+.sp-gallery-container > li {
+  width: 15%;
+  float: left;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.5s ease;
+}
+
+.sp-gallery-container > li:hover {
+  border: 2px solid aquamarine;
+}
+
+.sp-gallery-container > li img {
+  max-width: 100%;
+  display: block;
+}
+
+.sp-display-panel {
+  display: table;
+  height: 0%;
+  left: 0px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.8);
+}
+
+.sp-display-pointer {
+  border-width: 20px;
+  border-style: solid;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  transform: translate(0%, -50%);
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.sp-display-pointer.right {
+  border-color: transparent blue transparent transparent;
+  left: 0px;
+}
+
+.sp-display-pointer.left {
+  border-color: transparent transparent transparent blue;
+  right: 0px;
+}
+
+.sp-display-pointer.active {
+  opacity: 1;
+}
+
+.sp-image-container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.sp-image-container > img {
+  max-width: 70%;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.sp-image-container > img.active {
+  opacity: 1;
+}
