@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title> Awesome Cufonized Fly-out Menu with jQuery and CSS3 </title>
+		<!-- Bootstrap -->
+		<link href="css/codrop15.css" rel="stylesheet">
+		<link href="css/normalize.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<a class="back-button" href="index.html">Back</a>
+		<div class="fom">
+			<ul class="fom-menu">
+				<li><a href="#/">Home</a></li>
+				<li><a href="#/">Portfolio</a></li>
+				<li><a href="#/">Resume</a></li>
+				<li><a href="#/">About</a></li>
+				<li><a href="#/">Contact</a></li>
+			</ul>
+			<div class="fom-hoverblock"></div>
+			<ul class="fom-desc">
+				<li>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</li>
+				<li>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</li>
+				<li>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</li>
+				<li>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</li>
+				<li>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</li>
+			</ul>
+
+		</div>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+		<script src="jquery.min.js"></script>
+
+		<script>
+
+			$(function(){
+				var fom_menu = $('.fom-menu');
+				var fom_desc = $('.fom-desc');
+				var fom_block = $('.fom-hoverblock');
+
+				function blockMoveTo(elem) {
+					fom_block.stop(true).animate({
+						top: elem.offset().top + 'px',
+						width: elem.outerWidth() + 'px',
+						height: elem.outerHeight() + 'px'
+					}, 200);
+				}
+
+				function blockWarpTo(elem) {
+					fom_block.css({
+						'top' : elem.offset().top + 'px',
+						'width' : elem.outerWidth() + 'px',
+						'height' : elem.outerHeight() + 'px'
+					});
+				}
+
+				var fom_menu_first = fom_menu.find('li:first-child a');
+				blockWarpTo(fom_menu_first);
+
+				fom_desc.find('li').each(function(i){
+					var $this = $(this);
+					var fom_menu_target = fom_menu.find('li:nth-child('+parseInt(i+1)+') a');
+					var fom_menu_top = fom_menu_target.offset().top;
+					var fom_menu_left = fom_menu_target.offset().left;
+
+					$this.css({
+						'top': fom_menu_top,
+						'width' : '500px',
+						'left' : '-50%'
+					});
+
+					console.log(fom_menu_target);
+				});
+
+				fom_menu.find('li a')
+				.on('mouseenter', function(){
+					var $this = $(this);
+					var current = $this.parent().index();
+					blockMoveTo($this);
+
+					$(fom_desc)
+					.find('li:nth-child('+parseInt(current+1)+')')
+					// .width($this.offset().left - 20)
+					.stop(true)
+					.animate({
+						'width': $this.offset().left - 20,
+						'left': '0%'
+					},500);
+				})
+
+				.on('mouseleave', function(){
+					var $this = $(this);
+					var current = $this.parent().index();
+
+					$(fom_desc)
+					.find('li:nth-child('+parseInt(current+1)+')')
+					.stop(true)
+					.animate({
+						'width': '500px',
+						'left': '-50%'
+					},500);
+				});
+
+				$(window).on('resize',function(){
+					blockWarpTo(x);
+
+					$('.fom-desc > li').each(function(i){
+						var $this = $(this);
+
+						$this.css({
+							'top': fom_menu.find('li:nth-child('+parseInt(i+1)+') a').offset().top
+						});
+					});
+				})
+
+			});
+
+		</script>
+	</body>
+</html>
