@@ -23,7 +23,7 @@ $(document).ready(function(){
             $('.cancal_result').text("Strong No");
         } else if (totalPoints <= 26) {
             $('.cancal_result').text("No");
-        } else if (totalPoints <= 35) {
+        } else if (totalPoints <= 32) {
             $('.cancal_result').text("Yes");
         } else {
             $('.cancal_result').text("Strong Yes");
