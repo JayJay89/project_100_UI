@@ -21,10 +21,10 @@
             border 0.5s 0.8s;
         transition-timing-function: cubic-bezier(0.000, 0.165, 0.385, 1.160);
 
-
         &:hover{
             width: 20%;
             border: 3px solid aquamarine;
+
             span {
                 opacity: 0;
             }
@@ -72,7 +72,6 @@
             opacity: 1;
             transition: opacity 0.7s ease;
         }
-
     }
 
     li:nth-child(1){

@@ -56,7 +56,7 @@
 
 				var current = 1;
 
-				$('.sf-nav a').on('click',function(){
+				$('.sf-nav a').on('click',function(e){
 					var $this = $(this);
 					$('.sf-nav li').removeClass('selected');
 					$this.parent().addClass('selected');
@@ -67,7 +67,7 @@
 						marginLeft: '-' + (current-1) * slideWidth + 'px'
 					},500)
 
-					// e.preventDefault();
+					e.preventDefault();
 				});
 
 			});

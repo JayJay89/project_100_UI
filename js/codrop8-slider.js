@@ -1,38 +1,24 @@
 $(function(){
 	
-	var currentSlide = 1;
-
-	var iterate = function(){
-		var i = parseInt (currentSlide + 1);
-		var lis = $('.consl-content-list').children('li').length;
-		if (i > lis) {
-			i = 1;
-		}
-		select($('.consl-content-list li:nth-child('+i+')'));
-		console.log(lis);
-	}
-
-	var slidemode = setInterval(iterate,3000);
+	var currentSlide = 2;
+	// If currentSlide is 1, currentSlide == $clickedSlide, this will return false, which means nothing will load.
+	// This hack change currentSlide to 2, currentSlide != $clickedSlide, therefore the function will run
 
 	select($('.consl-content-list li:first'));
 
 	$('.consl-content-list li').on('click',function(e){
 		clearTimeout(slidemode);
 		select($(this));
-		e.preventDefault();
+		// e.preventDefault();
 	})
 
-
-	function select(slide){
-
+	function select(slide) {
 		var $slide = slide;
-		var same_btn_clicked = false;
+		var $clickedSlide = parseInt($slide.index() + 1);
 
-		if(currentSlide == parseInt($slide.index() + 1)) {
-			same_btn_clicked = true;
-		}
-
-		if(!same_btn_clicked) {
+		if(currentSlide == $clickedSlide) {
+			return false;
+		} else {
 			$('.consl-content-list').find('li:nth-child('+currentSlide+') a').stop(true,true)
 			.animate({
 				'marginTop':'-10px'
@@ -40,11 +26,13 @@ $(function(){
 		}
 
 		/*Why adding var here will cause an errors?*/
-		currentSlide = parseInt($slide.index() + 1);
+		currentSlide = $clickedSlide;
 
 		var currentSlide_link = $('.consl-navlink',$slide);
 		// var currentSlide_info = currentSlide_link.next();
 		var currentSlide_info = $('.consl-content',$slide);
+
+		console.log(currentSlide_link);
 
 		currentSlide_link.stop(true,true).animate({
 			'marginTop':'0px'
@@ -61,4 +49,14 @@ $(function(){
 		});
 	}
 
+	var iterate = function(){
+		var i = parseInt (currentSlide + 1);
+		var lis = $('.consl-content-list').children('li').length;
+		if (i > lis) {
+			i = 1;
+		}
+		select($('.consl-content-list li:nth-child('+i+')'));
+	}
+
+	var slidemode = setInterval(iterate,3000);
 });

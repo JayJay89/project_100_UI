@@ -76,6 +76,10 @@ $(function(){
     });
 
     $('.sp-image-container').on('click', 'img', function(){
+
+        var $this = $(this);
+        $this.animate({'height':'0%'},500);
+
         $('.sp-gallery-container').css('z-index','1').show().find('li').show();
 
         $('.sp-gallery-container').stop().animate({'height':'100%'},500,function(){
@@ -97,3 +101,12 @@ $(function(){
         navigateTo($nextImg, "next");
     });
 });
+
+/*
+nth-child:          1  2  3  4  5
+currentImgIndex:    0  1  2  3  4
+*/
+
+/*If you are at Index2 and you want to go to the next img, that next image is the 4th-child */
+/*If you are at Index2 and you want to go to the prev img, that next image is the 2th-child */
+/*Hence the calculation above*/
