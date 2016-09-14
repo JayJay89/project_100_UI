@@ -61,10 +61,6 @@ ul {
   z-index: 1;
 }
 
-.testclass {
-  border: 1px solid red;
-}
-
 .slide-container {
   display: table;
   width: 100%;
