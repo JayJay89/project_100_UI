@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/*clear fixes*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*Equal Height*/
+.eq-height {
+  overflow: hidden;
+}
+
+.eq-height .eq-height-col {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+
+/*Back Button*/
+.back-button {
+  position: fixed;
+  top: 0px;
+  background-color: #f0f0f0;
+  padding: 5px;
+  z-index: 99999;
+}
+
+.testbox {
+  width: 200px;
+  height: 200px;
+  display: block;
+  content: "test";
+  background-color: red;
+  z-index: 1;
+}
+
+.csn {
+  display: table;
+  height: 100vh;
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
+.csn-container {
+  height: inherit;
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+}
+
+.csn-card {
+  text-align: center;
+  height: 500px;
+  width: 130px;
+  position: relative;
+  float: left;
+  border: 1px solid green;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.csn-card > img {
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: top 0.5s ease;
+  top: -500px;
+}
+
+.csn-card > span {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  background-color: white;
+  display: block;
+  width: 100%;
+  z-index: 2;
+}
+
+.csn-card:hover > img {
+  top: 0px;
+}
+
+.csn-card:hover .csn-link {
+  bottom: 0px;
+}
+
+.csn-link {
+  cursor: pointer;
+  position: absolute;
+  bottom: -100%;
+  color: white;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: bottom 0.5s ease;
+}
+
+.csn-link > span:hover {
+  color: red;
+}
+
+.csn-card:nth-child(1) {
+  z-index: 3;
+  background-color: #EAF2F8;
+}
+
+.csn-card:nth-child(2) {
+  z-index: 2;
+  background-color: #D4E6F1;
+}
+
+.csn-card:nth-child(3) {
+  z-index: 1;
+  background-color: #A9CCE3;
+}
+
+.csn-content-container {
+  width: 50%;
+  height: 500px;
+  left: -100%;
+  background-color: rgba(255, 0, 0, 0.8);
+  position: absolute;
+  display: table;
+  z-index: 999;
+}
+
+.csn-content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
