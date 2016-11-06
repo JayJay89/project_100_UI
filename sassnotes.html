@@ -18,34 +18,67 @@
     </head>
     <body>
         <a class="back-button" href="index.html">Back</a>
-        <h1>Features</h1>
+        <h1 id="sassnotes">Features</h1>
         <div class="container">
 
-            <nav id="navbar">
-                <ul class="clearfix">
-                    <li>Basics</li>
-                    <li>@-Rules and Directives</li>
-                    <li>Control Directives & Expressions</li>
-                    <li>Misc</li>
-                </ul>
-            </nav>
+            <a href="#sassnotes" class="btt_button">back to top</a>
 
             <div class="part">
                 <section>
                     <p>
-                        You can easily experiment with SassScript using the interactive shell. run <span>sass -i</span> in the terminal
+                        <!-- You can easily experiment with SassScript using the interactive shell. run <span>sass -i</span> in the terminal -->
                     </p>
+                    
+                    <h3>last last week</h3>
+                    <div class="header-nav">
+                        <a href="#sass_nesting">Nesting</a>
+                        <a href="#sass_reference">Referencing Parent Selectors: &</a>
+                        <a href="#sass_variables">Variables</a>
+                        <a href="#sass_interpolation">Interpolation</a>
+                        <a href="#sass_mixins">Mixins</a>
+                    </div>
+                    <hr>
+
+                    <h3>last week</h3>
+                    <div class="header-nav">
+                        <a href="#sass_imports">Imports</a>
+                        <a href="#sass_partials">Partials</a>
+                        <a href="#sass_media">Media</a>
+                        <a href="#sass_content">Content</a>
+                        <a target="_blank" href="https://github.com/JayJay89/sassdemo">Example Repo</a>
+                    </div>
+                    <hr>
+                    <h3>this week</h3>
+                    <div class="header-nav">
+                        <a href="#sass_lists">Lists</a>
+                        <a href="#sass_maps">Maps</a>
+                        <a href="#sass_for">For</a>
+                        <a href="#sass_each">Each</a>
+                        <a target="_blank" href="https://css-tricks.com/video-screencasts/132-quick-useful-case-sass-math-mixins/">The Row Machine</a>
+                    </div>
                 </section>
+
+
                 <!--Nesting-->
                 <section>
-                    <h1>Nesting</h1>
+                    <h1 id="sass_nesting">Nesting</h1>
                     <p>Nested Rules</p>
                     <div class="code">
                         <div class="left">
                             <pre>
                                 .main {
                                     p {
-                                        color: red
+                                        color: red;
+                                    }
+
+                                    h1 {
+                                        color: blue;
+                                    }
+
+                                    span {
+                                        .header {
+                                            border: 1px solid red;
+                                        }
                                     }
                                 }
                             </pre>
@@ -53,7 +86,32 @@
                         </div>
                         <div class="right">
                             <pre>
-                                .main p { color:red }
+                                .main p { color:red; }
+                                .main h1 { color:blue; }
+                                .main span .header { border: 1px solid red; }
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                div {
+                                    &.image {
+                                        color: red;
+                                    }
+
+                                    &.container {
+                                        color: blue;
+                                    }
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                                div.image { color:red; }
+                                div.container { color:blue; }
                             </pre>
                         </div>
                     </div>
@@ -82,10 +140,12 @@
                         </pre>
                         </div>  
                     </div>
+
+
                 </section>
                 <!--Referencing Parent Selectors-->
                 <section>
-                    <h1>Referencing Parent Selectors: &</h1>
+                    <h1 id="sass_reference">Referencing Parent Selectors: &</h1>
                     <p>
                         & will be replaced with the parent selector as it appears in the CSS
                     </p>
@@ -103,7 +163,7 @@
                         
                         <div class="right">
                         <pre>
-                            .main p { color:red }
+                            a:hover {color: red}
                         </pre>
                         </div>
                     </div>
@@ -148,7 +208,7 @@
                 </section>
                 <!--Variables-->
                 <section>
-                    <h1>Variables</h1>
+                    <h1 id="sass_variables">Variables</h1>
                     <div class="code">
                         <p>
                             Variables with the <span>!global</span> extends globally even though they are contain in a local block;
@@ -195,10 +255,12 @@
                     </div>
                 </section>
                 <!--List-->
-                <section>
+                <section id="sass_lists">
                     <h1>List</h1>
                     <p>Lists are how Sass represents the values of CSS declarations like </p>
-
+                    <a href="https://benfrain.com/working-with-lists-and-each-loops-in-sass-with-the-index-and-nth-function/">
+                        Source
+                    </a>
                     <ul>
                         <li>margin: 10px 15px 0 0</li>
                         <li>font-face: Helvetica, Arial, sans-serif.</li>
@@ -207,9 +269,102 @@
                     <p>
                         Lists are just a series of other values, separated by either spaces or commas. In fact, individual values count as lists, too: they’re just lists with one item.
                     </p>
+
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                $colors-list: #111 #222 #333 #444 #555;
+
+                                @each $current-color in $colors-list {
+                                    $i: index($colors-list, $current-color);
+                                    .stuff-#{$i} { 
+                                        color: $current-color;
+                                    }
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            .stuff-1 {
+                              color: #111111;
+                            }
+
+                            .stuff-2 {
+                              color: #222222;
+                            }
+
+                            .stuff-3 {
+                              color: #333333;
+                            }
+
+                            .stuff-4 {
+                              color: #444444;
+                            }
+
+                            .stuff-5 {
+                              color: #555555;
+                            }
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                $background-colors-list: #4BC2A5 #606F40 #6648CA #6B6022 #2F54E9;
+                                $border-colors-list: #ff9900 #77ff66 #73C227 #C23E50 #7BAFC2;
+                                $colors-list: #111 #222 #333 #444 #555;
+
+                                @each $current-color in $colors-list {
+                                    $i: index($colors-list, $current-color);
+                                    .stuff-#{$i} {
+                                        color: $current-color;
+                                        background-color: nth($background-colors-list, $i);
+                                        border: 1px solid nth($border-colors-list, $i);
+                                    }
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                            .stuff-1 {
+                              color: #111111;
+                              background-color: #4bc2a5;
+                              border: 1px solid #ff9900;
+                            }
+
+                            .stuff-2 {
+                              color: #222222;
+                              background-color: #606f40;
+                              border: 1px solid #77ff66;
+                            }
+
+                            .stuff-3 {
+                              color: #333333;
+                              background-color: #6648ca;
+                              border: 1px solid #73c227;
+                            }
+
+                            .stuff-4 {
+                              color: #444444;
+                              background-color: #6b6022;
+                              border: 1px solid #c23e50;
+                            }
+
+                            .stuff-5 {
+                              color: #555555;
+                              background-color: #2f54e9;
+                              border: 1px solid #7bafc2;
+                            }
+                            </pre>
+                        </div>
+                    </div>
+
                 </section>
                 <!--Maps-->
-                <section>
+                <section id="sass_maps">
                     <h1>Map</h1>
                     <p>Maps represent an association between keys and values, where keys are used to look up values</p>
                     <p>
@@ -221,6 +376,62 @@
                     <p>
                     maps must always be surrounded by parentheses and must always be comma-separated
                     </p>
+
+                    <div class="code">
+                        <div class="left">
+                            <pre>
+                                $primary-colors: (
+                                    "red":   "#ff0000",
+                                    "green": "#00ff00",
+                                    "blue":  "#0000ff"
+                                );
+
+                                /* Key and value together */
+                                @each $color in $primary-colors {
+                                  .thing {
+                                    content: "#{$color}";
+                                  }
+                                }
+
+                                /* Key and value separate */
+                                @each $color-name, $color-code in $primary-colors {
+                                  .color-#{$color-name} {
+                                    background: $color-code;
+                                  }
+                                }
+                            </pre>
+
+                        </div>
+                        <div class="right">
+                            <pre>
+                                /* Key and value together */
+                                .thing {
+                                  content: "red #ff0000";
+                                }
+
+                                .thing {
+                                  content: "green #00ff00";
+                                }
+
+                                .thing {
+                                  content: "blue #0000ff";
+                                }
+
+                                /* Key and value separate */
+                                .color-red {
+                                  background: "#ff0000";
+                                }
+
+                                .color-green {
+                                  background: "#00ff00";
+                                }
+
+                                .color-blue {
+                                  background: "#0000ff";
+                                }
+                            </pre>
+                        </div>
+                    </div>
                 </section>
                 <!--Math Operations-->
                 <section>
@@ -229,7 +440,7 @@
                 </section>
                 <!--Interpolation-->
                 <section>
-                    <h1>Interpolation</h1>
+                    <h1 id="sass_interpolation">Interpolation</h1>
                     <p>You can also use SassScript variables in selectors and property names using <span>#{}</span> interpolation syntax:</p>
 
                     <div class="code">
@@ -279,7 +490,7 @@
                 <!--@-Rules and Directives-->
                 <h1>@-Rules and Directives</h1>
                 <!--@import-->
-                <section>
+                <section id="sass_imports">
                     <h1>@import</h1>
                     <p>Sass extends the CSS <span>@import</span> rule to allow it to import SCSS and Sass files.</p>
                     <p>@import takes a filename to import.</p>
@@ -292,11 +503,6 @@
                                 @import "foo.scss";
                             </pre>
 
-                        </div>
-                        <div class="right">
-                            <pre>
-
-                            </pre>
                         </div>
                     </div>
 
@@ -325,9 +531,9 @@
                     </div>
                 </section>
                 <!--Partials-->
-                <section>
+                <section id="sass_partials">
                     <h1>Partial</h1>
-                    <p>If you have a SCSS or Sass file that you want to import but don’t want to compile to a CSS file, you can add an <span>underscore</span> to the beginning of the filename. This will tell Sass not to compile it to a normal CSS file.</p>
+                    <p>If you have a SCSS or Sass file that you want to import but don’t want to compile to a CSS file, you can add an <span>underscore</span> to the beginning of the filename. <strong>This will tell Sass not to compile it to a normal CSS file.</strong></p>
                     <p>
                         For example, you might have _colors.scss. Then no _colors.css file would be created, and you can do
                     </p>
@@ -340,15 +546,10 @@
                             </pre>
 
                         </div>
-                        <div class="right">
-                            <pre>
-
-                            </pre>
-                        </div>
                     </div>
                 </section>
                 <!--@media-->
-                <section>
+                <section id="sass_media">
                     <h1>@media</h1>
                     <p>@media directives in Sass behave just like they do in plain CSS, with one extra capability: they can be nested in CSS rules</p>
                     <div class="code">
@@ -604,7 +805,7 @@
                     </div>
                 </section>
                 <!--@for-->
-                <section>
+                <section id="sass_for">
                     <h1>@for</h1>
                     <p>The @for directive repeatedly outputs a set of styles. For each repetition, a counter variable is used to adjust the output. </p>
                     <div class="code">
@@ -626,7 +827,7 @@
                     </div>
                 </section>
                 <!--@each-->
-                <section>
+                <section id="sass_each">
                     <h1>@each</h1>
                     <p>The @each directive usually has the form @each $var in list or map</p>
                     <div class="code">
@@ -711,7 +912,7 @@
                 </section>
                 <!--@mixin-->
                 <section>
-                    <h1>@mixin</h1>
+                    <h1 id="sass_mixins">@mixin</h1>
                     <p>Mixins allow you to define styles that can be re-used throughout the stylesheet without needing to resort to non-semantic classes like .float-left. Mixin definitions can also include other mixins. </p>
                     <div class="code">
                         <div class="left">
@@ -777,7 +978,7 @@
                     <div class="code">
                         <div class="left">
                             <pre>
-                                @mixin sexy-border($color, $width: 1in) {
+                                @mixin sexy-border($color, $width: 4px) {
                                     border: {
                                         color: $color;
                                         width: $width;
@@ -785,7 +986,7 @@
                                     }
                                 }
                                 p { @include sexy-border(blue); }
-                                h1 { @include sexy-border(blue, 2in); }
+                                h1 { @include sexy-border(blue, 6px); }
                             </pre>
 
                         </div>
@@ -793,13 +994,13 @@
                             <pre>
                             p {
                                 border-color: blue;
-                                border-width: 1in;
+                                border-width: 4px;
                                 border-style: dashed; 
                             }
 
                             h1 {
                                 border-color: blue;
-                                border-width: 2in;
+                                border-width: 6px;
                                 border-style: dashed; 
                             }
                             </pre>
@@ -874,7 +1075,7 @@
                     </div>
                 </section>
                 <!--@content-->
-                <section>
+                <section id="sass_content">
                     <h1>@content</h1>
                     <p>It is possible to pass a block of styles to the mixin for placement within the styles included by the mixin. </p>
                     <div class="code">
@@ -1095,7 +1296,6 @@
                     </div>
                 </section>
             </div>
-
         </div>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
