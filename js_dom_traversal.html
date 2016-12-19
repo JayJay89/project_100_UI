@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title> </title>
+    <!-- Bootstrap -->
+    <!-- <link href="css/js_dom_traversal.css" rel="stylesheet"> -->
+    <link href="css/normalize.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <a class="back-button" href="index.html">Back</a>
+
+    <ul class="jsdom-navlinks">
+      <li>
+        <a href="#/">link-1</a>
+      </li>
+      <li>
+        <a href="#/">link-2</a>
+        <h2>Title 2</h2>
+      </li>
+      <li>
+        <a href="#/">link-3</a>
+      </li>
+      <li>
+        <a href="#/">link-4</a>
+      </li>
+      <li>
+        <a href="#/">link-5</a>
+      </li>
+      <li>
+        <a href="#/">link-6</a>
+      </li>
+      <li id="seventh"><a href="#/">link-7</a></li>
+      <li><a href="#/">link-8</a></li>
+    </ul>
+    
+    <div class="jsdom-myContent">
+      <h2>myContent</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, qui.</p>
+    </div>
+
+    <div>
+      <p class="redtext">Lorem ipsum dolor sit amet.</p>
+      <p class="redtext">Lorem ipsum dolor sit amet.</p>
+      <p class="redtext">Lorem ipsum dolor sit amet.</p>
+      <p class="redtext">Lorem ipsum dolor sit amet.</p>
+      <p class="redtext">Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="jquery.min.js"></script>
+    <script>
+
+      /*Basic 4*/
+      var seventh_link = document.getElementById("seventh");
+      var myRedText = document.getElementsByClassName("redtext");
+      var link_li = document.getElementsByTagName('li');
+      
+      /*Get by ClassName*/
+      var nav_links = document.getElementsByClassName("jsdom-navlinks")[0]; 
+      var myContent_1 = document.getElementsByClassName("jsdom-myContent")[0];
+      var myRedText = document.getElementsByClassName("redtext");
+      var myRedText_1 = document.getElementsByClassName("redtext")[0];
+      var myRedText_4 = document.getElementsByClassName("redtext")[3];
+
+      var h2_title = myContent_1.getElementsByTagName("h2")[0];
+      var myRedText_3 = myRedText[2];
+
+      /*Get by ID*/
+      /*
+        Note that the spelling is getElement and not getElements
+        JS is only expecting to get one ID;
+      */
+      var seventh_link = document.getElementById("seventh");
+      
+      /*Get by tags*/
+      var link_li = document.getElementsByTagName('li');
+      var link_li_2 = link_li[1];
+      var link_li_2_title = link_li[1].getElementsByTagName("h2")[0];
+
+      /*Style color*/
+      link_li_2_title.style.color = "red";
+
+      /*For Loop to apply color to all the child elements*/
+      for (var i = 0; i < myRedText.length; i++){
+        myRedText[i].style.color = "red";
+      }
+
+      /*Child Nodes*/
+      /*Note that child node targets ALL nodes, this includes some of the whitespaces*/
+      var nav_links_child_nodes = nav_links.childNodes;
+
+      /*First and Last Element Child*/
+      var nav_links_children = nav_links.children;
+      var nav_links_first_child = nav_links.firstElementChild;
+      var nav_links_last_child = nav_links.lastElementChild;
+
+      /*Parent element*/
+      var myRedText_1_parent = myRedText_1.parentElement;
+      var myRedText_1_grandparent = myRedText_1.parentElement.parentElement;
+
+      /*Sibling element*/
+      var myRedText_4_nextsib = myRedText_4.nextElementSibling;
+      var myRedText_4_prevsib = myRedText_4.previousElementSibling;
+
+    </script>
+  </body>
+</html>
