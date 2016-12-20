@@ -24,17 +24,7 @@
     max-width: 700px;
     position: relative;
     overflow: hidden;
-
-    /*CSS Hover solution*/
-    // &:hover{
-    //     .tools {
-    //         top: 0%;
-    //     }
-
-    //     .nav-bar{
-    //         bottom: 0%;
-    //     } 
-    // }
+    cursor: pointer;
 }
 
 .bar {
@@ -44,18 +34,17 @@
     line-height: 40px;
     opacity: 0.7;
     cursor: pointer;
+
     &:hover {
         opacity: 1;
     }
-    /**Transition Properties will mess*/
-    // transition: all 0.5s ease;
 }
 
 .tools {
-    // top: -100%;
-    top: 0%;
+    top: -100%;
     width: 100%; 
-    
+    transition: top 0.6s ease;
+
     ul {
         margin: 0 auto;
         width: 500px
@@ -72,11 +61,15 @@
             opacity: 1;
         }
     }
+
+    &.hover {
+        top: 0%;
+    }
 }
 
 .nav-bar{
-    // bottom: -100%;
-    bottom: 0%;
+    bottom: -100%;
+    transition: bottom 0.6s ease;
 
     a {
         padding: 0px 20px;
@@ -92,5 +85,9 @@
             opacity: 1;
             color: blue;
         }
+    }
+
+    &.hover {
+        bottom: 0%;
     }
 }

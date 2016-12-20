@@ -20,25 +20,12 @@
     <a class="back-button" href="index.html">Back</a>
 
     <ul class="jsdom-navlinks">
-      <li>
-        <a href="#/">link-1</a>
-      </li>
-      <li>
-        <a href="#/">link-2</a>
-        <h2>Title 2</h2>
-      </li>
-      <li>
-        <a href="#/">link-3</a>
-      </li>
-      <li>
-        <a href="#/">link-4</a>
-      </li>
-      <li>
-        <a href="#/">link-5</a>
-      </li>
-      <li>
-        <a href="#/">link-6</a>
-      </li>
+      <li><a href="#/">link-1</a></li>
+      <li><a href="#/">link-2</a><h2>Title 2</h2></li>
+      <li><a href="#/">link-3</a></li>
+      <li><a href="#/">link-4</a></li>
+      <li><a href="#/">link-5</a></li>
+      <li><a href="#/">link-6</a></li>
       <li id="seventh"><a href="#/">link-7</a></li>
       <li><a href="#/">link-8</a></li>
     </ul>
@@ -55,6 +42,9 @@
       <p class="redtext">Lorem ipsum dolor sit amet.</p>
       <p class="redtext">Lorem ipsum dolor sit amet.</p>
     </div>
+
+    <button id="spanDel">Click me to delete the span</button>
+    <button id="spanAdd">Click me to insert div</button>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
@@ -82,7 +72,8 @@
         JS is only expecting to get one ID;
       */
       var seventh_link = document.getElementById("seventh");
-      
+      var delete_span_btn = document.getElementById("spanDel");
+
       /*Get by tags*/
       var link_li = document.getElementsByTagName('li');
       var link_li_2 = link_li[1];
@@ -112,6 +103,36 @@
       /*Sibling element*/
       var myRedText_4_nextsib = myRedText_4.nextElementSibling;
       var myRedText_4_prevsib = myRedText_4.previousElementSibling;
+
+      /*New Element*/
+      var newElement = document.createElement('li');
+      newElement.textContent = "I'm new content"
+
+      var newDiv = document.createElement('div');
+      newDiv.textContent = "I'm new div"
+
+      var newSpan = document.createElement('span');
+      newSpan.textContent = "I'm new span"
+      /*Append Child*/
+      /*
+      Note that There's only one newElement. newElement will be appended to nav_links first and then appended to myContent, 
+      There won't be a duplicate.
+      */
+      nav_links.appendChild(newElement);
+      myContent_1.appendChild(newElement);
+
+      /*Insert Before*/
+      spanAdd.addEventListener ('click', function(){
+        myContent_1.insertBefore(newDiv, myContent_1.firstElementChild);
+      });
+
+      /*Remove Child*/
+      nav_links.appendChild(newSpan);
+
+      delete_span_btn.addEventListener ('click', function(){
+        nav_links.removeChild(newSpan);
+      });
+
 
     </script>
   </body>
