@@ -1,12 +1,12 @@
 /*
-Creational
-Constructor Pattern - Create objects from functions
+  Creational
+  Constructor Pattern - Create objects from functions
 
-The new keyword
-- Creates a brand new object
-- Links to an object prototype
-- Bind 'this' to the new object scope
-- Implicitly returns this
+  The new keyword
+  - Creates a brand new object
+  - Links to an object prototype
+  - Bind 'this' to the new object scope
+  - Implicitly returns this
 */
 
 console.log("running js_constructor_pattern");
@@ -36,7 +36,7 @@ var task = function (name){
     console.log("Saving task " + this.taskName);
   }
 
-  /* Note that this function will be created on all objects. Which means that it's repeated 4 times for all objects.     To solve this problem, we use prototypes.
+  /* Note that this function will be created on all objects. Which means that it's repeated 4 times for all objects. To solve this problem, we use prototypes.
   */
 }
 

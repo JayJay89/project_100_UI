@@ -1,14 +1,17 @@
 /*
-Creational
-Module Pattern - Object Literal
-
-- Simple Way to Encapsulate Methods
-- Creates a "Toolbox" of functions to use
-
-Difference between Module and Constructor is that
+  Creational
+  Module Pattern - Object Literal
+  
+  - It's a toolbox
+  - Simple Way to Encapsulate Methods
+  - Creates a "Toolbox" of functions to use
+  - It's a bundle of methods that we can used to interact with the DB
+  
+  Difference between Module and Constructor is that
 
   I'm going to have one thing as opposed to create multiple objects in the constructor
 
+  Note that module, factory and singleton pattern is related to database
 */
 
 console.log("running js_module_pattern");

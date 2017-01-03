@@ -1,11 +1,9 @@
 /*Basics of Objects Creation, Inheritance*/
-
-
 var task = {
   taskName: 'myTask',
   taskDescription: 'myTask Description',
 
-  /*Usually we definer object properties this way*/
+  /*Usually we define object properties this way*/
   taskReturnInfo: function(){
     return this.taskName + " " + this.taskDescription; 
   }
