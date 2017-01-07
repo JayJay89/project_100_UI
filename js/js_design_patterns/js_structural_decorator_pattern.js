@@ -57,14 +57,32 @@ superTask.notify = function(){
 }
 superTask.save = function (){
   this.notify();
-  work.prototype.save.call(this)
+  work.prototype.save.call(this);
+
+  // Using "call(this)" here will result in calling in line 31 which is
+  // console.log("Saving " + this.workName);
 };
 
 superTask.notify();
 superTask.complete();
 superTask.save();
 
+/*
+  What if you want to create multiple urgent tasks?? 
+  You would have to repeat the code above multiple times.
+  go to js_structural_decorator_pattern_2 for more info
+*/
+
+
 // EXTRA STUFF - How prototype.call works
+// EXAMPLE 0 //
+
+var addToThis = function(a){
+  return "hohohoh"
+};
+
+addToThis.call(this); // returns "hohohoh"
+
 // EXAMPLE 1 //
   var obj = {num:2};
   var addToThis = function(a){
@@ -112,8 +130,15 @@ superTask.save();
     console.log(this.name + " is shouting");
   }
 
+  var chillDude = new dude('Chillman');
   var superDude = new dude('Clark Kent');
 
+  //By default both these objects will have a shout prototype inherited from dude object
+  chillDude.shout(); //'Chillman is shouting'
+  superDude.shout(); //'Clark Kent is shouting'
+
+  //Superdude's shout is being overwritten here to include a special console.log feature.
   superDude.shout = function (){
+    console.log("This is a superman shouting");
     dude.prototype.shout.call(this)
   };
