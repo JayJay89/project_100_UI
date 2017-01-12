@@ -49,14 +49,19 @@ section {
     float :left;
     padding: ($height - 18px)/2;
 }
-.content {
-    // margin-top: $height + 10px;
-    p {
+
+.scrollbox {
+    display: block;
+    height: 200px;
+    width: 350px;
+    overflow-y: scroll;
+    border: 1px solid red;
+    box-sizing: content-box;
+
+    > p {
+        padding: 20px;
         display: block;
-        height: 200px;
-        width: 350px;
-        overflow-y: scroll;
-        border: 1px solid red;
+        background-color: darkkhaki;
     }
 }
 

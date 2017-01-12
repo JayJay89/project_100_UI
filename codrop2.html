@@ -33,7 +33,11 @@
       <section class="content">
         <span class="scrollheight-feedback">scrollheight</span>
         <h1>Title</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ipsam harum illo provident. Quaerat laudantium molestias sequi commodi reiciendis consequuntur dicta cumque laboriosam deserunt provident vero porro quis officia voluptatibus nulla qui doloribus ut repellat, distinctio quo, natus? Amet ullam aut, optio adipisci distinctio incidunt sapiente suscipit quo et. Asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam voluptas maiores, nesciunt doloremque quas distinctio aperiam dolores dolor. Ipsam est cum, veniam quod amet rem quisquam quae tempore, animi facilis temporibus odit sed. Quis eum similique doloremque quod sunt. Amet a, porro eveniet architecto minima fugiat eaque temporibus vitae vero. Suscipit delectus veniam qui recusandae sed, magni corporis laborum. Accusamus repellendus culpa commodi fugit quae aliquam, odit nostrum quam animi, nesciunt, nam nemo odio consequuntur eius voluptatibus veniam quasi dolor assumenda eaque facere nisi eum. Officia cum asperiores, soluta, voluptatum provident minus vel optio, qui numquam voluptates id placeat itaque.</p>
+        <div class="scrollbox">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ipsam harum illo provident. Quaerat laudantium molestias sequi commodi reiciendis consequuntur dicta cumque laboriosam deserunt provident vero porro quis officia voluptatibus nulla qui doloribus ut repellat, distinctio quo, natus? Amet ullam aut, optio adipisci distinctio incidunt sapiente suscipit quo et. Asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam voluptas maiores, nesciunt doloremque quas distinctio aperiam dolores dolor. Ipsam est cum, veniam quod amet rem quisquam quae tempore, animi facilis temporibus odit sed. Quis eum similique doloremque quod sunt. Amet a, porro eveniet architecto minima fugiat eaque temporibus vitae vero. Suscipit delectus veniam qui recusandae sed, magni corporis laborum. Accusamus repellendus culpa commodi fugit quae aliquam, odit nostrum quam animi, nesciunt, nam nemo odio consequuntur eius voluptatibus veniam quasi dolor assumenda eaque facere nisi eum. Officia cum asperiores, soluta, voluptatum provident minus vel optio, qui numquam voluptates id placeat itaque. Lorem ipsum dolor sit amet.
+          </p>
+        </div>
         <button id="scroll-btn">scroll</button>
         <!-- <button id="scrolldown-btn">scroll down</button> -->
       </section>
@@ -46,95 +50,48 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script src="jquery.min.js"></script>
+    <script src="js/codrop2.js"></script>
     <script>
 
-      // $(document).ready(function(){
+      $(document).ready(function(){
 
-      //   $('p').on('scroll',function(){
-      //    $('.scrollheight-feedback').html("p's height is " + $('p').scrollTop());
-      //   });
+        // $('.scrollbox').on('scroll',function(){
+        //  $('.scrollheight-feedback').html("p's height is " + $('.scrollbox').scrollTop());
+        // });
 
-      //   $('#scroll-btn').on('click',function(){
-      //     if ($('p').scrollTop() == 0) {
-      //       $('p').animate({scrollTop: 450}, 300);
-      //     } else {
-      //       $('p').animate({scrollTop: 0}, 300);
-      //     };
-      //   });
+        // $('#scroll-btn').on('click',function(){
+        //   if ($('p').scrollTop() == 0) {
+        //     $('p').animate({scrollTop: 450}, 300);
+        //   } else {
+        //     $('p').animate({scrollTop: 0}, 300);
+        //   };
+        // });
 
-      //   $('.footer').on("click", function(){
-      //     $("html, body").animate({ scrollTop: "0px" },200);
-      //   });
+        $('.footer').on("click", function(){
+          $("html, body").animate({ scrollTop: "0px" },200);
+        });
 
-      //   $('.nav-bar-container').on('mouseenter',function(){
-      //     $(this).stop().animate({opacity: 1},0);
-      //   }).on('mouseleave',function(){
-      //     $(this).stop().animate({opacity: 0.2},0);
-      //   });
+        $('.nav-bar-container').on('mouseenter',function(){
+          $(this).stop().animate({opacity: 1},0);
+        }).on('mouseleave',function(){
+          $(this).stop().animate({opacity: 0.2},0);
+        });
 
-      //   $(window).on('scroll', function(){
+        $(window).on('scroll', function(){
 
-      //     $('.scrollheight-feedback').html("window height is " + $(window).scrollTop());
+          // $('.scrollheight-feedback').html("window height is " + $(window).scrollTop());
 
-      //     var winScrollTop = $(window).scrollTop();
+          var winScrollTop = $(window).scrollTop();
 
-      //     if (winScrollTop == 0) {
-      //       $('.nav-bar-container').stop().animate({opacity: 1},0);
-      //     } else {
-      //       $('.nav-bar-container').stop().animate({opacity: 0.2},0);
-      //     };
-      //   });
-      // });
-
-      var doc_text = document.querySelectorAll('p')[0];
-      var feedback = document.querySelectorAll('.scrollheight-feedback')[0];
-      var scroll_btn = document.querySelectorAll('#scroll-btn')[0];
-
-      function animateScroll(elem) {
-        var scrollTop = elem.scrollTop;
-
-        function frameUp() {
-          scrollTop++  // update parameters
-          elem.scrollTop = scrollTop // show frame
-          if (scrollTop == 450)  // check finish condition
-            clearInterval(id)
-        }
-
-        function frameDown() {
-          scrollTop--  // update parameters
-          elem.scrollTop = scrollTop // show frame
-          if (scrollTop == 0)  // check finish condition
-            clearInterval(id)
-        }
-
-        if ( scrollTop === 0 ) {
-          var id = setInterval(frameUp, 1) 
-        } else {
-          var id = setInterval(frameDown, 1) 
-        }
-
-      }
-
-      /*Cross-Browser Solutions*/
-      // var scrollLeft = (window.pageXOffset !== undefined) ? window.pageXOffset : (document.documentElement || document.body.parentNode || document.body).scrollLeft;
-
-      // var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-
-      doc_text.addEventListener('scroll', function(){
-        feedback.innerHTML = "p's height is " + doc_text.scrollTop;
+          if (winScrollTop == 0) {
+            $('.nav-bar-container').stop().animate({opacity: 1},0);
+          } else {
+            $('.nav-bar-container').stop().animate({opacity: 0.2},0);
+          };
+        });
       });
 
-      scroll_btn.addEventListener('click', function(){
-        animateScroll(doc_text);
-      });
-
-      // $('#scroll-btn').on('click',function(){
-      //   if ($('p').scrollTop() == 0) {
-      //     $('p').animate({scrollTop: 450}, 300);
-      //   } else {
-      //     $('p').animate({scrollTop: 0}, 300);
-      //   };
-      // });
+      
 
     </script>
   </body>
