@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", function(event){
     feedback.innerHTML = "window's height is " + window.scrollY;
   });
 
-  var scrollAnimate;
-
   scroll_btn.addEventListener('click', function(){
 
     scrollTheBox();
@@ -25,27 +23,46 @@ document.addEventListener("DOMContentLoaded", function(event){
 
   });
 
+  var diff = scrollbox.scrollHeight - scrollbox.clientHeight
+
   function scrollTheBox(){
 
-    var diff = scrollbox.scrollHeight - scrollbox.clientHeight;
-    var milisecs = 20;
-    var scrollDuration = 1000;
-    var scrollAnimate;
+    var animate;
+    // var diff = scrollbox.scrollHeight - scrollbox.clientHeight
+    var seconds = 2;
+    var miliseconds = seconds * 1000;
+    var steps = (0.005 * diff) / seconds;
 
     function scrolltoTop(){
-      scrollbox.scrollBy( 0, -diff/(scrollDuration/milisecs));
+      console.log(scrollbox.scrollTop);
+      /*If scroll reach top, clear interval*/
+      if (scrollbox.scrollTop === 0) {
+        clearInterval(animate);
+      } else {
+        scrollbox.scrollBy(0, -steps);
+      }
     }
 
     function scrolltoBottom(){
-      scrollbox.scrollBy( 0, diff/(scrollDuration/milisecs));
+      console.log(scrollbox.scrollTop);
+      /*If scroll reach bottom, clear interval*/
+      if (scrollbox.scrollTop === diff) {
+        clearInterval(animate);
+      } else {
+        scrollbox.scrollBy(0, steps);
+      }
     }
 
     /*if scroll is at bottom, scroll to top*/
-    if (scrollbox.scrollHeight - scrollbox.clientHeight === scrollbox.scrollTop) {
-      setInterval(scrolltoTop, milisecs);
+    if (scrollbox.scrollTop === diff ) {
+      console.log("scroll to top");
+      var animate = setInterval(scrolltoTop, 5);
+      scrolltoTop();
     } else {
       /*if scroll is anywhere, scroll to bottom*/
-     setInterval(scrolltoBottom, milisecs);
+      console.log("scroll to bottom");
+      var animate = setInterval(scrolltoBottom, 5);
+      scrolltoBottom();
     } 
   }
 
@@ -57,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function(event){
   scrollbox.scrollTop = 0       (When scroll is at top)
   scrollbox.scrollTop = 398     (When scroll is at bottom)
   scrollbox.scrollHeight = 598  (Full height of the long text)
-*/
+  */
 
 // function scrollToTop(scrollDur){
 //   var scrollStep = -scrollbox.scrollTop / (scrollDur / 15),
