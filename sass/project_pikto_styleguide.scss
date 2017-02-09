@@ -1,11 +1,26 @@
 
 $lightblue: #F6F9FC;
+$lightblue2: #8497AB;
+$gray1: #6F6F6F;
+$gray2: #849AB0;
+
 
 ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
 }
+
+button {
+  background-color: transparent;
+  border: 0px;  
+  padding: 0px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 
 /*clear fixes*/
 .clearfix:before,
@@ -20,22 +35,42 @@ ul {
 .sg-sidebar {
   // background-color: $lightblue;
   background-color: beige;
-  width: 275px;
+  width: calc(275px - 60px);
   display: inline-block;
   float: left;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 30px;
 
   ul > li {
     display: inline-block;
     width: 100%;
   }
+
+  button, label {
+    width: 100%;
+    text-align: left;
+    color: $gray1;
+  }
+
+  h1, h2 {
+    margin: 0px 0px 10px 0px;
+  }
 }
 
 .sg-main-container {
-  width: calc(100% - 275px);
+  width: calc(100% - 275px - 65px);
   display: inline-block;
   float: left;
-  background-color: yellow;
+  position: relative;
+  opacity: 1;
+  top: 0px;
+  transition: top 0.3s ease, opacity 0.3s ease;
+  padding: 100px 0px 0px 65px;
+  &.slide-out {
+    top: 10px;
+    opacity: 0;
+  }
+
 }
 
 .sg-dropdown {
@@ -44,29 +79,52 @@ ul {
   }
 
   label {
-    border: 1px solid black;
     cursor: pointer;
     width: 100%;
     display: inline-block;
   }
 
-  input:checked + .sg-tab-content{
+  input:checked ~ .sg-tab-content{
     max-height: 300px;
   }
 }
 
 .sg-tab-content {
   max-height: 0;
-  border: 1px solid black;
   float: left;
   overflow: hidden;
   display: inline-block;
   -webkit-transition: max-height .35s;
   -o-transition: max-height .35s;
   transition: max-height .35s;
-
   width: 100%;
+  
   > li {
-    width: 100%;
+    padding-left: 20px;
+    position: relative;
+
+    &:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      left: 8px;
+      top: 8px;
+      border-radius: 50%;
+      background-color: $lightblue2;
+    }
+  }
+}
+
+.sg-contents {
+  display: none;
+}
+
+.sg-button-list, .sg-tab-content {
+  > li.active {
+    button {
+      color: $gray2;
+    }
   }
 }

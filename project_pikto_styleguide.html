@@ -23,73 +23,113 @@
         <span>styleguide v1.0</span>
 
         <h2>Brand Kit</h2>
-        <ul>
-          <li><a href="#/">Logo</a></li>
-          <li><a href="#/">Brand Colors</a></li>
-          <li><a href="#/">Brand Patterns</a></li>
-          <li><a href="#/">Typography</a></li>
-          <li><a href="#/">Icons & Illustrations</a></li>
+        <ul class="sg-button-list">
+          <li>
+            <button class="sg-btn sg-btn-first" data-target="sg_data_logo">Logo</button>
+          </li>
+          <li>
+            <button class="sg-btn" data-target="sg_data_brand_color">Brand Colors</button>
+          </li>
+          <li>
+            <button class="sg-btn" data-target="sg_data_brand_patterns">Brand Patterns</button>
+          </li>
+          <li>
+            <button class="sg-btn" data-target="sg_data_typography">Typography</button>
+          </li>
+          <li>
+            <button class="sg-btn" data-target="sg_data_illustration">Icons & Illustrations</button>
+          </li>
         </ul>
 
         <h2>UI Kit</h2>
-        <ul>
-          <li><a href="#/">Website Colour Palette</a></li>
-          <li><a href="#/">UI Colour Palette</a></li>
-          <li><a href="#/">Typography</a></li>
+        <ul class="sg-button-list">
+          <li><button class="sg-btn" data-target="sg_data_website_colour">Website Colour Palette</button></li>
+          <li><button class="sg-btn" data-target="sg_data_ui_colour">UI Colour Palette</button></li>
+          <li><button class="sg-btn" data-target="sg_data_typography">Typography</button></li>
           <li class="sg-dropdown">
             <input id="styleguide_ui" type="radio" name="tabs">
             <label for="styleguide_ui">UI Elements</label>
-            <ul class="sg-tab-content">
-              <li><a href="#/">Buttons</a></li>
-              <li><a href="#/">Tooltip</a></li>
-              <li><a href="#/">Popover</a></li>
-              <li><a href="#/">Paginations</a></li>
-              <li><a href="#/">Preloader</a></li>
-              <li><a href="#/">Label/Badges</a></li>
-              <li><a href="#/">Sliders</a></li>
-              <li><a href="#/">Cards</a></li>
-              <li><a href="#/">Alerts/Notifications</a></li>
-              <li><a href="#/">Breadcrumbs</a></li>
-              <li><a href="#/">Feedbacks</a></li>
-              <li><a href="#/">Modals</a></li>
-              <li><a href="#/">Tables</a></li>
-              <li><a href="#/">File Selector</a></li>
-              <li><a href="#/">Toolbar</a></li>
-              <li><a href="#/">Picture</a></li>
+            <ul class="sg-tab-content sg-button-list">
+              <li><button class="sg-btn" data-target="sg_data_button">Buttons</button></li>
+              <li><button class="sg-btn" data-target="sg_data_tooltip">Tooltip</button></li>
+              <li><button class="sg-btn" data-target="sg_data_popover">Popover</button></li>
+              <li><button class="sg-btn" data-target="sg_data_paginations">Paginations</button></li>
+              <li><button class="sg-btn" data-target="sg_data_preloader">Preloader</button></li>
+              <li><button class="sg-btn" data-target="sg_data_label">Label/Badges</button></li>
+              <li><button class="sg-btn" data-target="sg_data_sliders">Sliders</button></li>
+              <li><button class="sg-btn" data-target="sg_data_cards">Cards</button></li>
+              <li><button class="sg-btn" data-target="sg_data_alerts">Alerts/Notifications</button></li>
+              <li><button class="sg-btn" data-target="sg_data_breadcrumbs">Breadcrumbs</button></li>
+              <li><button class="sg-btn" data-target="sg_data_feedbacks">Feedbacks</button></li>
+              <li><button class="sg-btn" data-target="sg_data_modals">Modals</button></li>
+              <li><button class="sg-btn" data-target="sg_data_tables">Tables</button></li>
+              <li><button class="sg-btn" data-target="sg_data_file">File Selector</button></li>
+              <li><button class="sg-btn" data-target="sg_data_toolbar">Toolbar</button></li>
+              <li><button class="sg-btn" data-target="sg_data_picture">Picture</button></li>
             </ul>
           </li>
           <li class="sg-dropdown">
             <input id="styleguide_nav" type="radio" name="tabs">
             <label for="styleguide_nav">Navigations</label>
-            <ul class="sg-tab-content">
-              <li><a href="#/">Nav 1</a></li>
-              <li><a href="#/">Nav 2</a></li>
-              <li><a href="#/">Nav 3</a></li>
+            <ul class="sg-tab-content sg-button-list">
+              <li><button class="sg-btn" data-target="sg_data_nav_1">Nav 1</button></li>
+              <li><button class="sg-btn" data-target="sg_data_nav_2">Nav 2</button></li>
+              <li><button class="sg-btn" data-target="sg_data_nav_3">Nav 3</button></li>
             </ul>
           </li>
           <li class="sg-dropdown">
             <input id="styleguide_form" type="radio" name="tabs">
             <label for="styleguide_form">Form Elements</label>
-            <ul class="sg-tab-content">
-              <li><a href="#/">Form 1</a></li>
-              <li><a href="#/">Form 2</a></li>
-              <li><a href="#/">Form 3</a></li>
+            <ul class="sg-tab-content sg-button-list">
+              <li><button class="sg-btn" data-target="sg_data_form_1">Form 1</button></li>
+              <li><button class="sg-btn" data-target="sg_data_form_2">Form 2</button></li>
+              <li><button class="sg-btn" data-target="sg_data_form_3">Form 3</button></li>
             </ul>
           </li>
           <li class="sg-dropdown">
             <input id="styleguide_icon" type="radio" name="tabs">
             <label for="styleguide_icon">Icons</label>
-            <ul class="sg-tab-content">
-            <li><a href="#/">Icon 1</a></li>
-            <li><a href="#/">Icon 2</a></li>
-            <li><a href="#/">Icon 3</a></li>
+            <ul class="sg-tab-content sg-button-list">
+              <li><button class="sg-btn" data-target="sg_data_icon_1">Icon 1</button></li>
+              <li><button class="sg-btn" data-target="sg_data_icon_2">Icon 2</button></li>
+              <li><button class="sg-btn" data-target="sg_data_icon_3">Icon 3</button></li>
             </ul>
           </li>
         </ul>
       </div>
 
-      <div class="sg-main-container">
-        <section>
+      <div class="sg-main-container" id="sg_main_container">
+        <section></section>
+      </div>
+
+      <!--All the Contents in here-->
+      <div class="sg-contents">
+        <section id="sg_data_logo">
+          <h1>Logo</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolore, reiciendis nostrum blanditiis possimus nesciunt consequatur rerum. Autem, eaque vero omnis, tenetur, nemo suscipit praesentium adipisci perspiciatis doloremque vel veniam?</p>
+        </section>
+
+        <section id="sg_data_brand_color">
+          <h1>Brand Colours</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia.</p>
+        </section>
+
+        <section id="sg_data_brand_patterns">
+          <h1>Brand Patterns</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, aliquid voluptates inventore quis eligendi dolores!</p>
+        </section>
+
+        <section id="sg_data_typography">
+          <h1>Typography</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia.</p>
+        </section>
+
+        <section id="sg_data_illustration">
+          <h1>Icons & Illustrations</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_website_colour">
           <h1>Website Colour Palette</h1>
           <p>Thus is the primary and secondary colour palettes as described in the PSD styleguide and in variables.scsss</p>
 
@@ -99,8 +139,6 @@
               <div>#ffffff</div>
               <span>$gplus-whiteiconbg-color</span>
             </li>
-          </ul>
-          <ul>
             <li>
               <div>#ffffff</div>
               <span>$gplus-whiteiconbg-color</span>
@@ -112,13 +150,146 @@
               <div>#ffffff</div>
               <span>$gplus-whiteiconbg-color</span>
             </li>
-          </ul>
-          <ul>
             <li>
               <div>#ffffff</div>
               <span>$gplus-whiteiconbg-color</span>
             </li>
           </ul>
+        </section>
+
+        <section id="sg_data_ui_colour">
+          <h1>UI Colour Palette</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_typography">
+          <h1>Typography</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_button">
+          <h1>Buttons</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_tooltip">
+          <h1>Tooltip</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_popover">
+          <h1>Popover</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_paginations">
+          <h1>Paginations</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_preloader">
+          <h1>Preloaders</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_label">
+          <h1>Labels</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_sliders">
+          <h1>Sliders</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_cards">
+          <h1>Cards</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_alerts">
+          <h1>Alerts</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_breadcrumbs">
+          <h1>Breadcrumb</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_feedbacks">
+          <h1>Feedbacks</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_modals">
+          <h1>Modals</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_tables">
+          <h1>Tables</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_file">
+          <h1>File Selector</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_toolbar">
+          <h1>Toolbar</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_picture">
+          <h1>Picture</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_nav_1">
+          <h1>Nav 1</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_nav_2">
+          <h1>Nav 2</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_nav_3">
+          <h1>Nav 3</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_form_1">
+          <h1>Form 1</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_form_2">
+          <h1>Form 2</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_form_3">
+          <h1>Form 3</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_icon_1">
+          <h1>Icon 1</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_icon_2">
+          <h1>Icon 2</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_icon_3">
+          <h1>Icon 3</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
       </div>
     </div>
@@ -126,5 +297,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script src="jquery.min.js"></script>
+    <script src="js/project_pikto_styleguide.js"></script>
   </body>
-  </html>
+</html>
