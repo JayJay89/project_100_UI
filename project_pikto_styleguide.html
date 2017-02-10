@@ -22,80 +22,84 @@
         <h1>Piktochart</h1>
         <span>styleguide v1.0</span>
 
-        <h2>Brand Kit</h2>
-        <ul class="sg-button-list">
-          <li>
-            <button class="sg-btn sg-btn-first" data-target="sg_data_logo">Logo</button>
-          </li>
-          <li>
-            <button class="sg-btn" data-target="sg_data_brand_color">Brand Colors</button>
-          </li>
-          <li>
-            <button class="sg-btn" data-target="sg_data_brand_patterns">Brand Patterns</button>
-          </li>
-          <li>
-            <button class="sg-btn" data-target="sg_data_typography">Typography</button>
-          </li>
-          <li>
-            <button class="sg-btn" data-target="sg_data_illustration">Icons & Illustrations</button>
-          </li>
-        </ul>
+        <div class="sg-brand-kit">
+          <h2>Brand Kit</h2>
+          <ul class="sg-button-list sg-button-list--outer">
+            <li>
+              <button class="sg-btn sg-btn-first" data-target="sg_data_logo">Logo</button>
+            </li>
+            <li>
+              <button class="sg-btn" data-target="sg_data_brand_color">Brand Colors</button>
+            </li>
+            <li>
+              <button class="sg-btn" data-target="sg_data_brand_patterns">Brand Patterns</button>
+            </li>
+            <li>
+              <button class="sg-btn" data-target="sg_data_typography">Typography</button>
+            </li>
+            <li>
+              <button class="sg-btn" data-target="sg_data_illustration">Icons & Illustrations</button>
+            </li>
+          </ul>
+        </div>
 
-        <h2>UI Kit</h2>
-        <ul class="sg-button-list">
-          <li><button class="sg-btn" data-target="sg_data_website_colour">Website Colour Palette</button></li>
-          <li><button class="sg-btn" data-target="sg_data_ui_colour">UI Colour Palette</button></li>
-          <li><button class="sg-btn" data-target="sg_data_typography">Typography</button></li>
-          <li class="sg-dropdown">
-            <input id="styleguide_ui" type="radio" name="tabs">
-            <label for="styleguide_ui">UI Elements</label>
-            <ul class="sg-tab-content sg-button-list">
-              <li><button class="sg-btn" data-target="sg_data_button">Buttons</button></li>
-              <li><button class="sg-btn" data-target="sg_data_tooltip">Tooltip</button></li>
-              <li><button class="sg-btn" data-target="sg_data_popover">Popover</button></li>
-              <li><button class="sg-btn" data-target="sg_data_paginations">Paginations</button></li>
-              <li><button class="sg-btn" data-target="sg_data_preloader">Preloader</button></li>
-              <li><button class="sg-btn" data-target="sg_data_label">Label/Badges</button></li>
-              <li><button class="sg-btn" data-target="sg_data_sliders">Sliders</button></li>
-              <li><button class="sg-btn" data-target="sg_data_cards">Cards</button></li>
-              <li><button class="sg-btn" data-target="sg_data_alerts">Alerts/Notifications</button></li>
-              <li><button class="sg-btn" data-target="sg_data_breadcrumbs">Breadcrumbs</button></li>
-              <li><button class="sg-btn" data-target="sg_data_feedbacks">Feedbacks</button></li>
-              <li><button class="sg-btn" data-target="sg_data_modals">Modals</button></li>
-              <li><button class="sg-btn" data-target="sg_data_tables">Tables</button></li>
-              <li><button class="sg-btn" data-target="sg_data_file">File Selector</button></li>
-              <li><button class="sg-btn" data-target="sg_data_toolbar">Toolbar</button></li>
-              <li><button class="sg-btn" data-target="sg_data_picture">Picture</button></li>
-            </ul>
-          </li>
-          <li class="sg-dropdown">
-            <input id="styleguide_nav" type="radio" name="tabs">
-            <label for="styleguide_nav">Navigations</label>
-            <ul class="sg-tab-content sg-button-list">
-              <li><button class="sg-btn" data-target="sg_data_nav_1">Nav 1</button></li>
-              <li><button class="sg-btn" data-target="sg_data_nav_2">Nav 2</button></li>
-              <li><button class="sg-btn" data-target="sg_data_nav_3">Nav 3</button></li>
-            </ul>
-          </li>
-          <li class="sg-dropdown">
-            <input id="styleguide_form" type="radio" name="tabs">
-            <label for="styleguide_form">Form Elements</label>
-            <ul class="sg-tab-content sg-button-list">
-              <li><button class="sg-btn" data-target="sg_data_form_1">Form 1</button></li>
-              <li><button class="sg-btn" data-target="sg_data_form_2">Form 2</button></li>
-              <li><button class="sg-btn" data-target="sg_data_form_3">Form 3</button></li>
-            </ul>
-          </li>
-          <li class="sg-dropdown">
-            <input id="styleguide_icon" type="radio" name="tabs">
-            <label for="styleguide_icon">Icons</label>
-            <ul class="sg-tab-content sg-button-list">
-              <li><button class="sg-btn" data-target="sg_data_icon_1">Icon 1</button></li>
-              <li><button class="sg-btn" data-target="sg_data_icon_2">Icon 2</button></li>
-              <li><button class="sg-btn" data-target="sg_data_icon_3">Icon 3</button></li>
-            </ul>
-          </li>
-        </ul>
+        <div class="sg-ui-kit">
+          <h2>UI Kit</h2>
+          <ul class="sg-button-list sg-button-list--outer">
+            <li><button class="sg-btn" data-target="sg_data_website_colour">Website Colour Palette</button></li>
+            <li><button class="sg-btn" data-target="sg_data_ui_colour">UI Colour Palette</button></li>
+            <li><button class="sg-btn" data-target="sg_data_typography">Typography</button></li>
+            <li class="sg-dropdown">
+              <input id="styleguide_ui" type="radio" name="tabs">
+              <label for="styleguide_ui">UI Elements</label>
+              <ul class="sg-button-list sg-button-list--inner">
+                <li><button class="sg-btn" data-target="sg_data_button">Buttons</button></li>
+                <li><button class="sg-btn" data-target="sg_data_tooltip">Tooltip</button></li>
+                <li><button class="sg-btn" data-target="sg_data_popover">Popover</button></li>
+                <li><button class="sg-btn" data-target="sg_data_paginations">Paginations</button></li>
+                <li><button class="sg-btn" data-target="sg_data_preloader">Preloader</button></li>
+                <li><button class="sg-btn" data-target="sg_data_label">Label/Badges</button></li>
+                <li><button class="sg-btn" data-target="sg_data_sliders">Sliders</button></li>
+                <li><button class="sg-btn" data-target="sg_data_cards">Cards</button></li>
+                <li><button class="sg-btn" data-target="sg_data_alerts">Alerts/Notifications</button></li>
+                <li><button class="sg-btn" data-target="sg_data_breadcrumbs">Breadcrumbs</button></li>
+                <li><button class="sg-btn" data-target="sg_data_feedbacks">Feedbacks</button></li>
+                <li><button class="sg-btn" data-target="sg_data_modals">Modals</button></li>
+                <li><button class="sg-btn" data-target="sg_data_tables">Tables</button></li>
+                <li><button class="sg-btn" data-target="sg_data_file">File Selector</button></li>
+                <li><button class="sg-btn" data-target="sg_data_toolbar">Toolbar</button></li>
+                <li><button class="sg-btn" data-target="sg_data_picture">Picture</button></li>
+              </ul>
+            </li>
+            <li class="sg-dropdown">
+              <input id="styleguide_nav" type="radio" name="tabs">
+              <label for="styleguide_nav">Navigations</label>
+              <ul class="sg-button-list sg-button-list--inner">
+                <li><button class="sg-btn" data-target="sg_data_nav_1">Nav 1</button></li>
+                <li><button class="sg-btn" data-target="sg_data_nav_2">Nav 2</button></li>
+                <li><button class="sg-btn" data-target="sg_data_nav_3">Nav 3</button></li>
+              </ul>
+            </li>
+            <li class="sg-dropdown">
+              <input id="styleguide_form" type="radio" name="tabs">
+              <label for="styleguide_form">Form Elements</label>
+              <ul class="sg-button-list sg-button-list--inner">
+                <li><button class="sg-btn" data-target="sg_data_form_1">Form 1</button></li>
+                <li><button class="sg-btn" data-target="sg_data_form_2">Form 2</button></li>
+                <li><button class="sg-btn" data-target="sg_data_form_3">Form 3</button></li>
+              </ul>
+            </li>
+            <li class="sg-dropdown">
+              <input id="styleguide_icon" type="radio" name="tabs">
+              <label for="styleguide_icon">Icons</label>
+              <ul class="sg-button-list sg-button-list--inner">
+                <li><button class="sg-btn" data-target="sg_data_icon_1">Icon 1</button></li>
+                <li><button class="sg-btn" data-target="sg_data_icon_2">Icon 2</button></li>
+                <li><button class="sg-btn" data-target="sg_data_icon_3">Icon 3</button></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="sg-main-container" id="sg_main_container">
