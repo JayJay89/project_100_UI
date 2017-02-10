@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // console.log(sg_button_list_btn);
 
   /*Default*/
-  container.innerHTML = sg_data_logo.innerHTML;
+  container.innerHTML = sg_data_website_colour.innerHTML;
 
   function changeContent( ev ) {
     // console.log( 'changeContent', ev);

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title> Infotrek Module 1a</title>
+  <!-- Bootstrap -->
+  <link href="css/infotrek1.css" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="mo-wrapper clearfix">
+      <div class="mo-sidebar">
+        <button class="mo-sidebar-hide">
+          <div class="triangle"></div>
+        </button>
+        <h1>Module 1</h1>
+
+        <ul class="mo-button-list">
+
+          <li><button class="mo-btn" data-target="info_box_model">Box Models</button></li>
+          <li><button class="mo-btn" data-target="info_display">Displays</button></li>
+          <li><button class="mo-btn" data-target="info_position">Positions</button></li>
+          <li><button class="mo-btn" data-target="info_float">Floats</button></li>
+          <li><button class="mo-btn" data-target="info_centering">Centering</button></li>
+          <li><button class="mo-btn" data-target="info_equal_height">Equal-Height Columns</button></li>
+          <li><button class="mo-btn" data-target="info_responsive">Responsive</button></li>
+
+          <li class="mo-dropdown">
+            <input id="styleguide_nav" type="radio" name="tabs">
+            <label for="styleguide_nav">Navigations</label>
+            <ul class="mo-tab-content mo-button-list">
+              <li><button class="mo-btn" data-target="mo_data_nav_1">Nav 1</button></li>
+              <li><button class="mo-btn" data-target="mo_data_nav_2">Nav 2</button></li>
+              <li><button class="mo-btn" data-target="mo_data_nav_3">Nav 3</button></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!--Content Frame-->
+      <div class="mo-main-container" id="mo_main_container">
+        <section></section>
+      </div>
+
+      <!--All the Contents in here-->
+      <div class="mo-contents">
+        <section id="info_box_model">
+          <h1>Box Models</h1>
+          <p></p>
+          <div class="info-box-model__box box_turquoise box-model">
+            BOX
+          </div>
+          <div class="info-box-model__box box_chartreuse box-model">
+            BOX
+          </div>
+
+          <h2>CSS Property: Margin and Padding</h2>
+
+          <ul class="info-list-exception">
+            <li>Margin can accept negative values</li>
+            <li>Padding cannot accept negative values</li>
+          </ul>
+
+          <div class="info-try-this">
+            Try This
+            <ul class="info-list-exception">
+              <li>Change the value of padding and margin on the boxes above.</li>
+              <li>Set the margin to a negative value to see what it looks like.</li>
+            </ul>
+          </div>
+
+          <h2>CSS Property: Width and Height</h2>
+
+          <ul class="info-list-exception">
+            <li>Height and width can be given fixed or percentage values</li>
+            <li>Percentage values are calculated based on the parents dimensions</li>
+            <li>Height, when given percentage value, only inherit from a direct parent</li>
+          </ul>
+
+          <section class="info-box-give-me-height">
+            <div class="info-box-model__box box_turquoise box-d-1">
+              height: 300px; <br>
+              width: 300px;
+            </div>
+
+            <div class="info-box-model__box box_turquoise box-d-3">
+              <div class="info-box-model__box box_chartreuse box-d-4">
+                height: 50%; <br>
+                width: 50%;
+              </div>
+            </div>
+
+            <div class="info-box-model__box box_chartreuse box-d-2">
+              height: 20%; <br>
+              width: 20%;
+            </div>
+          </section>
+
+          <div class="info-try-this">
+            Try This
+            <ul class="info-list-exception">
+              <li>Give .info-box-give-me-height height: 500px</li>
+              <li>Give .info-box-give-me-height height: 100%</li>
+              <li>Drag the last box out of .info-box-give-me-height</li>
+            </ul>
+          </div>
+          
+
+          <h2>CSS: Margin Collapse</h2>
+          <p>Top and bottom margins of blocks are sometimes combined (collapsed) into a single margin whose size is the largest of the margins combined into it, a behavior known as margin collapsing.</p>
+          <p>When there are 2 <strong>block</strong> elements arrange next to each other, margins collapses</p>
+          <img src="images/infotrek/margin_collapse.jpg" alt="">
+
+          <div class="info-box-model__box box-margin-collapse">Margin Collapse</div>
+          <div class="info-box-model__box box-margin-collapse">Margin Collapse</div>
+          <p>How do we prevent this?</p>
+          <div class="info-try-this">
+            Try This
+            <ul class="info-list-exception">
+              <li>Change both boxes(box-margin-collapse) display: value to inline-box and give them a 100% width</li>
+            </ul>
+          </div>
+          <h2>CSS Property: Box Sizing</h2>
+          <p>The default value is content-box</p>
+          <p>The box-sizing property is used to alter the default CSS box model used to calculate width and height of the elements.</p>
+          <div class="info-box-model__box box-sizing box1">
+            Border-box <br>
+            w: 200px <br>
+            h: 200px <br>
+          </div>
+          <div class="info-box-model__box box-sizing box2">
+            Content-box <br>
+            w: 200px <br>
+            h: 200px <br>
+          </div>
+          <br><br>
+          <div class="info-box-model__box box-sizing box3">
+            Border-box <br>
+            padding: 20px <br>
+            w: 200px <br>
+            h: 200px <br>
+          </div>
+          <div class="info-box-model__box box-sizing box4">
+            Content-box <br>
+            padding: 20px <br>
+            w: 200px <br>
+            h: 200px <br>
+          </div>
+
+        </section>
+
+        <section id="info_display">
+          <h1>Displays</h1>
+          <h2>Inline, Inline-block, block</h2>
+        </section>
+
+        <section id="info_position">
+          <h1>Position</h1>
+          <h2>Relative, Absolute, Fixed, Z-index</h2>
+        </section>
+
+        <section id="info_float">
+          <h1>Float</h1>
+          <h2>Inline-block gap bug. Clearfix</h2>
+        </section>
+
+        <section id="info_centering">
+          <h1>Centering</h1>
+          <h2>Horizontally</h2>
+          <h2>Vertically</h2>
+          <h2>Horizontal and Vertical</h2>
+        </section>
+
+        <section id="info_equal_height">
+          <h1>Equal Height</h1>
+        </section>
+
+        <section id="info_responsive">
+          <h1>Responsive</h1>
+          <h2>Media Queries</h2>
+          <h2>Calc()</h2>
+        </section>
+
+        <section id="mo_data_nav_1">
+          <h1>Nav 1</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="mo_data_nav_2">
+          <h1>Nav 2</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="mo_data_nav_3">
+          <h1>Nav 3</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="jquery.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) { 
+        
+        var current_active = $('.mo-btn-first');
+        var container = document.querySelector('.mo-main-container');
+        var mo_button_list_btn = document.querySelectorAll('.mo-button-list > li > button');
+        var mo_btn = document.querySelectorAll('.mo-btn');
+
+        /*Default*/
+        container.innerHTML = info_box_model.innerHTML;
+        $('.mo-sidebar-hide').find('.triangle').toggleClass('inverse');
+        $('.mo-sidebar').toggleClass('slide-in');
+        $('.mo-main-container').toggleClass('expand');
+
+
+        function changeContent( ev ) {
+          const data = ev.currentTarget.dataset.active;
+          const target = document.getElementById(data);
+          ev.currentTarget.innerHTML = target.innerHTML;
+          ev.currentTarget.classList.remove('slide-out');
+        }
+
+        container.addEventListener( 'transitionend', changeContent );
+
+        function makeSlideOut( selector ) {
+          return function slideOut( ev ) {
+            // console.log('slideOut', ev);
+            const container = document.querySelector( selector );
+            container.dataset.active = ev.currentTarget.dataset.target;
+            container.classList.add('slide-out');
+          }
+        }
+
+        [...mo_button_list_btn].forEach( function(elem) {
+          elem.addEventListener('mousedown', makeSlideOut( '.mo-main-container' ) );
+          // console.log(elem);
+        });
+
+        $('.mo-btn').on('click', function(){
+          $('.mo-btn').closest('li').removeClass('active');
+          $(this.closest('li')).addClass('active');
+          current_active = this;
+        })
+
+        $('.mo-sidebar-hide').on('click', function(){
+          $('.mo-sidebar-hide').find('.triangle').toggleClass('inverse');
+          $('.mo-sidebar').toggleClass('slide-in');
+          $('.mo-main-container').toggleClass('expand');
+        });
+
+      });
+
+    </script>
+  </body>
+</html>
