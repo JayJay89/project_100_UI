@@ -36,6 +36,21 @@ button {
   clear: both;
 }
 
+.sg-color-copy-label {
+  background-color: beige;
+  padding: 10px;
+  position: fixed;
+  display: inline-block;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  &.fade-in {
+    opacity: 1
+  }
+}
+
 .sg-sidebar {
   // background-color: $lightblue;
   background-color: $lightblue;
@@ -91,6 +106,10 @@ button {
   margin-bottom: 30px;
 }
 
+.sg-content-title {
+  margin-bottom: 40px;
+}
+
 .sg-main-container {
   width: calc(100% - 275px - 65px);
   display: inline-block;
@@ -104,6 +123,36 @@ button {
   &.slide-out {
     top: 10px;
     opacity: 0;
+  }
+
+  > h1 {
+    font-size: 22px;
+  }
+
+  > h2 {
+    font-size: 16px;
+    color: $blue;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  > section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease, top 0.5s ease;
+    top: -10px;
+    position: relative;
+
+    &.active {
+      display: block;
+    }
+
+    &.slide-in {
+      opacity: 1;
+      top: 0px;
+    }
   }
 }
 
@@ -182,3 +231,31 @@ button {
   display: none;
 }
 
+.sg-color-palette {
+  > li {
+    float: left;
+    margin-right: 24px;
+
+    > span {
+      margin-top: 13px;
+      display: block; 
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}
+
+.sg-colorbox {
+  /*
+    The background-color is generated with JS from HTML content,
+    Changing the content, will change the background-color.
+  */
+
+  width: 170px;
+  height: 56px;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  cursor: pointer;
+  z-index: 1;
+}

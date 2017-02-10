@@ -18,6 +18,9 @@
   </head>
   <body>
     <div class="sg-wrapper clearfix">
+
+      <div class="sg-color-copy-label">Color Copied!</div>
+
       <div class="sg-sidebar">
         <h1>Piktochart</h1>
         <span>styleguide v1.0</span>
@@ -26,7 +29,7 @@
           <h2>Brand Kit</h2>
           <ul class="sg-button-list sg-button-list--outer">
             <li>
-              <button class="sg-btn sg-btn-first" data-target="sg_data_logo">Logo</button>
+              <button class="sg-btn" data-target="sg_data_logo">Logo</button>
             </li>
             <li>
               <button class="sg-btn" data-target="sg_data_brand_color">Brand Colors</button>
@@ -103,12 +106,7 @@
       </div>
 
       <div class="sg-main-container" id="sg_main_container">
-        <section></section>
-      </div>
-
-      <!--All the Contents in here-->
-      <div class="sg-contents">
-        <section id="sg_data_logo">
+        <section id="sg_data_logo" class="active slide-in">
           <h1>Logo</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolore, reiciendis nostrum blanditiis possimus nesciunt consequatur rerum. Autem, eaque vero omnis, tenetur, nemo suscipit praesentium adipisci perspiciatis doloremque vel veniam?</p>
         </section>
@@ -134,28 +132,31 @@
         </section>
 
         <section id="sg_data_website_colour">
-          <h1>Website Colour Palette</h1>
-          <p>Thus is the primary and secondary colour palettes as described in the PSD styleguide and in variables.scsss</p>
+          <div class="sg-content-title">
+            <h1>Website Colour Palette</h1>
+            <p>This is the primary and secondary colour palettes as described in the PSD styleguide and in variables.scss</p>
+          </div>
 
           <h2>Primary Colours</h2>
-          <ul>
+          <ul class="sg-color-palette clearfix">
             <li>
-              <div>#ffffff</div>
+              <div class="sg-colorbox" data-clipboard-text="#ff0000"></div>
               <span>$gplus-whiteiconbg-color</span>
             </li>
             <li>
-              <div>#ffffff</div>
+              <div class="sg-colorbox" data-clipboard-text="#ff0ff0"></div>
               <span>$gplus-whiteiconbg-color</span>
             </li>
           </ul>
+
           <h2>Secondary Colours</h2>
-          <ul>
+          <ul class="sg-color-palette clearfix">
             <li>
-              <div>#ffffff</div>
+              <div class="sg-colorbox" data-clipboard-text="#fff000"></div>
               <span>$gplus-whiteiconbg-color</span>
             </li>
             <li>
-              <div>#ffffff</div>
+              <div class="sg-colorbox" data-clipboard-text="gray"></div>
               <span>$gplus-whiteiconbg-color</span>
             </li>
           </ul>
@@ -301,6 +302,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script src="jquery.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
     <script src="js/project_pikto_styleguide.js"></script>
   </body>
-</html>
+  </html>
