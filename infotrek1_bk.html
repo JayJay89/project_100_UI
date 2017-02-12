@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title> </title>
+  <title> Infotrek Module 1a</title>
   <!-- Bootstrap -->
   <link href="css/infotrek1.css" rel="stylesheet">
   <link href="css/normalize.css" rel="stylesheet">
@@ -18,17 +18,13 @@
   </head>
   <body>
     <div class="mo-wrapper clearfix">
-
       <div class="mo-sidebar">
-        <h1>Piktochart</h1>
-        <span>styleguide v1.0</span>
-
         <button class="mo-sidebar-hide">
           <div class="triangle"></div>
         </button>
+        <h1>Module 1</h1>
 
-        <h2>Module 1</h2>
-        <ul class="mo-button-list mo-button-list--outer">
+        <ul class="mo-button-list">
 
           <li><button class="mo-btn" data-target="info_box_model">Box Models</button></li>
           <li><button class="mo-btn" data-target="info_display">Displays</button></li>
@@ -39,19 +35,24 @@
           <li><button class="mo-btn" data-target="info_responsive">Responsive</button></li>
 
           <li class="mo-dropdown">
-            <input id="styleguide_icon" type="radio" name="tabs">
-            <label for="styleguide_icon">Icons</label>
-            <ul class="mo-button-list mo-button-list--inner">
-              <li><button class="mo-btn" data-target="info_data_icon_1">Icon 1</button></li>
-              <li><button class="mo-btn" data-target="info_data_icon_2">Icon 2</button></li>
-              <li><button class="mo-btn" data-target="info_data_icon_3">Icon 3</button></li>
+            <input id="styleguide_nav" type="radio" name="tabs">
+            <label for="styleguide_nav">Navigations</label>
+            <ul class="mo-tab-content mo-button-list">
+              <li><button class="mo-btn" data-target="mo_data_nav_1">Nav 1</button></li>
+              <li><button class="mo-btn" data-target="mo_data_nav_2">Nav 2</button></li>
+              <li><button class="mo-btn" data-target="mo_data_nav_3">Nav 3</button></li>
             </ul>
           </li>
         </ul>
       </div>
 
-      <div class="mo-main-container" id="sg_main_container">
-        <section id="info_box_model" class="active slide-in">
+      <!--Content Frame-->
+      <div class="mo-main-container" id="mo_main_container">
+        <section></section>
+      </div>
+
+      <!--All the Contents in here-->
+      <div class="mo-contents">        <section id="info_box_model">
           <h1>Box Models</h1>
           <p></p>
           <div class="info-box-model__box box_turquoise box-model">
@@ -187,27 +188,79 @@
           <h2>Calc()</h2>
         </section>
 
-        <section id="info_data_icon_1">
+        <section id="mo_data_nav_1">
           <h1>Nav 1</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
-        <section id="info_data_icon_2">
+        <section id="mo_data_nav_2">
           <h1>Nav 2</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
-        <section id="info_data_icon_3">
+        <section id="mo_data_nav_3">
           <h1>Nav 3</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
+
       </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script src="jquery.min.js"></script>
-    <script src="js/clipboard.min.js"></script>
-    <script src="js/infotrek1.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) { 
+        
+        var current_active = $('.mo-btn-first');
+        var container = document.querySelector('.mo-main-container');
+        var mo_button_list_btn = document.querySelectorAll('.mo-button-list > li > button');
+        var mo_btn = document.querySelectorAll('.mo-btn');
+
+        /*Default*/
+        container.innerHTML = info_box_model.innerHTML;
+        $('.mo-sidebar-hide').find('.triangle').toggleClass('inverse');
+        $('.mo-sidebar').toggleClass('slide-in');
+        $('.mo-main-container').toggleClass('expand');
+
+
+        function changeContent( ev ) {
+          const data = ev.currentTarget.dataset.active;
+          const target = document.getElementById(data);
+          ev.currentTarget.innerHTML = target.innerHTML;
+          ev.currentTarget.classList.remove('slide-out');
+        }
+
+        container.addEventListener( 'transitionend', changeContent );
+
+        function makeSlideOut( selector ) {
+          return function slideOut( ev ) {
+            // console.log('slideOut', ev);
+            const container = document.querySelector( selector );
+            container.dataset.active = ev.currentTarget.dataset.target;
+            container.classList.add('slide-out');
+          }
+        }
+
+        [...mo_button_list_btn].forEach( function(elem) {
+          elem.addEventListener('mousedown', makeSlideOut( '.mo-main-container' ) );
+          // console.log(elem);
+        });
+
+        $('.mo-btn').on('click', function(){
+          $('.mo-btn').closest('li').removeClass('active');
+          $(this.closest('li')).addClass('active');
+          current_active = this;
+        })
+
+        $('.mo-sidebar-hide').on('click', function(){
+          $('.mo-sidebar-hide').find('.triangle').toggleClass('inverse');
+          $('.mo-sidebar').toggleClass('slide-in');
+          $('.mo-main-container').toggleClass('expand');
+        });
+
+      });
+
+    </script>
   </body>
-  </html>
+</html>

@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     $('.sg-button-list--inner').find('li').removeClass('active--inner');
     $(this).addClass('active--inner');
   })
-
 });
 
 /*

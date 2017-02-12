@@ -1,4 +1,4 @@
-/*Reset*/
+/*Resets*/
 ul {
   list-style: none;
   margin: 0px;
@@ -15,20 +15,6 @@ button:focus {
   outline: none;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-.info-list-exception {
-  list-style-type: disc;
-  margin: 10px 0px;
-  padding-left: 20px;
-}
-
-.info-list-exception > li {
-  margin: 10px 0px;
-}
-
 /*clear fixes*/
 .clearfix:before,
 .clearfix:after {
@@ -40,29 +26,40 @@ button:focus {
   clear: both;
 }
 
-/*General*/
-.info-try-this {
-  display: block;
-  margin: 5px 0px;
-  background-color: darkgreen;
-  padding: 20px;
-  color: white;
-  font-size: 18px;
-  border-radius: 4px;
-}
-
-.mo-wrapper {
-  position: relative;
-}
-
 .mo-sidebar {
-  background-color: beige;
-  width: 275px;
+  background-color: #F6F9FC;
+  width: calc(275px - 60px);
+  display: inline-block;
+  float: left;
   min-height: 100vh;
   padding: 30px;
-  position: absolute;
+  position: relative;
   left: 0px;
-  transition: left 0.2s ease;
+  transition: left 0.3s ease;
+}
+
+.mo-sidebar h1, .mo-sidebar h2 {
+  margin: 0px 0px 10px 0px;
+}
+
+.mo-sidebar h1 {
+  font-size: 34px;
+  color: #6F6F6F;
+  margin-bottom: 0px;
+}
+
+.mo-sidebar h2 {
+  font-size: 18px;
+  color: #71B0EF;
+  margin-bottom: 8px;
+  padding-left: 8px;
+}
+
+.mo-sidebar > span {
+  font-size: 14px;
+  margin-bottom: 40px;
+  display: block;
+  color: #BCBCBC;
 }
 
 .mo-sidebar ul > li {
@@ -74,12 +71,12 @@ button:focus {
   width: 100%;
   text-align: left;
   color: #6F6F6F;
-  font-size: 18px;
-  margin-bottom: 10px;
+  margin: 8px 0px;
 }
 
-.mo-sidebar h1, .mo-sidebar h2 {
-  margin: 0px 0px 10px 0px;
+.mo-sidebar > button {
+  padding-left: 8px;
+  border-left: 2px solid transparent;
 }
 
 .mo-sidebar.slide-in {
@@ -130,6 +127,36 @@ button:focus {
   display: inline-block;
 }
 
+.mo-main-container > h1 {
+  font-size: 22px;
+}
+
+.mo-main-container > h2 {
+  font-size: 16px;
+  color: #71B0EF;
+}
+
+.mo-main-container .hide {
+  display: none;
+}
+
+.mo-main-container > section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease, top 0.5s ease;
+  top: -10px;
+  position: relative;
+}
+
+.mo-main-container > section.active {
+  display: block;
+}
+
+.mo-main-container > section.slide-in {
+  opacity: 1;
+  top: 0px;
+}
+
 .mo-main-container.slide-out {
   top: 10px;
   opacity: 0;
@@ -148,64 +175,77 @@ button:focus {
   cursor: pointer;
   width: 100%;
   display: inline-block;
-  position: relative;
 }
 
-.mo-dropdown label:after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  border-left: 9px solid #6F6F6F;
-  position: absolute;
-  right: 0px;
-  top: 5px;
-  transition: transform 0.2s ease;
+.mo-dropdown input:checked ~ .mo-button-list--inner {
+  max-height: 544px;
+  padding-bottom: 20px;
 }
 
-.mo-dropdown input:checked ~ .mo-tab-content {
-  max-height: 300px;
+.mo-button-list--outer > li > button, .mo-button-list--outer > li > label {
+  border-left: 2px solid transparent;
+  padding-left: 8px;
 }
 
-.mo-dropdown input:checked ~ label:after {
-  transform: rotate(90deg);
+.mo-button-list--outer > li.active > button,
+.mo-button-list--outer > li.active > input:checked ~ label {
+  border-left: 2px solid #71B0EF;
+  color: #849AB0;
 }
 
-.mo-tab-content {
+.mo-button-list--inner {
   max-height: 0;
   float: left;
   overflow: hidden;
   display: inline-block;
+  padding-left: 20px;
   -webkit-transition: max-height .35s;
   -o-transition: max-height .35s;
   transition: max-height .35s;
   width: 100%;
 }
 
-.mo-tab-content > li {
+.mo-button-list--inner > li {
   padding-left: 20px;
   position: relative;
+  /*List Item - Circle*/
 }
 
-.mo-tab-content > li:after {
+.mo-button-list--inner > li:after {
   content: " ";
   display: block;
   position: absolute;
   width: 5px;
   height: 5px;
   left: 8px;
-  top: 8px;
+  top: 14px;
   border-radius: 50%;
   background-color: #8497AB;
 }
 
-.mo-contents {
-  display: none;
+.mo-button-list--inner > li.active--inner > button {
+  color: #849AB0;
 }
 
-.mo-button-list > li.active button, .mo-tab-content > li.active button {
-  color: #849AB0;
+/*GEneral*/
+.info-list-exception {
+  list-style-type: disc;
+  margin: 10px 0px;
+  padding-left: 20px;
+}
+
+.info-list-exception > li {
+  margin: 10px 0px;
+}
+
+.info-try-this {
+  display: block;
+  margin: 5px 0px;
+  background-color: darkgreen;
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+  border-radius: 4px;
 }
 
 /*CONTENTS*/

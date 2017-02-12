@@ -1,10 +1,15 @@
 
 $lightblue: #F6F9FC;
 $lightblue2: #8497AB;
+$blue: #71B0EF;
 $gray1: #6F6F6F;
 $gray2: #849AB0;
+$gray3: #BCBCBC;
 
-/*Reset*/
+$sg-sidebar-padding: 8px;
+$mo-button-list--inner-padding-btm: 20px;
+
+/*Resets*/
 ul {
   list-style: none;
   margin: 0px;
@@ -21,55 +26,51 @@ button {
   }
 }
 
-* {
-  box-sizing: border-box;
-}
-
-.info-list-exception {
-  list-style-type: disc;
-  margin: 10px 0px;
-  padding-left: 20px;
-
-  > li {
-    margin: 10px 0px;
-  }
-}
-
 /*clear fixes*/
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
-
 .clearfix:after {
   clear: both;
 }
 
-/*General*/
-.info-try-this {
-  display: block;
-  margin: 5px 0px;
-  background-color: darkgreen;
-  padding: 20px;
-  color: white;
-  font-size: 18px;
-  border-radius: 4px;
-}
-
-.mo-wrapper {
-  position: relative;
-}
-
 .mo-sidebar {
   // background-color: $lightblue;
-  background-color: beige;
-  width: 275px;
+  background-color: $lightblue;
+  width: calc(275px - 60px);
+  display: inline-block;
+  float: left;
   min-height: 100vh;
   padding: 30px;
-  position: absolute;
+  position: relative;
   left: 0px;
-  transition: left 0.2s ease;
+  transition: left 0.3s ease; 
+
+  h1, h2 {
+    margin: 0px 0px 10px 0px;
+  }
+
+  h1 {
+    font-size: 34px;
+    color: $gray1;
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    font-size: 18px;
+    color: $blue;
+    margin-bottom: 8px;
+    padding-left: $sg-sidebar-padding;
+  }
+
+  > span {
+    font-size: 14px;
+    margin-bottom: 40px;
+    display: block;
+    color: $gray3;
+  }
 
   ul > li {
     display: inline-block;
@@ -80,12 +81,12 @@ button {
     width: 100%;
     text-align: left;
     color: $gray1;
-    font-size: 18px;
-    margin-bottom: 10px;
+    margin: 8px 0px;
   }
 
-  h1, h2 {
-    margin: 0px 0px 10px 0px;
+  > button {
+    padding-left: $sg-sidebar-padding;
+    border-left: 2px solid transparent;
   }
 
   &.slide-in {
@@ -137,7 +138,37 @@ button {
   height: 100vh;
   overflow-y: scroll;
   display: inline-block;
-  
+
+  > h1 {
+    font-size: 22px;
+  }
+
+  > h2 {
+    font-size: 16px;
+    color: $blue;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  > section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease, top 0.5s ease;
+    top: -10px;
+    position: relative;
+
+    &.active {
+      display: block;
+    }
+
+    &.slide-in {
+      opacity: 1;
+      top: 0px;
+    }
+  }
+
   &.slide-out {
     top: 10px;
     opacity: 0;
@@ -158,45 +189,47 @@ button {
     cursor: pointer;
     width: 100%;
     display: inline-block;
-    position: relative;
-
-    &:after {
-      content: "";
-      width: 0; 
-      height: 0; 
-      border-top: 7px solid transparent;
-      border-bottom: 7px solid transparent;
-      border-left: 9px solid $gray1;
-      position: absolute;
-      right: 0px;
-      top: 5px;
-      transition: transform 0.2s ease;
-    }
   }
 
-  input:checked ~ .mo-tab-content{
-    max-height: 300px;
-  }
-
-  input:checked ~ label:after{
-    transform: rotate(90deg);
+  input:checked ~ .mo-button-list--inner {
+    max-height: 544px;
+    padding-bottom: $mo-button-list--inner-padding-btm;
   }
 }
 
-.mo-tab-content {
+.mo-button-list--outer {
+  > li {
+    > button, > label {
+      border-left: 2px solid transparent;
+      padding-left: $sg-sidebar-padding;
+    }
+  }
+
+  > li.active {
+    > button,  
+    > input:checked ~ label {
+      border-left: 2px solid $blue;
+      color: $gray2;
+    }
+  }
+}
+
+.mo-button-list--inner {
   max-height: 0;
   float: left;
   overflow: hidden;
   display: inline-block;
+  padding-left: 20px;
   -webkit-transition: max-height .35s;
   -o-transition: max-height .35s;
   transition: max-height .35s;
   width: 100%;
-  
+
   > li {
     padding-left: 20px;
     position: relative;
 
+    /*List Item - Circle*/
     &:after {
       content: " ";
       display: block;
@@ -204,23 +237,38 @@ button {
       width: 5px;
       height: 5px;
       left: 8px;
-      top: 8px;
+      top: 14px;
       border-radius: 50%;
       background-color: $lightblue2;
     }
-  }
-}
 
-.mo-contents {
-  display: none;
-}
-
-.mo-button-list, .mo-tab-content {
-  > li.active {
-    button {
-      color: $gray2;
+    &.active--inner { 
+      > button {
+        color: $gray2;
+      }
     }
   }
+}
+
+/*GEneral*/
+.info-list-exception {
+  list-style-type: disc;
+  margin: 10px 0px;
+  padding-left: 20px;
+
+  > li {
+    margin: 10px 0px;
+  }
+}
+
+.info-try-this {
+  display: block;
+  margin: 5px 0px;
+  background-color: darkgreen;
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+  border-radius: 4px;
 }
 
 /*CONTENTS*/
