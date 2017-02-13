@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var sg_container_list = document.querySelectorAll('.sg-main-container > section');
   var sg_button_list_btn = document.querySelectorAll('.sg-button-list > li > button');
   var sg_btn = document.querySelectorAll('.sg-btn');
+  var code_box = document.querySelectorAll('.sg-code-box');
 
   /*Instantiate clipboard*/
   /*Clipboard uses a library call clipboard.min.js*/
@@ -15,6 +16,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   clipboard.on('error', function(e) {
       console.log(e);
   });
+
+  /*Initiate PrettyPre*/
+  // $( function() { $('.sg-code-box').prettyPre(); } );
 
   [...sg_button_list_btn].forEach( function(elem) {
     elem.addEventListener('mousedown', function(){
@@ -33,17 +37,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
   });
 
-  /*Generate Background Color from HTML Content*/
-  $('.sg-colorbox').each(function(){
-    $(this).html(this.getAttribute('data-clipboard-text'));
-    $(this).css("background-color",this.getAttribute('data-clipboard-text'));
-  })
+  /*Convert tags to escape characters, and spaces to nothing*/
+  [...code_box].forEach( function(elem) {
+    var mapObj = {
+      '<':'&lt;',
+      '>':'&gt;'
+    }
+    elem.innerHTML = elem.innerHTML.replace(/<|>/ig, function(matched){
+      return mapObj[matched];
+    });
+  });
 
-  $('.sg-colorbox').on('click', function(){
-    $('.sg-color-copy-label').addClass('fade-in');
-    setTimeout(function(){
-      $('.sg-color-copy-label').removeClass('fade-in');
-    }, 500)
+  /*For populating the sg-code-box with numbers*/
+  $(".sg-code-box").html(function (index, html) {
+      return html.replace(/^(.*)$/mg, "<span class=\"line\">$1</span>")
   });
 
   /*Default*/
@@ -58,7 +65,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
     $('.sg-button-list--inner').find('li').removeClass('active--inner');
     $(this).addClass('active--inner');
   })
+
+  /*Generate Background Color from HTML Content*/
+  $('.sg-colorbox').each(function(){
+    $(this).html(this.getAttribute('data-clipboard-text'));
+    $(this).css("background-color",this.getAttribute('data-clipboard-text'));
+  })
+
+  $('.sg-colorbox').on('click', function(){
+    $('.sg-color-copy-label').addClass('fade-in');
+    setTimeout(function(){
+      $('.sg-color-copy-label').removeClass('fade-in');
+    }, 500)
+  });
 });
+
+
 
 /*
   function changeContent( ev ) {

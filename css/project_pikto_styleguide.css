@@ -1,3 +1,58 @@
+@charset "UTF-8";
+/*Variables -- Fonts*/
+/**
+ * @license
+ * MyFonts Webfont Build ID 3307944, 2016-11-14T04:58:36-0500
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: ProximaNova-Bold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/bold/
+ * Licensed pageviews: 1,000,000
+ *
+ * Webfont: ProximaNova-Regular by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/regular/
+ * Licensed pageviews: 21,000,000
+ *
+ * Webfont: ProximaNova-Semibold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/semibold/
+ * Licensed pageviews: 10,000,000
+ *
+ *
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3307944
+ * Webfonts copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+ *
+ * © 2016 MyFonts Inc
+*/
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3279a8");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,600,700");
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  src: url("/fonts/base-proximanova/3279A8_0_0.eot");
+  src: url("/fonts/base-proximanova/3279A8_0_0.eot?#iefix") format("embedded-opentype"), url("/fonts/base-proximanova/3279A8_0_0.woff2") format("woff2"), url("/fonts/base-proximanova/3279A8_0_0.woff") format("woff"), url("/fonts/base-proximanova/3279A8_0_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'ProximaNova-Regular';
+  src: url("/fonts/base-proximanova/3279A8_1_0.eot");
+  src: url("/fonts/base-proximanova/3279A8_1_0.eot?#iefix") format("embedded-opentype"), url("/fonts/base-proximanova/3279A8_1_0.woff2") format("woff2"), url("/fonts/base-proximanova/3279A8_1_0.woff") format("woff"), url("/fonts/base-proximanova/3279A8_1_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'ProximaNova-Semibold';
+  src: url("/fonts/base-proximanova/3279A8_2_0.eot");
+  src: url("/fonts/base-proximanova/3279A8_2_0.eot?#iefix") format("embedded-opentype"), url("/fonts/base-proximanova/3279A8_2_0.woff2") format("woff2"), url("/fonts/base-proximanova/3279A8_2_0.woff") format("woff"), url("/fonts/base-proximanova/3279A8_2_0.ttf") format("truetype");
+}
+
+/*Mixins -- Fonts*/
+/*Variables -- Colors*/
+/*Variables -- Layout*/
 /*Resets*/
 ul {
   list-style: none;
@@ -15,7 +70,7 @@ button:focus {
   outline: none;
 }
 
-/*clear fixes*/
+/*Utilities*/
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -26,6 +81,26 @@ button:focus {
   clear: both;
 }
 
+/*Scaffold*/
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  color: #6B7C93;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+}
+
+p {
+  font-size: 17px;
+  letter-spacing: 0.4px;
+  line-height: 26px;
+  font-family: "ProximaNova-Regular", Arial, sans-serif;
+}
+
+/*General*/
 .sg-color-copy-label {
   background-color: beige;
   padding: 10px;
@@ -65,6 +140,9 @@ button:focus {
   color: #71B0EF;
   margin-bottom: 8px;
   padding-left: 8px;
+  letter-spacing: 0.5px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 700;
 }
 
 .sg-sidebar > span {
@@ -83,7 +161,7 @@ button:focus {
   width: 100%;
   text-align: left;
   color: #6F6F6F;
-  margin: 8px 0px;
+  margin: 6px 0px;
 }
 
 .sg-sidebar > button {
@@ -100,32 +178,19 @@ button:focus {
 }
 
 .sg-main-container {
-  width: calc(100% - 275px - 65px);
+  width: calc(100% - 275px - 130px);
   display: inline-block;
   float: left;
   position: relative;
   opacity: 1;
   top: 0px;
   transition: top 0.3s ease, opacity 0.3s ease;
-  padding: 100px 0px 0px 65px;
+  padding: 100px 65px 0px 65px;
 }
 
 .sg-main-container.slide-out {
   top: 10px;
   opacity: 0;
-}
-
-.sg-main-container > h1 {
-  font-size: 22px;
-}
-
-.sg-main-container > h2 {
-  font-size: 16px;
-  color: #71B0EF;
-}
-
-.sg-main-container .hide {
-  display: none;
 }
 
 .sg-main-container > section {
@@ -143,6 +208,22 @@ button:focus {
 .sg-main-container > section.slide-in {
   opacity: 1;
   top: 0px;
+}
+
+.sg-main-container > section h1 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #6A6A6A;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.sg-main-container > section h2 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.47px;
 }
 
 .sg-dropdown input {
@@ -176,7 +257,7 @@ button:focus {
   float: left;
   overflow: hidden;
   display: inline-block;
-  padding-left: 20px;
+  padding-left: 10px;
   -webkit-transition: max-height .35s;
   -o-transition: max-height .35s;
   transition: max-height .35s;
@@ -184,7 +265,7 @@ button:focus {
 }
 
 .sg-button-list--inner > li {
-  padding-left: 20px;
+  padding-left: 30px;
   position: relative;
   /*List Item - Circle*/
 }
@@ -193,8 +274,8 @@ button:focus {
   content: " ";
   display: block;
   position: absolute;
-  width: 5px;
-  height: 5px;
+  width: 3px;
+  height: 3px;
   left: 8px;
   top: 14px;
   border-radius: 50%;
@@ -217,15 +298,14 @@ button:focus {
 .sg-color-palette > li > span {
   margin-top: 13px;
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
+  color: #AA1111;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 400;
 }
 
 .sg-colorbox {
-  /*
-    The background-color is generated with JS from HTML content,
-    Changing the content, will change the background-color.
-  */
   width: 170px;
   height: 56px;
   text-align: center;
@@ -233,4 +313,108 @@ button:focus {
   display: table-cell;
   cursor: pointer;
   z-index: 1;
+  color: #8497AB;
+  font-size: 14px;
+}
+
+.sg-code-box {
+  counter-reset: line-numbering;
+  background-color: beige;
+  padding: 12px 0px 14px 0;
+  color: red;
+  line-height: 140%;
+  border: 1px solid red;
+  width: 100%;
+}
+
+.sg-code-box .line::before {
+  content: counter(line-numbering);
+  counter-increment: line-numbering;
+  padding-right: 1em;
+  /* space after numbers */
+  padding-left: 8px;
+  width: 100%;
+  text-align: right;
+  opacity: 0.5;
+  color: red;
+  border: 1px solid black;
+  display: inline-block;
+  width: 20px;
+}
+
+.sg-code-box .yeah {
+  color: blue;
+}
+
+/*Section Specific*/
+.sg-website-color > h2,
+.sg-ui-color > h2 {
+  margin: 40px 0px 32px 0px;
+}
+
+.sg-typo-proxima {
+  margin-right: 130px;
+}
+
+.sg-typo-proxima,
+.sg-typo-montseraat {
+  display: inline-block;
+  float: left;
+}
+
+.sg-typo-proxima__regular {
+  font-family: "ProximaNova-Regular", Arial, sans-serif;
+}
+
+.sg-typo-proxima__semibold {
+  font-family: "ProximaNova-Semibold", Arial, sans-serif;
+}
+
+.sg-typo-montseraat__regular {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+}
+
+.sg-typo-montseraat__semibold {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 700;
+}
+
+.sg-typo-proxima__regular,
+.sg-typo-montseraat__regular {
+  margin-right: 30px;
+}
+
+.sg-typo-proxima__regular,
+.sg-typo-proxima__semibold,
+.sg-typo-montseraat__regular,
+.sg-typo-montseraat__semibold {
+  border: 1px solid red;
+  float: left;
+}
+
+.sg-typo-proxima__regular > p,
+.sg-typo-proxima__semibold > p,
+.sg-typo-montseraat__regular > p,
+.sg-typo-montseraat__semibold > p {
+  display: inline-block;
+  font-size: 56px;
+  line-height: 56px;
+  margin: 0px;
+}
+
+.sg-typo-proxima__regular > span,
+.sg-typo-proxima__semibold > span,
+.sg-typo-montseraat__regular > span,
+.sg-typo-montseraat__semibold > span {
+  font-size: 16px;
+  line-height: 16px;
+  display: block;
+}
+
+.sg-typo-test {
+  display: block;
+  margin-top: 34px;
+  line-height: 36px;
+  font-size: 22px;
 }

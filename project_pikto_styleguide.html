@@ -28,21 +28,11 @@
         <div class="sg-brand-kit">
           <h2>Brand Kit</h2>
           <ul class="sg-button-list sg-button-list--outer">
-            <li>
-              <button class="sg-btn" data-target="sg_data_logo">Logo</button>
-            </li>
-            <li>
-              <button class="sg-btn" data-target="sg_data_brand_color">Brand Colors</button>
-            </li>
-            <li>
-              <button class="sg-btn" data-target="sg_data_brand_patterns">Brand Patterns</button>
-            </li>
-            <li>
-              <button class="sg-btn" data-target="sg_data_typography">Typography</button>
-            </li>
-            <li>
-              <button class="sg-btn" data-target="sg_data_illustration">Icons & Illustrations</button>
-            </li>
+            <li><button class="sg-btn" data-target="sg_data_logo">Logo</button></li>
+            <li><button class="sg-btn" data-target="sg_data_brand_color">Brand Colors</button></li>
+            <li><button class="sg-btn" data-target="sg_data_brand_patterns">Brand Patterns</button></li>
+            <li><button class="sg-btn" data-target="sg_data_typography">Typography</button></li>
+            <li><button class="sg-btn" data-target="sg_data_illustration">Icons & Illustrations</button></li>
           </ul>
         </div>
 
@@ -51,7 +41,6 @@
           <ul class="sg-button-list sg-button-list--outer">
             <li><button class="sg-btn" data-target="sg_data_website_colour">Website Colour Palette</button></li>
             <li><button class="sg-btn" data-target="sg_data_ui_colour">UI Colour Palette</button></li>
-            <li><button class="sg-btn" data-target="sg_data_typography">Typography</button></li>
             <li class="sg-dropdown">
               <input id="styleguide_ui" type="radio" name="tabs">
               <label for="styleguide_ui">UI Elements</label>
@@ -101,6 +90,8 @@
                 <li><button class="sg-btn" data-target="sg_data_icon_3">Icon 3</button></li>
               </ul>
             </li>
+            <li><button class="sg-btn" data-target="sg_conventions">HTML/CSS Conventions</button></li>
+            <li><button class="sg-btn" data-target="sg_bem">BEM</button></li>
           </ul>
         </div>
       </div>
@@ -109,6 +100,16 @@
         <section id="sg_data_logo" class="active slide-in">
           <h1>Logo</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolore, reiciendis nostrum blanditiis possimus nesciunt consequatur rerum. Autem, eaque vero omnis, tenetur, nemo suscipit praesentium adipisci perspiciatis doloremque vel veniam?</p>
+          <!--Indentation had to be pushed back--> 
+          <pre class="sg-code-box">
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <div>
+    <p>2</p>
+  </div>
+          </pre>
+
         </section>
 
         <section id="sg_data_brand_color">
@@ -123,7 +124,35 @@
 
         <section id="sg_data_typography">
           <h1>Typography</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+          <div class="clearfix">
+            <div class="sg-typo-proxima">
+              <h2>Proxima Nova</h2>
+              <div class="sg-typo-proxima__regular">
+                <p>Aa</p>
+                <span>Regular</span>
+              </div>
+              <div class="sg-typo-proxima__semibold">
+                <p>Aa</p>
+                <span>Semibold</span>
+              </div>
+            </div>
+            <div class="sg-typo-montseraat">
+              <h2>Montseraat</h2>
+              <div class="sg-typo-montseraat__regular">
+                <p>Aa</p>
+                <span>Regular</span>
+              </div>
+              <div class="sg-typo-montseraat__semibold">
+                <p>Aa</p>
+                <span>Semibold</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sg-typo-test">
+            ​‌A​‌B​‌C​‌Ć​‌Č​‌D​‌Đ​‌E​‌F​‌G​‌H​‌I​‌J​‌K​‌L​‌M​‌N​‌O​‌P​‌Q​‌R​‌S​‌Š​‌T​‌U​‌V​‌W​‌X​‌Y​‌Z​‌Ž​‌a​‌b​‌c​‌č​‌ć​‌d​‌đ​‌e​‌f​‌g​‌h​‌i​‌j​‌k​‌l​‌m​‌n​‌o​‌p​‌q​‌r​‌s​‌š​‌t​‌u​‌v​‌w​‌x​‌y​‌z​‌ž​‌А​‌Б​‌В​‌Г​‌Ґ​‌Д​‌Ђ​‌Е​‌Ё​‌Є​‌Ж​‌З​‌Ѕ​‌И​‌І​‌Ї​‌Й​‌Ј​‌К​‌Л​‌Љ​‌М​‌Н​‌Њ​‌О​‌П​‌Р​‌С​‌Т​‌Ћ​‌У​‌Ў​‌Ф​‌Х​‌Ц​‌Ч​‌Џ​‌Ш​‌Щ​‌Ъ​‌Ы​‌Ь​‌Э​‌Ю​‌Я​‌а​‌б​‌в​‌г​‌ґ​‌д​‌ђ​‌е​‌ё​‌є​‌ж​‌з​‌ѕ​‌и​‌і​‌ї​‌й​‌ј​‌к​‌л​‌љ​‌м​‌н​‌њ​‌о​‌п​‌р​‌с​‌т​‌ћ​‌у​‌ў​‌ф​‌х​‌ц​‌ч​‌џ​‌ш​‌щ​‌ъ​‌ы​‌ь​‌э​‌ю​‌я​‌Α​‌Β​‌Γ​‌Δ​‌Ε​‌Ζ​‌Η​‌Θ​‌Ι​‌Κ​‌Λ​‌Μ​‌Ν​‌Ξ​‌Ο​‌Π​‌Ρ​‌Σ​‌Τ​‌Υ​‌Φ​‌Χ​‌Ψ​‌Ω​‌α​‌β​‌γ​‌δ​‌ε​‌ζ​‌η​‌θ​‌ι​‌κ​‌λ​‌μ​‌ν​‌ξ​‌ο​‌π​‌ρ​‌σ​‌τ​‌υ​‌φ​‌χ​‌ψ​‌ω​‌ά​‌Ά​‌έ​‌Έ​‌έ​‌Ή​‌ί​‌ϊ​‌ΐ​‌Ί​‌ό​‌Ό​‌ύ​‌ΰ​‌ϋ​‌Ύ​‌Ϋ​‌ὰ​‌ά​‌ὲ​‌έ​‌ὴ​‌ή​‌ὶ​‌ί​‌ὸ​‌ό​‌ὺ​‌ύ​‌ὼ​‌ώ​‌Ώ​‌1​‌2​‌3​‌4​‌5​‌6​‌7​‌8​‌9​‌0​‌‘​‌?​‌’​‌“​‌!​‌”​‌(​‌%​‌)​‌[​‌#​‌]​‌{​‌@​‌}​‌/​‌&​‌<​‌-​‌+​‌÷​‌×​‌=​‌>​‌®​‌©​‌$​‌€​‌£​‌¥​‌¢​‌:​‌;​‌,​‌.​‌*
+          </div>
         </section>
 
         <section id="sg_data_illustration">
@@ -131,11 +160,9 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
-        <section id="sg_data_website_colour">
-          <div class="sg-content-title">
-            <h1>Website Colour Palette</h1>
-            <p>This is the primary and secondary colour palettes as described in the PSD styleguide and in variables.scss</p>
-          </div>
+        <section class="sg-website-color" id="sg_data_website_colour">
+          <h1>Website Colour Palette</h1>
+          <p>This is the primary and secondary colour palettes as described in the PSD styleguide and in variables.scss</p>
 
           <h2>Primary Colours</h2>
           <ul class="sg-color-palette clearfix">
@@ -162,14 +189,31 @@
           </ul>
         </section>
 
-        <section id="sg_data_ui_colour">
+        <section class="sg-ui-color" id="sg_data_ui_colour">
           <h1>UI Colour Palette</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
+          <h2>Primary Colours</h2>
+          <ul class="sg-color-palette clearfix">
+            <li>
+              <div class="sg-colorbox" data-clipboard-text="#ff0000"></div>
+              <span>$gplus-whiteiconbg-color</span>
+            </li>
+            <li>
+              <div class="sg-colorbox" data-clipboard-text="#ff0ff0"></div>
+              <span>$gplus-whiteiconbg-color</span>
+            </li>
+          </ul>
 
-        <section id="sg_data_typography">
-          <h1>Typography</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+          <h2>Secondary Colours</h2>
+          <ul class="sg-color-palette clearfix">
+            <li>
+              <div class="sg-colorbox" data-clipboard-text="#fff000"></div>
+              <span>$gplus-whiteiconbg-color</span>
+            </li>
+            <li>
+              <div class="sg-colorbox" data-clipboard-text="gray"></div>
+              <span>$gplus-whiteiconbg-color</span>
+            </li>
+          </ul>
         </section>
 
         <section id="sg_data_button">
@@ -296,12 +340,24 @@
           <h1>Icon 3</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
+
+        <section id="sg_conventions">
+          <h1>HTML/CSS Conventions</h1>
+          <a target="_blank" href="https://docs.google.com/document/d/1APOh_El-iafCVn9A9cHY0pQyeHoCgbOePLcVgWCPkBM/edit">Link to Document</a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_bem">
+          <h1>BEM</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
       </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script src="jquery.min.js"></script>
+    <script src="js/prettypre.js"></script>
     <script src="js/clipboard.min.js"></script>
     <script src="js/project_pikto_styleguide.js"></script>
   </body>

@@ -1,12 +1,73 @@
+/*Variables -- Fonts*/
+@import "proxima-nova";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,600,700");
 
+$proxima-regular:   "ProximaNova-Regular", Arial, sans-serif !default;
+$proxima-semibold:  "ProximaNova-Semibold", Arial, sans-serif !default;
+$proxima-bold:      "ProximaNova-Bold", Arial, sans-serif !default;
+$source-code-pro:   "Source Code Pro", monospace !default; 
+$montserrat:        "Montserrat", Arial, sans-serif !default;
+
+/*Mixins -- Fonts*/
+@mixin montserrat ($weight) {
+  font-family: $montserrat;
+
+  @if $weight == 'light'{
+    font-weight: 100;
+  } 
+  @if $weight == 'regular'{
+    font-weight: 400;
+  } 
+  @if $weight == 'semibold'{
+    font-weight: 700;
+  }
+  @if $weight == 'bold'{
+    font-weight: 900;
+  }  
+}
+
+@mixin proxima ($weight){
+  @if $weight == 'regular'{
+    font-family: $proxima-regular;
+  } 
+  @if $weight == 'semibold'{
+    font-family: $proxima-semibold;
+  } 
+  @if $weight == 'bold'{
+    font-family: $proxima-ibold;
+  }
+}
+
+@mixin sourceCode ($weight){
+  font-family: $source-code-pro;
+  @if $weight == 'light'{
+    font-weight: 100;
+  } 
+  @if $weight == 'regular'{
+    font-weight: 400;
+  } 
+  @if $weight == 'bold'{
+    font-weight: 600;
+  }
+  @if $weight == 'bolder'{
+    font-weight: 900;
+  }
+}
+
+/*Variables -- Colors*/
 $lightblue: #F6F9FC;
 $lightblue2: #8497AB;
 $blue: #71B0EF;
+$blue2: #6B7C93;
 $gray1: #6F6F6F;
 $gray2: #849AB0;
 $gray3: #BCBCBC;
+$gray4: #6A6A6A;
+$red: #AA1111;
 
-$sg-sidebar-padding: 8px;
+/*Variables -- Layout*/
+$sg-sidebar-padding: 8px; 
 $sg-button-list--inner-padding-btm: 20px;
 
 /*Resets*/
@@ -26,7 +87,7 @@ button {
   }
 }
 
-/*clear fixes*/
+/*Utilities*/
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -36,6 +97,24 @@ button {
   clear: both;
 }
 
+/*Scaffold*/
+body {
+  @include montserrat(regular);
+  color: $blue2;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  @include montserrat(regular);
+}
+
+p {
+  font-size: 17px;
+  letter-spacing: 0.4px;
+  line-height: 26px;
+  @include proxima(regular);
+}
+
+/*General*/
 .sg-color-copy-label {
   background-color: beige;
   padding: 10px;
@@ -64,7 +143,7 @@ button {
     margin: 0px 0px 10px 0px;
   }
 
- h1 {
+  h1 {
     font-size: 34px;
     color: $gray1;
     margin-bottom: 0px;
@@ -75,6 +154,8 @@ button {
     color: $blue;
     margin-bottom: 8px;
     padding-left: $sg-sidebar-padding;
+    letter-spacing: 0.5px;
+    @include montserrat(semibold);
   }
 
   > span {
@@ -93,7 +174,7 @@ button {
     width: 100%;
     text-align: left;
     color: $gray1;
-    margin: 8px 0px;
+    margin: 6px 0px;
   }
 
   > button {
@@ -111,31 +192,18 @@ button {
 }
 
 .sg-main-container {
-  width: calc(100% - 275px - 65px);
+  width: calc(100% - 275px - 130px);
   display: inline-block;
   float: left;
   position: relative;
   opacity: 1;
   top: 0px;
   transition: top 0.3s ease, opacity 0.3s ease;
-  padding: 100px 0px 0px 65px;
+  padding: 100px 65px 0px 65px;
 
   &.slide-out {
     top: 10px;
     opacity: 0;
-  }
-
-  > h1 {
-    font-size: 22px;
-  }
-
-  > h2 {
-    font-size: 16px;
-    color: $blue;
-  }
-
-  .hide {
-    display: none;
   }
 
   > section {
@@ -152,6 +220,20 @@ button {
     &.slide-in {
       opacity: 1;
       top: 0px;
+    }
+
+    h1 {
+      @include montserrat(semibold);
+      font-size: 22px;
+      color: $gray4;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      @include montserrat(regular);
+      font-size: 16px;
+      letter-spacing: 0.47px;
     }
   }
 }
@@ -195,14 +277,14 @@ button {
   float: left;
   overflow: hidden;
   display: inline-block;
-  padding-left: 20px;
+  padding-left: 10px;
   -webkit-transition: max-height .35s;
   -o-transition: max-height .35s;
   transition: max-height .35s;
   width: 100%;
 
   > li {
-    padding-left: 20px;
+    padding-left: 30px;
     position: relative;
 
     /*List Item - Circle*/
@@ -210,8 +292,8 @@ button {
       content: " ";
       display: block;
       position: absolute;
-      width: 5px;
-      height: 5px;
+      width: 3px;
+      height: 3px;
       left: 8px;
       top: 14px;
       border-radius: 50%;
@@ -238,18 +320,18 @@ button {
     > span {
       margin-top: 13px;
       display: block; 
-      font-size: 14px;
+      font-size: 12px;
       text-align: center;
+      color: $red;
+      @include sourceCode(regular)
     }
   }
 }
 
 .sg-colorbox {
-  /*
-    The background-color is generated with JS from HTML content,
-    Changing the content, will change the background-color.
-  */
-
+  // The background-color is generated with JS from HTML content,
+  // Changing the content, will change the background-color.
+  
   width: 170px;
   height: 56px;
   text-align: center;
@@ -257,4 +339,91 @@ button {
   display: table-cell;
   cursor: pointer;
   z-index: 1;
+  color: $lightblue2;
+  font-size: 14px;
+}
+
+.sg-code-box {
+  counter-reset:line-numbering;
+  background-color: beige;
+  padding: 12px 0px 14px 0;
+  color: red;
+  line-height:140%;
+  border: 1px solid red;
+  width: 100%;
+
+  .line::before {
+    content: counter(line-numbering);
+    counter-increment: line-numbering;
+    padding-right: 1em;
+    /* space after numbers */
+    padding-left:8px;
+    width: 100%;
+    text-align: right;
+    opacity: 0.5;
+    color: red;
+    border: 1px solid black;
+    display: inline-block;
+    width: 20px;
+  }
+
+  .yeah {
+    color: blue;
+  }
+}
+
+/*Section Specific*/
+.sg-website-color,
+.sg-ui-color {
+  > h2 {
+    margin: 40px 0px 32px 0px;
+  }
+}
+
+.sg-typo-proxima {
+  margin-right: 130px;
+}
+
+.sg-typo-proxima,
+.sg-typo-montseraat {
+  display: inline-block;
+  float: left;
+}
+
+.sg-typo-proxima__regular {@include proxima(regular)};
+.sg-typo-proxima__semibold {@include proxima(semibold)};
+.sg-typo-montseraat__regular {@include montserrat(regular)};
+.sg-typo-montseraat__semibold {@include montserrat(semibold)};
+
+.sg-typo-proxima__regular,
+.sg-typo-montseraat__regular {
+  margin-right: 30px;
+}
+
+.sg-typo-proxima__regular,
+.sg-typo-proxima__semibold,
+.sg-typo-montseraat__regular,
+.sg-typo-montseraat__semibold {
+  border: 1px solid red;
+  float: left;
+
+  > p {
+    display: inline-block;
+    font-size: 56px;
+    line-height: 56px;
+    margin: 0px;
+  }
+
+  > span {
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+  }
+}
+
+.sg-typo-test {
+  display: block;
+  margin-top: 34px;
+  line-height: 36px;
+  font-size: 22px;
 }
