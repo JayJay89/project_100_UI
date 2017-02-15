@@ -18,7 +18,6 @@
   </head>
   <body>
     <div class="mo-wrapper clearfix">
-
       <div class="mo-sidebar">
         <h1>Piktochart</h1>
         <span>styleguide v1.0</span>
@@ -54,10 +53,10 @@
         <section id="info_box_model">
           <h1>Box Models</h1>
           <p>An element is structured with several components in the box model: content, border, padding, margin</p>
-          <div class="info-box-model__box box_turquoise box-model">
+          <div class="info-box info-box-model__box info-box--turquoise">
             BOX
           </div>
-          <div class="info-box-model__box box_chartreuse box-model">
+          <div class="info-box info-box-model__box info-box--chartreuse">
             BOX
           </div>
 
@@ -84,19 +83,19 @@
           </ul>
 
           <section class="info-box-give-me-height">
-            <div class="info-box-model__box box_turquoise box-d-1">
+            <div class="info-box info-width-height__box info-width-height__box--1 info-box--turquoise">
               height: 300px; <br>
               width: 300px;
             </div>
 
-            <div class="info-box-model__box box_turquoise box-d-3">
-              <div class="info-box-model__box box_chartreuse box-d-4">
+            <div class="info-box info-width-height__box info-box--turquoise info-width-height__box--2">
+              <div class="info-box info-width-height__box info-box--chartreuse info-width-height__box--3">
                 height: 50%; <br>
                 width: 50%;
               </div>
             </div>
 
-            <div class="info-box-model__box box_chartreuse box-d-2">
+            <div class="info-box info-width-height__box info-box--chartreuse info-width-height__box--4">
               height: 20%; <br>
               width: 20%;
             </div>
@@ -118,8 +117,8 @@
           <p>When there are 2 <strong>block</strong> elements arrange next to each other, margins collapses</p>
           <img src="images/infotrek/margin_collapse.jpg" alt="">
 
-          <div class="info-box-model__box box-margin-collapse">Margin Collapse</div>
-          <div class="info-box-model__box box-margin-collapse">Margin Collapse</div>
+          <div class="info-box info-margin-collapse__box">Margin Collapse</div>
+          <div class="info-box info-margin-collapse__box">Margin Collapse</div>
           <p>How do we prevent this?</p>
           <div class="info-try-this">
             Try This
@@ -130,24 +129,24 @@
           <h2>CSS Property: Box Sizing</h2>
           <p>The default value is content-box</p>
           <p>The box-sizing property is used to alter the default CSS box model used to calculate width and height of the elements.</p>
-          <div class="info-box-model__box box-sizing box1">
+          <div class="info-box info-box-sizing info-box-sizing--1 info-box--turquoise">
             Border-box <br>
             w: 200px <br>
             h: 200px <br>
           </div>
-          <div class="info-box-model__box box-sizing box2">
+          <div class="info-box info-box-sizing info-box-sizing--2 info-box--chartreuse box2">
             Content-box <br>
             w: 200px <br>
             h: 200px <br>
           </div>
           <br><br>
-          <div class="info-box-model__box box-sizing box3">
+          <div class="info-box info-box-sizing info-box-sizing--3 info-box--turquoise box3">
             Border-box <br>
             padding: 20px <br>
             w: 200px <br>
             h: 200px <br>
           </div>
-          <div class="info-box-model__box box-sizing box4">
+          <div class="info-box info-box-sizing info-box-sizing--4 info-box--chartreuse box4">
             Content-box <br>
             padding: 20px <br>
             w: 200px <br>
@@ -214,8 +213,105 @@
         </section>
 
         <section id="info_position">
-          <h1>Position</h1>
-          <h2>Relative, Absolute, Fixed, Z-index</h2>
+          <h1>Positions</h1>
+          <p></p>
+
+          <h2>Static</h2>
+          <p>The top, right, bottom, left and z-index properties do not apply.</p>
+          <div class="info-position-test-ground">
+            <div class="info-box info-box--chartreuse info-position__box info-position__box--1">
+              Static
+            </div>
+            <div class="info-box info-box--chartreuse info-position__box info-position__box--1">
+              Static
+            </div>
+          </div>
+
+          <div class="info-try-this">
+            Try This
+            <ul class="info-list-exception">
+              <li>Change the top, left, right, bottom value of the static box</li>
+            </ul>
+          </div>
+
+          <h2>Relative</h2>
+          <ul class="info-list-exception">
+            <li>This element will be positioned in relative to its original position</li>
+            <li>It changes its position without changing the layout of the page.</li>
+          </ul>
+          <div class="info-position-test-ground">
+            <div class="info-box info-box--chartreuse info-position__box info-position__box--2">
+              Relative
+            </div>
+            <div class="info-box info-box--chartreuse info-position__box info-position__box--2">
+              Relative
+            </div>
+          </div>
+
+          <div class="info-try-this">
+            Try This
+            <ul class="info-list-exception">
+              <li>Change the top, left, right, bottom value of the relative box</li>
+            </ul>
+          </div>
+
+          <h2>Absolute</h2>
+          <ul class="info-list-exception">
+            <li>This element will be positioned in relative to its nearest positioned ancestor</li>
+            <li>In the example below, the box is stucked to the top of its parent because of <span class="info-classname">top: 0px</span></li>
+          </ul>
+          <div class="info-position-test-ground info-position-absolute-ground">
+            <span>Display: Relative</span>
+            <div class="info-box info-box--chartreuse info-position__box info-position__box--3">
+              Absolute <br>
+              top: 0px
+            </div>
+          </div>
+
+          <div class="info-try-this">
+            Try This
+            <ul class="info-list-exception">
+              <li>Change the top, left, right, bottom value of the absolute boxes</li>
+              <li>Go the box's parent class <span class="info-classname">info-position-absolute-ground</span> and disable its <span class="info-classname">position</span></li>
+            </ul>
+          </div>
+
+          <h2>Absolute Inception</h2>
+          <p>When an absolutely positioned position is placed in another absolutely positioned element, this is the result</p>
+          <div class="info-position-test-ground info-position-absolute-ground">
+            <div class="info-box info-position__box info-position__box--3 box1">
+              <div class="info-box info-position__box info-position__box--3 box2">
+                <div class="info-box info-position__box info-position__box--3 box4"></div>
+              </div>
+              <div class="info-box info-position__box info-position__box--3 box3">
+              </div>
+            </div>
+          </div>
+          
+          <h2>
+            <button class="info-call-modal" data-target="info_data_absolute_centering">Centering with Absolute</button>
+          </h2>
+
+          <h2>
+            <button class="info-call-modal" data-target="info_full_page_stretch">Full Page Stretch</button>
+          </h2>
+
+          <h2>Fixed</h2>
+          <ul class="info-list-exception">
+            <li>This element will be positioned in relative to the viewport</li>
+          </ul>
+          <div class="info-position-test-ground">
+            <div class="info-box info-box--chartreuse info-position__box info-position__box--4">
+              Fixed
+            </div>
+          </div>
+
+          <h2>Z-Index</h2>
+          <div class="info-position-test-ground">
+            <div class="info-box info-box--chartreuse info-position__box ">
+              Fixed
+            </div>
+          </div>
         </section>
 
         <section id="info_float">
@@ -253,6 +349,22 @@
         <section id="info_data_icon_3">
           <h1>Nav 3</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+      </div>
+
+      <div class="mo-side-modules">
+        <div class="mo-overlay-close"></div>
+
+        <section id="info_data_absolute_centering">
+          <div>
+            Centering with Absolute
+          </div>
+        </section>
+
+        <section id="info_full_page_stretch">
+          <div>
+            Full Page Stretch
+          </div>
         </section>
       </div>
     </div>

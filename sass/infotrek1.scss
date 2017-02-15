@@ -9,6 +9,9 @@ $gray3: #BCBCBC;
 $sg-sidebar-padding: 8px;
 $mo-button-list--inner-padding-btm: 20px;
 
+$zi-mo-overlay: 1;
+$zi-mo-overlay-close: 1;
+
 /*Resets*/
 body {
   overflow-y: hidden;
@@ -251,6 +254,58 @@ button {
   }
 }
 
+.mo-overlay-close {
+  top: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  display: none;
+  opacity: 0;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: $zi-mo-overlay-close;
+  transition: opacity 0.5s ease;
+
+  &.active {
+    display: block;
+  }
+
+  &.slide-in {
+    opacity: 1;
+  }
+}
+
+.mo-side-modules {
+  
+  > section {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: none;
+    opacity: 0;
+    top: -50px;
+    background-color: rgba(black, 0.8);
+    transition: opacity 0.2s, top 0.2s;
+
+    &.active {
+      display: table;
+    }
+
+    &.slide-in {
+      opacity: 1;
+      top: 0px;
+    }
+
+    > div {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+  }
+}
+
 /*GEneral*/
 .info-list-exception {
   list-style-type: disc;
@@ -264,33 +319,36 @@ button {
 
 .info-try-this {
   display: block;
-  margin: 5px 0px;
+  margin: 10px 0px;
   background-color: darkgreen;
-  padding: 20px;
+  padding: 10px 20px;
   color: white;
   font-size: 18px;
   border-radius: 4px;
 }
 
-/*CONTENTS*/
-.info-box-model__box { 
+.info-box {
   display: inline-block;
-  background-color: darkturquoise;
   font-size: 20px;
 }
 
-.box_turquoise {
+.info-box--turquoise {
   background-color: darkturquoise;
 }
 
-.box_chartreuse {
+.info-box--chartreuse {
   background-color: chartreuse;
 }
 
-.box-model {
+/*BOX MODELS*/
+.info-box-model__box { 
   border: 10px solid black;
   margin: 20px;
   padding: 50px;
+  display: inline-block;
+  font-size: 20px;
+  width: auto;
+  height: auto;
 }
 
 .info-box-give-me-height {
@@ -308,54 +366,51 @@ button {
   }
 }
 
-.box-d-1 {
+.info-width-height__box--1, 
+.info-width-height__box--2 {
   height: 300px;
   width: 300px;
 }
 
-.box-d-2 {
-  height: 20%;
-  width: 20%;
-}
-
-.box-d-3{
-  height: 300px;
-  width: 300px;
-}
-
-.box-d-4{
+.info-width-height__box--3 {
   height: 50%;
   width: 50%;
 }
 
-.box-margin-collapse {
+.info-width-height__box--4 {
+  height: 20%;
+  width: 20%;
+}
+
+.info-margin-collapse__box {
   display: block;
   padding: 20px;
   margin: 20px 0px;
+  border: 10px solid black;
 }
 
-.box-sizing {
+.info-box-sizing {
   border: 10px solid grey;
   width: 200px;
   height: 200px;
+}
 
-  .box1 {
-    box-sizing: border-box;
-  }
+.info-box-sizing--1 {
+  box-sizing: border-box;
+}
 
-  .box2{
-    box-sizing: content-box;
-  }
+.info-box-sizing--2 {
+  box-sizing: content-box;
+}
 
-  .box3 {
-    box-sizing: border-box;
-    padding: 20px;
-  }
+.info-box-sizing--3 {
+  box-sizing: border-box;
+  padding: 20px;
+}
 
-  .box4{
-    box-sizing: content-box;
-    padding: 20px;
-  }
+.info-box-sizing--4 {
+  box-sizing: content-box;
+  padding: 20px;
 }
 
 /*DISPLAYS*/
@@ -398,10 +453,10 @@ button {
 }
 
 .info-classname {
-  padding: 2px 4px;
+  padding: 2px 10px;
   border-radius: 3px;
-  background-color: beige;
-  color: magenta;
+  background-color: darkcyan;
+  color: white;
   margin-left: 2px;
 }
 
@@ -413,6 +468,85 @@ button {
     border: 1px solid black;
     padding: 10px;
   }
+}
 
+/*POSITIONS*/
+.info-position-test-ground {
+  background-color: cadetblue;
+  padding: 20px;
+  position: relative;
+  height: 80px;
 
+  > span {
+    background-color: cadetblue;
+    position: absolute;
+    top: -37px;
+    right: 0px;
+    padding: 10px
+  }
+}
+
+.info-position__box {
+  width: 80px;
+  height: 80px;
+}
+
+.info-position__box--1 {  
+  position: static; 
+  top: auto;
+  bottom: auto;
+  right: auto;
+  left: auto;
+}
+
+.info-position__box--2 {  
+  position: relative; 
+  top: auto;
+  bottom: auto;
+  right: auto;
+  left: auto;
+}
+
+.info-position__box--3 {  
+  position: absolute; 
+  top: 0px;
+  bottom: auto;
+  right: auto;
+  left: auto;
+
+  &.box1 {
+    background-color: red;
+    top: 0px;
+    left: 0px;
+    width: 500px;
+    height: 90%;
+  }
+
+  &.box2 {
+    background-color: beige;
+    width: 100px;
+    height: 90%;
+    bottom: 0px;
+    right: 0px;
+  }
+
+  &.box3 {
+    background-color: orange;
+  }
+
+  &.box4 {
+    background-color: blue;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    right: 0px;
+  }
+}
+
+.info-position__box--4 {  
+  position: fixed; 
+  top: auto;
+  bottom: 0px;
+  right: 0px;
+  left: auto;
 }
