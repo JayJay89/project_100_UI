@@ -238,7 +238,7 @@ button:focus {
   background-color: red;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 1;
+  z-index: 3;
   transition: opacity 0.5s ease;
 }
 
@@ -258,7 +258,8 @@ button:focus {
   opacity: 0;
   top: -50px;
   background-color: rgba(0, 0, 0, 0.8);
-  transition: opacity 0.2s, top 0.2s;
+  transition: opacity 0.3s, top 0.2s;
+  z-index: 2;
 }
 
 .mo-side-modules > section.active {

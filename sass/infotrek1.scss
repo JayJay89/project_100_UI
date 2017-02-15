@@ -9,8 +9,9 @@ $gray3: #BCBCBC;
 $sg-sidebar-padding: 8px;
 $mo-button-list--inner-padding-btm: 20px;
 
-$zi-mo-overlay: 1;
-$zi-mo-overlay-close: 1;
+$zi-mo-overlay-close: 3;
+$zi-mo-overlay: 2;
+$zi-mo-sidebar-hide: 1;
 
 /*Resets*/
 body {
@@ -111,7 +112,7 @@ button {
     top: 0px;
     right: -32px;
     cursor: pointer;
-    z-index: 1;
+    z-index: $zi-mo-sidebar-hide;
 
     &:hover {
       .triangle {
@@ -278,7 +279,7 @@ button {
 }
 
 .mo-side-modules {
-  
+
   > section {
     position: absolute;
     height: 100vh;
@@ -287,8 +288,8 @@ button {
     opacity: 0;
     top: -50px;
     background-color: rgba(black, 0.8);
-    transition: opacity 0.2s, top 0.2s;
-
+    transition: opacity 0.3s, top 0.2s;
+    z-index: $zi-mo-overlay;
     &.active {
       display: table;
     }
