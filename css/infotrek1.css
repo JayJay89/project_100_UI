@@ -1,4 +1,8 @@
 /*Resets*/
+body {
+  overflow-y: hidden;
+}
+
 ul {
   list-style: none;
   margin: 0px;
@@ -115,14 +119,14 @@ button:focus {
 }
 
 .mo-main-container {
-  width: calc(100% - 275px);
+  width: calc(100% - 275px - 100px);
   position: absolute;
   left: 275px;
   top: 0px;
   opacity: 1;
   transition: top 0.3s ease, opacity 0.3s ease, left 0.3s ease, width 0.3s ease;
   padding: 50px;
-  height: 100vh;
+  height: calc(100vh - 100px);
   overflow-y: scroll;
   display: inline-block;
 }
@@ -134,10 +138,6 @@ button:focus {
 .mo-main-container > h2 {
   font-size: 16px;
   color: #71B0EF;
-}
-
-.mo-main-container .hide {
-  display: none;
 }
 
 .mo-main-container > section {
@@ -163,7 +163,7 @@ button:focus {
 }
 
 .mo-main-container.expand {
-  width: 100%;
+  width: calc(100% - 100px);
   left: 0px;
 }
 
@@ -332,4 +332,61 @@ button:focus {
 .box-sizing .box4 {
   box-sizing: content-box;
   padding: 20px;
+}
+
+/*DISPLAYS*/
+.info-display-test-btn {
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+}
+
+.info-display-test-btn:hover {
+  background-color: #006700;
+}
+
+.info-display-test-btn:active {
+  background-color: #005c00;
+}
+
+.info-display-test-btn.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.info-display-test-ground {
+  padding: 20px 20px;
+  margin: 30px 0px;
+  background-color: beige;
+}
+
+.info-display-test-text {
+  margin: 0px;
+  background-color: orange;
+  border: 1px solid red;
+  width: 200px;
+  padding: 20px;
+}
+
+.info-display-test-span {
+  color: green;
+}
+
+.info-classname {
+  padding: 2px 4px;
+  border-radius: 3px;
+  background-color: beige;
+  color: magenta;
+  margin-left: 2px;
+}
+
+.info-display-table {
+  text-align: left;
+  border: 1px solid red;
+}
+
+.info-display-table tr, .info-display-table th {
+  border: 1px solid black;
+  padding: 10px;
 }

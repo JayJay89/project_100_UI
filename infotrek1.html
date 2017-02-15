@@ -51,9 +51,9 @@
       </div>
 
       <div class="mo-main-container" id="sg_main_container">
-        <section id="info_box_model" class="active slide-in">
+        <section id="info_box_model">
           <h1>Box Models</h1>
-          <p></p>
+          <p>An element is structured with several components in the box model: content, border, padding, margin</p>
           <div class="info-box-model__box box_turquoise box-model">
             BOX
           </div>
@@ -72,7 +72,6 @@
             Try This
             <ul class="info-list-exception">
               <li>Change the value of padding and margin on the boxes above.</li>
-              <li>Set the margin to a negative value to see what it looks like.</li>
             </ul>
           </div>
 
@@ -81,7 +80,7 @@
           <ul class="info-list-exception">
             <li>Height and width can be given fixed or percentage values</li>
             <li>Percentage values are calculated based on the parents dimensions</li>
-            <li>Height, when given percentage value, only inherit from a direct parent</li>
+            <li>Height, when given percentage value, inherits from a direct parent's fixed height value</li>
           </ul>
 
           <section class="info-box-give-me-height">
@@ -106,12 +105,13 @@
           <div class="info-try-this">
             Try This
             <ul class="info-list-exception">
-              <li>Give .info-box-give-me-height height: 500px</li>
-              <li>Give .info-box-give-me-height height: 100%</li>
-              <li>Drag the last box out of .info-box-give-me-height</li>
+              <li>Give <span class="info-classname">.info-box-give-me-height</span> height: 500px</li>
+              <li>Give <span class="info-classname">.info-box-give-me-height</span> height: 100%</li>
+              <li>Drag the last box out of <span class="info-classname">.info-box-give-me-height</span></li>
             </ul>
           </div>
           
+          <h2>View Width and View Height</h2>
 
           <h2>CSS: Margin Collapse</h2>
           <p>Top and bottom margins of blocks are sometimes combined (collapsed) into a single margin whose size is the largest of the margins combined into it, a behavior known as margin collapsing.</p>
@@ -124,7 +124,7 @@
           <div class="info-try-this">
             Try This
             <ul class="info-list-exception">
-              <li>Change both boxes(box-margin-collapse) display: value to inline-box and give them a 100% width</li>
+              <li>Change both boxes(box-margin-collapse) display value to <span class="info-classname">inline-box</span> and give them a 100% width</li>
             </ul>
           </div>
           <h2>CSS Property: Box Sizing</h2>
@@ -158,6 +158,59 @@
         <section id="info_display">
           <h1>Displays</h1>
           <h2>Inline, Inline-block, block</h2>
+          
+          <ul class="info-list-exception">
+            <li>The HTML tag has nothing to do with how an element is displayed.</li>
+            <li>However, each HTML tag has a default display value</li>
+          </ul>
+
+          <div class="info-display-test-ground">
+            <p>I'm a &lt;p&gt; tag, display: block</p>
+            <a href="#/">I'm a &lt;a&gt; tag, display: inline</a>
+            <div>I'm a &lt;div&gt; tag, display: block</div>
+            <span>I'm a &lt;span&gt; tag, display: inline</span>
+            <section>I'm a &lt;section&gt; tag, display: block</section>
+            <button>I'm a &lt;button&gt; tag, display: inline-block</button>
+          </div>  
+          
+          <div class="info-try-this">
+            Try This
+            <ul class="info-list-exception">
+              <li>Inspect the elements and see their default display value</li>
+            </ul>
+          </div>
+
+          <button class="info-display-test-btn">Duplicate Element</button>
+          
+          <div class="info-display-test-ground js-info-duplicate-here">
+            <p class="info-display-test-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque beatae, <span class="info-display-test-span">ducimus</span> natus vero earum.
+            </p>
+          </div>
+
+          <div class="info-try-this">
+            Try This
+            <ul class="info-list-exception">
+              <li>Change the value of the display (inline, inline-block, block) of <span class="info-classname">.info-display-test-text</span> element above</li>
+              <li>Duplicate the box above and change their displays.</li>
+              <li>Change the display value of <span class="info-classname">.info-display-test-span</span> </li>
+            </ul>
+          </div>
+
+          <h2>Tables</h2>
+          <p>Standard Tables</p>
+          <div class="info-display-test-ground">
+            <table class="info-display-table">
+              <tr>
+                <th>Table Header 1</th>
+                <th>Table Header 2</th>
+              </tr>
+              <tr>
+                <th>Content 1</th>
+                <th>Content 2</th>
+              </tr>
+            </table>
+          </div>  
         </section>
 
         <section id="info_position">

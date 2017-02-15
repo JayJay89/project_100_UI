@@ -10,6 +10,10 @@ $sg-sidebar-padding: 8px;
 $mo-button-list--inner-padding-btm: 20px;
 
 /*Resets*/
+body {
+  overflow-y: hidden;
+}
+
 ul {
   list-style: none;
   margin: 0px;
@@ -25,6 +29,7 @@ button {
     outline: none;
   }
 }
+
 
 /*clear fixes*/
 .clearfix:before,
@@ -128,14 +133,14 @@ button {
 }
 
 .mo-main-container {
-  width: calc(100% - 275px);
+  width: calc(100% - 275px - 100px);
   position: absolute;
   left: 275px;
   top: 0px;
   opacity: 1;
   transition: top 0.3s ease, opacity 0.3s ease, left 0.3s ease, width 0.3s ease;
   padding: 50px;
-  height: 100vh;
+  height: calc(100vh - 100px);
   overflow-y: scroll;
   display: inline-block;
 
@@ -146,10 +151,6 @@ button {
   > h2 {
     font-size: 16px;
     color: $blue;
-  }
-
-  .hide {
-    display: none;
   }
 
   > section {
@@ -175,7 +176,7 @@ button {
   }
 
   &.expand {
-    width: 100%;
+    width: calc(100% - 100px);
     left: 0px;
   }
 }
@@ -357,4 +358,61 @@ button {
   }
 }
 
+/*DISPLAYS*/
+.info-display-test-btn {
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
 
+  &:hover {
+    background-color: darken(green, 5%);
+  }
+
+  &:active {
+    background-color: darken(green, 7%);
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.info-display-test-ground {
+  padding: 20px 20px;
+  margin: 30px 0px;
+  background-color: beige;
+}
+
+.info-display-test-text {
+  margin: 0px;
+  background-color: orange;
+  border: 1px solid red;
+  width: 200px;
+  padding: 20px;
+}
+
+.info-display-test-span {
+  color: green;
+}
+
+.info-classname {
+  padding: 2px 4px;
+  border-radius: 3px;
+  background-color: beige;
+  color: magenta;
+  margin-left: 2px;
+}
+
+.info-display-table {
+  text-align: left;
+  border: 1px solid red;
+
+  tr, th {
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+
+}

@@ -5,9 +5,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var mo_container_list = document.querySelectorAll('.mo-main-container > section');
   var mo_button_list_btn = document.querySelectorAll('.mo-button-list > li > button');
 
-
   /*Default*/
-  $("button[data-target='sg_data_logo']").parent('li').addClass('active');
+  $("#info_display").addClass('active slide-in');
   $('.mo-sidebar-hide').find('.triangle').toggleClass('inverse');
   $('.mo-sidebar').toggleClass('slide-in');
   $('.mo-main-container').toggleClass('expand');
@@ -29,8 +28,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
   });
 
-
-
   $('.mo-sidebar-hide').on('click', function(){
     $('.mo-sidebar-hide').find('.triangle').toggleClass('inverse');
     $('.mo-sidebar').toggleClass('slide-in');
@@ -45,5 +42,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   $('.mo-button-list--inner').find('li').on('click', function(e){
     $('.mo-button-list--inner').find('li').removeClass('active--inner');
     $(this).addClass('active--inner');
+  })
+
+  $('.info-display-test-btn').on('click', function(){
+    $('.info-display-test-text').clone().appendTo('.js-info-duplicate-here');
+    $(this).addClass('disabled');
   })
 });
