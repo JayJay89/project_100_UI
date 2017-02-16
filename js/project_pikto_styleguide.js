@@ -17,9 +17,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       console.log(e);
   });
 
-  /*Initiate PrettyPre*/
-  // $( function() { $('.sg-code-box').prettyPre(); } );
-
   [...sg_button_list_btn].forEach( function(elem) {
     elem.addEventListener('mousedown', function(){
 
@@ -47,12 +44,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       return mapObj[matched];
     });
   });
-
-  /*For populating the sg-code-box with numbers*/
-  $(".sg-code-box").html(function (index, html) {
-      return html.replace(/^(.*)$/mg, "<span class=\"line\">$1</span>")
-  });
-
+  
   /*Default*/
   $("button[data-target='sg_data_logo']").parent('li').addClass('active');
 

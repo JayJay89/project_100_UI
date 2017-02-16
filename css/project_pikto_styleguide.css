@@ -317,35 +317,6 @@ p {
   font-size: 14px;
 }
 
-.sg-code-box {
-  counter-reset: line-numbering;
-  background-color: beige;
-  padding: 12px 0px 14px 0;
-  color: red;
-  line-height: 140%;
-  border: 1px solid red;
-  width: 100%;
-}
-
-.sg-code-box .line::before {
-  content: counter(line-numbering);
-  counter-increment: line-numbering;
-  padding-right: 1em;
-  /* space after numbers */
-  padding-left: 8px;
-  width: 100%;
-  text-align: right;
-  opacity: 0.5;
-  color: red;
-  border: 1px solid black;
-  display: inline-block;
-  width: 20px;
-}
-
-.sg-code-box .yeah {
-  color: blue;
-}
-
 /*Section Specific*/
 .sg-website-color > h2,
 .sg-ui-color > h2 {
