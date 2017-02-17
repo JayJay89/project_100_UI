@@ -1,0 +1,314 @@
+/////////////////////////////////////////////
+////// Utilities
+////// 01 General
+//////////// 01a Float
+//////////// 01b Toggling Content
+//////////// 01c Affix
+//////////// 01d Hiddens
+//////////// 01e Pikto
+////// 02 Pikto Circular Loading
+////// 03 Pikto Disabled
+////// 04 Pikto Loading Icons
+////// 05 Pikto Opacity
+////// 06 Pikto Pre-loading Overlay
+////// 07 Zendesk Widget
+////// 08 Rounded Icons (Used in Signup Poll, Downgrade Poll, Accounts setting page)
+////// 09 Slider
+/////////////////////////////////////////////
+
+/**=====================================**/
+/* Utilities */
+/**=====================================**/
+/* 01 Bootstrap-sass-asset-helper */
+/**=====================================**/
+
+/**=====================================**/
+/*  01a Float
+/**=====================================**/
+.clearfix {
+  @include clearfix;
+}
+.center-block {
+  @include center-block;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+/**=====================================**/
+/*  01b Toggling Content
+/**=====================================**/
+
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+/* Makes something not displayed, but still takes up its usual area/dimensions. */
+.invisible {
+  visibility: hidden;
+}
+/* What does this do that visibility:hidden does not?  Allow selection for copy-paste perhaps? */
+.text-hide {
+  @include text-hide;
+}
+
+// Hide from screenreaders and browsers
+// Credit: HTML5 Boilerplate
+// -------------------------
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/**=====================================**/
+/*  01c Affix
+/**=====================================**/
+
+.affix {
+  position: fixed;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/**=====================================**/
+/*  01d Hiddens
+/**=====================================**/
+.pikto-hidden {
+  display: none !important;
+}
+.pikto-cloak-hidden {
+  visibility: hidden;
+  position: absolute;
+  @include size(0,0);
+}
+.pikto-hide-while-loading {
+  visibility: hidden;
+}
+.pikto-transparent {
+  @include opacity(0.3, isImportant);
+}
+
+/**=====================================**/
+/*  02 Pikto Circular Loading
+/**=====================================**/
+.pikto-spinner {
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.pikto-spinner:before {
+  content: 'Loading…';/**lower version of IE will see loading word**/
+  position: absolute;
+  color: $teal;
+  width: 24px;
+  height: 24px;
+  margin-left: -32px;
+}
+
+/** IE fix for IE9, IE10 **/
+@media screen and (min-width:0\0) {
+  .pikto-spinner:before  {
+    margin-left/**/: 0;
+  }
+}
+
+.pikto-spinner:not(:required):before {
+  content: '';
+  border-radius: 50%;
+  border: 3px solid $teal-grey-lighter;
+  border-top-color: $teal;
+  @include animation(spinner 1s linear infinite);
+}
+
+
+/**=====================================**/
+/*  03 Pikto Disabled
+/**=====================================**/
+/* Remarks:
+/* For any buttons or widgets which the user cannot currently use. */
+/* It would be great if we could prevent some mouse events (click/mousedown/mouseup) from firing on these. */
+/* However pointer-events:none; will prevent tooltips from appearing, which we don't want! */
+/* We *could* use pointer-events:none; safely if we always place the tooltip on the container, but .pikto-disabled on the child button. */
+
+.pikto-disabled {
+  @include opacity(.4);
+  cursor: default;
+}
+
+.pikto-no-events {
+  pointer-events: none;
+}
+
+/**=====================================**/
+/*  04 Pikto Loading Icons
+/**=====================================**/
+.pikto-loading-small{
+  @include size(20px);
+}
+.pikto-loading-med {
+  padding: 5px;
+  @include size(30px);
+}
+.pikto-loading-lg {
+  @include size(60px);
+}
+
+/* Preloading */
+.pikto-preloading{
+  text-align: center;
+  margin-top: 120px;
+}
+
+/**=====================================**/
+/*  05 Pikto Opacity
+/**=====================================**/
+
+.onhover-opacity {
+  opacity: 0.3!important;
+}
+
+/**=====================================**/
+/*  06 Pikto Pre-loading Overlay
+/**=====================================**/
+#modal-generic {
+  /* for the used of generic(transparent) modal eg: chart when import excel n csv, just a overlay with loading */;
+  background-color: rgba(50 , 46 , 66 , $modal-backdrop-opacity); //$modal-backdrop-bg
+
+  .modal-dialog {
+    @include box-shadow(none);
+    @include border-radius(none);
+  }
+
+  .modal-content {
+    background: none;
+    @include box-shadow(none);
+    text-align: center;
+    border: none;
+    margin-top: 30%;
+    color: $white;
+  }
+
+  .modal-title {
+    margin: 0;
+  }
+
+  h3 {
+    margin: 15px 0px 10px 0px;
+    font-size: 16px;
+    color: $light-blue-grey-02;
+    line-height: normal;
+    font-family: $proxima-nova-semibold;
+  }
+
+  p {
+    font-size: 14px
+  }
+}
+
+/**=====================================**/
+/*  07 Zendesk Widget
+/**=====================================**/
+
+.zendesk-help {
+  color: rgb(255, 255, 255);
+  position: fixed;
+  right: 1.5%;
+  bottom: -5px !important;
+  width: auto;
+  padding: 8px 14px;
+  display: block;
+  background-color: $teal;
+  cursor: pointer;
+  z-index: $zindex-needhelp;
+  height: 40px;
+  @include border-radius(5px 5px 0px 0px);
+  @include transition(bottom 0.4s ease);
+
+  /*This important tag is to overwrite the JS that's preventing this from happening.*/
+
+  &:hover {
+    bottom: 0px !important;
+  }
+
+  &.zendesk-hide {
+    bottom: -200px !important;
+  }
+}
+
+/*
+EL: this is to 'hack' the default widget button from zendesk  to be hidden
+it is specifically added for IE10 whereby it doesn't hide from JS code
+*/
+.zEWidget-launcher {
+  display: none;
+}
+
+/**=====================================**/
+/*  09 Slider
+/**=====================================**/
+
+/* Sliders in general (like those plugged into wyslider.js) */
+.pikto-slider-container {
+  padding: 9px 8px 10px;
+}
+.pikto-slider-container * {
+  vertical-align: middle;   /* Keep the slider and the min/max labels aligned. */
+}
+.pikto-slider {
+  display: inline-block;   /* Since the slider is often declared as a div, without this rule it will break onto its own line, instead of between its min/max labels. */
+  padding: 6px 8px 6px 8px;
+  -moz-box-sizing: content-box; /* must override reset.css to display correctly */
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  position: relative;
+}
+
+.pikto-slider-bar {
+  overflow: hidden;
+  @include size(78px, 5px); /* Used to be in the parent class but neater here. */
+  /* width: 100%; */
+  @include border-radius(5px);
+}
+.pikto-slider-subbar {
+  height: 5px;
+  background-color: $bar-progress-color;
+}
+
+.pikto-slider-btn {
+  @include size(13px);
+  @include border-radius(20px);
+  background: $teal;
+  border: 2px solid;
+  position: relative;
+  margin-top: -9px;   /* We once tried using top instead of margin-top, but that made the marker expand the size of the slider container! */
+  cursor: pointer;
+  @include box-shadow (1px 0 1px rgba(0,0,0,0.5));
+}
+
+.pikto-slider-darkbg {
+  .pikto-slider-bar {
+    background-color: $bar-color-darkbg;
+  }
+
+  .pikto-slider-btn {
+    border-color: $bar-color-darkbg;
+  }
+}
+
+.pikto-slider-lightbg {
+  .pikto-slider-bar {
+    background-color: $bar-color-lightbg;
+  }
+
+  .pikto-slider-btn {
+    border-color: $bar-color-lightbg;
+  }
+}

@@ -1,0 +1,1362 @@
+////////////////////////////////////
+////// Core
+////// 01 Bootstrap-sass-asset-helper
+////// 02 Colors
+//////////// 02a Core Colour
+//////////// 02b Scaffolding
+//////////// 02c Global Textual Link Color
+//////////// 02d Global Icon Link Color
+//////////// 02e Alert State Colour
+//////////// 02f Social Media Colour
+//////////// 02g Account Plan Related Colour
+//////////// 02h Privacy Setting Related Colour
+//////////// 02i Others
+///// 03 Components
+///// 04 Form State and Alert
+///// 05 Media Queries Breakpoints
+//////////// 05a For specific case scenario
+///// 06 Grid system
+///// 07 Typography
+//////////// 07a Base
+//////////// 07b Header
+//////////// 07c Body text size
+////////////////////////////////////
+
+////////////////////////////////////
+///// UI Elements
+///// 08 Alerts
+///// 09 Badges
+///// 10 Breadcrumbs
+///// 11 Button
+///// 12 Carousel
+///// 13 Close
+///// 14 Code
+///// 15 Container Sizes
+///// 16 Dropdowns
+///// 17 Forms
+///// 18 Jumbotron
+///// 19 Labels
+///// 20 List Group
+///// 21 Modals
+//////////// 21a Base
+//////////// 21b Modal - Charts & Maps Shared Elements
+//////////// 21d Modal-Charts - Main
+//////////// 21e Modal-Charts - SVG library container
+//////////// 21f Modal-Maps v4
+///// 22 Color Picker
+///// 23 Nav
+///// 24 Navbar
+///// 25 Pagination
+///// 26 Pager
+///// 27 Panels
+///// 28 Popovers
+///// 29 Progress Bars & Slider
+///// 30 Table
+///// 31 Thumbnail
+///// 32 Tooltips
+///// 33 Type (Different from typography)
+///// 34 Wells
+///// 35 Z-index Master List
+///// 36 Arrow Icon Rotation Degrees
+///// 37 Autocomplete, Dropdown List, Popover & Context Menu
+///// 38 Shared Effect Style (eg. dropshadow)
+////////////////////////////////////
+
+////////////////////////////////////
+///// Specific Pages
+///// 39 Signup Polls
+///// 40 Output/Presentation Page SCSS
+///// 41 Templates Selector
+///// 42 Magic Editor Structure
+//////////// 42a Overall Structure
+//////////// 42b Left Side Menu
+//////////// 42c Block Settings
+//////////// 42d Properties Toolbar
+///// 43 Pricing Plans related
+//////////// 43a Subscription Completion
+//////////// 43b Pricing Pages/Modals/EDU
+///// 44 Dashboard
+//////////// 44a Header
+//////////// 44b Inspire Me Page
+////////////////////////////////////
+
+/**=====================================**/
+/* Base */
+/**=====================================**/
+/* 01 Bootstrap-sass-asset-helper */
+/**=====================================**/
+$bootstrap-sass-asset-helper: false !default;
+
+/**=====================================**/
+/* 02 Colors
+/**=====================================**/
+/* 02a Core Colour
+/**=====================================**/
+$black:                 #000;
+$white:                 #fff;
+
+//Teal
+$teal:                  #1cafa2 !default; //base
+$teal-dark:             #158379 !default; //darken($teal, 10%) !default;
+$teal-darker:           #127169 !default; //darken($teal, 14%) !default;
+
+//Magenta
+$magenta:               #f16078 !default;
+$magenta-dark:          #cb3f56 !default;
+$magenta-darker:        #a12e41 !default;
+
+//Lighter grey
+$grey:                  #e8e8e8 !default; 
+$grey-lighter:          #fafafa !default; 
+$grey-light:            #f0f0f0 !default; 
+$grey-dark:             #d8d8d8 !default; 
+$grey-darker:           #c2c2c2 !default; 
+$grey-darkest:          #828282 !default; 
+
+$grey-alternate-1:      #f9f9f9 !default; // hsb(0 ,0, 98)
+$grey-alternate-2:      #f1f1f1 !default; // hsb(0 ,0, 95)
+$grey-alternate-3:      #f3f3f3 !default; // hsb(0 ,0, 95)
+$grey-alternate-3a:     #f5f5f5 !default; // hsb(0 ,0, 96)
+$grey-alternate-3b:     #e4e4e4 !default; // hsb(0 ,0, 89)
+$grey-alternate-4:      #dadada !default; // hsb(0 ,0, 85)
+$grey-alternate-5:      #d3d3d3 !default; // hsb(0 ,0, 83)
+$grey-alternate-6:      #cccccc !default; // hsb(0 ,0, 80)
+
+//Teal-ish kind of grey
+$teal-grey:             #485456 !default; // hsb(189 ,16, 34)
+$teal-grey-light:       #93a2a4 !default; // hsb(187 ,10, 64)
+$teal-grey-lighter:     #eaf2ef !default; // hsb(158 ,3, 95)
+
+//Blue-ish kind of gray
+$light-blue-grey-01:    #f1f4f5 !default; // hsb(195, 2, 96)
+$light-blue-grey-02:    #f0f6f7 !default; // hsb(189 ,3, 97)
+$light-blue-grey-03:    #ebf5f7 !default; // hsb(190 ,5, 97)
+$light-blue-grey-04:    #e1ebed !default; // hsb(190 ,5, 93)
+$light-blue-grey-05:    #d5e6ea !default; // hsb(191 ,9, 92)
+$light-blue-grey-06:    #d2e0e3 !default; // hsb(191 ,5, 89)
+$light-blue-grey-07:    #c6d6da !default; // hsb(192 ,9, 85)
+$light-blue-grey-08:    #c6d6d9 !default; // hsb(189 ,9, 85)
+$light-blue-grey-09:    #c0d1d4 !default; // hsb(189 ,9, 83)
+
+//Dark Blue-ish kind of gray
+$dark-blue-grey-01:     #1e2527 !default; // hsb(193, 23, 15)
+$dark-blue-grey-02:     #232b2d !default; // hsb(192 ,22, 18)
+$dark-blue-grey-03:     #2b3436 !default; // hsb(191, 20, 21)
+$dark-blue-grey-04:     #313b3d !default; // hsb(190, 20, 24)
+$dark-blue-grey-05:     #809a9f !default; // hsb(190, 20, 62)
+
+//Dark Purple-ish kind of grey
+$dark-purple-grey-01:   #1e1d26 !default; // hsb(247, 24, 15)
+$dark-purple-grey-02:   #2a2834 !default; // hsb(250, 23, 20)
+$dark-purple-grey-03:   #2c2a37 !default; // hsb(249, 24, 22)
+$dark-purple-grey-04:   #322E42 !default; // hsb(252, 30, 26)
+$dark-purple-grey-05:   #373544 !default; // hsb(248, 22, 27)
+$dark-purple-grey-06:   #3f3d48 !default; // hsb(251, 15, 28)
+$dark-purple-grey-07:   #3f3c4e !default; // hsb(250, 23, 31)
+$dark-purple-grey-08:   #4b475c !default; // hsb(251, 23, 36)
+$dark-purple-grey-08b:  #514b6d !default;
+$dark-purple-grey-09:   #2f2b41 !default;
+$dark-purple-grey-10:   #6C677B !default;
+
+//Light Purple-ish kind of grey
+$light-purple-grey-01:  #413d49 !default;
+$light-purple-grey-02:  #474456 !default;
+$light-purple-grey-03:  #5d5a6b !default;
+$light-purple-grey-04:  #666470 !default;
+$light-purple-grey-05:  #777483 !default;
+$light-purple-grey-06:  #8e89a4 !default;
+$light-purple-grey-07:  #bcbac7 !default;
+
+//Social Media Colors
+$fb-color:                  #5272af;
+$gplus-color:               #4285F4;
+$gplus-whiteiconbg-color:   $white;
+$gplus-rediconbg-color:     #DC4E41;
+$twitter-color:             #60a8dc;
+$pinterest-color:           #ca2127;
+
+//Misc
+$orange:                #fc6940;    // rgb(252, 105, 64)
+$mercury-grey:          #dde2e8;   //  hsb(213, 5, 91);
+$light-green:           #d8e9c6;
+$light-blue:            #c3e0e3;
+$light-yellow:          #f3eeae;
+$light-red:             #f8c8c8;
+$light-red-2:           #f98484;
+
+/**=====================================**/
+/* 02b Scaffolding
+/**=====================================**/
+// Background Colour
+$body-bg:               $grey-lighter !default;
+$external-overlay-bg:   $white !default;
+$editor-bg:             $grey !default;
+$text-color:            $dark-purple-grey-03 !default;
+$text-color-darkbg:     $white !default;
+$brand-primary:         $teal !default;
+
+/**=====================================**/
+/* 02c Global Textual Link Color
+/**=====================================**/
+$link-color:                  $teal !default;
+$link-hover-color:            $teal-dark !default;
+$link-hover-decoration:       underline !default;
+
+$attention-link-color:        $magenta !default;
+$attention-link-hover-color:  $magenta-dark !default;
+
+$title-link-color:            $white !default;
+$title-link-hover-color:      $grey-darker !default;
+
+$menu-link-color:             $light-purple-grey-04 !default;
+$menu-link-hover-color:       $dark-purple-grey-03 !default;
+
+$meta-link-color:             $light-purple-grey-06 !default;
+$meta-link-hover-color:       $light-purple-grey-03 !default;
+
+/**=====================================**/
+/* 02d Global Icon Link Color
+/**=====================================**/
+$icon-container-default-color-01:  $white !default;
+$icon-container-hover-color-01:    $grey-light !default;
+$icon-container-active-color-01:   $grey-light !default;
+
+$icon-container-hover-color-02:    $grey-lighter !default;
+$icon-container-active-color-02:   $grey-lighter !default;
+
+$icon-container-hover-color-03:    $dark-purple-grey-03 !default;
+$icon-container-active-color-03:   $dark-purple-grey-03 !default;
+
+/**=====================================**/
+/* 02e Alert State Colour
+/**=====================================**/
+$brand-success:           $light-green !default;
+$brand-info:              $light-blue !default;
+$brand-info-box:          $teal-grey-lighter !default;
+$brand-warning:           $light-yellow !default;
+$brand-danger:            $light-red !default;
+$brand-danger-attention:  $light-red-2 !default;
+
+// Modal Alert Text Colour
+$error-text-color:        $brand-danger-attention !default;
+
+/**=====================================**/
+/* 02g Account Plan Related Colour
+/**=====================================**/
+$pro-tag:     $magenta;
+$info-box-bg: $teal-grey-light;
+
+/**=====================================**/
+/* 02i Others
+/**=====================================**/
+$border-lightbg:     $grey;
+$border-darkbg:      $dark-purple-grey-05;
+
+/**=====================================**/
+/* 03 Components
+/**=====================================**/
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+
+$padding-xlarge-vertical:    16px !default;
+$padding-xlarge-horizontal:  28px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  16px !default;
+
+$padding-medium-vertical:    8px !default;
+$padding-medium-horizontal:  16px !default;
+
+$padding-small-vertical:    5px !default;
+$padding-small-horizontal:  10px !default;
+
+$padding-xs-vertical:       2px !default;
+$padding-xs-horizontal:     5px !default;
+
+//Modifier for wide buttons
+$wide-pd-ver: 0px;
+$wide-pd-hor: 20px;
+
+$line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5 !default;
+
+$border-radius-base:        2px !default;
+$border-radius-large:       2px !default;
+$border-radius-small:       2px !default;
+
+$component-active-color:    $white !default;
+$component-active-bg:       $dark-purple-grey-01 !default;
+
+$caret-width-base:          4px !default;
+$caret-width-large:         5px !default;
+
+/**=====================================**/
+/* 04 Form State and Alert
+/**=====================================**/
+$state-success-text:    $text-color !default;
+$state-success-bg:      $brand-success  !default;
+$state-success-border:  darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+$state-info-text:       $text-color !default;
+$state-info-bg:         $brand-info !default;
+$state-info-border:     darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+$state-warning-text:    $text-color !default;
+$state-warning-bg:      $brand-warning !default;
+$state-warning-border:  darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+
+$state-danger-text:     $text-color !default;
+$state-danger-bg:       $brand-danger !default;
+$state-danger-border:   darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+
+$state-danger-attention-text:     $white !default;
+$state-danger-attention-bg:       $brand-danger-attention !default;
+$state-danger-attention-border:   darken(adjust-hue($state-danger-attention-bg, -10), 5%) !default;
+
+/**=====================================**/
+/* 05 Media Queries Breakpoints
+/**=====================================**/
+// Extreme small screen / phone
+$screen-xxs:                 320px !default;
+$screen-xxs-min:             $screen-xxs !default;
+$screen-phone:               $screen-xxs-min !default;
+
+// Extra small screen / phone
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// Extra large screen / wide desktop
+$screen-xl:                  1400px !default;
+$screen-xl-min:              $screen-xl !default;
+$screen-xl-desktop:          $screen-xl-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xxs-max:             ($screen-xs-min - 1) !default;
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+$screen-lg-max:              ($screen-xl-min - 1) !default;
+
+/**=====================================**/
+/* 05a For specific case scenario
+/**=====================================**/
+// Shared navbar (to fix the levelup orange text from jumping down)
+$screen-lg-navbar: 1130px;
+$screen-lg-output: 1215px;
+/**=====================================**/
+/* 06 Grid system
+/**=====================================**/
+// Number of columns in the grid.
+$grid-columns:              12 !default;
+// Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px !default;
+// Navbar collapse
+// Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-sm-min !default;
+// Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+/**=====================================**/
+/* 07 Typography
+/**=====================================**/
+/* 07a Base
+/**=====================================**/
+@import url(//fonts.googleapis.com/css?family=Montserrat:100,400,700,900,400italic,700italic,900italic);
+
+  $font-family-base:        "ProximaNova-Regular", Arial, sans-serif !default;
+  $proxima-nova-semibold:   "ProximaNova-Semibold", Arial, sans-serif !default;
+  $proxima-nova-bold:       "ProximaNova-Bold", Arial, sans-serif !default;
+  $headings-font-family:    "Montserrat", Arial, sans-serif !default;
+
+// Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+
+// Font Sizes
+$font-size-base:         14px;
+$font-size-xlarge:       22px;
+$font-size-large:        ceil(($font-size-base * 1.3)) !default; // ~18px
+$font-size-medium:       16px;
+$font-size-small-medium: 13px;
+$font-size-small:        12px;
+$font-size-xsmall:       10px;
+
+$font-size-meta:     $font-size-small;
+
+$font-weight-base:      400 !default;
+
+// Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429 !default; // 20/14
+$line-height-medium:      1.8; //for paragraphs ex: acc. settings, pricing FAQs
+
+// Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+
+/**=====================================**/
+/* 07b Header
+/**=====================================**/
+$headings-line-height:          1.4 !default;
+$headings-color:                inherit !default;
+$headings-smaller-font-weight:  300 !default;
+
+//////////// Header font size (ProximaNovaFont)
+$font-size-h1: ceil(($font-size-base * 2.1)) !default; // ~32px
+$font-size-h2: floor(($font-size-base * 1.9)) !default; // ~28px
+$font-size-h3: ceil(($font-size-base * 1.7)) !default; // ~26px
+$font-size-h4: floor(($font-size-base * 1.5)) !default; // ~22px
+$font-size-h5: ceil(($font-size-base * 1.2)) !default; // ~18px
+$font-size-h6: floor(($font-size-base * 1.1)) !default; // ~16px
+
+//////////// Header font size (Montserrat Font)
+$font-size-hero-h1: ceil(($font-size-base * 4)) !default; // ~60px
+$font-size-hero-h2: floor(($font-size-base * 3.7)) !default; // ~55px
+$font-size-hero-h3: round(($font-size-base * 3.2)) !default; // ~48px
+$font-size-hero-h4: round(($font-size-base * 3)) !default; // ~45px
+$font-size-hero-h5: floor(($font-size-base * 2.7)) !default; // ~40px
+$font-size-hero-h6: round(($font-size-base * 2.4)) !default; // ~36px
+
+/**=====================================**/
+/* UI Elements */
+/**=====================================**/
+/* 08 Alerts
+/**=====================================**/
+$alert-padding:             15px !default;
+$alert-border-radius:       $border-radius-base !default;
+$alert-link-font-weight:    bold !default;
+$alert-no-border:           transparent !default;
+
+$alert-success-bg:             $state-success-bg !default;
+$alert-success-text:           $state-success-text !default;
+
+$alert-info-bg:                $state-info-bg !default;
+$alert-info-text:              $state-info-text !default;
+
+$alert-warning-bg:             $state-warning-bg !default;
+$alert-warning-text:           $state-warning-text !default;
+
+$alert-danger-bg:              $state-danger-bg !default;
+$alert-danger-text:            $state-danger-text !default;
+
+$alert-danger-attention-bg:    $state-danger-attention-bg !default;
+$alert-danger-attention-text:  $state-danger-attention-text !default;
+
+/**=====================================**/
+/* 09 Badges
+/**=====================================**/
+$badge-color:               $white !default;
+$badge-link-hover-color:    $white !default;
+$badge-bg:                  inherit !default;
+$badge-border-color:        $magenta !default;
+
+$badge-active-color:        $link-color !default;
+$badge-active-bg:           $magenta !default;
+
+$badge-font-weight:         bold !default;
+$badge-line-height:         1 !default;
+$badge-border-radius:       10px !default;
+
+/**=====================================**/
+/* 10 Breadcrumbs
+/**=====================================**/
+$breadcrumb-padding-vertical:   8px !default;
+$breadcrumb-padding-horizontal: 15px !default;
+$breadcrumb-bg:                 $grey-alternate-3a !default;
+$breadcrumb-color:              $grey-alternate-6 !default;
+$breadcrumb-active-color:       $teal !default;
+$breadcrumb-separator:          "/" !default;
+
+/**=====================================**/
+/* 11 Buttons
+/**=====================================**/
+/* 11a Buttons Colour
+/**=====================================**/
+$btn-font-weight:               normal !default;
+
+$btn-icon-outline-color:        $grey-dark !default; //color of the outline
+$btn-icon-bg:                   $white !default;
+$btn-icon-bg-hover:             $grey-light !default;
+$btn-icon-bg-active:            $grey-light !default;
+
+$btn-option-color:              $text-color !default;
+$btn-option-bg-hover:           $grey-light !default;
+$btn-option-bg-active:          $grey-dark !default;
+
+$btn-back-bg-hover:             $grey-light !default;
+
+$btn-lightgrey-color:           $text-color !default;
+$btn-lightgrey-bg:              $grey-light !default;
+$btn-lightgrey-bg-hover:        $grey-darker !default;
+$btn-lightgrey-bg-active:       $light-purple-grey-04 !default;
+
+$btn-grey-color:                $white !default;
+$btn-grey-bg:                   $teal-grey !default;
+$btn-grey-bg-hover:             $dark-purple-grey-07 !default;
+$btn-grey-bg-active:            $dark-purple-grey-01 !default;
+
+$btn-purplegrey-color:          $white !default;
+$btn-purplegrey-bg:             $light-purple-grey-03 !default;
+$btn-purplegrey-bg-hover:       $dark-purple-grey-07 !default;
+$btn-purplegrey-bg-active:      $dark-purple-grey-07 !default;
+
+$btn-teal-color:                $white !default;
+$btn-teal-bg:                   $teal !default;
+$btn-teal-bg-hover:             $teal-dark !default;
+$btn-teal-bg-active:            $teal-darker !default;
+
+$btn-magenta-color:             $white !default;
+$btn-magenta-bg:                $magenta !default;
+$btn-magenta-bg-hover:          $magenta-dark !default;
+$btn-magenta-bg-active:         $magenta-darker !default;
+
+$btn-bluegrey-outline-color:    $white !default;
+$btn-bluegrey-outline:          $light-purple-grey-04 !default; //color of the outline
+$btn-bluegrey-outline-bg-hover: $light-purple-grey-04 !default;
+$btn-bluegrey-outline-bg-active:$light-purple-grey-01 !default;
+
+$btn-success-color:             $text-color !default;
+$btn-success-bg:                $brand-success !default;
+$btn-success-bg-hover:          darken($brand-success, 10%)  !default;
+$btn-success-bg-active:         darken($brand-success, 16%) !default;
+
+$btn-info-color:                $text-color !default;
+$btn-info-bg:                   $brand-info !default;
+$btn-info-bg-hover:             darken($brand-info, 10%)  !default;
+$btn-info-bg-active:            darken($brand-info, 16%) !default;
+
+$btn-warning-color:             $text-color !default;
+$btn-warning-bg:                $brand-warning !default;
+$btn-warning-bg-hover:          darken($brand-warning, 10%)  !default;
+$btn-warning-bg-active:         darken($brand-warning, 16%)  !default;
+
+$btn-danger-color:              $white !default;
+$btn-danger-bg:                 $brand-danger-attention !default;
+$btn-danger-bg-hover:           darken($brand-danger-attention, 10%)  !default;
+$btn-danger-bg-active:          darken($brand-danger-attention, 16%)  !default;
+
+$btn-link-disabled-color:       $grey !default;
+
+$btn-inline-icon-gap:           5px !default;
+$btn-inline-icon-height:        15px !default;
+$btn-upgrade-icon-width:        20px !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius-base:    $border-radius-base !default;
+$btn-border-radius-large:   $border-radius-large !default;
+$btn-border-radius-small:   $border-radius-small !default;
+
+/**=====================================**/
+/* 12 Carousel
+/**=====================================**/
+$carousel-text-shadow:              0 1px 2px rgba(0,0,0,.6) !default;
+
+$carousel-control-color:            $white !default;
+$carousel-control-width:            15% !default;
+$carousel-control-opacity:          .5 !default;
+$carousel-control-font-size:        20px !default;
+
+$carousel-indicator-active-bg:      $white !default;
+$carousel-indicator-border-color:   $white !default;
+
+$carousel-caption-color:            $white !default;
+
+/**=====================================**/
+/* 13 Close
+/**=====================================**/
+$close-font-weight:     bold !default;
+$close-color:           $black !default;
+$close-bright-color:    $white !default;
+$close-text-shadow:     0 1px 0 $white !default;
+
+/**=====================================**/
+/* 14 Code
+/**=====================================**/
+$code-color:                  #c7254e !default;
+$code-bg:                     #f9f2f4 !default;
+
+$kbd-color:                   $white !default;
+$kbd-bg:                      #333 !default;
+
+$pre-bg:                      $grey-alternate-3a !default;
+$pre-color:                   $grey !default;
+$pre-border-color:            $grey-alternate-6 !default;
+$pre-scrollable-max-height:   340px !default;
+
+/**=====================================**/
+/* 15 Container Sizes
+/**=====================================**/
+// Small screen / tablet
+$container-tablet:          (720px + $grid-gutter-width) !default;
+$container-sm:              $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop:         (940px + $grid-gutter-width) !default;
+$container-md:              $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop:   (1140px + $grid-gutter-width) !default;
+$container-lg:              $container-large-desktop !default;
+
+/**=====================================**/
+/* 16 Dropdowns
+/**=====================================**/
+$dropdown-bg:                    $dark-purple-grey-03 !default;
+// $dropdown-border:                rgba(0,0,0,.15) !default;
+$dropdown-border:                $grey-alternate-6 !default;
+$dropdown-fallback-border:       $grey-alternate-6 !default;
+$dropdown-divider-bg:            $light-purple-grey-04 !default;
+$dropdown-link-color:            $grey-light !default;
+$dropdown-link-hover-color:      $white !default;
+$dropdown-link-hover-bg:         $dark-purple-grey-01 !default;
+$dropdown-link-active-color:     $component-active-color !default;
+$dropdown-link-active-bg:        $component-active-bg !default;
+$dropdown-link-disabled-color:   $grey !default;
+$dropdown-header-color:          $grey !default;
+$dropdown-caret-color:           $black !default;
+/**=====================================**/
+/* 17 Forms
+/**=====================================**/
+$input-bg:                      $white !default;
+$input-color:                   $text-color !default;
+$input-color-placeholder:       #999 !default;
+
+$input-bg-disabled:             $grey !default;
+
+$input-color:                   $grey !default;
+$input-color-placeholder:       $dark-purple-grey-03 !default;
+
+$input-border:                  #d2dee2 !default;
+$input-border-radius:           $border-radius-base !default;
+$input-border-radius-large:     $border-radius-large !default;
+$input-border-radius-small:     $border-radius-small !default;
+
+$input-border-focus:          $teal !default;
+
+$input-height-base:           ($line-height-computed + ($padding-base-vertical * 2) + 2) !default; //-->34px
+$input-height-large:          (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
+$input-height-small:          (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default; //-->30px
+
+$form-group-margin-bottom:      15px !default;
+
+$legend-color:                $text-color !default;
+$legend-border-color:         #e5e5e5 !default;
+
+$input-group-addon-bg:              $grey !default;
+$input-group-addon-border-color:    $input-border !default;
+
+$cursor-disabled:           not-allowed !default;
+$pikto-input-height:        35px;
+
+/**=====================================**/
+/* 18 Jumbotron
+/**=====================================**/
+$jumbotron-padding:             30px !default;
+$jumbotron-color:               inherit !default;
+$jumbotron-bg:                  $grey !default;
+$jumbotron-heading-color:       inherit !default;
+$jumbotron-font-size:           ceil(($font-size-base * 1.5)) !default;
+$jumbotron-heading-font-size:   ceil(($font-size-base * 4.5)) !default;
+
+/**=====================================**/
+/* 19 Labels
+/**=====================================**/
+$label-default-bg:          $light-purple-grey-04 !default;
+$label-primary-bg:          $brand-primary !default;
+$label-success-bg:          $brand-success !default;
+$label-info-bg:             $brand-info !default;
+$label-warning-bg:          $brand-warning !default;
+$label-danger-bg:           $brand-danger !default;
+$label-color:               $white !default;
+$label-link-hover-color:    $white !default;
+
+/**=====================================**/
+/* 20 List Group
+/**=====================================**/
+$list-group-bg:                 $white !default;
+$list-group-border:             #ddd !default;
+$list-group-border-radius:      $border-radius-base !default;
+
+$list-group-hover-bg:           $grey-alternate-3a !default;
+$list-group-active-color:       $component-active-color !default;
+$list-group-active-bg:          $component-active-bg !default;
+$list-group-active-border:      $list-group-active-bg !default;
+$list-group-active-text-color:  lighten($list-group-active-bg, 40%) !default;
+
+$list-group-disabled-color:      $grey !default;
+$list-group-disabled-bg:         $grey !default;
+$list-group-disabled-text-color: $list-group-disabled-color !default;
+
+$list-group-link-color:         #555 !default;
+$list-group-link-hover-color:   $list-group-link-color !default;
+$list-group-link-heading-color: #333 !default;
+
+/**=====================================**/
+/* 21 Modals
+/**=====================================**/
+/* 21a Base
+/**=====================================**/
+$modal-border-radius:                     2px !default;
+$modal-border-radius-underlying:          4px !default;
+
+$modal-inner-padding:                     20px !default;
+$modal-footertopbottom-padding:           15px !default;
+// $modal-footertopbottom-padding:           10px !default;
+$modal-side-padding:                      17px !default;
+$modal-preview-inner-padding:             0px !default;
+
+$modal-title-padding:                     15px !default;
+$modal-title-line-height:                 $line-height-base !default;
+$modal-button-gap:                        7px !default;
+$modal-button-small-gap:                  5px !default;
+
+$modal-content-bg:                        $white !default;
+$modal-content-border-color:              rgba(0,0,0,.2) !default;
+$modal-content-fallback-border-color:     #999 !default;
+$modal-header-bg:                         $grey-light !default;
+$modal-header-dark-bg:                    $dark-purple-grey-03 !default;
+$modal-footer-bg:                         $modal-header-bg !default;
+
+//overlay-bg
+$modal-backdrop-bg:                       $dark-purple-grey-04 !default;
+$modal-backdrop-opacity:                  .7 !default;
+$modal-border-color:                      $border-lightbg !default;
+
+$modal-default:                           475px !default;
+$modal-lg:                                980px !default;
+$modal-md:                                600px !default;
+$modal-sm:                                300px !default;
+
+//modal-function
+$modal-subtitle-margin-top:               25px !default;
+
+//modal-payment
+$modal-subcontent-bg:                     $light-blue-grey-02 !default;
+
+//modal-tool
+$modal-tool-height:                       645px !default;
+$modal-tool-header-height:                63px !default;
+$modal-paneltab-width:                    55px !default;
+$modal-paneltab-padding:                  12px 10px !default;
+$modal-paneltab-bg:                       $modal-header-dark-bg !default;
+$modal-tabpane-padding:                   16px !default;
+$modal-tool-innercontent-space:           8px !default;
+$modal-tool-previewwrapper-width:         400px !default;
+
+$modal-wrapper-darker-bg:                 $grey-lighter !default;
+
+//modal-tool - container-settings-options
+$modal-option-items-width:                35% !default;
+
+//modal-preview
+$modal-preview-previewwrapper-width:      980px !default;
+$modal-preview-containermenu-bg:          $grey-light !default;
+$modal-preview-containermenu-padding:     10px $modal-inner-padding 0px $modal-inner-padding !default;
+
+//preview-arrow (left & right)
+$container-arrow-circle-size:             100px;
+$container-arrow-bg:                      $grey-darker;
+$container-arrow-padding:                 0 6px;
+$container-arrow-top:                     45%;
+$container-arrow-icon-top:                30px;
+$container-arrow-left-position:           -22px;
+$container-arrow-left-hover-position:     -5px;
+$container-arrow-right-position:          -15px;
+$container-arrow-right-hover-position:    2px;
+
+/**=====================================**/
+/* 21b Modal - Charts & Maps Shared Elements
+/**=====================================**/
+$modal-settings-options-title-width:        65% !default;
+// $modal-settings-options-wide-title-width:  60% !default;
+$modal-settings-options-value-width:        33% !default;
+$modal-mapsv4-settings-options-title-width: 71% !default; //this figure is given due to the compatibility with lower version of chrome v53
+$modal-chartmaparea-width:                  400px !default;
+$modal-mapsv4-paneltab-height:              56px !default;
+$full-width-toolmodal-content:              100% !default;
+
+/**=====================================**/
+/* 21c Modal - Charts & Maps - Handsontable Data Grid
+/**=====================================**/
+$handsontable-border-color:             $border-lightbg !default;
+$handsontable-header-bg:                $grey-lighter !default;
+$handsontable-header-hover-bg:          $white !default;
+$handsontable-headertext-color:         $text-color !default;
+$handsontable-databox-highlight-color:  $teal !default;
+$handsontable-selected-row-bg:          $light-blue-grey-02 !default; //to follow the handsontable selected row color
+$handsontable-hidden-row-bg:            $grey-light !default;
+$handsontable-cell-height:              28px !default;
+
+/**=====================================**/
+/* 21d Modal-Charts - Main
+/**=====================================**/
+$modal-chart-paneltab-padding:              4px 10px !default;
+$modal-chart-settingswrapper-height:        529px !default;
+
+/**=====================================**/
+/* 21e Modal-Charts - SVG library container
+/**=====================================**/
+$modal-chart-svglibrary-height:           355px !default;
+
+/**=====================================**/
+/* 21f Modal-Maps v4
+/**=====================================**/
+$modal-mapsv4-datawrapper-width:                     $modal-tool-previewwrapper-width!default;
+$modal-mapsv4-countries-container:                   $grey-light !default;
+$modal-mapsv4-countries-container-search-height:     35px !default;
+$modal-mapsv4-countries-list-countrydivider-top:     6px !default;
+$modal-mapsv4-countries-list-countrydivider-font:    18px !default;
+$modal-mapsv4-countries-list-padding-topbottom:      5px !default;
+$modal-mapsv4-countries-list-hover:                  $grey !default;
+$modal-mapsv4-countries-list-edited:                 $grey-lighter !default;
+$modal-mapsv4-countries-list-noresult-bottom:        20px !default;
+$modal-mapsv4-regions-container:                     $modal-wrapper-darker-bg !default;
+$modal-mapsv4-regions-list-tab-width:                45% !default;
+$modal-mapsv4-regions-list-tab-padding:              5px !default;
+$modal-mapsv4-regions-list-tab-margin-bottom:        $modal-tabpane-padding !default;
+$modal-mapsv4-regions-list-tab-margin-side:          $modal-mapsv4-regions-list-tab-margin-bottom !default;
+$modal-mapsv4-regions-list-tab-min-height:           112px !default;
+$modal-mapsv4-regions-list-tab-title-space:          5px !default;
+$modal-mapsv4-regions-list-tab-default:              $grey !default;
+$modal-mapsv4-regions-list-tab-hover:                $grey-darker !default;
+
+/**=====================================**/
+/* 22 Color Picker
+/**=====================================**/
+$color-picker-wrapper-width:                290px !default;
+$color-picker-wrapper-height:               120px !default;
+$color-picker-wrapper-margin-top:           10px !default;
+$color-picker-wrapper-padding:              6px !default;
+$color-picker-swatchpanel-container-margin: 10px !default;
+$color-picker-hex-container-margin:         10px !default;
+
+//the swatch on the tools modal
+$color-swatch-container-border-color:       $grey-darker !default;
+$color-swatch-container-size:               22px !default;
+
+/**=====================================**/
+/* 23 Nav
+/**=====================================**/
+$nav-link-padding:                          10px 15px !default;
+$nav-tabs-padding:                          0 15px 6px !default;
+$nav-link-hover-bg:                         transparent !default;
+
+$nav-disabled-link-color:                   $grey !default; //#999999
+$nav-disabled-link-hover-color:             $grey !default;
+
+// $nav-tabs-border-color:                     #ddd !default;
+
+// $nav-tabs-link-hover-border-color:          $grey-light !default;
+
+// $nav-tabs-active-link-hover-bg:             $body-bg !default;
+// $nav-tabs-active-link-hover-color:          $grey !default;
+$nav-tabs-active-link-hover-border-color:   $teal !default;
+
+$nav-tabs-justified-link-border-color:            #ddd !default;
+$nav-tabs-justified-active-link-border-color:     $body-bg !default;
+
+//Pills
+$nav-pills-border-radius:                   $border-radius-base !default;
+$nav-pills-active-link-hover-bg:            $component-active-bg !default;
+$nav-pills-active-link-hover-color:         $component-active-color !default;
+
+/**=====================================**/
+/* 24 Navbar
+/**=====================================**/
+// Basics of a navbar
+$navbar-height:                    60px !default;
+$navbar-margin-bottom:             $line-height-computed !default;
+$navbar-border-radius:             $border-radius-base !default;
+$navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+$navbar-collapse-max-height:       340px !default;
+
+$navbar-default-color:             #777 !default;
+$navbar-default-bg:                $dark-purple-grey-03 !default;
+$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default; //#e7e7e7
+
+// Navbar links
+/*
+_navbar-new.scss
+certain colors have the same variable but uses different colors
+*/
+$navbar-default-link-color:                $grey-darker !default;
+$navbar-default-link-hover-color:          $white !default;
+$navbar-default-link-hover-bg:             transparent !default;
+$navbar-default-link-active-color:         $teal !default;
+$navbar-default-link-active-bg:            transparent !default;
+$navbar-default-link-disabled-color:       $grey-alternate-6 !default;
+$navbar-default-link-disabled-bg:          transparent !default;
+
+// Navbar brand label
+$navbar-default-brand-color:               $navbar-default-link-color !default;
+$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%) !default; //#5e5e5e
+$navbar-default-brand-hover-bg:            transparent !default;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           #ddd !default;
+$navbar-default-toggle-icon-bar-bg:        #888 !default; //$grey-alternate-6
+$navbar-default-toggle-border-color:       #ddd !default;
+
+// Reset inverted navbar basics
+$navbar-inverse-color:                      lighten($grey, 15%) !default; //#999999
+$navbar-inverse-bg:                         #222 !default;
+$navbar-inverse-border:                     darken($navbar-inverse-bg, 10%) !default; //#080808
+
+// Inverted navbar links
+$navbar-inverse-link-color:                 lighten($grey, 15%) !default; //#999999;
+$navbar-inverse-link-hover-color:           $white !default;
+$navbar-inverse-link-hover-bg:              transparent !default;
+$navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color !default; //$whitefff, //#555555
+$navbar-inverse-link-active-bg:             darken($navbar-inverse-bg, 10%) !default; //#080808, //#e7e7e7
+$navbar-inverse-link-disabled-color:        #444 !default;
+$navbar-inverse-link-disabled-bg:           transparent !default;
+
+// Inverted navbar brand label
+$navbar-inverse-brand-color:                $navbar-inverse-link-color !default; //#999999
+
+$navbar-inverse-brand-hover-color:          $white !default;
+$navbar-inverse-brand-hover-bg:             transparent !default;
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg:            #333 !default;
+$navbar-inverse-toggle-icon-bar-bg:         $white !default;
+$navbar-inverse-toggle-border-color:        #333 !default;
+
+//Others
+$navbar-font-size:                          $font-size-base;
+$navbar-button-size:                        32px;
+$navbar-menu-collapse-bp:                   950px;
+$navbar-brand-logo-height:                  40px;
+
+/**=====================================**/
+/* 25 Pagination
+/**=====================================**/
+$pagination-color:                     $link-color !default;
+$pagination-bg:                        $white !default;
+$pagination-border:                    #ddd !default;
+
+$pagination-hover-color:               $link-hover-color !default;
+$pagination-hover-bg:                  $grey-darker !default;
+$pagination-hover-border:              #ddd !default;
+
+$pagination-active-color:              $white !default;
+$pagination-active-bg:                 $brand-primary !default;
+$pagination-active-border:             $brand-primary !default;
+
+$pagination-disabled-color:            $grey !default;
+$pagination-disabled-bg:               $white !default;
+$pagination-disabled-border:           #ddd !default;
+
+/**=====================================**/
+/* 26 Pager
+/**=====================================**/
+$pager-bg:                             $pagination-bg !default;
+$pager-border:                         $pagination-border !default;
+$pager-border-radius:                  15px !default;
+
+$pager-hover-bg:                       $pagination-hover-bg !default;
+
+$pager-active-bg:                      $pagination-active-bg !default;
+$pager-active-color:                   $pagination-active-color !default;
+
+$pager-disabled-color:                 $pagination-disabled-color !default;
+
+/**=====================================**/
+/* 27 Panels
+/**=====================================**/
+$panel-bg:                    $white !default;
+$panel-body-padding:          15px !default;
+$panel-heading-padding:       10px 0 10px 10px !default;
+$panel-footer-padding:        $panel-heading-padding !default;
+$panel-border-radius:         $border-radius-base !default;
+
+// Border color for elements within panels
+$panel-inner-border:          #ddd !default;
+$panel-footer-bg:             $grey-alternate-3a !default;
+
+$panel-default-text:          $text-color !default;
+$panel-default-border:        #ddd !default;
+$panel-default-heading-bg:    $grey-alternate-3a !default;
+
+$panel-primary-text:          $white !default;
+$panel-primary-border:        $brand-primary !default;
+$panel-primary-heading-bg:    $brand-primary !default;
+
+$panel-success-text:          $state-success-text !default;
+$panel-success-border:        $state-success-border !default;
+$panel-success-heading-bg:    $state-success-bg !default;
+
+$panel-info-text:             $state-info-text !default;
+$panel-info-border:           $state-info-border !default;
+$panel-info-heading-bg:       $state-info-bg !default;
+
+$panel-warning-text:          $state-warning-text !default;
+$panel-warning-border:        $state-warning-border !default;
+$panel-warning-heading-bg:    $state-warning-bg !default;
+
+$panel-danger-text:           $state-danger-text !default;
+$panel-danger-border:         $state-danger-border !default;
+$panel-danger-heading-bg:     $state-danger-bg !default;
+
+/**=====================================**/
+/* 28 Popovers
+/**=====================================**/
+$popover-bg:                          $white !default;
+$popover-max-width:                   276px !default;
+$popover-border-color:                rgba(0,0,0,.2) !default;
+$popover-fallback-border-color:       $grey-alternate-6 !default;
+
+$popover-title-bg:                    darken($popover-bg, 3%) !default;
+
+$popover-arrow-width:                 6px !default;
+$popover-arrow-color:                 $popover-bg !default;
+
+$popover-arrow-outer-width:           ($popover-arrow-width + 1) !default;
+$popover-arrow-outer-color:           fade_in($popover-border-color, 0.05) !default;
+$popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%) !default;
+
+/**=====================================**/
+/* 29 Progress Bars & Slider
+/**=====================================**/
+$bar-color-darkbg:            $grey-light !default;
+$bar-color-lightbg:           $grey-dark !default;
+$bar-progress-color:          $teal !default;
+$progress-bg:                 $light-purple-grey-06 !default;
+$progress-bar-color:          $white !default;
+$progress-border-radius:      $border-radius-base !default;
+
+$slider-input-padding:        4px 4px 3px !default;
+$slider-input-fontsize:       12px !default;
+
+$progress-bar-bg:             $brand-primary;
+$progress-bar-success-bg:     $brand-success !default;
+$progress-bar-warning-bg:     $brand-warning !default;
+$progress-bar-danger-bg:      $brand-danger !default;
+$progress-bar-info-bg:        $brand-info !default;
+
+/**=====================================**/
+/* 30 Table
+/**=====================================**/
+$table-cell-padding:            8px !default;
+$table-condensed-cell-padding:  5px !default;
+$table-bg:                      transparent !default;
+$table-bg-accent:               #f9f9f9 !default;
+$table-bg-hover:                $grey-alternate-3a !default;
+$table-bg-active:               $table-bg-hover !default;
+$table-border-color:            #ddd !default;
+
+/**=====================================**/
+/* 31 Thumbnails
+/**=====================================**/
+$thumbnail-padding:           4px !default;
+$thumbnail-bg:                $white !default;
+$thumbnail-border:            #ddd !default;
+$thumbnail-border-radius:     $border-radius-base !default;
+
+$thumbnail-caption-color:     $teal-grey !default;
+$thumbnail-caption-padding:   9px !default;
+
+/**=====================================**/
+/* 32 Tooltips
+/**=====================================**/
+$tooltip-max-width:           200px !default;
+$tooltip-color:               $white !default;
+$tooltip-bg:                  $black !default;
+$tooltip-opacity:             .9 !default;
+$tooltip-arrow-width:         5px !default;
+$tooltip-arrow-color:         $tooltip-bg !default;
+
+/**=====================================**/
+/* 33 Type (Different from typography)
+/**=====================================**/
+$component-offset-horizontal: 180px !default;
+$text-muted:                  $teal-grey !default;
+$abbr-border-color:           $border-lightbg !default;
+$headings-small-color:        $teal-grey !default;
+$blockquote-small-color:      $dark-purple-grey-08 !default;
+$blockquote-font-size:        ($font-size-base * 1.25) !default;
+$blockquote-border-color:     $dark-purple-grey-08 !default;
+$page-header-border-color:    $dark-purple-grey-08 !default;
+$dl-horizontal-offset:        $component-offset-horizontal !default;
+$dl-horizontal-breakpoint:    $grid-float-breakpoint !default;
+$hr-border:                   $border-lightbg !default;
+
+/**=====================================**/
+/* 34 Wells
+/**=====================================**/
+$well-bg:       $grey-alternate-3a !default;
+$well-border:   darken($well-bg, 7%) !default;
+
+/**=====================================**/
+/* 35 Z-index Master List
+/**=====================================**/
+$zindex-properties-popover:            998 !default; //for elements such as colour box, properties bar dropdown
+$zindex-navbar:                        999 !default; //1000
+$zindex-navbar-dropdown:               999 !default; //3000
+$zindex-navbar-fixed:                  999 !default; //1030
+$zindex-triggerbasedonbording-popover: 1000 !default; //1010
+$zindex-needhelp:                      1002 !default;
+$zindex-modal-background:              1030 !default; //eg: loading overlay
+$zindex-modal:                         1040 !default;
+$zindex-popover:                       1060 !default; //1010
+$zindex-modal-content:                 1060 !default; //elements on top of modal content
+$zindex-tooltip:                       1070 !default; //1030
+$zindex-responsive-notify:             1080 !default;
+
+/**=====================================**/
+/* 36 Arrow Icon Rotation Degrees
+/**=====================================**/
+$arrow-left-rotation:      90 !default;
+$arrow-right-rotation:     270 !default;
+$arrow-top-rotation:       180 !default;
+
+/**=====================================**/
+/* 37 Autocomplete, Dropdown List & Context Menu
+/**=====================================**/
+$list-hover-color:               $grey-light!default;
+$list-active-color:              $grey-dark!default;
+$list-divider-color:             $grey!default;
+$container-border-color:         $bar-color-lightbg!default;
+$search-highlighted-word-color:  $teal!default;
+$search-list-padding:            10px!default;
+$contextmenu-list-padding:       2px 6px!default;
+
+/**=====================================**/
+/* 38 Shared Effect Style (eg. dropshadow)
+/**=====================================**/
+$boxlist-dropshadow:          0 0 3px 1px rgba(0,0,0,0.2)!default;
+$active-element-insetshadow:  inset 0 2px 3px rgba(0,0,0,0.4)!default;
+$boxlist-disabled-opacity:    .3!default;
+$hover-opacity:               .5!default;
+
+/**=====================================**/
+/* Specific Pages
+/**=====================================**/
+/* 39 Signup Polls
+/**=====================================**/
+/*
+  How many icons do you have per row ?
+  icon-x is on the horizontal axis, icon-y is on the vertical axis. Please Change accordingly
+  Currently this means that there are 9 rows and 8 columns
+*/
+$icon-x: 8;
+$icon-y: 9;
+$x-row-width: 100% / ($icon-x - 1);
+$y-column-height: 100% / ($icon-y - 1);
+
+$spoll-logo-height: 125px;
+
+$spoll-input-height-short: 55px;
+$spoll-input-height: 65px;
+
+$spoll-slide-cont-padding-lg: 50px;
+$spoll-slide-cont-padding-md: 60px;
+$spoll-slide-cont-padding-sm: 50px;
+$spoll-slide-cont-padding-xs: 35px;
+
+$spoll-logo-border-width: 6px;
+$spoll-max-width: 1016px;
+
+/*account page*/
+$signup-poll-acc-icon-size: 80px;
+$signup-poll-acc-icon-margin-right: 40px;
+
+/*These maps are storing sprite bgpositions*/
+$signup-poll-svgmap: (
+  (education, 1 , 0),
+  (enterprise, 1 , 1),
+  (sme, 1 , 2),
+  (startup-sme, 1 , 3),
+  (private, 1 , 4),
+  (self-employed, 1 , 5),
+  (ngo, 1 , 6),
+  (government, 1 , 7),
+  (other, 1 , 8),
+  (teacher, 3 , 0),
+  (tutor, 3 , 1),
+  (student, 3 , 2),
+  (librarian, 3 , 3),
+  (admin, 3 , 4),
+  // 3,5 used to be c-level icon (which had been changed to 5,0)
+  (product-manager, 3 , 6),
+  (sales-manager, 3 , 7),
+  (marketing, 3 , 8),
+  (c-level, 5 , 0),
+  (representative, 5 , 0),
+  (founder, 5 , 1),
+  (project-manager, 5 , 2),
+  (freelance-designer, 5 , 3),
+  (freelance-marketer, 5 , 4),
+  (blogger, 5 , 5),
+  (business-consultant, 5 , 6),
+  (fundraising, 5 , 7),
+  (operation, 5 , 8),
+  (signup-poll-success, 6 , 3),
+  (signup-poll-user, 6 , 4),
+  (hr, 7 , 0),
+  (management, 7 , 1),
+  (signup-poll-question, 6 , 2),
+  (age-group-3-5, 7 , 5),
+  (age-group-6-12, 7 , 6),
+  (age-group-13-17, 7 , 7),
+  (age-group-18plus, 7 , 8)
+);
+
+$signup-poll-active-map: (
+  (education, 0 , 0),
+  (enterprise, 0 , 1),
+  (sme, 0 , 2),
+  (startup-sme, 0 , 3),
+  (private, 0 , 4),
+  (self-employed, 0 , 5),
+  (ngo, 0 , 6),
+  (government, 0 , 7),
+  (other, 0 , 8),
+  (teacher, 2 , 0),
+  (tutor, 2 , 1),
+  (student, 2 , 2),
+  (librarian, 2 , 3),
+  (admin, 2 , 4),
+  // 2,5 used to be c-level icon (which had been changed to 4,0)
+  (product-manager, 2 , 6),
+  (sales-manager, 2 , 7),
+  (marketing, 2 , 8),
+  (c-level, 4 , 0),
+  (representative, 4 , 0),
+  (founder, 4 , 1),
+  (project-manager, 4 , 2),
+  (freelance-designer, 4 , 3),
+  (freelance-marketer, 4 , 4),
+  (blogger, 4 , 5),
+  (business-consultant, 4 , 6),
+  (fundraising, 4 , 7),
+  (operation, 4 , 8),
+  (hr, 6 , 0),
+  (management, 6 , 1),
+  (signup-poll-question, 6 , 2),
+  (age-group-3-5, 6 , 5),
+  (age-group-6-12, 6 , 6),
+  (age-group-13-17, 6 , 7),
+  (age-group-18plus, 6 , 8)
+);
+
+/**=====================================**/
+/* 40 Output/Presentation Page SCSS
+/**=====================================**/
+$output-infobar-width: 320px;
+$presentation-slide-height: 100px;
+
+/**=====================================**/
+/* 41 Templates Selector
+/**=====================================**/
+$templates-filter-icon-height: 14px;
+$templates-filter-bar-height: 40px;
+$templates-height: 337px;
+$templates-width: 232px;
+$templates-list-height: 72px;
+$templates-list-width: 50px;
+$templates-presentation-list-height: 36px;
+$presentation-height: 143px;
+
+/**=====================================**/
+/* 42 Magic Editor Structure
+/**=====================================**/
+/* 42a Overall Structure
+/**=====================================**/
+$content-header-gap: 30px !default;
+
+/**=====================================**/
+/* 42b Left Side Menu
+/**=====================================**/
+$editor-sidemenu-paneltab-width:   75px !default;
+$editor-sidemenu-paneltab-padding: 13px !default;
+$editor-sidemenu-paneltab-bg:      $dark-purple-grey-03 !default;
+$editor-sidemenu-paneltab-color:   $grey-darker !default;
+$editor-sidemenu-paneltab-active-color:   $white !default;
+$editor-sidemenu-tabcontent-bg:    $light-purple-grey-02 !default;
+$editor-sidemenu-tabcontent-width: 282px !default;
+$panel-padding:                20px;
+$editor-panel-padding:           15px $panel-padding;
+$innertab-panel-padding:           0px $panel-padding;
+
+/**=====================================**/
+/* 42c Block Settings
+/**=====================================**/
+$editor-blocksetting-width:                 25px !default;
+$editor-blocksetting-height:                28px !default;
+$editor-blocksetting-color:                 $teal !default;
+$editor-blocksetting-blocknumber-size:      40px !default;
+$editor-blocksetting-padding:               12px !default;
+$editor-blocksetting-bg:                    $dark-purple-grey-08 !default;
+$editor-blocksetting-hover-bg:              $dark-purple-grey-03 !default;
+$editor-blocksetting-divider:               $border-darkbg !default;
+$editor-blocksetting-gap:                   5px !default;
+$editor-blocksetting-content-width:         124px !default;
+$editor-blocksetting-content-padding:       13px !default;
+$editor-blocksetting-content-input-width:   72px !default;
+$editor-blocksetting-content-input-height:  22px !default;
+
+/**=====================================**/
+/* 42d Properties Toolbar
+/**=====================================**/
+$properties-tool-wrapper-bg:                    $grey-light !default;
+$properties-tool-groupitem-gap:                 3px !default;
+$properties-tool-item-size:                     35px !default;
+$properties-tool-dropdown-item-width:           46px !default;
+$properties-tool-dropdown-arrow-padding-right:  5px !default;
+$properties-tool-dropdown-arrow-size:           10px !default;
+$properties-tool-dropdown-top-gap:              6px !default;
+$properties-tool-wrapper-padding:               15px 25px 9px !default;
+$properties-tool-item-bg:                       $white !default;
+$properties-tool-item-active-bg:                $grey-darker !default;
+$properties-tool-item-divider:                  $properties-tool-wrapper-bg !default;
+$properties-tool-fonttype-dropdown-width:       120px !default;
+$properties-tool-fontsize-dropdown-width:       50px !default;
+$properties-tool-fonts-dropdown-height:         350px !default;
+
+/**=====================================**/
+/* 43 Pricing Plans related
+/**=====================================**/
+/* 43a Subscription Completion */
+/**=====================================**/
+$subscription-complete-content:          30px 50px;
+
+/**=====================================**/
+/* 43b Pricing Pages/Modals/EDU */
+/**=====================================**/
+$divider-color:                    $grey-alternate-3b;
+$box-bottom-margin:                50px;
+$font-payment-price:               50px;
+$font-heading-msg:                 20px;
+$payment-content-padding:          25px 50px;
+$list-item-min-height:             76px;
+$list-item-max-height:             97px;
+
+/**=====================================**/
+/* 44 Dashboard */
+/**=====================================**/
+/* 44a Header */
+/**=====================================**/
+$dashboard-header-height:             70px;
+$delete-bg-red:                       #DC4E41;
+
+/**=====================================**/
+/* 44b Inspire Me Page */
+/**=====================================**/
+$page-title-size:               37px;
+$gutter_width:                  2;
