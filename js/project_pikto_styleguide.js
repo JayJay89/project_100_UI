@@ -17,6 +17,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
       console.log(e);
   });
 
+  /*Initialize highlight.js*/
+  $(document).ready(function() {
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+  });
+
   [...sg_button_list_btn].forEach( function(elem) {
     elem.addEventListener('mousedown', function(){
 
@@ -34,17 +41,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
   });
 
-  /*Convert tags to escape characters, and spaces to nothing*/
-  [...code_box].forEach( function(elem) {
-    var mapObj = {
-      '<':'&lt;',
-      '>':'&gt;'
-    }
-    elem.innerHTML = elem.innerHTML.replace(/<|>/ig, function(matched){
-      return mapObj[matched];
-    });
-  });
-  
+  /*Convert tags to escape characters*/
+  // [...code_box].forEach( function(elem) {
+  //   var mapObj = {
+  //     '<':'&lt;',
+  //     '>':'&gt;'
+  //   }
+  //   elem.innerHTML = elem.innerHTML.replace(/<|>/ig, function(matched){
+  //     return mapObj[matched];
+  //   });
+  // });
+
+  /*Add Line Increments*/
+  // $("pre").html(function (index, html) {
+  //     return html.replace(/^(.*)$/mg, "<span class=\"line\">$1</span>")
+  // });
+
   /*Default*/
   $("button[data-target='sg_data_logo']").parent('li').addClass('active');
 
