@@ -190,7 +190,7 @@ pre code {
   opacity: 1;
   top: 0px;
   transition: top 0.3s ease, opacity 0.3s ease;
-  padding: 100px 65px 0px 65px;
+  padding: 100px 65px;
 }
 
 .sg-main-container.slide-out {
@@ -229,6 +229,11 @@ pre code {
   font-weight: 400;
   font-size: 16px;
   letter-spacing: 0.47px;
+  margin-top: 55px;
+}
+
+.sg-main-container > section h2:first-of-type {
+  margin-top: 0px;
 }
 
 .sg-dropdown input {
@@ -368,6 +373,11 @@ pre code {
   line-height: 20px;
   text-align: center;
   font-size: 13px;
+}
+
+.sg-change-this {
+  font-size: 14px;
+  color: red;
 }
 
 /*Section Specific*/

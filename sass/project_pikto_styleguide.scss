@@ -222,7 +222,7 @@ pre code {
   opacity: 1;
   top: 0px;
   transition: top 0.3s ease, opacity 0.3s ease;
-  padding: 100px 65px 0px 65px;
+  padding: 100px 65px;
 
   &.slide-out {
     top: 10px;
@@ -257,6 +257,11 @@ pre code {
       @include montserrat(regular);
       font-size: 16px;
       letter-spacing: 0.47px;
+      margin-top: 55px;
+
+      &:first-of-type {
+        margin-top: 0px;
+      }
     }
   }
 }
@@ -429,6 +434,10 @@ pre code {
   }
 }
 
+.sg-change-this {
+  font-size: 14px;
+  color: red;
+}
 /*Section Specific*/
 .sg-website-color,
 .sg-ui-color {
