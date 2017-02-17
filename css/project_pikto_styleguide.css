@@ -295,12 +295,22 @@ pre code {
   display: none;
 }
 
-.sg-color-palette > li {
-  float: left;
-  margin-right: 24px;
+.sg-color-palette > div:before, .sg-color-palette > div:after {
+  content: " ";
+  display: table;
 }
 
-.sg-color-palette > li > span {
+.sg-color-palette > div:after {
+  clear: both;
+}
+
+.sg-color-palette > div > li {
+  float: left;
+  margin-right: 24px;
+  margin-bottom: 35px;
+}
+
+.sg-color-palette > div > li > span {
   margin-top: 13px;
   display: block;
   font-size: 12px;
@@ -327,7 +337,7 @@ pre code {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  margin: 20px;
+  margin: 20px 0px;
   /*Enable Counter Increment*/
 }
 
@@ -348,6 +358,8 @@ pre code {
   width: 32px;
   flex: 1;
   padding: 8px 0px;
+  border: 1px solid #E0E0E0;
+  border-right: 0px;
 }
 
 .sg-code-box .sg-code-box-sidebar > span {

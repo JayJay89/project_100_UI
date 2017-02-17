@@ -336,17 +336,22 @@ pre code {
 }
 
 .sg-color-palette {
-  > li {
-    float: left;
-    margin-right: 24px;
 
-    > span {
-      margin-top: 13px;
-      display: block; 
-      font-size: 12px;
-      text-align: center;
-      color: $red;
-      @include sourceCode(regular)
+  > div {
+    @include clearfix();
+
+    > li {
+      float: left;
+      margin-right: 24px;
+      margin-bottom: 35px;
+      > span {
+        margin-top: 13px;
+        display: block; 
+        font-size: 12px;
+        text-align: center;
+        color: $red;
+        @include sourceCode(regular)
+      }
     }
   }
 }
@@ -370,7 +375,7 @@ pre code {
   $sg-code-line-height: 20px;
 
   @include flex();
-  margin: 20px;
+  margin: 20px 0px;
 
   pre {
     width: calc(100% - 32px);
@@ -389,6 +394,8 @@ pre code {
     width: 32px;
     flex: 1;
     padding: 8px 0px;
+    border: 1px solid $gray6;
+    border-right: 0px;
 
     > span {
       font-family: Courier, monospace;
