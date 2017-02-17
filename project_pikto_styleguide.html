@@ -8,10 +8,11 @@
   <title> </title>
   <!-- Bootstrap -->
   <link href="css/project_pikto_styleguide.css" rel="stylesheet">
+  <link href="css/pikto-styleguide-code-highlight.css" rel="stylesheet">
   <link href="css/normalize.css" rel="stylesheet">
 
-  <!-- Highlight Stuff -->
-  <link rel="stylesheet" href="highlight/styles/agate.css">
+  <!-- Highlight CSS -->
+  <!-- <link rel="stylesheet" href="highlight/styles/agate.css"> -->
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -107,20 +108,39 @@
           <!--Indentation had to be pushed back--> 
           <!-- class="sg-code-box"-->
           <div class="sg-code-box">
-            <pre>
-              <code class="html">
-  &lt;p&gt;test&lt;/p&gt;
-  &lt;p&gt;test&lt;/p&gt;
-  &lt;p&gt;test&lt;/p&gt;
-  &lt;div&gt;
-    &lt;p&gt;2&lt;/p&gt;
-  &lt;/div&gt;
-              </code>
-            </pre>
+            <div class="sg-code-box-sidebar"></div>
+
+            <pre><code class="html sg-code-syntax">&lt;ul class=&quot;sg-button-list sg-button-list--inner&quot;&gt;
+  &lt;li&gt;&lt;button class=&quot;sg-btn&quot; data-target=&quot;sg_data_icon_1&quot;&gt;Icon 1&lt;/button&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;button class=&quot;sg-btn&quot; data-target=&quot;sg_data_icon_2&quot;&gt;Icon 2&lt;/button&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;button class=&quot;sg-btn&quot; data-target=&quot;sg_data_icon_3&quot;&gt;Icon 3&lt;/button&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
           </div>
 
+          <div class="sg-code-box">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="css sg-code-syntax">.test {
+  border: 1px solid red;
+  display: none;
+  position: relative;
+  transform: translate(0, -50%);
+}</code></pre>
+          </div>
 
+          <div class="sg-code-box">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax">.test {
+  border: 1px solid red;
+  display: none;
+  position: relative;
+  transform: translate(0, -50%);
 
+  .side {
+    border: 1px solid blue;
+  }
+}</code></pre>
+          </div>
         </section>
 
         <section id="sg_data_brand_color">
@@ -368,7 +388,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script src="jquery.min.js"></script>
-    <script src="js/prettypre.js"></script>
+    <!-- <script src="js/prettypre.js"></script> -->
     <script src="js/clipboard.min.js"></script>
     <script src="js/project_pikto_styleguide.js"></script>
     <script src="highlight/highlight.pack.js"></script>

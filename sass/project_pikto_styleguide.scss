@@ -55,6 +55,23 @@ $montserrat:        "Montserrat", Arial, sans-serif !default;
   }
 }
 
+@mixin clearfix(){
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin flex(){
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
 /*Variables -- Colors*/
 $lightblue: #F6F9FC;
 $lightblue2: #8497AB;
@@ -64,6 +81,8 @@ $gray1: #6F6F6F;
 $gray2: #849AB0;
 $gray3: #BCBCBC;
 $gray4: #6A6A6A;
+$gray5: #F7F7F7;
+$gray6: #E0E0E0;
 $red: #AA1111;
 
 /*Variables -- Layout*/
@@ -112,6 +131,10 @@ p {
   letter-spacing: 0.4px;
   line-height: 26px;
   @include proxima(regular);
+}
+
+pre code {
+  @include sourceCode(regular);
 }
 
 /*General*/
@@ -344,28 +367,59 @@ p {
 }
 
 .sg-code-box {
+  $sg-code-line-height: 20px;
 
-}
+  @include flex();
+  margin: 20px;
 
-pre {
-  // counter-reset: line-numbering;
-  // background: #2c3e50;
-  // padding: 12px 0px 14px 0;
-  // width: 600px;
-  // color: #ecf0f1;
-  // line-height: 140%;
+  pre {
+    width: calc(100% - 32px);
+    margin: 0px;
+    border: 1px solid $gray6;
 
-  // .line::before {
-  //   content: counter(line-numbering);
-  //   counter-increment: line-numbering;
-  //   padding-right: 1em;
-  //   /* space after numbers */
-  //   padding-left:8px;
-  //   width: 1.5em;
-  //   text-align: right;
-  //   opacity: 0.5;
-  //   color:white;
-  // }
+    code {
+      float: left;
+      line-height: $sg-code-line-height;
+    }
+  }
+
+  .sg-code-box-sidebar {
+    display: block;
+    background-color: $gray5;
+    width: 32px;
+    flex: 1;
+    padding: 8px 0px;
+
+    > span {
+      font-family: Courier, monospace;
+      display: block;
+      line-height: $sg-code-line-height;
+      text-align: center;
+      font-size: 13px;
+    }
+  }
+
+  /*Enable Counter Increment*/
+  pre {
+    // counter-reset: line-numbering;
+    // background: #2c3e50;
+    // padding: 12px 0px 14px 0;
+    // width: 600px;
+    // color: #ecf0f1;
+    // line-height: 140%;
+
+    // .line::before {
+    //   content: counter(line-numbering);
+    //   counter-increment: line-numbering;
+    //   padding-right: 1em;
+    //   /* space after numbers */
+    //   padding-left:8px;
+    //   width: 1.5em;
+    //   text-align: right;
+    //   opacity: 0.5;
+    //   color:white;
+    // }
+  }
 }
 
 /*Section Specific*/

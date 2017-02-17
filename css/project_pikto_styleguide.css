@@ -100,6 +100,11 @@ p {
   font-family: "ProximaNova-Regular", Arial, sans-serif;
 }
 
+pre code {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 400;
+}
+
 /*General*/
 .sg-color-copy-label {
   background-color: beige;
@@ -315,6 +320,42 @@ p {
   z-index: 1;
   color: #8497AB;
   font-size: 14px;
+}
+
+.sg-code-box {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  margin: 20px;
+  /*Enable Counter Increment*/
+}
+
+.sg-code-box pre {
+  width: calc(100% - 32px);
+  margin: 0px;
+  border: 1px solid #E0E0E0;
+}
+
+.sg-code-box pre code {
+  float: left;
+  line-height: 20px;
+}
+
+.sg-code-box .sg-code-box-sidebar {
+  display: block;
+  background-color: #F7F7F7;
+  width: 32px;
+  flex: 1;
+  padding: 8px 0px;
+}
+
+.sg-code-box .sg-code-box-sidebar > span {
+  font-family: Courier, monospace;
+  display: block;
+  line-height: 20px;
+  text-align: center;
+  font-size: 13px;
 }
 
 /*Section Specific*/

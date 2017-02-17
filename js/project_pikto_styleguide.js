@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var sg_button_list_btn = document.querySelectorAll('.sg-button-list > li > button');
   var sg_btn = document.querySelectorAll('.sg-btn');
   var code_box = document.querySelectorAll('.sg-code-box');
+  var code_box_code = document.querySelectorAll('.sg-code-box > pre > code');
 
   /*Instantiate clipboard*/
   /*Clipboard uses a library call clipboard.min.js*/
@@ -18,10 +19,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   /*Initialize highlight.js*/
-  $(document).ready(function() {
-    $('pre code').each(function(i, block) {
-      hljs.highlightBlock(block);
-    });
+  // $(document).ready(function() {
+  //   $('pre code').each(function(i, block) {
+  //     hljs.highlightBlock(block);
+  //   });
+  // });
+
+  /*Number Counter System*/
+  [...code_box].forEach( function(elem) {
+    var pre_code = elem.querySelector('.sg-code-syntax');
+    var side_bar = elem.querySelector('.sg-code-box-sidebar');
+
+    var style = window.getComputedStyle(pre_code);
+    var line_height = parseInt(style.getPropertyValue('line-height'), 10);
+    var numLines = (pre_code.offsetHeight)/(line_height);
+
+    for(i = 0; i < numLines; i++) {
+      side_bar.innerHTML += ("<span>" + i + "</span>");
+    }
   });
 
   [...sg_button_list_btn].forEach( function(elem) {
@@ -50,11 +65,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   //   elem.innerHTML = elem.innerHTML.replace(/<|>/ig, function(matched){
   //     return mapObj[matched];
   //   });
-  // });
-
-  /*Add Line Increments*/
-  // $("pre").html(function (index, html) {
-  //     return html.replace(/^(.*)$/mg, "<span class=\"line\">$1</span>")
   // });
 
   /*Default*/
