@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var sg_button_list_btn = document.querySelectorAll('.sg-button-list > li > button');
   var sg_btn = document.querySelectorAll('.sg-btn');
   var code_box = document.querySelectorAll('.sg-code-box');
-  var code_box_code = document.querySelectorAll('.sg-code-box > pre > code');
 
   /*Instantiate clipboard*/
   /*Clipboard uses a library call clipboard.min.js*/
@@ -23,9 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     elem.classList.remove('active');
     elem.classList.remove('slide-in');
   });
-
   $("button[data-target='sg_data_alerts']").parent('li').addClass('active');
-
   $("#sg_data_alerts").addClass('active slide-in');
 
   /*Initialize highlight.js*/
@@ -42,8 +39,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var style = window.getComputedStyle(pre_code);
     var line_height = parseInt(style.getPropertyValue('line-height'), 10);
-    var numLines = (pre_code.offsetHeight)/(line_height);
+    var numLines = parseInt($( pre_code ).height(), 10)/(line_height);
 
+    console.log( style.getPropertyValue('height') );
     for(i = 1; i <= numLines; i++) {
       side_bar.innerHTML += ("<span>" + i + "</span>");
     }
