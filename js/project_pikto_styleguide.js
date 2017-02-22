@@ -30,31 +30,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const target = elem.getAttribute('data-content');
     const target_content = document.querySelector('#' + target);
     const target_child = target_content.querySelector('.sg-code-syntax');
+    const target_sidebar = target_content.querySelector('.sg-code-box-sidebar');
 
+    console.log(elem);
     var mapObj = {
       "<": "&lt;",
       ">": "&gt;",
-      /*This replaces the first newline of the code with nothing*/
-      "\n":"",
-      /*This removes empty white spaces*/
-      "  ":""
+      /*This removes the white spaces in front of each line*/
+      "            ":""
     };
 
     /*Regex Replacement */
-    current_content = current_content.replace(/<|>|  /gi, function(matched){
+    current_content = current_content.replace(/<|>|            /gi, function(matched){
       return mapObj[matched];
-    }).replace(/\n/i, function(matched){
-      /*Only the first new line needs to be remove, hence the global tag is omitted*/
-      return mapObj[matched];
-    });
+    }).trim();
 
-    const line_count = current_content.match(/\n/g).length;
+    const new_line = current_content.match(/\n/g);
 
-    console.log("Count: ",line_count);
+    const numLines = new_line ? new_line.length + 1  : 1;
+
+    /*Populate line numbers*/
+    for(i = 1; i <= numLines; i++) {
+      target_sidebar.innerHTML += ("<span>" + i + "</span>");
+    }
+
+    /*Put the copied strings into the codebox*/
     target_child.innerHTML = current_content;
-    
-    // console.log(target_content);
-    // console.log(target_child);
+
+    console.log("Count: ",numLines);
+    console.log(target_sidebar);
   });
 
 
