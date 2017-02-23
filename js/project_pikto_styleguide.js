@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     elem.classList.remove('active');
     elem.classList.remove('slide-in');
   });
-  $("button[data-target='sg_data_alerts']").parent('li').addClass('active');
-  $("#sg_data_alerts").addClass('active slide-in');
+  $("button[data-target='sg_data_label']").parent('li').addClass('active');
+  $("#sg_data_label").addClass('active slide-in');
 
   [...sg_content].forEach( function(elem){
     var current_content = elem.innerHTML;
@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const target_child = target_content.querySelector('.sg-code-syntax');
     const target_sidebar = target_content.querySelector('.sg-code-box-sidebar');
 
-    console.log(elem);
     var mapObj = {
       "<": "&lt;",
       ">": "&gt;",
@@ -57,33 +56,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
     /*Put the copied strings into the codebox*/
     target_child.innerHTML = current_content;
 
-    console.log("Count: ",numLines);
-    console.log(target_sidebar);
+    // console.log("Count: ",numLines);
+    // console.log(target_sidebar);
   });
-
-
 
   /*Initialize highlight.js*/
   // $(document).ready(function() {
   //   $('pre code').each(function(i, block) {
   //     hljs.highlightBlock(block);
   //   });
-  // });
-
-  /*Number Counter System*/
-  /*When an element is not rendered on the page, we can't get the height value of the element. Hence, some elements doesn't render the numbers.*/
-  // [...code_box].forEach( function(elem) {
-  //   var pre_code = elem.querySelector('.sg-code-syntax');
-  //   var side_bar = elem.querySelector('.sg-code-box-sidebar');
-
-  //   var style = window.getComputedStyle(pre_code);
-  //   var line_height = parseInt(style.getPropertyValue('line-height'), 10);
-  //   var numLines = parseInt($( pre_code ).height(), 10)/(line_height);
-
-  //   console.log( style.getPropertyValue('height') );
-  //   for(i = 1; i <= numLines; i++) {
-  //     side_bar.innerHTML += ("<span>" + i + "</span>");
-  //   }
   // });
 
   [...sg_button_list_btn].forEach( function(elem) {
@@ -153,21 +134,39 @@ document.addEventListener("DOMContentLoaded", function(event) {
 */
 
 /*OLD*/
-// document.addEventListener("DOMContentLoaded", function(event) { 
+/*
+document.addEventListener("DOMContentLoaded", function(event) { 
   
-//   var container = document.getElementsByClassName('sg-main-container')[0];
+  var container = document.getElementsByClassName('sg-main-container')[0];
 
-//   /*Default*/
-//   container.innerHTML = sg_data_logo.innerHTML;
+  container.innerHTML = sg_data_logo.innerHTML;
 
-//   $('button').on('click', function(){
-//     container.classList.add('slide-out');
+  $('button').on('click', function(){
+    container.classList.add('slide-out');
 
-//     var data = this.getAttribute('data-target');
-//     var target = document.getElementById(data);
-//     container.innerHTML = target.innerHTML;
+    var data = this.getAttribute('data-target');
+    var target = document.getElementById(data);
+    container.innerHTML = target.innerHTML;
 
-//     container.classList.remove('slide-out');
-//   });
+    container.classList.remove('slide-out');
+  });
+});
+*/
 
-// });
+/*Number Counter System*/
+/*When an element is not rendered on the page, we can't get the height value of the element. Hence, some elements doesn't render the numbers.*/
+/*
+[...code_box].forEach( function(elem) {
+  var pre_code = elem.querySelector('.sg-code-syntax');
+  var side_bar = elem.querySelector('.sg-code-box-sidebar');
+
+  var style = window.getComputedStyle(pre_code);
+  var line_height = parseInt(style.getPropertyValue('line-height'), 10);
+  var numLines = parseInt($( pre_code ).height(), 10)/(line_height);
+
+  console.log( style.getPropertyValue('height') );
+  for(i = 1; i <= numLines; i++) {
+    side_bar.innerHTML += ("<span>" + i + "</span>");
+  }
+});
+*/

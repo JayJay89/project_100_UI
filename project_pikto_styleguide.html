@@ -66,7 +66,6 @@
                 <li><button class="sg-btn" data-target="sg_data_label">Label/Badges</button></li>
                 <li><button class="sg-btn" data-target="sg_data_sliders">Sliders</button></li>
                 <li><button class="sg-btn" data-target="sg_data_cards">Cards</button></li>
-                <li><button class="sg-btn" data-target="sg_data_alerts">Alerts/Notifications</button></li>
                 <li><button class="sg-btn" data-target="sg_data_breadcrumbs">Breadcrumbs</button></li>
                 <li><button class="sg-btn" data-target="sg_data_feedbacks">Feedbacks</button></li>
                 <li><button class="sg-btn" data-target="sg_data_modals">Modals</button></li>
@@ -518,52 +517,8 @@
             </div>
           </ul>
         </section>
-
-        <section id="sg_data_alert">
-          <h1>Alerts</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_button">
-          <h1>Buttons</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_tooltip">
-          <h1>Tooltip</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_popover">
-          <h1>Popover</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_paginations">
-          <h1>Paginations</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_preloader">
-          <h1>Preloaders</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_label">
-          <h1>Labels</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_sliders">
-          <h1>Sliders</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_cards">
-          <h1>Cards</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
+        
+        <!-- UI Components -->
         <section id="sg_data_alerts">
           <h1>Alerts</h1>
 
@@ -604,16 +559,193 @@
           </div>
 
           <h2>Flash Message</h2>
-          <span class="sg-change-this">Change this in piktodev! In piktodev, flash-message uses span tag, it should be change to div tag and given an inline-display </span>
+          <span class="sg-change-this">
+            Change this in piktodev! In piktodev, flash-message uses span tag, it should be change to div tag and given an inline-blockdisplay 
+          </span>
           <div class="sg-content-box" data-content="alert-4">
-            <div style="display: block; padding: 10px;">
-              <div class="alert alert-success alert-flash">This Success message is a Flash message</div>
-            </div>
+            <div class="alert alert-success alert-flash">Flash message!</div>
           </div>
           <div class="sg-code-box" id="alert-4">
             <div class="sg-code-box-sidebar"></div>
-            <pre><code class="html sg-code-syntax">&lt;div class=&quot;alert alert-success alert-flash&quot;&gt;This Success message is a Flash message&lt;/div&gt;</code></pre>
+            <pre><code class="html sg-code-syntax"></code></pre>
           </div>
+        </section>
+
+        <section id="sg_data_button" class="sg-button-section">
+          <h1>Buttons</h1>
+          <h2>General Color Variation</h2>
+          <div class="sg-content-box sg-normal-btn" data-content="btn-1">
+            <button class="pikto-btn">default button</button>
+            <button class="pikto-btn pikto-btn-teal">teal</button>
+            <button class="pikto-btn pikto-btn-magenta">magenta</button>
+            <button class="pikto-btn pikto-btn-lightgrey">lightgrey</button>
+            <button class="pikto-btn pikto-btn-purplegrey">purplegrey</button>
+            <button class="pikto-btn pikto-btn-grey">grey</button>
+          </div>
+          <div class="sg-code-box" id="btn-1">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Outline Variation</h2>
+          <span class="sg-change-this">Change the name btn-option to something else. btn option doesn't describe the name of the btn</span>
+          <div class="sg-content-box sg-normal-btn" data-content="btn-2">
+            <button class="pikto-btn pikto-btn-option">option button</button>
+            <button class="pikto-btn pikto-btn-bluegrey-outline">bluegrey outline</button>
+          </div>
+          <div class="sg-code-box" id="btn-2">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Light Color Variation</h2>
+          <div class="sg-content-box sg-normal-btn" data-content="btn-3">
+            <button class="pikto-btn pikto-btn-success">success button</button>
+            <button class="pikto-btn pikto-btn-info">info button</button>
+            <button class="pikto-btn pikto-btn-warning">warning button</button>
+            <button class="pikto-btn pikto-btn-danger">danger button</button>
+          </div>
+          <div class="sg-code-box" id="btn-3">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Full Width Variation</h2>
+          <div class="sg-content-box" data-content="btn-4">
+            <button class="pikto-btn pikto-btn-teal pikto-btn-block">Full Width button</button>
+          </div>
+          <div class="sg-code-box" id="btn-4">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Size Variations</h2>
+          <div class="sg-content-box" data-content="btn-5">
+            <button class="pikto-btn pikto-btn-xl">XL button</button>
+            <button class="pikto-btn pikto-btn-lg">L button</button>
+            <button class="pikto-btn pikto-btn-md">MD button</button>
+            <button class="pikto-btn pikto-btn-sm">SM button</button>
+            <button class="pikto-btn pikto-btn-xs">XS button</button>
+          </div>
+          <div class="sg-code-box" id="btn-5">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Wide Size Variations</h2>
+          <div class="sg-content-box" data-content="btn-6">
+            <button class="pikto-btn pikto-btn-xl--wide">XL button</button>
+            <button class="pikto-btn pikto-btn-lg--wide">L button</button>
+            <button class="pikto-btn pikto-btn-md--wide">MD button</button>
+            <button class="pikto-btn pikto-btn-sm--wide">SM button</button>
+            <button class="pikto-btn pikto-btn-xs--wide">XS button</button>
+          </div>
+          <div class="sg-code-box" id="btn-6">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Disabled and No Events</h2>
+          <div class="sg-content-box sg-normal-btn" data-content="btn-7">
+            <button class="pikto-btn disabled">Disabled</button>
+            <button class="pikto-btn pikto-disabled">Pikto Disabled</button>
+            <button class="pikto-btn pikto-no-events">No Events</button>
+
+          </div>
+          <div class="sg-code-box" id="btn-7">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Button Groups</h2>
+          <div class="sg-content-box sg-normal-btn" data-content="btn-8">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="pikto-btn pikto-btn-option">One</button>
+              <button type="button" class="pikto-btn pikto-btn-option">Two</button>
+              <button type="button" class="pikto-btn pikto-btn-option">Three</button>
+              <button type="button" class="pikto-btn pikto-btn-option active">Four (Active)</button>
+              <button type="button" class="pikto-btn pikto-btn-option">Five</button>
+            </div>
+            
+          </div>
+          <div class="sg-code-box" id="btn-8">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+        </section>
+
+        <section id="sg_data_label">
+
+          <h1>Labels</h1>
+          <h2>General Labels</h2>
+          <div class="sg-change-this">Removed label featured because their are basically label-primary. Rename label new to label magenta</div>
+          <div class="sg-change-this">Need to identify what's beta and pro label. Don't add href unless it's a lvlup btn</div>
+
+          <div class="sg-content-box sg-normal-btn" data-content="label-1">
+
+            <span class="label label-default">default</span>
+            <span class="label label-primary">primary</span>
+            <span class="label label-magenta">magenta</span>
+            <span class="label label-success">success</span>
+            <span class="label label-info">info</span>
+            <span class="label label-warning">warning</span>
+            <span class="label label-danger">danger</span>
+          </div>
+          <div class="sg-code-box" id="label-1">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Level Up Label</h2>
+          <div class="sg-content-box sg-normal-btn" data-content="label-2">
+            <a href="#/" class="label label-magenta label-levelup"> </a> 
+          </div>
+          <div class="sg-code-box" id="label-2">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+
+          <h2>Misc Labels</h2>
+          <div class="sg-content-box sg-normal-btn" data-content="label-3">
+            <span class="label label-beta">beta</span>
+            <span class="label label-pro">pro</span>
+          </div>
+          <div class="sg-code-box" id="label-3">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+        </section>
+
+        <section id="sg_data_tooltip">
+          <h1>Tooltip</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_popover">
+          <h1>Popover</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_paginations">
+          <h1>Paginations</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_preloader">
+          <h1>Preloaders</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_sliders">
+          <h1>Sliders</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_cards">
+          <h1>Cards</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_breadcrumbs">

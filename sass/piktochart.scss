@@ -1,3 +1,163 @@
+/*Variables*/
+$black:                 #000;
+$white:                 #fff;
+
+//Teal
+$teal:                  #1cafa2 !default; //base
+$teal-dark:             #158379 !default; //darken($teal, 10%) !default;
+$teal-darker:           #127169 !default; //darken($teal, 14%) !default;
+
+//Magenta
+$magenta:               #f16078 !default;
+$magenta-dark:          #cb3f56 !default;
+$magenta-darker:        #a12e41 !default;
+
+//Lighter grey
+$grey:                  #e8e8e8 !default; 
+$grey-lighter:          #fafafa !default; 
+$grey-light:            #f0f0f0 !default; 
+$grey-dark:             #d8d8d8 !default; 
+$grey-darker:           #c2c2c2 !default; 
+$grey-darkest:          #828282 !default; 
+
+$grey-alternate-1:      #f9f9f9 !default; // hsb(0 ,0, 98)
+$grey-alternate-2:      #f1f1f1 !default; // hsb(0 ,0, 95)
+$grey-alternate-3:      #f3f3f3 !default; // hsb(0 ,0, 95)
+$grey-alternate-3a:     #f5f5f5 !default; // hsb(0 ,0, 96)
+$grey-alternate-3b:     #e4e4e4 !default; // hsb(0 ,0, 89)
+$grey-alternate-4:      #dadada !default; // hsb(0 ,0, 85)
+$grey-alternate-5:      #d3d3d3 !default; // hsb(0 ,0, 83)
+$grey-alternate-6:      #cccccc !default; // hsb(0 ,0, 80)
+
+//Teal-ish kind of grey
+$teal-grey:             #485456 !default; // hsb(189 ,16, 34)
+$teal-grey-light:       #93a2a4 !default; // hsb(187 ,10, 64)
+$teal-grey-lighter:     #eaf2ef !default; // hsb(158 ,3, 95)
+
+//Blue-ish kind of gray
+$light-blue-grey-01:    #f1f4f5 !default; // hsb(195, 2, 96)
+$light-blue-grey-02:    #f0f6f7 !default; // hsb(189 ,3, 97)
+$light-blue-grey-03:    #ebf5f7 !default; // hsb(190 ,5, 97)
+$light-blue-grey-04:    #e1ebed !default; // hsb(190 ,5, 93)
+$light-blue-grey-05:    #d5e6ea !default; // hsb(191 ,9, 92)
+$light-blue-grey-06:    #d2e0e3 !default; // hsb(191 ,5, 89)
+$light-blue-grey-07:    #c6d6da !default; // hsb(192 ,9, 85)
+$light-blue-grey-08:    #c6d6d9 !default; // hsb(189 ,9, 85)
+$light-blue-grey-09:    #c0d1d4 !default; // hsb(189 ,9, 83)
+
+//Dark Blue-ish kind of gray
+$dark-blue-grey-01:     #1e2527 !default; // hsb(193, 23, 15)
+$dark-blue-grey-02:     #232b2d !default; // hsb(192 ,22, 18)
+$dark-blue-grey-03:     #2b3436 !default; // hsb(191, 20, 21)
+$dark-blue-grey-04:     #313b3d !default; // hsb(190, 20, 24)
+$dark-blue-grey-05:     #809a9f !default; // hsb(190, 20, 62)
+$dark-blue-grey-06:     #809A9C !default;
+
+//Dark Purple-ish kind of grey
+$dark-purple-grey-01:   #1e1d26 !default; // hsb(247, 24, 15)
+$dark-purple-grey-02:   #2a2834 !default; // hsb(250, 23, 20)
+$dark-purple-grey-03:   #2c2a37 !default; // hsb(249, 24, 22)
+$dark-purple-grey-04:   #322E42 !default; // hsb(252, 30, 26)
+$dark-purple-grey-05:   #373544 !default; // hsb(248, 22, 27)
+$dark-purple-grey-06:   #3f3d48 !default; // hsb(251, 15, 28)
+$dark-purple-grey-07:   #3f3c4e !default; // hsb(250, 23, 31)
+$dark-purple-grey-08:   #4b475c !default; // hsb(251, 23, 36)
+
+$dark-purple-grey-08b:  #514b6d !default;
+$dark-purple-grey-09:   #2f2b41 !default;
+$dark-purple-grey-10:   #6C677B !default;
+
+//Light Purple-ish kind of grey
+$light-purple-grey-01:  #413d49 !default;
+$light-purple-grey-02:  #474456 !default;
+$light-purple-grey-03:  #5d5a6b !default;
+$light-purple-grey-04:  #666470 !default;
+$light-purple-grey-05:  #777483 !default;
+$light-purple-grey-06:  #8e89a4 !default;
+$light-purple-grey-07:  #bcbac7 !default;
+
+//Social Media Colors
+$fb-color:                  #5272af;
+$gplus-color:               #4285F4;
+$gplus-whiteiconbg-color:   $white;
+$gplus-rediconbg-color:     #DC4E41;
+$twitter-color:             #60a8dc;
+$pinterest-color:           #ca2127;
+
+//Misc
+$orange:                #fc6940;    // rgb(252, 105, 64)
+$mercury-grey:          #dde2e8;   //  hsb(213, 5, 91);
+
+$light-green:           #d8e9c6;
+$light-green-dark:      #bfdba1;
+$light-green-darker:    #b0d28b;
+
+$light-blue:            #c3e0e3;
+$light-blue-dark:       #a0ced3;
+$light-blue-darker:     #8bc3c9;
+
+$light-yellow:          #f3eeae;
+$light-yellow-dark:     #ece582;
+$light-yellow-darker:   #e8df67;
+
+$light-red:             #f8c8c8;
+$light-red-dark:        #f75353;
+$light-red-darker:      #f53636;
+
+$light-red-2:           #f98484;
+
+
+/*Color Combo Factory*/
+@mixin color-combo ($target, $color, $hover, $active){
+  @if $target == 'color' {
+    color: $color;
+    &:hover {color: $hover;}
+    &:active {color: $active;}
+  }
+  @if $target == 'bgcolor' {
+    background-color: $color;
+    &:hover {background-color: $hover;}
+    &:active {background-color: $active;}
+  }
+}
+
+/*Color Combo Sets*/
+/*Target is for targeting either the color or the bgcolor*/
+@mixin teal-combo ($target) {
+  @include color-combo ($target, $teal, $teal-dark, $teal-darker)
+}
+@mixin magenta-combo ($target) {
+  @include color-combo ($target, $magenta, $magenta-dark, $magenta-darker)
+}
+@mixin grey-combo ($target) {
+  @include color-combo ($target, $teal-grey, $dark-purple-grey-07, $dark-purple-grey-01)
+}
+@mixin grey-combo-2 ($target) {
+  @include color-combo ($target, $white, $grey-light, $grey-dark)
+}
+@mixin lightgrey-combo ($target) {
+  @include color-combo ($target, $grey-light, $grey-darker, $light-purple-grey-04)
+}
+@mixin bluegrey-outline-combo ($target) {
+  @include color-combo ($target, transparent, $light-purple-grey-04, $light-purple-grey-01)
+}
+@mixin purplegrey-combo ($target) {
+  @include color-combo ($target, $light-purple-grey-03, $dark-purple-grey-07, $dark-purple-grey-07)
+}
+
+@mixin success-combo ($target) {
+  @include color-combo ($target, $light-green, $light-green-dark, $light-green-darker)
+}
+@mixin info-combo ($target) {
+  @include color-combo ($target, $light-blue, $light-blue-dark, $light-blue-darker)
+}
+@mixin warning-combo ($target) {
+  @include color-combo ($target, $light-yellow, $light-yellow-dark, $light-yellow-darker)
+}
+@mixin danger-combo ($target) {
+  @include color-combo ($target, $light-red, $light-red-dark, $light-red-darker)
+}
+
 /*Alerts*/
 .alert {
   padding: 15px;
@@ -77,4 +237,262 @@ button.close {
   text-shadow: 0 1px 0 #fff;
   opacity: 0.3;
   filter: alpha(opacity=30);
+}
+
+/*Buttons*/
+.pikto-btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-color: #e8e8e8;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  border-radius: 2px;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-transition: background, 0.3s;
+  -o-transition: background, 0.3s;
+  transition: background, 0.3s;
+  color: $dark-purple-grey-03;
+
+  &:hover {
+    background-color: #c2c2c2;
+  }
+
+  &:active {
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 1px;
+  }
+}
+.pikto-btn-teal {
+  color: $white;
+  @include teal-combo(bgcolor);
+}
+.pikto-btn-magenta {
+  color: $white;
+  @include magenta-combo(bgcolor);
+}
+.pikto-btn-grey {
+  color: $white;
+  @include grey-combo(bgcolor);
+}
+.pikto-btn-lightgrey {
+  @include lightgrey-combo(bgcolor);
+}
+.pikto-btn-purplegrey {
+  color: $white;
+  @include purplegrey-combo(bgcolor);
+}
+
+.pikto-btn-option {
+  border-color: $grey-dark;
+  @include grey-combo-2 (bgcolor);
+  &:active {
+    box-shadow: none;
+  }
+  &.active {
+    background-color: $grey-dark;
+  }
+}
+.pikto-btn-bluegrey-outline {
+  color: $white;
+  border-color: $light-purple-grey-04;
+  @include bluegrey-outline-combo (bgcolor);
+}
+
+.pikto-btn-success {
+  @include success-combo (bgcolor);
+}
+.pikto-btn-info {
+  @include info-combo (bgcolor);
+}
+.pikto-btn-warning {
+  @include warning-combo (bgcolor);
+}
+.pikto-btn-danger {
+  @include danger-combo (bgcolor);
+}
+
+.pikto-btn-block {
+  display: block;
+  width: 100%;
+}
+
+.pikto-btn-xl {
+  padding: 16px 28px;
+  font-size: 22px;
+  line-height: 1.33333;
+
+  &--wide {
+    padding: 16px 48px;
+    font-size: 22px;
+    line-height: 1.33333;
+  }
+}
+.pikto-btn-lg {
+  padding: 10px 16px;
+  font-size: 19px;
+  line-height: 1.33333;
+
+  &--wide {
+    padding: 16px 36px;
+    font-size: 19px;
+    line-height: 1.33333;
+  }
+}
+.pikto-btn-md {
+  padding: 8px 16px;
+  font-size: 16px;
+  line-height: 1.33333;
+
+  &--wide {
+    padding: 8px 36px;
+    font-size: 16px;
+    line-height: 1.33333;
+  }
+}
+.pikto-btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+
+  &--wide {
+    padding: 8px 30px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+.pikto-btn-xs {
+  padding: 2px 5px;
+  font-size: 10px;
+  line-height: 1.5;
+
+  &--wide {
+    padding: 8px 25px;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+}
+
+/*Utilities*/
+.pikto-btn.disabled, 
+.pikto-btn[disabled], 
+fieldset[disabled] .pikto-btn {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.pikto-no-events {
+  pointer-events: none !important;
+}
+
+.pikto-disabled {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  cursor: default;
+}
+
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  
+  // match .btn alignment given font-size hack above
+  vertical-align: middle; 
+
+  > .pikto-btn {
+    position: relative;
+    
+    // Bring the "active" button to the front
+    float: left;
+
+    &:hover,
+    &:focus,
+    &:active {
+      z-index: 2;
+    }
+
+    &.active {
+      top: 0;
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-group {
+  .pikto-btn + .pikto-btn,
+  .pikto-btn + .btn-group,
+  .btn-group + .pikto-btn,
+  .btn-group + .btn-group {
+    margin-left: -1px;
+  }
+}
+
+/*Labels*/
+.label {
+  display: inline-block;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  // font-family: $proxima-nova-semibold;
+  line-height: normal;
+  color: $white;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+  text-decoration: none;
+  // [converter] extracted a& to a.label
+
+  // Empty labels collapse automatically (not available in IE8)
+  &:empty {
+    display: none;
+  }
+}
+
+.label-default {background-color: $light-purple-grey-04;}
+.label-primary {background-color: $teal;}
+.label-magenta {background-color: $magenta;}
+.label-success {background-color: $light-green;}
+.label-info {background-color: $light-blue;}
+.label-warning {background-color: $light-yellow;}
+.label-danger {background-color: $light-red;}
+
+
+.label-levelup {
+  text-transform: uppercase;
+  font-size: 10px;
+  z-index: 3;
+  padding: 2px 8px;
+
+  /* Content of the button. */
+  &:before {
+    content: "level up";
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
+
+.label-beta, .label-pro {
+  color: $dark-blue-grey-06;
+  border: 1px solid $dark-blue-grey-06;
 }

@@ -493,3 +493,18 @@ pre code {
   line-height: 36px;
   font-size: 22px;
 }
+
+/*Button*/
+.sg-button-section {
+  > .sg-content-box {
+    > button {
+      margin: 5px;
+    }
+
+    &.sg-normal-btn {
+      > button {
+        width: 140px;
+      }
+    }
+  }
+}
