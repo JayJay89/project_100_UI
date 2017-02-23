@@ -508,3 +508,16 @@ pre code {
     }
   }
 }
+
+/*Popover*/
+.sg-popover {
+  padding: 20px;
+  background-color: grey;
+  height: 90px;
+  > .popover {
+    margin: 20px;
+  }
+  > .popover.top {
+    margin: 10px;
+  }
+}

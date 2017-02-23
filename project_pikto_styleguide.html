@@ -650,7 +650,6 @@
             <button class="pikto-btn disabled">Disabled</button>
             <button class="pikto-btn pikto-disabled">Pikto Disabled</button>
             <button class="pikto-btn pikto-no-events">No Events</button>
-
           </div>
           <div class="sg-code-box" id="btn-7">
             <div class="sg-code-box-sidebar"></div>
@@ -725,7 +724,99 @@
 
         <section id="sg_data_popover">
           <h1>Popover</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+          <h2>Bright Popovers</h2>
+          
+          <div class="sg-content-box sg-popover" data-content="popover-1">
+            <div class="popover popover-teal-grey top">
+              <div class="arrow"></div>
+              <div class="popover-content">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+            </div>
+            <div class="popover popover-dark-purple top">
+              <div class="arrow"></div>
+              <div class="popover-content">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+            </div>
+          </div>
+          <div class="sg-code-box" id="popover-1">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <div class="sg-popover-arrow-control">
+            <button class="pikto-btn pikto-btn-teal" data-style="top">Top</button>
+            <button class="pikto-btn pikto-btn-teal" data-style="top top-left">Top Left</button>
+            <button class="pikto-btn pikto-btn-teal" data-style="top top-right">Top Right</button>
+            <button class="pikto-btn pikto-btn-teal" data-style="bottom">Bottom</button>
+            <button class="pikto-btn pikto-btn-teal" data-style="bottom bottom-left">Bottom Left</button>
+            <button class="pikto-btn pikto-btn-teal" data-style="bottom bottom-right">Bottom Right</button>
+            <button class="pikto-btn pikto-btn-teal" data-style="left">Left</button>
+            <button class="pikto-btn pikto-btn-teal" data-style="right">Right</button>
+          </div>
+
+            <h2>White Popover</h4>
+            <div class="popover popover-white popover-with-footer left">
+              <div class="arrow"></div>
+              <div class="popover-content">
+                <h1>Cut-off line</h1>
+                <p>
+                  Plan on printing your project? <br>
+                  This marks the end of one <span class="papersize"></span>-sized page.
+                </p>
+                <p>
+                  Not using <span class="papersize"></span> paper?
+                  Change your paper size in
+                </p>
+                <a href="#" id="pikto-cutoff-popover-topagesetup">File &gt; Page Setup</a>
+              </div>
+              <div class="popover-footer">
+                <button name="button" type="submit">Got It</button>
+              </div>
+            </div>
+            <div class="popover popover-white popover-with-title right">
+              <div class="arrow"></div>
+              <h4 class="popover-title">Take a Tour</h4>
+              <div class="popover-content">Click here to tour the Piktochart editor.</div>
+            </div>
+
+            <h2>Onboarding Popover</h4>
+
+            <div class="popover popover-white popover-onboarding  top" role="tooltip">
+              <div class="popover-title" style="display: none;"></div>
+              <div class="popover-content">
+                <i class="btn-close icon-cross-greydark-big"></i>
+                <!-- reuse templates doesn't have an accompanying image initially -->
+                <!-- <div class="popover-image"> -->
+                <!-- <img src="http://placehold.it/100x100"> -->
+                <!-- </div> -->
+                <div class="popover-text-content">
+                  <div class="popover-title-bold">Reuse Template</div>
+                  <p>Reuse the fonts on the template by double-clicking the text box to edit. Right click on text box to copy/paste.</p>
+                </div>
+              </div>
+              <div class="popover-footer">
+                <button class="btn-close tour-btn" style="display: none">Take Tour</button>
+                <button class="btn-close">Got it!</button>
+              </div>
+            </div>
+
+            <div class="popover popover-white popover-onboarding bottom" role="tooltip">
+              <div class="popover-title" style="display: none;"></div>
+              <div class="popover-content">
+                <i class="btn-close icon-cross-greydark-big"></i>
+                <div class="popover-image">
+                  <img src="/assets/v4/e/app/locking-objects.gif" alt="Lock objects">
+                </div>
+                <div class="popover-text-content">
+                  <div class="popover-title-bold">Lock Objects</div>
+                  <p>Lock and unlock background layers by clicking the Lock icon in the top menu bar.</p>
+                </div>
+              </div>
+              <div class="popover-footer">
+                <button class="btn-close tour-btn">Take Tour</button>
+                <button class="btn-close">Got it!</button>
+              </div>
+            </div>
+
+          </section>
         </section>
 
         <section id="sg_data_paginations">
@@ -846,8 +937,9 @@
     <script src="jquery.min.js"></script>
     <!-- <script src="js/prettypre.js"></script> -->
     <script src="js/clipboard.min.js"></script>
-    <script src="js/project_pikto_styleguide.js"></script>
     <script src="highlight/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script src="js/project_pikto_styleguide.js"></script>
+    
   </body>
   </html>

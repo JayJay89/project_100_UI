@@ -4,8 +4,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var container = document.querySelector('.sg-main-container');
   var sg_container_list = document.querySelectorAll('.sg-main-container > section');
   var sg_button_list_btn = document.querySelectorAll('.sg-button-list > li > button');
-  var code_box = document.querySelectorAll('.sg-code-box');
-  var sg_content = document.querySelectorAll('.sg-content-box');
+  var sg_code_box = document.querySelectorAll('.sg-code-box');
+  var sg_content_box = document.querySelectorAll('.sg-content-box');
+  var sg_popover_teal = document.querySelector('.sg-popover > .popover-teal-grey');
+  var sg_popover_purple = document.querySelector('.sg-popover > .popover-dark-purple');
+  var popover_arrow_control = document.querySelectorAll('.sg-popover-arrow-control > button');
+
+  var sg_code_box_sidebar = document.querySelectorAll('.sg-code-box-sidebar');
 
   /*Instantiate clipboard*/
   /*Clipboard uses a library call clipboard.min.js*/
@@ -22,12 +27,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     elem.classList.remove('active');
     elem.classList.remove('slide-in');
   });
-  $("button[data-target='sg_data_label']").parent('li').addClass('active');
-  $("#sg_data_label").addClass('active slide-in');
+  $("button[data-target='sg_data_popover']").parent('li').addClass('active');
+  $("#sg_data_popover").addClass('active slide-in');
 
-  [...sg_content].forEach( function(elem){
-    var current_content = elem.innerHTML;
-    const target = elem.getAttribute('data-content');
+  function injectCode (contentbox){
+    var current_content = contentbox.innerHTML;
+    const target = contentbox.getAttribute('data-content');
     const target_content = document.querySelector('#' + target);
     const target_child = target_content.querySelector('.sg-code-syntax');
     const target_sidebar = target_content.querySelector('.sg-code-box-sidebar');
@@ -44,20 +49,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
       return mapObj[matched];
     }).trim();
 
-    const new_line = current_content.match(/\n/g);
+    /*Put the copied strings into the codebox*/
+    target_child.innerHTML = current_content;
+  }
 
-    const numLines = new_line ? new_line.length + 1  : 1;
+  function populateNumber (contentbox){
+    var current_content = contentbox.innerHTML;
+    const target = contentbox.getAttribute('data-content');
+    const target_content = document.querySelector('#' + target);
+    const target_child = target_content.querySelector('.sg-code-syntax');
+    const target_sidebar = target_content.querySelector('.sg-code-box-sidebar');
+
+    const new_line = current_content.match(/\n/g);
+    const numLines = new_line ? new_line.length - 1 : 1;
 
     /*Populate line numbers*/
     for(i = 1; i <= numLines; i++) {
       target_sidebar.innerHTML += ("<span>" + i + "</span>");
     }
+  }
 
-    /*Put the copied strings into the codebox*/
-    target_child.innerHTML = current_content;
-
-    // console.log("Count: ",numLines);
-    // console.log(target_sidebar);
+  [...sg_content_box].forEach( function(elem){
+    injectCode(elem);
+    populateNumber(elem);
   });
 
   /*Initialize highlight.js*/
@@ -106,6 +120,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
       $('.sg-color-copy-label').removeClass('fade-in');
     }, 500)
   });
+
+  /*Popover Arrow Change*/
+  [...popover_arrow_control].forEach( function(elem) {
+
+    const sg_popover = document.querySelector('.sg-popover');
+
+    elem.addEventListener('mousedown', function(e){
+      var style = e.target.getAttribute('data-style');
+      sg_popover_teal.classList = "popover popover-teal-grey" + " " + style;
+      sg_popover_purple.classList = "popover popover-dark-purple" + " " + style;
+      injectCode(sg_popover);
+      /*reinitialized highlighting*/
+      $('.sg-popover + .sg-code-box pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
+  });
+
 });
 
 
@@ -156,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 /*Number Counter System*/
 /*When an element is not rendered on the page, we can't get the height value of the element. Hence, some elements doesn't render the numbers.*/
 /*
-[...code_box].forEach( function(elem) {
+[...sg_code_box].forEach( function(elem) {
   var pre_code = elem.querySelector('.sg-code-syntax');
   var side_bar = elem.querySelector('.sg-code-box-sidebar');
 
