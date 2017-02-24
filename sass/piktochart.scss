@@ -633,7 +633,6 @@ $popover-arrow-width:       6px !default;
 }
 
 .popover-white {
-  font-size: 12px;
 
   $popwhite-arrow: 8px;
   $popwhite-arrow-pos: $popwhite-arrow - 1px;
@@ -663,11 +662,6 @@ $popover-arrow-width:       6px !default;
     padding: 10px 15px;
     background-color: $white;
     border-radius: 2px;
-  }
-
-  h1, .popover-title {
-    font-weight: bold;
-    font-size: 15px;
   }
 
   .popover-title {

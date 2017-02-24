@@ -118,35 +118,35 @@
             <div class="sg-code-box-sidebar"></div>
 
             <pre><code class="html sg-code-syntax">&lt;ul class=&quot;sg-button-list sg-button-list--inner&quot;&gt;
-  &lt;li&gt;&lt;button class=&quot;sg-btn&quot; data-target=&quot;sg_data_icon_1&quot;&gt;Icon 1&lt;/button&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;button class=&quot;sg-btn&quot; data-target=&quot;sg_data_icon_2&quot;&gt;Icon 2&lt;/button&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;button class=&quot;sg-btn&quot; data-target=&quot;sg_data_icon_3&quot;&gt;Icon 3&lt;/button&gt;&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+              &lt;li&gt;&lt;button class=&quot;sg-btn&quot; data-target=&quot;sg_data_icon_1&quot;&gt;Icon 1&lt;/button&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;button class=&quot;sg-btn&quot; data-target=&quot;sg_data_icon_2&quot;&gt;Icon 2&lt;/button&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;button class=&quot;sg-btn&quot; data-target=&quot;sg_data_icon_3&quot;&gt;Icon 3&lt;/button&gt;&lt;/li&gt;
+              &lt;/ul&gt;</code></pre>
 
-          </div>
+            </div>
 
-          <div class="sg-code-box">
-            <div class="sg-code-box-sidebar"></div>
-            <pre><code class="css sg-code-syntax">.test {
-  border: 1px solid red;
-  display: none;
-  position: relative;
-  transform: translate(0, -50%);
-}</code></pre>
-          </div>
+            <div class="sg-code-box">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="css sg-code-syntax">.test {
+                border: 1px solid red;
+                display: none;
+                position: relative;
+                transform: translate(0, -50%);
+              }</code></pre>
+            </div>
 
-          <div class="sg-code-box">
-            <div class="sg-code-box-sidebar"></div>
-            <pre><code class="scss sg-code-syntax">.test {
-  border: 1px solid red;
-  display: none;
-  position: relative;
-  transform: translate(0, -50%);
+            <div class="sg-code-box">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="scss sg-code-syntax">.test {
+                border: 1px solid red;
+                display: none;
+                position: relative;
+                transform: translate(0, -50%);
 
-  .side {
-    border: 1px solid blue;
-  }
-}</code></pre>
+                .side {
+                border: 1px solid blue;
+              }
+            }</code></pre>
           </div>
 
         </section>
@@ -724,9 +724,9 @@
 
         <section id="sg_data_popover">
           <h1>Popover</h1>
-          <h2>Bright Popovers</h2>
-          
-          <div class="sg-content-box sg-popover" data-content="popover-1">
+          <h2>Color and Position Variation</h2>
+          <p>Click the buttons below to display varying Color and Position differences </p>
+          <div class="sg-content-box sg-popover sg-popover-grey" data-content="popover-1">
             <div class="popover popover-teal-grey top">
               <div class="arrow"></div>
               <div class="popover-content">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
@@ -752,70 +752,80 @@
             <button class="pikto-btn pikto-btn-teal" data-style="right">Right</button>
           </div>
 
-            <h2>White Popover</h4>
+          <h2>White Popover With Footer</h2>
+          <div class="sg-content-box sg-popover-grey" data-content="popover-2">
             <div class="popover popover-white popover-with-footer left">
               <div class="arrow"></div>
               <div class="popover-content">
-                <h1>Cut-off line</h1>
-                <p>
-                  Plan on printing your project? <br>
-                  This marks the end of one <span class="papersize"></span>-sized page.
-                </p>
-                <p>
-                  Not using <span class="papersize"></span> paper?
-                  Change your paper size in
-                </p>
-                <a href="#" id="pikto-cutoff-popover-topagesetup">File &gt; Page Setup</a>
+                <h1>Title</h1>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, eum.
               </div>
               <div class="popover-footer">
                 <button name="button" type="submit">Got It</button>
               </div>
             </div>
+          </div>
+          <div class="sg-code-box" id="popover-2">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>White Popover With Header</h2>
+          <div class="sg-content-box sg-popover-grey" data-content="popover-3">
             <div class="popover popover-white popover-with-title right">
               <div class="arrow"></div>
-              <h4 class="popover-title">Take a Tour</h4>
+              <h1 class="popover-title">Take a Tour</h1>
               <div class="popover-content">Click here to tour the Piktochart editor.</div>
             </div>
+          </div>
+          <div class="sg-code-box" id="popover-3">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
 
-            <h2>Onboarding Popover</h4>
-
-            <div class="popover popover-white popover-onboarding  top" role="tooltip">
-              <div class="popover-title" style="display: none;"></div>
-              <div class="popover-content">
-                <i class="btn-close icon-cross-greydark-big"></i>
-                <!-- reuse templates doesn't have an accompanying image initially -->
-                <!-- <div class="popover-image"> -->
-                <!-- <img src="http://placehold.it/100x100"> -->
-                <!-- </div> -->
-                <div class="popover-text-content">
-                  <div class="popover-title-bold">Reuse Template</div>
-                  <p>Reuse the fonts on the template by double-clicking the text box to edit. Right click on text box to copy/paste.</p>
+          <h2>Onboarding Popover</h4>
+            <div class="sg-content-box sg-popover-grey" data-content="popover-4">
+              <div class="popover popover-white popover-onboarding top" role="tooltip">
+                <div class="popover-content">
+                  <i class="btn-close icon-cross-greydark-big"></i>
+                  <div class="popover-text-content">
+                    <div class="popover-title-bold">Reuse Template</div>
+                    <p>Reuse the fonts on the template by double-clicking the text box to edit. Right click on text box to copy/paste.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="popover-footer">
-                <button class="btn-close tour-btn" style="display: none">Take Tour</button>
-                <button class="btn-close">Got it!</button>
+                <div class="popover-footer">
+                  <button class="btn-close">Got it!</button>
+                </div>
               </div>
             </div>
-
-            <div class="popover popover-white popover-onboarding bottom" role="tooltip">
-              <div class="popover-title" style="display: none;"></div>
-              <div class="popover-content">
-                <i class="btn-close icon-cross-greydark-big"></i>
-                <div class="popover-image">
-                  <img src="/assets/v4/e/app/locking-objects.gif" alt="Lock objects">
-                </div>
-                <div class="popover-text-content">
-                  <div class="popover-title-bold">Lock Objects</div>
-                  <p>Lock and unlock background layers by clicking the Lock icon in the top menu bar.</p>
-                </div>
-              </div>
-              <div class="popover-footer">
-                <button class="btn-close tour-btn">Take Tour</button>
-                <button class="btn-close">Got it!</button>
-              </div>
+            <div class="sg-code-box" id="popover-4">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
             </div>
 
+            <div class="sg-content-box sg-popover-grey" data-content="popover-5">
+              <div class="popover popover-white popover-onboarding bottom" role="tooltip">
+                <div class="popover-content">
+                  <i class="btn-close icon-cross-greydark-big"></i>
+                  <div class="popover-image">
+                  <img src="http://placehold.it/80x100">
+                  </div>
+                  <div class="popover-text-content">
+                    <div class="popover-title-bold">Lock Objects</div>
+                    <p>Lock and unlock background layers by clicking the Lock icon in the top menu bar.</p>
+                  </div>
+                </div>
+                <div class="popover-footer">
+                  <button class="btn-close tour-btn">Take Tour</button>
+                  <button class="btn-close">Got it!</button>
+                </div>
+              </div>
+            </div>
+            <div class="sg-code-box" id="popover-5">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+            
           </section>
         </section>
 
@@ -940,6 +950,6 @@
     <script src="highlight/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="js/project_pikto_styleguide.js"></script>
-    
+
   </body>
   </html>

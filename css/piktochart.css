@@ -621,10 +621,6 @@ fieldset[disabled] .pikto-btn {
   border-right-color: #2c2a37;
 }
 
-.popover-white {
-  font-size: 12px;
-}
-
 .popover-white.top .arrow {
   border-top-color: #f9f9f9;
   bottom: -7px;
@@ -653,11 +649,6 @@ fieldset[disabled] .pikto-btn {
   padding: 10px 15px;
   background-color: #fff;
   border-radius: 2px;
-}
-
-.popover-white h1, .popover-white .popover-title {
-  font-weight: bold;
-  font-size: 15px;
 }
 
 .popover-white .popover-title {

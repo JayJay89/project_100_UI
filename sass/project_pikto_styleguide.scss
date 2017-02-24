@@ -512,12 +512,25 @@ pre code {
 /*Popover*/
 .sg-popover {
   padding: 20px;
-  background-color: grey;
   height: 90px;
   > .popover {
     margin: 20px;
   }
   > .popover.top {
     margin: 10px;
+  }
+}
+
+.sg-popover-grey {
+  background-color: grey;
+}
+
+[data-content="popover-2"], 
+[data-content="popover-3"],
+[data-content="popover-4"],
+[data-content="popover-5"]
+ {
+  > .popover {
+    margin: 20px;
   }
 }

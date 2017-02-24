@@ -465,7 +465,6 @@ pre code {
 /*Popover*/
 .sg-popover {
   padding: 20px;
-  background-color: grey;
   height: 90px;
 }
 
@@ -475,4 +474,15 @@ pre code {
 
 .sg-popover > .popover.top {
   margin: 10px;
+}
+
+.sg-popover-grey {
+  background-color: grey;
+}
+
+[data-content="popover-2"] > .popover,
+[data-content="popover-3"] > .popover,
+[data-content="popover-4"] > .popover,
+[data-content="popover-5"] > .popover {
+  margin: 20px;
 }
