@@ -43,38 +43,58 @@
             <li><button class="sg-btn" data-target="sg_data_logo">Logo</button></li>
             <li><button class="sg-btn" data-target="sg_data_brand_color">Brand Colors</button></li>
             <li><button class="sg-btn" data-target="sg_data_brand_patterns">Brand Patterns</button></li>
-            <li><button class="sg-btn" data-target="sg_data_typography">Typography</button></li>
-            <li><button class="sg-btn" data-target="sg_data_illustration">Icons & Illustrations</button></li>
           </ul>
         </div>
 
         <div class="sg-ui-kit">
           <h2>UI Kit</h2>
           <ul class="sg-button-list sg-button-list--outer">
-            <li><button class="sg-btn" data-target="sg_data_website_colour">Website Colour Palette</button></li>
-            <li><button class="sg-btn" data-target="sg_data_ui_colour">UI Colour Palette</button></li>
+
+            <li><button class="sg-btn" data-target="sg_data_reset">Reset</button></li>
+
+            <li class="sg-dropdown">
+              <input id="styleguide_nav" type="radio" name="tabs">
+              <label for="styleguide_nav">Foundational Components</label>
+              <ul class="sg-button-list sg-button-list--inner">
+                <li><button class="sg-btn" data-target="sg_data_website_colour">Website Colour Palette</button></li>
+                <li><button class="sg-btn" data-target="sg_data_ui_colour">UI Colour Palette</button></li>
+                <li><button class="sg-btn" data-target="sg_data_shadow">Shadow</button></li>
+                <li><button class="sg-btn" data-target="sg_data_border_radii">Border Radii</button></li>
+                <li><button class="sg-btn" data-target="sg_data_spacing">Spacing</button></li>
+                <li><button class="sg-btn" data-target="sg_data_typography">Typography</button></li>
+                <li><button class="sg-btn" data-target="sg_data_transitions">Transitions</button></li>
+              </ul>
+            </li>
+
+            <li><button class="sg-btn" data-target="sg_data_layout">Layout</button></li>
+
             <li class="sg-dropdown">
               <input id="styleguide_ui" type="radio" name="tabs">
               <label for="styleguide_ui">UI Elements</label>
               <ul class="sg-button-list sg-button-list--inner">
+                <li><button class="sg-btn" data-target="sg_data_accordion">Accordion</button></li>
                 <li><button class="sg-btn" data-target="sg_data_alerts">Alerts</button></li>
-                <li><button class="sg-btn" data-target="sg_data_button">Buttons</button></li>
-                <li><button class="sg-btn" data-target="sg_data_tooltip">Tooltip</button></li>
-                <li><button class="sg-btn" data-target="sg_data_popover">Popover</button></li>
-                <li><button class="sg-btn" data-target="sg_data_paginations">Paginations</button></li>
-                <li><button class="sg-btn" data-target="sg_data_preloader">Preloader</button></li>
-                <li><button class="sg-btn" data-target="sg_data_label">Label/Badges</button></li>
-                <li><button class="sg-btn" data-target="sg_data_sliders">Sliders</button></li>
-                <li><button class="sg-btn" data-target="sg_data_cards">Cards</button></li>
                 <li><button class="sg-btn" data-target="sg_data_breadcrumbs">Breadcrumbs</button></li>
+                <li><button class="sg-btn" data-target="sg_data_button">Buttons</button></li>
+                <li><button class="sg-btn" data-target="sg_data_cards">Cards</button></li>
                 <li><button class="sg-btn" data-target="sg_data_feedbacks">Feedbacks</button></li>
-                <li><button class="sg-btn" data-target="sg_data_modals">Modals</button></li>
-                <li><button class="sg-btn" data-target="sg_data_tables">Tables</button></li>
                 <li><button class="sg-btn" data-target="sg_data_file">File Selector</button></li>
-                <li><button class="sg-btn" data-target="sg_data_toolbar">Toolbar</button></li>
+                <li><button class="sg-btn" data-target="sg_data_forms">Forms</button></li>
+                <li><button class="sg-btn" data-target="sg_data_icon">Icons & Illustrations</button></li>
+                <li><button class="sg-btn" data-target="sg_data_label">Label/Badges</button></li>
+                <li><button class="sg-btn" data-target="sg_data_modals">Modals</button></li>
+                <li><button class="sg-btn" data-target="sg_data_paginations">Paginations</button></li>
                 <li><button class="sg-btn" data-target="sg_data_picture">Picture</button></li>
+                <li><button class="sg-btn" data-target="sg_data_popover">Popover</button></li>
+                <li><button class="sg-btn" data-target="sg_data_preloader">Preloader</button></li>
+                <li><button class="sg-btn" data-target="sg_data_progressbar">Progress Bar</button></li>
+                <li><button class="sg-btn" data-target="sg_data_sliders">Sliders</button></li>
+                <li><button class="sg-btn" data-target="sg_data_tables">Tables</button></li>
+                <li><button class="sg-btn" data-target="sg_data_toolbar">Toolbar</button></li>
+                <li><button class="sg-btn" data-target="sg_data_tooltip">Tooltip</button></li>
               </ul>
             </li>
+
             <li class="sg-dropdown">
               <input id="styleguide_nav" type="radio" name="tabs">
               <label for="styleguide_nav">Navigations</label>
@@ -84,6 +104,7 @@
                 <li><button class="sg-btn" data-target="sg_data_nav_3">Nav 3</button></li>
               </ul>
             </li>
+
             <li class="sg-dropdown">
               <input id="styleguide_form" type="radio" name="tabs">
               <label for="styleguide_form">Form Elements</label>
@@ -93,6 +114,7 @@
                 <li><button class="sg-btn" data-target="sg_data_form_3">Form 3</button></li>
               </ul>
             </li>
+
             <li class="sg-dropdown">
               <input id="styleguide_icon" type="radio" name="tabs">
               <label for="styleguide_icon">Icons</label>
@@ -102,13 +124,15 @@
                 <li><button class="sg-btn" data-target="sg_data_icon_3">Icon 3</button></li>
               </ul>
             </li>
-            <li><button class="sg-btn" data-target="sg_conventions">HTML/CSS Conventions</button></li>
-            <li><button class="sg-btn" data-target="sg_bem">BEM</button></li>
+            
+            <li><button class="sg-btn" data-target="sg_data_conventions">HTML/CSS Conventions</button></li>
+            <li><button class="sg-btn" data-target="sg_data_bem">BEM</button></li>
           </ul>
         </div>
       </div>
 
       <div class="sg-main-container" id="sg_main_container">
+        <!--Branding-->
         <section id="sg_data_logo" class="active slide-in">
           <h1>Logo</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolore, reiciendis nostrum blanditiis possimus nesciunt consequatur rerum. Autem, eaque vero omnis, tenetur, nemo suscipit praesentium adipisci perspiciatis doloremque vel veniam?</p>
@@ -148,7 +172,6 @@
               }
             }</code></pre>
           </div>
-
         </section>
 
         <section id="sg_data_brand_color">
@@ -161,44 +184,13 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, aliquid voluptates inventore quis eligendi dolores!</p>
         </section>
 
-        <section id="sg_data_typography">
-          <h1>Typography</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-          <div class="clearfix">
-            <div class="sg-typo-proxima">
-              <h2>Proxima Nova</h2>
-              <div class="sg-typo-proxima__regular">
-                <p>Aa</p>
-                <span>Regular</span>
-              </div>
-              <div class="sg-typo-proxima__semibold">
-                <p>Aa</p>
-                <span>Semibold</span>
-              </div>
-            </div>
-            <div class="sg-typo-montseraat">
-              <h2>Montseraat</h2>
-              <div class="sg-typo-montseraat__regular">
-                <p>Aa</p>
-                <span>Regular</span>
-              </div>
-              <div class="sg-typo-montseraat__semibold">
-                <p>Aa</p>
-                <span>Semibold</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="sg-typo-test">
-            ​‌A​‌B​‌C​‌Ć​‌Č​‌D​‌Đ​‌E​‌F​‌G​‌H​‌I​‌J​‌K​‌L​‌M​‌N​‌O​‌P​‌Q​‌R​‌S​‌Š​‌T​‌U​‌V​‌W​‌X​‌Y​‌Z​‌Ž​‌a​‌b​‌c​‌č​‌ć​‌d​‌đ​‌e​‌f​‌g​‌h​‌i​‌j​‌k​‌l​‌m​‌n​‌o​‌p​‌q​‌r​‌s​‌š​‌t​‌u​‌v​‌w​‌x​‌y​‌z​‌ž​‌А​‌Б​‌В​‌Г​‌Ґ​‌Д​‌Ђ​‌Е​‌Ё​‌Є​‌Ж​‌З​‌Ѕ​‌И​‌І​‌Ї​‌Й​‌Ј​‌К​‌Л​‌Љ​‌М​‌Н​‌Њ​‌О​‌П​‌Р​‌С​‌Т​‌Ћ​‌У​‌Ў​‌Ф​‌Х​‌Ц​‌Ч​‌Џ​‌Ш​‌Щ​‌Ъ​‌Ы​‌Ь​‌Э​‌Ю​‌Я​‌а​‌б​‌в​‌г​‌ґ​‌д​‌ђ​‌е​‌ё​‌є​‌ж​‌з​‌ѕ​‌и​‌і​‌ї​‌й​‌ј​‌к​‌л​‌љ​‌м​‌н​‌њ​‌о​‌п​‌р​‌с​‌т​‌ћ​‌у​‌ў​‌ф​‌х​‌ц​‌ч​‌џ​‌ш​‌щ​‌ъ​‌ы​‌ь​‌э​‌ю​‌я​‌Α​‌Β​‌Γ​‌Δ​‌Ε​‌Ζ​‌Η​‌Θ​‌Ι​‌Κ​‌Λ​‌Μ​‌Ν​‌Ξ​‌Ο​‌Π​‌Ρ​‌Σ​‌Τ​‌Υ​‌Φ​‌Χ​‌Ψ​‌Ω​‌α​‌β​‌γ​‌δ​‌ε​‌ζ​‌η​‌θ​‌ι​‌κ​‌λ​‌μ​‌ν​‌ξ​‌ο​‌π​‌ρ​‌σ​‌τ​‌υ​‌φ​‌χ​‌ψ​‌ω​‌ά​‌Ά​‌έ​‌Έ​‌έ​‌Ή​‌ί​‌ϊ​‌ΐ​‌Ί​‌ό​‌Ό​‌ύ​‌ΰ​‌ϋ​‌Ύ​‌Ϋ​‌ὰ​‌ά​‌ὲ​‌έ​‌ὴ​‌ή​‌ὶ​‌ί​‌ὸ​‌ό​‌ὺ​‌ύ​‌ὼ​‌ώ​‌Ώ​‌1​‌2​‌3​‌4​‌5​‌6​‌7​‌8​‌9​‌0​‌‘​‌?​‌’​‌“​‌!​‌”​‌(​‌%​‌)​‌[​‌#​‌]​‌{​‌@​‌}​‌/​‌&​‌<​‌-​‌+​‌÷​‌×​‌=​‌>​‌®​‌©​‌$​‌€​‌£​‌¥​‌¢​‌:​‌;​‌,​‌.​‌*
-          </div>
-        </section>
-
-        <section id="sg_data_illustration">
-          <h1>Icons & Illustrations</h1>
+        <!--Foundational UI-->
+        <section id="sg_data_reset">
+          <h1>Reset and Normalize</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
+        <!--Foundational UI-->
         <section class="sg-website-color" id="sg_data_website_colour">
           <h1>Website Colour Palette</h1>
           <p>This is the primary and secondary colour palettes as described in the PSD styleguide and in variables.scss</p>
@@ -517,8 +509,264 @@
             </div>
           </ul>
         </section>
+
+        <section class="sg-shadows" id="sg_data_shadow">
+          <h1>Shadows</h1>
+          
+          <h2>Constructor</h2>
+
+
+          <div class="sg-content-box" data-content="shadow-1" style="display: none;">
+            @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+              @if $inset {
+                -webkit-box-shadow:inset $top $left $blur $color;
+                -moz-box-shadow:inset $top $left $blur $color;
+                box-shadow:inset $top $left $blur $color;
+              } @else {
+                -webkit-box-shadow: $top $left $blur $color;
+                -moz-box-shadow: $top $left $blur $color;
+                box-shadow: $top $left $blur $color;
+              }
+            }
+          </div>
+
+          <div class="sg-code-box" id="shadow-1" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Applying As Classes</h2>
+          <div class="sg-content-box" data-content="shadow-2" style="display: none;">
+            .inset-shadow {
+              @include box-shadow (0px 2px 1px 0px rgba(black, 0.2) inset);
+            }
+            .outer-shadow {
+              @include box-shadow (1px 1px 4px 0px rgba(black ,0.2));
+            }
+            .no-shadow {
+              @include box-shadow (none);
+            }
+          </div>
+
+          <div class="sg-code-box" id="shadow-2" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+
+          <div class="sg-content-box" data-content="shadow-3">
+            <div class="inset-shadow">Box</div>
+            <div class="outer-shadow">Box</div>
+            <div class="no-shadow">Box</div>
+          </div>
+
+          <div class="sg-code-box" id="shadow-3" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Applying As Mixins</h2>
+          <p>box shadows can be applied on UI components through the use of mixins</p>
+          <div class="sg-content-box" data-content="shadow-4" style="display: none;">
+            @mixin inset-shadow {
+              @include box-shadow (0px 2px 2px 0px rgba(black, 0.2) inset);
+            }
+            @mixin outer-shadow {
+              @include box-shadow (1px 1px 4px 0px rgba(black ,0.2));
+            }
+            @mixin no-shadow {
+              @include box-shadow (none);
+            }
+          </div>
+          <div class="sg-code-box" id="shadow-4" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Applying on button as Mixins</h2>
+          <button class="pikto-btn pikto-btn-teal">Click Me!</button>
+          <div class="sg-content-box" data-content="shadow-5" style="display: none;">
+            .pikto-btn {
+              display: inline-block;
+
+              &:active {
+                @include inset-shadow;
+              }
+            }
+          </div>
+          <div class="sg-code-box" id="shadow-5" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Applying on popover as Mixins</h2>
+          <div class="popover popover-teal-grey top">
+            <div class="arrow"></div>
+            <div class="popover-content">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+          </div>
+          <div class="sg-content-box" data-content="shadow-6" style="display: none;">
+            .popover {
+              @include outer-shadow;
+            }
+          </div>
+          <div class="sg-code-box" id="shadow-6" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Applying Shadows on popover arrows</h2>
+          <p>WIP</p>
+        </section>
+
+        <section class="sg-border-radius" id="sg_data_border_radii">
+          <h1>Border Radii</h1>
+          <h2>Constructor</h2>
+          <div class="sg-content-box" data-content="border-radius-1" style="display: none">
+            @mixin border-radius($radius, $side) {
+              @if $side == 'all'{
+                border-radius: $radius;
+              } @if $side == "top"{
+                border-radius: $radius $radius 0px 0px;
+              } @if $side == 'bottom' {
+                border-radius: 0px 0px $radius $radius;
+              } @if $side == 'left' {
+                border-radius: $radius 0px 0px $radius;
+              } @if $side == 'right' {
+                border-radius: 0px $radius $radius 0px;
+              } @if $side == 'top-left' {
+                border-radius: $radius 0px 0px 0px;
+              } @if $side == 'top-right' {
+                border-radius: 0px $radius 0px 0px;
+              } @if $side == 'bottom-right' {
+                border-radius: 0px 0px $radius 0px;
+              } @if $side == 'bottom-left' {
+                border-radius: 0px 0px 0px $radius;
+              }
+            }
+          </div>
+
+          <div class="sg-code-box" id="border-radius-1" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Applying as Class</h2>
+          <div class="sg-content-box" data-content="border-radius-2" style="display: none">
+            .border-radius-6 {
+              @include border-radius(6px, all);
+            }
+            .border-radius-4 {
+              @include border-radius(4px, all);
+            }
+            .border-radius-2 {
+              @include border-radius(2px, all);
+            }
+          </div>
+
+          <div class="sg-code-box" id="border-radius-2" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+
+          <div class="sg-content-box" data-content="border-radius-3">
+            <div class="border-radius-2">Box</div>
+            <div class="border-radius-4">Box</div>
+            <div class="border-radius-6">Box</div>
+          </div>
+
+          <div class="sg-code-box" id="border-radius-3" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Applying as Mixin</h2>
+          <div class="sg-content-box" data-content="border-radius-4" style="display: none">
+            @mixin border-radius-6 {
+              @include border-radius(6px, all);
+            }
+            @mixin border-radius-4 {
+              @include border-radius(4px, all);
+            }
+            @mixin border-radius-2 {
+              @include border-radius(2px, all);
+            }
+          </div>
+
+          <div class="sg-code-box" id="border-radius-4">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+
+          <h2>Applying as Mixin on button</h2>
+          <button class="pikto-btn pikto-btn-teal">Button</button>
+  
+          <div class="sg-content-box" data-content="border-radius-5" style="display: none">
+            .pikto-btn {
+              @include border-radius-2;
+            }
+          </div>
+
+          <div class="sg-code-box" id="border-radius-5">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+        </section>
+
+        <section id="sg_data_spacing">
+          <h1>Spacing</h1>
+          <p>Spacing is the general spacing rules that governs the webapp. Margins and Paddings</p>
+          
+        </section>
+
+        <section id="sg_data_typography">
+          <h1>Typography</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+          <div class="clearfix">
+            <div class="sg-typo-proxima">
+              <h2>Proxima Nova</h2>
+              <div class="sg-typo-proxima__regular">
+                <p>Aa</p>
+                <span>Regular</span>
+              </div>
+              <div class="sg-typo-proxima__semibold">
+                <p>Aa</p>
+                <span>Semibold</span>
+              </div>
+            </div>
+            <div class="sg-typo-montseraat">
+              <h2>Montseraat</h2>
+              <div class="sg-typo-montseraat__regular">
+                <p>Aa</p>
+                <span>Regular</span>
+              </div>
+              <div class="sg-typo-montseraat__semibold">
+                <p>Aa</p>
+                <span>Semibold</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sg-typo-test">
+            ​‌A​‌B​‌C​‌Ć​‌Č​‌D​‌Đ​‌E​‌F​‌G​‌H​‌I​‌J​‌K​‌L​‌M​‌N​‌O​‌P​‌Q​‌R​‌S​‌Š​‌T​‌U​‌V​‌W​‌X​‌Y​‌Z​‌Ž​‌a​‌b​‌c​‌č​‌ć​‌d​‌đ​‌e​‌f​‌g​‌h​‌i​‌j​‌k​‌l​‌m​‌n​‌o​‌p​‌q​‌r​‌s​‌š​‌t​‌u​‌v​‌w​‌x​‌y​‌z​‌ž​‌А​‌Б​‌В​‌Г​‌Ґ​‌Д​‌Ђ​‌Е​‌Ё​‌Є​‌Ж​‌З​‌Ѕ​‌И​‌І​‌Ї​‌Й​‌Ј​‌К​‌Л​‌Љ​‌М​‌Н​‌Њ​‌О​‌П​‌Р​‌С​‌Т​‌Ћ​‌У​‌Ў​‌Ф​‌Х​‌Ц​‌Ч​‌Џ​‌Ш​‌Щ​‌Ъ​‌Ы​‌Ь​‌Э​‌Ю​‌Я​‌а​‌б​‌в​‌г​‌ґ​‌д​‌ђ​‌е​‌ё​‌є​‌ж​‌з​‌ѕ​‌и​‌і​‌ї​‌й​‌ј​‌к​‌л​‌љ​‌м​‌н​‌њ​‌о​‌п​‌р​‌с​‌т​‌ћ​‌у​‌ў​‌ф​‌х​‌ц​‌ч​‌џ​‌ш​‌щ​‌ъ​‌ы​‌ь​‌э​‌ю​‌я​‌Α​‌Β​‌Γ​‌Δ​‌Ε​‌Ζ​‌Η​‌Θ​‌Ι​‌Κ​‌Λ​‌Μ​‌Ν​‌Ξ​‌Ο​‌Π​‌Ρ​‌Σ​‌Τ​‌Υ​‌Φ​‌Χ​‌Ψ​‌Ω​‌α​‌β​‌γ​‌δ​‌ε​‌ζ​‌η​‌θ​‌ι​‌κ​‌λ​‌μ​‌ν​‌ξ​‌ο​‌π​‌ρ​‌σ​‌τ​‌υ​‌φ​‌χ​‌ψ​‌ω​‌ά​‌Ά​‌έ​‌Έ​‌έ​‌Ή​‌ί​‌ϊ​‌ΐ​‌Ί​‌ό​‌Ό​‌ύ​‌ΰ​‌ϋ​‌Ύ​‌Ϋ​‌ὰ​‌ά​‌ὲ​‌έ​‌ὴ​‌ή​‌ὶ​‌ί​‌ὸ​‌ό​‌ὺ​‌ύ​‌ὼ​‌ώ​‌Ώ​‌1​‌2​‌3​‌4​‌5​‌6​‌7​‌8​‌9​‌0​‌‘​‌?​‌’​‌“​‌!​‌”​‌(​‌%​‌)​‌[​‌#​‌]​‌{​‌@​‌}​‌/​‌&​‌<​‌-​‌+​‌÷​‌×​‌=​‌>​‌®​‌©​‌$​‌€​‌£​‌¥​‌¢​‌:​‌;​‌,​‌.​‌*
+          </div>
+        </section>
+
+        <section id="sg_data_transitions">
+          <h1>Transitions</h1>
+          <p>This is the primary and secondary colour palettes as described in the PSD styleguide and in variables.scss</p>
+        </section>
+        
+        <!-- Layout -->
+        <section id="sg_data_layout">
+          <h1>Layout</h1>
+          <p>Pikto-container, max-width, min-width</p>
+        </section>
         
         <!-- UI Components -->
+        <section id="sg_data_accordion">
+          <h1>Accordion</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
         <section id="sg_data_alerts">
           <h1>Alerts</h1>
 
@@ -569,6 +817,11 @@
             <div class="sg-code-box-sidebar"></div>
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
+        </section>
+
+        <section id="sg_data_breadcrumbs">
+          <h1>Breadcrumb</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_button" class="sg-button-section">
@@ -673,6 +926,31 @@
           </div>
         </section>
 
+        <section id="sg_data_cards">
+          <h1>Cards</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_feedbacks">
+          <h1>Feedbacks</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_file">
+          <h1>File Selector</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_form">
+          <h1>Forms</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_icon">
+          <h1>Icons</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
         <section id="sg_data_label">
 
           <h1>Labels</h1>
@@ -714,11 +992,20 @@
             <div class="sg-code-box-sidebar"></div>
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
-
         </section>
 
-        <section id="sg_data_tooltip">
-          <h1>Tooltip</h1>
+        <section id="sg_data_modals">
+          <h1>Modals</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_paginations">
+          <h1>Paginations</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        </section>
+
+        <section id="sg_data_picture">
+          <h1>Picture</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
@@ -829,13 +1116,13 @@
           </section>
         </section>
 
-        <section id="sg_data_paginations">
-          <h1>Paginations</h1>
+        <section id="sg_data_preloader">
+          <h1>Preloaders</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
-        <section id="sg_data_preloader">
-          <h1>Preloaders</h1>
+        <section id="sg_data_progressbar">
+          <h1>Progress Bars</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
@@ -844,43 +1131,18 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
-        <section id="sg_data_cards">
-          <h1>Cards</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_breadcrumbs">
-          <h1>Breadcrumb</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_feedbacks">
-          <h1>Feedbacks</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_modals">
-          <h1>Modals</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
         <section id="sg_data_tables">
           <h1>Tables</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
-        <section id="sg_data_file">
-          <h1>File Selector</h1>
+        <section id="sg_data_tooltip">
+          <h1>Tooltip</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_toolbar">
           <h1>Toolbar</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_picture">
-          <h1>Picture</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
@@ -929,13 +1191,13 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
-        <section id="sg_conventions">
+        <section id="sg_data_conventions">
           <h1>HTML/CSS Conventions</h1>
           <a target="_blank" href="https://docs.google.com/document/d/1APOh_El-iafCVn9A9cHY0pQyeHoCgbOePLcVgWCPkBM/edit">Link to Document</a>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
-        <section id="sg_bem">
+        <section id="sg_data_bem">
           <h1>BEM</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>

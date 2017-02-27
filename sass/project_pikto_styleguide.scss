@@ -120,6 +120,7 @@ button {
 body {
   @include montserrat(regular);
   color: $blue2;
+  overflow: hidden;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -159,7 +160,8 @@ pre code {
   width: calc(275px - 60px);
   display: inline-block;
   float: left;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: auto;
   padding: 30px;
 
   h1, h2 {
@@ -223,6 +225,8 @@ pre code {
   top: 0px;
   transition: top 0.3s ease, opacity 0.3s ease;
   padding: 100px 65px;
+  height: calc(100vh - 200px);
+  overflow: scroll;
 
   &.slide-out {
     top: 10px;
@@ -532,5 +536,22 @@ pre code {
  {
   > .popover {
     margin: 20px;
+  }
+}
+
+/*Shadows*/
+.sg-shadows, 
+.sg-border-radius {
+  > .sg-content-box > div {
+    width: 75px;
+    height: 75px;
+    display: inline-block;
+    background-color: beige;
+  }
+}
+
+.sg-border-radius {
+  > .sg-content-box > div {
+    border: 1px solid black;
   }
 }

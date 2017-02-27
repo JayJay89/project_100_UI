@@ -106,7 +106,6 @@ $light-red-darker:      #f53636;
 
 $light-red-2:           #f98484;
 
-
 /*Color Combo Factory*/
 @mixin color-combo ($target, $color, $hover, $active){
   @if $target == 'color' {
@@ -157,6 +156,89 @@ $light-red-2:           #f98484;
 @mixin danger-combo ($target) {
   @include color-combo ($target, $light-red, $light-red-dark, $light-red-darker)
 }
+
+////Shadows////
+/*Shadow Constructor*/
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+/*Mixin*/
+@mixin inset-shadow {
+  @include box-shadow (0px, 2px, 2px, rgba(black, 0.2), $inset: true);
+}
+@mixin outer-shadow {
+  @include box-shadow (1px, 1px, 4px, rgba(black ,0.2), $inset: false);
+}
+@mixin no-shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/*Class*/
+.inset-shadow {
+  @include box-shadow (0px, 2px, 1px, rgba(black, 0.2), $inset: true);
+}
+.outer-shadow {
+  @include box-shadow (1px, 1px, 4px, rgba(black ,0.2), $inset: false);
+}
+.no-shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+////border-radius////
+@mixin border-radius($radius, $side) {
+  @if $side == 'all'{
+    border-radius: $radius;
+  } @if $side == "top"{
+    border-radius: $radius $radius 0px 0px;
+  } @if $side == 'bottom' {
+    border-radius: 0px 0px $radius $radius;
+  } @if $side == 'left' {
+    border-radius: $radius 0px 0px $radius;
+  } @if $side == 'right' {
+    border-radius: 0px $radius $radius 0px;
+  } @if $side == 'top-left' {
+    border-radius: $radius 0px 0px 0px;
+  } @if $side == 'top-right' {
+    border-radius: 0px $radius 0px 0px;
+  } @if $side == 'bottom-right' {
+    border-radius: 0px 0px $radius 0px;
+  } @if $side == 'bottom-left' {
+    border-radius: 0px 0px 0px $radius;
+  }
+}
+/*Class*/
+.border-radius-6 {
+  @include border-radius(6px, all);
+}
+.border-radius-4 {
+  @include border-radius(4px, all);
+}
+.border-radius-2 {
+  @include border-radius(2px, all);
+}
+/*Mixin*/
+@mixin border-radius-6 {
+  @include border-radius(6px, all);
+}
+@mixin border-radius-4 {
+  @include border-radius(4px, all);
+}
+@mixin border-radius-2 {
+  @include border-radius(2px, all);
+}
+
+/*Spacing*/
 
 /*Alerts*/
 .alert {
@@ -255,7 +337,6 @@ button.close {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857;
-  border-radius: 2px;
   -khtml-user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -266,6 +347,7 @@ button.close {
   -o-transition: background, 0.3s;
   transition: background, 0.3s;
   color: $dark-purple-grey-03;
+  @mixin border-radius-2;
 
   &:hover {
     background-color: #c2c2c2;
@@ -274,10 +356,9 @@ button.close {
   &:active {
     outline: 0;
     background-image: none;
-    -webkit-box-shadow: inset 0 2px 1px 0 rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     top: 1px;
+    @include inset-shadow;
   }
 }
 .pikto-btn-teal {
@@ -304,7 +385,7 @@ button.close {
   border-color: $grey-dark;
   @include grey-combo-2 (bgcolor);
   &:active {
-    box-shadow: none;
+    @include no-shadow;
   }
   &.active {
     background-color: $grey-dark;
@@ -398,8 +479,7 @@ fieldset[disabled] .pikto-btn {
   cursor: not-allowed;
   opacity: 0.4;
   filter: alpha(opacity=40);
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  @include no-shadow;
 }
 
 .pikto-no-events {
@@ -434,7 +514,7 @@ fieldset[disabled] .pikto-btn {
 
     &.active {
       top: 0;
-      box-shadow: none;
+      @include no-shadow;
     }
   }
 }
@@ -512,8 +592,9 @@ $popover-arrow-width:       6px !default;
   white-space: normal;
   font-size: 12px;
   border-radius: 2px;
-  box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
   margin: 10px;
+  @include outer-shadow;
+  
   &.top     { margin-top: -$popover-arrow-outer-width; }
   &.right   { margin-left: $popover-arrow-outer-width; }
   &.bottom  { margin-top: $popover-arrow-outer-width; }
