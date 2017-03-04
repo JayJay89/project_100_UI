@@ -347,7 +347,7 @@ button.close {
   -o-transition: background, 0.3s;
   transition: background, 0.3s;
   color: $dark-purple-grey-03;
-  @mixin border-radius-2;
+  @include border-radius-2;
 
   &:hover {
     background-color: #c2c2c2;

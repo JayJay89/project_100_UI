@@ -37,6 +37,7 @@
 }
 
 /*Mixin*/
+/*Spacing*/
 /*Alerts*/
 .alert {
   padding: 15px;
@@ -134,7 +135,6 @@ button.close {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857;
-  border-radius: 2px;
   -khtml-user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -145,6 +145,7 @@ button.close {
   -o-transition: background, 0.3s;
   transition: background, 0.3s;
   color: #2c2a37;
+  border-radius: 2px;
 }
 
 .pikto-btn:hover {
