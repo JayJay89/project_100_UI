@@ -27,7 +27,8 @@
             width: 100%;
             position: absolute;
             // bottom: 0px;
-            bottom: -120px; 
+            bottom: -120px;
+            pointer-events: none;
         }
 
         span {
@@ -35,6 +36,9 @@
             display: inline-block;
             font-size: 40px;
             text-transform: uppercase;
+        }
+
+        .box, .icon {
         }
 
         .box {

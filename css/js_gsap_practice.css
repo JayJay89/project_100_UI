@@ -61,59 +61,16 @@ ul {
   z-index: 1;
 }
 
-.container {
-  width: 80%;
-  background-color: red;
-  margin: 0 auto;
-  height: 200px;
-}
-
-.nav {
-  height: inherit;
-}
-
-.nav li {
-  width: 25%;
-  vertical-align: middle;
-  display: inline-block;
-  background-color: green;
-  float: left;
-  height: inherit;
+.box {
+  display: block;
+  width: 100px;
+  height: 100px;
   border: 1px solid red;
-  overflow: hidden;
   position: relative;
+  left: 0px;
+  opacity: 1;
 }
 
-.nav li a {
-  border: 1px solid blue;
+.box-stagger {
   display: inline-block;
-  width: 100%;
-  position: absolute;
-  bottom: -120px;
-  pointer-events: none;
-}
-
-.nav li span {
-  text-align: left;
-  display: inline-block;
-  font-size: 40px;
-  text-transform: uppercase;
-}
-
-.nav li .box {
-  width: 80%;
-  margin: 0 auto;
-  height: 150px;
-  background-color: yellow;
-}
-
-.nav li .icon {
-  position: absolute;
-  right: 0px;
-  text-align: right;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background-color: red;
-  bottom: 0%;
 }

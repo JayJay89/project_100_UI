@@ -1,0 +1,28 @@
+@import "all";
+
+section {
+  display: block;
+  width: 100%;
+  border: 1px solid red;
+  margin: 20px 0px;
+}
+
+.js-counter {
+  margin-top: 30px;
+}
+
+.js-animate-the-box {
+  display: block;
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.js-the-box,
+.js-the-box-2 {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+  position: relative;
+  cursor: pointer;
+}
