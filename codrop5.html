@@ -1,122 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title> CoDrops 5 - CSS Tutorial: A Fresh Bottom Slide Out Menu with jQuery </title>
-		<!-- Bootstrap -->
-		<link href="css/codrop5.css" rel="stylesheet">
-		<link href="css/normalize.css" rel="stylesheet">
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<a class="back-button" href="index.html">Back</a>
-		<div class="wrapper">
-			<div class="container">
-				<ul class="nav clearfix" id="navbar">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title> CoDrops 5 - CSS Tutorial: A Fresh Bottom Slide Out Menu with jQuery </title>
+    <!-- Bootstrap -->
+    <link href="css/codrop5.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <a class="back-button" href="index.html">Back</a>
+    <div class="wrapper">
+      <div class="container">
+        <ul class="nav clearfix" id="navbar">
 
-					<li>
-						<a href="#/">
-							<span class="title1">Title</span>
-							<div class="box"></div>
-							<div class="icon"></div>
-						</a>
-					</li>
+          <li>
+            <a href="#/">
+              <span class="title1">Title</span>
+              <div class="box"></div>
+              <div class="icon"></div>
+            </a>
+          </li>
 
-					<li>
-						<a href="#/">
-							<span class="title2">Title</span>
-							<div class="box"></div>
-							<div class="icon"></div>
-						</a>
-					</li>
+          <li>
+            <a href="#/">
+              <span class="title2">Title</span>
+              <div class="box"></div>
+              <div class="icon"></div>
+            </a>
+          </li>
 
-					<li>
-						<a href="#/">
-							<span class="title3">Title</span>
-							<div class="box"></div>
-							<div class="icon"></div>
-						</a>
-					</li>
+          <li>
+            <a href="#/">
+              <span class="title3">Title</span>
+              <div class="box"></div>
+              <div class="icon"></div>
+            </a>
+          </li>
 
-					<li>
-						<a href="#/">
-							<span class="title4">Title</span>
-							<div class="box"></div>
-							<div class="icon"></div>
-						</a>
-					</li>
+          <li>
+            <a href="#/">
+              <span class="title4">Title</span>
+              <div class="box"></div>
+              <div class="icon"></div>
+            </a>
+          </li>
 
-				</ul>
-			</div>
-		</div>
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-		<script src="jquery.min.js"></script>
-		<script>
+        </ul>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="jquery.min.js"></script>
+    <script>
 
-			document.addEventListener("DOMContentLoaded", function(event){
+      document.addEventListener("DOMContentLoaded", function(event){
 
-				var targets = document.querySelectorAll('#navbar > li');
+        var targets = document.querySelectorAll('#navbar > li');
 
-				function animate(elem, startPos, endPos) {
-					var animate = setInterval(frame, 1);
-					var pos = startPos;
+        [...targets].forEach(function(elem){
+          console.log(elem);
 
-					function frame(){
-						if (pos == endPos){
-							clearInterval(animate);
-						} else {
-							pos++;
-							elem.style.bottom = pos + 'px';
-						}
-					}
-				}
+          elem.addEventListener('mouseover', function(e){
+            e.target.classList.add('hover');
+          });
+          elem.addEventListener('mouseout', function(e){
+            e.target.classList.remove('hover');
+          });
+        });
 
-				[...targets].forEach(function(elem){
-					console.log(elem);
+      });
 
-					elem.addEventListener('mouseover', function(e){
-						var icon = e.target.querySelector('.icon');
-						var anchor = e.target.querySelector('a');
+      // $(document).ready(function(){
+      //  $('#navbar > li').hover(
+      //    function(){
+      //      $(this).find('a').stop()
+      //      .animate({'bottom':'5px'},300)
+      //      .animate({'bottom':'0px'},100);
 
-						animate(anchor, -120, 0);
+      //      $(this).find('.icon').stop()
+      //      .animate({'bottom':'70%'},300)
+      //      .animate({'bottom':'65%'},100);
 
-						console.log(icon);
-						console.log(anchor);
-					});
+      //    },function(){
+      //      $(this).find('a').stop()
+      //      .animate({'bottom':'-130px'},300)
+      //      .animate({'bottom':'-120px'},100);
 
-				});
+      //      $(this).find('.icon').stop().animate({'bottom':'0%'},300);
+      //    });
+      // });
 
-			});
-
-			// $(document).ready(function(){
-			// 	$('#navbar > li').hover(
-			// 		function(){
-			// 			$(this).find('a').stop()
-			// 			.animate({'bottom':'5px'},300)
-			// 			.animate({'bottom':'0px'},100);
-
-			// 			$(this).find('.icon').stop()
-			// 			.animate({'bottom':'70%'},300)
-			// 			.animate({'bottom':'65%'},100);
-
-			// 		},function(){
-			// 			$(this).find('a').stop()
-			// 			.animate({'bottom':'-130px'},300)
-			// 			.animate({'bottom':'-120px'},100);
-
-			// 			$(this).find('.icon').stop().animate({'bottom':'0%'},300);
-			// 		});
-			// });
-
-		</script>
-	</body>
+    </script>
+  </body>
 </html>

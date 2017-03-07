@@ -1,7 +1,8 @@
 const js_counter = document.querySelector('.js-counter');
 const js_animate_the_box = document.querySelector('.js-animate-the-box');
-const js_the_box = document.querySelector('.js-the-box');
-const js_the_box_2 = document.querySelector('.js-the-box-2');
+const box = document.querySelector('.box');
+const box_2 = document.querySelector('.box-2');
+const box_3 = document.querySelector('.box-3');
 
 /*Counter and Stop Counter*/
 // var counter = 1;
@@ -31,7 +32,7 @@ function moveTest (elem) {
 }
 
 js_animate_the_box.addEventListener('mousedown', function(){
-  moveTest(js_the_box);
+  moveTest(box);
 });
 /*Move Element*/
 
@@ -70,10 +71,10 @@ function move(element, delta, duration) {
   })
 }
 
-js_the_box_2.addEventListener('mousedown', function(e){
+box_2.addEventListener('mousedown', function(e){
   move(e.target, function(p) {return p});
 })
-
+/*Animate*/
 
 
 

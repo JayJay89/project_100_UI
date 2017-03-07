@@ -78,8 +78,7 @@ section {
   margin-bottom: 10px;
 }
 
-.js-the-box,
-.js-the-box-2 {
+.js-box {
   display: inline-block;
   width: 100px;
   height: 100px;

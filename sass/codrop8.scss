@@ -21,6 +21,7 @@ body {
 
 .consl-content-list {
 	background-color: orange;
+	cursor: pointer;
 	@include clearfix;
 
 	li {
@@ -36,6 +37,7 @@ body {
 	padding: 20px 20px 10px;
 	margin-top: -10px;
 	border-radius: 0px 0px 5px 5px;
+	pointer-events: none;
 
 	&:hover {
 		background-color: rgba(green, 0.8);

@@ -78,6 +78,7 @@ ul {
 
 .consl-content-list {
   background-color: orange;
+  cursor: pointer;
 }
 
 .consl-content-list:before, .consl-content-list:after {
@@ -101,6 +102,7 @@ ul {
   padding: 20px 20px 10px;
   margin-top: -10px;
   border-radius: 0px 0px 5px 5px;
+  pointer-events: none;
 }
 
 .consl-navlink:hover {

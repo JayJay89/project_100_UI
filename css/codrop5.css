@@ -84,6 +84,14 @@ ul {
   position: relative;
 }
 
+.nav li:hover a {
+  bottom: 0px;
+}
+
+.nav li:hover .icon {
+  bottom: 65%;
+}
+
 .nav li a {
   border: 1px solid blue;
   display: inline-block;
@@ -91,6 +99,19 @@ ul {
   position: absolute;
   bottom: -120px;
   pointer-events: none;
+  transition: bottom 0.5s cubic-bezier(0.5, -0.5, 0.5, 1.5);
+}
+
+.nav li .icon {
+  position: absolute;
+  right: 0px;
+  text-align: right;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: red;
+  bottom: 0%;
+  transition: bottom 0.5s cubic-bezier(0.5, -0.5, 0.5, 1.5);
 }
 
 .nav li span {
@@ -105,15 +126,4 @@ ul {
   margin: 0 auto;
   height: 150px;
   background-color: yellow;
-}
-
-.nav li .icon {
-  position: absolute;
-  right: 0px;
-  text-align: right;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background-color: red;
-  bottom: 0%;
 }
