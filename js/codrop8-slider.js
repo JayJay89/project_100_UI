@@ -1,5 +1,5 @@
 // $(function(){
-  
+
 //  var currentSlide = 2;
 //  // If currentSlide is 1, currentSlide == $clickedSlide, this will return false, which means nothing will load.
 //  // This hack change currentSlide to 2, currentSlide != $clickedSlide, therefore the function will run
@@ -7,7 +7,7 @@
 //  select($('.consl-content-list li:first'));
 
 //  $('.consl-content-list li').on('click',function(e){
-//    // clearTimeout(slidemode);
+//    clearTimeout(slidemode);
 //    select($(this));
 //    // e.preventDefault();
 //  })
@@ -49,16 +49,16 @@
 //    });
 //  }
 
-//  // var iterate = function(){
-//  //  var i = parseInt (currentSlide + 1);
-//  //  var lis = $('.consl-content-list').children('li').length;
-//  //  if (i > lis) {
-//  //    i = 1;
-//  //  }
-//  //  select($('.consl-content-list li:nth-child('+i+')'));
-//  // }
+//  var iterate = function(){
+//   var i = parseInt (currentSlide + 1);
+//   var lis = $('.consl-content-list').children('li').length;
+//   if (i > lis) {
+//     i = 1;
+//   }
+//   select($('.consl-content-list li:nth-child('+i+')'));
+//  }
 
-//  // var slidemode = setInterval(iterate,3000);
+//  var slidemode = setInterval(iterate,3000);
 // });
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -66,7 +66,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var list_object = document.querySelectorAll('.consl-content-list li');
   var first_object = document.querySelector('.consl-content-list li:first-child');
 
-  var container_header = document.querySelector('.consl-slider-header > h1');
+  var container_header = document.querySelector('.consl-slider-header');
+  var container_header_text = document.querySelector('.consl-slider-header > h1');
+
   var container_desc = document.querySelector('.consl-slider-description > p');
 
   var test = document.querySelector('#whereami');
@@ -74,16 +76,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
   /*default*/
   updateContent(first_object);
   currentSlide = findIndex(first_object);
-  console.log(currentSlide);
 
   [...list_object].forEach(function(elem){
     elem.addEventListener('mousedown', function(e){
-      updateContent(e.target);
-      currentSlide = findIndex(e.target);
-      console.log(currentSlide);
 
-      console.log(e.target.parentNode);
-      console.log(e.target.parentNode.children);
+     hideHeader()
+      .then(updateContent(e.target))
+      .then(showHeader)
+
+      currentSlide = findIndex(e.target);
+      // console.log(e.target);
     })
   });
 
@@ -94,17 +96,82 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   function updateContent(elem){
-    var description = elem.querySelector('.consl-content-desc');
-    var target_header = elem.querySelector('.consl-content-head');
+    var promise = new Promise(function(resolve, reject){
+      var description = elem.querySelector('.consl-content-desc');
+      var target_header = elem.querySelector('.consl-content-head');
 
-    container_desc.innerHTML = description.innerHTML;
-    container_header.innerHTML = target_header.innerHTML;
+      container_desc.innerHTML = description.innerHTML;
+      container_header_text.innerHTML = target_header.innerHTML;
+      console.log("content updated");
+      resolve("resolved");
+    });
+    return promise;
   }
 
-  function select(slide) {
-    var slide_content = slide.node;
-    console.log(slide);
-    console.log(slide_content);
+  function hideHeader(){
+    var promise = new Promise(function(resolve, reject){
+      container_header.classList.add('hide');
+      console.log("header hidden");
+      resolve("resolved");
+    });
+    return promise;
   }
 
+  function showHeader(){
+    var promise = new Promise(function(resolve, reject){
+      container_header.classList.remove('hide');
+      console.log("header shown");
+      resolve("resolved");
+    });
+    return promise;
+  }
+
+  // /*How Call back Works*/
+  // function runFirst(text, callback){
+  //   console.log(text);
+  //   callback();
+  // }
+
+  // function runSecond(text, callback){
+  //   console.log(text);
+  //   callback();
+  // }
+
+  // function runThird(text){
+  //   console.log(text);
+  // }
+
+  // /*Lead to callback hell*/
+  // runFirst("first_value", function() {
+  //   runSecond("second_value", function() {
+  //     runThird("third_value");
+  //   });
+  // });
+
+  // /*How Promises Works*/
+  // function ActiveFirst(){
+  //   var promise = new Promise(function(resolve, reject){
+  //     console.log("run first");
+  //     resolve("resolved");
+  //   });
+  //   return promise;
+  // }
+
+  // function ActiveSecond(){
+  //   var promise = new Promise(function(resolve, reject){
+  //     console.log("run second");
+  //     resolve("resolved");
+  //   });
+  //   return promise;
+  // }
+
+  // function ActiveThird(){
+  //   var promise = new Promise(function(resolve, reject){
+  //     console.log("run third");
+  //     resolve("resolved");
+  //   });
+  //   return promise;
+  // }
+
+  // ActiveFirst().then(ActiveSecond).then(ActiveThird).then(ActiveFirst);
 });

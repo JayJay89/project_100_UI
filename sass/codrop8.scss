@@ -12,7 +12,6 @@ body {
 
 .consl-container {
 	overflow: hidden;
-	height: 220px;
 }
 
 .consl-content {
@@ -54,9 +53,16 @@ body {
 	margin-top: 20px;
 	padding: 5px 50px;
 	border-radius: 0px 50px 50px 0px;
-
+	position: relative;
+	left: 0px;
+	transition: left 0.5s ease;
+	
 	h1 {
 		margin: 0;
+	}
+
+	&.hide {
+		left: -20px;
 	}
 }
 
