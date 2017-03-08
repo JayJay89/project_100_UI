@@ -79,10 +79,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   [...list_object].forEach(function(elem){
     elem.addEventListener('mousedown', function(e){
-
-     hideHeader()
-      .then(updateContent(e.target))
-      .then(showHeader)
+    
+    hideHeader();
+    container_header.addEventListener("transitionend", function(event){
+      updateContent(e.target, showHeader);
+    });
 
       currentSlide = findIndex(e.target);
       // console.log(e.target);
@@ -95,35 +96,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
     return (index);
   }
 
-  function updateContent(elem){
-    var promise = new Promise(function(resolve, reject){
-      var description = elem.querySelector('.consl-content-desc');
-      var target_header = elem.querySelector('.consl-content-head');
+  function updateContent(elem, callback){
+    var description = elem.querySelector('.consl-content-desc');
+    var target_header = elem.querySelector('.consl-content-head');
 
-      container_desc.innerHTML = description.innerHTML;
-      container_header_text.innerHTML = target_header.innerHTML;
-      console.log("content updated");
-      resolve("resolved");
-    });
-    return promise;
+    container_desc.innerHTML = description.innerHTML;
+    container_header_text.innerHTML = target_header.innerHTML;
+
+    /*
+    Run callback if it's available, updateContent(first_object) doesn't have the second parameter
+    Simply running callback() will return error.
+    */
+    if(callback) {
+      callback();
+    }
   }
 
   function hideHeader(){
-    var promise = new Promise(function(resolve, reject){
-      container_header.classList.add('hide');
-      console.log("header hidden");
-      resolve("resolved");
-    });
-    return promise;
+    container_header.classList.add('hide');
   }
 
   function showHeader(){
-    var promise = new Promise(function(resolve, reject){
-      container_header.classList.remove('hide');
-      console.log("header shown");
-      resolve("resolved");
-    });
-    return promise;
+    container_header.classList.remove('hide');
   }
 
   // /*How Call back Works*/
