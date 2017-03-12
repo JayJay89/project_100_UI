@@ -87,25 +87,20 @@ ul {
   background-repeat: no-repeat;
   background-position: 0px 0px;
   cursor: pointer;
-  z-index: 2;
   position: relative;
-}
-
-.bb-home-icon:hover {
-  background-position: 0px -52px;
-}
-
-.bb-home-icon:hover + .bb-title {
-  color: blue;
 }
 
 .bb-title {
   margin: 0px 0px 10px 0px;
   display: block;
   position: relative;
-  z-index: 2;
   text-align: center;
   transition: all 0.2s ease;
+}
+
+.bb-home-icon,
+.bb-title {
+  pointer-events: none;
 }
 
 .bb-bubble {
@@ -116,14 +111,32 @@ ul {
   padding-top: 0px;
   position: absolute;
   top: 0px;
-  z-index: 0;
   height: 52px;
   width: 52px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.bb-bubble:hover .bb-home-icon {
+  background-position: 0px -52px;
+}
+
+.bb-bubble:hover .bb-home-icon + .bb-title {
+  color: blue;
+}
+
+.bb-bubble.expand {
+  width: 200px;
+  height: 200px;
+  padding-top: 10px;
+  left: -70px;
+  opacity: 1.0;
 }
 
 .bb-bubble ul {
-  display: block;
+  display: none;
   opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .bb-bubble ul li a {
@@ -135,4 +148,8 @@ ul {
 
 .bb-bubble ul li a:hover {
   border-bottom: 1px solid red;
+}
+
+.bb-bubble ul.show {
+  opacity: 1.0;
 }

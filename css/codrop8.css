@@ -120,7 +120,7 @@ ul {
   border-radius: 0px 50px 50px 0px;
   position: relative;
   left: 0px;
-  transition: left 0.5s ease;
+  transition: left 0.3s ease;
 }
 
 .consl-slider-header h1 {
@@ -133,8 +133,13 @@ ul {
 
 .consl-slider-description {
   padding: 20px 30px;
+  transition: margin 0.3s ease;
 }
 
 .consl-slider-description p {
   margin: 0;
+}
+
+.consl-slider-description.extend {
+  margin-top: 30px;
 }

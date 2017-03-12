@@ -1,89 +1,101 @@
 @import "all";
 
 .bb-wrapper {
-	height: 100vh;
-	width: 100%;
-	background-color: gray;
-	display: table;
+  height: 100vh;
+  width: 100%;
+  background-color: gray;
+  display: table;
 }
 
 .bb-container {
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 
 }
 
 .bb {
-	// background-color: green;
-	display: inline-block;
-	position: relative;
+  // background-color: green;
+  display: inline-block;
+  position: relative;
 }
 
 .bb-home-icon {
-	width: 52px;
-	height: 52px;
-	display: inline-block;
-	background-image: url("../images/codrop9/home.png");
-	background-repeat: no-repeat;
-	background-position: 0px 0px;
-	cursor: pointer;
-	z-index: 2;
-	position: relative;
-	
-	&:hover {
-		background-position: 0px -52px;
-		
-		+ .bb-title {
-			color: blue;
-		}
-	}
+  width: 52px;
+  height: 52px;
+  display: inline-block;
+  background-image: url("../images/codrop9/home.png");
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  cursor: pointer;
+  position: relative;
 }
 
 .bb-title {
-	margin: 0px 0px 10px 0px;
-	display: block;
-	position: relative;
-	z-index: 2;
-	text-align: center;
-	transition: all 0.2s ease;
+  margin: 0px 0px 10px 0px;
+  display: block;
+  position: relative;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.bb-home-icon,
+.bb-title {
+  pointer-events: none;
 }
 
 .bb-bubble {
-	background-color: lightblue;
-	border-radius: 50%;
-	display: block;
-	left: 7px;
-	padding-top: 0px;
-	position: absolute;
-	top: 0px;
-	z-index: 0;
-	height: 52px;
-	width: 52px;
+  background-color: lightblue;
+  border-radius: 50%;
+  display: block;
+  left: 7px;
+  padding-top: 0px;
+  position: absolute;
+  top: 0px;
+  height: 52px;
+  width: 52px;
+  cursor: pointer;
+  transition: all 0.5s ease;
 
-	// to
-	
-	// height: 52px;
-	// width: 52px;
-	// padding-top: 90px;
-	// left: -70px;
+  &:hover {
+    .bb-home-icon {
+      background-position: 0px -52px;
+      
+      + .bb-title {
+        color: blue;
+      }
+    }
+  }
 
-	ul {
-		display: block;
-		opacity: 0;
+  &.expand {
+    width: 200px;
+    height: 200px;
+    padding-top: 10px;
+    left: -70px;
+    opacity: 1.0;
+  }
 
-		li {
+  ul {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
 
-			a {
-				display: inline-block;
-				padding: 5px 0px;
-				transition: all 0.5s ease;
-				border-bottom: 1px solid transparent;
+    li {
 
-				&:hover {
-					border-bottom: 1px solid red;
-				}
-			}
-		}
-	}
+      a {
+        display: inline-block;
+        padding: 5px 0px;
+        transition: all 0.5s ease;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+          border-bottom: 1px solid red;
+        }
+      }
+    }
+
+    &.show {
+      opacity: 1.0;
+    }
+  }
 }
