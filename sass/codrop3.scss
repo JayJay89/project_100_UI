@@ -1,67 +1,71 @@
 @import 'all';
 
 .wrapper {
-    height: 100%;
-    width: 90%;
-    margin: 0 auto;
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .nav-bar {
-    width: 100%;
-    text-align: center;
-    display: inline-block;
-    border:1px solid red;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  border:1px solid red;
 }
 
 .top-nav {
-    width: 20%;
-    background-color: red;
+  background-color: red;
+  display: inline-block;
+
+  li {
+    background-color: green;
+    padding: 20px;
+    float: left;
     display: inline-block;
+    border: 1px solid red;
+    position: relative;
+    transition: all 0.5s ease;
+    cursor: pointer;
 
-    li {
-        background-color: green;
-        padding: 20px;
-        float: left;
-        display: inline-block;
-        border: 1px solid red;
-        position: relative;
-        transition: all 0.5s ease;
-        cursor: pointer;
+    &:hover {
+      background-color: red;
 
-        &:hover {
-            background-color: red;
-
-            span {
-                opacity: 1;
-            }
-        }
-
-        span {
-            transition: opacity 1s ease;
-            height: 30px;
-            width: 30px;
-            padding: 20px;
-            display: block;
-            z-index: -1;
-            top: 0px;
-            position: absolute;
-            opacity: 0;
-        }
+      span {
+        opacity: 1;
+      }
     }
+
+    span {
+      transition: opacity 1s ease;
+      height: 30px;
+      width: 30px;
+      padding: 20px;
+      display: block;
+      z-index: -1;
+      top: 0px;
+      position: absolute;
+      opacity: 0;
+      transition: top 0.5s ease, opacity 0.5s ease;
+
+      &.drop {
+        top: 70px;
+      }
+    }
+  }
 }
 
 .icon1 {
-    background-color: green;
+  background-color: green;
 }
 
 .icon2 {
-    background-color: red;
+  background-color: red;
 }
 
 .icon3 {
-    background-color: blue;
+  background-color: blue;
 }
 
 .each-test {
-    
+
 }

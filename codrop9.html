@@ -44,9 +44,9 @@
     <script>
 
     /*
-    mouseenter and mouseleave 
-    handles hover-events better
-    than mouseover and mouseout
+      mouseenter and mouseleave 
+      handles hover-events better
+      than mouseover and mouseout
     */
 
       document.addEventListener("DOMContentLoaded", function(event){
@@ -54,12 +54,6 @@
         var bubbleContent = document.querySelector('.bb-bubble > ul');
 
         console.log(bubble);
-
-        /*
-        mouseenter and mouseleave 
-        handles hover-events better
-        than mouseover and mouseout
-        */
 
         bubble.addEventListener("mouseenter", function(e){
           expandBubble(e.currentTarget, showBubbleContent());

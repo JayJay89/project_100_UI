@@ -69,10 +69,10 @@
         [...targets].forEach(function(elem){
           console.log(elem);
 
-          elem.addEventListener('mouseover', function(e){
+          elem.addEventListener('mouseenter', function(e){
             e.target.classList.add('hover');
           });
-          elem.addEventListener('mouseout', function(e){
+          elem.addEventListener('mouseleave', function(e){
             e.target.classList.remove('hover');
           });
         });

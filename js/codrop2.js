@@ -1,6 +1,6 @@
-var feedback = document.querySelectorAll('.scrollheight-feedback')[0];
-var scrollbox = document.querySelectorAll('.scrollbox')[0];
-var scroll_btn = document.querySelectorAll('#scroll-btn')[0];
+var feedback = document.querySelector('.scrollheight-feedback');
+var scrollbox = document.querySelector('.scrollbox');
+var scroll_btn = document.querySelector('#scroll-btn');
 
 document.addEventListener("DOMContentLoaded", function(event){
 

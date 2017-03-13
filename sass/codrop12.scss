@@ -1,87 +1,98 @@
 @import "all";
 
 .sp {
-    height: 100vh;
-    position: relative;
+  height: 100vh;
+  position: relative;
 }
 
 .sp-gallery-container {
-    background-color: orange;
-    height: 100%;
-    position: absolute;
-    z-index: 0;
-    bottom: 0px;
+  background-color: orange;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  bottom: 0px;
+  transition: height 0.7s ease;
 
-    > li {
-        width: 15%;
-        float: left;
-        margin-right: 10px;
-        cursor: pointer;
-        border: 2px solid transparent;
-        transition: border 0.5s ease;
+  > li {
+    width: 15%;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.5s ease;
 
-        &:hover {
-            border: 2px solid aquamarine;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
+    &:hover {
+      border: 2px solid aquamarine;
     }
+
+    img {
+      max-width: 100%;
+      display: block;
+      pointer-events: none;
+    }
+  }
+
+  &.hide {
+    height: 0%;
+  }
 }
 
 .sp-display-panel {    
-    display: table;
-    // display: none;
-    height: 0%;
-    left: 0px;
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    background-color: rgba(grey, 0.8);
+  display: table;
+  height: 0%;
+  left: 0px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgba(grey, 0.8);
+  transition: height 0.7s ease;
+  z-index: 0;
+  
+  &.expand {
+    height: 100%;
+  }
 }
 
 .sp-display-pointer {
-    border-width: 20px;
-    border-style: solid;
-    position: absolute;
-    cursor: pointer;
-    top: 50%;
-    transform: translate(0%, -50%);
-    opacity: 0;
-    display: none;
-    transition: opacity 0.5s ease;
+  border-width: 20px;
+  border-style: solid;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  transform: translate(0%, -50%);
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease;
 
-    &.right {
-        border-color: transparent blue transparent transparent;
-        left: 0px
-    }
+  &.right {
+    border-color: transparent blue transparent transparent;
+    left: 0px
+  }
 
-    &.left {
-        border-color: transparent transparent transparent blue;
-        right: 0px;
-    }
+  &.left {
+    border-color: transparent transparent transparent blue;
+    right: 0px;
+  }
 
-    &.active {
-        opacity: 1;
-    }
+  &.active {
+    opacity: 1;
+  }
 }
 
 .sp-image-container {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 
-    > img {
-        max-width: 70%;
-        opacity: 0;
-        cursor: pointer;
-        transition: opacity 0.5s ease;
-        
-        &.active {
-            opacity: 1;
-        }
+  > img {
+    max-width: 70%;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+
+    &.active {
+      opacity: 1;
     }
+  }
 }
 

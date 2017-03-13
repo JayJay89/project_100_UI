@@ -49,44 +49,42 @@
     
     <script>
 
-      document.addEventListener("DOMContentLoaded", function(event) { 
-        var tools = document.getElementsByClassName('tools')[0];
-        var nav_bar = document.getElementsByClassName('nav-bar')[0];
+    /*JQUERY*/
+    // $(document).ready(function(){
+    //   $(".image-container").hover (
+    //     function() {
+    //       $(".tools").slideDown('100');
+    //       $(".nav-bar").slideDown('100');
+    //     } ,
+    //     function() {
+    //       $(".tools").slideUp('100');
+    //       $(".nav-bar").slideUp('100');
+    //     }
+    //   );
+    // });
 
-        image_container.addEventListener('mouseover', function(){
-          /*Method - 1 Add a new class hover to it*/
-          // tools.className += " hover";
+    document.addEventListener("DOMContentLoaded", function(event) { 
+      var tools = document.querySelector('.tools');
+      var nav_bar = document.querySelector('.nav-bar');
+      var image_container = document.querySelector('.image-container');
 
-          /*Method - 2 Decide what classes remains when we hovered */
-          nav_bar.className = "bar nav-bar hover";
+      image_container.addEventListener('mouseenter', function(){
+        /*Method - 1 Add a new class hover to it*/
+        // tools.className += " hover";
 
-          /*Method - 3 Add a new class hover to it*/
-          tools.classList.add("hover");
-        });
+        /*Method - 2 Decide what classes remains when we hovered */
+        nav_bar.className = "bar nav-bar hover";
 
-        image_container.addEventListener('mouseout', function(){
-          tools.classList.remove("hover");
-
-          nav_bar.className = "bar nav-bar";
-
-          /*Alternatively toggle the class*/
-          // tools.classList.toggle("hover");
-        });
+        /*Method - 3 Add a new class hover to it*/
+        tools.classList.add("hover");
       });
 
-      /*JQUERY*/
-      // $(document).ready(function(){
-      //   $(".image-container").hover (
-      //     function() {
-      //       $(".tools").slideDown('100');
-      //       $(".nav-bar").slideDown('100');
-      //     } ,
-      //     function() {
-      //       $(".tools").slideUp('100');
-      //       $(".nav-bar").slideUp('100');
-      //     }
-      //   );
-      // });
+      image_container.addEventListener('mouseleave', function(){
+        tools.classList.remove("hover");
+
+        nav_bar.className = "bar nav-bar";
+      });
+    });
 
     </script>
   </body>

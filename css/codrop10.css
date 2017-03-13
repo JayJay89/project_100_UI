@@ -76,6 +76,8 @@ ul {
   height: 68px;
   overflow: hidden;
   position: relative;
+  transition: width 0.5s ease;
+  cursor: pointer;
 }
 
 .rr-circle:before, .rr-circle:after {
@@ -85,6 +87,10 @@ ul {
 
 .rr-circle:after {
   clear: both;
+}
+
+.rr-circle.expand {
+  width: 300px;
 }
 
 .rr-circle img {

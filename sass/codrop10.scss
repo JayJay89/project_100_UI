@@ -17,7 +17,14 @@
 
 	overflow: hidden;
 	position: relative;
+	transition: width 0.5s ease;
+	cursor: pointer;
+
 	@include clearfix;
+
+	&.expand {
+		width: 300px;
+	}
 
 	img {
 		float: left;

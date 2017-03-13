@@ -16,6 +16,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
+	
 	<body>
 		<a class="back-button" href="index.html">Back</a>
 
@@ -37,52 +38,54 @@
 					</li>
 				</ul>
 			</nav>
-	
-
-			<h3>each()</h3>
-			<p>.each is an iterator that is used to iterate over only jQuery objects collection</p>
-
-			<div class="each-test">
-				<input type="text" value="text-box">
-				<p>Lorem ipsum dolor sit amet.</p>
-				<span>Lorem ipsum dolor sit amet.</span>
-				<p>check the console</p>
-			</div>
 		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 		<script src="jquery.min.js"></script>
 		<script>
-			$(document).ready(function(){
+			
+			document.addEventListener('DOMContentLoaded', function(){
 
-				$('.top-nav li').hover(function(){
-					$( this )
-					.find('span').stop().animate({
-						'top':'70px'
-					},400)
-					.css({'zIndex':'10'});
-				},function(){
-					$( this )
-					.find('span').stop().animate({
-						'top':'0px'
-					},1000)
-					.css({'zIndex':'-1'});
-				});
+				var topnav_li = document.querySelectorAll('.top-nav > li');
+				console.log(topnav_li);
 
-				$('.each-test').children().
+				[...topnav_li].forEach(function(elem){
+					
+					elem.addEventListener('mouseenter', function(e){
+						dropSpan(e.target);
+					})
 
-				$('.each-test').children().each(function(index, element){
-					console.log('element at index ' + index + ' is ' + (this.tagName).toLowerCase());
-				});
+					elem.addEventListener('mouseleave', function(e){
+						pullSpan(e.target);
+					})
 
-				$('.each-test').children().each(function(index, element){
-					console.log('current element as dom object:' + element);
-				});
-
-				$('.each-test').children().each(function(index, element){
-					console.log('current element as jQuery object:' + $(this));
-				});
+				})
 			});
+
+			var dropSpan = function(target){
+				target.querySelector('span').classList.add('drop');
+			}
+			var pullSpan = function(target){
+				target.querySelector('span').classList.remove('drop');
+			}
+
+			// $(document).ready(function(){
+
+			// 	$('.top-nav li').hover(function(){
+			// 		$( this )
+			// 		.find('span').stop().animate({
+			// 			'top':'70px'
+			// 		},400)
+			// 		.css({'zIndex':'10'});
+			// 	},function(){
+			// 		$( this )
+			// 		.find('span').stop().animate({
+			// 			'top':'0px'
+			// 		},1000)
+			// 		.css({'zIndex':'-1'});
+			// 	});
+			// });
+
 		</script>
 	</body>
 </html>

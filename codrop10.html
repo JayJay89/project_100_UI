@@ -46,27 +46,53 @@
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 		<script src="jquery.min.js"></script>
 		<script>
-			$(document).ready(function(){
 
-				$('.rr-circle').hover(
-				function(){
-					var $this = $(this);
-					expand($this);
-				},function(){
-					var $this = $(this);
-					collapse($this);
+			// $(document).ready(function(){
+
+			// 	$('.rr-circle').hover(
+			// 	function(){
+			// 		var $this = $(this);
+			// 		expand($this);
+			// 	},function(){
+			// 		var $this = $(this);
+			// 		collapse($this);
+			// 	});
+
+			// 	function expand($object) {
+			// 		$object.find('p').stop().fadeIn(200);
+			// 		$object.stop().animate({width:'300px'},500);
+			// 	};
+
+			// 	function collapse($object) {
+			// 		$object.stop().animate({width:'68px'},500);
+			// 		$object.find('p').stop().fadeOut(300);
+			// 	}
+			// });
+
+			document.addEventListener("DOMContentLoaded", function(){
+
+				var rr_circle = document.querySelectorAll('.rr-circle');
+
+				[...rr_circle].forEach(function(elem){
+					elem.addEventListener("mouseenter", function(e){
+						expandTarget(e.target);
+					});
+
+					elem.addEventListener("mouseleave", function(e){
+						collapseTarget(e.target);
+					});
 				});
-
-				function expand($object) {
-					$object.find('p').stop().fadeIn(200);
-					$object.stop().animate({width:'300px'},500);
-				};
-
-				function collapse($object) {
-					$object.stop().animate({width:'68px'},500);
-					$object.find('p').stop().fadeOut(300);
-				}
 			});
+
+			var expandTarget = function(target){
+				target.classList.add('expand');
+			}
+
+			var collapseTarget = function(target){
+				target.classList.remove('expand');
+			}
+
+
 		</script>
 	</body>
 </html>

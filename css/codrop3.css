@@ -75,7 +75,6 @@ ul {
 }
 
 .top-nav {
-  width: 20%;
   background-color: red;
   display: inline-block;
 }
@@ -109,6 +108,11 @@ ul {
   top: 0px;
   position: absolute;
   opacity: 0;
+  transition: top 0.5s ease, opacity 0.5s ease;
+}
+
+.top-nav li span.drop {
+  top: 70px;
 }
 
 .icon1 {
