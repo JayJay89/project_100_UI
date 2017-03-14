@@ -64,6 +64,7 @@ ul {
 .sp {
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 .sp-gallery-container {
@@ -72,7 +73,7 @@ ul {
   position: absolute;
   z-index: 1;
   bottom: 0px;
-  transition: height 0.7s ease;
+  transition: bottom 0.7s ease;
 }
 
 .sp-gallery-container > li {
@@ -95,23 +96,23 @@ ul {
 }
 
 .sp-gallery-container.hide {
-  height: 0%;
+  bottom: -100%;
 }
 
 .sp-display-panel {
   display: table;
-  height: 0%;
+  height: 100%;
   left: 0px;
   position: absolute;
-  bottom: 0px;
+  bottom: -100%;
   width: 100%;
   background-color: rgba(128, 128, 128, 0.8);
-  transition: height 0.7s ease;
+  transition: bottom 0.7s ease;
   z-index: 0;
 }
 
 .sp-display-panel.expand {
-  height: 100%;
+  bottom: 0px;
 }
 
 .sp-display-pointer {
@@ -122,7 +123,6 @@ ul {
   top: 50%;
   transform: translate(0%, -50%);
   opacity: 0;
-  display: none;
   transition: opacity 0.5s ease;
 }
 

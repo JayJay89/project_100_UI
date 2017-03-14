@@ -113,67 +113,139 @@ currentImgIndex:    0  1  2  3  4
 /*Hence the calculation above*/
 
 document.addEventListener('DOMContentLoaded', function(event){
-  var gallery = document.querySelector('.sp-gallery-container');
-  var gallery_li = document.querySelectorAll('.sp-gallery-container > li');
-  var display_panel = document.querySelector('.sp-display-panel');
-  var image_container = document.querySelector('.sp-image-container');
+  const gallery = document.querySelector('.sp-gallery-container');
+  const gallery_li = document.querySelectorAll('.sp-gallery-container > li');
+  const display_panel = document.querySelector('.sp-display-panel');
+  const image_container = document.querySelector('.sp-image-container');
+  const pointer = document.querySelectorAll('.sp-display-pointer');
+  const first_pointer = document.querySelector('.sp-display-panel .sp-display-pointer:first-child')
+  const prev_btn = document.querySelector('.sp-display-pointer.right');
+  const next_btn = document.querySelector('.sp-display-pointer.left');
 
-  var displayImage = function(target){
-    var target_src = target.querySelector('img').getAttribute('src');
-    var image_tag = document.createElement('img');
+  const displayImage = function(target){
 
-    var expandPanel = function(){
-      display_panel.classList.add('expand');
+    const image_tag = document.createElement('img');
+    const target_src = target.querySelector('img').getAttribute('src');
+
+    const switchDisplay = function(){
       display_panel.addEventListener('transitionend', activateImage);
+      display_panel.classList.add('expand');
+      gallery.classList.add('hide');
+    }
+
+    const createImg = function(callback){
+      image_tag.setAttribute('src', target_src);
+      image_container.appendChild(image_tag);
+
+      if(callback){
+        callback()
+      }
     };
 
-    var activateImage = function(){
+    const activateImage = function(){
+      image_tag.addEventListener('transitionend', activatePointers);
       image_tag.classList.add('active')
     };
 
-    gallery.classList.add('hide');
-    image_tag.setAttribute('src', target_src);
-    image_container.appendChild(image_tag);
-    expandPanel();
+    const activatePointers = function(){
+      next_btn.classList.add('active');
+      prev_btn.classList.add('active');
+    };
+
+    switchDisplay();
+    createImg();
   };
 
-  var hideImage = function(){
+  const hideImage = function(){
+    const image = image_container.querySelector('img');
 
+    const showGallery = function(){
+      gallery.addEventListener('transitionend', removeImg);
+      gallery.classList.remove('hide');
+    }
+
+    const switchDisplay = function(){
+      display_panel.classList.remove('expand');
+      first_pointer.removeEventListener('transitionend', switchDisplay);
+      showGallery();
+    };
+
+    const removeImg = function(){
+      image.remove();
+    };
+
+    const hidePointers = function(){
+      first_pointer.addEventListener('transitionend', switchDisplay);
+      next_btn.classList.remove('active');
+      prev_btn.classList.remove('active');
+    };
+    
+    hidePointers();
   };
 
-  [...gallery_li].forEach(function(elem){
-    elem.addEventListener('click', function(e){
+  // const gallery = document.querySelector('.sp-gallery-container');
+  // const gallery_li = document.querySelectorAll('.sp-gallery-container > li');
+
+  gallery.addEventListener('click',function(e){
+    if(e.target && e.target.nodeName == "LI") {
       displayImage(e.target);
-    });
+    }
   });
 
-  image_container.addEventListener('click', function(e){
+  /*Original Even Handler - Switch to the one above(event delegation)*/
+  // [...gallery_li].forEach(function(elem){
+  //   elem.addEventListener('click', function(e){
+  //     displayImage(e.target);
+  //   });
+  // });
 
+  image_container.addEventListener('click', function(e){
     /*Assigning Event Handlers to the img tag which wasn't added yet*/
     if (e.target.tagName.toLowerCase() === 'img') {
-      console.log("HI");
+      hideImage();
     }
   })
 
 });
 
-
-/* Adding Events to objects that isn't added into the DOM yet
+/*Lesson 1*/
+/* Event Delegation
 
   image_container_image.addEventListener('click', function(e){
     console.log(e.target);
 
     if (e.target.tagName.toLowerCase() === 'img') {
+      //do something
     }
 
     if(e.tagName == 'A' && e.classList.contains("someBtn")){
-        console.log("hi");
+      //do something
     }
 
     if ( e.target.className === 'my-button') {
-         //Do your magic
+      //do something
     }
 
+    if(e.target && e.target.nodeName == "LI") {
+      //do something
+    }
   })
+*/
 
+/*Lesson 2*/
+/*
+
+  This won't work
+  ======================================
+  first_pointer.addEventListener('transitionend', function(){
+    closeGallery();
+  });
+  first_pointer.removeEventListener('transitionend');
+  ======================================
+
+  To remove event listeners, This'll work
+  ======================================
+  first_pointer.addEventListener('transitionend', switchDisplay);
+  first_pointer.removeEventListener('transitionend', switchDisplay);
+  ======================================
 */
