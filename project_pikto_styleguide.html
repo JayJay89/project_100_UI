@@ -27,6 +27,12 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.s7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   </head>
   <body>
     <div class="sg-wrapper clearfix">
@@ -997,6 +1003,29 @@
         <section id="sg_data_modals">
           <h1>Modals</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+
+          <button type="button" class="pikto-btn pikto-btn-info pikto-btn-md" data-toggle="modal" data-target="#myModalDefault">
+            Open Small Modal
+          </button>
+
+          <div class="modal fade" id="myModalDefault" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Default Modal</h4>
+                </div>
+                <div class="modal-body">
+                  This is a default modal.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="pikto-btn pikto-btn-grey" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="pikto-btn pikto-btn-teal" data-dismiss="modal">OK</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </section>
 
         <section id="sg_data_paginations">

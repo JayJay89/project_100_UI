@@ -790,3 +790,573 @@ fieldset[disabled] .pikto-btn {
 .popover-onboarding .tour-btn {
   margin-right: 5px;
 }
+
+/*Modal*/
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+/**=====================================**/
+/* 01 Base */
+/**=====================================**/
+.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1040;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
+.modal.fade .modal-dialog {
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  -o-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.modal-open .modal {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.modal-dialog {
+  position: relative;
+  width: 85%;
+  margin: 30px auto;
+}
+
+/**=====================================**/
+/* 02 Actual Modal */
+/**=====================================**/
+.modal-content {
+  position: relative;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  background-clip: padding-box;
+  outline: 0;
+}
+
+.modal-content .btn-group .pikto-btn + .pikto-btn {
+  margin-left: -1px;
+}
+
+.modal-content .btn-block + .btn-block {
+  margin-left: 0;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1030;
+  background-color: #3f3c4e;
+  -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+.modal-backdrop.fade {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.modal-backdrop.fade.in {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+
+.modal-header {
+  background-color: #f0f0f0;
+  padding: 15px;
+  text-align: center;
+  border-radius: 2px 2px 0px 0px;
+}
+
+.modal-header:before, .modal-header:after {
+  content: " ";
+  display: table;
+}
+
+.modal-header:after {
+  clear: both;
+}
+
+.modal-header .close {
+  margin-top: -2px;
+}
+
+.modal-header .close:focus {
+  outline: none;
+}
+
+.modal-header .level-up i {
+  height: 18px;
+  width: 25px;
+  background-position: -103px -136px;
+}
+
+.modal-title {
+  margin: 0 0 0 14px;
+  line-height: normal;
+  word-spacing: 2px;
+  font-weight: normal;
+}
+
+.modal-body {
+  position: relative;
+  padding: 20px;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  background-color: #f0f0f0;
+  border-radius: 0px 0px 2px 2px;
+  text-align: right;
+  border-top: 1px solid #e8e8e8;
+}
+
+.modal-footer:before, .modal-footer:after {
+  content: " ";
+  display: table;
+}
+
+.modal-footer:after {
+  clear: both;
+}
+
+.modal-header .pikto-btn + .pikto-btn, .modal-footer .pikto-btn + .pikto-btn {
+  margin-left: 7px;
+  margin-bottom: 0;
+}
+
+.modal-generic .modal-body {
+  display: table-cell;
+  height: 130px;
+  vertical-align: middle;
+  word-break: break-word;
+}
+
+.modal-generic .modal-body > p:last-child {
+  margin: 0px;
+}
+
+/**=====================================**/
+/* 03 Measure Scrollbar Width for Padding Body During Modal Show/Hide */
+/**=====================================**/
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+/**=====================================**/
+/* 04 Scale Up the Modal & Modal Sizes */
+/**=====================================**/
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 475px;
+    margin: 30px auto;
+  }
+  .modal-md {
+    width: 600px;
+  }
+  .modal-sm {
+    width: 300px;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 980px;
+  }
+}
+
+/**=====================================**/
+/* 05 Pikto Modal */
+/**=====================================**/
+/* 05a Types of Default Modal (without header, without footer, without header & footer) */
+/**=====================================**/
+.modal-noheaderfooter .modal-header {
+  background-color: transparent;
+  padding-bottom: 0;
+  border: none;
+}
+
+.modal-noheaderfooter .modal-body {
+  padding-top: 0;
+  min-height: 100px;
+}
+
+/**=====================================**/
+/* 05b Function Modal (publish, export, download, piktocard...) */
+/**=====================================**/
+.modal-function .modal-dialog {
+  width: 570px;
+}
+
+.modal-function .modal-body {
+  min-height: 490px;
+}
+
+.modal-function .modal-header {
+  padding-bottom: 0;
+}
+
+.modal-function .modal-header .modal-subtitle {
+  margin-top: 25px;
+}
+
+.modal-function .nav-tabs > li {
+  margin-right: 35px;
+}
+
+.modal-function .nav-tabs > li:last-of-type {
+  margin: 0;
+}
+
+.modal-function .tab-content > .tab-pane {
+  padding: 0;
+}
+
+/**=====================================**/
+/* 05c Payment Modal (related to payment) */
+/**=====================================**/
+.modal-payment .modal-body {
+  padding: 0;
+}
+
+.modal-payment .main-content {
+  text-align: center;
+}
+
+.modal-payment .sub-content {
+  background: i #f0f6f7;
+}
+
+.modal-payment .main-content, .modal-payment .sub-content {
+  padding: 20px;
+}
+
+.modal-payment .modal-footer {
+  text-align: center;
+}
+
+.modal-payment .modal-footer .meta {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+/**to be check & cleared after coding the plans layout**/
+@media screen and (min-width: 768px) {
+  .payment-modal .modal-dialog {
+    width: 460px;
+  }
+}
+
+.pricing-payment-btn {
+  position: relative;
+  height: 50px;
+}
+
+.pricing-payment-btn > input {
+  background-color: transparent;
+  border: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.pricing-payment-btn > input:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/**=====================================**/
+/* 05d Tool Modal (maps, charts) */
+/**=====================================**/
+.modal-tool .modal-content {
+  height: 645px;
+  border-radius: 4px 4px 2px 2px;
+}
+
+.modal-tool .modal-header {
+  height: 63px;
+}
+
+.modal-tool .modal-header .modal-title {
+  margin-left: calc(55px - 15px);
+}
+
+.modal-tool .panel-tab {
+  background-color: #2c2a37;
+  border-radius: 0px 0px 0px 2px;
+}
+
+.modal-tool .panel-tab li {
+  display: block;
+  width: 55px;
+  text-align: center;
+}
+
+.modal-tool .panel-tab li > a {
+  margin-right: 0;
+  padding: 12px 10px;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.modal-tool .panel-tab li.active, .modal-tool .panel-tab li.current {
+  background-color: #fafafa;
+}
+
+.modal-tool .panel-tab li.active > a, .modal-tool .panel-tab li.current > a {
+  border-bottom: none;
+}
+
+.modal-tool .tab-content > .tab-pane {
+  padding: 0;
+}
+
+.modal-tool .wrapper-preview {
+  width: 400px;
+}
+
+.modal-tool .wrapper-preview, .modal-tool .panel-tab {
+  height: calc(645px - 63px);
+  overflow: hidden;
+}
+
+.modal-tool .wrapper-data {
+  width: 525px;
+}
+
+/**=====================================**/
+/* 05e Preview Modal (with leftright arrow) */
+/**=====================================**/
+.modal-preview .modal-dialog {
+  margin: 50px auto;
+}
+
+.modal-preview .modal-header {
+  position: relative;
+}
+
+.modal-preview .modal-header .close {
+  position: absolute;
+  top: -20px;
+  right: -15px;
+}
+
+.modal-preview .modal-header .pikto-btn-lightgrey {
+  padding: 0;
+}
+
+.modal-preview .modal-header .pikto-btn + .pikto-btn {
+  margin-left: 5px;
+}
+
+.modal-preview .wrapper-preview {
+  width: 980px;
+  border-radius: 0 0 0 2px;
+  text-align: center;
+  padding: 0px;
+}
+
+.modal-preview .wrapper-data {
+  width: 525px;
+}
+
+.modal-preview .wrapper-data .container-menu {
+  background: #f0f0f0;
+  padding: 10px 20px 0px 20px;
+}
+
+.modal-preview .wrapper-data .container-content {
+  padding: 20px;
+}
+
+.modal-preview .container-arrow-left, .modal-preview .container-arrow-right {
+  background: #c2c2c2;
+  position: fixed;
+  padding: 0 6px;
+  height: 100px;
+  width: 100px/2;
+  z-index: 1060;
+  top: 45%;
+  transition: all 0.3s ease;
+  -webkit-transform: scale3d 1, 1, 1;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.modal-preview .container-arrow-left i, .modal-preview .container-arrow-right i {
+  position: relative;
+  top: 30px;
+  pointer-events: none;
+}
+
+.modal-preview .container-arrow-left:hover, .modal-preview .container-arrow-left:active, .modal-preview .container-arrow-right:hover, .modal-preview .container-arrow-right:active {
+  opacity: 1;
+}
+
+.modal-preview .container-arrow-left {
+  left: -22px;
+  border-radius: 0 100px 100px 0;
+}
+
+.modal-preview .container-arrow-left i {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.modal-preview .container-arrow-left:hover, .modal-preview .container-arrow-left.active {
+  left: -5px;
+}
+
+.modal-preview .container-arrow-right {
+  right: -15px;
+  border-radius: 100px 0px 0px 100px;
+}
+
+.modal-preview .container-arrow-right i {
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.modal-preview .container-arrow-right:hover, .modal-preview .container-arrow-right.active {
+  right: 2px;
+}
+
+.modal-preview .progress {
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  border-radius: 0px;
+  top: 0;
+}
+
+.modal-preview .progress .progress-bar {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-preview img {
+  width: 100%;
+}
+
+.modal-preview img.lazyloading + .progress, .modal-preview img.lazyload + .progress {
+  display: block;
+}
+
+.modal-preview img.lazyloaded + .progress {
+  display: none;
+}
+
+/**=====================================**/
+/* 05f Tool & Preview Modal Sharing Elements */
+/**=====================================**/
+.modal-tool .modal-lg, .modal-preview .modal-lg {
+  width: 980px;
+}
+
+.modal-tool .modal-header, .modal-preview .modal-header {
+  background-color: #2c2a37;
+  border-bottom: 0;
+}
+
+.modal-tool .modal-header .modal-title, .modal-preview .modal-header .modal-title {
+  color: #fff;
+  line-height: 2;
+}
+
+.modal-tool .modal-body, .modal-preview .modal-body {
+  padding: 0;
+}
+
+.modal-tool .wrapper-preview, .modal-preview .wrapper-preview {
+  overflow: hidden;
+  background: #fafafa;
+}
+
+/**=====================================**/
+/**to be check & cleared after coding the  plans layout**/
+/* 05g Modals in share settings and delete account. */
+/**=====================================**/
+.bootstrap-modal .full-loading-icon {
+  position: relative;
+  left: 48%;
+  margin-top: 11%;
+}
+
+.bootstrap-modal .modal-dialog {
+  margin-top: 5%;
+  border-radius: 10px;
+}
+
+.bootstrap-modal .modal-content {
+  border-radius: 10px;
+  border: 0 none;
+}
+
+.bootstrap-modal .modal-content .modal-header {
+  background: #f0f0f0;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.bootstrap-modal .modal-content .modal-header h4 {
+  color: #93a2a4;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.bootstrap-modal .modal-content .modal-footer {
+  border-top: none;
+  margin-top: 0;
+  background: #eaf2ef;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.bootstrap-modal .modal-content .modal-footer .pikto-btn-lightgrey {
+  margin-right: 0.35em;
+}

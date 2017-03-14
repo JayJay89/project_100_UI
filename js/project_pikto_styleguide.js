@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     elem.classList.remove('slide-in');
   });
   $("button[data-target='sg_data_border_radii']").parent('li').addClass('active');
-  $("#sg_data_border_radii").addClass('active slide-in');
+  $("#sg_data_modals").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;

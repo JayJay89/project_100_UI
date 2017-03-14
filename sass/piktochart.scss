@@ -182,6 +182,64 @@ $light-red-2:           #f98484;
   -moz-box-shadow: none;
   box-shadow: none;
 }
+
+//Pikto Mixins
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -ms-transform:   $transforms; // IE9 only
+  -o-transform:   $transforms;
+  transform:   $transforms;
+}
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+@mixin transition-transform($transition...) {
+  -webkit-transition: -webkit-transform $transition;
+  -moz-transition: -moz-transform $transition;
+  -o-transition: -o-transform $transition;
+  transition: transform $transition;
+}
+@mixin rotate($degrees) {
+  @include transform(rotate(#{$degrees}deg));
+}
+@mixin opacity($opacity, $important: no) {
+  @if $important == isImportant {
+    opacity: $opacity !important;
+    $opacity-ie: $opacity * 100 !important;
+    filter: alpha(opacity=$opacity-ie) !important; //IE8
+  } @else {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+  }
+}
+@mixin min-screen($width) {
+  @media screen and (min-width:$width) {
+    @content;
+  }
+}
+@mixin max-screen($width) {
+  @media screen and (max-width:$width) {
+    @content;
+  }
+}
+
 /*Class*/
 .inset-shadow {
   @include box-shadow (0px, 2px, 1px, rgba(black, 0.2), $inset: true);
@@ -217,6 +275,7 @@ $light-red-2:           #f98484;
     border-radius: 0px 0px 0px $radius;
   }
 }
+
 /*Class*/
 .border-radius-6 {
   @include border-radius(6px, all);
@@ -847,3 +906,608 @@ $popover-arrow-width:       6px !default;
   }
 }
 
+/*Modal*/
+.fade {
+  opacity: 0;
+  @include transition(opacity 0.15s linear);
+}
+.fade.in {
+  opacity: 1;
+}
+
+/**=====================================**/
+/* 01 Base */
+/**=====================================**/
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+
+// Kill the scroll on the body
+.modal-open {
+  overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1040;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .modal-dialog {
+    @include translate(0, -25%);
+    @include transition-transform(0.3s ease-out);
+  }
+  &.in .modal-dialog { @include translate(0, 0) }
+}
+
+.modal-open .modal {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: 85%;
+  margin: 30px auto;
+}
+
+/**=====================================**/
+/* 02 Actual Modal */
+/**=====================================**/
+.modal-content {
+  position: relative;
+  border-radius: 2px;
+  @include inset-shadow;
+  background-color: white;
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: 0;
+
+  // but override that for button groups
+  .btn-group .pikto-btn + .pikto-btn {
+    margin-left: -1px;
+  }
+
+  // and override it for block buttons as well
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+}
+
+// Modal background
+.modal-backdrop {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1030;
+  background-color: $dark-purple-grey-07;
+
+  // Fade for backdrop
+  &.fade { @include opacity(0); }
+  &.fade.in { @include opacity(0.7); }
+
+  @include transition(opacity 0.15s linear);
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.modal-header {
+  background-color: $grey-light;
+  padding: 15px;
+  text-align: center;
+  border-radius: 2px 2px 0px 0px;
+  @include clearfix;
+
+  .close {
+    // Close icon
+    margin-top: -2px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .level-up {
+    i {
+      height: 18px;
+      width: 25px;
+      background-position: -103px -136px;
+    }
+  }
+}
+
+// Title text within header
+.modal-title {
+  margin: 0 0 0 14px;
+  line-height: normal;
+  word-spacing: 2px;
+  font-weight: normal;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  position: relative;
+  padding: 20px;
+}
+
+// Footer (for actions)
+.modal-footer {
+  padding: 15px 20px;
+  background-color: $grey-light;
+  border-radius: 0px 0px 2px 2px;
+  text-align: right; // right align buttons
+  border-top: 1px solid $grey;
+  @include clearfix; // clear it in case folks use .pull-* classes on buttons
+}
+
+.modal-header, .modal-footer {
+  // Properly space out buttons
+  .pikto-btn + .pikto-btn {
+    margin-left: 7px;
+    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+}
+
+.modal-generic {
+  .modal-body {
+    display: table-cell;
+    height: 130px;
+    vertical-align: middle;
+    word-break: break-word;
+
+    > p:last-child {
+      margin: 0px;
+    }
+  }
+}
+
+/**=====================================**/
+/* 03 Measure Scrollbar Width for Padding Body During Modal Show/Hide */
+/**=====================================**/
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+/**=====================================**/
+/* 04 Scale Up the Modal & Modal Sizes */
+/**=====================================**/
+@media (min-width: 768px) {
+
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    width: 475px;
+    margin: 30px auto;
+  }
+
+  // Modal sizes
+  .modal-md {
+    width: 600px;
+  }
+
+  .modal-sm {
+    width: 300px;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 980px;
+  }
+}
+
+/**=====================================**/
+/* 05 Pikto Modal */
+/**=====================================**/
+/* 05a Types of Default Modal (without header, without footer, without header & footer) */
+/**=====================================**/
+.modal-noheaderfooter {
+
+  .modal-header {
+    background-color: transparent;
+    padding-bottom: 0;
+    border: none;
+  }
+
+  .modal-body {
+    padding-top: 0;
+    min-height: 100px;
+  }
+}
+
+/**=====================================**/
+/* 05b Function Modal (publish, export, download, piktocard...) */
+/**=====================================**/
+.modal-function {
+
+  .modal-dialog {
+    width: 570px;
+  }
+
+  .modal-body {
+    min-height: 490px;
+  }
+
+  .modal-header {
+    padding-bottom: 0;
+
+    // Subtitle text below the title
+    .modal-subtitle {
+      margin-top: 25px;
+    }
+  }
+
+  .nav-tabs > li {
+    margin-right: 35px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  .tab-content {
+
+    > .tab-pane {
+      padding: 0;
+    }
+  }
+}
+
+/**=====================================**/
+/* 05c Payment Modal (related to payment) */
+/**=====================================**/
+.modal-payment {
+
+  .modal-body {
+    padding: 0;
+  }
+
+  .main-content {
+    text-align: center;
+  }
+
+  .sub-content {
+    background: i$light-blue-grey-02;
+  }
+
+  .main-content, .sub-content {
+    padding: 20px;
+  }
+
+  .modal-footer {
+    text-align: center;
+
+    .meta {
+      margin-top: 8px;
+      font-size: 12px;
+    }
+  }
+}
+
+/**to be check & cleared after coding the plans layout**/
+.payment-modal {
+
+  .modal-dialog {
+
+    @include min-screen(768px) {
+      width: 460px;
+    }
+  }
+}
+
+.pricing-payment-btn {
+  position: relative;
+  height: 50px;
+
+  > input {
+    background-color: transparent;
+    border: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+
+    &:focus {
+      @include no-shadow;
+    }
+  }
+}
+
+/**=====================================**/
+/* 05d Tool Modal (maps, charts) */
+/**=====================================**/
+.modal-tool {
+
+  .modal-content {
+    height: 645px;
+    border-radius: 4px 4px 2px 2px;
+  }
+
+  .modal-header {
+    height: 63px; //to calculate .wrapper-preview, .panel-tab height
+
+    .modal-title {
+      margin-left: calc(55px - 15px);
+    }
+  }
+
+  .panel-tab {
+    background-color: $dark-purple-grey-03;
+    border-radius: 0px 0px 0px 2px;
+
+    li {
+      display: block;
+      width: 55px;
+
+      text-align: center;
+
+      > a {
+        margin-right: 0; //to overwrite .nav-tabs > li.active > a
+        padding: 12px 10px;
+        @include opacity(1); //to overwrite .nav-tabs > li > a
+      }
+
+      &.active, &.current {
+        background-color: $grey-lighter;
+
+        > a {
+          border-bottom: none; //to overwrite the .nav-tabs > li.active > a
+        }
+      }
+    }
+  }
+
+  .tab-content {
+
+    > .tab-pane {
+      padding: 0;
+    }
+  }
+
+  .wrapper-preview {
+    width: 400px;
+  }
+
+  .wrapper-preview, .panel-tab {
+   height: calc(645px - 63px);
+   overflow: hidden;
+ }
+
+ .wrapper-data {
+  width: (980px - 55px - 400px);
+  }
+}
+
+/**=====================================**/
+/* 05e Preview Modal (with leftright arrow) */
+/**=====================================**/
+.modal-preview {
+
+  .modal-dialog {
+    margin: 50px auto;
+  }
+
+  .modal-header {
+    position: relative;
+
+    .close{
+      position: absolute;
+      top: -20px;
+      right: -15px;
+    }
+
+    .pikto-btn-lightgrey {
+      padding: 0;
+    }
+
+    .pikto-btn + .pikto-btn {
+      margin-left: 5px;
+    }
+  }
+
+  .wrapper-preview {
+    width: 980px;
+    border-radius: 0 0 0 2px;
+    text-align: center;
+    padding: 0px;
+  }
+
+  .wrapper-data {
+    width: 525px;
+
+    .container-menu {
+      background: #f0f0f0;
+      padding: 10px 20px 0px 20px;
+    }
+
+    .container-content {
+      padding: 20px;
+    }
+  }
+
+  .container-arrow-left, .container-arrow-right {
+    background: #c2c2c2;
+    position: fixed;
+    padding: 0 6px;
+    height: 100px;
+    width: 100px/2;
+    z-index: 1060;
+    top: 45%;
+    transition: all 0.3s ease;
+    -webkit-transform: scale3d (1,1,1); // fix for bug in chrome: http://stackoverflow.com/questions/15152470/chrome-rendering-issue-fixed-position-anchor-with-ul-in-body
+    opacity: 0.5;
+    cursor: pointer;
+
+    i {
+      position: relative;
+      top: 30px;
+      pointer-events: none;
+    }
+
+    &:hover, &:active {
+      opacity: 1;
+    }
+  }
+
+  .container-arrow-left {
+    left: -22px;
+    border-radius: 0 100px 100px 0;
+
+    i {
+      @include rotate(90);
+    }
+
+    &:hover, &.active {
+      left: -5px;;
+    }
+  }
+
+  .container-arrow-right {
+    right: -15px;
+    border-radius: 100px 0px 0px 100px;
+
+    i {
+      @include rotate(270);
+    }
+
+    &:hover, &.active {
+      right: 2px;
+    }
+  }
+
+  .progress {
+    position: absolute;
+    height: 8px;
+    width: 100%;
+    border-radius: 0px;
+    top: 0;
+
+    .progress-bar {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  img {
+    width: 100%;
+
+    &.lazyloading + .progress, &.lazyload + .progress {
+      display: block;
+    }
+
+    &.lazyloaded + .progress {
+      display: none;
+    }
+  }
+}
+
+/**=====================================**/
+/* 05f Tool & Preview Modal Sharing Elements */
+/**=====================================**/
+.modal-tool, .modal-preview {
+
+  .modal-lg {
+    width: 980px;
+  }
+
+  .modal-header {
+    background-color: $dark-purple-grey-03;
+    border-bottom: 0;
+
+    .modal-title {
+      color: $white;
+      line-height: 2;
+    }
+  }
+
+  .modal-body {
+    padding: 0;
+  }
+
+  .wrapper-preview {
+    overflow: hidden;
+    background: $grey-lighter;
+
+    // img {
+    //     width: 100%;
+    // }
+  }
+}
+
+/**=====================================**/
+/**to be check & cleared after coding the  plans layout**/
+/* 05g Modals in share settings and delete account. */
+/**=====================================**/
+.bootstrap-modal {
+
+  .full-loading-icon {
+    position: relative;
+    left: 48%;
+    margin-top: 11%;
+  }
+
+  .modal-dialog {
+    margin-top: 5%;
+    border-radius: 10px;
+  }
+
+  .modal-content {
+    border-radius: 10px;
+    border: 0 none;
+
+    .modal-header {
+      background: $grey-light;
+      border-radius: 8px 8px 0px 0px;
+
+      h4 {
+        color: $teal-grey-light;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+    }
+
+    .modal-body {
+      // background: $modal-backdrop-bg;
+    }
+
+    .modal-footer {
+      border-top: none;
+      margin-top: 0;
+      background: $teal-grey-lighter;;
+      border-radius: 0px 0px 8px 8px;
+
+      .pikto-btn-lightgrey {
+        margin-right: 0.35em;
+      }
+    }
+  }
+}
+
+// .fade {
+//   opacity: 0;
+//   @include transition(opacity 0.15s linear);
+
+//   &.in {
+//     opacity: 1;
+//   }
+// }
