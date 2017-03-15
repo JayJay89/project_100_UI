@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     elem.classList.remove('active');
     elem.classList.remove('slide-in');
   });
-  $("button[data-target='sg_data_border_radii']").parent('li').addClass('active');
-  $("#sg_data_modals").addClass('active slide-in');
+  $("button[data-target='sg_data_switches']").parent('li').addClass('active');
+  $("#sg_data_switches").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
