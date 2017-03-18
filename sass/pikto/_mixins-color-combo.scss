@@ -1,0 +1,50 @@
+/*Color Combo Factory*/
+@mixin color-combo ($target, $color, $hover, $active){
+  @if $target == 'color' {
+    color: $color;
+    &:hover {color: $hover;}
+    &:active {color: $active;}
+  }
+  @if $target == 'bgcolor' {
+    background-color: $color;
+    &:hover {background-color: $hover;}
+    &:active {background-color: $active;}
+  }
+}
+
+/*Color Combo Sets*/
+/*Target is for targeting either the color or the bgcolor*/
+@mixin teal-combo ($target) {
+  @include color-combo ($target, $teal, $teal-dark, $teal-darker)
+}
+@mixin magenta-combo ($target) {
+  @include color-combo ($target, $magenta, $magenta-dark, $magenta-darker)
+}
+@mixin grey-combo ($target) {
+  @include color-combo ($target, $teal-grey, $dark-purple-grey-07, $dark-purple-grey-01)
+}
+@mixin grey-combo-2 ($target) {
+  @include color-combo ($target, $white, $grey-light, $grey-dark)
+}
+@mixin lightgrey-combo ($target) {
+  @include color-combo ($target, $grey-light, $grey-darker, $light-purple-grey-04)
+}
+@mixin bluegrey-outline-combo ($target) {
+  @include color-combo ($target, transparent, $light-purple-grey-04, $light-purple-grey-01)
+}
+@mixin purplegrey-combo ($target) {
+  @include color-combo ($target, $light-purple-grey-03, $dark-purple-grey-07, $dark-purple-grey-07)
+}
+
+@mixin success-combo ($target) {
+  @include color-combo ($target, $light-green, $light-green-dark, $light-green-darker)
+}
+@mixin info-combo ($target) {
+  @include color-combo ($target, $light-blue, $light-blue-dark, $light-blue-darker)
+}
+@mixin warning-combo ($target) {
+  @include color-combo ($target, $light-yellow, $light-yellow-dark, $light-yellow-darker)
+}
+@mixin danger-combo ($target) {
+  @include color-combo ($target, $light-red, $light-red-dark, $light-red-darker)
+}

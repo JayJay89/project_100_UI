@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     elem.classList.remove('active');
     elem.classList.remove('slide-in');
   });
-  $("button[data-target='sg_data_switches']").parent('li').addClass('active');
-  $("#sg_data_switches").addClass('active slide-in');
+  $("button[data-target='sg_data_button']").parent('li').addClass('active');
+  $("#sg_data_button").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
@@ -73,13 +73,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     injectCode(elem);
     populateNumber(elem);
   });
-
-  /*Initialize highlight.js*/
-  // $(document).ready(function() {
-  //   $('pre code').each(function(i, block) {
-  //     hljs.highlightBlock(block);
-  //   });
-  // });
 
   [...sg_button_list_btn].forEach( function(elem) {
     elem.addEventListener('mousedown', function(){
@@ -138,7 +131,50 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
   });
 
+  /*Slider Config*/
+  /*http://codepen.io/ryanttb/pen/fHyEJ*/
+  // .firefox
+  var isFF = true;
+  var addRule = (function (style) {
+    var sheet = document.head.appendChild(style).sheet;
+    return function (selector, css) {
+      if ( isFF ) {
+        if ( sheet.cssRules.length > 0 ) {
+          sheet.deleteRule( 0 );
+        }
+      
+        try {
+          sheet.insertRule(selector + "{" + css + "}", 0);
+        } catch ( ex ) {
+          isFF = false;
+        }
+      }    
+    };
+  })(document.createElement("style"));
+
+  var background_gradient = 'background: linear-gradient(to bottom, #1CAFA2 0%, #1CAFA2 50%, #C2C2C2 50%, #C2C2C2 100%);'
+  /*
+    linear-gradient(to right, #1CAFA2 0%, #1CAFA2 ' + this.value + '%, #C2C2C2 ' + this.value + '%, #C2C2C2 100%)
+  */
+  var slider = document.querySelectorAll('input[type="range"]');
+
+  if ( 'webkitRequestAnimationFrame' in window ) {
+    $( 'input[type="range"]' ).addClass( 'webkit-track' );
+  }
+
+  addRule( 'input[type="range"]::-moz-range-track', 'background: linear-gradient(to right, green, #005555 75%, #C2C2C2)' );
+
+  $( 'input[type="range"]' ).on( 'input', function( ) {
+    addRule( 'input[type="range"]::-moz-range-track', 'background: linear-gradient(to right, #1CAFA2 0%, #1CAFA2 ' + this.value + '%, #C2C2C2 ' + this.value + '%, #C2C2C2 100%)' );
+    
+    if ( $( this ).hasClass( 'webkit-track' ) ) {
+      $( this ).css( 'background', 'linear-gradient(to right, #1CAFA2 0%, #1CAFA2 ' + this.value + '%, #C2C2C2 ' + this.value + '%, #C2C2C2 100%)' );
+    }
+  } );
+
+  $( 'input[type="range"]' ).trigger( 'input' );
 });
+
 
 
 /* Old Codes

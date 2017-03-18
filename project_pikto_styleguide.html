@@ -10,6 +10,7 @@
 
   <!-- Base Pikto File-->
   <link href="css/piktochart.css" rel="stylesheet">
+  <link href="css/piktochart2.css" rel="stylesheet">
 
   <!-- Styleguide CSS-->
   <link href="css/project_pikto_styleguide.css" rel="stylesheet">
@@ -86,7 +87,6 @@
                 <li><button class="sg-btn" data-target="sg_data_cards">Cards</button></li>
                 <li><button class="sg-btn" data-target="sg_data_feedbacks">Feedbacks</button></li>
                 <li><button class="sg-btn" data-target="sg_data_file">File Selector</button></li>
-                <li><button class="sg-btn" data-target="sg_data_forms">Forms</button></li>
                 <li><button class="sg-btn" data-target="sg_data_icon">Icons & Illustrations</button></li>
                 <li><button class="sg-btn" data-target="sg_data_label">Label/Badges</button></li>
                 <li><button class="sg-btn" data-target="sg_data_modals">Modals</button></li>
@@ -96,10 +96,20 @@
                 <li><button class="sg-btn" data-target="sg_data_popover">Popover</button></li>
                 <li><button class="sg-btn" data-target="sg_data_preloader">Preloader</button></li>
                 <li><button class="sg-btn" data-target="sg_data_progressbar">Progress Bar</button></li>
-                <li><button class="sg-btn" data-target="sg_data_sliders">Sliders</button></li>
                 <li><button class="sg-btn" data-target="sg_data_tables">Tables</button></li>
                 <li><button class="sg-btn" data-target="sg_data_toolbar">Toolbar</button></li>
                 <li><button class="sg-btn" data-target="sg_data_tooltip">Tooltip</button></li>
+              </ul>
+            </li>
+
+            <li class="sg-dropdown">
+              <input id="styleguide_form" type="radio" name="tabs">
+              <label for="styleguide_form">Form Elements</label>
+              <ul class="sg-button-list sg-button-list--inner">
+                <li><button class="sg-btn" data-target="sg_data_checkboxes">Checkboxes</button></li>
+                <li><button class="sg-btn" data-target="sg_data_inputs">Inputs</button></li>
+                <li><button class="sg-btn" data-target="sg_data_sliders">Sliders</button></li>
+                <li><button class="sg-btn" data-target="sg_data_selects">Selects</button></li>
               </ul>
             </li>
 
@@ -113,15 +123,7 @@
               </ul>
             </li>
 
-            <li class="sg-dropdown">
-              <input id="styleguide_form" type="radio" name="tabs">
-              <label for="styleguide_form">Form Elements</label>
-              <ul class="sg-button-list sg-button-list--inner">
-                <li><button class="sg-btn" data-target="sg_data_form_1">Form 1</button></li>
-                <li><button class="sg-btn" data-target="sg_data_form_2">Form 2</button></li>
-                <li><button class="sg-btn" data-target="sg_data_form_3">Form 3</button></li>
-              </ul>
-            </li>
+
 
             <li class="sg-dropdown">
               <input id="styleguide_icon" type="radio" name="tabs">
@@ -773,6 +775,217 @@
         <section id="sg_data_accordion">
           <h1>Accordion</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+          <div id="accordion" class="panel-group sd-panel-group" >
+            <!-- Shapes and Lines -->
+            <div class="panel panel-default panel-border">
+              <div class="panel-heading" >
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#pikto-shape-tab" class="collapsed">
+                    <i class="icon-arrow-grey-right"></i> Shapes & Lines
+                  </a>
+                </h4>
+              </div>
+
+              <div id="pikto-shape-tab" class="panel-collapse collapse">
+                <div id="pikto-mainlist-shape" class="pikto-mainlist panel-body pikto-shapes">
+                  <h4>Basic Shapes</h4>
+                  <%= image_tag 'v4/b/loading.gif', id: "pikto-mainlist-shape-loading", class: "pikto-loading-med" %>
+                  <div id="pikto-chart-basic-shape-container">
+                    <ul id="pikto-mainlist-shape-ul" class="imageLoadList">
+                      <% # ICON LISTS WILL APPEAR HERE %>
+                    </ul>
+                  </div>
+
+                  <div id="pikto-chart-line-container" class="graphics-lines">
+                    <h4>Lines</h4>
+                    <ul id="pikto-mainlist-line-ul" class="imageLoadList">
+                      <li class="ttips" data-placement="right" data-toggle="tooltip" data-original-title="Add a line">
+                        <i id="pikto-chart-line" data-oType="line" class="icon-tool-line"></i>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Icons -->
+            <div class="panel panel-default panel-border">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#pikto-svg-tab" class="collapsed">
+                    <i class="icon-arrow-grey-right"></i> Icons
+                  </a>
+                </h4>
+              </div>
+
+              <div id="pikto-svg-tab" class="panel-collapse collapse">
+                <!-- Add class 'in' to start open. -->
+                <div class="tab-panel">
+                  <div class="pikto-search-input clearfix pikto-hidden">
+                    <div class="search-container clearfix">
+                      <input id="pikto-search-svg" type="search" data-type="svg" placeholder="Search icon here" />
+                      <button id="pikto-search-svg-btn" class="search-icon icon-search-darkpurple-small" name="search"></button>
+                      <button id="pikto-clearsearch-svg-btn" class="search-icon clearsearch-sidepane icon-clearsearch-small pikto-hidden" data-type="svg" title="Clear Search..."></button>
+                    </div>
+                  </div>
+
+                  <select id="pikto-categories-svg" class="pikto-select-dark"></select>
+
+                  <div id="icon-style-separation">
+                    <ul class="icons-filter">
+                      <li id="icons-filter-all" data-filter="All" class="active">
+                        <span>All</span>
+                      </li>
+                      <li id="icons-filter-pro" data-filter="Multi" class="">
+                        <span>Color</span>
+                      </li>
+                      <li id="icons-filter-free" data-filter="Single" class="">
+                        <span>Mono</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div id="pikto-mainlist-svg" class="panel-body pikto-search-result pikto-mainlist">
+                  <div id="pikto-mainlist-svg-loading" class="pikto-loading-med pikto-leftpane-loading">
+                    <%= image_tag 'v4/b/loading.gif' %>
+                    <p>
+                      Loading Icons...
+                    </p>
+                  </div>
+
+                  <div id="pikto-mainlist-svg_message" class="pikto-hidden">
+                    <div class="icons-not-found">
+                      <i class="icon-not-found-emo"></i>
+                      <p class="message-desc">
+                        Icons not found
+                        <br>
+                        Please try other keywords
+                      </p>
+                    </div>
+                  </div>
+
+                  <ul id="pikto-mainlist-svg-ul" class="imageLoadList">
+                    <% # ICON LISTS WILL APPEAR HERE %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photos -->
+            <div class="panel panel-default panel-border">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#pikto-img-tab" class="collapsed">
+                    <i class="icon-arrow-grey-right"></i> Photos
+                  </a>
+                </h4>
+              </div>
+
+              <div id="pikto-img-tab" class="panel-collapse collapse">
+                <div class="tab-panel">
+                  <div class="pikto-search-input clearfix pikto-hidden">
+                    <div class="search-container clearfix">
+                      <input id="pikto-search-photo" type="search" data-type="img" placeholder="Search photo here" />
+                      <button id="pikto-search-photo-btn" class="search-icon icon-search-darkpurple-small" name="search"></button>
+                      <button id="pikto-clearsearch-photo-btn" class="search-icon clearsearch-sidepane icon-clearsearch-small pikto-hidden" data-type="img" title="Clear Search..."></button>
+                    </div>
+                  </div>
+
+                  <select id="pikto-categories-img" class="pikto-select-dark"></select>
+
+                </div>
+
+                <div id="pikto-mainlist-img" class="panel-body pikto-search-result pikto-mainlist">
+                  <div id="pikto-mainlist-img-loading" class="pikto-loading-med pikto-leftpane-loading">
+                    <%= image_tag 'v4/b/loading.gif' %>
+                    <p>
+                      Loading Photos...
+                    </p>
+                  </div>
+                  <ul id="pikto-mainlist-img-ul" class="imageLoadList graphics-photos">
+                    <li id="pikto-photos-addyourownimages" data-placement="bottom" data-html="true" data-toggle="tooltip" data-original-title="Add your<br />own images">
+                    <a>
+                      <i class="icon-upload-plus"></i>
+                    </a>
+                  </li>
+                </ul>
+                <div id="pikto-mainlist-img_message" class="pikto-hidden">
+                  <div class="icons-not-found">
+                    <i class="icon-not-found-emo"></i>
+                    <p class="message-desc">
+                      No relevant photos were found.
+                      <br>
+                      Please try a different keyword, or upload your own photo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo Frames -->
+          <div class="panel panel-default frametext-show-flag frametext-photoframe panel-border">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#pikto-photoframe-tab" class="collapsed">
+                  <i class="icon-arrow-grey-right"></i> Photo Frame
+                </a>
+              </h4>
+            </div>
+
+            <div id="pikto-photoframe-tab" class="panel-collapse collapse">
+              <div id="pikto-mainlist-photoframe" class="panel-body pikto-mainlist">
+                <div id="pikto-mainlist-photoframe-loading" class="pikto-loading-med pikto-leftpane-loading">
+                  <%= image_tag 'v4/b/loading.gif' %>
+                </div>
+                <ul id="pikto-mainlist-photoframe-ul" class="imageLoadList">
+                  <% # ICON LISTS WILL APPEAR HERE %>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Designer Icons for Designer -->
+          <% if current_user.has_any_role? :designer, :supermin %>
+          <!-- ONLY SHOWN FOR DESIGNER TO ABLE TO ACCESS UNPUBLISHED SVG -->
+          <div class="panel panel-default panel-border">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#pikto-desvg-tab" class="collapsed">
+                  <i class="icon-arrow-grey-right"></i>Designer Icons
+                </a>
+              </h4>
+            </div>
+
+            <div id="pikto-desvg-tab" class="panel-collapse collapse">
+              <!-- Add class 'in' to start open. -->
+              <div id="pikto-mainlist-desvg" class="panel-body pikto-search-result pikto-mainlist">
+                <div id="pikto-mainlist-desvg-loading" class="pikto-loading-med pikto-leftpane-loading">
+                  <%= image_tag 'v4/b/loading.gif' %>
+                  <p>
+                    Loading Designer Icons...
+                  </p>
+                </div>
+                <div id="pikto-mainlist-desvg_message" class="pikto-hidden">
+                  <div class="icons-not-found">
+                    <i class="icon-not-found-emo"></i>
+                    <p class="message-desc">
+                      Designer Icons not found
+                      <br>
+                      Please try other keywords
+                    </p>
+                  </div>
+                </div>
+                <ul id="pikto-mainlist-desvg-ul" class="imageLoadList">
+                  <% # ICON LISTS WILL APPEAR HERE %>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <% end %>
+          </div> <!-- Accordion -->
+
         </section>
 
         <section id="sg_data_alerts">
@@ -947,73 +1160,6 @@
         <section id="sg_data_file">
           <h1>File Selector</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_forms">
-          <h1>Forms</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-          <div>
-            <label class="pikto-label" for="styleguide-chkbox-1">
-              <input id="styleguide-chkbox-1" type="checkbox" name="name" value="value" checked>
-              <span class="pikto-checkbox pikto-checkbox-thin"></span>
-              <span>Pikto Checkbox</span>
-            </label>
-          </div>
-
-          <div>
-            <label class="pikto-label" for="styleguide-chkbox-2">
-              <input id="styleguide-chkbox-2" type="checkbox" name="name" value="value">
-              <span class="pikto-checkbox pikto-checkbox-thin"></span>
-              <span>Pikto Checkbox</span>
-            </label>
-          </div>
-
-          <div class="pikto-disabled pikto-no-events">
-            <label class="pikto-label" for="styleguide-chkbox-3">
-              <input id="styleguide-chkbox-3" type="checkbox" name="name" value="value">
-              <span class="pikto-checkbox pikto-checkbox-thin"></span>
-              <span>Pikto Checkbox</span>
-            </label>
-          </div>
-
-          <h4>Forms - Text Field</h4>
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
-            <span class="input-group-btn">
-              <button class="pikto-btn pikto-btn-teal" type="button">Go!</button>
-            </span>
-          </div>
-          <div class="inline-icon-input left-icon">
-            <i class="icon-edit-darkpurple"></i>
-            <input type="text" placeholder="Search for...">
-          </div>
-          <div class="search-container">
-            <div class="inline-icon-input left-icon">
-              <i class="icon-search-lightpurple"></i>
-              <input class="search-bar" name="search" type="text" placeholder="Search for countries">
-            </div>
-          </div>
-          <div class="search-container">
-            <div class="inline-icon-input right-icon">
-              <input class="search-bar" name="search" type="text" placeholder="Search for countries">
-              <i class="icon-search-lightpurple"></i>
-            </div>
-          </div>
-          <div class="search-container">
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-          </div>
-          <div class="search-container">
-            <form class="has-error">
-              <div class="form-control">
-                <input placeholder="Error form" id="" class="form-control " type="text" autofocus value="" name="">
-                <div class="alert alert-danger-attention">
-                  <span class="alert-title up-arrow">Error! </span>
-                  Invalid email or password.
-                </div>
-              </div>
-            </form>
-          </div>
-
         </section>
 
         <section id="sg_data_icon">
@@ -1504,25 +1650,12 @@
 
         <section id="sg_data_progressbar">
           <h1>Progress Bars</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-        </section>
-
-        <section id="sg_data_sliders">
-          <h1>Sliders</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-          <div class="pikto-slider-container bg-setting-container styleguide-container-dark">
-            <div id="pikto-slider-background-image-opacity" class="pikto-slider pikto-slider-darkbg">
-              <div class="pikto-slider-bar" id="pikto-slider-background-image-opacity-bar">
-                <div class="pikto-slider-subbar" id="pikto-slider-background-image-opacity-subbar" style="width: 50%;"></div>
+          <div class="sg-dark-container">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+                <span class="sr-only">50%</span>
               </div>
-              <div class="pikto-slider-btn" id="pikto-slider-background-image-opacity-btn" style="left: 36px;"></div>
             </div>
-          </div>
-          <div class="pikto-slider pikto-slider-lightbg">
-            <div class="pikto-slider-bar" id="pikto-slider-background-image-opacity-bar">
-              <div class="pikto-slider-subbar" id="pikto-slider-background-image-opacity-subbar" style="width: 50%;"></div>
-            </div>
-            <div class="pikto-slider-btn" id="pikto-slider-background-image-opacity-btn" style="left: 36px;"></div>
           </div>
         </section>
 
@@ -1556,19 +1689,93 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
-        <section id="sg_data_form_1">
-          <h1>Form 1</h1>
+        <section id="sg_data_checkboxes">
+          <h1>Checkboxes</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+          <div>
+            <label class="pikto-label" for="styleguide-chkbox-1">
+              <input id="styleguide-chkbox-1" type="checkbox" name="name" value="value" checked>
+              <span class="pikto-checkbox pikto-checkbox-thin"></span>
+              <span>Pikto Checkbox</span>
+            </label>
+          </div>
+
+          <div>
+            <label class="pikto-label" for="styleguide-chkbox-2">
+              <input id="styleguide-chkbox-2" type="checkbox" name="name" value="value">
+              <span class="pikto-checkbox pikto-checkbox-thin"></span>
+              <span>Pikto Checkbox</span>
+            </label>
+          </div>
+
+          <div class="pikto-disabled pikto-no-events">
+            <label class="pikto-label" for="styleguide-chkbox-3">
+              <input id="styleguide-chkbox-3" type="checkbox" name="name" value="value">
+              <span class="pikto-checkbox pikto-checkbox-thin"></span>
+              <span>Pikto Checkbox</span>
+            </label>
+          </div>
         </section>
 
-        <section id="sg_data_form_2">
-          <h1>Form 2</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+        <section id="sg_data_inputs">
+          <h1>Inputs</h1>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="pikto-btn pikto-btn-teal" type="button">Go!</button>
+            </span>
+          </div>
+          <div class="inline-icon-input left-icon">
+            <i class="icon-edit-darkpurple"></i>
+            <input type="text" placeholder="Search for...">
+          </div>
+          <div class="search-container">
+            <div class="inline-icon-input left-icon">
+              <i class="icon-search-lightpurple"></i>
+              <input class="search-bar" name="search" type="text" placeholder="Search for countries">
+            </div>
+          </div>
+          <div class="search-container">
+            <div class="inline-icon-input right-icon">
+              <input class="search-bar" name="search" type="text" placeholder="Search for countries">
+              <i class="icon-search-lightpurple"></i>
+            </div>
+          </div>
+          <div class="search-container">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          </div>
+          <div class="search-container">
+            <form class="has-error">
+              <div class="form-control">
+                <input placeholder="Error form" id="" class="form-control " type="text" autofocus value="" name="">
+                <div class="alert alert-danger-attention">
+                  <span class="alert-title up-arrow">Error! </span>
+                  Invalid email or password.
+                </div>
+              </div>
+            </form>
+          </div>
         </section>
 
-        <section id="sg_data_form_3">
-          <h1>Form 3</h1>
+        <section id="sg_data_sliders">
+          <h1>Sliders</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+          <input type="range"/>
+        </section>
+
+        <section id="sg_data_selects">
+          <h1>Selects</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+          <div class="select-default">
+            <select>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+              <option>Option 4</option>
+              <option>Option 5</option>
+              <option>Option 6</option>
+            </select>
+          </div>
         </section>
 
         <section id="sg_data_icon_1">
@@ -1603,6 +1810,7 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script src="jquery.min.js"></script>
     <!-- <script src="js/prettypre.js"></script> -->
+
     <script src="js/clipboard.min.js"></script>
     <script src="highlight/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>

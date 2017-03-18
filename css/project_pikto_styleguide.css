@@ -83,15 +83,13 @@ button:focus {
 
 /*Scaffold*/
 body {
-  font-family: "Montserrat", Arial, sans-serif;
-  font-weight: 400;
+  font-family: "ProximaNova-Regular", Arial, sans-serif;
   color: #6B7C93;
   overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", Arial, sans-serif;
-  font-weight: 400;
+  font-family: "ProximaNova-Regular", Arial, sans-serif;
 }
 
 p {
@@ -107,6 +105,12 @@ pre code {
 }
 
 /*General*/
+.sg-wrapper * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
 .sg-color-copy-label {
   background-color: beige;
   padding: 10px;
@@ -127,12 +131,16 @@ pre code {
   width: calc(275px - 60px);
   display: inline-block;
   float: left;
-  height: 100vh;
+  height: calc(100vh - 60px);
   overflow: auto;
   padding: 30px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
 }
 
 .sg-sidebar h1, .sg-sidebar h2 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
   margin: 0px 0px 10px 0px;
 }
 
@@ -194,7 +202,7 @@ pre code {
   transition: top 0.3s ease, opacity 0.3s ease;
   padding: 100px 65px;
   height: calc(100vh - 200px);
-  overflow: scroll;
+  overflow: auto;
 }
 
 .sg-main-container.slide-out {
@@ -354,6 +362,8 @@ pre code {
   width: calc(100% - 32px);
   margin: 0px;
   border: 1px solid #E0E0E0;
+  padding: 0px;
+  background-color: #fff;
 }
 
 .sg-code-box pre code {
@@ -502,4 +512,9 @@ pre code {
 
 .sg-border-radius > .sg-content-box > div {
   border: 1px solid black;
+}
+
+.sg-dark-container {
+  background-color: #2c2a37;
+  padding: 10px;
 }
