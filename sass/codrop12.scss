@@ -65,13 +65,13 @@
   transition: opacity 0.5s ease;
 
   &.right {
-    border-color: transparent blue transparent transparent;
-    left: 0px
+    border-color: transparent transparent transparent blue;
+    right: 0px
   }
 
   &.left {
-    border-color: transparent transparent transparent blue;
-    right: 0px;
+    border-color: transparent blue transparent transparent;
+    left: 0px;
   }
 
   &.active {

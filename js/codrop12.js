@@ -118,9 +118,31 @@ document.addEventListener('DOMContentLoaded', function(event){
   const display_panel = document.querySelector('.sp-display-panel');
   const image_container = document.querySelector('.sp-image-container');
   const pointer = document.querySelectorAll('.sp-display-pointer');
-  const first_pointer = document.querySelector('.sp-display-panel .sp-display-pointer:first-child')
-  const prev_btn = document.querySelector('.sp-display-pointer.right');
-  const next_btn = document.querySelector('.sp-display-pointer.left');
+  const left_pointer = document.querySelector('.sp-display-pointer.left');
+  const right_pointer = document.querySelector('.sp-display-pointer.right');
+
+  var currentPic = 0;
+
+  var findIndex = function(node) {
+    var parent = node.parentNode;
+    var index = Array.prototype.indexOf.call(parent.children, node);
+    return (index + 1);
+  };
+
+  const hideShowPointer = function(){
+    var image_count = gallery.children.length;
+    if (currentPic === 1) {
+      left_pointer.classList.remove('active');
+    } else {
+      left_pointer.classList.add('active');
+    };
+
+    if (currentPic === image_count) {
+      right_pointer.classList.remove('active');
+    } else {
+      right_pointer.classList.add('active');
+    };
+  };
 
   const displayImage = function(target){
 
@@ -143,17 +165,16 @@ document.addEventListener('DOMContentLoaded', function(event){
     };
 
     const activateImage = function(){
-      image_tag.addEventListener('transitionend', activatePointers);
-      image_tag.classList.add('active')
-    };
-
-    const activatePointers = function(){
-      next_btn.classList.add('active');
-      prev_btn.classList.add('active');
+      image_tag.addEventListener('transitionend', hideShowPointer);
+      image_tag.classList.add('active');
+      display_panel.removeEventListener('transitionend', activateImage);
     };
 
     switchDisplay();
     createImg();
+
+    currentPic = findIndex(target);
+    console.log(currentPic);
   };
 
   const hideImage = function(){
@@ -166,7 +187,11 @@ document.addEventListener('DOMContentLoaded', function(event){
 
     const switchDisplay = function(){
       display_panel.classList.remove('expand');
-      first_pointer.removeEventListener('transitionend', switchDisplay);
+
+      [...pointer].forEach(function(elem){
+        elem.removeEventListener('transitionend', switchDisplay);
+      });
+
       showGallery();
     };
 
@@ -175,16 +200,67 @@ document.addEventListener('DOMContentLoaded', function(event){
     };
 
     const hidePointers = function(){
-      first_pointer.addEventListener('transitionend', switchDisplay);
-      next_btn.classList.remove('active');
-      prev_btn.classList.remove('active');
+      [...pointer].forEach(function(elem){
+        elem.classList.remove('active');
+        elem.addEventListener('transitionend', switchDisplay);
+      });
     };
     
     hidePointers();
   };
 
-  // const gallery = document.querySelector('.sp-gallery-container');
-  // const gallery_li = document.querySelectorAll('.sp-gallery-container > li');
+  const switchImage = function(dir){
+    const current_image = document.querySelector('.sp-image-container > img');
+    var image_count = gallery.children.length;
+
+    const changeImg = function(dir){
+
+      const updateCurrentPic = function(callback){
+        if (dir === "next") {
+          currentPic++;
+        } else if (dir === "prev") {
+          currentPic--;
+        }
+        current_image.setAttribute('src', "images/img" + currentPic + ".jpg");
+        setTimeout(showImage, 100);
+      
+        current_image.removeEventListener('transitionend', updateCurrentPic);
+      }
+
+      const showImage = function(){
+        current_image.classList.add('active');
+      }
+
+      current_image.addEventListener('transitionend', updateCurrentPic);
+      current_image.classList.remove('active');
+    }
+
+    if (dir === "next") {
+      if (currentPic === image_count) {
+        return;
+      } else {
+        changeImg("next");
+        // console.log(currentPic);
+      }
+    } else if (dir === "previous") {
+      if (currentPic === 1) {
+        return;
+      } else {
+        changeImg("prev");
+        // console.log(currentPic);
+      }
+    }
+
+    hideShowPointer();
+  };
+
+  display_panel.addEventListener('click', function(e){
+    if(e.target.classList.contains('right')){
+      switchImage("next");
+    } else if(e.target.classList.contains('left')){
+      switchImage("previous");
+    }
+  });
 
   gallery.addEventListener('click',function(e){
     if(e.target && e.target.nodeName == "LI") {
@@ -237,15 +313,20 @@ document.addEventListener('DOMContentLoaded', function(event){
 
   This won't work
   ======================================
-  first_pointer.addEventListener('transitionend', function(){
+  left_pointer.addEventListener('transitionend', function(){
     closeGallery();
   });
-  first_pointer.removeEventListener('transitionend');
+  left_pointer.removeEventListener('transitionend');
   ======================================
 
   To remove event listeners, This'll work
   ======================================
-  first_pointer.addEventListener('transitionend', switchDisplay);
-  first_pointer.removeEventListener('transitionend', switchDisplay);
+  left_pointer.addEventListener('transitionend', switchDisplay);
+  left_pointer.removeEventListener('transitionend', switchDisplay);
   ======================================
+*/
+
+/*Lesson 3 */
+/*
+  Always remember to remove event listeners after they are not in used!!!
 */

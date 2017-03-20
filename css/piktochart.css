@@ -5976,7 +5976,6 @@ input[type=range]::-moz-focus-outer {
 /**=====================================**/
 .pikto-btn {
   display: inline-block;
-  margin-bottom: 0;
   font-weight: normal;
   text-align: center;
   vertical-align: middle;
@@ -5990,10 +5989,6 @@ input[type=range]::-moz-focus-outer {
   padding: 6px 12px;
   font-size: 14px;
   color: #2c2a37;
-  border-radius: 2px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857;
   border-radius: 2px;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -6045,8 +6040,8 @@ input.pikto-btn:focus, input.pikto-btn.focus {
 }
 
 /************************
- 02 Alternate buttons
- ************************/
+02 Alternate buttons
+************************/
 .pikto-btn-option {
   color: #2c2a37;
   background-color: #fff;

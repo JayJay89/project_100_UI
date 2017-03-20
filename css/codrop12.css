@@ -127,13 +127,13 @@ ul {
 }
 
 .sp-display-pointer.right {
-  border-color: transparent blue transparent transparent;
-  left: 0px;
+  border-color: transparent transparent transparent blue;
+  right: 0px;
 }
 
 .sp-display-pointer.left {
-  border-color: transparent transparent transparent blue;
-  right: 0px;
+  border-color: transparent blue transparent transparent;
+  left: 0px;
 }
 
 .sp-display-pointer.active {
