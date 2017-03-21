@@ -329,4 +329,8 @@ document.addEventListener('DOMContentLoaded', function(event){
 /*Lesson 3 */
 /*
   Always remember to remove event listeners after they are not in used!!!
+
+  OR 
+
+  Search for how to prevent event handlers from firing multiple times
 */

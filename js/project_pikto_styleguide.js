@@ -153,9 +153,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   })(document.createElement("style"));
 
   var background_gradient = 'background: linear-gradient(to bottom, #1CAFA2 0%, #1CAFA2 50%, #C2C2C2 50%, #C2C2C2 100%);'
-  /*
-    linear-gradient(to right, #1CAFA2 0%, #1CAFA2 ' + this.value + '%, #C2C2C2 ' + this.value + '%, #C2C2C2 100%)
-  */
+  /* linear-gradient(to right, #1CAFA2 0%, #1CAFA2 ' + this.value + '%, #C2C2C2 ' + this.value + '%, #C2C2C2 100%) */
   var slider = document.querySelectorAll('input[type="range"]');
 
   if ( 'webkitRequestAnimationFrame' in window ) {
@@ -164,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   addRule( 'input[type="range"]::-moz-range-track', 'background: linear-gradient(to right, green, #005555 75%, #C2C2C2)' );
 
-  $( 'input[type="range"]' ).on( 'input', function( ) {
+  $( 'input[type="range"]' ).on( 'input', function() {
     addRule( 'input[type="range"]::-moz-range-track', 'background: linear-gradient(to right, #1CAFA2 0%, #1CAFA2 ' + this.value + '%, #C2C2C2 ' + this.value + '%, #C2C2C2 100%)' );
     
     if ( $( this ).hasClass( 'webkit-track' ) ) {
