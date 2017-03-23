@@ -117,9 +117,11 @@ document.addEventListener('DOMContentLoaded', function(event){
   const gallery_li = document.querySelectorAll('.sp-gallery-container > li');
   const display_panel = document.querySelector('.sp-display-panel');
   const image_container = document.querySelector('.sp-image-container');
+  const image_container_image = document.querySelector('.sp-image-container > img');
   const pointer = document.querySelectorAll('.sp-display-pointer');
   const left_pointer = document.querySelector('.sp-display-pointer.left');
   const right_pointer = document.querySelector('.sp-display-pointer.right');
+   
 
   var currentPic = 0;
 
@@ -145,7 +147,6 @@ document.addEventListener('DOMContentLoaded', function(event){
   };
 
   const displayImage = function(target){
-
     const image_tag = document.createElement('img');
     const target_src = target.querySelector('img').getAttribute('src');
 
@@ -197,6 +198,7 @@ document.addEventListener('DOMContentLoaded', function(event){
 
     const removeImg = function(){
       image.remove();
+      gallery.removeEventListener('transitionend', removeImg);
     };
 
     const hidePointers = function(){
@@ -281,7 +283,6 @@ document.addEventListener('DOMContentLoaded', function(event){
       hideImage();
     }
   })
-
 });
 
 /*Lesson 1*/
