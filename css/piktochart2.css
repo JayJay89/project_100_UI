@@ -2162,26 +2162,20 @@ select:-moz-focusring {
 /*================================*/
 /*Slider*/
 /*================================*/
-html {
-  height: 100%;
-  background: radial-gradient(rgba(73, 88, 107, 0.85), rgba(9, 21, 33, 0.75)), url(http://i.stack.imgur.com/PEnJm.png), radial-gradient(rgba(73, 88, 107, 0.25), rgba(9, 21, 33, 0.25));
-  background-blend-mode: multiply;
-}
-
 input[type='range'] {
   box-sizing: border-box;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 0 0.5em;
-  width: 20em;
-  height: 2.5em;
-  transform: translate(-50%, -50%);
+  padding: 0px;
+  width: 200px;
+  height: 23px;
   background: none;
   /* fix Chrome white */
   font: 1em verdana;
   /* level things */
   cursor: pointer;
+  border: 0px;
+  border: 0px;
+  box-shadow: none;
+  outline: none;
 }
 
 input[type='range']::-webkit-slider-runnable-track, input[type='range']::-webkit-slider-thumb, input[type='range'] {
@@ -2191,116 +2185,115 @@ input[type='range']::-webkit-slider-runnable-track, input[type='range']::-webkit
 [class*='-ms-'] input[type='range'] {
   box-sizing: content-box;
   border: solid 0 transparent;
-  border-width: 0 0.5em;
+  border-width: 0 10px;
   padding: 0;
   /* unsure about this 
     with Edge having added filters now */
 }
 
 [class*='-ms-'] input[type='range']:focus {
-  box-shadow: 0 0 1em cyan;
+  box-shadow: none;
 }
 
-input[type='range']:focus {
+input[type='range']:focus, input[type='range']::-moz-focus-inner, input[type='range']::-moz-focus-outer {
+  border: 0px;
+  box-shadow: none;
   outline: none;
-  -webkit-filter: drop-shadow(0 0 1em cyan);
-  filter: drop-shadow(0 0 1em cyan);
 }
 
 input[type='range']::-webkit-slider-runnable-track {
   box-sizing: border-box;
-  padding: 0.5em;
-  width: 20em;
-  height: 1.25em;
-  border-radius: 0.625em;
-  box-shadow: inset 0 -1px 1px #9daabb, inset 0 1px 0.125em #0f1110;
-  background: linear-gradient(#4c4c4c 50%, #111 50%, transparent) content-box, linear-gradient(to right top, #474747, #202020);
+  padding: 10px;
+  width: 200px;
+  height: 26px;
+  border-radius: 13px;
+  background: linear-gradient(transparent 0%, transparent 25%, #C2C2C2 25%, #C2C2C2 75%, transparent 75%, transparent 100%) content-box, transparent;
 }
 
 input[type='range']::-moz-range-track {
+  margin: 0px;
   box-sizing: border-box;
-  padding: 0.5em;
-  width: 20em;
-  height: 1.25em;
-  border-radius: 0.625em;
-  box-shadow: inset 0 -1px 1px #9daabb, inset 0 1px 0.125em #0f1110;
-  background: linear-gradient(#4c4c4c 50%, #111 50%, transparent) content-box, linear-gradient(to right top, #474747, #202020);
+  padding: 10px;
+  width: 200px;
+  height: 26px;
+  border-radius: 13px;
+  background: linear-gradient(transparent 0%, transparent 25%, #C2C2C2 25%, #C2C2C2 75%, transparent 75%, transparent 100%) content-box, transparent;
 }
 
 input[type='range']::-ms-track {
   box-sizing: border-box;
-  padding: 0.5em;
-  width: 20em;
-  height: 1.25em;
-  border-radius: 0.625em;
-  box-shadow: inset 0 -1px 1px #9daabb, inset 0 1px 0.125em #0f1110;
-  background: linear-gradient(#4c4c4c 50%, #111 50%, transparent) content-box, linear-gradient(to right top, #474747, #202020);
+  padding: 10px;
+  width: 200px;
+  height: 26px;
+  border-radius: 13px;
+  background: linear-gradient(transparent 0%, transparent 25%, #C2C2C2 25%, #C2C2C2 75%, transparent 75%, transparent 100%) content-box, transparent;
+  /*This fixes the extra spacing created by the sliders*/
+  margin: 0px -10px 0px -10px;
   border: none;
   /* remove black border */
   color: transparent;
   /* remove lines */
 }
 
-input[type='range']::-webkit-slider-runnable-track {
+.js input[type='range']::-webkit-slider-runnable-track {
   position: relative;
-  background: linear-gradient(90deg, #ffe14c, #ff4c8a) 0 50% no-repeat content-box, linear-gradient(#4c4c4c 50%, #111 50%, transparent) content-box, linear-gradient(to right top, #474747, #202020);
-  background-size: 75% 0.125em, 100%, 100%;
+  background: linear-gradient(90deg, #1CAFA2, #1CAFA2) 0 50% no-repeat content-box, linear-gradient(transparent 0%, transparent 25%, #C2C2C2 25%, #C2C2C2 75%, transparent 75%, transparent 100%) content-box, transparent;
+  background-size: 75% 3px, 100%, 100%;
+  /*This fixes the extra spacing created by the sliders*/
+  margin: 0px -10px 0px -10px;
   /* Blink only so far */
   /* would have used .js /deep/ #track:after
        in earlier versions */
+  /*Safari's Side Number Display*/
 }
 
-input[type='range']::-webkit-slider-runnable-track:after {
+.js input[type='range']::-webkit-slider-runnable-track:after {
   position: absolute;
   left: 100%;
   top: 50%;
   width: 4em;
-  height: 1.66667em;
-  border-radius: 0.83333em;
-  transform: translate(0.5em, -50%);
-  box-shadow: inset 0 -1px 1px #9daabb, inset 0 1px 0.125em #0f1110;
-  background: linear-gradient(to right top, #474747, #202020);
+  height: 34.66667px;
+  border-radius: 17.33333px;
+  transform: translate(8px, -50%);
+  background: transparent;
   font-size: 0.75em;
-  line-height: 1.66667em;
+  line-height: 34.66667px;
   text-align: center;
   content: '75%';
 }
 
 input[type='range']::-moz-range-progress {
-  height: 0.125em;
-  background: linear-gradient(90deg, #ffe14c, #ff4c8a);
+  height: 3px;
+  background: linear-gradient(90deg, #1CAFA2, #1CAFA2);
 }
 
 input[type='range']::-ms-fill-lower {
-  height: 0.125em;
-  background: linear-gradient(90deg, #ffe14c, #ff4c8a);
+  height: 3px;
+  background: linear-gradient(90deg, #1CAFA2, #1CAFA2);
 }
 
 input[type='range']::-webkit-slider-thumb {
-  margin-top: -0.625em;
-  /* weird shit */
+  margin-top: -6px;
   box-sizing: border-box;
-  border: solid 1px rgba(238, 238, 238, 0.1);
-  width: 1.25em;
-  height: 1.25em;
+  border: 3px solid #C2C2C2;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   transform: translateY(-1px);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2), 0 7px 7px rgba(0, 0, 0, 0.2), 0 8px 8px rgba(0, 0, 0, 0.2), 0 9px 9px rgba(0, 0, 0, 0.2);
-  background: conic-gradient(#8a8a8a, #e0e0e0, #909090, #f1f2f1, #949392, #cfcfcf, #8a8a8a);
-  background-color: #eee;
+  box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.5);
+  background-color: #019B97;
   /* fallback */
 }
 
 input[type='range']::-moz-range-thumb {
   box-sizing: border-box;
-  border: solid 1px rgba(238, 238, 238, 0.1);
-  width: 1.25em;
-  height: 1.25em;
+  border: 3px solid #C2C2C2;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   transform: translateY(-1px);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2), 0 7px 7px rgba(0, 0, 0, 0.2), 0 8px 8px rgba(0, 0, 0, 0.2), 0 9px 9px rgba(0, 0, 0, 0.2);
-  background: conic-gradient(#8a8a8a, #e0e0e0, #909090, #f1f2f1, #949392, #cfcfcf, #8a8a8a);
-  background-color: #eee;
+  box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.5);
+  background-color: #019B97;
   /* fallback */
   /* Firefox-only, it won't work in IE 
        and it's messed up in Chrome */
@@ -2309,13 +2302,12 @@ input[type='range']::-moz-range-thumb {
 
 input[type='range']::-ms-thumb {
   box-sizing: border-box;
-  border: solid 1px rgba(238, 238, 238, 0.1);
-  width: 1.25em;
-  height: 1.25em;
+  border: 3px solid #C2C2C2;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   transform: translateY(-1px);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2), 0 7px 7px rgba(0, 0, 0, 0.2), 0 8px 8px rgba(0, 0, 0, 0.2), 0 9px 9px rgba(0, 0, 0, 0.2);
-  background: conic-gradient(#8a8a8a, #e0e0e0, #909090, #f1f2f1, #949392, #cfcfcf, #8a8a8a);
-  background-color: #eee;
+  box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.5);
+  background-color: #019B97;
   /* fallback */
 }
