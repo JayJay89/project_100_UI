@@ -1706,7 +1706,7 @@ input[type='range'] {
     color: transparent; /* remove lines */
   }
   
-  .js &::-webkit-slider-runnable-track {
+   &::-webkit-slider-runnable-track {
     position: relative;
     background: 
       $fill-bg 0 50% no-repeat content-box, 

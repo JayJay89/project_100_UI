@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   /*Slider Config*/
   // http://codepen.io/thebabydino/pen/JoOomG?editors=0010
-  var input_sel = '.js input[type=range]',
+  var input_sel = 'input[type=range]',
       slider = document.querySelector(input_sel), 
       style = document.createElement('style'), 
       track_sel = input_sel + 

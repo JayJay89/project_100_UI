@@ -2235,7 +2235,7 @@ input[type='range']::-ms-track {
   /* remove lines */
 }
 
-.js input[type='range']::-webkit-slider-runnable-track {
+input[type='range']::-webkit-slider-runnable-track {
   position: relative;
   background: linear-gradient(90deg, #1CAFA2, #1CAFA2) 0 50% no-repeat content-box, linear-gradient(transparent 0%, transparent 25%, #C2C2C2 25%, #C2C2C2 75%, transparent 75%, transparent 100%) content-box, transparent;
   background-size: 75% 3px, 100%, 100%;
@@ -2247,7 +2247,7 @@ input[type='range']::-ms-track {
   /*Safari's Side Number Display*/
 }
 
-.js input[type='range']::-webkit-slider-runnable-track:after {
+input[type='range']::-webkit-slider-runnable-track:after {
   position: absolute;
   left: 100%;
   top: 50%;
