@@ -122,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function(event){
   const left_pointer = document.querySelector('.sp-display-pointer.left');
   const right_pointer = document.querySelector('.sp-display-pointer.right');
    
-
   var currentPic = 0;
 
   var findIndex = function(node) {
@@ -151,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function(event){
     const target_src = target.querySelector('img').getAttribute('src');
 
     const switchDisplay = function(){
-      display_panel.addEventListener('transitionend', activateImage);
+      display_panel.addEventListener('transitionend', activateImage, {once: true});
       display_panel.classList.add('expand');
       gallery.classList.add('hide');
     }
@@ -168,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function(event){
     const activateImage = function(){
       image_tag.addEventListener('transitionend', hideShowPointer);
       image_tag.classList.add('active');
-      display_panel.removeEventListener('transitionend', activateImage);
     };
 
     switchDisplay();
@@ -182,29 +180,23 @@ document.addEventListener('DOMContentLoaded', function(event){
     const image = image_container.querySelector('img');
 
     const showGallery = function(){
-      gallery.addEventListener('transitionend', removeImg);
+      gallery.addEventListener('transitionend', removeImg, {once: true});
       gallery.classList.remove('hide');
     }
 
     const switchDisplay = function(){
       display_panel.classList.remove('expand');
-
-      [...pointer].forEach(function(elem){
-        elem.removeEventListener('transitionend', switchDisplay);
-      });
-
       showGallery();
     };
 
     const removeImg = function(){
       image.remove();
-      gallery.removeEventListener('transitionend', removeImg);
     };
 
     const hidePointers = function(){
       [...pointer].forEach(function(elem){
         elem.classList.remove('active');
-        elem.addEventListener('transitionend', switchDisplay);
+        elem.addEventListener('transitionend', switchDisplay, {once: true});
       });
     };
     
@@ -225,15 +217,13 @@ document.addEventListener('DOMContentLoaded', function(event){
         }
         current_image.setAttribute('src', "images/img" + currentPic + ".jpg");
         setTimeout(showImage, 100);
-      
-        current_image.removeEventListener('transitionend', updateCurrentPic);
       }
 
       const showImage = function(){
         current_image.classList.add('active');
       }
 
-      current_image.addEventListener('transitionend', updateCurrentPic);
+      current_image.addEventListener('transitionend', updateCurrentPic, {once: true});
       current_image.classList.remove('active');
     }
 
@@ -269,6 +259,7 @@ document.addEventListener('DOMContentLoaded', function(event){
       displayImage(e.target);
     }
   });
+
 
   /*Original Even Handler - Switch to the one above(event delegation)*/
   // [...gallery_li].forEach(function(elem){
@@ -334,4 +325,12 @@ document.addEventListener('DOMContentLoaded', function(event){
   OR 
 
   Search for how to prevent event handlers from firing multiple times
+*/
+
+/*Lesson 4*/
+// https://developers.google.com/web/updates/2016/10/addeventlistener-once
+/*
+Instead of removing event listeners all the time, You can add a third parameter 
+to  
+  elem.addEventListener('transitionend', switchDisplay, {once: true});
 */

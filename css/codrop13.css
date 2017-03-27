@@ -62,14 +62,13 @@ ul {
 }
 
 .ws {
-  overflow: hidden;
   height: 100%;
   width: calc((3 * 200vw) + 2px);
 }
 
 .ws-nav {
   position: fixed;
-  bottom: 0;
+  bottom: 18px;
   right: 50%;
   transform: translate(50%, 0%);
 }
