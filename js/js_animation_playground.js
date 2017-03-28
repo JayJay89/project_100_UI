@@ -1,8 +1,5 @@
 const js_counter = document.querySelector('.js-counter');
-const js_animate_the_box = document.querySelector('.js-animate-the-box');
-const box = document.querySelector('.box');
-const box_2 = document.querySelector('.box-2');
-const box_3 = document.querySelector('.box-3');
+const js_box = document.querySelector('.js-box');
 
 /*Counter and Stop Counter*/
 // var counter = 1;
@@ -18,64 +15,33 @@ js_counter.addEventListener('mousedown', function(){
 });
 /*Counter and Stop Counter */
 
-/*Move Element*/
-function moveTest (elem) {
-  var left = 0;
-  function frame(){
-    left++;
-    elem.style.left = left + 'px';
-    if (left == 100) {
-      clearInterval(animateBox);
+js_box.addEventListener('click', function(e){
+  console.log("move");
+  moveBy(e.target, 270, 1);
+})
+
+/*http://javax3script.info/js-animation*/
+var moveBy = function(target, distance, seconds){
+  
+  var pos = 0;
+  var toPosition = distance;
+  const fps = 1;
+  var time =  seconds * 1000;
+
+  var moveInterval = setInterval(moveTarget, fps);
+
+  function moveTarget(){
+    if (pos == toPosition) {
+      clearInterval(moveInterval);
+    } else {
+      pos += (distance/time);
+      console.log(pos);
+      target.style.left = pos + 'px';
     }
   }
-  var animateBox = setInterval(frame, 10);
+
+  /*The answer is to calculate the time passed, rather than how far this guy reach*/
 }
-
-js_animate_the_box.addEventListener('mousedown', function(){
-  moveTest(box);
-});
-/*Move Element*/
-
-/*Animate*/
-function animate(opts) {
-  
-  var start = new Date
-
-  var id = setInterval(function() {
-    var timePassed = new Date - start
-    var progress = timePassed / opts.duration
-
-    console.log(timePassed);
-    console.log(progress);
-
-    if (progress > 1) {progress = 1}
-    var delta = opts.delta(progress)
-    opts.step(delta)
-    
-    if (progress == 1) {
-      clearInterval(id)
-    }
-  }, opts.delay || 10)
-}
-
-function move(element, delta, duration) {
-  var to = 100;
-  console.log(delta);
-  animate({
-    delay: 20,
-    duration: duration || 100, // 1 sec by default
-    delta: delta,
-    step: function(delta) {
-      element.style.left = to*delta + "px"    
-    }
-  })
-}
-
-box_2.addEventListener('mousedown', function(e){
-  move(e.target, function(p) {return p});
-})
-/*Animate*/
-
 
 
 

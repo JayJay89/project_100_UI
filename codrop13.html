@@ -63,7 +63,6 @@
 
         // http://stackoverflow.com/questions/21474678/scrolltop-animation-without-jquery
         // http://stackoverflow.com/questions/17722497/scroll-smoothly-to-specific-element-on-page
-
         window.addEventListener('scroll', function(e){
           // console.log(e);
 
@@ -78,7 +77,9 @@
 
           // window.pageXOffset == window.scrollX;
           // For cross-browser compatibility, use window.pageXOffset
-          console.log(window.pageXOffset);
+          // console.log("window.pageXOffset : " + window.pageXOffset);
+
+          console.log("window offset " +window.pageXOffset);
         })
 
         var slideTo = function(target){
@@ -88,26 +89,54 @@
           var distance  = selectedSlide.offsetLeft;
           var duration  = 500; //1000ms
           var fps       = 15;
-          var steps     = selectedSlide.offsetLeft / (duration / fps);
-          
-          window.pageXOffset = 0;
-          var scrollInterval = setInterval(function(){
-            // if (window.scrollX === selectedSlide.offsetLeft) {
-            if (window.scrollX > selectedSlide.offsetLeft) {
-              clearInterval(scrollInterval);
-            } else {
-              body.scrollBy(steps, 0)
-            }
-          }, fps);
-          console.log(window.pageXOffset);
+          var steps     = distance / (duration / fps);
 
-          // body.scrollLeft = selectedSlide.offsetLeft;
-          console.log(window.scrollX);
-          
-          // console.log(body.scrollLeft);
-          // console.log(selectedSlide.offsetLeft);
+          console.log("select offsetLeft " + selectedSlide.offsetLeft);
+          console.log("window offset " +window.pageXOffset);
+
+          window.addEventListener('scroll', function(e){
+            console.log("select offsetLeft " + selectedSlide.offsetLeft);
+            console.log("window offset " +window.pageXOffset);
+          });
+
+          if (window.pageXOffset < selectedSlide.offsetLeft) {
+            console.log("move right");
+
+            var scrollInterval = setInterval(function(){
+              if (window.pageXOffset < selectedSlide.offsetLeft) {
+                clearInterval(scrollInterval);
+              } else {
+                body.scrollBy(-steps, 0)
+              }
+            }, fps);
+
+          } else if (window.pageXOffset > selectedSlide.offsetLeft) {
+            console.log("move left");
+
+          } else {
+            console.log("no move");
+            return;
+          }
+
+          /*
+            console.log(window.pageXOffset);
+            body.scrollLeft = selectedSlide.offsetLeft;
+            console.log(body.scrollLeft);
+            console.log(selectedSlide.offsetLeft);
+          */
         }
       });
+
+      // var scrollfront = setInterval(function(){
+      //   if (window.pageXOffset > selectedSlide.offsetLeft) {
+      //     clearInterval(scrollfront);
+      //     console.log("clear!");
+      //   } else {
+      //     body.scrollBy(steps, 0);
+      //     console.log("move!");
+      //   }
+      // }, fps);
+
 
       // $(function(){
 

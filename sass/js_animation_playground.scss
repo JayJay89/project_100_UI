@@ -11,17 +11,12 @@ section {
   margin-top: 30px;
 }
 
-.js-animate-the-box {
-  display: block;
-  width: 150px;
-  margin-bottom: 10px;
-}
-
 .js-box {
   display: inline-block;
   width: 100px;
   height: 100px;
   border: 1px solid red;
   position: relative;
+  left: 0px;
   cursor: pointer;
 }
