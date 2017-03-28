@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /*Variables*/
+/*Base Size*/
 /**=====================================**/
 /* 02b Scaffolding
 /**=====================================**/
@@ -10434,6 +10435,7 @@ button.close {
 /**=====================================**/
 .modal-payment .modal-body {
   padding: 0;
+  min-height: 300px;
 }
 
 .modal-payment .main-content {
@@ -10886,26 +10888,16 @@ button.close {
   position: absolute;
   top: initial;
   left: initial;
-  z-index: 1060;
   display: none;
+  z-index: 1060;
   max-width: 220px;
   text-align: left;
   background-clip: padding-box;
   white-space: normal;
   font-size: 12px;
+  -webkit-box-shadow: 1px, 1px, 4px, rgba(0, 0, 0, 0.2);
+  box-shadow: 1px, 1px, 4px, rgba(0, 0, 0, 0.2);
   border-radius: 2px;
-  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-  /*Boot
-    background-color: $popover-bg;
-    border: 1px solid $popover-fallback-border-color;
-    border: 1px solid $popover-border-color;
-    font-size: $font-size-base;
-    padding: 1px;
-    // Our parent element can be arbitrary since popovers are by default inserted as a sibling of their target element.
-    // So reset our font and text properties to avoid inheriting weird values.
-    @include reset-text;
-    */
 }
 
 .popover.top {

@@ -1,10 +1,5 @@
 // Core variables and mixins
-@import "pikto/variables-colors";
-@import "pikto/variables";
-@import "pikto/mixins-color-combo";
-@import "pikto/mixins-shadow";
-@import "pikto/mixins-border-radii";
-@import "pikto/mixins";
+@import "pikto/prerequisite";
 
 // Resetpikto/ pikto/and dependencies
 @import "pikto/normalize";

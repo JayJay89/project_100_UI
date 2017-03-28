@@ -9,28 +9,16 @@
   position: absolute;
   top: initial;
   left: initial;
-  z-index: $zindex-popover; //1010
   display: none;
+  z-index: $zindex-popover; //1010
   max-width: 220px;
   text-align: left;
   background-clip: padding-box;
   white-space: normal;
   font-size: 12px;
-
+  @include outer-shadow;
   @include border-radius($border-radius-base);
-  @include box-shadow(1px 1px 4px rgba(0,0,0,0.2));
-  /*Boot
-    background-color: $popover-bg;
-    border: 1px solid $popover-fallback-border-color;
-    border: 1px solid $popover-border-color;
-    font-size: $font-size-base;
-    padding: 1px;
-    // Our parent element can be arbitrary since popovers are by default inserted as a sibling of their target element.
-    // So reset our font and text properties to avoid inheriting weird values.
-    @include reset-text;
-    */
 
-  // Offset the popover to account for the popover arrow
   &.top     { margin-top: -$popover-arrow-width; }
   &.right   { margin-left: $popover-arrow-width; }
   &.bottom  { margin-top: $popover-arrow-width; }

@@ -547,6 +547,8 @@ pre code {
 }
 
 .sg-popover > .popover {
+  position: relative;
+  display: inline-block;
   margin: 20px;
 }
 

@@ -600,9 +600,13 @@ pre code {
 .sg-popover {
   padding: 20px;
   height: 90px;
+
   > .popover {
+    position: relative;
+    display: inline-block;
     margin: 20px;
   }
+  
   > .popover.top {
     margin: 10px;
   }
