@@ -42,8 +42,7 @@
       <div class="sg-color-copy-label">Color Copied!</div>
 
       <div class="sg-sidebar">
-        <h1>Piktochart</h1>
-        <span>styleguide v1.0</span>
+        <img class="sg-sidebar-logo" src="images/pikto_styleguide/logo.svg" alt="">
 
         <div class="sg-brand-kit">
           <h2>Brand Kit</h2>
@@ -144,8 +143,7 @@
       <div class="sg-main-container" id="sg_main_container">
         <!--Branding-->
         <section id="sg_data_logo" class="active slide-in">
-          <h1>Logo</h1>
-
+          <h1 class="sg-h1">Logo</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolore, reiciendis nostrum blanditiis possimus nesciunt consequatur rerum. Autem, eaque vero omnis, tenetur, nemo suscipit praesentium adipisci perspiciatis doloremque vel veniam?</p>
           <!--Indentation had to be pushed back--> 
           <!-- class="sg-code-box"-->
@@ -186,24 +184,24 @@
         </section>
 
         <section id="sg_data_brand_color">
-          <h1>Brand Colours</h1>
+          <h1 class="sg-h1">Brand Colours</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia.</p>
         </section>
 
         <section id="sg_data_brand_patterns">
-          <h1>Brand Patterns</h1>
+          <h1 class="sg-h1">Brand Patterns</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, aliquid voluptates inventore quis eligendi dolores!</p>
         </section>
 
         <!--Foundational UI-->
         <section id="sg_data_reset">
-          <h1>Reset and Normalize</h1>
+          <h1 class="sg-h1">Reset and Normalize</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <!--Foundational UI-->
         <section class="sg-website-color" id="sg_data_website_colour">
-          <h1>Website Colour Palette</h1>
+          <h1 class="sg-h1">Website Colour Palette</h1>
           <p>This is the primary and secondary colour palettes as described in the PSD styleguide and in variables.scss</p>
 
           <h2>Primary Colours</h2>
@@ -211,8 +209,8 @@
         </section>
 
         <section class="sg-ui-color" id="sg_data_ui_colour">
-          <h1>UI Colour Palette</h1>
-          <h2>Primary Colours</h2>
+          <h1 class="sg-h1">UI Colour Palette</h1>
+          <h2>Primary Palette</h2>
           <ul class="sg-color-palette clearfix">
             <div>
               <li>
@@ -522,7 +520,7 @@
         </section>
 
         <section class="sg-shadows" id="sg_data_shadow">
-          <h1>Shadows</h1>
+          <h1 class="sg-h1">Shadows</h1>
           
           <h2>Constructor</h2>
 
@@ -629,7 +627,7 @@
         </section>
 
         <section class="sg-border-radius" id="sg_data_border_radii">
-          <h1>Border Radii</h1>
+          <h1 class="sg-h1">Border Radii</h1>
           <h2>Constructor</h2>
           <div class="sg-content-box" data-content="border-radius-1" style="display: none">
             @mixin border-radius($radius, $side) {
@@ -723,17 +721,17 @@
         </section>
 
         <section id="sg_data_spacing">
-          <h1>Spacing</h1>
+          <h1 class="sg-h1">Spacing</h1>
           <p>Spacing is the general spacing rules that governs the webapp. Margins and Paddings</p>
           
         </section>
 
-        <section id="sg_data_typography">
-          <h1>Typography</h1>
+        <section id="sg_data_typography" class="sg-typo-section">
+          <h1 class="sg-h1">Typography</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-          <div class="clearfix">
+          <section class="sg-typo-types clearfix">
             <div class="sg-typo-proxima">
-              <h2>Proxima Nova</h2>
+              <h2 class="sg-h2">Proxima Nova</h2>
               <div class="sg-typo-proxima__regular">
                 <p>Aa</p>
                 <span>Regular</span>
@@ -744,7 +742,7 @@
               </div>
             </div>
             <div class="sg-typo-montseraat">
-              <h2>Montseraat</h2>
+              <h2 class="sg-h2">Montseraat</h2>
               <div class="sg-typo-montseraat__regular">
                 <p>Aa</p>
                 <span>Regular</span>
@@ -754,27 +752,78 @@
                 <span>Semibold</span>
               </div>
             </div>
-          </div>
+          </section>
 
-          <div class="sg-typo-test">
+          <section class="sg-typo-test">
             ​‌A​‌B​‌C​‌Ć​‌Č​‌D​‌Đ​‌E​‌F​‌G​‌H​‌I​‌J​‌K​‌L​‌M​‌N​‌O​‌P​‌Q​‌R​‌S​‌Š​‌T​‌U​‌V​‌W​‌X​‌Y​‌Z​‌Ž​‌a​‌b​‌c​‌č​‌ć​‌d​‌đ​‌e​‌f​‌g​‌h​‌i​‌j​‌k​‌l​‌m​‌n​‌o​‌p​‌q​‌r​‌s​‌š​‌t​‌u​‌v​‌w​‌x​‌y​‌z​‌ž​‌А​‌Б​‌В​‌Г​‌Ґ​‌Д​‌Ђ​‌Е​‌Ё​‌Є​‌Ж​‌З​‌Ѕ​‌И​‌І​‌Ї​‌Й​‌Ј​‌К​‌Л​‌Љ​‌М​‌Н​‌Њ​‌О​‌П​‌Р​‌С​‌Т​‌Ћ​‌У​‌Ў​‌Ф​‌Х​‌Ц​‌Ч​‌Џ​‌Ш​‌Щ​‌Ъ​‌Ы​‌Ь​‌Э​‌Ю​‌Я​‌а​‌б​‌в​‌г​‌ґ​‌д​‌ђ​‌е​‌ё​‌є​‌ж​‌з​‌ѕ​‌и​‌і​‌ї​‌й​‌ј​‌к​‌л​‌љ​‌м​‌н​‌њ​‌о​‌п​‌р​‌с​‌т​‌ћ​‌у​‌ў​‌ф​‌х​‌ц​‌ч​‌џ​‌ш​‌щ​‌ъ​‌ы​‌ь​‌э​‌ю​‌я​‌Α​‌Β​‌Γ​‌Δ​‌Ε​‌Ζ​‌Η​‌Θ​‌Ι​‌Κ​‌Λ​‌Μ​‌Ν​‌Ξ​‌Ο​‌Π​‌Ρ​‌Σ​‌Τ​‌Υ​‌Φ​‌Χ​‌Ψ​‌Ω​‌α​‌β​‌γ​‌δ​‌ε​‌ζ​‌η​‌θ​‌ι​‌κ​‌λ​‌μ​‌ν​‌ξ​‌ο​‌π​‌ρ​‌σ​‌τ​‌υ​‌φ​‌χ​‌ψ​‌ω​‌ά​‌Ά​‌έ​‌Έ​‌έ​‌Ή​‌ί​‌ϊ​‌ΐ​‌Ί​‌ό​‌Ό​‌ύ​‌ΰ​‌ϋ​‌Ύ​‌Ϋ​‌ὰ​‌ά​‌ὲ​‌έ​‌ὴ​‌ή​‌ὶ​‌ί​‌ὸ​‌ό​‌ὺ​‌ύ​‌ὼ​‌ώ​‌Ώ​‌1​‌2​‌3​‌4​‌5​‌6​‌7​‌8​‌9​‌0​‌‘​‌?​‌’​‌“​‌!​‌”​‌(​‌%​‌)​‌[​‌#​‌]​‌{​‌@​‌}​‌/​‌&​‌<​‌-​‌+​‌÷​‌×​‌=​‌>​‌®​‌©​‌$​‌€​‌£​‌¥​‌¢​‌:​‌;​‌,​‌.​‌*
-          </div>
+          </section>
+
+          <section class="sg-typo-size-height clearfix">
+            <div class="sg-typo-size">
+              <h2 class="sg-h2">Type Sizes</h2>
+              <ul class="sg-typo-heading-size">
+                <li>
+                  <div><h1>Heading Level One</h1></div>
+                  <span>32px</span>
+                </li>
+                <li>
+                  <div><h2>Heading Level Two</h2></div>
+                  <span>28px</span>
+                </li>
+                <li>
+                  <div><h3>Heading Level Three</h3></div>
+                  <span>24px</span>
+                </li>
+                <li>
+                  <div><h4>Heading Level Four</h4></div>
+                  <span>20px</span>
+                </li>
+                <li>
+                  <div><h5>Heading Level Five</h5></div>
+                  <span>16px</span>
+                </li>
+                <li>
+                  <div><h6>Heading Level Six</h6></div>
+                  <span>14px</span>
+                </li>
+                <li>
+                  <div><p>Body Text</p></div>
+                  <span>14px</span>
+                </li>
+                <li>
+                  <div><p>Small Body Text</p></div>
+                  <span>12px</span>
+                </li>
+              </ul>
+            </div>
+            <div class="sg-typo-line-height">
+              <h2 class="sg-h2">Line Height</h2>
+              <p>Min: 20px</p>
+              <p>
+                In the context of an enterprise application, the need for longform text is quite rare. More often, application design involves many small bits of text that all represent the user’s data. This text is spaced intentionally to maintain distinction between different types and rows of data.
+              </p>
+              <p>
+                As a result, we take a pragmatic approach to spacing and line height by resetting all margins and paddings to 0, and allowing the line-height property for all text to inherit a globally defined ratio of 1.5 of the text size. This allows designers and developers to easily opt-in to specific text spacing by leveraging our CSS Text and Spacing Utilities.
+              </p>
+            </div>
+          </section>
+
         </section>
 
         <section id="sg_data_transitions">
-          <h1>Transitions</h1>
+          <h1 class="sg-h1">Transitions</h1>
           <p>This is the primary and secondary colour palettes as described in the PSD styleguide and in variables.scss</p>
         </section>
         
         <!-- Layout -->
         <section id="sg_data_layout">
-          <h1>Layout</h1>
+          <h1 class="sg-h1">Layout</h1>
           <p>Pikto-container, max-width, min-width</p>
         </section>
         
         <!-- UI Components -->
         <section id="sg_data_accordion">
-          <h1>Accordion</h1>
+          <h1 class="sg-h1">Accordion</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
           <div id="accordion" class="panel-group sd-panel-group" >
             <!-- Shapes and Lines -->
@@ -990,7 +1039,7 @@
         </section>
 
         <section id="sg_data_alerts">
-          <h1>Alerts</h1>
+          <h1 class="sg-h1">Alerts</h1>
 
           <h2>Color Variations</h2>
 
@@ -1042,12 +1091,12 @@
         </section>
 
         <section id="sg_data_breadcrumbs">
-          <h1>Breadcrumb</h1>
+          <h1 class="sg-h1">Breadcrumb</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_button" class="sg-button-section">
-          <h1>Buttons</h1>
+          <h1 class="sg-h1">Buttons</h1>
           <h2>General Color Variation</h2>
           <div class="sg-content-box sg-normal-btn" data-content="btn-1">
             <button class="pikto-btn">default button</button>
@@ -1149,28 +1198,28 @@
         </section>
 
         <section id="sg_data_cards">
-          <h1>Cards</h1>
+          <h1 class="sg-h1">Cards</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_feedbacks">
-          <h1>Feedbacks</h1>
+          <h1 class="sg-h1">Feedbacks</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_file">
-          <h1>File Selector</h1>
+          <h1 class="sg-h1">File Selector</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_icon">
-          <h1>Icons</h1>
+          <h1 class="sg-h1">Icons</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_label">
 
-          <h1>Labels</h1>
+          <h1 class="sg-h1">Labels</h1>
           <h2>General Labels</h2>
           <div class="sg-change-this">Removed label featured because their are basically label-primary. Rename label new to label magenta</div>
           <div class="sg-change-this">Need to identify what's beta and pro label. Don't add href unless it's a lvlup btn</div>
@@ -1212,7 +1261,7 @@
         </section>
 
         <section id="sg_data_modals">
-          <h1>Modals</h1>
+          <h1 class="sg-h1">Modals</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
 
           <!--MODALS BUTTONS-->
@@ -1506,7 +1555,7 @@
         </section>
 
         <section id="sg_data_switches">
-          <h1>On Off Switches</h1>
+          <h1 class="sg-h1">On Off Switches</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
 
           <div class="onoffswitch">
@@ -1528,17 +1577,17 @@
         </section>
 
         <section id="sg_data_paginations">
-          <h1>Paginations</h1>
+          <h1 class="sg-h1">Paginations</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_picture">
-          <h1>Picture</h1>
+          <h1 class="sg-h1">Picture</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_popover">
-          <h1>Popover</h1>
+          <h1 class="sg-h1">Popover</h1>
           <h2>Color and Position Variation</h2>
           <p>Click the buttons below to display varying Color and Position differences </p>
           <div class="sg-content-box sg-popover sg-popover-grey" data-content="popover-1">
@@ -1645,12 +1694,12 @@
         </section>
 
         <section id="sg_data_preloader">
-          <h1>Preloaders</h1>
+          <h1 class="sg-h1">Preloaders</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_progressbar">
-          <h1>Progress Bars</h1>
+          <h1 class="sg-h1">Progress Bars</h1>
           <div class="sg-dark-container">
             <div class="progress">
               <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
@@ -1661,37 +1710,37 @@
         </section>
 
         <section id="sg_data_tables">
-          <h1>Tables</h1>
+          <h1 class="sg-h1">Tables</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_tooltip">
-          <h1>Tooltip</h1>
+          <h1 class="sg-h1">Tooltip</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_toolbar">
-          <h1>Toolbar</h1>
+          <h1 class="sg-h1">Toolbar</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_nav_1">
-          <h1>Nav 1</h1>
+          <h1 class="sg-h1">Nav 1</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_nav_2">
-          <h1>Nav 2</h1>
+          <h1 class="sg-h1">Nav 2</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_nav_3">
-          <h1>Nav 3</h1>
+          <h1 class="sg-h1">Nav 3</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_checkboxes">
-          <h1>Checkboxes</h1>
+          <h1 class="sg-h1">Checkboxes</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
           <div>
             <label class="pikto-label" for="styleguide-chkbox-1">
@@ -1719,7 +1768,7 @@
         </section>
 
         <section id="sg_data_inputs">
-          <h1>Inputs</h1>
+          <h1 class="sg-h1">Inputs</h1>
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search for...">
             <span class="input-group-btn">
@@ -1759,13 +1808,13 @@
         </section>
 
         <section id="sg_data_sliders">
-          <h1>Sliders</h1>
+          <h1 class="sg-h1">Sliders</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
           <input type="range"/>
         </section>
 
         <section id="sg_data_selects">
-          <h1>Selects</h1>
+          <h1 class="sg-h1">Selects</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
           <div class="select-default">
             <select>
@@ -1780,28 +1829,28 @@
         </section>
 
         <section id="sg_data_icon_1">
-          <h1>Icon 1</h1>
+          <h1 class="sg-h1">Icon 1</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_icon_2">
-          <h1>Icon 2</h1>
+          <h1 class="sg-h1">Icon 2</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_icon_3">
-          <h1>Icon 3</h1>
+          <h1 class="sg-h1">Icon 3</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_conventions">
-          <h1>HTML/CSS Conventions</h1>
+          <h1 class="sg-h1">HTML/CSS Conventions</h1>
           <a target="_blank" href="https://docs.google.com/document/d/1APOh_El-iafCVn9A9cHY0pQyeHoCgbOePLcVgWCPkBM/edit">Link to Document</a>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_bem">
-          <h1>BEM</h1>
+          <h1 class="sg-h1">BEM</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
       </div>

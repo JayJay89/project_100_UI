@@ -75,6 +75,7 @@ $montserrat:        "Montserrat", Arial, sans-serif !default;
 /*Variables -- Colors*/
 $lightblue: #F6F9FC;
 $lightblue2: #8497AB;
+$lightblue3: #EAEEF1;
 $blue: #71B0EF;
 $blue2: #6B7C93;
 $gray1: #6F6F6F;
@@ -84,6 +85,10 @@ $gray4: #6A6A6A;
 $gray5: #F7F7F7;
 $gray6: #E0E0E0;
 $red: #AA1111;
+$teal: #1CAFA2;
+$purple-gray: #262442;
+$purple-gray-2: #6A6887;
+$darkblue: #0A5FAC;
 
 /*Variables -- Layout*/
 $sg-sidebar-padding: 8px; 
@@ -165,11 +170,11 @@ pre code {
 
 .sg-sidebar {
   // background-color: $lightblue;
-  background-color: $lightblue;
+  background-color: $lightblue3;
   width: calc(275px - 60px);
+  height: calc(100vh - 60px);
   display: inline-block;
   float: left;
-  height: calc(100vh - 60px);
   overflow: auto;
   padding: 30px;
   @include montserrat(regular);
@@ -187,7 +192,7 @@ pre code {
 
   h2 {
     font-size: 18px;
-    color: $blue;
+    color: $teal;
     margin-bottom: 8px;
     padding-left: $sg-sidebar-padding;
     letter-spacing: 0.5px;
@@ -209,14 +214,19 @@ pre code {
   button, label {
     width: 100%;
     text-align: left;
-    color: $gray1;
-    margin: 6px 0px;
+    color: $purple-gray;
+    margin: 5px 0px;
+    line-height: 14px
   }
 
   > button {
     padding-left: $sg-sidebar-padding;
     border-left: 2px solid transparent;
   }
+}
+.sg-sidebar-logo {
+  padding-left: 8px;
+  margin-bottom: 50px;
 }
 
 .sg-brand-kit {
@@ -259,25 +269,26 @@ pre code {
       opacity: 1;
       top: 0px;
     }
+  }
+}
 
-    h1 {
-      @include montserrat(semibold);
-      font-size: 22px;
-      color: $gray4;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
+.sg-h1 {
+  @include montserrat(semibold);
+  font-size: 22px;
+  color: $purple-gray;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 
-    h2 {
-      @include montserrat(regular);
-      font-size: 16px;
-      letter-spacing: 0.47px;
-      margin-top: 55px;
+.sg-h2 {
+  @include montserrat(regular);
+  font-size: 16px;
+  letter-spacing: 0.47px;
+  margin-top: 55px;
+  color: $darkblue;
 
-      &:first-of-type {
-        margin-top: 0px;
-      }
-    }
+  &:first-of-type {
+    margin-top: 0px;
   }
 }
 
@@ -309,8 +320,8 @@ pre code {
   > li.active {
     > button,  
     > input:checked ~ label {
-      border-left: 2px solid $blue;
-      color: $gray2;
+      border-left: 2px solid $teal;
+      color: $teal;
     }
   }
 }
@@ -327,25 +338,29 @@ pre code {
   width: 100%;
 
   > li {
-    padding-left: 30px;
+    padding-left: 10px;
     position: relative;
 
-    /*List Item - Circle*/
-    &:after {
-      content: " ";
-      display: block;
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      left: 8px;
-      top: 14px;
-      border-radius: 50%;
-      background-color: $lightblue2;
+    > button {
+      color: $purple-gray-2
     }
+
+    /*List Item - Circle*/
+    // &:after {
+    //   content: " ";
+    //   display: block;
+    //   position: absolute;
+    //   width: 3px;
+    //   height: 3px;
+    //   left: 8px;
+    //   top: 14px;
+    //   border-radius: 50%;
+    //   background-color: $lightblue2;
+    // }
 
     &.active--inner { 
       > button {
-        color: $gray2;
+        color: $teal;
       }
     }
   }
@@ -364,13 +379,16 @@ pre code {
       float: left;
       margin-right: 24px;
       margin-bottom: 35px;
+
       > span {
-        margin-top: 13px;
+        margin-top: 6px;
         display: block; 
-        font-size: 12px;
-        text-align: center;
-        color: $red;
-        @include sourceCode(regular)
+        font-size: 10px;
+        text-align: left;
+        border: 1px solid $lightblue3;
+        color: $purple-gray;
+        @include sourceCode(regular);
+
       }
     }
   }
@@ -379,9 +397,9 @@ pre code {
 .sg-colorbox {
   // The background-color is generated with JS from HTML content,
   // Changing the content, will change the background-color.
-  
-  width: 170px;
-  height: 56px;
+  @include montserrat(regular);
+  width: 144px;
+  height: 60px;
   text-align: center;
   vertical-align: middle;
   display: table-cell;
@@ -389,6 +407,7 @@ pre code {
   z-index: 1;
   color: $lightblue2;
   font-size: 14px;
+  border-radius: 2px;
 }
 
 .sg-code-box {
@@ -462,6 +481,14 @@ pre code {
   }
 }
 
+/*Typo*/
+.sg-typo-section {
+  color: $purple-gray;
+  
+  > section {
+    margin-bottom: 30px;
+  }
+}
 .sg-typo-proxima {
   margin-right: 130px;
 }
@@ -505,11 +532,55 @@ pre code {
 
 .sg-typo-test {
   display: block;
-  margin-top: 34px;
   line-height: 36px;
   font-size: 22px;
 }
 
+.sg-typo-size,
+.sg-typo-line-height {
+  width: calc(50% - 20px);
+  display: inline-block;
+  float: left;
+  padding: 20px;
+}
+
+.sg-typo-size {
+  padding: 20px 20px 20px 0px;
+}
+.sg-typo-line-height {
+  padding: 20px 0px 20px 20px;
+}
+
+.sg-typo-heading-size {
+  > li {
+    @include clearfix;
+    margin: 10px 10px 10px 0px;
+    h1, h2, h3, h4, h5, h6, p {
+      margin: 0;
+    }
+
+    > div, > span {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    > div {
+      width: 271px;
+
+    }
+    > span {
+      width: calc(100% - 271px);
+      text-align: right;
+      font-size: 16px;
+    }
+  }
+}
+
+.sg-typo-line-height {
+  > p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
 /*Button*/
 .sg-button-section {
   > .sg-content-box {
@@ -572,3 +643,4 @@ pre code {
   background-color: #2c2a37;
   padding: 10px;
 }
+

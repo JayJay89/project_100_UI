@@ -127,11 +127,11 @@ pre code {
 }
 
 .sg-sidebar {
-  background-color: #F6F9FC;
+  background-color: #EAEEF1;
   width: calc(275px - 60px);
+  height: calc(100vh - 60px);
   display: inline-block;
   float: left;
-  height: calc(100vh - 60px);
   overflow: auto;
   padding: 30px;
   font-family: "Montserrat", Arial, sans-serif;
@@ -152,7 +152,7 @@ pre code {
 
 .sg-sidebar h2 {
   font-size: 18px;
-  color: #71B0EF;
+  color: #1CAFA2;
   margin-bottom: 8px;
   padding-left: 8px;
   letter-spacing: 0.5px;
@@ -175,13 +175,19 @@ pre code {
 .sg-sidebar button, .sg-sidebar label {
   width: 100%;
   text-align: left;
-  color: #6F6F6F;
-  margin: 6px 0px;
+  color: #262442;
+  margin: 5px 0px;
+  line-height: 14px;
 }
 
 .sg-sidebar > button {
   padding-left: 8px;
   border-left: 2px solid transparent;
+}
+
+.sg-sidebar-logo {
+  padding-left: 8px;
+  margin-bottom: 50px;
 }
 
 .sg-brand-kit {
@@ -227,24 +233,25 @@ pre code {
   top: 0px;
 }
 
-.sg-main-container > section h1 {
+.sg-h1 {
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 700;
   font-size: 22px;
-  color: #6A6A6A;
+  color: #262442;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-.sg-main-container > section h2 {
+.sg-h2 {
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
   letter-spacing: 0.47px;
   margin-top: 55px;
+  color: #0A5FAC;
 }
 
-.sg-main-container > section h2:first-of-type {
+.sg-h2:first-of-type {
   margin-top: 0px;
 }
 
@@ -270,8 +277,8 @@ pre code {
 
 .sg-button-list--outer > li.active > button,
 .sg-button-list--outer > li.active > input:checked ~ label {
-  border-left: 2px solid #71B0EF;
-  color: #849AB0;
+  border-left: 2px solid #1CAFA2;
+  color: #1CAFA2;
 }
 
 .sg-button-list--inner {
@@ -287,25 +294,17 @@ pre code {
 }
 
 .sg-button-list--inner > li {
-  padding-left: 30px;
+  padding-left: 10px;
   position: relative;
   /*List Item - Circle*/
 }
 
-.sg-button-list--inner > li:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  left: 8px;
-  top: 14px;
-  border-radius: 50%;
-  background-color: #8497AB;
+.sg-button-list--inner > li > button {
+  color: #6A6887;
 }
 
 .sg-button-list--inner > li.active--inner > button {
-  color: #849AB0;
+  color: #1CAFA2;
 }
 
 .sg-contents {
@@ -328,18 +327,21 @@ pre code {
 }
 
 .sg-color-palette > div > li > span {
-  margin-top: 13px;
+  margin-top: 6px;
   display: block;
-  font-size: 12px;
-  text-align: center;
-  color: #AA1111;
+  font-size: 10px;
+  text-align: left;
+  border: 1px solid #EAEEF1;
+  color: #262442;
   font-family: "Source Code Pro", monospace;
   font-weight: 400;
 }
 
 .sg-colorbox {
-  width: 170px;
-  height: 56px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  width: 144px;
+  height: 60px;
   text-align: center;
   vertical-align: middle;
   display: table-cell;
@@ -347,6 +349,7 @@ pre code {
   z-index: 1;
   color: #8497AB;
   font-size: 14px;
+  border-radius: 2px;
 }
 
 .sg-code-box {
@@ -398,6 +401,15 @@ pre code {
 .sg-website-color > h2,
 .sg-ui-color > h2 {
   margin: 40px 0px 32px 0px;
+}
+
+/*Typo*/
+.sg-typo-section {
+  color: #262442;
+}
+
+.sg-typo-section > section {
+  margin-bottom: 30px;
 }
 
 .sg-typo-proxima {
@@ -462,9 +474,61 @@ pre code {
 
 .sg-typo-test {
   display: block;
-  margin-top: 34px;
   line-height: 36px;
   font-size: 22px;
+}
+
+.sg-typo-size,
+.sg-typo-line-height {
+  width: calc(50% - 20px);
+  display: inline-block;
+  float: left;
+  padding: 20px;
+}
+
+.sg-typo-size {
+  padding: 20px 20px 20px 0px;
+}
+
+.sg-typo-line-height {
+  padding: 20px 0px 20px 20px;
+}
+
+.sg-typo-heading-size > li {
+  margin: 10px 10px 10px 0px;
+}
+
+.sg-typo-heading-size > li:before, .sg-typo-heading-size > li:after {
+  content: " ";
+  display: table;
+}
+
+.sg-typo-heading-size > li:after {
+  clear: both;
+}
+
+.sg-typo-heading-size > li h1, .sg-typo-heading-size > li h2, .sg-typo-heading-size > li h3, .sg-typo-heading-size > li h4, .sg-typo-heading-size > li h5, .sg-typo-heading-size > li h6, .sg-typo-heading-size > li p {
+  margin: 0;
+}
+
+.sg-typo-heading-size > li > div, .sg-typo-heading-size > li > span {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.sg-typo-heading-size > li > div {
+  width: 271px;
+}
+
+.sg-typo-heading-size > li > span {
+  width: calc(100% - 271px);
+  text-align: right;
+  font-size: 16px;
+}
+
+.sg-typo-line-height > p {
+  font-size: 14px;
+  line-height: 20px;
 }
 
 /*Button*/
