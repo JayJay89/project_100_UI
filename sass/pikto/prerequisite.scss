@@ -1,7 +1,8 @@
-@import "variables-colors";
-@import "variables-spacings";
+@import "fc-color-variables";
+@import "fc-spacing-variables";
+@import "fc-border-radii";
+@import "fc-color-combo";
+@import "fc-shadow";
+@import "fc-typography";
 @import "variables";
-@import "mixins-color-combo";
-@import "mixins-shadow";
-@import "mixins-border-radii";
 @import "mixins";

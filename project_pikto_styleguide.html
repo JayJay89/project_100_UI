@@ -46,6 +46,7 @@
         <div class="sg-brand-kit">
           <h2>Brand Kit</h2>
           <ul class="sg-button-list sg-button-list--outer">
+            <li><button class="sg-btn" data-target="sg_data_road_map">Road Map</button></li>
             <li><button class="sg-btn" data-target="sg_data_logo">Logo</button></li>
             <li><button class="sg-btn" data-target="sg_data_brand_color">Brand Colors</button></li>
             <li><button class="sg-btn" data-target="sg_data_brand_patterns">Brand Patterns</button></li>
@@ -121,8 +122,6 @@
               </ul>
             </li>
 
-
-
             <li class="sg-dropdown">
               <input id="styleguide_icon" type="radio" name="tabs">
               <label for="styleguide_icon">Icons</label>
@@ -140,10 +139,61 @@
       </div>
 
       <div class="sg-main-container" id="sg_main_container">
+      <section id="sg_data_road_map">
+        <h1 class="sg-h1">Road Map</h1>
+        <h2>Changelogs</h2>
+        <p>Changes made for the design system</p>
+
+        <ul class="sg-list">
+        To do list
+          <li>Can we include certain variables and mixins in their related files? Font mixins and font variables in their font files.</li>
+          <li>HTML/CSS Convention</li>
+          <li>BEM System</li>
+        </ul>
+
+        <ul class="sg-list">
+          <li>
+            <h2>Introduction of Foundational Components</h2>
+            <p>Colors, Shadows, Border-radii, Spacings, Typography, Transitions, Animations</p>
+            <p>These are the basic modular components used in the constructions of complex elements such as buttons, accordions, labels, etc. Each complex element will be formed from the variables and mixins defined for the foundational components</p>
+            <p>The general idea is that having a set of foundational components which follows well-defined rules. Our complex components can be composed from foundational components, and would the overall result is a much more cohesive system. Modularization is the key attribute in the project.</p>
+          </li>
+
+          <li>
+            <h2>Splitting mixins and variables into chunks to reflect this change of management</h2>
+            <p>Originally we had variables.scss, and mixins.scss, to accomodate new changes of this managemet. This is a work in progress, typography and transitions isn't modularized yet</p>
+
+            <div class="sg-content-box" data-content="prequisite-1" style="display: none;">
+            @import "variables-colors";
+            @import "variables-spacings";
+            @import "variables";
+            @import "mixins-border-radii";
+            @import "mixins-color-combo";
+            @import "mixins-shadow";
+            @import "mixins-typography";
+            @import "mixins";
+            </div>
+
+            <div class="sg-code-box" id="prequisite-1" >
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="scss sg-code-syntax"></code></pre>
+            </div>
+          </li>
+
+          <li>
+            <h2>Bootstrap Code - Keep it lean</h2>
+            <p>Bootstrap provides us with many useful components that helps us in development. However, at the same time it bloats our code, by keeping a lot of components that we didn't make use of. Aside from that, using Bootstrap prevents us from fully implementing our design system, which is constructing our system from modular fundamental components.</p>
+            <br>
+            <p>The actionable step to be taken here - is to comb through our current code base, keep what we need, and dispose codes that we don't. This means slowly converting our design system for our own need. In that process, we could learn how bootstrap implement certain elements and how we could benefit from that.</p>
+            <p>If bootstrap 4 comes up a feature that could be of use to use. We could extract the code that we need and adapt it to our arsenal.</p>
+          </li>
+
+        </ul>
+      </section>
+
         <!--Branding-->
         <section id="sg_data_logo" class="active slide-in">
           <h1 class="sg-h1">Logo</h1>
-          <input type="range"/>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolore, reiciendis nostrum blanditiis possimus nesciunt consequatur rerum. Autem, eaque vero omnis, tenetur, nemo suscipit praesentium adipisci perspiciatis doloremque vel veniam?</p>
           <!--Indentation had to be pushed back--> 
           <!-- class="sg-code-box"-->
@@ -524,7 +574,6 @@
           
           <h2>Constructor</h2>
 
-
           <div class="sg-content-box" data-content="shadow-1" style="display: none;">
             @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
               @if $inset {
@@ -722,13 +771,51 @@
 
         <section id="sg_data_spacing">
           <h1 class="sg-h1">Spacing</h1>
-          <p>Spacing is the general spacing rules that governs the webapp. Margins and Paddings</p>
-          <p>The base size is 4px</p>
+          <p>
+            Spacing is the general spacing rules that governs the webapp. This is an effort to keep the spacing and dimension consistent. However, do note that not all elements will be applied to this rule. All spacing configurations are controlled in variables-spacings.scss
+          </p>
+
+          <div class="sg-content-box" data-content="spacing-1" style="display: none;">
+            $base-size: 4;
+
+            $s1: $base-size * 1;
+            $s2: $base-size * 2;
+            $s3: $base-size * 3;
+            $s4: $base-size * 4;
+            $s5: $base-size * 5;
+            $s6: $base-size * 6;
+          </div>
+
+          <div class="sg-code-box" id="spacing-1" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+
+          <p>The base size is 4px, and it increments so on...</p>
+
+          <button class="pikto-btn pikto-btn-teal sg-spacing-button-example">teal</button>
+
+          <div class="sg-content-box" data-content="spacing-2" style="display: none;">
+            .pikto-btn {
+              padding: $s1 $s3;
+            }
+
+            /* this produces a
+            padding: 4px 12px; */
+          </div>
+
+          <div class="sg-code-box" id="spacing-2" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+          <p>However, this system is not implemented yet as it'll cause a huge drastic changes in the the element's and layout's spacing and sizes. Is there a need for this system or not depends on how important it is to have this kind of system.</p>
         </section>
 
         <section id="sg_data_typography" class="sg-typo-section">
           <h1 class="sg-h1">Typography</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+
+          <p>All type related scss are defined in _type.scss</p>
+
           <section class="sg-typo-types clearfix">
             <div class="sg-typo-proxima">
               <h2 class="sg-h2">Proxima Nova</h2>
@@ -759,6 +846,36 @@
           </section>
 
           <section class="sg-typo-size-height clearfix">
+            <h2>On Tags and Classes</h2>
+
+            <p>Just a note on our font system, after various discussions we have come to an agreement to set a convention on setting font-sizes.</p>
+
+            <ul class="sg-list">
+              <li>HTML tags denotes the hierarchy of the headers. Example &lt;h1&gt; tag are use for the main header, and &lt;h2&gt; is for secondary headers. They are used semantically rather than as a mean to define the font-size.</li>
+              <li>Classes will be used to define font-sizes.</li>
+            </ul>
+
+            <p>This results in the following possibilities</p>
+            <h1>Header with h1 class</h1>
+            <h1>Header with h1 class</h1>
+
+            <div class="sg-content-box" data-content="typo-1" style="display: none;">
+              .inset-shadow {
+                @include box-shadow (0px 2px 1px 0px rgba(black, 0.2) inset);
+              }
+              .outer-shadow {
+                @include box-shadow (1px 1px 4px 0px rgba(black ,0.2));
+              }
+              .no-shadow {
+                @include box-shadow (none);
+              }
+            </div>
+
+            <div class="sg-code-box" id="typo-1" >
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="scss sg-code-syntax"></code></pre>
+            </div>
+
             <div class="sg-typo-size">
               <h2 class="sg-h2">Type Sizes</h2>
               <ul class="sg-typo-heading-size">
@@ -796,6 +913,7 @@
                 </li>
               </ul>
             </div>
+
             <div class="sg-typo-line-height">
               <h2 class="sg-h2">Line Height</h2>
               <p>Min: 20px</p>
@@ -806,6 +924,7 @@
                 As a result, we take a pragmatic approach to spacing and line height by resetting all margins and paddings to 0, and allowing the line-height property for all text to inherit a globally defined ratio of 1.5 of the text size. This allows designers and developers to easily opt-in to specific text spacing by leveraging our CSS Text and Spacing Utilities.
               </p>
             </div>
+
           </section>
 
         </section>

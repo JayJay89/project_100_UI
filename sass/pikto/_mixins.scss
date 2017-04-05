@@ -1493,19 +1493,6 @@
   line-height: $line-height-base;
 }
 
-@mixin header-base {
-  color: $headings-color;
-  line-height: $line-height-base;
-}
-
-@mixin header-font-base {
-  font-family: $proxima-nova-semibold;
-}
-
-@mixin header-font-base-bolder {
-  font-family: $proxima-nova-bold;
-}
-
 /**====================================**/
 /* 05g Sprite */
 /**====================================**/
