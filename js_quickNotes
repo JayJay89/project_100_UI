@@ -1,0 +1,103 @@
+/*Lesson 1*/
+/* Event Delegation
+
+  image_container_image.addEventListener('click', function(e){
+    console.log(e.target);
+
+    if (e.target.tagName.toLowerCase() === 'img') {
+      //do something
+    }
+
+    if(e.tagName == 'A' && e.classList.contains("someBtn")){
+      //do something
+    }
+
+    if ( e.target.className === 'my-button') {
+      //do something
+    }
+
+    if(e.target && e.target.nodeName == "LI") {
+      //do something
+    }
+  })
+*/
+
+/*Lesson 2*/
+/*
+
+  This won't work
+  ======================================
+  left_pointer.addEventListener('transitionend', function(){
+    closeGallery();
+  });
+  left_pointer.removeEventListener('transitionend');
+  ======================================
+
+  To remove event listeners, This'll work
+  ======================================
+  left_pointer.addEventListener('transitionend', switchDisplay);
+  left_pointer.removeEventListener('transitionend', switchDisplay);
+  ======================================
+*/
+
+/*Lesson 3 */
+/*
+  Always remember to remove event listeners after they are not in used!!!
+
+  OR 
+
+  Search for how to prevent event handlers from firing multiple times
+*/
+
+/*Lesson 4*/
+// https://developers.google.com/web/updates/2016/10/addeventlistener-once
+/*
+Instead of removing event listeners all the time, You can add a third parameter 
+to  
+  elem.addEventListener('transitionend', switchDisplay, {once: true});
+*/
+
+/*Animation Machine*/
+
+var moveBy3 = function(target){
+  let start = performance.now();
+  var duration = 500;
+  var distance = 300;
+
+  requestAnimationFrame(animate);
+
+  function animate(){
+    let timePassed = performance.now() - start;
+    let progress = timePassed / duration;
+
+    if (progress > 1) {
+      progress = 1;
+    }
+
+    moveLeft();
+    console.log(progress);
+
+    if (progress == 1) {
+      cancelAnimationFrame(animate);
+    } else {
+      requestAnimationFrame(animate);
+    }
+
+    function moveLeft(){
+      target.style.left = (distance * progress) + "px"; 
+      console.log("timePassed " + timePassed);
+      console.log("left " + target.style.left);
+      console.log("progress " + progress);
+    }
+  }
+}
+
+/*Lesson 5*/
+/*This won't work*/
+var animate = function(moveProp){
+  elem.style.moveProp = 100px;
+}
+/*Use Bracket Notation instead*/
+var animate = function(moveProp){
+  elem.style[moveprop] = 100px;
+}

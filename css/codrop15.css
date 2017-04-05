@@ -82,8 +82,18 @@ ul {
   display: inline-block;
 }
 
-.fom-desc > li {
+.fom-desc-container {
   position: absolute;
+  left: 0px;
+}
+
+.fom-desc {
+  display: table-cell;
+  height: 100vh;
+  vertical-align: middle;
+}
+
+.fom-desc > li {
   overflow: hidden;
   height: 89px;
 }
@@ -98,9 +108,11 @@ ul {
 
 .fom-hoverblock {
   position: absolute;
+  top: 0px;
   right: 20px;
   background-color: yellow;
   width: 100px;
+  height: 100px;
   z-index: -1;
   border-radius: 10px;
 }

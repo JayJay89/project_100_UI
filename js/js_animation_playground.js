@@ -1,6 +1,7 @@
 const js_counter = document.querySelector('.js-counter');
 const js_box = document.querySelector('.js-box');
 
+
 /*Counter and Stop Counter*/
 // var counter = 1;
 // var timer = setInterval(logCounter, 1000);
@@ -19,7 +20,7 @@ js_box.addEventListener('click', function(e){
   console.log("move");
   // moveBy(e.target, 500, 1);
   // moveBy2(e.target, "left", "px", 0 , 500, 2000);
-  moveBy3(e.target);
+  moveBy4(e.target);
 })
 
 /*http://javascript.info/css-animations*/
@@ -90,6 +91,7 @@ var moveBy3 = function(target){
     }
 
     moveLeft();
+    console.log(progress);
 
     if (progress == 1) {
       cancelAnimationFrame(animate);
@@ -106,4 +108,34 @@ var moveBy3 = function(target){
   }
 }
 
+/*Prototype 4*/
+var moveBy4 = function(target){
+  let start = performance.now();
+  var duration = 500;
+  var distance = 300;
+  requestAnimationFrame(animate);
 
+  function animate(){
+    let timePassed = performance.now() - start;
+    let progress = timePassed / duration;
+
+    if (progress > 1) {
+      progress = 1;
+    }
+
+    moveLeft();
+    // console.log(progress);
+
+    if (progress == 1) {
+      cancelAnimationFrame(animate);
+    } else {
+      requestAnimationFrame(animate);
+    }
+
+    function moveLeft(){
+      value += 30;
+      // target.style.left = (distance * progress) + "px"; 
+      console.log(value);
+    }
+  }
+}
