@@ -1,4 +1,10 @@
 // Core variables and mixins
+@import "fc-color-variables";
+@import "fc-spacing-variables";
+@import "fc-border-radii";
+@import "fc-color-combo";
+@import "fc-shadow";
+@import "fc-typography";
 @import "variables";
 @import "mixins";
 
@@ -9,7 +15,7 @@
 
 // Core CSS
 @import "scaffolding";
-@import "type";
+// @import "type";
 @import "code";
 @import "grid";
 @import "tables";
@@ -38,6 +44,7 @@
 @import "responsive-embed";
 @import "wells";
 @import "close";
+@import "combo-boxes";
 
 // Components w/ JavaScript
 @import "modals";

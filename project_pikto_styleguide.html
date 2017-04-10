@@ -65,6 +65,7 @@
               <ul class="sg-button-list sg-button-list--inner">
                 <li><button class="sg-btn" data-target="sg_data_website_colour">Website Colour Palette</button></li>
                 <li><button class="sg-btn" data-target="sg_data_ui_colour">UI Colour Palette</button></li>
+                <li><button class="sg-btn" data-target="sg_data_ui_combo">UI Colour Combo</button></li>
                 <li><button class="sg-btn" data-target="sg_data_shadow">Shadow</button></li>
                 <li><button class="sg-btn" data-target="sg_data_border_radii">Border Radii</button></li>
                 <li><button class="sg-btn" data-target="sg_data_spacing">Spacing</button></li>
@@ -161,7 +162,7 @@
 
           <li>
             <h2>Splitting mixins and variables into chunks to reflect this change of management</h2>
-            <p>Originally we had variables.scss, and mixins.scss, to accomodate new changes of this managemet. This is a work in progress, typography and transitions isn't modularized yet</p>
+            <p>Originally we had variables.scss, and mixins.scss, to accomodate new changes of this management. This is a work in progress, typography and transitions isn't modularized yet</p>
 
             <div class="sg-content-box" data-content="prequisite-1" style="display: none;">
             @import "variables-colors";
@@ -188,6 +189,10 @@
             <p>If bootstrap 4 comes up a feature that could be of use to use. We could extract the code that we need and adapt it to our arsenal.</p>
           </li>
 
+          <li>
+            <h2>Mixins Movement</h2>
+            <p>Typography mixins are moved from mixins into _fc-typography, as they are only used in mixins.</p>
+          </li>
         </ul>
       </section>
 
@@ -569,6 +574,114 @@
           </ul>
         </section>
 
+        <section class="sg-website-color" id="sg_data_ui_combo">
+          <h1 class="sg-h1">UI Colour Combo</h1>
+          <p> Color combos are sets of colors designed for elements at different states. Take these 2 links for example. How can the be generated using the color-combo sets?</p>
+          
+          <section class="sg-color-combo">
+            <div class="color-combo-box">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </section>
+
+          <h2>Generating Elements with color combo sets</h2>
+          <a class="general-link" href="#/">Teal Link</a>
+          <a class="magenta-link" href="#/">Magenta Link</a>
+          
+          <br>
+          <p>Here's the color-combo sets</p>
+          <div class="sg-content-box" data-content="color-combo-1" style="display: none;">
+            $teal-combo: (
+              'col-1': $teal,
+              'col-2': $teal-dark,
+              'col-3': $teal-darker
+            );
+
+            $magenta-combo: (
+              'col-1': $magenta,
+              'col-2': $magenta-dark,
+              'col-3': $magenta-darker
+            );
+          </div>
+          
+          <div class="sg-code-box" id="color-combo-1" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+
+          <p>This is the Link Generator, the factory</p>
+          <div class="sg-content-box" data-content="color-combo-2" style="display: none;">
+            @mixin generateLink($combo){
+              color: map-get($combo, 'col-1');
+
+              &:hover {
+                color: map-get($combo, 'col-2');
+              }
+
+              &:active {
+                color: map-get($combo, 'col-3');
+              }
+            }
+          </div>
+
+          <div class="sg-code-box" id="color-combo-2" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+          
+          <p>Passing the color combo into the constructor to generate the colors</p>
+          <div class="sg-content-box" data-content="color-combo-3" style="display: none;">
+            .general-link {
+              @include generateLink($teal-combo);
+            }
+            .magenta-link {
+              @include generateLink($magenta-combo);
+            }
+          </div>
+
+          <div class="sg-code-box" id="color-combo-3" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+
+          <p>In CSS this'll be displayed</p>
+          <div class="sg-content-box" data-content="color-combo-4" style="display: none;">
+            .general-link {
+              color: map-get($teal-combo, 'col-1');
+
+              &:hover {
+                color: map-get($teal-combo, 'col-2');
+              }
+
+              &:active {
+                color: map-get($teal-combo, 'col-3');
+              }
+            }
+
+            .magenta-link {
+              color: map-get($magenta-combo, 'col-1');
+
+              &:hover {
+                color: map-get($magenta-combo, 'col-2');
+              }
+
+              &:active {
+                color: map-get($magenta-combo, 'col-3');
+              }
+            }
+          </div>
+
+          <p>The same process goes for generating buttons</p>
+
+          <div class="sg-code-box" id="color-combo-4" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+        </section>
+
         <section class="sg-shadows" id="sg_data_shadow">
           <h1 class="sg-h1">Shadows</h1>
           
@@ -814,7 +927,7 @@
         <section id="sg_data_typography" class="sg-typo-section">
           <h1 class="sg-h1">Typography</h1>
 
-          <p>All type related scss are defined in _type.scss</p>
+          <p>All type related scss are defined in _fc-typography.scss</p>
 
           <section class="sg-typo-types clearfix">
             <div class="sg-typo-proxima">
@@ -846,61 +959,56 @@
           </section>
 
           <section class="sg-typo-size-height clearfix">
-            <h2>On Tags and Classes</h2>
+            <h2 class="sg-h2">On Tags and Classes</h2>
 
-            <p>Just a note on our font system, after various discussions we have come to an agreement to set a convention on setting font-sizes.</p>
+            <p>HTML tags denotes the hierarchy of the headers. Example &lt;h1&gt; tag are use for the main header, and &lt;h2&gt; is for secondary headers. They are used semantically rather than as a mean to define the font-size. Classes will be used to define font-sizes.</p>
 
-            <ul class="sg-list">
-              <li>HTML tags denotes the hierarchy of the headers. Example &lt;h1&gt; tag are use for the main header, and &lt;h2&gt; is for secondary headers. They are used semantically rather than as a mean to define the font-size.</li>
-              <li>Classes will be used to define font-sizes.</li>
-            </ul>
-
-            <p>This results in the following possibilities</p>
-            <h1>Header with h1 class</h1>
-            <h1>Header with h1 class</h1>
+            <p>This results in the following possibilities:</p>
+            <h1 class="h1">header 1 with .h1 class</h1>
+            <h1 class="h2">header 1 with .h2 class</h1>
+            <h2 class="h1">header 2 with .h1 class</h2>
+            <h2 class="h2">header 2 with .h2 class</h2>
+            <h5 class="h3">header 5 with .h3 class</h2>
 
             <div class="sg-content-box" data-content="typo-1" style="display: none;">
-              .inset-shadow {
-                @include box-shadow (0px 2px 1px 0px rgba(black, 0.2) inset);
-              }
-              .outer-shadow {
-                @include box-shadow (1px 1px 4px 0px rgba(black ,0.2));
-              }
-              .no-shadow {
-                @include box-shadow (none);
-              }
+            <h1 class="h1">header 1 with .h1 class</h1>
+            <h1 class="h2">header 1 with .h2 class</h1>
+            <h2 class="h1">header 2 with .h1 class</h2>
+            <h2 class="h2">header 2 with .h2 class</h2>
+            <h5 class="h3">header 5 with .h3 class</h2>
             </div>
 
             <div class="sg-code-box" id="typo-1" >
               <div class="sg-code-box-sidebar"></div>
-              <pre><code class="scss sg-code-syntax"></code></pre>
+              <pre><code class="html sg-code-syntax"></code></pre>
             </div>
-
+          </section>
+          <section class="clearfix">
             <div class="sg-typo-size">
               <h2 class="sg-h2">Type Sizes</h2>
               <ul class="sg-typo-heading-size">
                 <li>
-                  <div><h1>Heading Level One</h1></div>
+                  <div><h1 class="h1">Heading Level One</h1></div>
                   <span>32px</span>
                 </li>
                 <li>
-                  <div><h2>Heading Level Two</h2></div>
+                  <div><h2 class="h2">Heading Level Two</h2></div>
                   <span>28px</span>
                 </li>
                 <li>
-                  <div><h3>Heading Level Three</h3></div>
+                  <div><h3 class="h3">Heading Level Three</h3></div>
                   <span>24px</span>
                 </li>
                 <li>
-                  <div><h4>Heading Level Four</h4></div>
+                  <div><h4 class="h4">Heading Level Four</h4></div>
                   <span>20px</span>
                 </li>
                 <li>
-                  <div><h5>Heading Level Five</h5></div>
+                  <div><h5 class="h5">Heading Level Five</h5></div>
                   <span>16px</span>
                 </li>
-                <li>
-                  <div><h6>Heading Level Six</h6></div>
+                <li class="margin-bottom">
+                  <div><h6 class="h6">Heading Level Six</h6></div>
                   <span>14px</span>
                 </li>
                 <li>
@@ -916,7 +1024,7 @@
 
             <div class="sg-typo-line-height">
               <h2 class="sg-h2">Line Height</h2>
-              <p>Min: 20px</p>
+              <p style="color: #6B7C93;">Min: 20px</p>
               <p>
                 In the context of an enterprise application, the need for longform text is quite rare. More often, application design involves many small bits of text that all represent the user’s data. This text is spaced intentionally to maintain distinction between different types and rows of data.
               </p>
@@ -924,9 +1032,15 @@
                 As a result, we take a pragmatic approach to spacing and line height by resetting all margins and paddings to 0, and allowing the line-height property for all text to inherit a globally defined ratio of 1.5 of the text size. This allows designers and developers to easily opt-in to specific text spacing by leveraging our CSS Text and Spacing Utilities.
               </p>
             </div>
-
           </section>
 
+          <section>
+            <h2>Links</h2>
+            <a class="general-link" href="#/">General link</a>
+            <a class="attention-link" href="#/">Attention link</a>
+            <a class="title-link" href="#/">Title link</a>
+            <a class="meta-link" href="#/">Meta link</a>
+          </section>
         </section>
 
         <section id="sg_data_transitions">

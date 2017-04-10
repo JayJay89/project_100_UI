@@ -299,9 +299,9 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 /**=====================================**/
 /* 07a Base
 /**=====================================**/
-  $font-family-base:        "ProximaNova-Regular", Arial, sans-serif !default;
-  $proxima-nova-semibold:   "ProximaNova-Semibold", Arial, sans-serif !default;
-  $proxima-nova-bold:       "ProximaNova-Bold", Arial, sans-serif !default;
+$font-family-base:        "ProximaNova-Regular", Arial, sans-serif !default;
+$proxima-nova-semibold:   "ProximaNova-Semibold", Arial, sans-serif !default;
+$proxima-nova-bold:       "ProximaNova-Bold", Arial, sans-serif !default;
 
 // Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;

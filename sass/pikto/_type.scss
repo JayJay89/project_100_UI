@@ -18,18 +18,6 @@
 /**=====================================**/
 /* 01 Headings */
 /**=====================================**/
-h1, h2, h3, h4, h5, h6, .hero {
-  @include header-base;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  @include header-font-base;
-
-  &.bolder {
-    @include header-font-base-bolder;
-  }
-}
-
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6, .hero {
 
@@ -61,13 +49,6 @@ h6, .h6 {
     font-size: 75%;
   }
 }
-
-h1, .h1 { font-size: $font-size-h1; }
-h2, .h2 { font-size: $font-size-h2; }
-h3, .h3 { font-size: $font-size-h3; }
-h4, .h4 { font-size: $font-size-h4; }
-h5, .h5 { font-size: $font-size-h5; }
-h6, .h6 { font-size: $font-size-h6; }
 
 /**=====================================**/
 /* 02 Body text */
@@ -175,28 +156,6 @@ mark, .mark {
   border-bottom: 1px solid $page-header-border-color;
 }
 
-/**=====================================**/
-/* 08 Hyperlink */
-/**=====================================**/
-.general-link{
-  @include general-link;
-  cursor: pointer;
-}
-
-.attention-link{
-  @include attention-link;
-  cursor: pointer;
-}
-
-.title-link{
-  @include title-link;
-  cursor: pointer;
-}
-
-.meta-link{
-  @include meta-link;
-  cursor: pointer;
-}
 
 /**=====================================**/
 /* 09 List */

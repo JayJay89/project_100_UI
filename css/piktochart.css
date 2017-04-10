@@ -1,6 +1,194 @@
 @charset "UTF-8";
 /*Variables*/
 /*Base Size*/
+/*Class*/
+@import url("//hello.myfonts.net/count/3279a8");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,600,700");
+.border-radius-6 {
+  border-radius: 6px;
+}
+
+.border-radius-4 {
+  border-radius: 4px;
+}
+
+.border-radius-2 {
+  border-radius: 2px;
+}
+
+/*Mixin*/
+/*Shadow Constructor*/
+/*Mixin*/
+/*Class*/
+.inset-shadow {
+  -webkit-box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.outer-shadow {
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.no-shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/*Variables -- Fonts*/
+/**
+ * @license
+ * MyFonts Webfont Build ID 3307944, 2016-11-14T04:58:36-0500
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: ProximaNova-Bold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/bold/
+ * Licensed pageviews: 1,000,000
+ *
+ * Webfont: ProximaNova-Regular by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/regular/
+ * Licensed pageviews: 21,000,000
+ *
+ * Webfont: ProximaNova-Semibold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/semibold/
+ * Licensed pageviews: 10,000,000
+ *
+ *
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3307944
+ * Webfonts copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+ *
+ * © 2016 MyFonts Inc
+*/
+/* @import must be at top of file, otherwise CSS will not work */
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  src: url("/fonts/base-proximanova/3279A8_0_0.eot");
+  src: url("/fonts/base-proximanova/3279A8_0_0.eot?#iefix") format("embedded-opentype"), url("/fonts/base-proximanova/3279A8_0_0.woff2") format("woff2"), url("/fonts/base-proximanova/3279A8_0_0.woff") format("woff"), url("/fonts/base-proximanova/3279A8_0_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'ProximaNova-Regular';
+  src: url("/fonts/base-proximanova/3279A8_1_0.eot");
+  src: url("/fonts/base-proximanova/3279A8_1_0.eot?#iefix") format("embedded-opentype"), url("/fonts/base-proximanova/3279A8_1_0.woff2") format("woff2"), url("/fonts/base-proximanova/3279A8_1_0.woff") format("woff"), url("/fonts/base-proximanova/3279A8_1_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'ProximaNova-Semibold';
+  src: url("/fonts/base-proximanova/3279A8_2_0.eot");
+  src: url("/fonts/base-proximanova/3279A8_2_0.eot?#iefix") format("embedded-opentype"), url("/fonts/base-proximanova/3279A8_2_0.woff2") format("woff2"), url("/fonts/base-proximanova/3279A8_2_0.woff") format("woff"), url("/fonts/base-proximanova/3279A8_2_0.ttf") format("truetype");
+}
+
+/*Mixins -- Fonts*/
+/*Code*/
+h1, h2, h3, h4, h5, h6, p {
+  color: inherit;
+  line-height: normal;
+  margin: 0px;
+}
+
+p {
+  line-height: 20px;
+  font-size: 14px;
+}
+
+/*Font-sizes*/
+.h1 {
+  font-size: 32px;
+}
+
+.h2 {
+  font-size: 28px;
+}
+
+.h3 {
+  font-size: 24px;
+}
+
+.h4 {
+  font-size: 20px;
+}
+
+.h5 {
+  font-size: 16px;
+}
+
+.h6 {
+  font-size: 14px;
+}
+
+/*Alignment*/
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+/*Text Transform*/
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase, .initialism {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+/*Hyperlinks*/
+.general-link, .attention-link, .title-link, .meta-link {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.general-link {
+  color: #1cafa2;
+}
+
+.general-link:hover {
+  color: #158379;
+}
+
+.general-link:active {
+  color: #127169;
+}
+
+.magenta-link {
+  color: #f16078;
+}
+
+.magenta-link:hover {
+  color: #cb3f56;
+}
+
+.magenta-link:active {
+  color: #a12e41;
+}
+
 /**=====================================**/
 /* 02b Scaffolding
 /**=====================================**/
@@ -221,44 +409,6 @@
 /**=====================================**/
 /* 45 Responsive Notification  */
 /**=====================================**/
-/*Color Combo Factory*/
-/*Color Combo Sets*/
-/*Target is for targeting either the color or the bgcolor*/
-/*Shadow Constructor*/
-/*Mixin*/
-/*Class*/
-.inset-shadow {
-  -webkit-box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.2);
-}
-
-.outer-shadow {
-  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-}
-
-.no-shadow {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-
-/*Class*/
-.border-radius-6 {
-  border-radius: 6px;
-}
-
-.border-radius-4 {
-  border-radius: 4px;
-}
-
-.border-radius-2 {
-  border-radius: 2px;
-}
-
-/*Mixin*/
 /**=====================================**/
 /* 01 Utilities */
 /**=====================================**/
@@ -2841,19 +2991,6 @@ a:focus {
 /**=====================================**/
 /* 01 Headings */
 /**=====================================**/
-h1, h2, h3, h4, h5, h6, .hero {
-  color: inherit;
-  line-height: 1.42857;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "ProximaNova-Semibold", Arial, sans-serif;
-}
-
-h1.bolder, h2.bolder, h3.bolder, h4.bolder, h5.bolder, h6.bolder {
-  font-family: "ProximaNova-Bold", Arial, sans-serif;
-}
-
 h1 small,
 h1 .small, h2 small,
 h2 .small, h3 small,
@@ -2901,30 +3038,6 @@ h5 .small, .h5 small, .h5 .small,
 h6 small,
 h6 .small, .h6 small, .h6 .small {
   font-size: 75%;
-}
-
-h1, .h1 {
-  font-size: 30px;
-}
-
-h2, .h2 {
-  font-size: 26px;
-}
-
-h3, .h3 {
-  font-size: 24px;
-}
-
-h4, .h4 {
-  font-size: 21px;
-}
-
-h5, .h5 {
-  font-size: 17px;
-}
-
-h6, .h6 {
-  font-size: 15px;
 }
 
 /**=====================================**/
@@ -3114,49 +3227,6 @@ a.bg-danger:focus {
   padding-bottom: 9px;
   margin: 40px 0 20px;
   border-bottom: 1px solid #3f3d48;
-}
-
-/**=====================================**/
-/* 08 Hyperlink */
-/**=====================================**/
-.general-link {
-  color: #1cafa2;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.general-link:hover {
-  color: #158379;
-}
-
-.attention-link {
-  color: #f16078;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.attention-link:hover {
-  color: #cb3f56;
-}
-
-.title-link {
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.title-link:hover {
-  color: #c2c2c2;
-}
-
-.meta-link {
-  color: #8e89a4;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.meta-link:hover {
-  color: #5d5a6b;
 }
 
 /**=====================================**/
@@ -10169,6 +10239,28 @@ button.close {
   background: transparent;
   border: 0;
   -webkit-appearance: none;
+}
+
+/*This created specifcally for UI color combo page for the design system*/
+.color-combo-box:before, .color-combo-box:after {
+  content: " ";
+  display: table;
+}
+
+.color-combo-box:after {
+  clear: both;
+}
+
+.color-combo-box > span {
+  float: left;
+  background-color: red;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+}
+
+.color-combo-box > span:first-child {
+  margin-right: 10px;
 }
 
 /**to be check & cleared after coding the  plans layout**/

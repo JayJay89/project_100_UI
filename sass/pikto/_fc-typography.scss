@@ -9,6 +9,8 @@ $proxima-bold:      "ProximaNova-Bold", Arial, sans-serif !default;
 $source-code-pro:   "Source Code Pro", monospace !default; 
 $montserrat:        "Montserrat", Arial, sans-serif !default;
 
+$base-font-size:    14px;
+
 /*Mixins -- Fonts*/
 @mixin montserrat ($weight) {
   font-family: $montserrat;
@@ -56,8 +58,71 @@ $montserrat:        "Montserrat", Arial, sans-serif !default;
 }
 
 /*Code*/
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   color: inherit;
   line-height: normal;
   margin: 0px;
 }
+
+p {
+  line-height: 20px;
+  font-size: $base-font-size;
+}
+
+/*Font-sizes*/
+.h1 { font-size: 32px; }
+.h2 { font-size: 28px; }
+.h3 { font-size: 24px; }
+.h4 { font-size: 20px; }
+.h5 { font-size: 16px; }
+.h6 { font-size: 14px; }
+
+/*Alignment*/
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
+
+/*Text Transform*/
+.text-lowercase      { text-transform: lowercase; }
+.text-uppercase      { text-transform: uppercase; }
+.text-capitalize     { text-transform: capitalize; }
+
+/*Hyperlinks*/
+@mixin generateLink($combo){
+  color: map-get($combo, 'col-1');
+
+  &:hover {
+    color: map-get($combo, 'col-2');
+  }
+
+  &:active {
+    color: map-get($combo, 'col-3');
+  }
+}
+
+.general-link, .attention-link, .title-link, .meta-link{
+  cursor: pointer;
+  display: inline-block;
+}
+
+.general-link {
+  @include generateLink($teal-combo);
+}
+.magenta-link {
+  @include generateLink($magenta-combo);
+}
+
+// .attention-link{
+//   @include attention-link;
+// }
+
+// .title-link{
+//   @include title-link;
+// }
+
+// .meta-link{
+//   @include meta-link;
+// }
+

@@ -70,33 +70,10 @@ button:focus {
   outline: none;
 }
 
-/*Utilities*/
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
 /*Scaffold*/
 body {
-  font-family: "ProximaNova-Regular", Arial, sans-serif;
   color: #6B7C93;
   overflow: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "ProximaNova-Regular", Arial, sans-serif;
-}
-
-p {
-  font-size: 17px;
-  letter-spacing: 0.4px;
-  line-height: 26px;
-  font-family: "ProximaNova-Regular", Arial, sans-serif;
 }
 
 pre code {
@@ -245,7 +222,7 @@ pre code {
 .sg-h2 {
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.47px;
   margin-top: 55px;
   color: #0A5FAC;
@@ -353,12 +330,12 @@ pre code {
 }
 
 .sg-code-box {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  overflow: hidden;
   margin: 20px 0px;
-  /*Enable Counter Increment*/
 }
 
 .sg-code-box pre {
@@ -494,6 +471,10 @@ pre code {
   padding: 20px 0px 20px 20px;
 }
 
+.sg-typo-heading-size {
+  margin-top: 51px;
+}
+
 .sg-typo-heading-size > li {
   margin: 10px 10px 10px 0px;
 }
@@ -517,18 +498,17 @@ pre code {
 }
 
 .sg-typo-heading-size > li > div {
-  width: 271px;
+  width: 280px;
 }
 
 .sg-typo-heading-size > li > span {
-  width: calc(100% - 271px);
+  width: calc(100% - 280px);
   text-align: right;
   font-size: 16px;
 }
 
-.sg-typo-line-height > p {
-  font-size: 14px;
-  line-height: 20px;
+.sg-typo-heading-size > .margin-bottom {
+  margin-bottom: 25px;
 }
 
 /*Button*/

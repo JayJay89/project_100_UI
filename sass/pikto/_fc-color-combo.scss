@@ -1,50 +1,65 @@
-/*Color Combo Factory*/
-@mixin color-combo ($target, $color, $hover, $active){
-  @if $target == 'color' {
-    color: $color;
-    &:hover {color: $hover;}
-    &:active {color: $active;}
-  }
-  @if $target == 'bgcolor' {
-    background-color: $color;
-    &:hover {background-color: $hover;}
-    &:active {background-color: $active;}
-  }
-}
+$teal-combo: (
+  'col-1': $teal,
+  'col-2': $teal-dark,
+  'col-3': $teal-darker
+);
 
-/*Color Combo Sets*/
-/*Target is for targeting either the color or the bgcolor*/
-@mixin teal-combo ($target) {
-  @include color-combo ($target, $teal, $teal-dark, $teal-darker)
-}
-@mixin magenta-combo ($target) {
-  @include color-combo ($target, $magenta, $magenta-dark, $magenta-darker)
-}
-@mixin grey-combo ($target) {
-  @include color-combo ($target, $teal-grey, $dark-purple-grey-07, $dark-purple-grey-01)
-}
-@mixin grey-combo-2 ($target) {
-  @include color-combo ($target, $white, $grey-light, $grey-dark)
-}
-@mixin lightgrey-combo ($target) {
-  @include color-combo ($target, $grey-light, $grey-darker, $light-purple-grey-04)
-}
-@mixin bluegrey-outline-combo ($target) {
-  @include color-combo ($target, transparent, $light-purple-grey-04, $light-purple-grey-01)
-}
-@mixin purplegrey-combo ($target) {
-  @include color-combo ($target, $light-purple-grey-03, $dark-purple-grey-07, $dark-purple-grey-07)
-}
+$magenta-combo: (
+  'col-1': $magenta,
+  'col-2': $magenta-dark,
+  'col-3': $magenta-darker
+);
 
-@mixin success-combo ($target) {
-  @include color-combo ($target, $light-green, $light-green-dark, $light-green-darker)
-}
-@mixin info-combo ($target) {
-  @include color-combo ($target, $light-blue, $light-blue-dark, $light-blue-darker)
-}
-@mixin warning-combo ($target) {
-  @include color-combo ($target, $light-yellow, $light-yellow-dark, $light-yellow-darker)
-}
-@mixin danger-combo ($target) {
-  @include color-combo ($target, $light-red, $light-red-dark, $light-red-darker)
-}
+$grey-combo: (
+  'col-1': $teal-grey,
+  'col-2': $dark-purple-grey-07,
+  'col-3': $dark-purple-grey-01
+);
+
+$grey-combo-2: (
+  'col-1': $white,
+  'col-2': $grey-light,
+  'col-3': $grey-dark
+);
+
+$lightgrey-combo: (
+  'col-1': $grey-light,
+  'col-2': $grey-darker,
+  'col-3': $light-purple-grey-04
+);
+
+$bluegrey-outline-combo: (
+  'col-1': transparent,
+  'col-2': $light-purple-grey-04,
+  'col-3': $light-purple-grey-01
+);
+
+$purplegrey-combo: (
+  'col-1': $light-purple-grey-03,
+  'col-2': $dark-purple-grey-07,
+  'col-3': $dark-purple-grey-07
+);
+
+$success-combo: (
+  'col-1': $light-green,
+  'col-2': $light-green-dark,
+  'col-3': $light-green-darker
+);
+
+$info-combo: (
+  'col-1': $light-blue,
+  'col-2': $light-blue-dark,
+  'col-3': $light-blue-darker
+);
+
+$warning-combo: (
+  'col-1': $light-yellow,
+  'col-2': $light-yellow-dark,
+  'col-3': $light-yellow-darker
+);
+
+$danger-combo: (
+  'col-1': $light-red,
+  'col-2': $light-red-dark,
+  'col-3': $light-red-darker
+);

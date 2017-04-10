@@ -1,20 +1,82 @@
-@mixin clearfix(){
+/*Variables -- Fonts*/
+@import "proxima-nova";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,600,700");
+
+$proxima-regular:   "ProximaNova-Regular", Arial, sans-serif !default;
+$proxima-semibold:  "ProximaNova-Semibold", Arial, sans-serif !default;
+$proxima-bold:      "ProximaNova-Bold", Arial, sans-serif !default;
+$source-code-pro:   "Source Code Pro", monospace !default; 
+$montserrat:        "Montserrat", Arial, sans-serif !default;
+
+$base-font-size:    14px;
+
+/*Mixins -- Fonts*/
+@mixin montserrat ($weight) {
+  font-family: $montserrat;
+
+  @if $weight == 'light'{
+    font-weight: 100;
+  } 
+  @if $weight == 'regular'{
+    font-weight: 400;
+  } 
+  @if $weight == 'semibold'{
+    font-weight: 700;
+  }
+  @if $weight == 'bold'{
+    font-weight: 900;
+  }  
+}
+
+@mixin proxima ($weight){
+  @if $weight == 'regular'{
+    font-family: $proxima-regular;
+  } 
+  @if $weight == 'semibold'{
+    font-family: $proxima-semibold;
+  } 
+  @if $weight == 'bold'{
+    font-family: $proxima-ibold;
+  }
+}
+
+@mixin sourceCode ($weight){
+  font-family: $source-code-pro;
+  @if $weight == 'light'{
+    font-weight: 100;
+  } 
+  @if $weight == 'regular'{
+    font-weight: 400;
+  } 
+  @if $weight == 'bold'{
+    font-weight: 600;
+  }
+  @if $weight == 'bolder'{
+    font-weight: 900;
+  }
+}
+
+@mixin clearfix() {
   &:before,
   &:after {
-    content: " ";
-    display: table;
+    content: " "; // 1
+    display: table; // 2
   }
+
   &:after {
     clear: both;
   }
 }
 
-@mixin flex(){
-  display: -webkit-flex;
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  overflow: hidden;
 }
+
 /*Variables -- Colors*/
 $lightblue: #F6F9FC;
 $lightblue2: #8497AB;
@@ -54,32 +116,10 @@ button {
   }
 }
 
-/*Utilities*/
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-
 /*Scaffold*/
 body {
-  @include proxima(regular);
   color: $blue2;
   overflow: hidden;
-}
-
-h1,h2,h3,h4,h5,h6 {
-  @include proxima(regular);
-}
-
-p {
-  font-size: 17px;
-  letter-spacing: 0.4px;
-  line-height: 26px;
-  @include proxima(regular);
 }
 
 pre code {
@@ -94,7 +134,6 @@ pre code {
     box-sizing: content-box;
   }
 }
-
 
 .sg-color-copy-label {
   background-color: beige;
@@ -225,7 +264,7 @@ pre code {
 
 .sg-h2 {
   @include montserrat(regular);
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.47px;
   margin-top: 55px;
   color: $darkblue;
@@ -356,7 +395,7 @@ pre code {
 .sg-code-box {
   $sg-code-line-height: 20px;
 
-  @include flex();
+  @include flexbox();
   margin: 20px 0px;
 
   pre {
@@ -387,28 +426,6 @@ pre code {
       text-align: center;
       font-size: 13px;
     }
-  }
-
-  /*Enable Counter Increment*/
-  pre {
-    // counter-reset: line-numbering;
-    // background: #2c3e50;
-    // padding: 12px 0px 14px 0;
-    // width: 600px;
-    // color: #ecf0f1;
-    // line-height: 140%;
-
-    // .line::before {
-    //   content: counter(line-numbering);
-    //   counter-increment: line-numbering;
-    //   padding-right: 1em;
-    //   /* space after numbers */
-    //   padding-left:8px;
-    //   width: 1.5em;
-    //   text-align: right;
-    //   opacity: 0.5;
-    //   color:white;
-    // }
   }
 }
 
@@ -495,9 +512,12 @@ pre code {
 }
 
 .sg-typo-heading-size {
+  margin-top: 51px;
+
   > li {
     @include clearfix;
     margin: 10px 10px 10px 0px;
+
     h1, h2, h3, h4, h5, h6, p {
       margin: 0;
     }
@@ -507,23 +527,21 @@ pre code {
       vertical-align: middle;
     }
     > div {
-      width: 271px;
+      width: 280px;
 
     }
     > span {
-      width: calc(100% - 271px);
+      width: calc(100% - 280px);
       text-align: right;
       font-size: 16px;
     }
   }
-}
 
-.sg-typo-line-height {
-  > p {
-    font-size: 14px;
-    line-height: 20px;
+  > .margin-bottom {
+    margin-bottom: 25px;
   }
 }
+
 /*Button*/
 .sg-button-section {
   > .sg-content-box {
@@ -590,6 +608,7 @@ pre code {
   background-color: #2c2a37;
   padding: 10px;
 }
+
 
 //////////*SLIDERS*//////////
 
