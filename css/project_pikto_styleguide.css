@@ -232,6 +232,13 @@ pre code {
   margin-top: 0px;
 }
 
+.sg-code {
+  font-size: 12px;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 400;
+  color: #117700;
+}
+
 .sg-dropdown input {
   display: none;
 }
@@ -394,7 +401,7 @@ pre code {
 }
 
 .sg-typo-section > section {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .sg-typo-proxima {
@@ -461,6 +468,7 @@ pre code {
   display: block;
   line-height: 36px;
   font-size: 22px;
+  color: #6B7C93;
 }
 
 .sg-typo-size,
@@ -473,6 +481,10 @@ pre code {
 
 .sg-typo-size {
   padding: 20px 20px 20px 0px;
+}
+
+.sg-typo-size-height > p {
+  margin: 0px 0px 10px;
 }
 
 .sg-typo-line-height {
@@ -529,16 +541,19 @@ pre code {
 
 .sg-typo-alignment > div > span:nth-child(2) {
   float: right;
-  font-size: 12px;
-  font-family: "Source Code Pro", monospace;
-  font-weight: 400;
-  color: #117700;
 }
 
 .sg-typo-alignment > p {
   padding: 20px 0px;
   border: 1px solid #EAEEF1;
   margin: 0px 0px 25px;
+}
+
+.sg-type-list > div {
+  display: inline-block;
+  float: left;
+  width: 180px;
+  margin-right: 20px;
 }
 
 /*Button*/

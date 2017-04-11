@@ -17,7 +17,6 @@
   <!-- Syntax Highlight CSS-->
   <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
   <link href="css/pikto-styleguide-code-highlight.css" rel="stylesheet">
-  <link href="css/normalize.css" rel="stylesheet">
   
   <!-- Highlight CSS -->
   <!-- <link rel="stylesheet" href="highlight/styles/agate.css"> -->
@@ -1078,7 +1077,9 @@
         <section id="sg_data_typography" class="sg-typo-section">
           <h1 class="sg-h1">Typography</h1>
 
-          <p>All type related scss are defined in _fc-typography.scss</p>
+          <p>
+            All type related scss are defined in _fc-typography.scss. Note that Bootstrap's _type.scss has a lot of other type elements such as address, blockquote, dl, etc. These are not included here unless we find a need for them.
+          </p>
 
           <section class="sg-typo-types clearfix">
             <div class="sg-typo-proxima">
@@ -1202,7 +1203,7 @@
               <li class="sg-typo-alignment"> 
                 <div class="clearfix">
                   <span>Text Left</span>
-                  <span>.text-left</span>
+                  <span class="sg-code">.text-left</span>
                 </div>
                 <p class="text-left">The quick brown fox jumps over the lazy dog.</p>
               </li>
@@ -1210,7 +1211,7 @@
               <li class="sg-typo-alignment"> 
                 <div class="clearfix">
                   <span>Text Right</span>
-                  <span>.text-right</span>
+                  <span class="sg-code">.text-right</span>
                 </div>
                 <p class="text-right">The quick brown fox jumps over the lazy dog.</p>
               </li>
@@ -1218,7 +1219,7 @@
               <li class="sg-typo-alignment"> 
                 <div class="clearfix">
                   <span>Text Center</span>
-                  <span>.text-center</span>
+                  <span class="sg-code">.text-center</span>
                 </div>
                 <p class="text-center">The quick brown fox jumps over the lazy dog.</p>
               </li>
@@ -1226,25 +1227,41 @@
               <li class="sg-typo-alignment"> 
                 <div class="clearfix">
                   <span>Text Justify</span>
-                  <span>.text-justify</span>
+                  <span class="sg-code">.text-justify</span>
                 </div>
                 <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nemo dolor praesentium repudiandae fugit fuga id, assumenda, voluptatem ad laboriosam saepe corporis, temporibus libero blanditiis.</p>
               </li>
             </ul>
           </section>
 
-          <section>
+          <section class="sg-type-list clearfix">
+            <h2 class="sg-h2">List</h2>
+            <p>By default, &lt;ul&gt; or &lt;ol&gt; won't have have bullets or decimals because the browser defaults had been overwritten. To bring the decimals or bullets back, attach the classes stated below.</p>
             <div>
               <h2 class="sg-h2">Ordered list</h2>
-              <ol>
+              <p class="sg-code">.pikto-ordered-list</p>
+              <ol class="pikto-ordered-list">
                 <li>John</li>
                 <li>Paul</li>
                 <li>George</li>
                 <li>Ringo</li>
               </ol>
             </div>
+
             <div>
               <h2 class="sg-h2">Unordered list</h2>
+              <p class="sg-code">.pikto-unordered-list</p>
+              <ul class="pikto-unordered-list">
+                <li>John</li>
+                <li>Paul</li>
+                <li>George</li>
+                <li>Ringo</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 class="sg-h2">Unordered list</h2>
+              <p class="sg-code">ul</p>
               <ul>
                 <li>John</li>
                 <li>Paul</li>
@@ -1252,6 +1269,7 @@
                 <li>Ringo</li>
               </ul>
             </div>
+
           </section>
         </section>
 

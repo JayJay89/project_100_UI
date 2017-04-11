@@ -16,10 +16,12 @@ $grey-combo: (
   'col-3': $dark-purple-grey-01
 );
 
+/*The outline is for outlined buttons*/
 $grey-2-combo: (
   'col-1': $white,
   'col-2': $grey-light,
-  'col-3': $grey-dark
+  'col-3': $grey-dark,
+  'outline': $grey-dark
 );
 
 $lightgrey-combo: (
@@ -36,8 +38,8 @@ $bluegrey-outline-combo: (
 
 $purplegrey-combo: (
   'col-1': $light-purple-grey-03,
-  'col-2': $dark-purple-grey-07,
-  'col-3': $dark-purple-grey-07
+  'col-2': $dark-purple-grey-05,
+  'col-3': $dark-purple-grey-05
 );
 
 $purplegrey-2-combo: (

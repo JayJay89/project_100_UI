@@ -61,7 +61,7 @@ $base-font-size:    14px;
 h1, h2, h3, h4, h5, h6, p {
   color: inherit;
   line-height: normal;
-  margin: 0px;
+  margin: 0px 0px 10px;
 }
 
 p {
@@ -122,8 +122,15 @@ p {
 
 /*Lists - By default, ul's and ol's properties are overwritten, this */
 .pikto-ordered-list {
-  display: block;
   list-style-type: decimal;
-  margin: 1em 0px;
-  padding-left: 40px;
+}
+
+.pikto-unordered-list {
+  list-style-type: disc;
+}
+
+.pikto-ordered-list,
+.pikto-unordered-list {
+  display: block;
+  padding-left: 15px;
 }

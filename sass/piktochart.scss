@@ -1,14 +1,18 @@
-// Core variables and mixins
+// Reset
+@import "pikto/normalize";
+
+// Include prerequisites - Mixins, Variables, Fundamental Components
 @import "pikto/prerequisite";
 
+// Included Scaffolding
+@import "pikto/scaffolding";
+
 // Resetpikto/ pikto/and dependencies
-@import "pikto/normalize";
 @import "pikto/print";
 @import "pikto/sprite";
 
-// Core pikto/Cpikto/SS
-@import "pikto/scaffolding";
-@import "pikto/type";
+// Core pikto/CSS
+// @import "pikto/type";
 @import "pikto/code";
 @import "pikto/grid";
 @import "pikto/tables";

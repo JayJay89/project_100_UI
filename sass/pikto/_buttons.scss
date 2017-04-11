@@ -13,7 +13,7 @@
 /**=====================================**/
 .pikto-btn {
   display: inline-block;
-  font-weight: $btn-font-weight;
+  font-weight: normal;
   text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
@@ -81,32 +81,62 @@ input.pikto-btn {
   }
 }
 
+/**=====================================**/
+/* 01 Button Constructor */
+/**=====================================**/
+/*Constructor*/
+@mixin buttonConstructor($textColor, $textColorActive, $map){
+  background-color: map-get($map, 'col-1');
+  color: $textColor;
+  border-color: transparent;
+
+  &:hover,
+  &:focus {
+    background-color: map-get($map, 'col-2');
+    color: $textColor;
+  }
+
+  &:active {
+    background-color: map-get($map, 'col-3');
+    color: $textColorActive;
+  }
+}
+
+@mixin outline($color){
+  border: 1px solid $color;
+
+  &:active {
+    @include no-shadow;
+  }
+}
+/**=====================================**/
+/* 01 Button Color Variations */
+/**=====================================**/
+.pikto-btn-teal {
+  @include buttonConstructor($white, $white, $teal-combo);
+}
+.pikto-btn-magenta {
+  @include buttonConstructor($white, $white, $magenta-combo);
+}
+.pikto-btn-lightgrey {
+  @include buttonConstructor($dark-purple-grey-03, $white, $lightgrey-combo);
+}
+.pikto-btn-purplegrey {
+  @include buttonConstructor($white, $white, $purplegrey-combo);
+}
+.pikto-btn-grey {
+  @include buttonConstructor($white, $white, $grey-combo);
+}
+.pikto-btn-option {
+  @include buttonConstructor($dark-purple-grey-03, $dark-purple-grey-03, $grey-2-combo);
+  @include outline($grey-dark);
+}
 /************************
 02 Alternate buttons
 ************************/
-.pikto-btn-option {
-  @include button-variant ($btn-option-color, button-icon, $btn-option-bg-hover, $btn-option-bg-active);
-}
-
-.pikto-btn-lightgrey {
-  @include button-variant ($btn-lightgrey-color, $btn-lightgrey-bg, $btn-lightgrey-bg-hover, $btn-lightgrey-bg-active);
-}
-
-.pikto-btn-grey {
-  @include button-variant ($btn-grey-color, $btn-grey-bg, $btn-grey-bg-hover, $btn-grey-bg-active);
-}
-
-.pikto-btn-purplegrey {
-  @include button-variant ($btn-purplegrey-color, $btn-purplegrey-bg, $btn-purplegrey-bg-hover, $btn-purplegrey-bg-active);
-}
-
-.pikto-btn-teal {
-  @include button-variant ($btn-teal-color, $btn-teal-bg, $btn-teal-bg-hover, $btn-teal-bg-active);
-}
-
-.pikto-btn-magenta {
-  @include button-variant ($btn-magenta-color, $btn-magenta-bg, $btn-magenta-bg-hover, $btn-magenta-bg-active);
-}
+// .pikto-btn-option {
+//   @include button-variant ($btn-option-color, button-icon, $btn-option-bg-hover, $btn-option-bg-active);
+// }
 
 .pikto-btn-bluegrey-outline {
   @include button-variant ($btn-bluegrey-outline-color, bluegrey-outline, $btn-bluegrey-outline-bg-hover, $btn-bluegrey-outline-bg-active);

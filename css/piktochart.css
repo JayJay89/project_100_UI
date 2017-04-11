@@ -1,10 +1,261 @@
 @charset "UTF-8";
-/*Variables*/
-/*Base Size*/
-/*Class*/
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**=====================================**/
+/* 01 Main */
+/**=====================================**/
 @import url("//hello.myfonts.net/count/3279a8");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,400,700,900");
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,600,700");
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/**=====================================**/
+/* 02 HTML5 display definitions */
+/**=====================================**/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+/**=====================================**/
+/* 03 Links */
+/**=====================================**/
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/**=====================================**/
+/* 04 Text-Level Semantics */
+/**=====================================**/
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/**=====================================**/
+/* 05 Embedded Content */
+/**=====================================**/
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/**=====================================**/
+/* 06 Grouping Content */
+/**=====================================**/
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/**=====================================**/
+/* 07 Forms */
+/**=====================================**/
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+/**=====================================**/
+/* 08 Tables */
+/**=====================================**/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/*Jay Jay - this overwrites button styles*/
+button {
+  background-color: transparent;
+  padding: 0px;
+  outline: none;
+  border: 0px;
+  color: initial;
+}
+
+/*Variables*/
+/*Base Size*/
+/*Class*/
 .border-radius-6 {
   border-radius: 6px;
 }
@@ -18,6 +269,7 @@
 }
 
 /*Mixin*/
+/*The outline is for outlined buttons*/
 /*
   Code Below is create specifically for the design system, it's not for the system itself.
 */
@@ -203,11 +455,11 @@
 }
 
 .purplegrey-combo > span:nth-child(1):hover {
-  background-color: #3f3c4e;
+  background-color: #373544;
 }
 
 .purplegrey-combo > span:nth-child(1):active {
-  background-color: #3f3c4e;
+  background-color: #373544;
 }
 
 .purplegrey-combo > span:nth-child(2) {
@@ -215,11 +467,11 @@
 }
 
 .purplegrey-combo > span:nth-child(3) {
-  background-color: #3f3c4e;
+  background-color: #373544;
 }
 
 .purplegrey-combo > span:nth-child(4) {
-  background-color: #3f3c4e;
+  background-color: #373544;
 }
 
 .purplegrey-2-combo > span:nth-child(1) {
@@ -352,19 +604,19 @@
   background-color: #f53636;
 }
 
+/*Shadow colors*/
 /*Shadow Constructor*/
 /*Mixin*/
+/*faux borders - shadows which are used to generate faux borders*/
 /*Class*/
 .inset-shadow {
-  -webkit-box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px, 2px, 1px, rgba(0, 0, 0, 0.2);
+  box-shadow: 0px, 2px, 1px, rgba(0, 0, 0, 0.2);
 }
 
 .outer-shadow {
-  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px, 1px, 4px, rgba(0, 0, 0, 0.2);
+  box-shadow: 1px, 1px, 4px, rgba(0, 0, 0, 0.2);
 }
 
 .no-shadow {
@@ -426,7 +678,7 @@
 h1, h2, h3, h4, h5, h6, p {
   color: inherit;
   line-height: normal;
-  margin: 0px;
+  margin: 0px 0px 10px;
 }
 
 p {
@@ -485,7 +737,7 @@ p {
   text-transform: lowercase;
 }
 
-.text-uppercase, .initialism {
+.text-uppercase {
   text-transform: uppercase;
 }
 
@@ -545,6 +797,21 @@ p {
 
 .meta-link:active {
   color: #5d5a6b;
+}
+
+/*Lists - By default, ul's and ol's properties are overwritten, this */
+.pikto-ordered-list {
+  list-style-type: decimal;
+}
+
+.pikto-unordered-list {
+  list-style-type: disc;
+}
+
+.pikto-ordered-list,
+.pikto-unordered-list {
+  display: block;
+  padding-left: 15px;
 }
 
 /**=====================================**/
@@ -950,255 +1217,165 @@ p {
   order: 2;
 }
 
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**=====================================**/
-/* 01 Main */
+/* Scaffolding */
 /**=====================================**/
+/* 01 Reset Box-Sizing*/
+/**=====================================**/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/**=====================================**/
+/* 02 Reset Body */
+/**=====================================**/
+html, body {
+  height: 100%;
+}
+
 html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  font-size: 10px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  margin: 0;
+  font-family: "ProximaNova-Regular", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #2c2a37;
+  background-color: #fafafa;
+  font-weight: 400;
+  /*Safari renders fonts-smoothing auto, setting this will render fonts consistently on all browsers*/
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 /**=====================================**/
-/* 02 HTML5 display definitions */
-/**=====================================**/
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
-}
-
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-  vertical-align: baseline;
-}
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-[hidden],
-template {
-  display: none;
-}
-
-/**=====================================**/
-/* 03 Links */
-/**=====================================**/
-a {
-  background-color: transparent;
-}
-
-a:active,
-a:hover {
-  outline: 0;
-}
-
-/**=====================================**/
-/* 04 Text-Level Semantics */
-/**=====================================**/
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-b,
-strong {
-  font-weight: bold;
-}
-
-dfn {
-  font-style: italic;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-mark {
-  background: #ff0;
-  color: #000;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-/**=====================================**/
-/* 05 Embedded Content */
-/**=====================================**/
-img {
-  border: 0;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/**=====================================**/
-/* 06 Grouping Content */
+/* 03 Figures */
 /**=====================================**/
 figure {
-  margin: 1em 40px;
-}
-
-hr {
-  box-sizing: content-box;
-  height: 0;
-}
-
-pre {
-  overflow: auto;
-}
-
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-/**=====================================**/
-/* 07 Forms */
-/**=====================================**/
-button,
-input,
-optgroup,
-select,
-textarea {
-  color: inherit;
-  font: inherit;
   margin: 0;
 }
 
-button {
-  overflow: visible;
-}
-
+input,
 button,
-select {
-  text-transform: none;
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer;
-}
-
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
+/**=====================================**/
+/* 04 Horizontal Rules */
+/**=====================================**/
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
   border: 0;
-  padding: 0;
+  border-top: 1px solid #e8e8e8;
 }
 
-input {
-  line-height: normal;
+/**=====================================**/
+/* 05 Images */
+/**=====================================**/
+img {
+  vertical-align: middle;
+  max-width: 100%;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+/**=====================================**/
+/* 05 Image Thumbnails */
+/**=====================================**/
+.img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
   height: auto;
 }
 
-input[type="search"] {
-  -webkit-appearance: textfield;
-  box-sizing: content-box;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-legend {
-  border: 0;
-  padding: 0;
-}
-
-textarea {
-  overflow: auto;
-}
-
-optgroup {
-  font-weight: bold;
+/**=====================================**/
+/* 07 IOS Clickable Element */
+/**=====================================**/
+[role="button"] {
+  cursor: pointer;
 }
 
 /**=====================================**/
-/* 08 Tables */
+/* 08 Links (text & icon with container) */
 /**=====================================**/
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+a {
+  color: #1cafa2;
+  text-decoration: none;
 }
 
-td,
-th {
-  padding: 0;
+a:hover {
+  color: #158379;
 }
 
-/*Jay Jay - this overwrites button styles*/
-button {
-  background-color: transparent;
-  padding: 0px;
+a:focus {
   outline: none;
-  border: 0px;
-  color: initial;
+}
+
+/**=====================================**/
+/* 09 Perfect Circle */
+/**=====================================**/
+.img-circle {
+  border-radius: 50%;
+}
+
+/**=====================================**/
+/* 10 Responsive Imagess */
+/**=====================================**/
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**=====================================**/
+/* 11 Rounded Corner */
+/**=====================================**/
+.img-rounded {
+  border-radius: 2px;
+}
+
+/**=====================================**/
+/* 12 Screen Reader */
+/**=====================================**/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
@@ -3185,578 +3362,6 @@ Find icon-x, icon-y
   @include svgbgpos (1, 1);
 }
 */
-/**=====================================**/
-/* Scaffolding */
-/**=====================================**/
-/* 01 Reset Box-Sizing*/
-/**=====================================**/
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/**=====================================**/
-/* 02 Reset Body */
-/**=====================================**/
-html, body {
-  height: 100%;
-}
-
-html {
-  font-size: 10px;
-  -webkit-tap-highlight-color: transparent;
-}
-
-body {
-  font-family: "ProximaNova-Regular", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.42857;
-  color: #2c2a37;
-  background-color: #fafafa;
-  font-weight: 400;
-  /*Safari renders fonts-smoothing auto, setting this will render fonts consistently on all browsers*/
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-
-/**=====================================**/
-/* 03 Figures */
-/**=====================================**/
-figure {
-  margin: 0;
-}
-
-input,
-button,
-select,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-/**=====================================**/
-/* 04 Horizontal Rules */
-/**=====================================**/
-hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid #e8e8e8;
-}
-
-/**=====================================**/
-/* 05 Images */
-/**=====================================**/
-img {
-  vertical-align: middle;
-  max-width: 100%;
-}
-
-/**=====================================**/
-/* 05 Image Thumbnails */
-/**=====================================**/
-.img-thumbnail {
-  padding: 4px;
-  line-height: 1.42857;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  display: inline-block;
-  max-width: 100%;
-  height: auto;
-}
-
-/**=====================================**/
-/* 07 IOS Clickable Element */
-/**=====================================**/
-[role="button"] {
-  cursor: pointer;
-}
-
-/**=====================================**/
-/* 08 Links (text & icon with container) */
-/**=====================================**/
-a {
-  color: #1cafa2;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #158379;
-}
-
-a:focus {
-  outline: none;
-}
-
-/**=====================================**/
-/* 09 Perfect Circle */
-/**=====================================**/
-.img-circle {
-  border-radius: 50%;
-}
-
-/**=====================================**/
-/* 10 Responsive Imagess */
-/**=====================================**/
-.img-responsive {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-/**=====================================**/
-/* 11 Rounded Corner */
-/**=====================================**/
-.img-rounded {
-  border-radius: 2px;
-}
-
-/**=====================================**/
-/* 12 Screen Reader */
-/**=====================================**/
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-.sr-only-focusable:active, .sr-only-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-}
-
-/**=====================================**/
-/* 01 Headings */
-/**=====================================**/
-h1 small,
-h1 .small, h2 small,
-h2 .small, h3 small,
-h3 .small, h4 small,
-h4 .small, h5 small,
-h5 .small, h6 small,
-h6 .small,
-.h1 small,
-.h1 .small, .h2 small,
-.h2 .small, .h3 small,
-.h3 .small, .h4 small,
-.h4 .small, .h5 small,
-.h5 .small, .h6 small,
-.h6 .small, .hero small,
-.hero .small {
-  font-weight: normal;
-  line-height: 1;
-  color: #485456;
-}
-
-h1, .h1,
-h2, .h2,
-h3, .h3 {
-  margin: 20px 0;
-}
-
-h1 small, h1 .small, .h1 small, .h1 .small,
-h2 small,
-h2 .small, .h2 small, .h2 .small,
-h3 small,
-h3 .small, .h3 small, .h3 .small {
-  font-size: 65%;
-}
-
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-h4 small, h4 .small, .h4 small, .h4 .small,
-h5 small,
-h5 .small, .h5 small, .h5 .small,
-h6 small,
-h6 .small, .h6 small, .h6 .small {
-  font-size: 75%;
-}
-
-/**=====================================**/
-/* 02 Body text */
-/**=====================================**/
-p {
-  margin: 0 0 10px;
-}
-
-.ultra-bold {
-  font-weight: 900;
-}
-
-cite {
-  font-style: normal;
-}
-
-.text-muted {
-  color: #485456;
-}
-
-.lead {
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.4;
-}
-
-@media (min-width: 768px) {
-  .lead {
-    font-size: 21px;
-  }
-}
-
-small, .small {
-  font-size: 85%;
-}
-
-mark, .mark {
-  background-color: #f3eeae;
-  padding: .2em;
-}
-
-/**=====================================**/
-/* 03 Alignment */
-/**=====================================**/
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-justify {
-  text-align: justify;
-}
-
-.text-nowrap {
-  white-space: nowrap;
-}
-
-/**=====================================**/
-/* 04 Transformation */
-/**=====================================**/
-.text-lowercase {
-  text-transform: lowercase;
-}
-
-.text-uppercase, .initialism {
-  text-transform: uppercase;
-}
-
-.text-capitalize {
-  text-transform: capitalize;
-}
-
-/**=====================================**/
-/* 05 Emphasis */
-/**=====================================**/
-/*Bootstraps Version (We are using this version, but $brand-primary will be altered to become $teal)*/
-.text-primary {
-  color: #1cafa2;
-}
-
-a.text-primary:hover, a.text-primary:focus {
-  /*Boot Original is 10%*/
-  color: black;
-}
-
-.text-success {
-  color: #2c2a37;
-}
-
-a.text-success:hover, a.text-success:focus {
-  /*Boot Original is 10%*/
-  color: black;
-}
-
-.text-info {
-  color: #2c2a37;
-}
-
-a.text-info:hover, a.text-info:focus {
-  /*Boot Original is 10%*/
-  color: black;
-}
-
-.text-warning {
-  color: #2c2a37;
-}
-
-a.text-warning:hover, a.text-warning:focus {
-  /*Boot Original is 10%*/
-  color: black;
-}
-
-.text-danger {
-  color: #2c2a37;
-}
-
-a.text-danger:hover, a.text-danger:focus {
-  /*Boot Original is 10%*/
-  color: black;
-}
-
-/**=====================================**/
-/* 06 Contextual backgrounds */
-/**=====================================**/
-.bg-primary {
-  color: #fff;
-}
-
-.bg-primary {
-  background-color: #1cafa2;
-}
-
-a.bg-primary:hover,
-a.bg-primary:focus {
-  background-color: #158379;
-}
-
-.bg-success {
-  background-color: #d8e9c6;
-}
-
-a.bg-success:hover,
-a.bg-success:focus {
-  background-color: #bfdba1;
-}
-
-.bg-info {
-  background-color: #c3e0e3;
-}
-
-a.bg-info:hover,
-a.bg-info:focus {
-  background-color: #a0ced3;
-}
-
-.bg-warning {
-  background-color: #f3eeae;
-}
-
-a.bg-warning:hover,
-a.bg-warning:focus {
-  background-color: #ece582;
-}
-
-.bg-danger {
-  background-color: #f8c8c8;
-}
-
-a.bg-danger:hover,
-a.bg-danger:focus {
-  background-color: #f29b9b;
-}
-
-/**=====================================**/
-/* 07 Page Header */
-/**=====================================**/
-.page-header {
-  padding-bottom: 9px;
-  margin: 40px 0 20px;
-  border-bottom: 1px solid #3f3d48;
-}
-
-/**=====================================**/
-/* 09 List */
-/**=====================================**/
-ul, ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-}
-
-ul ul, ul ol, ol ul, ol ol {
-  margin-bottom: 0;
-}
-
-.list-unstyled {
-  padding-left: 0;
-  list-style: none;
-}
-
-.list-inline {
-  padding-left: 0;
-  list-style: none;
-  float: left;
-}
-
-.list-inline > li {
-  display: inline-block;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.list-inline > li:first-child {
-  padding-left: 0;
-}
-
-/**=====================================**/
-/* 10 Description List */
-/**=====================================**/
-dl {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-dt, dd {
-  line-height: 1.42857;
-}
-
-dt {
-  font-weight: bold;
-}
-
-dd {
-  margin-left: 0;
-}
-
-.dl-horizontal dd:before, .dl-horizontal dd:after {
-  content: " ";
-  display: table;
-}
-
-.dl-horizontal dd:after {
-  clear: both;
-}
-
-@media (min-width: 768px) {
-  .dl-horizontal dt {
-    float: left;
-    width: 160px;
-    clear: left;
-    text-align: right;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .dl-horizontal dd {
-    margin-left: 180px;
-  }
-}
-
-/**=====================================**/
-/* 11 Misc */
-/**=====================================**/
-abbr[title], abbr[data-original-title] {
-  cursor: help;
-  border-bottom: 1px dotted #e8e8e8;
-}
-
-.initialism {
-  font-size: 90%;
-}
-
-/**=====================================**/
-/* 12 Blockquotes */
-/**=====================================**/
-blockquote {
-  padding: 10px 20px;
-  margin: 0 0 20px;
-  font-size: 17.5px;
-  border-left: 5px solid #3f3d48;
-  /*From Old*/
-}
-
-blockquote p:last-child, blockquote ul:last-child, blockquote ol:last-child {
-  margin-bottom: 0;
-}
-
-blockquote footer, blockquote small, blockquote .small {
-  display: block;
-  font-size: 80%;
-  line-height: 1.42857;
-  color: #3f3d48;
-}
-
-blockquote footer:before, blockquote small:before, blockquote .small:before {
-  content: '\2014 \00A0';
-}
-
-blockquote p {
-  font-size: 17.5px;
-  font-weight: 300;
-  line-height: 1.25;
-}
-
-blockquote.pull-right {
-  padding-right: 15px;
-  padding-left: 0;
-  border-right: 5px solid #eeeeee;
-  border-left: 0;
-}
-
-blockquote.pull-right p, blockquote.pull-right small, blockquote.pull-right .small {
-  text-align: right;
-}
-
-blockquote.pull-right small:before, blockquote.pull-right .small:before {
-  content: '';
-}
-
-blockquote:before, blockquote:after {
-  content: "";
-}
-
-.blockquote-reverse, blockquote.pull-right {
-  padding-right: 15px;
-  padding-left: 0;
-  border-right: 5px solid #3f3d48;
-  border-left: 0;
-  text-align: right;
-}
-
-.blockquote-reverse footer:before, .blockquote-reverse small:before, .blockquote-reverse .small:before, blockquote.pull-right footer:before, blockquote.pull-right small:before, blockquote.pull-right .small:before {
-  content: '';
-}
-
-.blockquote-reverse footer:after, .blockquote-reverse small:after, .blockquote-reverse .small:after, blockquote.pull-right footer:after, blockquote.pull-right small:after, blockquote.pull-right .small:after {
-  content: '\00A0 \2014';
-}
-
-/**=====================================**/
-/* 13 Addresses */
-/**=====================================**/
-address {
-  margin-bottom: 20px;
-  font-style: normal;
-  line-height: 1.42857;
-}
-
 /**=====================================**/
 /* 01 Inline and Block */
 /**=====================================**/
@@ -6308,8 +5913,8 @@ select:-moz-focusring {
 .pikto-btn:active, .pikto-btn.active {
   outline: 0;
   background-image: none;
-  -webkit-box-shadow: 0px, 2px, 2px, rgba(0, 0, 0, 0.2);
-  box-shadow: 0px, 2px, 2px, rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.2);
   position: relative;
   top: 1px;
 }
@@ -6333,222 +5938,118 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   box-shadow: none;
 }
 
-/************************
-02 Alternate buttons
-************************/
-.pikto-btn-option {
-  color: #2c2a37;
-  background-color: #fff;
-  border-color: #d8d8d8;
-}
-
-.pikto-btn-option:hover, .pikto-btn-option:focus,
-.open > .pikto-btn-option.dropdown-toggle {
-  color: #2c2a37;
-  border-color: transparent;
-  background-color: #f0f0f0;
-  border-color: #d8d8d8;
-}
-
-.pikto-btn-option:active, .pikto-btn-option.active,
-.open > .pikto-btn-option.dropdown-toggle {
-  background-color: #d8d8d8;
-  border-color: #d8d8d8;
-  box-shadow: none;
-}
-
-.pikto-btn-option.disabled, .pikto-btn-option.disabled:hover, .pikto-btn-option.disabled:focus, .pikto-btn-option.disabled:active, .pikto-btn-option.disabled.active, .pikto-btn-option[disabled], .pikto-btn-option[disabled]:hover, .pikto-btn-option[disabled]:focus, .pikto-btn-option[disabled]:active, .pikto-btn-option[disabled].active,
-fieldset[disabled] .pikto-btn-option,
-fieldset[disabled] .pikto-btn-option:hover,
-fieldset[disabled] .pikto-btn-option:focus,
-fieldset[disabled] .pikto-btn-option:active,
-fieldset[disabled] .pikto-btn-option.active {
-  border-color: #e8e8e8;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-appearance: none;
-}
-
-.pikto-btn-option .badge {
-  color: button-icon;
-  background-color: #2c2a37;
-}
-
-.pikto-btn-lightgrey {
-  color: #2c2a37;
-  background-color: #f0f0f0;
-  border-color: transparent;
-}
-
-.pikto-btn-lightgrey:hover, .pikto-btn-lightgrey:focus,
-.open > .pikto-btn-lightgrey.dropdown-toggle {
-  color: #2c2a37;
-  border-color: transparent;
-  background-color: #c2c2c2;
-}
-
-.pikto-btn-lightgrey:active, .pikto-btn-lightgrey.active,
-.open > .pikto-btn-lightgrey.dropdown-toggle {
-  background-color: #666470;
-}
-
-.pikto-btn-lightgrey.disabled, .pikto-btn-lightgrey.disabled:hover, .pikto-btn-lightgrey.disabled:focus, .pikto-btn-lightgrey.disabled:active, .pikto-btn-lightgrey.disabled.active, .pikto-btn-lightgrey[disabled], .pikto-btn-lightgrey[disabled]:hover, .pikto-btn-lightgrey[disabled]:focus, .pikto-btn-lightgrey[disabled]:active, .pikto-btn-lightgrey[disabled].active,
-fieldset[disabled] .pikto-btn-lightgrey,
-fieldset[disabled] .pikto-btn-lightgrey:hover,
-fieldset[disabled] .pikto-btn-lightgrey:focus,
-fieldset[disabled] .pikto-btn-lightgrey:active,
-fieldset[disabled] .pikto-btn-lightgrey.active {
-  border-color: #e8e8e8;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-appearance: none;
-}
-
-.pikto-btn-lightgrey .badge {
-  color: #f0f0f0;
-  background-color: #2c2a37;
-}
-
-.pikto-btn-grey {
-  color: #fff;
-  background-color: #485456;
-  border-color: transparent;
-}
-
-.pikto-btn-grey:hover, .pikto-btn-grey:focus,
-.open > .pikto-btn-grey.dropdown-toggle {
-  color: #fff;
-  border-color: transparent;
-  background-color: #373544;
-}
-
-.pikto-btn-grey:active, .pikto-btn-grey.active,
-.open > .pikto-btn-grey.dropdown-toggle {
-  background-color: #1e1d26;
-}
-
-.pikto-btn-grey.disabled, .pikto-btn-grey.disabled:hover, .pikto-btn-grey.disabled:focus, .pikto-btn-grey.disabled:active, .pikto-btn-grey.disabled.active, .pikto-btn-grey[disabled], .pikto-btn-grey[disabled]:hover, .pikto-btn-grey[disabled]:focus, .pikto-btn-grey[disabled]:active, .pikto-btn-grey[disabled].active,
-fieldset[disabled] .pikto-btn-grey,
-fieldset[disabled] .pikto-btn-grey:hover,
-fieldset[disabled] .pikto-btn-grey:focus,
-fieldset[disabled] .pikto-btn-grey:active,
-fieldset[disabled] .pikto-btn-grey.active {
-  border-color: #e8e8e8;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-appearance: none;
-}
-
-.pikto-btn-grey .badge {
-  color: #485456;
-  background-color: #fff;
-}
-
-.pikto-btn-purplegrey {
-  color: #fff;
-  background-color: #5d5a6b;
-  border-color: transparent;
-}
-
-.pikto-btn-purplegrey:hover, .pikto-btn-purplegrey:focus,
-.open > .pikto-btn-purplegrey.dropdown-toggle {
-  color: #fff;
-  border-color: transparent;
-  background-color: #373544;
-}
-
-.pikto-btn-purplegrey:active, .pikto-btn-purplegrey.active,
-.open > .pikto-btn-purplegrey.dropdown-toggle {
-  background-color: #373544;
-}
-
-.pikto-btn-purplegrey.disabled, .pikto-btn-purplegrey.disabled:hover, .pikto-btn-purplegrey.disabled:focus, .pikto-btn-purplegrey.disabled:active, .pikto-btn-purplegrey.disabled.active, .pikto-btn-purplegrey[disabled], .pikto-btn-purplegrey[disabled]:hover, .pikto-btn-purplegrey[disabled]:focus, .pikto-btn-purplegrey[disabled]:active, .pikto-btn-purplegrey[disabled].active,
-fieldset[disabled] .pikto-btn-purplegrey,
-fieldset[disabled] .pikto-btn-purplegrey:hover,
-fieldset[disabled] .pikto-btn-purplegrey:focus,
-fieldset[disabled] .pikto-btn-purplegrey:active,
-fieldset[disabled] .pikto-btn-purplegrey.active {
-  border-color: #e8e8e8;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-appearance: none;
-}
-
-.pikto-btn-purplegrey .badge {
-  color: #5d5a6b;
-  background-color: #fff;
-}
-
+/**=====================================**/
+/* 01 Button Constructor */
+/**=====================================**/
+/*Constructor*/
+/**=====================================**/
+/* 01 Button Color Variations */
+/**=====================================**/
 .pikto-btn-teal {
-  color: #fff;
   background-color: #1cafa2;
-  border-color: transparent;
-}
-
-.pikto-btn-teal:hover, .pikto-btn-teal:focus,
-.open > .pikto-btn-teal.dropdown-toggle {
   color: #fff;
   border-color: transparent;
+}
+
+.pikto-btn-teal:hover, .pikto-btn-teal:focus {
   background-color: #158379;
+  color: #fff;
 }
 
-.pikto-btn-teal:active, .pikto-btn-teal.active,
-.open > .pikto-btn-teal.dropdown-toggle {
+.pikto-btn-teal:active {
   background-color: #127169;
-}
-
-.pikto-btn-teal.disabled, .pikto-btn-teal.disabled:hover, .pikto-btn-teal.disabled:focus, .pikto-btn-teal.disabled:active, .pikto-btn-teal.disabled.active, .pikto-btn-teal[disabled], .pikto-btn-teal[disabled]:hover, .pikto-btn-teal[disabled]:focus, .pikto-btn-teal[disabled]:active, .pikto-btn-teal[disabled].active,
-fieldset[disabled] .pikto-btn-teal,
-fieldset[disabled] .pikto-btn-teal:hover,
-fieldset[disabled] .pikto-btn-teal:focus,
-fieldset[disabled] .pikto-btn-teal:active,
-fieldset[disabled] .pikto-btn-teal.active {
-  border-color: #e8e8e8;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-appearance: none;
-}
-
-.pikto-btn-teal .badge {
-  color: #1cafa2;
-  background-color: #fff;
+  color: #fff;
 }
 
 .pikto-btn-magenta {
-  color: #fff;
   background-color: #f16078;
-  border-color: transparent;
-}
-
-.pikto-btn-magenta:hover, .pikto-btn-magenta:focus,
-.open > .pikto-btn-magenta.dropdown-toggle {
   color: #fff;
   border-color: transparent;
+}
+
+.pikto-btn-magenta:hover, .pikto-btn-magenta:focus {
   background-color: #cb3f56;
+  color: #fff;
 }
 
-.pikto-btn-magenta:active, .pikto-btn-magenta.active,
-.open > .pikto-btn-magenta.dropdown-toggle {
+.pikto-btn-magenta:active {
   background-color: #a12e41;
+  color: #fff;
 }
 
-.pikto-btn-magenta.disabled, .pikto-btn-magenta.disabled:hover, .pikto-btn-magenta.disabled:focus, .pikto-btn-magenta.disabled:active, .pikto-btn-magenta.disabled.active, .pikto-btn-magenta[disabled], .pikto-btn-magenta[disabled]:hover, .pikto-btn-magenta[disabled]:focus, .pikto-btn-magenta[disabled]:active, .pikto-btn-magenta[disabled].active,
-fieldset[disabled] .pikto-btn-magenta,
-fieldset[disabled] .pikto-btn-magenta:hover,
-fieldset[disabled] .pikto-btn-magenta:focus,
-fieldset[disabled] .pikto-btn-magenta:active,
-fieldset[disabled] .pikto-btn-magenta.active {
-  border-color: #e8e8e8;
+.pikto-btn-lightgrey {
+  background-color: #f0f0f0;
+  color: #2c2a37;
+  border-color: transparent;
+}
+
+.pikto-btn-lightgrey:hover, .pikto-btn-lightgrey:focus {
+  background-color: #c2c2c2;
+  color: #2c2a37;
+}
+
+.pikto-btn-lightgrey:active {
+  background-color: #666470;
+  color: #fff;
+}
+
+.pikto-btn-purplegrey {
+  background-color: #5d5a6b;
+  color: #fff;
+  border-color: transparent;
+}
+
+.pikto-btn-purplegrey:hover, .pikto-btn-purplegrey:focus {
+  background-color: #373544;
+  color: #fff;
+}
+
+.pikto-btn-purplegrey:active {
+  background-color: #373544;
+  color: #fff;
+}
+
+.pikto-btn-grey {
+  background-color: #485456;
+  color: #fff;
+  border-color: transparent;
+}
+
+.pikto-btn-grey:hover, .pikto-btn-grey:focus {
+  background-color: #3f3c4e;
+  color: #fff;
+}
+
+.pikto-btn-grey:active {
+  background-color: #1e1d26;
+  color: #fff;
+}
+
+.pikto-btn-option {
+  background-color: #fff;
+  color: #2c2a37;
+  border-color: transparent;
+  border: 1px solid #d8d8d8;
+}
+
+.pikto-btn-option:hover, .pikto-btn-option:focus {
+  background-color: #f0f0f0;
+  color: #2c2a37;
+}
+
+.pikto-btn-option:active {
+  background-color: #d8d8d8;
+  color: #2c2a37;
+}
+
+.pikto-btn-option:active {
   -webkit-box-shadow: none;
   box-shadow: none;
-  -webkit-appearance: none;
 }
 
-.pikto-btn-magenta .badge {
-  color: #f16078;
-  background-color: #fff;
-}
-
+/************************
+02 Alternate buttons
+************************/
 .pikto-btn-bluegrey-outline {
   color: #fff;
   background-color: transparent;
@@ -11308,8 +10809,8 @@ button.close {
   background-clip: padding-box;
   white-space: normal;
   font-size: 12px;
-  -webkit-box-shadow: 1px, 1px, 4px, rgba(0, 0, 0, 0.2);
-  box-shadow: 1px, 1px, 4px, rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
 }
 

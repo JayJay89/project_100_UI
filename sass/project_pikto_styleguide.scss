@@ -275,6 +275,12 @@ pre code {
   }
 }
 
+.sg-code {
+  font-size: 12px;
+  @include sourceCode(regular);
+  color: $green;
+}
+
 .sg-dropdown {
   input {
     display: none;
@@ -458,7 +464,7 @@ pre code {
   color: $purple-gray;
   
   > section {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 }
 .sg-typo-proxima {
@@ -506,6 +512,7 @@ pre code {
   display: block;
   line-height: 36px;
   font-size: 22px;
+  color: $blue2;
 }
 
 .sg-typo-size,
@@ -519,6 +526,13 @@ pre code {
 .sg-typo-size {
   padding: 20px 20px 20px 0px;
 }
+
+.sg-typo-size-height {
+  > p {
+    margin: 0px 0px 10px;
+  }
+}
+
 .sg-typo-line-height {
   padding: 20px 0px 20px 20px;
 }
@@ -565,9 +579,6 @@ pre code {
 
     > span:nth-child(2){
       float: right;
-      font-size: 12px;
-      @include sourceCode(regular);
-      color: $green;
     }
   }
   
@@ -578,6 +589,14 @@ pre code {
   }
 }
 
+.sg-type-list {
+  > div {
+    display: inline-block;
+    float: left;
+    width: 180px;
+    margin-right: 20px;
+  }
+}
 /*Button*/
 .sg-button-section {
   > .sg-content-box {
