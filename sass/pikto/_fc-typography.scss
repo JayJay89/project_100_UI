@@ -90,6 +90,11 @@ p {
 .text-capitalize     { text-transform: capitalize; }
 
 /*Hyperlinks*/
+.general-link, .attention-link, .title-link, .meta-link{
+  cursor: pointer;
+  display: inline-block;
+}
+
 @mixin generateLink($combo){
   color: map-get($combo, 'col-1');
 
@@ -102,27 +107,23 @@ p {
   }
 }
 
-.general-link, .attention-link, .title-link, .meta-link{
-  cursor: pointer;
-  display: inline-block;
-}
-
 .general-link {
   @include generateLink($teal-combo);
 }
-.magenta-link {
+.attention-link {
   @include generateLink($magenta-combo);
 }
+.title-link{
+  @include generateLink($grey-2-combo);
+}
+.meta-link{
+  @include generateLink($purplegrey-2-combo);
+}
 
-// .attention-link{
-//   @include attention-link;
-// }
-
-// .title-link{
-//   @include title-link;
-// }
-
-// .meta-link{
-//   @include meta-link;
-// }
-
+/*Lists - By default, ul's and ol's properties are overwritten, this */
+.pikto-ordered-list {
+  display: block;
+  list-style-type: decimal;
+  margin: 1em 0px;
+  padding-left: 40px;
+}

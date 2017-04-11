@@ -94,6 +94,7 @@ $teal: #1CAFA2;
 $purple-gray: #262442;
 $purple-gray-2: #6A6887;
 $darkblue: #0A5FAC;
+$green: #117700;
 
 /*Variables -- Layout*/
 $sg-sidebar-padding: 8px; 
@@ -434,10 +435,21 @@ pre code {
   color: red;
 }
 /*Section Specific*/
+
 .sg-website-color,
 .sg-ui-color {
   > h2 {
     margin: 40px 0px 32px 0px;
+  }
+}
+
+.sg-color-combo {
+  > div > section {
+    padding: 10px;
+    background-color: $gray6;
+    float: left;
+    margin: 0px 20px 20px 0px;
+    width: 242px;
   }
 }
 
@@ -539,6 +551,30 @@ pre code {
 
   > .margin-bottom {
     margin-bottom: 25px;
+  }
+}
+
+.sg-typo-alignment {
+  > div {
+    > span:first-child{
+      float: left;
+      font-size: 14px;
+      color: $blue2;
+      @include montserrat(regular);
+    }
+
+    > span:nth-child(2){
+      float: right;
+      font-size: 12px;
+      @include sourceCode(regular);
+      color: $green;
+    }
+  }
+  
+  > p {
+    padding: 20px 0px;
+    border: 1px solid $lightblue3;
+    margin: 0px 0px 25px;
   }
 }
 

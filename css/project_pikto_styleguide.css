@@ -380,6 +380,14 @@ pre code {
   margin: 40px 0px 32px 0px;
 }
 
+.sg-color-combo > div > section {
+  padding: 10px;
+  background-color: #E0E0E0;
+  float: left;
+  margin: 0px 20px 20px 0px;
+  width: 242px;
+}
+
 /*Typo*/
 .sg-typo-section {
   color: #262442;
@@ -509,6 +517,28 @@ pre code {
 
 .sg-typo-heading-size > .margin-bottom {
   margin-bottom: 25px;
+}
+
+.sg-typo-alignment > div > span:first-child {
+  float: left;
+  font-size: 14px;
+  color: #6B7C93;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+}
+
+.sg-typo-alignment > div > span:nth-child(2) {
+  float: right;
+  font-size: 12px;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 400;
+  color: #117700;
+}
+
+.sg-typo-alignment > p {
+  padding: 20px 0px;
+  border: 1px solid #EAEEF1;
+  margin: 0px 0px 25px;
 }
 
 /*Button*/

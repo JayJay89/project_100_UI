@@ -16,7 +16,7 @@ $grey-combo: (
   'col-3': $dark-purple-grey-01
 );
 
-$grey-combo-2: (
+$grey-2-combo: (
   'col-1': $white,
   'col-2': $grey-light,
   'col-3': $grey-dark
@@ -38,6 +38,12 @@ $purplegrey-combo: (
   'col-1': $light-purple-grey-03,
   'col-2': $dark-purple-grey-07,
   'col-3': $dark-purple-grey-07
+);
+
+$purplegrey-2-combo: (
+  'col-1': $light-purple-grey-06,
+  'col-2': $light-purple-grey-03,
+  'col-3': $light-purple-grey-03
 );
 
 $success-combo: (
@@ -63,3 +69,95 @@ $danger-combo: (
   'col-2': $light-red-dark,
   'col-3': $light-red-darker
 );
+
+/*
+  Code Below is create specifically for the design system, it's not for the system itself.
+*/
+@mixin color-combo-generator($combo) {
+  > span:nth-child(1) {
+    background-color: map-get($combo, 'col-1');
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: map-get($combo, 'col-2');
+    }
+
+    &:active {
+      background-color: map-get($combo, 'col-3');
+    }
+  }
+  > span:nth-child(2) {background-color: map-get($combo, 'col-1');}
+  > span:nth-child(3) {background-color: map-get($combo, 'col-2');}
+  > span:nth-child(4) {background-color: map-get($combo, 'col-3');}
+}
+
+.color-combo-box {
+  
+  > span {
+    background-color: red;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  > p {
+    margin: 0px;
+
+    &:first-child {
+      margin-top: 10px;
+    }
+  }
+}
+
+.teal-combo {
+  @include color-combo-generator($teal-combo);
+}
+
+.magenta-combo {
+  @include color-combo-generator($magenta-combo);
+}
+
+.grey-combo {
+  @include color-combo-generator($grey-combo);
+}
+
+.grey-2-combo {
+  @include color-combo-generator($grey-2-combo);
+}
+
+.lightgrey-combo {
+  @include color-combo-generator($lightgrey-combo);
+}
+
+.bluegrey-outline-combo {
+  @include color-combo-generator($bluegrey-outline-combo);
+}
+
+.purplegrey-combo {
+  @include color-combo-generator($purplegrey-combo);
+}
+
+.purplegrey-2-combo {
+  @include color-combo-generator($purplegrey-2-combo);
+}
+
+.success-combo {
+  @include color-combo-generator($success-combo);
+}
+
+.info-combo {
+  @include color-combo-generator($info-combo);
+}
+
+.warning-combo {
+  @include color-combo-generator($warning-combo);
+}
+
+.danger-combo {
+  @include color-combo-generator($danger-combo);
+}

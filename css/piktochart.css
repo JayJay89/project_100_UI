@@ -18,6 +18,340 @@
 }
 
 /*Mixin*/
+/*
+  Code Below is create specifically for the design system, it's not for the system itself.
+*/
+.color-combo-box > span {
+  background-color: red;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+}
+
+.color-combo-box > span:first-child {
+  margin-right: 10px;
+}
+
+.color-combo-box > p {
+  margin: 0px;
+}
+
+.color-combo-box > p:first-child {
+  margin-top: 10px;
+}
+
+.teal-combo > span:nth-child(1) {
+  background-color: #1cafa2;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.teal-combo > span:nth-child(1):hover {
+  background-color: #158379;
+}
+
+.teal-combo > span:nth-child(1):active {
+  background-color: #127169;
+}
+
+.teal-combo > span:nth-child(2) {
+  background-color: #1cafa2;
+}
+
+.teal-combo > span:nth-child(3) {
+  background-color: #158379;
+}
+
+.teal-combo > span:nth-child(4) {
+  background-color: #127169;
+}
+
+.magenta-combo > span:nth-child(1) {
+  background-color: #f16078;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.magenta-combo > span:nth-child(1):hover {
+  background-color: #cb3f56;
+}
+
+.magenta-combo > span:nth-child(1):active {
+  background-color: #a12e41;
+}
+
+.magenta-combo > span:nth-child(2) {
+  background-color: #f16078;
+}
+
+.magenta-combo > span:nth-child(3) {
+  background-color: #cb3f56;
+}
+
+.magenta-combo > span:nth-child(4) {
+  background-color: #a12e41;
+}
+
+.grey-combo > span:nth-child(1) {
+  background-color: #485456;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.grey-combo > span:nth-child(1):hover {
+  background-color: #3f3c4e;
+}
+
+.grey-combo > span:nth-child(1):active {
+  background-color: #1e1d26;
+}
+
+.grey-combo > span:nth-child(2) {
+  background-color: #485456;
+}
+
+.grey-combo > span:nth-child(3) {
+  background-color: #3f3c4e;
+}
+
+.grey-combo > span:nth-child(4) {
+  background-color: #1e1d26;
+}
+
+.grey-2-combo > span:nth-child(1) {
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.grey-2-combo > span:nth-child(1):hover {
+  background-color: #f0f0f0;
+}
+
+.grey-2-combo > span:nth-child(1):active {
+  background-color: #d8d8d8;
+}
+
+.grey-2-combo > span:nth-child(2) {
+  background-color: #fff;
+}
+
+.grey-2-combo > span:nth-child(3) {
+  background-color: #f0f0f0;
+}
+
+.grey-2-combo > span:nth-child(4) {
+  background-color: #d8d8d8;
+}
+
+.lightgrey-combo > span:nth-child(1) {
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lightgrey-combo > span:nth-child(1):hover {
+  background-color: #c2c2c2;
+}
+
+.lightgrey-combo > span:nth-child(1):active {
+  background-color: #666470;
+}
+
+.lightgrey-combo > span:nth-child(2) {
+  background-color: #f0f0f0;
+}
+
+.lightgrey-combo > span:nth-child(3) {
+  background-color: #c2c2c2;
+}
+
+.lightgrey-combo > span:nth-child(4) {
+  background-color: #666470;
+}
+
+.bluegrey-outline-combo > span:nth-child(1) {
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bluegrey-outline-combo > span:nth-child(1):hover {
+  background-color: #666470;
+}
+
+.bluegrey-outline-combo > span:nth-child(1):active {
+  background-color: #413d49;
+}
+
+.bluegrey-outline-combo > span:nth-child(2) {
+  background-color: transparent;
+}
+
+.bluegrey-outline-combo > span:nth-child(3) {
+  background-color: #666470;
+}
+
+.bluegrey-outline-combo > span:nth-child(4) {
+  background-color: #413d49;
+}
+
+.purplegrey-combo > span:nth-child(1) {
+  background-color: #5d5a6b;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.purplegrey-combo > span:nth-child(1):hover {
+  background-color: #3f3c4e;
+}
+
+.purplegrey-combo > span:nth-child(1):active {
+  background-color: #3f3c4e;
+}
+
+.purplegrey-combo > span:nth-child(2) {
+  background-color: #5d5a6b;
+}
+
+.purplegrey-combo > span:nth-child(3) {
+  background-color: #3f3c4e;
+}
+
+.purplegrey-combo > span:nth-child(4) {
+  background-color: #3f3c4e;
+}
+
+.purplegrey-2-combo > span:nth-child(1) {
+  background-color: #8e89a4;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.purplegrey-2-combo > span:nth-child(1):hover {
+  background-color: #5d5a6b;
+}
+
+.purplegrey-2-combo > span:nth-child(1):active {
+  background-color: #5d5a6b;
+}
+
+.purplegrey-2-combo > span:nth-child(2) {
+  background-color: #8e89a4;
+}
+
+.purplegrey-2-combo > span:nth-child(3) {
+  background-color: #5d5a6b;
+}
+
+.purplegrey-2-combo > span:nth-child(4) {
+  background-color: #5d5a6b;
+}
+
+.success-combo > span:nth-child(1) {
+  background-color: #d8e9c6;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.success-combo > span:nth-child(1):hover {
+  background-color: #bfdba1;
+}
+
+.success-combo > span:nth-child(1):active {
+  background-color: #b0d28b;
+}
+
+.success-combo > span:nth-child(2) {
+  background-color: #d8e9c6;
+}
+
+.success-combo > span:nth-child(3) {
+  background-color: #bfdba1;
+}
+
+.success-combo > span:nth-child(4) {
+  background-color: #b0d28b;
+}
+
+.info-combo > span:nth-child(1) {
+  background-color: #c3e0e3;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.info-combo > span:nth-child(1):hover {
+  background-color: #a0ced3;
+}
+
+.info-combo > span:nth-child(1):active {
+  background-color: #8bc3c9;
+}
+
+.info-combo > span:nth-child(2) {
+  background-color: #c3e0e3;
+}
+
+.info-combo > span:nth-child(3) {
+  background-color: #a0ced3;
+}
+
+.info-combo > span:nth-child(4) {
+  background-color: #8bc3c9;
+}
+
+.warning-combo > span:nth-child(1) {
+  background-color: #f3eeae;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.warning-combo > span:nth-child(1):hover {
+  background-color: #ece582;
+}
+
+.warning-combo > span:nth-child(1):active {
+  background-color: #e8df67;
+}
+
+.warning-combo > span:nth-child(2) {
+  background-color: #f3eeae;
+}
+
+.warning-combo > span:nth-child(3) {
+  background-color: #ece582;
+}
+
+.warning-combo > span:nth-child(4) {
+  background-color: #e8df67;
+}
+
+.danger-combo > span:nth-child(1) {
+  background-color: #f8c8c8;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.danger-combo > span:nth-child(1):hover {
+  background-color: #f75353;
+}
+
+.danger-combo > span:nth-child(1):active {
+  background-color: #f53636;
+}
+
+.danger-combo > span:nth-child(2) {
+  background-color: #f8c8c8;
+}
+
+.danger-combo > span:nth-child(3) {
+  background-color: #f75353;
+}
+
+.danger-combo > span:nth-child(4) {
+  background-color: #f53636;
+}
+
 /*Shadow Constructor*/
 /*Mixin*/
 /*Class*/
@@ -177,16 +511,40 @@ p {
   color: #127169;
 }
 
-.magenta-link {
+.attention-link {
   color: #f16078;
 }
 
-.magenta-link:hover {
+.attention-link:hover {
   color: #cb3f56;
 }
 
-.magenta-link:active {
+.attention-link:active {
   color: #a12e41;
+}
+
+.title-link {
+  color: #fff;
+}
+
+.title-link:hover {
+  color: #f0f0f0;
+}
+
+.title-link:active {
+  color: #d8d8d8;
+}
+
+.meta-link {
+  color: #8e89a4;
+}
+
+.meta-link:hover {
+  color: #5d5a6b;
+}
+
+.meta-link:active {
+  color: #5d5a6b;
 }
 
 /**=====================================**/
@@ -10239,28 +10597,6 @@ button.close {
   background: transparent;
   border: 0;
   -webkit-appearance: none;
-}
-
-/*This created specifcally for UI color combo page for the design system*/
-.color-combo-box:before, .color-combo-box:after {
-  content: " ";
-  display: table;
-}
-
-.color-combo-box:after {
-  clear: both;
-}
-
-.color-combo-box > span {
-  float: left;
-  background-color: red;
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-}
-
-.color-combo-box > span:first-child {
-  margin-right: 10px;
 }
 
 /**to be check & cleared after coding the  plans layout**/
