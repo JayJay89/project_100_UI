@@ -10,6 +10,9 @@
 /**=====================================**/
 /* 01 Base */
 /**=====================================**/
+$alert-padding:             15px !default;
+
+
 .alert {
   padding: $alert-padding;
   margin: 0 0 10px;
@@ -92,6 +95,20 @@
 /* 04 Alternate Styles */
 /**=====================================**/
 // Generate contextual modifier classes for colorizing the alert.
+@mixin alert-variant($background, $border, $text-color) {
+  background-color: $background;
+  border-color: $border;
+  color: $text-color;
+
+  hr {
+    border-top-color: darken($background, 5%);
+  }
+
+  a {
+    @include attention-link;
+  }
+}
+
 .alert-success {
   @include alert-variant($alert-success-bg, $alert-no-border, $alert-success-text);
 }

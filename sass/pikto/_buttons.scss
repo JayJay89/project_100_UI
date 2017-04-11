@@ -22,6 +22,7 @@
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid transparent;
   white-space: nowrap;
+  line-height: normal;
 
   /*DEFAULT*/
   padding: 6px 12px;
@@ -30,7 +31,7 @@
 
   @include border-radius-2;
   @include user-select(none);
-  @include transition(background, 0.3s);
+  @include transition-property(all);
 
   &,
   &:active,
@@ -110,7 +111,7 @@ input.pikto-btn {
   }
 }
 /**=====================================**/
-/* 01 Button Color Variations */
+/* 02 Button Color Variations */
 /**=====================================**/
 .pikto-btn-teal {
   @include buttonConstructor($white, $white, $teal-combo);
@@ -127,225 +128,72 @@ input.pikto-btn {
 .pikto-btn-grey {
   @include buttonConstructor($white, $white, $grey-combo);
 }
+.pikto-btn-red {
+  @include buttonConstructor($white, $white, $red-combo);
+}
 .pikto-btn-option {
   @include buttonConstructor($dark-purple-grey-03, $dark-purple-grey-03, $grey-2-combo);
   @include outline($grey-dark);
 }
-/************************
-02 Alternate buttons
-************************/
-// .pikto-btn-option {
-//   @include button-variant ($btn-option-color, button-icon, $btn-option-bg-hover, $btn-option-bg-active);
-// }
-
 .pikto-btn-bluegrey-outline {
-  @include button-variant ($btn-bluegrey-outline-color, bluegrey-outline, $btn-bluegrey-outline-bg-hover, $btn-bluegrey-outline-bg-active);
+  @include buttonConstructor($white, $white, $bluegrey-outline-combo);
+  @include outline($light-purple-grey-04);
 }
-
-.pikto-btn-red {
-  @include button-variant ($btn-red-color, $btn-red-bg, $btn-red-bg-hover, $btn-red-bg-active);
-}
-
-// .pikto-btn-icon {
-//   @include button-variant ($btn-icon-outline-color, button-icon, $btn-icon-bg-hover, $btn-icon-bg-active);
-// }
-
-.pikto-btn-inline-icon {
-  i {
-    height: $btn-inline-icon-height;
-  }
-}
-
-.pikto-btn-upgrade {
-  position: relative;
-  /*!important is used here to overwrite the complexity of the padding system on header*/
-  padding-left: 40px !important;
-
-  i {
-    width: $btn-upgrade-icon-width;
-  }
-
-  .icon-crown-white {
-    position: absolute;
-    left: 12px;
-    top: 6px;
-    @include bgposAdj (3, 4, -6, -8);
-  }
-
-  .icon-crown-darkpurple {
-    @include bgposAdj (4, 4, -6, -8);
-  }
-
-  .icon-crown-magenta {
-    @include bgposAdj (3, 5, -6, -8);
-  }
-
-  .icon-crown-magenta-dark {
-    @include bgposAdj (4, 5, -6, -8);
-  }
-}
-
 .pikto-btn-success {
-  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-bg-hover, $btn-success-bg-active);
+  @include buttonConstructor($dark-purple-grey-03, $dark-purple-grey-03, $success-combo);
 }
-
 .pikto-btn-info {
-  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-bg-hover, $btn-info-bg-active);
+  @include buttonConstructor($dark-purple-grey-03, $dark-purple-grey-03, $info-combo);
 }
-
 .pikto-btn-warning {
-  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-bg-hover, $btn-warning-bg-active);
+  @include buttonConstructor($dark-purple-grey-03, $dark-purple-grey-03, $warning-combo);
 }
-
 .pikto-btn-danger {
-  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-bg-hover, $btn-danger-bg-active);
+  @include buttonConstructor($dark-purple-grey-03, $dark-purple-grey-03, $danger-combo);
 }
 
 /**=====================================**/
-/* 03 Link Buttons */
-/**=====================================**/
-// Make a button look and behave like a link
-.pikto-btn-link {
-  color: $link-color;
-  font-weight: normal;
-  border-radius: 0;
-
-  &,
-  &:active,
-  &.active,
-  &[disabled],
-  fieldset[disabled] & {
-    background-color: transparent;
-    @include box-shadow(none);
-  }
-
-  &,
-  &:hover,
-  &:focus,
-  &:active {
-    border-color: transparent;
-  }
-
-  &:hover,
-  &:focus {
-    color: $link-hover-color;
-    background-color: transparent;
-  }
-
-  &[disabled],
-  fieldset[disabled] & {
-    &:hover,
-    &:focus {
-      color: $btn-link-disabled-color;
-      text-decoration: none;
-    }
-  }
-}
-
-/**=====================================**/
-/* 04 Button Sizes */
-/**=====================================**/
-
-.pikto-btn-xl {
-  // line-height: ensure even-numbered height of button next to extra large input
-  @include button-size($padding-xlarge-vertical, $padding-xlarge-horizontal, $font-size-xlarge, $line-height-large, $btn-border-radius-base);
-
-  &--wide {
-    @include button-size($padding-xlarge-vertical + $wide-pd-ver, $padding-xlarge-horizontal + $wide-pd-hor, $font-size-xlarge, $line-height-large, $btn-border-radius-base);
-  }
-}
-
-.pikto-btn-lg {
-  // line-height: ensure even-numbered height of button next to large input
-  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-base);
-
-  &--wide {
-    @include button-size($padding-large-vertical + $wide-pd-ver, $padding-large-horizontal + $wide-pd-hor, $font-size-large, $line-height-large, $btn-border-radius-base);
-  }
-}
-
-.pikto-btn-md {
-  // line-height: ensure even-numbered height of button next to medium input
-  @include button-size($padding-medium-vertical, $padding-medium-horizontal, $font-size-medium, $line-height-large, $btn-border-radius-base);
-
-  &--wide {
-    @include button-size($padding-medium-vertical + $wide-pd-ver, $padding-medium-horizontal + $wide-pd-hor, $font-size-medium, $line-height-large, $btn-border-radius-base);
-  }
-}
-
-.pikto-btn-sm {
-  // line-height: ensure proper height of button next to small input
-  @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
-
-  &--wide {
-    @include button-size($padding-small-vertical + $wide-pd-ver, $padding-small-horizontal + $wide-pd-hor, $font-size-small, $line-height-small, $btn-border-radius-small);
-  }
-}
-
-.pikto-btn-xs {
-  @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-xsmall, $line-height-small, $btn-border-radius-small);
-
-  &--wide {
-    @include button-size($padding-xs-vertical + $wide-pd-ver, $padding-xs-horizontal + $wide-pd-hor, $font-size-xsmall, $line-height-small, $btn-border-radius-small);
-  }
-}
-
-.pikto-btn-icon {
-  padding: 0;
-}
-
-.pikto-plan-btn {
-  width: $btn-plan-width;
-  height: $btn-plan-height;
-  border-radius: $border-radius-small;
-  font-size: $font-size-base;
-  text-align: center;
-
-  &.pikto-pro-team-btn {
-    background: $dark-purple-grey-08;
-  }
-
-  &.pikto-pro-team-btn:hover {
-    background: $dark-purple-grey-09;
-  }
-}
-
-/**=====================================**/
-/* 05 Block Button */
+/* Full Width Block */
 /**=====================================**/
 .pikto-btn-block {
   display: block;
   width: 100%;
 }
-
 // Vertically space out multiple block buttons
 .pikto-btn-block + .pikto-btn-block {
   margin-top: 5px;
 }
+/**=====================================**/
+/* 03 Button Sizes */
+/**=====================================**/
 
-// Specificity overrides
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-  &.pikto-btn-block {
-    width: 100%;
+$wide-pd-hor: 20px;
+
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+
+  &.wide {
+    padding: $padding-vertical calc(#{$padding-horizontal} + #{$wide-pd-hor});
   }
 }
 
-/**=====================================**/
-/* 05 Pikto Add-on Buttons */
-/**=====================================**/
-//This is being used on survey monkey panel and maps modal
-.slide-pane-back-btn {
-  @include border-radius(2px);
-  margin-right: 6px;
-  cursor:pointer;
+.pikto-btn-xl {
+  @include button-size(16px, 28px, 22px);
+}
 
-  i {
-    @include rotate($arrow-left-rotation);
-  }
+.pikto-btn-lg {
+  @include button-size(10px, 16px, 18px);
+}
 
-  &:hover {
-    background-color: $btn-back-bg-hover;
-  }
+.pikto-btn-md {
+  @include button-size(8px, 16px, 16px);
+}
+
+.pikto-btn-sm {
+  @include button-size(5px, 10px, 12px);
+}
+
+.pikto-btn-xs {
+  @include button-size(2px, 5px, 10px);
 }

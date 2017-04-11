@@ -1,0 +1,13 @@
+/*Old*/
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+/*Standard Transition*/
+@mixin transition-property ($transition-prop) {
+  -webkit-transition: $transition-prop 0.3s ease;
+  -o-transition: $transition-prop 0.3s ease;
+  transition: $transition-prop 0.3s ease;
+}

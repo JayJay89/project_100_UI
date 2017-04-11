@@ -500,6 +500,32 @@ button {
   background-color: #5d5a6b;
 }
 
+.red-combo > span:nth-child(1) {
+  background-color: #C64135;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.red-combo > span:nth-child(1):hover {
+  background-color: #AC3125;
+}
+
+.red-combo > span:nth-child(1):active {
+  background-color: #8F2218;
+}
+
+.red-combo > span:nth-child(2) {
+  background-color: #C64135;
+}
+
+.red-combo > span:nth-child(3) {
+  background-color: #AC3125;
+}
+
+.red-combo > span:nth-child(4) {
+  background-color: #8F2218;
+}
+
 .success-combo > span:nth-child(1) {
   background-color: #d8e9c6;
   cursor: pointer;
@@ -814,6 +840,8 @@ p {
   padding-left: 15px;
 }
 
+/*Old*/
+/*Standard Transition*/
 /**=====================================**/
 /* 02b Scaffolding
 /**=====================================**/
@@ -5884,6 +5912,7 @@ select:-moz-focusring {
   background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
+  line-height: normal;
   /*DEFAULT*/
   padding: 6px 12px;
   font-size: 14px;
@@ -5895,9 +5924,8 @@ select:-moz-focusring {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  -webkit-transition: background, 0.3s;
-  -o-transition: background, 0.3s;
-  transition: background, 0.3s;
+  -webkit-transition-property: all;
+  transition-property: all;
 }
 
 .pikto-btn:focus, .pikto-btn.focus, .pikto-btn:active:focus, .pikto-btn:active.focus, .pikto-btn.active:focus, .pikto-btn.active.focus {
@@ -5943,7 +5971,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
 /**=====================================**/
 /*Constructor*/
 /**=====================================**/
-/* 01 Button Color Variations */
+/* 02 Button Color Variations */
 /**=====================================**/
 .pikto-btn-teal {
   background-color: #1cafa2;
@@ -6025,6 +6053,22 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   color: #fff;
 }
 
+.pikto-btn-red {
+  background-color: #C64135;
+  color: #fff;
+  border-color: transparent;
+}
+
+.pikto-btn-red:hover, .pikto-btn-red:focus {
+  background-color: #AC3125;
+  color: #fff;
+}
+
+.pikto-btn-red:active {
+  background-color: #8F2218;
+  color: #fff;
+}
+
 .pikto-btn-option {
   background-color: #fff;
   color: #2c2a37;
@@ -6047,379 +6091,94 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   box-shadow: none;
 }
 
-/************************
-02 Alternate buttons
-************************/
 .pikto-btn-bluegrey-outline {
-  color: #fff;
   background-color: transparent;
-  border-color: #666470;
-}
-
-.pikto-btn-bluegrey-outline:hover, .pikto-btn-bluegrey-outline:focus,
-.open > .pikto-btn-bluegrey-outline.dropdown-toggle {
   color: #fff;
   border-color: transparent;
+  border: 1px solid #666470;
+}
+
+.pikto-btn-bluegrey-outline:hover, .pikto-btn-bluegrey-outline:focus {
   background-color: #666470;
+  color: #fff;
 }
 
-.pikto-btn-bluegrey-outline:active, .pikto-btn-bluegrey-outline.active,
-.open > .pikto-btn-bluegrey-outline.dropdown-toggle {
+.pikto-btn-bluegrey-outline:active {
   background-color: #413d49;
+  color: #fff;
 }
 
-.pikto-btn-bluegrey-outline.disabled, .pikto-btn-bluegrey-outline.disabled:hover, .pikto-btn-bluegrey-outline.disabled:focus, .pikto-btn-bluegrey-outline.disabled:active, .pikto-btn-bluegrey-outline.disabled.active, .pikto-btn-bluegrey-outline[disabled], .pikto-btn-bluegrey-outline[disabled]:hover, .pikto-btn-bluegrey-outline[disabled]:focus, .pikto-btn-bluegrey-outline[disabled]:active, .pikto-btn-bluegrey-outline[disabled].active,
-fieldset[disabled] .pikto-btn-bluegrey-outline,
-fieldset[disabled] .pikto-btn-bluegrey-outline:hover,
-fieldset[disabled] .pikto-btn-bluegrey-outline:focus,
-fieldset[disabled] .pikto-btn-bluegrey-outline:active,
-fieldset[disabled] .pikto-btn-bluegrey-outline.active {
-  border-color: #e8e8e8;
+.pikto-btn-bluegrey-outline:active {
   -webkit-box-shadow: none;
   box-shadow: none;
-  -webkit-appearance: none;
-}
-
-.pikto-btn-bluegrey-outline .badge {
-  color: bluegrey-outline;
-  background-color: #fff;
-}
-
-.pikto-btn-red {
-  color: #fff;
-  background-color: #C64135;
-  border-color: transparent;
-}
-
-.pikto-btn-red:hover, .pikto-btn-red:focus,
-.open > .pikto-btn-red.dropdown-toggle {
-  color: #fff;
-  border-color: transparent;
-  background-color: #AC3125;
-}
-
-.pikto-btn-red:active, .pikto-btn-red.active,
-.open > .pikto-btn-red.dropdown-toggle {
-  background-color: #8F2218;
-}
-
-.pikto-btn-red.disabled, .pikto-btn-red.disabled:hover, .pikto-btn-red.disabled:focus, .pikto-btn-red.disabled:active, .pikto-btn-red.disabled.active, .pikto-btn-red[disabled], .pikto-btn-red[disabled]:hover, .pikto-btn-red[disabled]:focus, .pikto-btn-red[disabled]:active, .pikto-btn-red[disabled].active,
-fieldset[disabled] .pikto-btn-red,
-fieldset[disabled] .pikto-btn-red:hover,
-fieldset[disabled] .pikto-btn-red:focus,
-fieldset[disabled] .pikto-btn-red:active,
-fieldset[disabled] .pikto-btn-red.active {
-  border-color: #e8e8e8;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-appearance: none;
-}
-
-.pikto-btn-red .badge {
-  color: #C64135;
-  background-color: #fff;
-}
-
-.pikto-btn-inline-icon i {
-  height: 15px;
-}
-
-.pikto-btn-upgrade {
-  position: relative;
-  /*!important is used here to overwrite the complexity of the padding system on header*/
-  padding-left: 40px !important;
-}
-
-.pikto-btn-upgrade i {
-  width: 20px;
-}
-
-.pikto-btn-upgrade .icon-crown-white {
-  position: absolute;
-  left: 12px;
-  top: 6px;
-  background-position: -102px -136px;
-}
-
-.pikto-btn-upgrade .icon-crown-darkpurple {
-  background-position: -134px -136px;
-}
-
-.pikto-btn-upgrade .icon-crown-magenta {
-  background-position: -102px -168px;
-}
-
-.pikto-btn-upgrade .icon-crown-magenta-dark {
-  background-position: -134px -168px;
 }
 
 .pikto-btn-success {
-  color: #2c2a37;
   background-color: #d8e9c6;
-  border-color: transparent;
-}
-
-.pikto-btn-success:hover, .pikto-btn-success:focus,
-.open > .pikto-btn-success.dropdown-toggle {
   color: #2c2a37;
   border-color: transparent;
+}
+
+.pikto-btn-success:hover, .pikto-btn-success:focus {
   background-color: #bfdba1;
+  color: #2c2a37;
 }
 
-.pikto-btn-success:active, .pikto-btn-success.active,
-.open > .pikto-btn-success.dropdown-toggle {
+.pikto-btn-success:active {
   background-color: #b0d28b;
-}
-
-.pikto-btn-success.disabled, .pikto-btn-success.disabled:hover, .pikto-btn-success.disabled:focus, .pikto-btn-success.disabled:active, .pikto-btn-success.disabled.active, .pikto-btn-success[disabled], .pikto-btn-success[disabled]:hover, .pikto-btn-success[disabled]:focus, .pikto-btn-success[disabled]:active, .pikto-btn-success[disabled].active,
-fieldset[disabled] .pikto-btn-success,
-fieldset[disabled] .pikto-btn-success:hover,
-fieldset[disabled] .pikto-btn-success:focus,
-fieldset[disabled] .pikto-btn-success:active,
-fieldset[disabled] .pikto-btn-success.active {
-  border-color: #e8e8e8;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-appearance: none;
-}
-
-.pikto-btn-success .badge {
-  color: #d8e9c6;
-  background-color: #2c2a37;
+  color: #2c2a37;
 }
 
 .pikto-btn-info {
-  color: #2c2a37;
   background-color: #c3e0e3;
-  border-color: transparent;
-}
-
-.pikto-btn-info:hover, .pikto-btn-info:focus,
-.open > .pikto-btn-info.dropdown-toggle {
   color: #2c2a37;
   border-color: transparent;
+}
+
+.pikto-btn-info:hover, .pikto-btn-info:focus {
   background-color: #a0ced3;
+  color: #2c2a37;
 }
 
-.pikto-btn-info:active, .pikto-btn-info.active,
-.open > .pikto-btn-info.dropdown-toggle {
+.pikto-btn-info:active {
   background-color: #8bc3c9;
-}
-
-.pikto-btn-info.disabled, .pikto-btn-info.disabled:hover, .pikto-btn-info.disabled:focus, .pikto-btn-info.disabled:active, .pikto-btn-info.disabled.active, .pikto-btn-info[disabled], .pikto-btn-info[disabled]:hover, .pikto-btn-info[disabled]:focus, .pikto-btn-info[disabled]:active, .pikto-btn-info[disabled].active,
-fieldset[disabled] .pikto-btn-info,
-fieldset[disabled] .pikto-btn-info:hover,
-fieldset[disabled] .pikto-btn-info:focus,
-fieldset[disabled] .pikto-btn-info:active,
-fieldset[disabled] .pikto-btn-info.active {
-  border-color: #e8e8e8;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-appearance: none;
-}
-
-.pikto-btn-info .badge {
-  color: #c3e0e3;
-  background-color: #2c2a37;
+  color: #2c2a37;
 }
 
 .pikto-btn-warning {
-  color: #2c2a37;
   background-color: #f3eeae;
-  border-color: transparent;
-}
-
-.pikto-btn-warning:hover, .pikto-btn-warning:focus,
-.open > .pikto-btn-warning.dropdown-toggle {
   color: #2c2a37;
   border-color: transparent;
+}
+
+.pikto-btn-warning:hover, .pikto-btn-warning:focus {
   background-color: #ece582;
+  color: #2c2a37;
 }
 
-.pikto-btn-warning:active, .pikto-btn-warning.active,
-.open > .pikto-btn-warning.dropdown-toggle {
+.pikto-btn-warning:active {
   background-color: #e8df67;
-}
-
-.pikto-btn-warning.disabled, .pikto-btn-warning.disabled:hover, .pikto-btn-warning.disabled:focus, .pikto-btn-warning.disabled:active, .pikto-btn-warning.disabled.active, .pikto-btn-warning[disabled], .pikto-btn-warning[disabled]:hover, .pikto-btn-warning[disabled]:focus, .pikto-btn-warning[disabled]:active, .pikto-btn-warning[disabled].active,
-fieldset[disabled] .pikto-btn-warning,
-fieldset[disabled] .pikto-btn-warning:hover,
-fieldset[disabled] .pikto-btn-warning:focus,
-fieldset[disabled] .pikto-btn-warning:active,
-fieldset[disabled] .pikto-btn-warning.active {
-  border-color: #e8e8e8;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-appearance: none;
-}
-
-.pikto-btn-warning .badge {
-  color: #f3eeae;
-  background-color: #2c2a37;
+  color: #2c2a37;
 }
 
 .pikto-btn-danger {
-  color: #fff;
-  background-color: #f98484;
+  background-color: #f8c8c8;
+  color: #2c2a37;
   border-color: transparent;
 }
 
-.pikto-btn-danger:hover, .pikto-btn-danger:focus,
-.open > .pikto-btn-danger.dropdown-toggle {
-  color: #fff;
-  border-color: transparent;
+.pikto-btn-danger:hover, .pikto-btn-danger:focus {
   background-color: #f75353;
+  color: #2c2a37;
 }
 
-.pikto-btn-danger:active, .pikto-btn-danger.active,
-.open > .pikto-btn-danger.dropdown-toggle {
+.pikto-btn-danger:active {
   background-color: #f53636;
-}
-
-.pikto-btn-danger.disabled, .pikto-btn-danger.disabled:hover, .pikto-btn-danger.disabled:focus, .pikto-btn-danger.disabled:active, .pikto-btn-danger.disabled.active, .pikto-btn-danger[disabled], .pikto-btn-danger[disabled]:hover, .pikto-btn-danger[disabled]:focus, .pikto-btn-danger[disabled]:active, .pikto-btn-danger[disabled].active,
-fieldset[disabled] .pikto-btn-danger,
-fieldset[disabled] .pikto-btn-danger:hover,
-fieldset[disabled] .pikto-btn-danger:focus,
-fieldset[disabled] .pikto-btn-danger:active,
-fieldset[disabled] .pikto-btn-danger.active {
-  border-color: #e8e8e8;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-appearance: none;
-}
-
-.pikto-btn-danger .badge {
-  color: #f98484;
-  background-color: #fff;
+  color: #2c2a37;
 }
 
 /**=====================================**/
-/* 03 Link Buttons */
-/**=====================================**/
-.pikto-btn-link {
-  color: #1cafa2;
-  font-weight: normal;
-  border-radius: 0;
-}
-
-.pikto-btn-link, .pikto-btn-link:active, .pikto-btn-link.active, .pikto-btn-link[disabled],
-fieldset[disabled] .pikto-btn-link {
-  background-color: transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.pikto-btn-link, .pikto-btn-link:hover, .pikto-btn-link:focus, .pikto-btn-link:active {
-  border-color: transparent;
-}
-
-.pikto-btn-link:hover, .pikto-btn-link:focus {
-  color: #158379;
-  background-color: transparent;
-}
-
-.pikto-btn-link[disabled]:hover, .pikto-btn-link[disabled]:focus,
-fieldset[disabled] .pikto-btn-link:hover,
-fieldset[disabled] .pikto-btn-link:focus {
-  color: #e8e8e8;
-  text-decoration: none;
-}
-
-/**=====================================**/
-/* 04 Button Sizes */
-/**=====================================**/
-.pikto-btn-xl {
-  padding: 16px 28px;
-  font-size: 22px;
-  line-height: 1.33333;
-  border-radius: 2px;
-}
-
-.pikto-btn-xl--wide {
-  padding: 16px 48px;
-  font-size: 22px;
-  line-height: 1.33333;
-  border-radius: 2px;
-}
-
-.pikto-btn-lg, .btn-group-lg > .pikto-btn {
-  padding: 10px 16px;
-  font-size: 19px;
-  line-height: 1.33333;
-  border-radius: 2px;
-}
-
-.pikto-btn-lg--wide {
-  padding: 10px 36px;
-  font-size: 19px;
-  line-height: 1.33333;
-  border-radius: 2px;
-}
-
-.pikto-btn-md {
-  padding: 8px 16px;
-  font-size: 16px;
-  line-height: 1.33333;
-  border-radius: 2px;
-}
-
-.pikto-btn-md--wide {
-  padding: 8px 36px;
-  font-size: 16px;
-  line-height: 1.33333;
-  border-radius: 2px;
-}
-
-.pikto-btn-sm, .btn-group-sm > .pikto-btn {
-  padding: 5px 10px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 2px;
-}
-
-.pikto-btn-sm--wide {
-  padding: 5px 30px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 2px;
-}
-
-.pikto-btn-xs, .btn-group-xs > .pikto-btn {
-  padding: 2px 5px;
-  font-size: 10px;
-  line-height: 1.5;
-  border-radius: 2px;
-}
-
-.pikto-btn-xs--wide {
-  padding: 2px 25px;
-  font-size: 10px;
-  line-height: 1.5;
-  border-radius: 2px;
-}
-
-.pikto-btn-icon {
-  padding: 0;
-}
-
-.pikto-plan-btn {
-  width: 185px;
-  height: 45px;
-  border-radius: 2px;
-  font-size: 14px;
-  text-align: center;
-}
-
-.pikto-plan-btn.pikto-pro-team-btn {
-  background: #4b475c;
-}
-
-.pikto-plan-btn.pikto-pro-team-btn:hover {
-  background: #2f2b41;
-}
-
-/**=====================================**/
-/* 05 Block Button */
+/* Full Width Block */
 /**=====================================**/
 .pikto-btn-block {
   display: block;
@@ -6430,29 +6189,52 @@ fieldset[disabled] .pikto-btn-link:focus {
   margin-top: 5px;
 }
 
-input[type="submit"].pikto-btn-block,
-input[type="reset"].pikto-btn-block,
-input[type="button"].pikto-btn-block {
-  width: 100%;
-}
-
 /**=====================================**/
-/* 05 Pikto Add-on Buttons */
+/* 03 Button Sizes */
 /**=====================================**/
-.slide-pane-back-btn {
-  border-radius: 2px;
-  margin-right: 6px;
-  cursor: pointer;
+.pikto-btn-xl {
+  padding: 16px 28px;
+  font-size: 22px;
 }
 
-.slide-pane-back-btn i {
-  -ms-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
+.pikto-btn-xl.wide {
+  padding: 16px calc(28px + 20px);
 }
 
-.slide-pane-back-btn:hover {
-  background-color: #f0f0f0;
+.pikto-btn-lg, .btn-group-lg > .pikto-btn {
+  padding: 10px 16px;
+  font-size: 18px;
+}
+
+.pikto-btn-lg.wide, .btn-group-lg > .wide.pikto-btn {
+  padding: 10px calc(16px + 20px);
+}
+
+.pikto-btn-md {
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+.pikto-btn-md.wide {
+  padding: 8px calc(16px + 20px);
+}
+
+.pikto-btn-sm, .btn-group-sm > .pikto-btn {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.pikto-btn-sm.wide, .btn-group-sm > .wide.pikto-btn {
+  padding: 5px calc(10px + 20px);
+}
+
+.pikto-btn-xs, .btn-group-xs > .pikto-btn {
+  padding: 2px 5px;
+  font-size: 10px;
+}
+
+.pikto-btn-xs.wide, .btn-group-xs > .wide.pikto-btn {
+  padding: 2px calc(5px + 20px);
 }
 
 /**=====================================**/

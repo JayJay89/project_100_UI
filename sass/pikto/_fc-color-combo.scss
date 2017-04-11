@@ -20,8 +20,7 @@ $grey-combo: (
 $grey-2-combo: (
   'col-1': $white,
   'col-2': $grey-light,
-  'col-3': $grey-dark,
-  'outline': $grey-dark
+  'col-3': $grey-dark
 );
 
 $lightgrey-combo: (
@@ -46,6 +45,12 @@ $purplegrey-2-combo: (
   'col-1': $light-purple-grey-06,
   'col-2': $light-purple-grey-03,
   'col-3': $light-purple-grey-03
+);
+
+$red-combo: (
+  'col-1': $red,
+  'col-2': $red-dark,
+  'col-3': $red-darker
 );
 
 $success-combo: (
@@ -146,6 +151,10 @@ $danger-combo: (
 
 .purplegrey-2-combo {
   @include color-combo-generator($purplegrey-2-combo);
+}
+
+.red-combo {
+  @include color-combo-generator($red-combo);
 }
 
 .success-combo {

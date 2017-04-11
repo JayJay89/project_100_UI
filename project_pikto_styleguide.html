@@ -51,7 +51,7 @@
             <li><button class="sg-btn" data-target="sg_data_brand_patterns">Brand Patterns</button></li>
           </ul>
         </div>
-
+        <em></em>
         <div class="sg-ui-kit">
           <h2>UI Kit</h2>
           <ul class="sg-button-list sg-button-list--outer">
@@ -191,6 +191,11 @@
           <li>
             <h2>Mixins Movement</h2>
             <p>Typography mixins are moved from mixins into _fc-typography, as they are only used in mixins.</p>
+          </li>
+
+          <li>
+            <h2>Variables with one case usages are removed</h2>
+            <p>We have multiple variables which are only used once. Example: $alert-border-radius is only used to defined the border-radius for alerts. This could be easily expressed without using variables as well. Other than that, to change that value, we had to search for $alert-border-radius</p>
           </li>
         </ul>
       </section>
@@ -679,6 +684,19 @@
                 <p>'col-1': $light-purple-grey-06 (#8e89a4)</p>
                 <p>'col-2': $light-purple-grey-03 (#5d5a6b)</p>
                 <p>'col-3': $light-purple-grey-03 (#5d5a6b)</p>
+              </div>
+            </section>
+
+            <section>
+              <p>red-combo</p>
+              <div class="color-combo-box red-combo">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <p>'col-1': $red (#C64135)</p>
+                <p>'col-2': $red-dark (#AC3125)</p>
+                <p>'col-3': $red-darker (#8F2218)</p>
               </div>
             </section>
 
@@ -1568,6 +1586,7 @@
             <button class="pikto-btn pikto-btn-lightgrey">lightgrey</button>
             <button class="pikto-btn pikto-btn-purplegrey">purplegrey</button>
             <button class="pikto-btn pikto-btn-grey">grey</button>
+            <button class="pikto-btn pikto-btn-red">red</button>
           </div>
           <div class="sg-code-box" id="btn-1">
             <div class="sg-code-box-sidebar"></div>
@@ -1621,11 +1640,11 @@
 
           <h2>Wide Size Variations</h2>
           <div class="sg-content-box" data-content="btn-6">
-            <button class="pikto-btn pikto-btn-xl--wide">XL button</button>
-            <button class="pikto-btn pikto-btn-lg--wide">L button</button>
-            <button class="pikto-btn pikto-btn-md--wide">MD button</button>
-            <button class="pikto-btn pikto-btn-sm--wide">SM button</button>
-            <button class="pikto-btn pikto-btn-xs--wide">XS button</button>
+            <button class="pikto-btn pikto-btn-xl wide">XL button</button>
+            <button class="pikto-btn pikto-btn-lg wide">L button</button>
+            <button class="pikto-btn pikto-btn-md wide">MD button</button>
+            <button class="pikto-btn pikto-btn-sm wide">SM button</button>
+            <button class="pikto-btn pikto-btn-xs wide">XS button</button>
           </div>
           <div class="sg-code-box" id="btn-6">
             <div class="sg-code-box-sidebar"></div>
