@@ -69,6 +69,13 @@ p {
   font-size: $base-font-size;
 }
 
+strong {
+  @include proxima(semibold);
+}
+
+em {
+  
+}
 /*Font-sizes*/
 .h1 { font-size: 32px; }
 .h2 { font-size: 28px; }

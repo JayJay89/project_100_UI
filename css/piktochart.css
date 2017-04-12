@@ -712,6 +712,10 @@ p {
   font-size: 14px;
 }
 
+strong {
+  font-family: "ProximaNova-Semibold", Arial, sans-serif;
+}
+
 /*Font-sizes*/
 .h1 {
   font-size: 32px;
