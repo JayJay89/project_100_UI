@@ -7,27 +7,27 @@
 ////// 05 Variation
 ////////////////////////////////////
 
-  /* 
-  Panels are used in 
-  /app/views/editor_v4/_left_pane.erb
-  app/views/import/survey_monkey/get_survey_list.html.erb
+/* 
+Panels are used in 
+/app/views/editor_v4/_left_pane.erb
+app/views/import/survey_monkey/get_survey_list.html.erb
 
-  panel-group are used in 
-  /app/views/editor_v4/_modals.erb
-  */
+panel-group are used in 
+/app/views/editor_v4/_modals.erb
+*/
 
-  /**=====================================**/
-  /* Panels */
-  /**=====================================**/
-  /* 01 Base Class */
-  /**=====================================**/
-  .panel {
-    margin-bottom: $line-height-computed;
-    background-color: $panel-bg;
-    border: 1px solid transparent;
-    @include border-radius($panel-border-radius);
-    @include box-shadow(0 1px 1px rgba(0,0,0,.05));
-  }
+/**=====================================**/
+/* Panels */
+/**=====================================**/
+/* 01 Base Class */
+/**=====================================**/
+.panel {
+  margin-bottom: $line-height-computed;
+  background-color: $panel-bg;
+  border: 1px solid transparent;
+  @include border-radius($panel-border-radius);
+  @include box-shadow(0 1px 1px rgba(0,0,0,.05));
+}
 
 // Panel contents
 .panel-body {
@@ -319,4 +319,52 @@
 
 .panel-danger {
   @include panel-variant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
+}
+
+/*overwrite*/
+.sd-panel-group {
+
+  .panel {
+
+    border: 0 none;
+    background-color: $light-purple-grey-02;
+
+    + .panel {
+      margin-top: 0px;
+    }
+  }
+
+  .panel-default {
+    box-shadow: none;
+
+    > .panel-heading {
+      background-color: $light-purple-grey-02;
+      border-radius: 0px;
+      padding: 0px;
+      border: none;
+    }
+
+    &:first-child {
+      padding-top: 12px;
+    }
+  }
+
+  .alert-info {
+    padding-top: 10px;
+    margin: 10px 20px;
+
+    .adjust-pane {
+
+      .icon-alert-close {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+      }
+    }
+
+    p {
+      overflow: hidden;
+      margin-top: -10px;
+    }
+  }
 }

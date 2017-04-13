@@ -12,36 +12,17 @@
 /**=====================================**/
 $alert-padding:             15px !default;
 
-
 .alert {
   padding: $alert-padding;
   margin: 0 0 10px;
   border: 1px solid transparent;
-  border-radius: $alert-border-radius;
   position: relative;
   font-size: 13px;
   word-wrap: break-word;
+  @include border-radius-2;
 
   .alert-title {
-    font-family: $proxima-nova-semibold;
-  }
-
-  // Headings for larger alerts
-  h4 {
-    margin-top: 0;
-    // Specified for the h4 to prevent conflicts of changing $headings-color
-    color: inherit;
-  }
-
-  // Provide class for links that match alerts
-  .alert-link {
-    font-family: $proxima-nova-semibold;
-  }
-
-  // Improve alignment and spacing of inner content
-  > p,
-  > ul {
-    margin-bottom: 0;
+    @include proxima(semibold);
   }
 }
 
@@ -74,6 +55,9 @@ $alert-padding:             15px !default;
   // Adjust close link position
   .close {
     @include relative(top 2px right -21px);
+    position: relative;
+    top: 2px;
+    right: -21px;
     color: $light-purple-grey-03;
     opacity: 1;
 
@@ -95,9 +79,8 @@ $alert-padding:             15px !default;
 /* 04 Alternate Styles */
 /**=====================================**/
 // Generate contextual modifier classes for colorizing the alert.
-@mixin alert-variant($background, $border, $text-color) {
+@mixin alert-variant($background, $text-color) {
   background-color: $background;
-  border-color: $border;
   color: $text-color;
 
   hr {
@@ -105,26 +88,26 @@ $alert-padding:             15px !default;
   }
 
   a {
-    @include attention-link;
+    @include generateLink($magenta-combo);
   }
 }
 
 .alert-success {
-  @include alert-variant($alert-success-bg, $alert-no-border, $alert-success-text);
+  @include alert-variant($state-success, $text-color-dark);
 }
 
 .alert-info, .alert-notice {
-  @include alert-variant($alert-info-bg, $alert-no-border, $alert-info-text);
+  @include alert-variant($state-info, $text-color-dark);
 }
 
 .alert-warning, .alert-alert {
-  @include alert-variant($alert-warning-bg, $alert-no-border, $alert-warning-text);
+  @include alert-variant($state-warning, $text-color-dark);
 }
 
-.alert-danger, .alert-error {
-  @include alert-variant($alert-danger-bg, $alert-no-border, $alert-danger-text);
+.alert-attention, .alert-error {
+  @include alert-variant($state-attention, $text-color-dark);
 }
 
-.alert-danger-attention {
-  @include alert-variant($alert-danger-attention-bg, $alert-no-border, $alert-danger-attention-text);
+.alert-danger {
+  @include alert-variant($state-danger, $text-color-light);
 }

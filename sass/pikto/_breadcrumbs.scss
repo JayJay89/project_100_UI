@@ -6,12 +6,13 @@
 /**=====================================**/
 /* 01 Base */
 /**=====================================**/
+$breadcrumb-separator:          "/" !default;
+
 .breadcrumb {
-  padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
-  margin-bottom: $line-height-computed;
+  padding: 8px 15px;
   list-style: none;
-  background-color: $breadcrumb-bg;
-  border-radius: $border-radius-base;
+  background-color: $grey-alternate-3a;
+  @include border-radius-2;
 
   > li {
     display: inline-block;
@@ -23,11 +24,11 @@
       // Unicode space added since inline-block means non-collapsing white-space
       content: "#{$breadcrumb-separator}#{$nbsp}"; 
       padding: 0 5px;
-      color: $breadcrumb-color;
+      color: $grey-alternate-6;
     }
   }
 
   > .active {
-    color: $breadcrumb-active-color;
+    color: $teal;
   }
 }
