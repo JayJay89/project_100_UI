@@ -429,16 +429,16 @@
 // Menu position and menu carets
 .navbar-nav > li > .dropdown-menu {
   margin-top: 0;
-  @include border-top-radius(0);
+  @include border-radius-removal("top");
 }
 
 // Menu position and menu caret support for dropups via extra dropup class
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
-  @include border-bottom-radius(0);
+  @include border-radius-removal("bottom");;
 
   /*Boot*/
   // margin-bottom: 0;
-  // @include border-top-radius($navbar-border-radius);
+  // @include border-radius("top");
 }
 
 .navbar-nav.pull-right > li > .dropdown-menu,

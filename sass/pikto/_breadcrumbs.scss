@@ -12,7 +12,7 @@ $breadcrumb-separator:          "/" !default;
   padding: 8px 15px;
   list-style: none;
   background-color: $grey-alternate-3a;
-  @include border-radius-2;
+  @include border-radius;
 
   > li {
     display: inline-block;

@@ -1,3 +1,6 @@
+
+
+
 /*Variables*/
 $black:                 #000;
 $white:                 #fff;
@@ -111,13 +114,12 @@ $red-dark:              #AC3125 !default;
 $red-darker:            #8F2218 !default;
 
 $brand-primary:         $teal !default;
+$brand-secondary:       $magenta !default;
+$brand-success: $light-green;
+$brand-info: $light-blue;
+$brand-warning: $light-yellow;
+$brand-attention: $light-red;
+$brand-danger: $light-red-2;
 
 $text-color-dark: $dark-purple-grey-03;
 $text-color-light: $white;
-
-$state-success: $light-green;
-$state-info: $light-blue;
-$state-warning: $light-yellow;
-$state-attention: $light-red;
-$state-danger: $light-red-2;
-

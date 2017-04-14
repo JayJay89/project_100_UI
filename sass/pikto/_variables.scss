@@ -589,14 +589,7 @@ $jumbotron-heading-font-size:   ceil(($font-size-base * 4.5)) !default;
 /**=====================================**/
 /* 19 Labels
 /**=====================================**/
-$label-default-bg:          $light-purple-grey-04 !default;
-$label-primary-bg:          $brand-primary !default;
-$label-success-bg:          $brand-success !default;
-$label-info-bg:             $brand-info !default;
-$label-warning-bg:          $brand-warning !default;
-$label-danger-bg:           $brand-danger !default;
-$label-color:               #fff !default;
-$label-link-hover-color:    #fff !default;
+
 
 /**=====================================**/
 /* 20 List Group
@@ -638,7 +631,6 @@ $modal-title-line-height:                 $line-height-base !default;
 $modal-button-gap:                        7px !default;
 $modal-button-small-gap:                  5px !default;
 
-$modal-content-bg:                        $white !default;
 $modal-content-border-color:              rgba(0,0,0,.2) !default;
 $modal-content-fallback-border-color:     #999 !default;
 $modal-header-bg:                         $grey-light !default;
@@ -929,40 +921,12 @@ $panel-danger-border:         $state-danger-border !default;
 $panel-danger-heading-bg:     $state-danger-bg !default;
 
 /**=====================================**/
-/* 28 Popovers
-/**=====================================**/
-$popover-bg:                          #fff !default;
-$popover-max-width:                   276px !default;
-$popover-border-color:                rgba(0,0,0,.2) !default;
-$popover-fallback-border-color:       #ccc !default;
-
-$popover-title-bg:                    darken($popover-bg, 3%) !default;
-
-$popover-arrow-width:                 6px !default;
-$popover-arrow-color:                 $popover-bg !default;
-
-$popover-arrow-outer-width:           ($popover-arrow-width + 1) !default;
-$popover-arrow-outer-color:           fade_in($popover-border-color, 0.05) !default;
-$popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%) !default;
-
-/**=====================================**/
 /* 29 Progress Bars & Slider
 /**=====================================**/
-$bar-color-darkbg:            $grey-light !default;
-$bar-color-lightbg:           $grey-dark !default;
-$bar-progress-color:          $teal !default;
-$progress-bg:                 $light-purple-grey-06 !default;
-$progress-bar-color:          #fff !default;
-$progress-border-radius:      $border-radius-base !default;
+
 
 $slider-input-padding:        4px 4px 3px !default;
 $slider-input-fontsize:       12px !default;
-
-$progress-bar-bg:             $brand-primary;
-$progress-bar-success-bg:     $brand-success !default;
-$progress-bar-warning-bg:     $brand-warning !default;
-$progress-bar-danger-bg:      $brand-danger !default;
-$progress-bar-info-bg:        $brand-info !default;
 
 /**=====================================**/
 /* 30 Table
@@ -1048,7 +1012,7 @@ $arrow-top-rotation:       180 !default;
 $list-hover-color:               $grey-light!default;
 $list-active-color:              $grey-dark!default;
 $list-divider-color:             $grey!default;
-$container-border-color:         $bar-color-lightbg!default;
+$container-border-color:         $grey-dark!default;
 $search-highlighted-word-color:  $teal!default;
 $search-list-padding:            10px!default;
 $contextmenu-list-padding:       2px 6px!default;

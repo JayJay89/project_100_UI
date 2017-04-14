@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     elem.classList.remove('active');
     elem.classList.remove('slide-in');
   });
-  $("button[data-target='sg_data_accordion']").parent('li').addClass('active');
-  $("#sg_data_accordion").addClass('active slide-in');
+  $("button[data-target='sg_data_toolbar']").parent('li').addClass('active');
+  $("#sg_data_toolbar").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
@@ -131,6 +131,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
   });
 
+  
+
   /*Slider Config*/
   // http://codepen.io/thebabydino/pen/JoOomG?editors=0010
   var input_sel = 'input[type=range]',
@@ -150,6 +152,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }, false);
 
 });
+
+$(function() {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 /* Old Codes
   function changeContent( ev ) {

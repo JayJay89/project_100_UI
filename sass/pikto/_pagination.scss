@@ -35,13 +35,13 @@
     &:first-child {
       > a, > span {
         margin-left: 0;
-        @include border-left-radius($border-radius-base);
+        @include border-radius("left");
       }
     }
 
     &:last-child {
       > a, > span {
-        @include border-right-radius($border-radius-base);
+        @include border-radius("right");
       }
     }
   }
@@ -90,4 +90,21 @@
 // Small
 .pagination-sm {
   @include pagination-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+}
+
+.pagination-load-more {
+  width: 90%;
+  color: $white;
+  background-color: $teal-grey;
+  display: block;
+  text-align: center;
+  padding: 6px 12px;
+  margin: 0 auto 20px;
+
+  @include border-radius;;
+
+  .loading {
+    width: 25px;
+    margin-right: 0.3em;
+  }
 }

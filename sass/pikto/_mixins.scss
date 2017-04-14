@@ -116,16 +116,6 @@
 /**=====================================**/
 /* 01c Labels */
 /**=====================================**/
-@mixin label-variant($color) {
-  background-color: $color;
-
-  &[href] {
-    &:hover,
-    &:focus {
-      background-color: darken($color, 10%);
-    }
-  }
-}
 
 /**=====================================**/
 /* 01d Opacity */
@@ -762,13 +752,13 @@
     &:first-child {
       > a,
       > span {
-        @include border-left-radius($border-radius);
+        @include border-radius("left");
       }
     }
     &:last-child {
       > a,
       > span {
-        @include border-right-radius($border-radius);
+        @include border-radius("right");
       }
     }
   }
@@ -805,14 +795,7 @@
 /**=====================================**/
 /* 02h Progress Bar */
 /**=====================================**/
-@mixin progress-bar-variant($color) {
-  background-color: $color;
 
-  // Deprecated parent class requirement as of v3.2.0
-  .progress-striped & {
-    @include gradient-striped;
-  }
-}
 
 /**=====================================**/
 /* 02i Table Row (Bootstrap) */
@@ -863,44 +846,6 @@
   a#{$parent}:focus {
     background-color: darken($color, 10%);
   }
-}
-
-/**=====================================**/
-/* 03b Border Radius */
-/**=====================================**/
-@mixin border-radius($radius:$border-radius-base, $important: no) {
-  @if $important == isImportant {
-    border-radius: $radius !important;
-  } @else {
-    border-radius: $radius;
-  }
-}
-
-// Double side border-radius
-// example: @include border-radius-section(top, right, 0);
-@mixin border-radius-section($vert, $horz, $radius: 4px) {
-  border-#{$vert}-#{$horz}-radius: $radius;
-}
-
-// Single side border-radius
-@mixin border-top-radius($radius) {
-  border-top-right-radius: $radius;
-  border-top-left-radius: $radius;
-}
-
-@mixin border-right-radius($radius) {
-  border-bottom-right-radius: $radius;
-  border-top-right-radius: $radius;
-}
-
-@mixin border-bottom-radius($radius) {
-  border-bottom-right-radius: $radius;
-  border-bottom-left-radius: $radius;
-}
-
-@mixin border-left-radius($radius) {
-  border-bottom-left-radius: $radius;
-  border-top-left-radius: $radius;
 }
 
 /**=====================================**/
@@ -958,11 +903,7 @@
   background-repeat: no-repeat;
 }
 
-@mixin gradient-striped($color: rgba(255,255,255,.15), $angle: 45deg) {
-  background-image: -webkit-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
-  background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
-}
+
 
 /**=====================================**/
 /* 04 Layouts */

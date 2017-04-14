@@ -1,43 +1,61 @@
 ////border-radius////
-@mixin border-radius($radius, $side) {
-  @if $side == 'all'{
+$default-base-radius: 2px;
+
+@mixin border-radius($side:"all", $radius:$default-base-radius) {
+  @if $side == "all"{
     border-radius: $radius;
-  } @if $side == "top"{
+  } @else if $side == "top" {
     border-radius: $radius $radius 0px 0px;
-  } @if $side == 'bottom' {
+  } @else if $side == "bottom" {
     border-radius: 0px 0px $radius $radius;
-  } @if $side == 'left' {
+  } @else if $side == "left" {
     border-radius: $radius 0px 0px $radius;
-  } @if $side == 'right' {
+  } @else if $side == "right" {
     border-radius: 0px $radius $radius 0px;
-  } @if $side == 'top-left' {
+  } @else if $side == "top-left" {
     border-radius: $radius 0px 0px 0px;
-  } @if $side == 'top-right' {
+  } @else if $side == "top-right" {
     border-radius: 0px $radius 0px 0px;
-  } @if $side == 'bottom-right' {
+  } @else if $side == "bottom-right" {
     border-radius: 0px 0px $radius 0px;
-  } @if $side == 'bottom-left' {
+  } @else if $side == "bottom-left" {
     border-radius: 0px 0px 0px $radius;
   }
 }
 
-/*Class*/
-.border-radius-6 {
-  @include border-radius(6px, all);
+@mixin border-radius-removal($side:"all"){
+  @if $side == "all"{
+    border-radius: 0px;
+  } @else if $side == "top" {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  } @else if $side == "bottom" {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  } @else if $side == "left" {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  } @else if $side == "right" {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
 }
-.border-radius-4 {
-  @include border-radius(4px, all);
-}
-.border-radius-2 {
-  @include border-radius(2px, all);
-}
+
 /*Mixin*/
 @mixin border-radius-6 {
-  @include border-radius(6px, all);
+  @include border-radius("all", 6px);
 }
 @mixin border-radius-4 {
-  @include border-radius(4px, all);
+  @include border-radius("all", 6px);
 }
-@mixin border-radius-2 {
-  @include border-radius(2px, all);
+
+/*Class*/
+.border-radius-6 {
+  @include border-radius-6
+}
+.border-radius-4 {
+  @include border-radius-4;
+}
+.border-radius-2 {
+  @include border-radius;
 }

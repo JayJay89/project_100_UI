@@ -85,7 +85,7 @@ a.badge {
 
   i {
     background-color: $gplus-whiteiconbg-color;
-    @include border-radius(2px);
+    @include border-radius;
     margin: 1px 12px 1px 1px;
   }
 }

@@ -19,7 +19,7 @@ $alert-padding:             15px !default;
   position: relative;
   font-size: 13px;
   word-wrap: break-word;
-  @include border-radius-2;
+  @include border-radius;;
 
   .alert-title {
     @include proxima(semibold);
@@ -93,21 +93,21 @@ $alert-padding:             15px !default;
 }
 
 .alert-success {
-  @include alert-variant($state-success, $text-color-dark);
+  @include alert-variant($brand-success, $text-color-dark);
 }
 
 .alert-info, .alert-notice {
-  @include alert-variant($state-info, $text-color-dark);
+  @include alert-variant($brand-info, $text-color-dark);
 }
 
 .alert-warning, .alert-alert {
-  @include alert-variant($state-warning, $text-color-dark);
+  @include alert-variant($brand-warning, $text-color-dark);
 }
 
 .alert-attention, .alert-error {
-  @include alert-variant($state-attention, $text-color-dark);
+  @include alert-variant($brand-attention, $text-color-dark);
 }
 
 .alert-danger {
-  @include alert-variant($state-danger, $text-color-light);
+  @include alert-variant($brand-danger, $text-color-light);
 }

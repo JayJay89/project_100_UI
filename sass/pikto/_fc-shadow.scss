@@ -1,6 +1,7 @@
 ////Shadows////
 /*Shadow colors*/
 $shadow-color: rgba(black, 0.2);
+$shadow-color-2: rgba(black, 0.5);
 
 /*Shadow Constructor*/
 @mixin box-shadow($shadow...) {
@@ -25,6 +26,10 @@ $shadow-color: rgba(black, 0.2);
   @include box-shadow(-2px 0px 4px 0px $shadow-color);
 }
 
+@mixin modal-shadow {
+  @include box-shadow(0px 2px 10px 0px $shadow-color-2);
+}
+
 @mixin no-shadow {
   @include box-shadow(none);
 }
@@ -37,13 +42,11 @@ $shadow-color: rgba(black, 0.2);
 
 /*Class*/
 .inset-shadow {
-  @include box-shadow (0px, 2px, 1px, rgba(black, 0.2), $inset: true);
+  @include inset-shadow;
 }
 .outer-shadow {
-  @include box-shadow (1px, 1px, 4px, rgba(black ,0.2), $inset: false);
+  @include outer-shadow;
 }
 .no-shadow {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+  @include no-shadow;
 }

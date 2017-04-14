@@ -27,28 +27,51 @@
 /* 02 Bar itself */
 /**=====================================**/
 
+$bar-color-darkbg:            $grey-light !default;
+$bar-color-lightbg:           $grey-dark !default;
+
+$progress-bar-bg:             $brand-primary;
+
+
+@mixin gradient-striped($color: rgba(255,255,255,.15), $angle: 45deg) {
+  background-image: -webkit-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+  background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+}
+
+@mixin progress-bar-variant($color) {
+  background-color: $color;
+
+  // Deprecated parent class requirement as of v3.2.0
+  .progress-striped & {
+    @include gradient-striped;
+  }
+}
+
 // Outer container
 .progress {
   overflow: hidden;
   height: 8px;
-  background-color: $progress-bg;
+  background-color: $light-purple-grey-06;
   @include border-radius(4px);
-  /*Boot*/
-    // @include box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
-  }
+}
 
-// Bar of progress
+.progress-bg-purple {
+  background-color: $light-purple-grey-06; 
+}
+
+.progress-bg-white {
+  background-color: $white;
+}
+
 .progress-bar {
   float: left;
   @include size(0%, 100%);
   font-size: $font-size-small;
-  line-height: $line-height-computed;
+  line-height: normal;
   text-align: center;
-  background-color: $progress-bar-bg; 
+  background-color: $brand-primary;
   @include transition(width .6s ease);
-
-  /*Boot*/
-  // @include box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
 }
 
 // Striped bars
@@ -75,28 +98,17 @@
 /**=====================================**/
 
 .progress-bar-success {
-  @include progress-bar-variant($progress-bar-success-bg);
+  @include progress-bar-variant($brand-success);
 }
 
 .progress-bar-info {
-  @include progress-bar-variant($progress-bar-info-bg);
+  @include progress-bar-variant($brand-info);
 }
 
 .progress-bar-warning {
-  @include progress-bar-variant($progress-bar-warning-bg);
+  @include progress-bar-variant($brand-warning);
 }
 
 .progress-bar-danger {
-  @include progress-bar-variant($progress-bar-danger-bg);
+  @include progress-bar-variant($brand-danger);
 }
-
-/*Example of progress-bar-variant*/
-
-// @mixin progress-bar-variant($color) {
-//   background-color: $color;
-
-//   // Deprecated parent class requirement as of v3.2.0
-//   .progress-striped & {
-//     @include gradient-striped;
-//   }
-// }

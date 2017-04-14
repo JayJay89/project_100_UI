@@ -5,6 +5,20 @@
 ////// 03 Styles
 /////////////////////////////////////////////
 
+$popover-bg:                          #fff !default;
+$popover-max-width:                   276px !default;
+$popover-border-color:                rgba(0,0,0,.2) !default;
+$popover-fallback-border-color:       #ccc !default;
+
+$popover-title-bg:                    darken($popover-bg, 3%) !default;
+
+$popover-arrow-width:                 6px !default;
+$popover-arrow-color:                 $popover-bg !default;
+
+$popover-arrow-outer-width:           ($popover-arrow-width + 1) !default;
+$popover-arrow-outer-color:           fade_in($popover-border-color, 0.05) !default;
+$popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%) !default;
+
 .popover {
   position: absolute;
   top: initial;
@@ -17,7 +31,7 @@
   white-space: normal;
   font-size: 12px;
   @include outer-shadow;
-  @include border-radius($border-radius-base);
+  @include border-radius;;
 
   &.top     { margin-top: -$popover-arrow-width; }
   &.right   { margin-left: $popover-arrow-width; }
@@ -168,21 +182,15 @@
     padding: 10px 15px;
     background-color: $white;
 
-    @include border-radius(2px);
-  }
-
-  h1, .popover-title {
-    font-weight: bold;
-    font-size: 15px;
+    @include border-radius;;
   }
 
   .popover-title {
     background-color: #fafafa;
-    padding: 5px 15px;
+    padding: 8px 16px;
     border-bottom: 1px solid $grey-dark;
-
     margin: 0;
-    @include border-radius (2px 2px 0px 0px);
+    @include border-radius (2px, 'top');
   }
 
   .popover-footer {
@@ -191,7 +199,7 @@
     border-top: 1px solid $grey-dark;
     font-size: 14px;
 
-    @include border-radius(0px 0px 2px 2px);
+    @include border-radius(2px, 'bottom');
 
     > button {
       color: $light-purple-grey-04;
@@ -201,13 +209,13 @@
 
 .popover-with-title {
   .popover-content {
-    @include border-radius(0px 0px 2px 2px)
+    @include border-radius(2px, 'bottom');
   }
 }
 
 .popover-with-footer {
   .popover-content {
-    @include border-radius(2px 2px 0px 0px)
+    @include border-radius (2px, 'top');
   }
 }
 
@@ -293,12 +301,6 @@
   }
 }
 
-// #pikto-cutoff-popover {
-//     display: block!important;
-//     top: 50%;
-//     left: 5%;
-// }
-
 .popover-cutoff {
   display: none;
   z-index: 1041;
@@ -309,7 +311,7 @@
 }
 
 #pikto-reuse-template {
-  display: block!important;
+  display: block !important;
   top: 50%;
   left: 15%;
 }

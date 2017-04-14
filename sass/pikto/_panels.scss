@@ -38,8 +38,7 @@ panel-group are used in
 .panel-heading {
   padding: $panel-heading-padding;
   border-bottom: 1px solid transparent;
-  @include border-top-radius(($panel-border-radius - 1));
-
+  @include border-radius(($panel-border-radius - 1), "top");
   > .dropdown .dropdown-toggle {
     color: inherit;
   }
@@ -70,7 +69,7 @@ panel-group are used in
   padding: $panel-footer-padding;
   background-color: $panel-footer-bg;
   border-top: 1px solid $panel-inner-border;
-  @include border-bottom-radius(($panel-border-radius - 1));
+  @include border-radius(($panel-border-radius - 1),"bottom");
 }
 /**=====================================**/
 /* 02 Collapsable */
@@ -135,7 +134,7 @@ panel-group are used in
     &:first-child {
       .list-group-item:first-child {
         border-top: 0;
-        @include border-top-radius(($panel-border-radius - 1));
+        @include border-radius(($panel-border-radius - 1), "top");
       }
     }
 
@@ -143,7 +142,7 @@ panel-group are used in
     &:last-child {
       .list-group-item:last-child {
         border-bottom: 0;
-        @include border-bottom-radius(($panel-border-radius - 1));
+        @include border-radius(($panel-border-radius - 1), "bottom");
       }
     }
 
@@ -189,7 +188,7 @@ panel-group are used in
   /*Boot*/// Add border top radius for first one
   > .table:first-child,
   > .table-responsive:first-child > .table:first-child {
-    @include border-top-radius(($panel-border-radius - 1));
+    @include border-radius(($panel-border-radius - 1), "top");
 
     > thead:first-child,
     > tbody:first-child {
@@ -213,7 +212,7 @@ panel-group are used in
   > .table:last-child,
   > .table-responsive:last-child > .table:last-child {
 
-    @include border-bottom-radius(($panel-border-radius - 1));
+    @include border-radius(($panel-border-radius - 1), "bottom");
 
     > tbody:last-child,
     > tfoot:last-child {
@@ -322,19 +321,16 @@ panel-group are used in
 }
 
 /*overwrite*/
-.sd-panel-group {
+.pikto-accordion {
+  background-color: $light-purple-grey-02;
+  padding: 20px;
+  margin-bottom: 0px;
+  min-width: 250px;
 
   .panel {
-
     border: 0 none;
     background-color: $light-purple-grey-02;
-
-    + .panel {
-      margin-top: 0px;
-    }
-  }
-
-  .panel-default {
+    border-bottom: 1px solid $dark-purple-grey-05;
     box-shadow: none;
 
     > .panel-heading {
@@ -344,27 +340,47 @@ panel-group are used in
       border: none;
     }
 
-    &:first-child {
-      padding-top: 12px;
+    + .panel {
+      margin-top: 0px;
+    }
+
+    &:first-child a {
+      padding-top: 0px;
+    }
+
+    &:last-child {
+      border: 0px; 
+
+      a {
+        padding-bottom: 0px;
+      } 
     }
   }
 
-  .alert-info {
-    padding-top: 10px;
-    margin: 10px 20px;
+  .panel-title {
+    display: table;
+    width: 100%;
+    color: $grey-darker;
+  }
 
-    .adjust-pane {
+  .panel-title a {
+    color: $grey-dark;
+    display: table-cell;
+    vertical-align: middle;
+    height: 48px;
 
-      .icon-alert-close {
-        position: absolute;
-        top: -5px;
-        right: -5px;
-      }
+    &:hover {
+      color: $white;
     }
 
-    p {
-      overflow: hidden;
-      margin-top: -10px;
+    &:not(.collapsed) {
+      color: $white;
+    }
+  }
+
+  .tab-panel {
+    > h1 {
+      color: $grey-darker;
     }
   }
 }

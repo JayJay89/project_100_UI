@@ -95,6 +95,7 @@ $purple-gray: #262442;
 $purple-gray-2: #6A6887;
 $darkblue: #0A5FAC;
 $green: #117700;
+$light-purple-grey-02: #474456;
 
 /*Variables -- Layout*/
 $sg-sidebar-padding: 8px; 
@@ -596,6 +597,7 @@ pre code {
     margin-right: 20px;
   }
 }
+
 /*Button*/
 .sg-button-section {
   > .sg-content-box {
@@ -614,7 +616,6 @@ pre code {
 /*Popover*/
 .sg-popover {
   padding: 20px;
-  height: 90px;
 
   > .popover {
     position: relative;
@@ -663,7 +664,28 @@ pre code {
   padding: 10px;
 }
 
+/*File Selector*/
+.sg-file-selector {
+  .sg-content-box {
+    background-color: $light-purple-grey-02;
+  }
+}
 
+/*ProgressBar*/
+.sg-progressbar {
+  .progress-bar {
+    width: 50%;
+  }
+}
+
+.sg-progressbar-set {
+  .progress-bar {
+    width: 50%;
+  }
+  > .progress {
+    margin-bottom: 5px;
+  }
+}
 //////////*SLIDERS*//////////
 
 $slider-bg-color: transparent;

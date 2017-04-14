@@ -73,16 +73,22 @@ strong {
   @include proxima(semibold);
 }
 
-em {
-  
-}
+@mixin h1 {font-size: 32px;}
+@mixin h2 {font-size: 28px;}
+@mixin h3 {font-size: 24px;}
+@mixin h4 {font-size: 20px;}
+@mixin h5 {font-size: 16px;}
+@mixin h6 {font-size: 12px;}
+@mixin small-text {font-size: 10px;}
+
 /*Font-sizes*/
-.h1 { font-size: 32px; }
-.h2 { font-size: 28px; }
-.h3 { font-size: 24px; }
-.h4 { font-size: 20px; }
-.h5 { font-size: 16px; }
-.h6 { font-size: 14px; }
+.h1 { @include h1; }
+.h2 { @include h2; }
+.h3 { @include h3; }
+.h4 { @include h4; }
+.h5 { @include h5; }
+.h6 { @include h6; }
+.small-text {@include small-text;}
 
 /*Alignment*/
 .text-left           { text-align: left; }

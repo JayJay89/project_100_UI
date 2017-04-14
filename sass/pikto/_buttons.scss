@@ -29,29 +29,28 @@
   font-size: 14px;
   color: $dark-purple-grey-03;
 
-  @include border-radius-2;
+  @include border-radius;
   @include user-select(none);
   @include transition-property(all);
 
   &,
-  &:active,
-  &.active {
-    &:focus,
-    &.focus {
+  &:active {
+    &:focus {
       @include tab-focus;
     }
   }
 
-  &:hover,
-  &:focus,
-  &.focus {
+  &:focus {
+    background-color: inherit;
+  }
+
+  &:hover {
     background-color: $grey-darker;
     color: #333333;
     text-decoration: none;
   }
 
-  &:active,
-  &.active {
+  &:active {
     outline: 0;
     background-image: none;
     @include inset-shadow;
@@ -91,8 +90,11 @@ input.pikto-btn {
   color: $textColor;
   border-color: transparent;
 
-  &:hover,
   &:focus {
+    background-color: map-get($map, 'col-1');;
+  }
+
+  &:hover {
     background-color: map-get($map, 'col-2');
     color: $textColor;
   }

@@ -128,7 +128,7 @@
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .pikto-btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .pikto-btn {
-  @include border-right-radius(0);
+  @include border-radius-removal("right");
 }
 
 .input-group-addon:first-child {
@@ -142,7 +142,7 @@
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .pikto-btn:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .pikto-btn {
-  @include border-left-radius(0);
+  @include border-radius-removal("left");;
 }
 
 .input-group-addon:last-child {

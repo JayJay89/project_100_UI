@@ -1,0 +1,123 @@
+.drag-drop-img-wrapper {
+  display: table;
+  width: calc(100% - 40px);
+  padding: 20px;
+}
+
+.drag-drop-img {
+  border: 1px dashed #777483;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+  height: 200px;
+
+  /*These are supposed to be icons, but images are used as placeholder.  */
+  img {
+    margin-bottom: 10px;    
+  }
+
+  h4 {
+    font-size: $font-size-base;
+    color: $grey-light;
+    margin-top: 0px;
+  }
+
+  .upload-caption {
+    color: $teal;
+  }
+
+  .pikto-spinner {
+    width: 65px;
+    height: 65px;
+    padding-top: $uploading-spinner-padding-top;
+    margin: 0 auto;
+    position: relative;
+
+    &:not(:required):before {
+      border-width: 5px;
+    }
+
+    &:before {
+      width: 65px;
+      height: 65px;
+    }
+  }
+
+  .uploads-number-container {
+    position: absolute;
+    top: 51px;
+    left: 5px;
+    font-size: 11px;
+    color: $teal-grey-light;
+    width: 55px;
+    text-align: center;
+  }
+
+  .pikto-upload-input {
+    opacity: 0;
+    position: absolute;
+    width: 0px;
+    display: none;
+  }
+
+  /** Begin uploading animation **/
+  .upload-caption span {
+    @include animation(opacitypulse 1s infinite);
+  }
+
+  .upload-caption span:nth-child(3) {
+    @include animation-delay(100ms);
+  }
+
+  .upload-caption span:nth-child(4) {
+    @include animation-delay(300ms);
+  }
+  /** End Uploading animation **/
+}
+
+.drag-drop-img-hover {
+  border-color: $teal;
+}
+
+.uploaded-images-progress {
+  margin: $innertab-panel-padding;
+  color: $grey-light;
+
+  .uploaded-title {
+    padding-bottom: 10px;
+
+    h4 {
+      margin: 0px;
+      float: left;
+    }
+
+    .upgrade-label {
+      float: right;
+    }
+  }
+
+  .storage-caption {
+    font-size: $font-size-small;
+    margin-bottom: 5px;
+  }
+}
+
+.cancel-uploads-content {
+  cursor: pointer;
+  background-color: rgba(73, 70, 87, 0.9);
+  color: $brand-danger-attention;
+  top: $uploading-spinner-padding-top;
+  display: inline-block;
+  z-index: 1;
+  padding: 20px;
+
+  + .attention-link {
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+  } 
+}

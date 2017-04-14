@@ -7,11 +7,11 @@
 // Included Scaffolding
 @import "pikto/scaffolding";
 
-// Resetpikto/ pikto/and dependencies
+// Resetand dependencies
 @import "pikto/print";
 @import "pikto/sprite";
 
-// Core pikto/CSS
+// Core CSS
 // @import "pikto/type";
 @import "pikto/code";
 @import "pikto/grid";
@@ -19,9 +19,10 @@
 @import "pikto/forms";
 @import "pikto/buttons";
 
-// Compopikto/npikto/ents
+// Components
 @import "pikto/component-animations";
 @import "pikto/dropdowns";
+@import "pikto/file-selector";
 @import "pikto/button-groups";
 @import "pikto/input-groups";
 @import "pikto/navs";
@@ -42,12 +43,18 @@
 @import "pikto/wells";
 @import "pikto/close";
 
-// Compopikto/npikto/ents w/ JavaScript
+// Components w/ JavaScript
 @import "pikto/modals";
 @import "pikto/tooltip";
 @import "pikto/popovers";
 
-// Utilipikto/tpikto/y classes
+// Utility classes
 @import "pikto/utilities";
 @import "pikto/responsive-utilities";
 
+//plugins 
+@import "pikto/plugin/handsontable";
+
+/*Only Added temporarily*/
+//glyphicons
+@import "pikto/glyphicons";

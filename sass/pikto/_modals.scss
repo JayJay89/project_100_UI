@@ -63,11 +63,13 @@
 /**=====================================**/
 /* 02 Actual Modal */
 /**=====================================**/
+$modal-backdrop-bg:                       $dark-purple-grey-07 !default;
+
 .modal-content {
   position: relative;
-  @include border-radius($modal-border-radius);
-  @include box-shadow(0 2px 9px 0 rgba(0,0,0,0.5));
-  background-color: $modal-content-bg;
+  @include border-radius;;
+  @include modal-shadow;
+  background-color: $white;
   background-clip: padding-box;
   // Remove focus outline from opened modal
   outline: 0;
@@ -502,7 +504,8 @@
   img {
     width: 100%;
 
-    &.lazyloading + .progress, &.lazyload + .progress {
+    &.lazyloading + .progress, 
+    &.lazyload + .progress {
       display: block;
     }
 
@@ -538,10 +541,6 @@
   .wrapper-preview {
     overflow: hidden;
     background: $modal-wrapper-darker-bg;
-
-    // img {
-    //     width: 100%;
-    // }
   }
 }
 
@@ -574,10 +573,6 @@
         text-transform: uppercase;
         font-size: 13px;
       }
-    }
-
-    .modal-body {
-      // background: $modal-backdrop-bg;
     }
 
     .modal-footer {
