@@ -31,7 +31,7 @@ $popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%
   white-space: normal;
   font-size: 12px;
   @include outer-shadow;
-  @include border-radius;;
+  @include border-radius;
 
   &.top     { margin-top: -$popover-arrow-width; }
   &.right   { margin-left: $popover-arrow-width; }
@@ -190,7 +190,7 @@ $popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%
     padding: 8px 16px;
     border-bottom: 1px solid $grey-dark;
     margin: 0;
-    @include border-radius (2px, 'top');
+    @include border-radius ("top");
   }
 
   .popover-footer {
@@ -199,7 +199,7 @@ $popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%
     border-top: 1px solid $grey-dark;
     font-size: 14px;
 
-    @include border-radius(2px, 'bottom');
+    @include border-radius("bottom");
 
     > button {
       color: $light-purple-grey-04;
@@ -209,13 +209,13 @@ $popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%
 
 .popover-with-title {
   .popover-content {
-    @include border-radius(2px, 'bottom');
+    @include border-radius("bottom");
   }
 }
 
 .popover-with-footer {
   .popover-content {
-    @include border-radius (2px, 'top');
+    @include border-radius ("top");
   }
 }
 

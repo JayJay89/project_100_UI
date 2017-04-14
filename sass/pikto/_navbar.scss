@@ -234,7 +234,7 @@
   background-color: transparent;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid transparent;
-  @include border-radius($border-radius-base);
+  @include border-radius;
 
   /*Boot*/
   // margin-right: $navbar-padding-horizontal;
@@ -252,7 +252,7 @@
   .icon-bar {
     display: block;
     @include size(22px,2px);
-    @include border-radius(1px);
+    @include border-radius;
   }
 
   .icon-bar + .icon-bar {
@@ -763,7 +763,7 @@
   font-size: $font-size-small;
   width: 400px;
   background: #f5fafb;
-  @include border-radius(10px);
+  @include border-radius("all",10px);
   z-index: 9;
 
   .arrow {
@@ -776,13 +776,13 @@
 
   .content {
     @include box-shadow ( 0 2px 7px rgba(0,0,0,0.3));
-    @include border-radius(10px);
+    @include border-radius("all",10px);
     border: 0 none;
 
     .noti-header {
       background: $dark-purple-grey-05;
       padding: 0.5em 1.2em;
-      @include border-radius(8px 8px 0 0);
+      @include border-radius("top", 8px);
 
       h6 {
         color: $white;
@@ -793,7 +793,7 @@
     .noti-body {
       background: $white;
       color: $grey;
-      @include border-radius(0 0 8px 8px);
+      @include border-radius("bottom", 8px);
 
       ul {
         padding: 0;
@@ -835,7 +835,7 @@
         color: $link-color;
         padding: 0.8em;
         background: $teal-grey-lighter;
-        @include border-radius(0 0 8px 8px);
+        @include border-radius("bottom", 8px);
         text-align: center;
         display: block; 
 

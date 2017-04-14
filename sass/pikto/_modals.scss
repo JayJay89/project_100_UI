@@ -102,7 +102,7 @@ $modal-backdrop-bg:                       $dark-purple-grey-07 !default;
   background-color: $modal-header-bg;
   padding: $modal-title-padding;
   text-align: center;
-  @include border-radius($modal-border-radius $modal-border-radius 0 0);
+  @include border-radius("top", $modal-border-radius);
   @include clearfix;
 
   .close {
@@ -142,7 +142,7 @@ $modal-backdrop-bg:                       $dark-purple-grey-07 !default;
 .modal-footer {
   padding: $modal-footertopbottom-padding $modal-inner-padding;
   background-color: $modal-footer-bg;
-  @include border-radius(0 0 $modal-border-radius $modal-border-radius);
+  @include border-radius("bottom", $modal-border-radius);
   text-align: right; // right align buttons
   border-top: 1px solid $modal-border-color;
   @include clearfix; // clear it in case folks use .pull-* classes on buttons
@@ -333,7 +333,7 @@ $modal-backdrop-bg:                       $dark-purple-grey-07 !default;
 
   .modal-content {
     height: $modal-tool-height;
-    @include border-radius($modal-border-radius-underlying $modal-border-radius-underlying $modal-border-radius $modal-border-radius);
+    @include border-radius-special($modal-border-radius-underlying $modal-border-radius-underlying $modal-border-radius $modal-border-radius);
   }
 
   .modal-header {
@@ -346,7 +346,7 @@ $modal-backdrop-bg:                       $dark-purple-grey-07 !default;
 
   .panel-tab {
     background-color: $modal-paneltab-bg;
-    @include border-radius(0 0 0 $modal-border-radius);
+    @include border-radius("bottom-right" $modal-border-radius);
 
     li {
       display: block;
@@ -420,7 +420,7 @@ $modal-backdrop-bg:                       $dark-purple-grey-07 !default;
 
   .wrapper-preview {
     width: $modal-preview-previewwrapper-width;
-    @include border-radius(0 0 0 $modal-border-radius);
+    @include border-radius("bottom-right" $modal-border-radius);
     text-align: center;
     padding: $modal-preview-inner-padding;
   }
@@ -464,7 +464,7 @@ $modal-backdrop-bg:                       $dark-purple-grey-07 !default;
 
   .container-arrow-left {
     left: $container-arrow-left-position;
-    @include border-radius(0 $container-arrow-circle-size $container-arrow-circle-size 0);
+    @include border-radius("right", $container-arrow-circle-size);
 
     i {
       @include rotate($arrow-left-rotation);
@@ -477,7 +477,7 @@ $modal-backdrop-bg:                       $dark-purple-grey-07 !default;
 
   .container-arrow-right {
     right: $container-arrow-right-position;
-    @include border-radius($container-arrow-circle-size 0 0 $container-arrow-circle-size);
+    @include border-radius("left", $container-arrow-circle-size);
 
     i {
       @include rotate($arrow-right-rotation);
@@ -557,16 +557,16 @@ $modal-backdrop-bg:                       $dark-purple-grey-07 !default;
 
   .modal-dialog {
     margin-top: 5%;
-    @include border-radius(10px);
+    @include border-radius("all", 10px);
   }
 
   .modal-content {
-    @include border-radius(10px);
+    @include border-radius("all", 10px);
     border: 0 none;
 
     .modal-header {
       background: $modal-header-bg;
-      @include border-radius(8px 8px 0 0);
+      @include border-radius("top", 8px);
 
       h4 {
         color: $teal-grey-light;
@@ -579,7 +579,7 @@ $modal-backdrop-bg:                       $dark-purple-grey-07 !default;
       border-top: none;
       margin-top: 0;
       background: $teal-grey-lighter;;
-      @include border-radius(0 0 8px 8px);
+      @include border-radius("bottom", 8px);
 
       .pikto-btn-lightgrey {
         margin-right: 0.35em;

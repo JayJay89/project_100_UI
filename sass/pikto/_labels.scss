@@ -23,7 +23,7 @@
   text-transform: uppercase;
 
   @include small-text
-  @include border-radius-4;
+  @include border-radius("all", 4px);
 
   // [converter] extracted a& to a.label
 
@@ -102,7 +102,7 @@ a.label {
   background-color: $teal-grey-lighter;
   padding: 20px;
   position: relative;
-  @include border-radius(2px);
+  @include border-radius;;
 
   .icon-cross-darkpurple-small {
     cursor: pointer;

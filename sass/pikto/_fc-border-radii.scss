@@ -22,6 +22,9 @@ $default-base-radius: 2px;
     border-radius: 0px 0px 0px $radius;
   }
 }
+@mixin border-radius-special($properties...){
+  border-radius: $properties;
+}
 
 @mixin border-radius-removal($side:"all"){
   @if $side == "all"{
@@ -40,6 +43,7 @@ $default-base-radius: 2px;
     border-bottom-right-radius: 0px;
   }
 }
+
 
 /*Mixin*/
 @mixin border-radius-6 {

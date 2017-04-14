@@ -34,12 +34,12 @@
 
   // Round the first and last items
   &:first-child {
-    @include border-radius ($list-group-border-radius, "top");
+    @include border-radius ("top", $list-group-border-radius);
   }
 
   &:last-child {
     margin-bottom: 0;
-    @include border-radius ($list-group-border-radius, "bottom");
+    @include border-radius ("bottom", $list-group-border-radius);
   }
 
   > .badge {

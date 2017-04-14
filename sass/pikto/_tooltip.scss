@@ -141,7 +141,7 @@
   text-align: center;
   text-decoration: none;
   background-color: $tooltip-bg;
-  @include border-radius($border-radius-base);
+  @include border-radius;
 }
 
 /**=====================================**/

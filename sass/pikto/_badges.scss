@@ -79,7 +79,7 @@ a.badge {
   font-size: 14px;
   color: $white;
   background-color: $gplus-color;
-  @include border-radius(3px);
+  @include border-radius;
   display: inline-block;
   padding-right: 15px;
 

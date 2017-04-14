@@ -25,7 +25,7 @@ panel-group are used in
   margin-bottom: $line-height-computed;
   background-color: $panel-bg;
   border: 1px solid transparent;
-  @include border-radius($panel-border-radius);
+  @include border-radius;
   @include box-shadow(0 1px 1px rgba(0,0,0,.05));
 }
 
@@ -38,7 +38,7 @@ panel-group are used in
 .panel-heading {
   padding: $panel-heading-padding;
   border-bottom: 1px solid transparent;
-  @include border-radius(($panel-border-radius - 1), "top");
+  @include border-radius("top", ($panel-border-radius - 1));
   > .dropdown .dropdown-toggle {
     color: inherit;
   }
@@ -69,7 +69,7 @@ panel-group are used in
   padding: $panel-footer-padding;
   background-color: $panel-footer-bg;
   border-top: 1px solid $panel-inner-border;
-  @include border-radius(($panel-border-radius - 1),"bottom");
+  @include border-radius("bottom", ($panel-border-radius - 1));
 }
 /**=====================================**/
 /* 02 Collapsable */
@@ -134,7 +134,7 @@ panel-group are used in
     &:first-child {
       .list-group-item:first-child {
         border-top: 0;
-        @include border-radius(($panel-border-radius - 1), "top");
+        @include border-radius("top", ($panel-border-radius - 1));
       }
     }
 
@@ -142,7 +142,7 @@ panel-group are used in
     &:last-child {
       .list-group-item:last-child {
         border-bottom: 0;
-        @include border-radius(($panel-border-radius - 1), "bottom");
+        @include border-radius("bottom", ($panel-border-radius - 1));
       }
     }
 
@@ -188,7 +188,7 @@ panel-group are used in
   /*Boot*/// Add border top radius for first one
   > .table:first-child,
   > .table-responsive:first-child > .table:first-child {
-    @include border-radius(($panel-border-radius - 1), "top");
+    @include border-radius("top", ($panel-border-radius - 1));
 
     > thead:first-child,
     > tbody:first-child {
@@ -212,21 +212,20 @@ panel-group are used in
   > .table:last-child,
   > .table-responsive:last-child > .table:last-child {
 
-    @include border-radius(($panel-border-radius - 1), "bottom");
+    @include border-radius("bottom", ($panel-border-radius - 1));
 
     > tbody:last-child,
     > tfoot:last-child {
       > tr:last-child {
-        border-bottom-left-radius: ($panel-border-radius - 1);
-        border-bottom-right-radius: ($panel-border-radius - 1);
+        @include border-radius("bottom", ($panel-border-radius - 1));
 
         td:first-child,
         th:first-child {
-          border-bottom-left-radius: ($panel-border-radius - 1);
+          @include border-radius("bottom-left", ($panel-border-radius - 1));
         }
         td:last-child,
         th:last-child {
-          border-bottom-right-radius: ($panel-border-radius - 1);
+          @include border-radius("bottom-right", ($panel-border-radius - 1));
         }
       }
     }
@@ -335,7 +334,7 @@ panel-group are used in
 
     > .panel-heading {
       background-color: $light-purple-grey-02;
-      border-radius: 0px;
+      @include border-radius-removal("all");
       padding: 0px;
       border: none;
     }

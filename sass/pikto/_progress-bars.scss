@@ -53,7 +53,7 @@ $progress-bar-bg:             $brand-primary;
   overflow: hidden;
   height: 8px;
   background-color: $light-purple-grey-06;
-  @include border-radius(4px);
+  @include border-radius("all",4px);
 }
 
 .progress-bg-purple {

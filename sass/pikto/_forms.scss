@@ -98,7 +98,7 @@ textarea  {
   font-size: $font-size-base;
   padding: $padding-base-vertical $padding-base-horizontal;
   line-height: $line-height-base;
-  @include border-radius(2px);
+  @include border-radius;;
   @include transition(border-color 0.2s ease);
   @include placeholder;
 
@@ -166,7 +166,7 @@ output {
   padding: 15px;
   margin-top: 7px;
   position: relative;
-  @include border-radius(2px);
+  @include border-radius;
 
   &:before {
       content:"";
@@ -814,7 +814,7 @@ span[data-acts-as-select] {
     position: absolute;
     top: 105%;
     left: 0; right: 0;
-    @include border-radius();
+    @include border-radius;
     background-color: $dropdown-bg;
   }
 
@@ -838,11 +838,11 @@ span[data-acts-as-select] {
     font-weight: normal;
 
     &[for="papersize"], &[for="web"], &:first-child {
-      @include border-radius(4px 4px 0 0);
+      @include border-radius("top", 4px);
     }
 
     &[for="custom"], &:last-child {
-      @include border-radius(0 0 4px 4px);
+      @include border-radius("bottom", 4px);
     }
 
     &:hover {
@@ -944,7 +944,7 @@ span[data-acts-as-select].select-dark {
 .pikto-checkbox-thin {
   border: 1px solid $grey-darker;
   background-color: $white;
-  @include border-radius(2px);
+  @include border-radius;
   margin-top: -2px;
 }
 
@@ -987,7 +987,7 @@ span[data-acts-as-select].select-dark {
   background-color: white;
   display: inline-block;
   border: 1px solid $grey-darker;
-  @include border-radius(50%);
+  @include border-radius("all", 50%);
   content: '';
   position: relative;
   vertical-align: middle;
@@ -1003,7 +1003,7 @@ span[data-acts-as-select].select-dark {
     top: 50%;
     right: 50%;
     @include translate(50%, -50%);
-    @include border-radius(50%);
+    @include border-radius("all", 50%);
     @include opacity(0);
   }
 }
@@ -1073,7 +1073,7 @@ span[data-acts-as-select].select-dark {
 /**=====================================**/
 .autocomplete-suggestions {
   background-color: $white;
-  @include border-radius(4px);
+  @include border-radius("all", 4px);
   border: 1px solid $container-border-color;
   cursor: default;
   overflow: auto;
@@ -1168,7 +1168,7 @@ select {
   display: block;
   overflow: hidden;
   cursor: pointer;
-  @include border-radius(12px);
+  @include border-radius("all", 12px);
 }
 
 .onoffswitch-inner {
@@ -1193,7 +1193,7 @@ select {
     padding: 0 10px 0;
     background-color: $teal;
     color: #f1f2f2;
-    @include border-radius(3px);
+    @include border-radius;
   }
 
   &:after {
@@ -1202,7 +1202,7 @@ select {
     background-color: $grey-dark;
     color: #f1f2f2;
     text-align: right;
-    @include border-radius(3px);
+    @include border-radius;
   }
 }
 
@@ -1212,9 +1212,9 @@ select {
   top: 2px;
   right: 32px;
   @include size(22px, 22px);
-  @include border-radius(50%);
+  @include border-radius("all", 50%);
   @include transition(all 0.3s ease-in 0s);
-  @include box-shadow(2px 0px 4px 0px rgba($black,0.3));
+  @include onoff-shadow-1;
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
@@ -1223,7 +1223,7 @@ select {
 
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 2px;
-  @include box-shadow(-2px 0px 4px 0px rgba($black,0.3));
+  @include onoff-shadow-2;
 }
 
 /**=====================================**/

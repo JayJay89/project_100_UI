@@ -13,7 +13,7 @@
   display: inline-block;
   padding-left: 0;
   margin: $line-height-computed 0;
-  @include border-radius($border-radius-base);
+  @include border-radius;
 
   > li {
     display: inline; // Remove list-style and block-level defaults

@@ -29,7 +29,7 @@ code {
   color: $code-color;
   background-color: $code-bg;
   white-space: nowrap;
-  @include border-radius($border-radius-base)
+  @include border-radius;
 }
 
 // User input typically entered via keyboard
@@ -61,7 +61,7 @@ pre {
   color: $pre-color;
   background-color: $pre-bg;
   border: 1px solid $pre-border-color;
-  @include border-radius($border-radius-base);
+  @include border-radius;
 
   // Account for some code outputs that place code tags in pre tags
   code {
@@ -70,7 +70,7 @@ pre {
     color: inherit;
     white-space: pre-wrap;
     background-color: transparent;
-    @include border-radius(0);
+    @include border-radius-removal;
   }
 }
 

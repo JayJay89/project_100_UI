@@ -25,7 +25,7 @@
       padding: 5px 14px;
       background-color: $pager-bg;
       border: 1px solid $pager-border;
-      @include border-radius($pager-border-radius);
+      @include border-radius("all", $pager-border-radius);
     }
 
     > a:hover,

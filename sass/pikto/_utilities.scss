@@ -188,7 +188,7 @@
 
   .modal-dialog {
     @include box-shadow(none);
-    @include border-radius(none);
+    @include border-radius-removal("all");
   }
 
   .modal-content {
@@ -233,7 +233,7 @@
   cursor: pointer;
   z-index: $zindex-needhelp;
   height: 40px;
-  @include border-radius(5px 5px 0px 0px);
+  @include border-radius("top", 5px);
   @include transition(bottom 0.4s ease);
 
   /*This important tag is to overwrite the JS that's preventing this from happening.*/

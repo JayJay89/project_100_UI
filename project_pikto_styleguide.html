@@ -134,7 +134,7 @@
       <div class="sg-main-container" id="sg_main_container">
       <section id="sg_data_road_map">
         <h1 class="sg-h1">Road Map</h1>
-        <h2>Changelogs</h2>
+        <h2 class="sg-h2">Changelogs</h2>
         <p>Changes made for the design system</p>
 
         <ul class="sg-list">
@@ -146,14 +146,14 @@
 
         <ul class="sg-list">
           <li>
-            <h2>Introduction of Foundational Components</h2>
+            <h2 class="sg-h2">Introduction of Foundational Components</h2>
             <p>Colors, Shadows, Border-radii, Spacings, Typography, Transitions, Animations</p>
             <p>These are the basic modular components used in the constructions of complex elements such as buttons, accordions, labels, etc. Each complex element will be formed from the variables and mixins defined for the foundational components</p>
             <p>The general idea is that having a set of foundational components which follows well-defined rules. Our complex components can be composed from foundational components, and would the overall result is a much more cohesive system. Modularization is the key attribute in the project.</p>
           </li>
 
           <li>
-            <h2>Splitting mixins and variables into chunks to reflect this change of management</h2>
+            <h2 class="sg-h2">Splitting mixins and variables into chunks to reflect this change of management</h2>
             <p>Originally we had variables.scss, and mixins.scss, to accomodate new changes of this management. This is a work in progress, typography and transitions isn't modularized yet</p>
 
             <div class="sg-content-box" data-content="prequisite-1" style="display: none;">
@@ -174,7 +174,7 @@
           </li>
 
           <li>
-            <h2>Bootstrap Code - Keep it lean</h2>
+            <h2 class="sg-h2">Bootstrap Code - Keep it lean</h2>
             <p>Bootstrap provides us with many useful components that helps us in development. However, at the same time it bloats our code, by keeping a lot of components that we didn't make use of. Aside from that, using Bootstrap prevents us from fully implementing our design system, which is constructing our system from modular fundamental components.</p>
             <br>
             <p>The actionable step to be taken here - is to comb through our current code base, keep what we need, and dispose codes that we don't. This means slowly converting our design system for our own need. In that process, we could learn how bootstrap implement certain elements and how we could benefit from that.</p>
@@ -182,12 +182,12 @@
           </li>
 
           <li>
-            <h2>Mixins Movement</h2>
+            <h2 class="sg-h2">Mixins Movement</h2>
             <p>Typography mixins are moved from mixins into _fc-typography, as they are only used in mixins.</p>
           </li>
 
           <li>
-            <h2>Variables with one case usages are removed</h2>
+            <h2 class="sg-h2">Variables with one case usages are removed</h2>
             <p>We have multiple variables which are only used once. Example: $alert-border-radius is only used to defined the border-radius for alerts. This could be easily expressed without using variables as well. Other than that, to change that value, we had to search for $alert-border-radius</p>
           </li>
         </ul>
@@ -1381,7 +1381,7 @@
         <section id="sg_data_alerts">
           <h1 class="sg-h1">Alerts/Feedbacks</h1>
 
-          <h2>Color Variations</h2>
+          <h2 class="sg-h2">Color Variations</h2>
 
           <div class="sg-content-box" data-content="alert-1">
             <div class="alert alert-success">Success</div>
@@ -1396,7 +1396,7 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <h2>Size Variation</h2>
+          <h2 class="sg-h2">Size Variation</h2>
           <div class="sg-content-box" data-content="alert-2">
             <div class="alert alert-success alert-nonfullwidth">Success</div>
           </div>
@@ -1413,7 +1413,7 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <h2>Dismissible Variation</h2>
+          <h2 class="sg-h2">Dismissible Variation</h2>
           <div class="sg-content-box" data-content="alert-4">
             <div class="alert alert-success alert-dismissible">
               Success 
@@ -1425,7 +1425,7 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <h2>Flash Message</h2>
+          <h2 class="sg-h2">Flash Message</h2>
           <span class="sg-change-this">
             Change this in piktodev! In piktodev, flash-message uses span tag, it should be change to div tag and given an inline-blockdisplay 
           </span>
@@ -1437,7 +1437,7 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <h2>Expanded Variation</h2>
+          <h2 class="sg-h2">Expanded Variation</h2>
           <div class="sg-content-box" data-content="alert-6">
             <div class="alert alert-success">
               Success! <hr> more Success!
@@ -1448,7 +1448,7 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <h2>Link Variation</h2>
+          <h2 class="sg-h2">Link Variation</h2>
           <p>We are currently not using any alerts with links on production at the moment</p>
           <div class="sg-content-box" data-content="alert-7">
             <div class="alert alert-success">
@@ -1488,7 +1488,7 @@
 
         <section id="sg_data_button" class="sg-button-section">
           <h1 class="sg-h1">Buttons</h1>
-          <h2>General Color Variation</h2>
+          <h2 class="sg-h2">General Color Variation</h2>
           <div class="sg-content-box sg-normal-btn" data-content="btn-1">
             <button class="pikto-btn">default button</button>
             <button class="pikto-btn pikto-btn-teal">teal</button>
@@ -1503,7 +1503,7 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <h2>Outline Variation</h2>
+          <h2 class="sg-h2">Outline Variation</h2>
           <span class="sg-change-this">Change the name btn-option to something else. btn option doesn't describe the name of the btn</span>
           <div class="sg-content-box sg-normal-btn" data-content="btn-2">
             <button class="pikto-btn pikto-btn-option">option button</button>
@@ -1514,7 +1514,7 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <h2>Light Color Variation</h2>
+          <h2 class="sg-h2">Light Color Variation</h2>
           <div class="sg-content-box sg-normal-btn" data-content="btn-3">
             <button class="pikto-btn pikto-btn-success">success button</button>
             <button class="pikto-btn pikto-btn-info">info button</button>
@@ -1526,7 +1526,7 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <h2>Full Width Variation</h2>
+          <h2 class="sg-h2">Full Width Variation</h2>
           <div class="sg-content-box" data-content="btn-4">
             <button class="pikto-btn pikto-btn-teal pikto-btn-block">Full Width button</button>
           </div>
@@ -1535,7 +1535,7 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <h2>Size Variations</h2>
+          <h2 class="sg-h2">Size Variations</h2>
           <div class="sg-content-box" data-content="btn-5">
             <button class="pikto-btn pikto-btn-xl">XL button</button>
             <button class="pikto-btn pikto-btn-lg">L button</button>
@@ -1548,7 +1548,7 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <h2>Wide Size Variations</h2>
+          <h2 class="sg-h2">Wide Size Variations</h2>
           <div class="sg-content-box" data-content="btn-6">
             <button class="pikto-btn pikto-btn-xl wide">XL button</button>
             <button class="pikto-btn pikto-btn-lg wide">L button</button>
@@ -1561,7 +1561,7 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <h2>Disabled and No Events</h2>
+          <h2 class="sg-h2">Disabled and No Events</h2>
           <div class="sg-content-box sg-normal-btn" data-content="btn-7">
             <button class="pikto-btn disabled">Disabled</button>
             <button class="pikto-btn pikto-disabled">Pikto Disabled</button>
@@ -1572,7 +1572,7 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <h2>Button Groups</h2>
+          <h2 class="sg-h2">Button Groups</h2>
           <div class="sg-content-box sg-normal-btn" data-content="btn-8">
             <div class="btn-group" role="group" aria-label="...">
               <button type="button" class="pikto-btn pikto-btn-option">One</button>
@@ -1597,7 +1597,7 @@
         <section id="sg_data_file" class="sg-file-selector">
           <h1 class="sg-h1">File Selector</h1>
           <p>File Selectors are elements such as the upload image box, upload file drops </p>
-          <h1>Drag and drops</h1>
+          <h1 class="sg-h1">Drag and drops</h1>
           
           <h2 class="sg-h2">Default appearance</h2>
           <div class="sg-content-box" data-content="file-1">
@@ -2409,14 +2409,38 @@
 
         </section>
 
-        <section id="sg_data_tooltip">
+        <section id="sg_data_tooltip" class="sg-tooltips">
           <h1 class="sg-h1">Tooltip</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+          <div class="tooltip tooltip-top" role="tooltip">
+            <div class="tooltip-inner">
+              <div class="tooltip-arrow"></div>
+              Tooltip on the top
+            </div>
+          </div>
+          <div class="tooltip tooltip-right" role="tooltip">
+            <div class="tooltip-inner">
+              <div class="tooltip-arrow"></div>
+              Tooltip on the right
+            </div>
+          </div>
+          <div class="tooltip tooltip-bottom" role="tooltip">
+            <div class="tooltip-inner">
+              <div class="tooltip-arrow"></div>
+              Tooltip on the bottom
+            </div>
+          </div>
+          <div class="tooltip tooltip-left" role="tooltip">
+            <div class="tooltip-inner">
+              <div class="tooltip-arrow"></div>
+              Tooltip on the left
+            </div>
+          </div>
+
         </section>
 
         <section id="sg_data_toolbar">
           <h1 class="sg-h1">Toolbar</h1>
-          
+          <p>The toolbar is a combination of buttons, button-groups, tooltips and icons</p>
           <p>Currently the toolbar on the editor was written using another class call pblist. Suggest to change to those into btn-groups</p>
 
           <div class="sg-content-box sg-normal-btn" data-content="toolbar-1">

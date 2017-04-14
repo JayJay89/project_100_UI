@@ -19,7 +19,7 @@ $alert-padding:             15px !default;
   position: relative;
   font-size: 13px;
   word-wrap: break-word;
-  @include border-radius;;
+  @include border-radius;
 
   .alert-title {
     @include proxima(semibold);

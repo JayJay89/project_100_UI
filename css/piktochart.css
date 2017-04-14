@@ -1329,6 +1329,7 @@ img {
   line-height: 1.42857;
   background-color: #fff;
   border: 1px solid #ddd;
+  border-radius: 2px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -1363,6 +1364,10 @@ a:focus {
 /**=====================================**/
 /* 09 Perfect Circle */
 /**=====================================**/
+.img-circle {
+  border-radius: 50%;
+}
+
 /**=====================================**/
 /* 10 Responsive Imagess */
 /**=====================================**/
@@ -3408,6 +3413,7 @@ code {
   color: #c7254e;
   background-color: #f9f2f4;
   white-space: nowrap;
+  border-radius: 2px;
 }
 
 kbd {
@@ -3437,6 +3443,7 @@ pre {
   color: #e8e8e8;
   background-color: #f5f5f5;
   border: 1px solid #ccc;
+  border-radius: 2px;
 }
 
 pre code {
@@ -3445,6 +3452,7 @@ pre code {
   color: inherit;
   white-space: pre-wrap;
   background-color: transparent;
+  border-radius: 0px;
 }
 
 .pre-scrollable {
@@ -4596,6 +4604,7 @@ textarea {
   font-size: 14px;
   padding: 6px 12px;
   line-height: 1.42857;
+  border-radius: 2px;
   -webkit-transition: border-color 0.2s ease;
   -o-transition: border-color 0.2s ease;
   transition: border-color 0.2s ease;
@@ -4714,6 +4723,7 @@ output {
   padding: 15px;
   margin-top: 7px;
   position: relative;
+  border-radius: 2px;
 }
 
 .error-msg:before {
@@ -5446,6 +5456,14 @@ span[data-acts-as-select] label {
   font-weight: normal;
 }
 
+span[data-acts-as-select] label[for="papersize"], span[data-acts-as-select] label[for="web"], span[data-acts-as-select] label:first-child {
+  border-radius: 4px 4px 0px 0px;
+}
+
+span[data-acts-as-select] label[for="custom"], span[data-acts-as-select] label:last-child {
+  border-radius: 0px 0px 4px 4px;
+}
+
 span[data-acts-as-select] label:hover {
   border-radius: 2px;
   background-color: #5e7e84;
@@ -5552,6 +5570,7 @@ span[data-acts-as-select].select-dark label:hover {
 .pikto-checkbox-thin {
   border: 1px solid #c2c2c2;
   background-color: #fff;
+  border-radius: 2px;
   margin-top: -2px;
 }
 
@@ -5587,6 +5606,7 @@ span[data-acts-as-select].select-dark label:hover {
   background-color: white;
   display: inline-block;
   border: 1px solid #c2c2c2;
+  border-radius: 50%;
   content: '';
   position: relative;
   vertical-align: middle;
@@ -5605,6 +5625,7 @@ span[data-acts-as-select].select-dark label:hover {
   -ms-transform: translate(50%, -50%);
   -webkit-transform: translate(50%, -50%);
   transform: translate(50%, -50%);
+  border-radius: 50%;
   opacity: 0;
   filter: alpha(opacity=0);
 }
@@ -5674,6 +5695,7 @@ span[data-acts-as-select].select-dark label:hover {
 /**=====================================**/
 .autocomplete-suggestions {
   background-color: #fff;
+  border-radius: 4px;
   border: 1px solid #d8d8d8;
   cursor: default;
   overflow: auto;
@@ -5768,6 +5790,7 @@ select:-moz-focusring {
   display: block;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 12px;
 }
 
 .onoffswitch-inner {
@@ -5796,6 +5819,7 @@ select:-moz-focusring {
   padding: 0 10px 0;
   background-color: #1cafa2;
   color: #f1f2f2;
+  border-radius: 2px;
 }
 
 .onoffswitch-inner:after {
@@ -5804,6 +5828,7 @@ select:-moz-focusring {
   background-color: #d8d8d8;
   color: #f1f2f2;
   text-align: right;
+  border-radius: 2px;
 }
 
 .onoffswitch-switch {
@@ -5813,11 +5838,12 @@ select:-moz-focusring {
   right: 32px;
   width: 22px;
   height: 22px;
+  border-radius: 50%;
   -webkit-transition: all 0.3s ease-in 0s;
   -o-transition: all 0.3s ease-in 0s;
   transition: all 0.3s ease-in 0s;
-  -webkit-box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
@@ -5826,8 +5852,8 @@ select:-moz-focusring {
 
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 2px;
-  -webkit-box-shadow: -2px 0px 4px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: -2px 0px 4px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: -2px 0px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: -2px 0px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 /**=====================================**/
@@ -7501,6 +7527,7 @@ tbody.collapse.in {
 @media (min-width: 768px) {
   .nav-tabs.nav-justified > li > a {
     border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0px 0px;
   }
   .nav-tabs.nav-justified > .active > a, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:focus {
     border-bottom-color: #fff;
@@ -7512,6 +7539,10 @@ tbody.collapse.in {
 /**=====================================**/
 .nav-pills > li {
   float: left;
+}
+
+.nav-pills > li > a {
+  border-radius: 2px;
 }
 
 .nav-pills > li > a > .badge {
@@ -7581,6 +7612,7 @@ a.list-group-item.active > .badge,
 
 .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
   margin-right: 0;
+  border-radius: 2px;
 }
 
 .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a,
@@ -7592,6 +7624,7 @@ a.list-group-item.active > .badge,
 @media (min-width: 768px) {
   .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
     border-bottom: 1px solid #ddd;
+    border-radius: 2px 2px 0px 0px;
   }
   .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a,
   .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover,
@@ -7817,6 +7850,7 @@ a.list-group-item.active > .badge,
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
+  border-radius: 2px;
   /*Boot*/
   /*Boot*/
   /*Boot @media (min-width: $grid-float-breakpoint) */
@@ -7826,6 +7860,7 @@ a.list-group-item.active > .badge,
   display: block;
   width: 22px;
   height: 2px;
+  border-radius: 2px;
 }
 
 .navbar-toggle .icon-bar + .icon-bar {
@@ -8314,6 +8349,7 @@ a.list-group-item.active > .badge,
   font-size: 12px;
   width: 400px;
   background: #f5fafb;
+  border-radius: 10px;
   z-index: 9;
 }
 
@@ -8331,12 +8367,14 @@ a.list-group-item.active > .badge,
 .notification-dropdown .content {
   -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
   border: 0 none;
 }
 
 .notification-dropdown .content .noti-header {
   background: #373544;
   padding: 0.5em 1.2em;
+  border-radius: 8px 8px 0px 0px;
 }
 
 .notification-dropdown .content .noti-header h6 {
@@ -8347,6 +8385,7 @@ a.list-group-item.active > .badge,
 .notification-dropdown .content .noti-body {
   background: #fff;
   color: #e8e8e8;
+  border-radius: 0px 0px 8px 8px;
 }
 
 .notification-dropdown .content .noti-body ul {
@@ -8390,6 +8429,7 @@ a.list-group-item.active > .badge,
   color: #1cafa2;
   padding: 0.8em;
   background: #eaf2ef;
+  border-radius: 0px 0px 8px 8px;
   text-align: center;
   display: block;
 }
@@ -8505,6 +8545,7 @@ a.list-group-item.active > .badge,
   display: inline-block;
   padding-left: 0;
   margin: 20px 0;
+  border-radius: 2px;
 }
 
 .pagination > li {
@@ -8644,6 +8685,7 @@ a.list-group-item.active > .badge,
   padding: 5px 14px;
   background-color: #fff;
   border: 1px solid #ddd;
+  border-radius: 15px;
 }
 
 .pager li > a:hover,
@@ -8685,7 +8727,7 @@ a.list-group-item.active > .badge,
   vertical-align: baseline;
   text-transform: uppercase;
   font-size: 10px;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .label:empty {
@@ -8788,6 +8830,7 @@ a.label:hover, a.label:focus {
   background-color: #eaf2ef;
   padding: 20px;
   position: relative;
+  border-radius: 2px;
 }
 
 .label-infopanel .icon-cross-darkpurple-small {
@@ -8867,6 +8910,7 @@ a.badge:hover, a.badge:focus {
   font-size: 14px;
   color: #fff;
   background-color: #4285F4;
+  border-radius: 2px;
   display: inline-block;
   padding-right: 15px;
 }
@@ -8945,6 +8989,7 @@ Thumbnails is currently not used
   line-height: 1.42857;
   background-color: #fff;
   border: 1px solid #ddd;
+  border-radius: 2px;
   -webkit-transition: border 0.2s ease-in-out;
   -o-transition: border 0.2s ease-in-out;
   transition: border 0.2s ease-in-out;
@@ -9182,6 +9227,7 @@ a.thumbnail.active {
   overflow: hidden;
   height: 8px;
   background-color: #8e89a4;
+  border-radius: 4px;
 }
 
 .progress-bg-purple {
@@ -9351,8 +9397,13 @@ a.thumbnail.active {
   border: 1px solid #ddd;
 }
 
+.list-group-item:first-child {
+  border-radius: 2px 2px 0px 0px;
+}
+
 .list-group-item:last-child {
   margin-bottom: 0;
+  border-radius: 0px 0px 2px 2px;
 }
 
 .list-group-item > .badge {
@@ -9474,6 +9525,7 @@ panel-group are used in
   margin-bottom: 20px;
   background-color: #fff;
   border: 1px solid transparent;
+  border-radius: 2px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -9490,6 +9542,7 @@ panel-group are used in
 .panel-heading {
   padding: 10px 0 10px 10px;
   border-bottom: 1px solid transparent;
+  border-radius: 1px 1px 0px 0px;
 }
 
 .panel-heading > .dropdown .dropdown-toggle {
@@ -9519,6 +9572,7 @@ panel-group are used in
   padding: 10px 0 10px 10px;
   background-color: #f5f5f5;
   border-top: 1px solid #ddd;
+  border-radius: 0px 0px 1px 1px;
 }
 
 /**=====================================**/
@@ -9571,11 +9625,13 @@ panel-group are used in
 .panel > .list-group:first-child .list-group-item:first-child,
 .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
   border-top: 0;
+  border-radius: 1px 1px 0px 0px;
 }
 
 .panel > .list-group:last-child .list-group-item:last-child,
 .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
   border-bottom: 0;
+  border-radius: 0px 0px 1px 1px;
 }
 
 .panel > .list-group:first-child,
@@ -9620,6 +9676,11 @@ panel-group are used in
   padding-right: 15px;
 }
 
+.panel > .table:first-child,
+.panel > .table-responsive:first-child > .table:first-child {
+  border-radius: 1px 1px 0px 0px;
+}
+
 .panel > .table:first-child > thead:first-child > tr:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
@@ -9650,12 +9711,16 @@ panel-group are used in
   border-top-right-radius: 1px;
 }
 
+.panel > .table:last-child,
+.panel > .table-responsive:last-child > .table:last-child {
+  border-radius: 0px 0px 1px 1px;
+}
+
 .panel > .table:last-child > tbody:last-child > tr:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
-  border-bottom-left-radius: 1px;
-  border-bottom-right-radius: 1px;
+  border-radius: 0px 0px 1px 1px;
 }
 
 .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
@@ -9666,7 +9731,7 @@ panel-group are used in
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
-  border-bottom-left-radius: 1px;
+  border-radius: 0px 0px 0px 1px;
 }
 
 .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
@@ -9677,7 +9742,7 @@ panel-group are used in
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
-  border-bottom-right-radius: 1px;
+  border-radius: 0px 0px 1px 0px;
 }
 
 .panel > .table > tbody:first-child > tr:first-child th,
@@ -9979,6 +10044,7 @@ panel-group are used in
   margin-bottom: 20px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
+  border-radius: 2px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -10134,6 +10200,7 @@ button.close {
   background-color: #f0f0f0;
   padding: 15px;
   text-align: center;
+  border-radius: 2px 2px 0px 0px;
 }
 
 .modal-header:before, .modal-header:after {
@@ -10174,6 +10241,7 @@ button.close {
 .modal-footer {
   padding: 15px 20px;
   background-color: #f0f0f0;
+  border-radius: 0px 0px 2px 2px;
   text-align: right;
   border-top: 1px solid #e8e8e8;
 }
@@ -10344,6 +10412,7 @@ button.close {
 /**=====================================**/
 .modal-tool .modal-content {
   height: 645px;
+  border-radius: 4px 4px 2px 2px;
 }
 
 .modal-tool .modal-header {
@@ -10470,6 +10539,7 @@ button.close {
 
 .modal-preview .container-arrow-left {
   left: -22px;
+  border-radius: 0px 100px 100px 0px;
 }
 
 .modal-preview .container-arrow-left i {
@@ -10484,6 +10554,7 @@ button.close {
 
 .modal-preview .container-arrow-right {
   right: -15px;
+  border-radius: 100px 0px 0px 100px;
 }
 
 .modal-preview .container-arrow-right i {
@@ -10560,14 +10631,17 @@ button.close {
 
 .bootstrap-modal .modal-dialog {
   margin-top: 5%;
+  border-radius: 10px;
 }
 
 .bootstrap-modal .modal-content {
+  border-radius: 10px;
   border: 0 none;
 }
 
 .bootstrap-modal .modal-content .modal-header {
   background: #f0f0f0;
+  border-radius: 8px 8px 0px 0px;
 }
 
 .bootstrap-modal .modal-content .modal-header h4 {
@@ -10580,6 +10654,7 @@ button.close {
   border-top: none;
   margin-top: 0;
   background: #eaf2ef;
+  border-radius: 0px 0px 8px 8px;
 }
 
 .bootstrap-modal .modal-content .modal-footer .pikto-btn-lightgrey {
@@ -10715,6 +10790,7 @@ button.close {
   text-align: center;
   text-decoration: none;
   background-color: #000;
+  border-radius: 2px;
 }
 
 /**=====================================**/
@@ -10929,6 +11005,7 @@ button.close {
   padding: 8px 16px;
   border-bottom: 1px solid #d8d8d8;
   margin: 0;
+  border-radius: 2px 2px 0px 0px;
 }
 
 .popover-white .popover-footer {
@@ -10936,10 +11013,19 @@ button.close {
   background-color: #fafafa;
   border-top: 1px solid #d8d8d8;
   font-size: 14px;
+  border-radius: 0px 0px 2px 2px;
 }
 
 .popover-white .popover-footer > button {
   color: #666470;
+}
+
+.popover-with-title .popover-content {
+  border-radius: 0px 0px 2px 2px;
+}
+
+.popover-with-footer .popover-content {
+  border-radius: 2px 2px 0px 0px;
 }
 
 .popover-onboarding {
@@ -11234,6 +11320,7 @@ button.close {
 #modal-generic .modal-dialog {
   -webkit-box-shadow: none;
   box-shadow: none;
+  border-radius: 0px;
 }
 
 #modal-generic .modal-content {
@@ -11277,6 +11364,7 @@ button.close {
   cursor: pointer;
   z-index: 1002;
   height: 40px;
+  border-radius: 5px 5px 0px 0px;
   -webkit-transition: bottom 0.4s ease;
   -o-transition: bottom 0.4s ease;
   transition: bottom 0.4s ease;

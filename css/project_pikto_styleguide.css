@@ -626,6 +626,13 @@ pre code {
   margin-bottom: 5px;
 }
 
+.sg-tooltips > .tooltip {
+  opacity: 1;
+  position: relative;
+  padding: 5px;
+  margin: 20px;
+}
+
 input[type=range] {
   -webkit-appearance: none;
   margin: 0px;

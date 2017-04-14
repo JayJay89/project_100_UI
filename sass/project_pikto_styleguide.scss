@@ -686,6 +686,15 @@ pre code {
     margin-bottom: 5px;
   }
 }
+
+.sg-tooltips {
+  >.tooltip {
+    opacity: 1;
+    position: relative;
+    padding: 5px;
+    margin: 20px;
+  }
+}
 //////////*SLIDERS*//////////
 
 $slider-bg-color: transparent;

@@ -134,7 +134,7 @@
 
 .nav-tabs.nav-justified > li > a {
   margin-right: 0;
-  @include border-radius();
+  @include border-radius;
 }
 
 .nav-tabs.nav-justified > .active > a,
@@ -146,7 +146,7 @@
 @media (min-width: 768px) {
   .nav-tabs.nav-justified > li > a {
     border-bottom: 1px solid #ddd;
-    @include border-radius(4px 4px 0 0);
+    @include border-radius("top", 4px);
   }
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
@@ -164,7 +164,7 @@
 
   // Links rendered as pills
   > a {
-    @include border-radius($nav-pills-border-radius);
+    @include border-radius;
 
     > .badge {
       margin-left: 3px;
@@ -244,7 +244,7 @@ a.list-group-item.active > .badge,
   > li > a {
     // Override margin from .nav-tabs
     margin-right: 0;
-    @include border-radius($border-radius-base);
+    @include border-radius;
   }
 
   > .active > a,
@@ -256,7 +256,7 @@ a.list-group-item.active > .badge,
   @media (min-width: $screen-sm-min) {
     > li > a {
       border-bottom: 1px solid $nav-tabs-justified-link-border-color;
-      @include border-radius($border-radius-base $border-radius-base 0 0);
+      @include border-radius("top");
     }
     > .active > a,
     > .active > a:hover,
