@@ -85,12 +85,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     elem.addEventListener('mousedown', function(e){
       clearInterval(slideMode);
       if (currentSlide === findIndex(e.target)) {
-        return
+        return;
       } else {
         select(e.target);
         console.log(currentSlide);
       }
-    })
+    });
   });
 
   function select(slide){

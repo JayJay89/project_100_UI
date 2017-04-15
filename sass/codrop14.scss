@@ -1,75 +1,76 @@
 @import "all";
 
 .sf {
-    display: table;
-    background-color: green;
-    height: 100%;
-    width: 100%;
+  background-color: green;
+  display: table;
+  height: 100%;
+  width: 100%;
 }
 
 .sf-container {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .sf-frame {
-    height: 50vh;
-    width: 550px;
-    margin: 0 auto;
-    overflow: hidden;
+  height: 50vh;
+  width: 550px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
+.sf-content {
+  height: 50vh;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 
-.sf-content{
-    height: 50vh;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-
-    &:first-child {
-        background-color: red;
-    }
-    &:nth-child(2) {
-        background-color: green;
-    }
-    &:nth-child(3) {
-        background-color: blue;
-    }
-    &:nth-child(4) {
-        background-color: gray;
-    }
-    &:nth-child(5) {
-        background-color: yellow;
-    }
+  &:first-child {
+    background-color: red;
+  }
+  &:nth-child(2) {
+    background-color: green;
+  }
+  &:nth-child(3) {
+    background-color: blue;
+  }
+  &:nth-child(4) {
+    background-color: gray;
+  }
+  &:nth-child(5) {
+    background-color: yellow;
+  }
 }
 
 .sf-nav {
-    width: 550px;
-    margin: 0 auto;
-    
-    > li {
-        float: left;
-        width: calc(100% / 5);
+  width: 550px;
+  margin: 0 auto;
 
-        &.selected {
-            > a {
-                background-color: gray;
-            }
-        }
+  > li {
+    float: left;
+    width: calc(100% / 5);
+    cursor: pointer;
+
+    &.selected {
+      > a {
+        background-color: gray;
+      }
     }
 
-    > li > a {
-        padding: 10px 0px;
-        display: block;
-        cursor: pointer;
-        background-color: white;
-
-        &:hover {
-            background-color: gray;
-        }
-        &:active {
-            background-color: red;
-        }
+    &:hover {
+      > a {background-color: gray;}
     }
+
+    &:active {
+      > a {background-color: red;}
+    }
+  }
+
+  > li > a {
+    padding: 10px 0;
+    display: block;
+    background-color: white;
+    pointer-events: none;
+  }
 }

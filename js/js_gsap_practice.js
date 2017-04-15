@@ -1,5 +1,9 @@
 /*Calling the TweenMax function*/
+'use strict';
+
 TweenMax.to('.box-1', 3, {left: 600});
+
+a = 1;
 
 /*QuerySelectorAll was used to find all the .box*/
 var box_2 = document.querySelectorAll('.box-2');

@@ -2,38 +2,43 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   width: 100%;
 }
 
 a {
-  color: black;
+  color: #000;
   text-decoration: none;
 }
 
 ul {
   list-style: none;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
-/*clear fixes*/
-.clearfix:before,
-.clearfix:after {
-  content: " ";
+.clearfix::before,
+.clearfix::after {
+  content: '';
   display: table;
 }
 
-.clearfix:after {
+.clearfix::after {
   clear: both;
 }
 
-/*Equal Height*/
 .eq-height {
   overflow: hidden;
 }
@@ -43,21 +48,20 @@ ul {
   padding-bottom: 99999px;
 }
 
-/*Back Button*/
 .back-button {
-  position: fixed;
-  top: 0px;
   background-color: #f0f0f0;
   padding: 5px;
   z-index: 99999;
+  position: fixed;
+  top: 0;
 }
 
 .testbox {
-  width: 200px;
-  height: 200px;
-  display: block;
-  content: "test";
   background-color: red;
+  height: 200px;
+  width: 200px;
+  display: block;
+  content: 'test';
   z-index: 1;
 }
 

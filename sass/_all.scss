@@ -1,63 +1,71 @@
-@import "mixins";
+@import 'mixins';
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-h1,h2,h3,h4,h5,h6,p {
-    margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
-body, html {
-    height: 100%;
-    width: 100%;
+body,
+html {
+  height: 100%;
+  width: 100%;
 }
 
 a {
-    color: black;
-    text-decoration: none;
+  color: #000;
+  text-decoration: none;
 }
 
 ul {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-/*clear fixes*/
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-.clearfix:after {
-    clear: both;
+// clear fixes
+.clearfix::before,
+.clearfix::after {
+  content: '';
+  display: table;
 }
 
-/*Equal Height*/
+.clearfix::after {
+  clear: both;
+}
+
+// Equal Height
 .eq-height {
-    overflow: hidden;
+  overflow: hidden;
 
-    .eq-height-col {
-        margin-bottom: -99999px;
-        padding-bottom: 99999px;
-    }
+  .eq-height-col {
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+  }
 }
 
-/*Back Button*/
+// Back Button
 .back-button {
-    position: fixed;
-    top: 0px;
-    background-color: #f0f0f0;
-    padding: 5px;
-    z-index: 99999;
+  background-color: #f0f0f0;
+  padding: 5px;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
 }
 
 .testbox {
-    width: 200px;
-    height: 200px;
-    display: block;
-    content: "test";
-    background-color: red;
-    z-index: 1;
+  background-color: red;
+  height: 200px;
+  width: 200px;
+  display: block;
+  content: 'test';
+  z-index: 1;
 }

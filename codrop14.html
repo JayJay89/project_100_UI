@@ -42,37 +42,35 @@
 		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-		<script src="jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="js/codrop14.js" ></script>
+		<script type="text/javascript">
+			// $(function(){
+			//   console.log("activated");
 
-		<script>
-			$(function(){
-				console.log("activated");
+			//   var linkCount = $('.sf-content-container').children().length;
+			//   var slideWidth = $('.sf-frame').width();
 
-				var linkCount = $('.sf-content-container').children().length;
-				var slideWidth = $('.sf-frame').width();
+			//   $('.sf-content').width(slideWidth);
+			//   $('.sf-content-container').width(linkCount * slideWidth);
 
-				$('.sf-content').width(slideWidth);
-				$('.sf-content-container').width(linkCount * slideWidth);
+			//   var current = 1;
 
-				var current = 1;
+			//   $('.sf-nav a').on('click',function(e){
+			//     var $this = $(this);
+			//     $('.sf-nav li').removeClass('selected');
+			//     $this.parent().addClass('selected');
 
-				$('.sf-nav a').on('click',function(e){
-					var $this = $(this);
-					$('.sf-nav li').removeClass('selected');
-					$this.parent().addClass('selected');
+			//     current = $(this).parent().index() + 1;
 
-					current = $(this).parent().index() + 1;
+			//     $('.sf-content-container').stop().animate({
+			//       marginLeft: '-' + (current-1) * slideWidth + 'px'
+			//     },500)
 
-					$('.sf-content-container').stop().animate({
-						marginLeft: '-' + (current-1) * slideWidth + 'px'
-					},500)
+			//     e.preventDefault();
+			//   });
 
-					e.preventDefault();
-				});
-
-			});
-
+			// });
 		</script>
-
 	</body>
 </html>
