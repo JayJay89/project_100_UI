@@ -24,10 +24,17 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
   /**/
-  
   navigation.addEventListener('click', function(e){
     if(e.target && e.target.nodeName == "LI") {
-      console.log(findIndex(e.target));
+      currentSlide = findIndex(e.target);
+      console.log(currentSlide);
+
+      // containerFrame.style.marginLeft = -(frameWidth * (currentSlide - 1)) + "px";
+      
+      $(containerFrame).stop().animate({
+        marginLeft: -(frameWidth * (currentSlide - 1)) + "px"
+      }, 500);
+
     }
   });
 

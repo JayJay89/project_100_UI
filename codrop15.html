@@ -30,19 +30,19 @@
       <div class="fom-desc-container">
         <ul class="fom-desc">
           <li>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Home: Lorem ipsum dolor sit amet.</p>
           </li>
           <li>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Portfolio: Lorem ipsum dolor sit amet.</p>
           </li>
           <li>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Resume: Lorem ipsum dolor sit amet.</p>
           </li>
           <li>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Above: Lorem ipsum dolor sit amet.</p>
           </li>
           <li>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Contact: Lorem ipsum dolor sit amet.</p>
           </li>
         </ul>
       </div>
@@ -51,167 +51,110 @@
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-    <script src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="js/lib/velocity.min.js"></script>
+    <script type="text/javascript" src="js/lib/helper.js"></script>
+    <script type="text/javascript" src="js/codrop15.js"></script>
+<!--     <script>
+      $(function(){
+       var fom_menu = $('.fom-menu');
+       var fom_desc = $('.fom-desc');
+       var fom_hoverblock = $('.fom-hoverblock');
 
-    <script>
+       /*Animate HoverBlock to the hovered Element*/
+       
+       function blockMoveTo(elem) {
+         fom_hoverblock.stop(true).animate({
+           top: elem.offset().top + 'px',
+           width: elem.outerWidth() + 'px',
+           height: elem.outerHeight() + 'px'
+         }, 200);
+       }
 
-      document.addEventListener('DOMContentLoaded', function(){
-        const fom_menu = document.querySelector('.fom-menu');
-        const fom_menu_links = document.querySelectorAll('.fom-menu a');
-        const fom_menu_first_link = document.querySelector('.fom-menu a:first-child');
-        const fom_desc = document.querySelector('.fom-desc');
-        const fom_hoverblock = document.querySelector('.fom-hoverblock');
+       /*
+         Move HoverBlock to the Element without animation
+         - Use for browser resize
+         - Use for positioning the first hoverblock
+       */        
+       function blockWarpTo(elem) {
+         fom_hoverblock.css({
+           'top' : elem.offset().top + 'px',
+           'width' : elem.outerWidth() + 'px',
+           'height' : elem.outerHeight() + 'px'
+         });
+       }
 
-        //Initialization
-        fom_hoverblock.style["height"] = fom_menu_first_link.offsetHeight + 'px';
-        fom_hoverblock.style["width"] = fom_menu_first_link.offsetWidth + 'px';
-        fom_hoverblock.style["top"] = fom_menu_first_link.offsetTop + 'px';
-        
-        console.log(fom_hoverblock.style.height);
+       /*Placing the hoverblock on the first li by default*/
+       var fom_menu_first = fom_menu.find('li:first-child a');
+       blockWarpTo(fom_menu_first);
 
-        var animate = function(moveTarget, moveProp, moveTo){
-          let start = performance.now();
-          var duration = 300;
-          requestAnimationFrame(animationWorks);
+       /*Set the top position of all description li to be the same as their counterpart in fom-menu*/
+       fom_desc.find('li').each(function(i){
+         var $this = $(this);
+         var fom_menu_target = fom_menu.find('li:nth-child('+parseInt(i+1)+') a');
+         var fom_menu_top = fom_menu_target.offset().top;
+         var fom_menu_left = fom_menu_target.offset().left;
 
-          function animationWorks(){
-            let timePassed = performance.now() - start;
-            let progress = timePassed / duration;
-            var currentHeight = fom_hoverblock.offsetHeight;
+         $this.css({
+           'top': fom_menu_top,
+           'width' : '500px',
+           'left' : '-100%'
+         });
 
-            if (progress > 1) {
-              progress = 1;
-            }
+         console.log(fom_menu_target);
+       });
 
-            if (progress == 1) {
-              cancelAnimationFrame(animationWorks);
-            } else {
-              requestAnimationFrame(animationWorks);
-            }
+       /*Bind mouseenter and mouseleave event handler onto the <a> tags*/
 
-            function move(){
-              var value = fom_hoverblock.offsetHeight;
-              value += -1
-              fom_hoverblock.style['height'] = value + 'px';
-            }
+       fom_menu.find('li a')
+       .on('mouseenter', function(){
+         var $this = $(this);
+         var current = $this.parent().index();
 
-            move();
-          }
-        };
+         /*Move Hoverblock to this element*/
+         blockMoveTo($this);
 
-        const warpRightBlockTo = function(elem){
-          animate();
-          // animate(fom_hoverblock, 'height', elem.offsetHeight);
-          animate(fom_hoverblock, 'width', elem.offsetWidth);
-          // animate(fom_hoverblock, 'top', elem.offsetTop);
-        };
+         /*Animate the fom-description from the left, stretching it and putting it on left: 0%*/
+         $(fom_desc)
+         .find('li:nth-child('+parseInt(current+1)+')')
+         // .width($this.offset().left - 20)
+         .stop(true)
+         .animate({
+           'width': $this.offset().left - 20,
+           'left': '0%'
+         },500);
+       })
 
-        [...fom_menu_links].forEach(function(elem){
-          elem.addEventListener('mouseenter', function(e){
-            warpRightBlockTo(e.target);
+       .on('mouseleave', function(){
+         var $this = $(this);
+         var current = $this.parent().index();
+
+         /*Animate the fom-description from the left, retracting it and putting it on left: 0%*/
+         $(fom_desc)
+         .find('li:nth-child('+parseInt(current+1)+')')
+         .stop(true)
+         .animate({
+           'width': '500px',
+           'left': '-50%'
+         },500);
+       });
+
+       $(window).on('resize',function(){
+
+         /*On resize, move hoverblock to element*/
+         blockWarpTo(fom_menu_first);
+
+         /*On resize, adjust fom_desc li top position accordingly*/
+         $('.fom-desc > li').each(function(i){
+           var $this = $(this);
+
+           $this.css({
+             'top': fom_menu.find('li:nth-child('+parseInt(i+1)+') a').offset().top
           });
-        })
-
+        });
       });
+    });
 
-      // $(function(){
-      //  var fom_menu = $('.fom-menu');
-      //  var fom_desc = $('.fom-desc');
-      //  var fom_hoverblock = $('.fom-hoverblock');
-
-      //  /*Animate HoverBlock to the hovered Element*/
-      //  function blockMoveTo(elem) {
-      //    fom_hoverblock.stop(true).animate({
-      //      top: elem.offset().top + 'px',
-      //      width: elem.outerWidth() + 'px',
-      //      height: elem.outerHeight() + 'px'
-      //    }, 200);
-      //  }
-
-      //  /*
-      //    Move HoverBlock to the Element without animation
-      //    - Use for browser resize
-      //    - Use for positioning the first hoverblock
-      //  */        
-      //  function blockWarpTo(elem) {
-      //    fom_hoverblock.css({
-      //      'top' : elem.offset().top + 'px',
-      //      'width' : elem.outerWidth() + 'px',
-      //      'height' : elem.outerHeight() + 'px'
-      //    });
-      //  }
-
-      //  /*Placing the hoverblock on the first li by default*/
-      //  var fom_menu_first = fom_menu.find('li:first-child a');
-      //  blockWarpTo(fom_menu_first);
-
-      //  /*Set the top position of all description li to be the same as their counterpart in fom-menu*/
-      //  fom_desc.find('li').each(function(i){
-      //    var $this = $(this);
-      //    var fom_menu_target = fom_menu.find('li:nth-child('+parseInt(i+1)+') a');
-      //    var fom_menu_top = fom_menu_target.offset().top;
-      //    var fom_menu_left = fom_menu_target.offset().left;
-
-      //    $this.css({
-      //      'top': fom_menu_top,
-      //      'width' : '500px',
-      //      'left' : '-100%'
-      //    });
-
-      //    console.log(fom_menu_target);
-      //  });
-
-      //  /*Bind mouseenter and mouseleave event handler onto the <a> tags*/
-
-      //  fom_menu.find('li a')
-      //  .on('mouseenter', function(){
-      //    var $this = $(this);
-      //    var current = $this.parent().index();
-
-      //    /*Move Hoverblock to this element*/
-      //    blockMoveTo($this);
-
-      //    /*Animate the fom-description from the left, stretching it and putting it on left: 0%*/
-      //    $(fom_desc)
-      //    .find('li:nth-child('+parseInt(current+1)+')')
-      //    // .width($this.offset().left - 20)
-      //    .stop(true)
-      //    .animate({
-      //      'width': $this.offset().left - 20,
-      //      'left': '0%'
-      //    },500);
-      //  })
-
-      //  .on('mouseleave', function(){
-      //    var $this = $(this);
-      //    var current = $this.parent().index();
-
-      //    /*Animate the fom-description from the left, retracting it and putting it on left: 0%*/
-      //    $(fom_desc)
-      //    .find('li:nth-child('+parseInt(current+1)+')')
-      //    .stop(true)
-      //    .animate({
-      //      'width': '500px',
-      //      'left': '-50%'
-      //    },500);
-      //  });
-
-      //  $(window).on('resize',function(){
-
-      //    /*On resize, move hoverblock to element*/
-      //    blockWarpTo(fom_menu_first);
-
-      //    /*On resize, adjust fom_desc li top position accordingly*/
-      //    $('.fom-desc > li').each(function(i){
-      //      var $this = $(this);
-
-      //      $this.css({
-      //        'top': fom_menu.find('li:nth-child('+parseInt(i+1)+') a').offset().top
-      //      });
-      //    });
-      //  })
-      // });
-
-    </script>
+    </script> -->
   </body>
 </html>
