@@ -22,13 +22,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
       console.log(e);
   });
 
+  /*http://stackoverflow.com/questions/33584392/bootstraps-tooltip-doesnt-disappear-after-button-click-mouseleave*/
+  /*Instantiate Bootstrap Tooltip*/
+  $('[data-toggle="tooltip"]').tooltip({
+      trigger : 'hover'
+  });
+
   /*Default*/
   [...sg_container_list].forEach( function(elem){
     elem.classList.remove('active');
     elem.classList.remove('slide-in');
   });
-  $("button[data-target='sg_data_toolbar']").parent('li').addClass('active');
-  $("#sg_data_toolbar").addClass('active slide-in');
+  $("button[data-target='sg_data_inputs']").parent('li').addClass('active');
+  $("#sg_data_inputs").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
@@ -154,12 +160,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 $(function() {
-  $('[data-toggle="tooltip"]').tooltip()
+
 });
 
-// $('[data-toggle="tooltip"]').tooltip({
-//     trigger : 'hover'
-// });
+
 
 /* Old Codes
   function changeContent( ev ) {

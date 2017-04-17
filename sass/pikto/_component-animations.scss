@@ -86,7 +86,7 @@ tbody.collapse.in {
 .animation-item {
   /* Some of this styling is shared with #graphics */
   width: 100%;
-  @include border-radius(4px);
+  @include border-radius("all", 4px);
   margin: 0px 2px 6px 0px;
   overflow: hidden;   /* Don't show the properties when our height is reduced to hide them. */
   background-color: $teal-grey-light;
@@ -127,7 +127,7 @@ tbody.collapse.in {
     .icon-delete {
       @include opacity(.4);
       background-color: transparent;
-      @include border-radius(4px);
+      @include border-radius("all", 4px);
 
       &:hover {
         @include opacity(1);
@@ -167,7 +167,7 @@ tbody.collapse.in {
   input {
     padding: 2px 10px;
     font-size: 12px;
-    @include border-radius(3px);
+    @include border-radius("all", 3px);
     width: 80px;
   }
 }

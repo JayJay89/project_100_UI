@@ -5862,41 +5862,168 @@ select:-moz-focusring {
 /**=====================================**/
 /* 16 Input with inline icon */
 /**=====================================**/
-.inline-icon-input {
+.input-inline-icon {
   position: relative;
+  cursor: pointer;
+  display: inline-block;
 }
 
-.inline-icon-input [class^="icon-"],
-.inline-icon-input [class*=" icon-"] {
+.input-inline-icon > i {
   position: absolute;
   z-index: 9;
   top: 0;
 }
 
-.inline-icon-input.left-icon [class^="icon-"],
-.inline-icon-input.left-icon [class*=" icon-"] {
+.input-inline-icon.left-icon > i {
   left: 5px;
 }
 
-.inline-icon-input.left-icon input {
-  padding-left: 33px;
+.input-inline-icon.left-icon input {
+  padding-left: 40px;
 }
 
-.inline-icon-input.right-icon .icon-search-lightpurple {
+.input-inline-icon.right-icon > i {
   right: 5px;
+}
+
+.input-inline-icon.right-icon input {
+  padding-right: 40px;
+}
+
+.input-with-btn {
+  display: inline-block;
+}
+
+.input-with-btn.right-btn > .pikto-btn {
+  margin-left: -6px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.input-with-btn.left-btn > .pikto-btn {
+  margin-right: -6px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.input-with-btn .pikto-btn {
+  display: inline-block;
+  border-width: 2px;
+  position: relative;
+}
+
+/**=====================================**/
+/* 17 Slider */
+/**=====================================**/
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  border: 0px;
+  background-color: transparent;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border-radius: 25px;
+  border: 0px solid red;
+  background: green;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  border: 0px solid #000000;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: red;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -10px;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border-radius: 25px;
+  background: green;
+  border: 0px solid red;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: 0px solid #000000;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: red;
   cursor: pointer;
 }
 
-.inline-icon-input.right-icon .icon-search-lightpurple:hover {
-  background-position: -32px -32px;
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  background-color: transparent;
+  border-color: transparent;
+  border-width: 39px 0;
+  color: transparent;
+  /*
+    IE produces a weird top and bottom spacing, hackish way reduce that space
+    */
+  margin: -30px 0px;
 }
 
-.inline-icon-input.right-icon .icon-search-lightpurple:active, .inline-icon-input.right-icon .icon-search-lightpurple:focus {
-  background-position: -32px -31px;
+input[type=range]::-ms-fill-lower {
+  background: green;
+  border: 0px solid red;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
 }
 
-.inline-icon-input.right-icon input {
-  padding-right: 33px;
+input[type=range]::-ms-fill-upper {
+  background: green;
+  border: 0px solid red;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+
+input[type=range]::-ms-thumb {
+  border: 0px solid #000000;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: red;
+  cursor: pointer;
+}
+
+input[type=range]::-moz-focus-outer {
+  border: 0;
+}
+
+input[type=range]:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: green;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: green;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: green;
 }
 
 /**=====================================**/
@@ -6243,6 +6370,13 @@ input.pikto-btn:focus, input.pikto-btn.focus {
 }
 
 /**=====================================**/
+/* Inline Icon Btn */
+/**=====================================**/
+.pikto-btn-inline-icon {
+  padding: 0px;
+}
+
+/**=====================================**/
 /* 03 Button Sizes */
 /**=====================================**/
 .pikto-btn-xl {
@@ -6365,6 +6499,7 @@ tbody.collapse.in {
 .animation-item {
   /* Some of this styling is shared with #graphics */
   width: 100%;
+  border-radius: 4px;
   margin: 0px 2px 6px 0px;
   overflow: hidden;
   /* Don't show the properties when our height is reduced to hide them. */
@@ -6406,6 +6541,7 @@ tbody.collapse.in {
   opacity: 0.4;
   filter: alpha(opacity=40);
   background-color: transparent;
+  border-radius: 4px;
 }
 
 .animation-item .animation-header .icon-delete:hover {
@@ -6443,6 +6579,7 @@ tbody.collapse.in {
 .animation-properties input {
   padding: 2px 10px;
   font-size: 12px;
+  border-radius: 3px;
   width: 80px;
 }
 
@@ -7043,6 +7180,10 @@ tbody.collapse.in {
   pointer-event: none;
 }
 
+.btn-group-inline-icon > button {
+  padding: 0;
+}
+
 .btn-group .pikto-btn ~ .pikto-btn,
 .btn-group .pikto-btn ~ .btn-group,
 .btn-group .btn-group ~ .pikto-btn,
@@ -7248,6 +7389,112 @@ tbody.collapse.in {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
+}
+
+/**=====================================**/
+/* 07 Btn Hover Dropdowns */
+/**=====================================**/
+.hover-over {
+  position: relative;
+}
+
+.hover-over-btn {
+  display: inline-block;
+}
+
+.hover-over-btn:hover .hover-over-panel {
+  display: block;
+  -webkit-animation: fade-in .1s linear 1, move-up .1s linear 1;
+  -moz-animation: fade-in .1s linear 1, move-up .1s linear 1;
+  -ms-animation: fade-in .1s linear 1, move-up .1s linear 1;
+}
+
+.hover-over-panel {
+  position: absolute;
+  display: none;
+  left: 0px;
+  padding-top: 5px;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes move-up {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: -115%;
+  }
+}
+
+@-moz-keyframes move-up {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: -115%;
+  }
+}
+
+@-ms-keyframes move-up {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: -115%;
+  }
+}
+
+@-webkit-keyframes move-down {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+
+@-moz-keyframes move-down {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+
+@-ms-keyframes move-down {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
 }
 
 /**=====================================**/
@@ -14089,4 +14336,8 @@ http://nicolasgallagher.com/micro-clearfix-hack/
 
 .glyphicon-menu-up:before {
   content: "\e260";
+}
+
+.glyphicon-plus {
+  padding: 9px 12px;
 }

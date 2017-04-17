@@ -76,6 +76,12 @@
   }
 }
 
+.btn-group-inline-icon {
+  > button {
+    padding: 0;
+  }
+}
+
 // Prevent double borders when buttons are next to each other
 // The tooltip will mess this up
 .btn-group {
@@ -305,5 +311,71 @@
       pointer-events: none;
     }
   }
+}
+
+/**=====================================**/
+/* 07 Btn Hover Dropdowns */
+/**=====================================**/
+.hover-over {
+  position: relative;
+}
+
+.hover-over-btn {
+  display: inline-block;
+  
+  &:hover {
+    .hover-over-panel {
+      display: block;
+      -webkit-animation: fade-in .1s linear 1, move-up .1s linear 1;
+      -moz-animation: fade-in .1s linear 1, move-up .1s linear 1;
+      -ms-animation: fade-in .1s linear 1, move-up .1s linear 1;
+    }
+  }
+}
+
+.hover-over-panel {
+  position: absolute;
+  display: none;
+  left: 0px;
+  padding-top: 5px;
+}
+
+@-webkit-keyframes fade-in {
+  from   { opacity: 0; }
+  to { opacity: 1; }
+}
+@-moz-keyframes fade-in {
+  from   { opacity: 0; }
+  to { opacity: 1; }
+}
+@-ms-keyframes fade-in {
+  from   { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@-webkit-keyframes move-up {
+  from   { bottom: -100%; }
+  to { bottom: -115%; }
+}
+@-moz-keyframes move-up {
+  from   { bottom: -100%; }
+  to { bottom: -115%; }
+}
+@-ms-keyframes move-up {
+  from   { bottom: -100%; }
+  to { bottom: -115%; }
+}
+
+@-webkit-keyframes move-down {
+  from   { bottom: 30px; }
+  to { bottom: 42px; }
+}
+@-moz-keyframes move-down {
+  from   { bottom: 30px; }
+  to { bottom: 42px; }
+}
+@-ms-keyframes move-down {
+  from   { bottom: 30px; }
+  to { bottom: 42px; }
 }
 

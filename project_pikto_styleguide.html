@@ -98,8 +98,9 @@
               <input id="styleguide_form" type="radio" name="tabs">
               <label for="styleguide_form">Form Elements</label>
               <ul class="sg-button-list sg-button-list--inner">
-                <li><button class="sg-btn" data-target="sg_data_checkboxes">Checkboxes</button></li>
                 <li><button class="sg-btn" data-target="sg_data_inputs">Inputs</button></li>
+                <li><button class="sg-btn" data-target="sg_data_checkboxes">Checkboxes</button></li>
+                <li><button class="sg-btn" data-target="sg_data_radio_btn">Radio Buttons</button></li>
                 <li><button class="sg-btn" data-target="sg_data_sliders">Sliders</button></li>
                 <li><button class="sg-btn" data-target="sg_data_selects">Selects</button></li>
               </ul>
@@ -951,7 +952,7 @@
 
         <section class="sg-border-radius" id="sg_data_border_radii">
           <h1 class="sg-h1">Border Radii</h1>
-          <h2 class="sg-h2">Constructor</h2>
+          <h2 class="sg-h2">Border Radii Constructor</h2>
           <div class="sg-content-box" data-content="border-radius-1" style="display: none">
             $default-base-radius: 2px
 
@@ -979,6 +980,33 @@
           </div>
 
           <div class="sg-code-box" id="border-radius-1" >
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="scss sg-code-syntax"></code></pre>
+          </div>
+
+          <h2 class="sg-h2">Border Radii Removal</h2>
+
+          <div class="sg-content-box" data-content="border-radius-1b" style="display: none">
+            @mixin border-radius-removal($side:"all") {
+              @if $side == 'all'{
+                border-radius: 0;
+              } @else if $side == 'top' {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+              } @else if $side == 'bottom' {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+              } @else if $side == 'left' {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+              } @else if $side == 'right' {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+              }
+            }
+          </div>
+
+          <div class="sg-code-box" id="border-radius-1b" >
             <div class="sg-code-box-sidebar"></div>
             <pre><code class="scss sg-code-syntax"></code></pre>
           </div>
@@ -1015,7 +1043,7 @@
           <h2 class="sg-h2">Applying as Class</h2>
           <div class="sg-content-box" data-content="border-radius-2" style="display: none">
             .border-radius-6 {
-              @include border-radius-6
+              @include border-radius-6;
             }
             .border-radius-4 {
               @include border-radius-4;
@@ -1535,6 +1563,17 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
+          <h2 class="sg-h2">Full Width Variation</h2>
+          <div class="sg-content-box" data-content="btn-4b">
+            <button class="pikto-btn pikto-btn-teal pikto-btn-inline-icon">
+              <i class="glyphicon glyphicon-plus"></i>
+            </button>
+          </div>
+          <div class="sg-code-box" id="btn-4b">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
           <h2 class="sg-h2">Size Variations</h2>
           <div class="sg-content-box" data-content="btn-5">
             <button class="pikto-btn pikto-btn-xl">XL button</button>
@@ -1584,6 +1623,32 @@
           </div>
 
           <div class="sg-code-box" id="btn-8">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2 class="sg-h2">Button Groups</h2>
+          <div class="sg-content-box sg-normal-btn" data-content="btn-9">
+            <div class="btn-group btn-group-inline-icon" role="group" aria-label="...">
+              <button type="button" class="pikto-btn pikto-btn-option">
+                <i class="glyphicon glyphicon-plus"></i>
+              </button>
+              <button type="button" class="pikto-btn pikto-btn-option">
+                <i class="glyphicon glyphicon-plus"></i>
+              </button>
+              <button type="button" class="pikto-btn pikto-btn-option">
+                <i class="glyphicon glyphicon-plus"></i>
+              </button>
+              <button type="button" class="pikto-btn pikto-btn-option active">
+                <i class="glyphicon glyphicon-plus"></i>
+              </button>
+              <button type="button" class="pikto-btn pikto-btn-option">
+                <i class="glyphicon glyphicon-plus"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="btn-9">
             <div class="sg-code-box-sidebar"></div>
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
@@ -2443,8 +2508,8 @@
           <p>The toolbar is a combination of buttons, button-groups, tooltips and icons</p>
           <p>Currently the toolbar on the editor was written using another class call pblist. Suggest to change to those into btn-groups</p>
 
-          <div class="sg-content-box sg-normal-btn" data-content="toolbar-1">
-            <div class="btn-group" role="group" aria-label="...">
+          <div class="sg-content-box" data-content="toolbar-1">
+            <div class="btn-group btn-group-inline-icon" role="group" aria-label="...">
               <button type="button" class="pikto-btn pikto-btn-option active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
                 <i class="glyphicon glyphicon-plus"></i> 
               </button>
@@ -2461,6 +2526,38 @@
           </div>
           
           <div class="sg-code-box" id="toolbar-1">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2 class="sg-h2">Hover Overs</h2>
+
+          <div class="sg-content-box hover-over" data-content="toolbar-2">
+
+            <div class="hover-over-btn">
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-inline-icon">
+                <i class="glyphicon glyphicon-plus"></i> 
+              </button>
+
+              <div class="btn-group btn-group-inline-icon hover-over-panel" role="group" aria-label="...">
+                <button type="button" class="pikto-btn pikto-btn-option active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
+                  <i class="glyphicon glyphicon-plus"></i> 
+                </button>
+                <button type="button" class="pikto-btn pikto-btn-option">
+                  <i class="glyphicon glyphicon-plus"></i> 
+                </button>
+                <button type="button" class="pikto-btn pikto-btn-option">
+                  <i class="glyphicon glyphicon-plus"></i> 
+                </button>
+                <button type="button" class="pikto-btn pikto-btn-option">
+                  <i class="glyphicon glyphicon-plus"></i> 
+                </button>
+              </div>
+            </div>
+
+          </div>
+          
+          <div class="sg-code-box" id="toolbar-2">
             <div class="sg-code-box-sidebar"></div>
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
@@ -2483,59 +2580,120 @@
 
         <section id="sg_data_checkboxes">
           <h1 class="sg-h1">Checkboxes</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-          <div>
-            <label class="pikto-label" for="styleguide-chkbox-1">
-              <input id="styleguide-chkbox-1" type="checkbox" name="name" value="value" checked>
-              <span class="pikto-checkbox pikto-checkbox-thin"></span>
-              <span>Pikto Checkbox</span>
-            </label>
+
+          <div class="sg-content-box " data-content="checkbox-1">
+            <div>
+              <label class="pikto-label" for="styleguide-chkbox-1">
+                <input id="styleguide-chkbox-1" type="checkbox" name="name" value="value" checked>
+                <span class="pikto-checkbox pikto-checkbox-thin"></span>
+                <span>Pikto Checkbox</span>
+              </label>
+            </div>
+
+            <div>
+              <label class="pikto-label" for="styleguide-chkbox-2">
+                <input id="styleguide-chkbox-2" type="checkbox" name="name" value="value">
+                <span class="pikto-checkbox pikto-checkbox-thin"></span>
+                <span>Pikto Checkbox</span>
+              </label>
+            </div>
+
+            <div class="pikto-disabled pikto-no-events">
+              <label class="pikto-label" for="styleguide-chkbox-3">
+                <input id="styleguide-chkbox-3" type="checkbox" name="name" value="value">
+                <span class="pikto-checkbox pikto-checkbox-thin"></span>
+                <span>Pikto Checkbox</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="sg-code-box" id="checkbox-1">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <div>
-            <label class="pikto-label" for="styleguide-chkbox-2">
-              <input id="styleguide-chkbox-2" type="checkbox" name="name" value="value">
-              <span class="pikto-checkbox pikto-checkbox-thin"></span>
-              <span>Pikto Checkbox</span>
-            </label>
-          </div>
-
-          <div class="pikto-disabled pikto-no-events">
-            <label class="pikto-label" for="styleguide-chkbox-3">
-              <input id="styleguide-chkbox-3" type="checkbox" name="name" value="value">
-              <span class="pikto-checkbox pikto-checkbox-thin"></span>
-              <span>Pikto Checkbox</span>
-            </label>
-          </div>
         </section>
 
         <section id="sg_data_inputs">
           <h1 class="sg-h1">Inputs</h1>
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
-            <span class="input-group-btn">
-              <button class="pikto-btn pikto-btn-teal" type="button">Go!</button>
-            </span>
+
+          <h2 class="sg-h2">Standard Input</h2>
+          <div class="sg-content-box " data-content="input-1">
+            <input type="search"/ placeholder="Search...">
           </div>
-          <div class="inline-icon-input left-icon">
+
+          <div class="sg-code-box" id="input-1">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2 class="sg-h2">Input with Icons</h2>
+          <div class="sg-content-box " data-content="input-2">
+            <div class="input-inline-icon left-icon">
+              <i class="glyphicon glyphicon-plus"></i>
+              <input class="search-bar" name="search" type="text" placeholder="Search for countries">
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="input-2">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <div class="sg-content-box " data-content="input-3">
+            <div class="input-inline-icon right-icon">
+              <i class="glyphicon glyphicon-plus"></i>
+              <input class="search-bar" name="search" type="text" placeholder="Search for countries">
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="input-3">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2 class="sg-h2">Input with Button</h2>
+          <div class="sg-content-box" data-content="input-4">
+            <div class="input-with-btn right-btn">
+              <input type="text" placeholder="Search for...">
+              <button class="pikto-btn pikto-btn-teal" type="button">Go!</button>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="input-4">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <div class="sg-content-box" data-content="input-5">
+            <div class="input-with-btn left-btn">
+              <button class="pikto-btn pikto-btn-teal" type="button">Go!</button>
+              <input type="text" placeholder="Search for...">
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="input-5">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+
+          <div class="input-inline-icon left-icon">
             <i class="icon-edit-darkpurple"></i>
             <input type="text" placeholder="Search for...">
           </div>
+
           <div class="search-container">
-            <div class="inline-icon-input left-icon">
-              <i class="icon-search-lightpurple"></i>
-              <input class="search-bar" name="search" type="text" placeholder="Search for countries">
-            </div>
-          </div>
-          <div class="search-container">
-            <div class="inline-icon-input right-icon">
+            <div class="input-inline-icon right-icon">
               <input class="search-bar" name="search" type="text" placeholder="Search for countries">
               <i class="icon-search-lightpurple"></i>
             </div>
           </div>
+
           <div class="search-container">
             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
           </div>
+
           <div class="search-container">
             <form class="has-error">
               <div class="form-control">
@@ -2568,6 +2726,11 @@
               <option>Option 6</option>
             </select>
           </div>
+        </section>
+
+        <section id="sg_data_radio_btn">
+          <h1 class="sg-h1">Selects</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
         <section id="sg_data_icon_1">
