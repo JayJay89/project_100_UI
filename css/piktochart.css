@@ -3452,7 +3452,7 @@ pre code {
   color: inherit;
   white-space: pre-wrap;
   background-color: transparent;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .pre-scrollable {
@@ -4591,107 +4591,6 @@ input[type="file"] {
   display: block;
 }
 
-input,
-input[type="text"],
-input[type="password"],
-input[type="search"],
-input[type="email"],
-input[type="number"],
-textarea {
-  border: 1px solid #d8d8d8;
-  color: #2c2a37;
-  background-color: #fff;
-  font-size: 14px;
-  padding: 6px 12px;
-  line-height: 1.42857;
-  border-radius: 2px;
-  -webkit-transition: border-color 0.2s ease;
-  -o-transition: border-color 0.2s ease;
-  transition: border-color 0.2s ease;
-}
-
-input::-moz-placeholder,
-input[type="text"]::-moz-placeholder,
-input[type="password"]::-moz-placeholder,
-input[type="search"]::-moz-placeholder,
-input[type="email"]::-moz-placeholder,
-input[type="number"]::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: #999;
-  opacity: 1;
-}
-
-input:-ms-input-placeholder,
-input[type="text"]:-ms-input-placeholder,
-input[type="password"]:-ms-input-placeholder,
-input[type="search"]:-ms-input-placeholder,
-input[type="email"]:-ms-input-placeholder,
-input[type="number"]:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: #999;
-}
-
-input::-webkit-input-placeholder,
-input[type="text"]::-webkit-input-placeholder,
-input[type="password"]::-webkit-input-placeholder,
-input[type="search"]::-webkit-input-placeholder,
-input[type="email"]::-webkit-input-placeholder,
-input[type="number"]::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: #999;
-}
-
-input:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus,
-textarea:focus {
-  border: 1px solid #1cafa2;
-  outline: none;
-  -webkit-box-shadow: inset 0 0 0 1px #1cafa2;
-  box-shadow: inset 0 0 0 1px #1cafa2;
-}
-
-.has-error input, .has-error
-input[type="text"], .has-error
-input[type="password"], .has-error
-input[type="search"], .has-error
-input[type="email"], .has-error
-input[type="number"], .has-error
-textarea {
-  border: 1px solid #f98484;
-}
-
-.has-error input:focus, .has-error
-input[type="text"]:focus, .has-error
-input[type="password"]:focus, .has-error
-input[type="search"]:focus, .has-error
-input[type="email"]:focus, .has-error
-input[type="number"]:focus, .has-error
-textarea:focus {
-  border: 1px solid #f98484;
-  -webkit-box-shadow: inset 0 0 0 1px #f98484;
-  box-shadow: inset 0 0 0 1px #f98484;
-  outline: none;
-}
-
-.has-error input:focus, .has-error
-input[type="text"]:focus, .has-error
-input[type="password"]:focus, .has-error
-input[type="search"]:focus, .has-error
-input[type="email"]:focus, .has-error
-input[type="number"]:focus, .has-error
-textarea:focus {
-  -webkit-box-shadow: inset 0 0 0 1px #f98484;
-  box-shadow: inset 0 0 0 1px #f98484;
-}
-
-.has-error .alert.alert-danger-attention, .has-error .alert.alert-error {
-  margin-top: 10px;
-}
-
 textarea {
   padding: 10px;
 }
@@ -4715,43 +4614,24 @@ output {
   color: #2c2a37;
 }
 
-.error-msg {
-  color: #fff;
-  background: #f98484;
-  width: 100%;
-  display: inline-block;
-  padding: 15px;
-  margin-top: 7px;
-  position: relative;
-  border-radius: 2px;
-}
-
-.error-msg:before {
-  content: "";
-  border-width: 7px;
-  border-style: solid;
-  border-color: transparent transparent #f98484 transparent;
-  display: block;
-  top: -12px;
-  left: 10px;
-  position: absolute;
-}
-
 /**=====================================**/
 /* 03 Common Form Controls */
 /**=====================================**/
 .form-control {
-  display: block;
-  width: 100%;
+  border: 1px solid #d8d8d8;
   font-size: 14px;
-  line-height: 1.42857;
+  line-height: normal;
   color: #2c2a37;
+  background-color: #fff;
+  padding: 7px 12px;
   background-image: none;
+  width: 100%;
+  border-radius: 2px;
   -webkit-box-shadow: inset 0 0 0 1px transparent;
   box-shadow: inset 0 0 0 1px transparent;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .form-control:focus {
@@ -4788,6 +4668,52 @@ fieldset[disabled] .form-control {
 .form-control[disabled],
 fieldset[disabled] .form-control {
   cursor: not-allowed;
+}
+
+.form-control:focus {
+  border: 1px solid #1cafa2;
+  outline: none;
+  -webkit-box-shadow: inset 0 0 0 1px #1cafa2;
+  box-shadow: inset 0 0 0 1px #1cafa2;
+}
+
+.input-has-error .form-control {
+  border: 1px solid #f98484;
+}
+
+.input-has-error .form-control:focus {
+  border: 1px solid #f98484;
+  -webkit-box-shadow: inset 0 0 0 1px #f98484;
+  box-shadow: inset 0 0 0 1px #f98484;
+  outline: none;
+}
+
+.input-has-error .form-control:focus {
+  -webkit-box-shadow: inset 0 0 0 1px #f98484;
+  box-shadow: inset 0 0 0 1px #f98484;
+}
+
+.input-has-error .form-control .alert-danger {
+  margin-top: 10px;
+}
+
+.alert-arrow:before {
+  content: "";
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent transparent #f98484 transparent;
+  display: block;
+  top: -12px;
+  left: 10px;
+  position: absolute;
+}
+
+.input-has-error .alert {
+  margin: 0 0 10px;
+}
+
+.input-has-error .alert-arrow {
+  margin: 10px 0 0;
 }
 
 textarea.form-control {
@@ -5212,40 +5138,6 @@ select[multiple].input-lg,
   color: #2c2a37;
 }
 
-.has-error .help-block,
-.has-error .control-label,
-.has-error .radio,
-.has-error .checkbox,
-.has-error .radio-inline,
-.has-error .checkbox-inline,
-.has-error.radio label,
-.has-error.checkbox label,
-.has-error.radio-inline label,
-.has-error.checkbox-inline label {
-  color: #2c2a37;
-}
-
-.has-error .form-control {
-  /*border-color: $border-color;
-    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work*/
-  border-radius: 2px;
-  /* &:focus {
-      border-color: darken($border-color, 10%);
-      $shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten($border-color, 20%);
-      @include box-shadow($shadow);
-    }*/
-}
-
-.has-error .input-group-addon {
-  color: #2c2a37;
-  border-color: #2c2a37;
-  background-color: #f98484;
-}
-
-.has-error .form-control-feedback {
-  color: #2c2a37;
-}
-
 .has-feedback label ~ .form-control-feedback {
   top: 25px;
 }
@@ -5600,6 +5492,10 @@ span[data-acts-as-select].select-dark label:hover {
 /**=====================================**/
 /* 13d Pikto Checkbox */
 /**=====================================**/
+.pikto-radio-set > .pikto-label {
+  display: block;
+}
+
 .pikto-radio {
   width: 14px;
   height: 14px;
@@ -5857,15 +5753,11 @@ select:-moz-focusring {
 }
 
 /**=====================================**/
-/* 15 Custom Select */
-/**=====================================**/
-/**=====================================**/
 /* 16 Input with inline icon */
 /**=====================================**/
 .input-inline-icon {
   position: relative;
   cursor: pointer;
-  display: inline-block;
 }
 
 .input-inline-icon > i {
@@ -5891,30 +5783,40 @@ select:-moz-focusring {
 }
 
 .input-with-btn {
-  display: inline-block;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 
 .input-with-btn.right-btn > .pikto-btn {
-  margin-left: -6px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  margin-left: -2px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .input-with-btn.left-btn > .pikto-btn {
-  margin-right: -6px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  margin-right: -2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .input-with-btn .pikto-btn {
-  display: inline-block;
-  border-width: 2px;
   position: relative;
+}
+
+.input-custom-size {
+  width: 200px;
 }
 
 /**=====================================**/
 /* 17 Slider */
 /**=====================================**/
+.pikto-slider-container {
+  padding: 10px 0px;
+}
+
 input[type=range] {
   -webkit-appearance: none;
   margin: 0px;
@@ -5922,6 +5824,9 @@ input[type=range] {
   width: 100%;
   border: 0px;
   background-color: transparent;
+  /*Not sure how to calculate this to cater all browsers*/
+  /*At lower values, the track shrunk in IE as well*/
+  height: 3px;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
@@ -5929,21 +5834,24 @@ input[type=range]::-webkit-slider-runnable-track {
   height: 3px;
   cursor: pointer;
   animate: 0.2s;
-  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
   border-radius: 25px;
   border: 0px solid red;
-  background: green;
+  background: transparent;
 }
 
 input[type=range]::-webkit-slider-thumb {
   border: 0px solid #000000;
-  height: 20px;
-  width: 20px;
+  height: 12px;
+  width: 12px;
   border-radius: 50%;
-  background: red;
+  background: #019B97;
+  border: 2px solid #C2C2C2;
   cursor: pointer;
+  -webkit-box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.5);
   -webkit-appearance: none;
-  margin-top: -10px;
+  margin-top: -3px;
+  margin-top: -4px;
 }
 
 input[type=range]::-moz-range-track {
@@ -5951,19 +5859,21 @@ input[type=range]::-moz-range-track {
   height: 3px;
   cursor: pointer;
   animate: 0.2s;
-  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
   border-radius: 25px;
-  background: green;
   border: 0px solid red;
+  background: transparent;
 }
 
 input[type=range]::-moz-range-thumb {
   border: 0px solid #000000;
-  height: 20px;
-  width: 20px;
+  height: 12px;
+  width: 12px;
   border-radius: 50%;
-  background: red;
+  background: #019B97;
+  border: 2px solid #C2C2C2;
   cursor: pointer;
+  -webkit-box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
 input[type=range]::-ms-track {
@@ -5974,35 +5884,31 @@ input[type=range]::-ms-track {
   background: transparent;
   background-color: transparent;
   border-color: transparent;
-  border-width: 39px 0;
   color: transparent;
-  /*
-    IE produces a weird top and bottom spacing, hackish way reduce that space
-    */
+  /*    IE produces a weird top and bottom spacing, hackish way reduce that space    */
   margin: -30px 0px;
 }
 
 input[type=range]::-ms-fill-lower {
-  background: green;
   border: 0px solid red;
-  border-radius: 50px;
-  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #1cafa2;
 }
 
 input[type=range]::-ms-fill-upper {
-  background: green;
   border: 0px solid red;
-  border-radius: 50px;
-  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #c2c2c2;
 }
 
 input[type=range]::-ms-thumb {
   border: 0px solid #000000;
-  height: 20px;
-  width: 20px;
+  height: 12px;
+  width: 12px;
   border-radius: 50%;
-  background: red;
+  background: #019B97;
+  border: 2px solid #C2C2C2;
   cursor: pointer;
+  -webkit-box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
 input[type=range]::-moz-focus-outer {
@@ -6015,15 +5921,15 @@ input[type=range]:focus {
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: green;
+  background: transparent;
 }
 
 input[type=range]:focus::-ms-fill-lower {
-  background: green;
+  background: #1cafa2;
 }
 
 input[type=range]:focus::-ms-fill-upper {
-  background: green;
+  background: #c2c2c2;
 }
 
 /**=====================================**/
@@ -7155,7 +7061,7 @@ tbody.collapse.in {
 .btn-group button {
   float: left;
   position: relative;
-  border-radius: 0px;
+  border-radius: 0;
   cursor: pointer;
 }
 
@@ -7221,14 +7127,14 @@ tbody.collapse.in {
 }
 
 .btn-group > .pikto-btn:first-child:not(:last-child):not(.dropdown-toggle) {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .btn-group > .pikto-btn:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .btn-group > .btn-group {
@@ -7241,13 +7147,13 @@ tbody.collapse.in {
 
 .btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .btn-group > .btn-group:last-child:not(:first-child) > .pikto-btn:first-child {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .btn-group .dropdown-toggle:active,
@@ -7345,13 +7251,13 @@ tbody.collapse.in {
 
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .pikto-btn:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .btn-group-vertical > .btn-group:last-child:not(:first-child) > .pikto-btn:first-child {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 /**=====================================**/
@@ -7595,8 +7501,8 @@ tbody.collapse.in {
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .pikto-btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .pikto-btn {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .input-group-addon:first-child {
@@ -7610,8 +7516,8 @@ tbody.collapse.in {
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .pikto-btn:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .pikto-btn {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .input-group-addon:last-child {
@@ -7905,8 +7811,8 @@ a.list-group-item.active > .badge,
 /**=====================================**/
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 /**=====================================**/
@@ -8306,13 +8212,13 @@ a.list-group-item.active > .badge,
 /**=====================================**/
 .navbar-nav > li > .dropdown-menu {
   margin-top: 0;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   /*Boot*/
 }
 
@@ -9273,7 +9179,6 @@ a.thumbnail.active {
 /**=====================================**/
 .alert {
   padding: 15px;
-  margin: 0 0 10px;
   border: 1px solid transparent;
   position: relative;
   font-size: 13px;
@@ -10212,7 +10117,7 @@ panel-group are used in
 
 .pikto-accordion .panel > .panel-heading {
   background-color: #474456;
-  border-radius: 0px;
+  border-radius: 0;
   padding: 0px;
   border: none;
 }
@@ -11567,7 +11472,7 @@ button.close {
 #modal-generic .modal-dialog {
   -webkit-box-shadow: none;
   box-shadow: none;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 #modal-generic .modal-content {

@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     elem.classList.remove('active');
     elem.classList.remove('slide-in');
   });
-  $("button[data-target='sg_data_inputs']").parent('li').addClass('active');
-  $("#sg_data_inputs").addClass('active slide-in');
+  $("button[data-target='sg_data_selects']").parent('li').addClass('active');
+  $("#sg_data_selects").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;

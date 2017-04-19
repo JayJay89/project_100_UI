@@ -131,9 +131,9 @@ pre code {
 /*General*/
 .sg-wrapper {
   * {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
 }
 
@@ -155,8 +155,8 @@ pre code {
 .sg-sidebar {
   // background-color: $lightblue;
   background-color: $lightblue3;
-  width: calc(275px - 60px);
-  height: calc(100vh - 60px);
+  width: 275px;
+  height: 100vh;
   display: inline-block;
   float: left;
   overflow: auto;
@@ -222,7 +222,7 @@ pre code {
 }
 
 .sg-main-container {
-  width: calc(100% - 275px - 130px);
+  width: calc(100% - 275px);
   display: inline-block;
   float: left;
   position: relative;
@@ -230,7 +230,7 @@ pre code {
   top: 0px;
   transition: top 0.3s ease, opacity 0.3s ease;
   padding: 100px 65px;
-  height: calc(100vh - 200px);
+  height: 100vh;
   overflow: auto;
   
   &.slide-out {
@@ -598,6 +598,17 @@ pre code {
   }
 }
 
+/*Alert*/
+.sg-alert-container {
+  .alert {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 /*Button*/
 .sg-button-section {
   > .sg-content-box {
@@ -696,3 +707,9 @@ pre code {
   }
 }
 
+/*Inputs*/
+.sg-input-container {
+  > div, > input {
+    margin-bottom: 10px;
+  } 
+}

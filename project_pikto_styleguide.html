@@ -197,6 +197,12 @@
         <!--Branding-->
         <section id="sg_data_logo" class="active slide-in">
           <h1 class="sg-h1">Logo</h1>
+
+          <div class="input-with-btn right-btn">
+            <input class="form-control input-full-width" type="text" placeholder="Search for...">
+            <button class="pikto-btn pikto-btn-teal" type="button">Go!</button>
+          </div>
+
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolore, reiciendis nostrum blanditiis possimus nesciunt consequatur rerum. Autem, eaque vero omnis, tenetur, nemo suscipit praesentium adipisci perspiciatis doloremque vel veniam?</p>
           <!--Indentation had to be pushed back--> 
           <!-- class="sg-code-box"-->
@@ -1411,7 +1417,7 @@
 
           <h2 class="sg-h2">Color Variations</h2>
 
-          <div class="sg-content-box" data-content="alert-1">
+          <div class="sg-content-box sg-alert-container" data-content="alert-1">
             <div class="alert alert-success">Success</div>
             <div class="alert alert-info">Info</div>
             <div class="alert alert-warning">Warning</div>
@@ -1484,6 +1490,17 @@
             </div>
           </div>
           <div class="sg-code-box" id="alert-7">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2 class="sg-h2">Error Message Variation</h2>
+          <div class="sg-content-box" data-content="alert-8">
+            <div class="alert alert-danger alert-arrow">
+              Error! Invalid email or password.
+            </div>
+          </div>
+          <div class="sg-code-box" id="alert-8">
             <div class="sg-code-box-sidebar"></div>
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
@@ -2578,6 +2595,172 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
         </section>
 
+        <section id="sg_data_inputs">
+          <h1 class="sg-h1">Inputs</h1>
+          <p>All inputs are standardized with a <span class="sg-code">.form-control</span> class</p>
+          <p>By default, all inputs will stretch 100% width. Unless defined otherwise</p>
+
+          <h2 class="sg-h2">Standard Input</h2>
+          <div class="sg-content-box" data-content="input-1">
+            <input class="form-control" type="search" placeholder="Search...">
+          </div>
+
+          <div class="sg-code-box" id="input-1">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2 class="sg-h2">Input with Icons</h2>
+          <div class="sg-content-box " data-content="input-2">
+            <div class="input-inline-icon left-icon">
+              <i class="glyphicon glyphicon-plus"></i>
+              <input class="form-control" name="search" type="text" placeholder="Search for countries">
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="input-2">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <div class="sg-content-box " data-content="input-3">
+            <div class="input-inline-icon right-icon">
+              <i class="glyphicon glyphicon-plus"></i>
+              <input class="form-control" name="search" type="text" placeholder="Search for countries">
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="input-3">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2 class="sg-h2">Input with Button</h2>
+          <div class="sg-content-box sg-input-container" data-content="input-4">
+
+            <div class="input-with-btn right-btn">
+              <input class="form-control" type="text" placeholder="Search for...">
+              <button class="pikto-btn pikto-btn-teal" type="button">Go!</button>
+            </div>
+
+            <div class="input-with-btn right-btn">
+              <input class="form-control" type="text" placeholder="Search for...">
+              <button class="pikto-btn pikto-btn-teal" type="button">Go! Search Search</button>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="input-4">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <div class="sg-content-box sg-input-container" data-content="input-5">
+            <div class="input-with-btn left-btn">
+              <button class="pikto-btn pikto-btn-teal" type="button">Go!</button>
+              <input class="form-control" type="text" placeholder="Search for...">
+            </div>
+
+            <div class="input-with-btn left-btn">
+              <button class="pikto-btn pikto-btn-teal" type="button">Go! Search Search</button>
+              <input class="form-control" type="text" placeholder="Search for...">
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="input-5">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2 class="sg-h2">Input with Error</h2>
+
+          <div class="sg-content-box" data-content="input-6">
+            <div class="input-has-error">
+              <div class="alert alert-danger">
+                Error! Invalid email or password.
+              </div>
+              <input class="form-control" placeholder="Form with Error" type="text">
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="input-6">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <div class="sg-content-box" data-content="input-6b">
+            <div class="input-has-error">
+              <input class="form-control" placeholder="Form with Error" type="text">
+              <div class="alert alert-danger alert-arrow input-error-msg">
+                Error! Invalid email or password.
+              </div>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="input-6b">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2 class="sg-h2">Custom Input Sizes</h2>
+          <div class="alert alert-danger">NOTE: Firefox had different ways of rendering flexboxes, don't use this feature yet!</div>
+          <p>
+            In this case <span class="code">.input-custom-size</span> is set to <span class="code">200px</span>. This size can be adjusted in different contexts.
+          </p>
+          <div class="sg-content-box sg-input-container" data-content="input-6c">
+            
+            <div class="input-custom-size">
+              <input class="form-control" type="search" placeholder="Search...">
+            </div>
+
+            <div class="input-custom-size input-inline-icon left-icon">
+              <input class="form-control" name="search" type="text" placeholder="Search for countries">
+              <i class="glyphicon glyphicon-plus"></i>
+            </div>
+
+            <div class="input-custom-size input-inline-icon right-icon">
+              <input class="form-control" name="search" type="text" placeholder="Search for countries">
+              <i class="glyphicon glyphicon-plus"></i>
+            </div>
+
+            <div class="input-custom-size input-with-btn right-btn">
+              <input class="form-control" type="text" placeholder="Search for...">
+              <button class="pikto-btn pikto-btn-teal" type="button">Go!</button>
+            </div>
+
+            <div class="input-custom-size input-with-btn right-btn">
+              <input class="form-control" type="text" placeholder="Search for...">
+              <button class="pikto-btn pikto-btn-teal" type="button">Go! Search Search</button>
+            </div>
+
+            <div class="input-custom-size input-with-btn left-btn">
+              <button class="pikto-btn pikto-btn-teal" type="button">Go!</button>
+              <input class="form-control" type="text" placeholder="Search for...">
+            </div>
+
+            <div class="input-custom-size input-with-btn left-btn">
+              <button class="pikto-btn pikto-btn-teal" type="button">Go! Search Search</button>
+              <input class="form-control" type="text" placeholder="Search for...">
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="input-6c">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+
+          <h2 class="sg-h2">Textarea</h2>
+
+          <div class="sg-content-box" data-content="input-7">
+            <textarea class="form-control" name="test" cols="30" rows="10" placeholder="textarea"></textarea>
+          </div>
+
+          <div class="sg-code-box" id="input-7">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+        </section>
+
         <section id="sg_data_checkboxes">
           <h1 class="sg-h1">Checkboxes</h1>
 
@@ -2611,126 +2794,77 @@
             <div class="sg-code-box-sidebar"></div>
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
-
         </section>
 
-        <section id="sg_data_inputs">
-          <h1 class="sg-h1">Inputs</h1>
+        <section id="sg_data_radio_btn">
+          <h1 class="sg-h1">Radio Buttons</h1>
+          
+          <div class="sg-content-box " data-content="radio-input-1">
+            <div class="pikto-radio-set">
+              <label class="pikto-label" for="radio-1">
+                <input id="radio-1" type="radio" name="radio-set-1">
+                <span class="pikto-radio"></span>
+                <span>I have a technical problem</span>
+              </label>
 
-          <h2 class="sg-h2">Standard Input</h2>
-          <div class="sg-content-box " data-content="input-1">
-            <input type="search"/ placeholder="Search...">
-          </div>
+              <label class="pikto-label" for="radio-2">
+                <input id="radio-2" type="radio" name="radio-set-1">
+                <span class="pikto-radio"></span>
+                <span>I have a technical problem</span>
+              </label>
 
-          <div class="sg-code-box" id="input-1">
-            <div class="sg-code-box-sidebar"></div>
-            <pre><code class="html sg-code-syntax"></code></pre>
-          </div>
-
-          <h2 class="sg-h2">Input with Icons</h2>
-          <div class="sg-content-box " data-content="input-2">
-            <div class="input-inline-icon left-icon">
-              <i class="glyphicon glyphicon-plus"></i>
-              <input class="search-bar" name="search" type="text" placeholder="Search for countries">
+              <label class="pikto-label pikto-disabled pikto-no-events" for="radio-3">
+                <input id="radio-3" type="radio" name="radio-set-1">
+                <span class="pikto-radio"></span>
+                <span>I have a technical problem</span>
+              </label>
             </div>
           </div>
-
-          <div class="sg-code-box" id="input-2">
+          
+          <div class="sg-code-box" id="radio-input-1">
             <div class="sg-code-box-sidebar"></div>
             <pre><code class="html sg-code-syntax"></code></pre>
-          </div>
-
-          <div class="sg-content-box " data-content="input-3">
-            <div class="input-inline-icon right-icon">
-              <i class="glyphicon glyphicon-plus"></i>
-              <input class="search-bar" name="search" type="text" placeholder="Search for countries">
-            </div>
-          </div>
-
-          <div class="sg-code-box" id="input-3">
-            <div class="sg-code-box-sidebar"></div>
-            <pre><code class="html sg-code-syntax"></code></pre>
-          </div>
-
-          <h2 class="sg-h2">Input with Button</h2>
-          <div class="sg-content-box" data-content="input-4">
-            <div class="input-with-btn right-btn">
-              <input type="text" placeholder="Search for...">
-              <button class="pikto-btn pikto-btn-teal" type="button">Go!</button>
-            </div>
-          </div>
-
-          <div class="sg-code-box" id="input-4">
-            <div class="sg-code-box-sidebar"></div>
-            <pre><code class="html sg-code-syntax"></code></pre>
-          </div>
-
-          <div class="sg-content-box" data-content="input-5">
-            <div class="input-with-btn left-btn">
-              <button class="pikto-btn pikto-btn-teal" type="button">Go!</button>
-              <input type="text" placeholder="Search for...">
-            </div>
-          </div>
-
-          <div class="sg-code-box" id="input-5">
-            <div class="sg-code-box-sidebar"></div>
-            <pre><code class="html sg-code-syntax"></code></pre>
-          </div>
-
-
-          <div class="input-inline-icon left-icon">
-            <i class="icon-edit-darkpurple"></i>
-            <input type="text" placeholder="Search for...">
-          </div>
-
-          <div class="search-container">
-            <div class="input-inline-icon right-icon">
-              <input class="search-bar" name="search" type="text" placeholder="Search for countries">
-              <i class="icon-search-lightpurple"></i>
-            </div>
-          </div>
-
-          <div class="search-container">
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-          </div>
-
-          <div class="search-container">
-            <form class="has-error">
-              <div class="form-control">
-                <input placeholder="Error form" id="" class="form-control " type="text" autofocus value="" name="">
-                <div class="alert alert-danger-attention">
-                  <span class="alert-title up-arrow">Error! </span>
-                  Invalid email or password.
-                </div>
-              </div>
-            </form>
           </div>
         </section>
 
         <section id="sg_data_sliders">
           <h1 class="sg-h1">Sliders</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-          <input type="range"/>
+          <p>The Slider background is generated by JS</p>
+
+          <div class="sg-content-box " data-content="slider-1">
+            <div class="pikto-slider-container">
+              <input type="range"/>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="slider-1">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
         </section>
 
         <section id="sg_data_selects">
           <h1 class="sg-h1">Selects</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
-          <div class="select-default">
-            <select>
+
+          <div class="sg-content-box sg-select-container" data-content="select-1">
+            <select class="pikto-select-light">
               <option>Option 1</option>
               <option>Option 2</option>
               <option>Option 3</option>
-              <option>Option 4</option>
-              <option>Option 5</option>
-              <option>Option 6</option>
+            </select>
+
+            <select class="pikto-select-dark">
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
             </select>
           </div>
-        </section>
 
-        <section id="sg_data_radio_btn">
-          <h1 class="sg-h1">Selects</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
+          <div class="sg-code-box" id="select-1">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
         </section>
 
         <section id="sg_data_icon_1">

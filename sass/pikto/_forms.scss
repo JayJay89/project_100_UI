@@ -85,52 +85,6 @@ input[type="file"] {
   display: block;
 }
 
-input,
-input[type="text"],
-input[type="password"],
-input[type="search"],
-input[type="email"],
-input[type="number"],
-textarea  {
-  border: 1px solid $grey-dark;
-  color: $dark-purple-grey-03;
-  background-color: $white;
-  font-size: $font-size-base;
-  padding: $padding-base-vertical $padding-base-horizontal;
-  line-height: $line-height-base;
-  @include border-radius;;
-  @include transition(border-color 0.2s ease);
-  @include placeholder;
-
-  &:focus {
-    border: 1px solid $input-border-focus;
-    outline: none;
-    @include box-shadow(inset 0 0 0 1px $input-border-focus);
-  }
-
-  .has-error & {
-    border: 1px solid $brand-danger-attention;
-
-    &:focus {
-      border: 1px solid $brand-danger-attention;
-      @include box-shadow(inset 0 0 0 1px $brand-danger-attention);
-      outline: none;
-    }
-
-    &:focus {
-      @include box-shadow(inset 0 0 0 1px $brand-danger-attention);
-    }
-
-  }
-}
-
-.has-error {
-
-  .alert.alert-danger-attention, .alert.alert-error {
-    margin-top: 10px;
-  }
-}
-
 textarea {
   padding: 10px;
 }
@@ -157,29 +111,6 @@ output {
   color: $input-color;
 }
 
-//Error Message
-.error-msg {
-  color: $alert-danger-attention-text;
-  background: $alert-danger-attention-bg;
-  width: 100%;
-  display: inline-block;
-  padding: 15px;
-  margin-top: 7px;
-  position: relative;
-  @include border-radius;
-
-  &:before {
-      content:"";
-      border-width: 7px;
-      border-style: solid;
-      border-color: transparent transparent $alert-danger-attention-bg transparent;
-      display: block;
-      top: -12px;
-      left: 10px;
-      position: absolute;
-  }
-}
-
 /**=====================================**/
 /* 03 Common Form Controls */
 /**=====================================**/
@@ -204,14 +135,17 @@ output {
 // input[type="color"]
 
 .form-control {
-  display: block;
-  width: 100%;
+  border: 1px solid $grey-dark;
   font-size: $font-size-base;
-  line-height: $line-height-base;
-  color: $input-color;
+  line-height: normal;
+  color: $dark-purple-grey-03;
+  background-color: $white;
+  padding: 7px 12px;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  width: 100%;
+  @include border-radius;
   @include box-shadow(inset 0 0 0 1px transparent);
-  @include transition(all .3s);
+  @include transition(all 0.2s ease);
   
   // Customize the `:focus` state to imitate native WebKit styles.
   @include form-control-focus;
@@ -242,6 +176,55 @@ output {
     cursor: $cursor-disabled;
   }
   // [converter] extracted textarea& to textarea.form-control
+
+  &:focus {
+    border: 1px solid $input-border-focus;
+    outline: none;
+    @include box-shadow(inset 0 0 0 1px $input-border-focus);
+  }
+
+  .input-has-error & {
+    border: 1px solid $brand-danger-attention;
+
+    &:focus {
+      border: 1px solid $brand-danger-attention;
+      @include box-shadow(inset 0 0 0 1px $brand-danger-attention);
+      outline: none;
+    }
+
+    &:focus {
+      @include box-shadow(inset 0 0 0 1px $brand-danger-attention);
+    }
+
+    .alert-danger{
+      margin-top: 10px;
+    }
+  }
+}
+
+//Error Message
+.alert-arrow {
+
+  &:before {
+    content:"";
+    border-width: 7px;
+    border-style: solid;
+    border-color: transparent transparent $brand-danger transparent;
+    display: block;
+    top: -12px;
+    left: 10px;
+    position: absolute;
+  }
+}
+
+.input-has-error {
+  .alert {
+    margin: 0 0 10px;
+  }
+
+  .alert-arrow {
+    margin: 10px 0 0;
+  }
 }
 
 // Reset height for `textarea`s
@@ -568,9 +551,9 @@ input[type="checkbox"] {
   @include form-control-validation($state-warning-text, $state-warning-text, $state-warning-bg);
 }
 
-.has-error {
-  @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
-}
+// .input-has-error {
+//   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
+// }
 
 // Reposition feedback icon if input has visible label above
 .has-feedback label {
@@ -981,6 +964,12 @@ span[data-acts-as-select].select-dark {
 /* 13d Pikto Checkbox */
 /**=====================================**/
 
+.pikto-radio-set {
+  > .pikto-label {
+    display: block;
+  }
+}
+
 .pikto-radio {
   width: 14px;
   height: 14px;
@@ -1226,10 +1215,6 @@ select {
   @include onoff-shadow-2;
 }
 
-/**=====================================**/
-/* 15 Custom Select */
-/**=====================================**/
-
 
 /**=====================================**/
 /* 16 Input with inline icon */
@@ -1237,7 +1222,6 @@ select {
 .input-inline-icon {
   position: relative;
   cursor: pointer;
-  display: inline-block;
 
   > i {
     position: absolute;
@@ -1268,43 +1252,57 @@ select {
 }
 
 .input-with-btn {
-  display: inline-block;
+  @include flexbox;
 
   &.right-btn {
     > .pikto-btn {
-      margin-left: -6px;
+      margin-left: -2px;
       @include border-radius-removal("left");
     }
   }
 
   &.left-btn {
     > .pikto-btn {
-      margin-right: -6px;
+      margin-right: -2px;
       @include border-radius-removal("right");
     }
   }
 
   .pikto-btn {
-    display: inline-block;
-    border-width: 2px;
     position: relative;
   }
+}
+
+.input-custom-size {
+  width: 200px;
 }
 
 /**=====================================**/
 /* 17 Slider */
 /**=====================================**/
+.pikto-slider-container {
+  padding: 10px 0px;
+}
+
 $slider-bg-color: transparent;
 
 $track-height: 3px;
-$track-color: green;
+$track-color: transparent;
 
 $focused-track-color: $track-color;
-$lower-track-color: $track-color;
-$upper-track-color: $track-color;
+$lower-track-color: $teal;
+$upper-track-color: $grey-darker;
 
-$thumb-size: 20px;
+$thumb-size: 12px;
+$thumb-color: #019B97;
+$thumb-border-width: 2px;
 
+@mixin slider-border-radius {
+  border-radius: 25px;
+}
+@mixin slider-track-border {
+  border: 0px solid red;
+}
 @mixin track-base {
   width: 100%;
   height: $track-height;
@@ -1312,24 +1310,15 @@ $thumb-size: 20px;
   animate: 0.2s;
 }
 @mixin thumb-base {
-  @include box-shadow;
   border: 0px solid #000000;
   height: $thumb-size;
   width: $thumb-size;
   border-radius: 50%;
-  background: red;
+  background: $thumb-color;
+  border: $thumb-border-width solid #C2C2C2;
   cursor: pointer;
+  @include box-shadow(1px 0px 1px 0px rgba(black, 0.5));
 }
-@mixin slider-shadow {
-  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-}
-@mixin slider-border-radius {
-  border-radius: 25px;
-}
-@mixin border {
-  border: 0px solid red;
-}
-
 input[type=range] {
   -webkit-appearance: none;
   margin: 0px;
@@ -1337,27 +1326,29 @@ input[type=range] {
   width: 100%;
   border: 0px;
   background-color: $slider-bg-color;
+  /*Not sure how to calculate this to cater all browsers*/
+  /*At lower values, the track shrunk in IE as well*/
+  height: $track-height;
 
   &::-webkit-slider-runnable-track {
     @include track-base;
-    @include slider-shadow;
     @include slider-border-radius;
-    @include border;
+    @include slider-track-border;
     background: $track-color;
   }
 
   &::-webkit-slider-thumb {
     @include thumb-base;
     -webkit-appearance: none;
-    margin-top: -$thumb-size / 2 ;
+    margin-top: -($thumb-size / 2) + $track-height ;
+    margin-top: -4px;
   }
 
   &::-moz-range-track {
     @include track-base;
-    @include slider-shadow;
     @include slider-border-radius;
+    @include slider-track-border;
     background: $track-color;
-    @include border;
   }
 
   &::-moz-range-thumb {
@@ -1369,26 +1360,19 @@ input[type=range] {
     background: transparent;
     background-color: transparent;
     border-color: transparent;
-    border-width: 39px 0;
     color: transparent;
-    /*
-    IE produces a weird top and bottom spacing, hackish way reduce that space
-    */
+    /*    IE produces a weird top and bottom spacing, hackish way reduce that space    */
     margin: -30px 0px;
   }
 
   &::-ms-fill-lower{
+    @include slider-track-border;
     background: $lower-track-color;
-    @include border;
-    border-radius: 50px;
-    @include slider-shadow;
   }
 
   &::-ms-fill-upper {
+    @include slider-track-border;
     background: $upper-track-color;
-    @include border;
-    border-radius: 50px;
-    @include slider-shadow;
   }
 
   &::-ms-thumb {
