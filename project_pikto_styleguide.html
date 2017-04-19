@@ -53,8 +53,8 @@
             <li><button class="sg-btn" data-target="sg_data_reset">Reset</button></li>
 
             <li class="sg-dropdown">
-              <input id="styleguide_nav" type="radio" name="tabs">
-              <label for="styleguide_nav">Foundational Components</label>
+              <input id="styleguide_foundational" type="radio" name="tabs">
+              <label for="styleguide_foundational">Foundational Components</label>
               <ul class="sg-button-list sg-button-list--inner">
                 <li><button class="sg-btn" data-target="sg_data_website_colour">Website Colour Palette</button></li>
                 <li><button class="sg-btn" data-target="sg_data_ui_colour">UI Colour Palette</button></li>
@@ -2493,29 +2493,29 @@
 
         <section id="sg_data_tooltip" class="sg-tooltips">
           <h1 class="sg-h1">Tooltip</h1>
-          <div class="tooltip tooltip-top" role="tooltip">
-            <div class="tooltip-inner">
-              <div class="tooltip-arrow"></div>
-              Tooltip on the top
-            </div>
+          
+          <p>Tooltips can be added with the following code:</p>
+
+
+          <div class="sg-content-box" data-content="tooltip-1" style="display: none;">
+            data-placement="bottom" data-toggle="tooltip" data-original-title="Copy"
           </div>
-          <div class="tooltip tooltip-right" role="tooltip">
-            <div class="tooltip-inner">
-              <div class="tooltip-arrow"></div>
-              Tooltip on the right
-            </div>
+          
+          <div class="sg-code-box" id="tooltip-1">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
           </div>
-          <div class="tooltip tooltip-bottom" role="tooltip">
-            <div class="tooltip-inner">
-              <div class="tooltip-arrow"></div>
-              Tooltip on the bottom
-            </div>
+
+
+          <div class="sg-content-box" data-content="tooltip-2">
+            <button type="button" class="pikto-btn pikto-btn-teal pikto-btn-inline-icon" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
+              <i class="glyphicon glyphicon-plus"></i> 
+            </button>
           </div>
-          <div class="tooltip tooltip-left" role="tooltip">
-            <div class="tooltip-inner">
-              <div class="tooltip-arrow"></div>
-              Tooltip on the left
-            </div>
+          
+          <div class="sg-code-box" id="tooltip-2">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
         </section>

@@ -392,7 +392,7 @@ pre code {
   background-color: #E0E0E0;
   float: left;
   margin: 0px 20px 20px 0px;
-  width: 242px;
+  width: 265px;
 }
 
 /*Typo*/
@@ -644,5 +644,9 @@ pre code {
 
 /*Inputs*/
 .sg-input-container > div, .sg-input-container > input {
+  margin-bottom: 10px;
+}
+
+.sg-select-container select {
   margin-bottom: 10px;
 }
