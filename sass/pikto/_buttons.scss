@@ -31,7 +31,7 @@
 
   @include border-radius;
   @include user-select(none);
-  @include transition-property(all);
+  @include pikto-transition(all);
 
   &,
   &:active {
@@ -169,10 +169,38 @@ input.pikto-btn {
 /**=====================================**/
 /* Inline Icon Btn */
 /**=====================================**/
-.pikto-btn-inline-icon {
+.pikto-btn-icon {
   padding: 0px;
+
+  > i {
+    top: 0px;
+  }
 }
 
+.pikto-btn-inline-icon {
+  padding: 0;
+  border-width: 0;
+
+  > i {
+    top: 0;
+    margin: 1px;
+    @include border-radius();
+  }
+  
+  > span {
+    line-height: 32px;
+    display: inline-block;
+    width: 100px;
+  }
+}
+
+.pikto-btn-inline-icon--bordered {
+  > i {
+    margin: 0px;
+    border-right: 1px solid darken($teal, 5%);
+    @include border-radius("left");
+  }
+}
 /**=====================================**/
 /* 03 Button Sizes */
 /**=====================================**/

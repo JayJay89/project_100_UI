@@ -650,3 +650,14 @@ pre code {
 .sg-select-container select {
   margin-bottom: 10px;
 }
+
+/*Grid*/
+.sg-grid-layout .row {
+  margin-bottom: 10px;
+}
+
+.sg-grid-layout [class*="col-"] {
+  padding: 10px;
+  background-color: beige;
+  border: 1px solid green;
+}

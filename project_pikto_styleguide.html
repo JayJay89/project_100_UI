@@ -1337,9 +1337,30 @@
         </section>
         
         <!-- Layout -->
-        <section id="sg_data_layout">
+        <section id="sg_data_layout" class="sg-grid-layout">
           <h1 class="sg-h1">Layout</h1>
-          <p>Pikto-container, max-width, min-width</p>
+          <p>The basic bootstrap capabilities are still retain here. </p>
+          <p>col-xs, col-sm, col-md, col-lg, col-xl</p>
+            <div class="row">
+              <div class="col-xs-6">col-xs-6</div>
+              <div class="col-xs-6">col-xs-6</div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-4">col-xs-4</div>
+              <div class="col-xs-8">col-xs-8</div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-2">col-xs-2</div>
+              <div class="col-xs-10">col-xs-10</div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-4">col-xs-4</div>
+              <div class="col-xs-4">col-xs-4</div>
+              <div class="col-xs-4">col-xs-4</div>
+            </div>
         </section>
         
         <!-- UI Components -->
@@ -1580,13 +1601,32 @@
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
 
-          <h2 class="sg-h2">Full Width Variation</h2>
+          <h2 class="sg-h2">Button with icon only</h2>
           <div class="sg-content-box" data-content="btn-4b">
-            <button class="pikto-btn pikto-btn-teal pikto-btn-inline-icon">
+            <button class="pikto-btn pikto-btn-teal pikto-btn-icon">
               <i class="glyphicon glyphicon-plus"></i>
             </button>
           </div>
           <div class="sg-code-box" id="btn-4b">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
+          <h2 class="sg-h2">Button with inline icon</h2>
+          <div class="sg-content-box" data-content="btn-4c">
+
+            <button class="pikto-btn pikto-btn-teal pikto-btn-inline-icon">
+              <i class="glyphicon glyphicon-plus" style="background-color: beige;"></i>
+              <span>login</span>
+            </button>
+
+            <button class="pikto-btn pikto-btn-teal pikto-btn-inline-icon pikto-btn-inline-icon--bordered">
+              <i class="glyphicon glyphicon-plus"></i>
+              <span>login</span>
+            </button>
+          </div>
+
+          <div class="sg-code-box" id="btn-4c">
             <div class="sg-code-box-sidebar"></div>
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>

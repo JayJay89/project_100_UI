@@ -314,4 +314,6 @@ $icon-font-svg-id:        "glyphicons_halflingsregular" !default;
 .glyphicon-menu-down              { &:before { content: "\e259"; } }
 .glyphicon-menu-up                { &:before { content: "\e260"; } }
 
-.glyphicon-plus {padding: 9px 12px;}
+.glyphicon-plus {
+  padding: 9px 12px;
+}

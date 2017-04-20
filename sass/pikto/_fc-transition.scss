@@ -6,7 +6,7 @@
 }
 
 /*Standard Transition*/
-@mixin transition-property ($transition-prop) {
+@mixin pikto-transition ($transition-prop) {
   -webkit-transition: $transition-prop 0.3s ease;
   -o-transition: $transition-prop 0.3s ease;
   transition: $transition-prop 0.3s ease;

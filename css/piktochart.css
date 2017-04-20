@@ -5958,8 +5958,9 @@ input[type=range]:focus::-ms-fill-upper {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  -webkit-transition-property: all;
-  transition-property: all;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .pikto-btn:focus, .pikto-btn:active:focus {
@@ -6278,8 +6279,35 @@ input.pikto-btn:focus, input.pikto-btn.focus {
 /**=====================================**/
 /* Inline Icon Btn */
 /**=====================================**/
-.pikto-btn-inline-icon {
+.pikto-btn-icon {
   padding: 0px;
+}
+
+.pikto-btn-icon > i {
+  top: 0px;
+}
+
+.pikto-btn-inline-icon {
+  padding: 0;
+  border-width: 0;
+}
+
+.pikto-btn-inline-icon > i {
+  top: 0;
+  margin: 1px;
+  border-radius: 2px;
+}
+
+.pikto-btn-inline-icon > span {
+  line-height: 32px;
+  display: inline-block;
+  width: 100px;
+}
+
+.pikto-btn-inline-icon--bordered > i {
+  margin: 0px;
+  border-right: 1px solid #18998e;
+  border-radius: 2px 0px 0px 2px;
 }
 
 /**=====================================**/
