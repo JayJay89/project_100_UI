@@ -181,7 +181,7 @@ input.pikto-btn {
   padding: 0;
   border-width: 0;
 
-  > i {
+  > i, > img {
     top: 0;
     margin: 1px;
     @include border-radius();
@@ -195,7 +195,7 @@ input.pikto-btn {
 }
 
 .pikto-btn-inline-icon--bordered {
-  > i {
+  > i, > img {
     margin: 0px;
     border-right: 1px solid darken($teal, 5%);
     @include border-radius("left");
@@ -236,3 +236,18 @@ $wide-pd-hor: 20px;
   @include button-size(2px, 5px, 10px);
 }
 
+.gplus-login {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: $white;
+  background-color: $gplus-color;
+  @include border-radius;
+  display: inline-block;
+  padding-right: 15px;
+
+  i {
+    background-color: $gplus-whiteiconbg-color;
+    @include border-radius;
+    margin: 1px 12px 1px 1px;
+  }
+}

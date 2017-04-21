@@ -25,13 +25,9 @@ $alert-padding:             15px !default;
   }
 }
 
-.alert-dashboard {
-  position: absolute;
-  @include horizontal-center;
-  text-align: center;
-  width: 60%;
-  max-width: 700px;
-}
+/**=====================================**/
+/* 02 Size Variation */
+/**=====================================**/
 
 .alert-nonfullwidth {
   text-align: center;
@@ -43,8 +39,13 @@ $alert-padding:             15px !default;
   }
 }
 
+.alert-sm {
+  padding: 5px 10px;
+  font-size: $font-size-small;
+}
+
 /**=====================================**/
-/* 02 Dismissible Alerts */
+/* 03 Dismissible Alerts */
 /**=====================================**/
 // Expand the right padding and account for the close button's positioning.
 
@@ -67,14 +68,6 @@ $alert-padding:             15px !default;
 }
 
 /**=====================================**/
-/* 03 Alerts Size */
-/**=====================================**/
-.alert-sm {
-  padding: 5px 10px;
-  font-size: $font-size-small;
-}
-
-/**=====================================**/
 /* 04 Alternate Styles */
 /**=====================================**/
 // Generate contextual modifier classes for colorizing the alert.
@@ -87,7 +80,7 @@ $alert-padding:             15px !default;
   }
 
   a {
-    @include generateLink($magenta-combo);
+    @include generate-link($magenta-combo);
   }
 }
 
@@ -95,18 +88,34 @@ $alert-padding:             15px !default;
   @include alert-variant($brand-success, $text-color-dark);
 }
 
-.alert-info, .alert-notice {
+.alert-info {
   @include alert-variant($brand-info, $text-color-dark);
 }
 
-.alert-warning, .alert-alert {
+.alert-warning {
   @include alert-variant($brand-warning, $text-color-dark);
 }
 
-.alert-attention, .alert-error {
+.alert-attention {
   @include alert-variant($brand-attention, $text-color-dark);
 }
 
 .alert-danger {
   @include alert-variant($brand-danger, $text-color-light);
+}
+
+/**=====================================**/
+/* 05 Alert with Notification with Arrow*/
+/**=====================================**/
+.alert-arrow {
+  &:before {
+    content:"";
+    border-width: 7px;
+    border-style: solid;
+    border-color: transparent transparent $brand-danger transparent;
+    display: block;
+    top: -12px;
+    left: 10px;
+    position: absolute;
+  }
 }

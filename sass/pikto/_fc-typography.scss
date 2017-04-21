@@ -108,7 +108,7 @@ strong {
   display: inline-block;
 }
 
-@mixin generateLink($combo){
+@mixin generate-link($combo) {
   color: map-get($combo, 'col-1');
 
   &:hover {
@@ -121,16 +121,23 @@ strong {
 }
 
 .general-link {
-  @include generateLink($teal-combo);
+  @include generate-link($teal-combo);
 }
+
 .attention-link {
-  @include generateLink($magenta-combo);
+  @include generate-link($magenta-combo);
 }
-.title-link{
-  @include generateLink($grey-2-combo);
+
+.title-link {
+  @include generate-link($grey-2-combo);
 }
-.meta-link{
-  @include generateLink($purplegrey-2-combo);
+
+.meta-link {
+  @include generate-link($purplegrey-2-combo);
+}
+
+.pikto-link {
+  @include generate-link($pikto-link-combo);
 }
 
 /*Lists - By default, ul's and ol's properties are overwritten, this */

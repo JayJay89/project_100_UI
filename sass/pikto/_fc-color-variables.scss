@@ -1,16 +1,13 @@
-
-
-
 /*Variables*/
 $black:                 #000;
 $white:                 #fff;
 
-//Teal
+//Teal - Primary Colors
 $teal:                  #1cafa2 !default; //base
 $teal-dark:             #158379 !default; //darken($teal, 10%) !default;
 $teal-darker:           #127169 !default; //darken($teal, 14%) !default;
 
-//Magenta
+//Magenta - Secondary Colors
 $magenta:               #f16078 !default;
 $magenta-dark:          #cb3f56 !default;
 $magenta-darker:        #a12e41 !default;
@@ -115,11 +112,11 @@ $red-darker:            #8F2218 !default;
 
 $brand-primary:         $teal !default;
 $brand-secondary:       $magenta !default;
-$brand-success: $light-green;
-$brand-info: $light-blue;
-$brand-warning: $light-yellow;
-$brand-attention: $light-red;
-$brand-danger: $light-red-2;
+$brand-success:         $light-green;
+$brand-info:            $light-blue;
+$brand-warning:         $light-yellow;
+$brand-attention:       $light-red;
+$brand-danger:          $light-red-2;
 
-$text-color-dark: $dark-purple-grey-03;
-$text-color-light: $white;
+$text-color-dark:       $dark-purple-grey-03;
+$text-color-light:      $white;

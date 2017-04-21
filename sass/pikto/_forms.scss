@@ -203,19 +203,7 @@ output {
 }
 
 //Error Message
-.alert-arrow {
 
-  &:before {
-    content:"";
-    border-width: 7px;
-    border-style: solid;
-    border-color: transparent transparent $brand-danger transparent;
-    display: block;
-    top: -12px;
-    left: 10px;
-    position: absolute;
-  }
-}
 
 .input-has-error {
   .alert {

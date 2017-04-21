@@ -78,6 +78,7 @@
                 <li><button class="sg-btn" data-target="sg_data_breadcrumbs">Breadcrumbs</button></li>
                 <li><button class="sg-btn" data-target="sg_data_button">Buttons</button></li>
                 <li><button class="sg-btn" data-target="sg_data_cards">Cards</button></li>
+                <li><button class="sg-btn" data-target="sg_data_dropdowns">Dropdowns</button></li>
                 <li><button class="sg-btn" data-target="sg_data_file">File Selector</button></li>
                 <li><button class="sg-btn" data-target="sg_data_icon">Icons & Illustrations</button></li>
                 <li><button class="sg-btn" data-target="sg_data_label">Label/Badges</button></li>
@@ -688,6 +689,19 @@
             </section>
 
             <section>
+              <p>pikto-link-combo</p>
+              <div class="color-combo-box pikto-link-combo">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <p>'col-1': $grey-darker (#c2c2c2)</p>
+                <p>'col-2': $white (#ffffff)</p>
+                <p>'col-3': $teal (#1cafa2)</p>
+              </div>
+            </section>
+
+            <section>
               <p>red-combo</p>
               <div class="color-combo-box red-combo">
                 <span></span>
@@ -780,7 +794,7 @@
 
           <p>This is the Link Generator, the factory</p>
           <div class="sg-content-box" data-content="color-combo-2" style="display: none;">
-            @mixin generateLink($combo){
+            @mixin generate-link($combo){
               color: map-get($combo, 'col-1');
 
               &:hover {
@@ -801,10 +815,10 @@
           <p>Passing the color combo into the constructor to generate the colors</p>
           <div class="sg-content-box" data-content="color-combo-3" style="display: none;">
             .general-link {
-              @include generateLink($teal-combo);
+              @include generate-link($teal-combo);
             }
             .attention-link {
-              @include generateLink($magenta-combo);
+              @include generate-link($magenta-combo);
             }
           </div>
 
@@ -839,7 +853,6 @@
               }
             }
           </div>
-
 
           <div class="sg-code-box" id="color-combo-4" >
             <div class="sg-code-box-sidebar"></div>
@@ -1326,6 +1339,7 @@
               <li><a class="attention-link" href="#/">Attention link</a></li>
               <li><a class="title-link" href="#/">Title link</a></li>
               <li><a class="meta-link" href="#/">Meta link</a></li>
+              <li><a class="pikto-link" href="#/">Pikto link</a></li>
             </ul>
           </section>
 
@@ -1495,7 +1509,9 @@
           <h2 class="sg-h2">Expanded Variation</h2>
           <div class="sg-content-box" data-content="alert-6">
             <div class="alert alert-success">
-              Success! <hr> more Success!
+              <span class="alert-title">Success! This is the title! </span>
+              <hr> 
+              more Success!
             </div>
           </div>
           <div class="sg-code-box" id="alert-6">
@@ -1604,7 +1620,7 @@
           <h2 class="sg-h2">Button with icon only</h2>
           <div class="sg-content-box" data-content="btn-4b">
             <button class="pikto-btn pikto-btn-teal pikto-btn-icon">
-              <i class="glyphicon glyphicon-plus"></i>
+              <img class="sg-icon" src="images/icon_black.svg" alt="icon">
             </button>
           </div>
           <div class="sg-code-box" id="btn-4b">
@@ -1616,12 +1632,12 @@
           <div class="sg-content-box" data-content="btn-4c">
 
             <button class="pikto-btn pikto-btn-teal pikto-btn-inline-icon">
-              <i class="glyphicon glyphicon-plus" style="background-color: beige;"></i>
+              <img class="sg-icon" src="images/icon_black.svg" alt="icon" style="background-color: white;">
               <span>login</span>
             </button>
 
             <button class="pikto-btn pikto-btn-teal pikto-btn-inline-icon pikto-btn-inline-icon--bordered">
-              <i class="glyphicon glyphicon-plus"></i>
+              <img class="sg-icon" src="images/icon_black.svg" alt="icon">
               <span>login</span>
             </button>
           </div>
@@ -1686,21 +1702,33 @@
 
           <h2 class="sg-h2">Button Groups</h2>
           <div class="sg-content-box sg-normal-btn" data-content="btn-9">
-            <div class="btn-group btn-group-inline-icon" role="group" aria-label="...">
-              <button type="button" class="pikto-btn pikto-btn-option">
-                <i class="glyphicon glyphicon-plus"></i>
+            <div class="btn-group " role="group" aria-label="...">
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
               </button>
-              <button type="button" class="pikto-btn pikto-btn-option">
-                <i class="glyphicon glyphicon-plus"></i>
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
               </button>
-              <button type="button" class="pikto-btn pikto-btn-option">
-                <i class="glyphicon glyphicon-plus"></i>
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
               </button>
-              <button type="button" class="pikto-btn pikto-btn-option active">
-                <i class="glyphicon glyphicon-plus"></i>
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon active">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
               </button>
-              <button type="button" class="pikto-btn pikto-btn-option">
-                <i class="glyphicon glyphicon-plus"></i>
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+              </button>
+            </div>
+
+            <div class="btn-group " role="group" aria-label="...">
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+              </button>
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+              </button>
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
               </button>
             </div>
           </div>
@@ -1709,11 +1737,56 @@
             <div class="sg-code-box-sidebar"></div>
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
+
+          <h2 class="sg-h2">Hover Overs</h2>
+          <div class="sg-content-box hover-over" data-content="btn-10">
+            <div class="hover-over-btn">
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+              </button>
+
+              <div class="btn-group  hover-over-panel" role="group" aria-label="...">
+                <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
+                  <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                </button>
+                <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                  <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                </button>
+                <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                  <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                </button>
+                <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                  <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="btn-10">
+            <div class="sg-code-box-sidebar"></div>
+            <pre><code class="html sg-code-syntax"></code></pre>
+          </div>
+
         </section>
 
         <section id="sg_data_cards">
           <h1 class="sg-h1">Cards</h1>
           <p>Cards are the one show when you hovered upon a dashboard template</p>
+        </section>
+
+        <section id="sg_data_dropdowns">
+          <h1 class="sg-h1">Dropdowns</h1>
+
+          <div class="dropdown">
+            <span class="general-link">Dropdown</span>
+
+            <div class="dropdown-menu">
+              <li><a href="#/" class="general-link">Infographics</a></li>
+              <li><a href="#/" class="general-link">Presentation</a></li>
+              <li><a href="#/" class="general-link">Reports</a></li>
+            </div>
+          </div>
+
         </section>
 
         <section id="sg_data_file" class="sg-file-selector">
@@ -2549,7 +2622,7 @@
 
           <div class="sg-content-box" data-content="tooltip-2">
             <button type="button" class="pikto-btn pikto-btn-teal pikto-btn-inline-icon" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
-              <i class="glyphicon glyphicon-plus"></i> 
+              <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
             </button>
           </div>
           
@@ -2566,55 +2639,23 @@
           <p>Currently the toolbar on the editor was written using another class call pblist. Suggest to change to those into btn-groups</p>
 
           <div class="sg-content-box" data-content="toolbar-1">
-            <div class="btn-group btn-group-inline-icon" role="group" aria-label="...">
-              <button type="button" class="pikto-btn pikto-btn-option active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
-                <i class="glyphicon glyphicon-plus"></i> 
+            <div class="btn-group " role="group" aria-label="...">
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
               </button>
-              <button type="button" class="pikto-btn pikto-btn-option">
-                <i class="glyphicon glyphicon-plus"></i> 
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
               </button>
-              <button type="button" class="pikto-btn pikto-btn-option">
-                <i class="glyphicon glyphicon-plus"></i> 
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
               </button>
-              <button type="button" class="pikto-btn pikto-btn-option">
-                <i class="glyphicon glyphicon-plus"></i> 
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
               </button>
             </div>
           </div>
           
           <div class="sg-code-box" id="toolbar-1">
-            <div class="sg-code-box-sidebar"></div>
-            <pre><code class="html sg-code-syntax"></code></pre>
-          </div>
-
-          <h2 class="sg-h2">Hover Overs</h2>
-
-          <div class="sg-content-box hover-over" data-content="toolbar-2">
-
-            <div class="hover-over-btn">
-              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-inline-icon">
-                <i class="glyphicon glyphicon-plus"></i> 
-              </button>
-
-              <div class="btn-group btn-group-inline-icon hover-over-panel" role="group" aria-label="...">
-                <button type="button" class="pikto-btn pikto-btn-option active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
-                  <i class="glyphicon glyphicon-plus"></i> 
-                </button>
-                <button type="button" class="pikto-btn pikto-btn-option">
-                  <i class="glyphicon glyphicon-plus"></i> 
-                </button>
-                <button type="button" class="pikto-btn pikto-btn-option">
-                  <i class="glyphicon glyphicon-plus"></i> 
-                </button>
-                <button type="button" class="pikto-btn pikto-btn-option">
-                  <i class="glyphicon glyphicon-plus"></i> 
-                </button>
-              </div>
-            </div>
-
-          </div>
-          
-          <div class="sg-code-box" id="toolbar-2">
             <div class="sg-code-box-sidebar"></div>
             <pre><code class="html sg-code-syntax"></code></pre>
           </div>
@@ -2653,7 +2694,7 @@
           <h2 class="sg-h2">Input with Icons</h2>
           <div class="sg-content-box " data-content="input-2">
             <div class="input-inline-icon left-icon">
-              <i class="glyphicon glyphicon-plus"></i>
+              <img class="sg-icon" src="images/icon_black.svg" alt="icon">
               <input class="form-control" name="search" type="text" placeholder="Search for countries">
             </div>
           </div>
@@ -2665,7 +2706,7 @@
 
           <div class="sg-content-box " data-content="input-3">
             <div class="input-inline-icon right-icon">
-              <i class="glyphicon glyphicon-plus"></i>
+              <img class="sg-icon" src="images/icon_black.svg" alt="icon">
               <input class="form-control" name="search" type="text" placeholder="Search for countries">
             </div>
           </div>
@@ -2754,12 +2795,12 @@
 
             <div class="input-custom-size input-inline-icon left-icon">
               <input class="form-control" name="search" type="text" placeholder="Search for countries">
-              <i class="glyphicon glyphicon-plus"></i>
+              <img class="sg-icon" src="images/icon_black.svg" alt="icon">
             </div>
 
             <div class="input-custom-size input-inline-icon right-icon">
               <input class="form-control" name="search" type="text" placeholder="Search for countries">
-              <i class="glyphicon glyphicon-plus"></i>
+              <img class="sg-icon" src="images/icon_black.svg" alt="icon">
             </div>
 
             <div class="input-custom-size input-with-btn right-btn">
