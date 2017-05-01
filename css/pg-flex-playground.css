@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: '';
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+.eq-height {
+  overflow: hidden;
+}
+
+.eq-height .eq-height-col {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+
+.back-button {
+  background-color: #f0f0f0;
+  padding: 5px;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+}
+
+.testbox {
+  background-color: red;
+  height: 200px;
+  width: 200px;
+  display: block;
+  content: 'test';
+  z-index: 1;
+}
+
+section {
+  background-color: beige;
+  border: 1px solid red;
+  padding: 20px;
+}
+
+section > h1 {
+  font-size: 20px;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.flex-children {
+  background-color: green;
+  color: white;
+}
+
+.flex-children:nth-child(1n) {
+  background-color: green;
+}
+
+.flex-children:nth-child(2n) {
+  background-color: grey;
+}
+
+.flex-children:nth-child(3n) {
+  background-color: purple;
+}
+
+.flex-children:nth-child(4n) {
+  background-color: blue;
+}
+
+.flex-children:last-child {
+  margin-right: 0;
+}
+
+.fl-playground .flexbox {
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* flex-flow: row wrap*/
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.fl-playground .flex-children {
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.fl-middle-text .flexbox {
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  height: 400px;
+}
+
+.fl-middle-text .flex-children {
+  width: 95%;
+  padding: 20px;
+}
+
+.fl-navtabs .flex-children {
+  padding: 10px 40px;
+}
+
+.fl-equalcolumn .flex-children {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 300px;
+}
+
+.fl-equalcolumn .flex-children:nth-child(1) {
+  flex: 1;
+}
+
+.fl-equalcolumn .flex-children:nth-child(2) {
+  flex: 1.5;
+}
+
+.fl-equalcolumn .flex-children:nth-child(3) {
+  flex: 1;
+}
+
+.fl-three-object-in-mid .flexbox {
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 400px;
+  background-color: red;
+}
+
+.fl-three-object-in-mid .flex-children {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+}
+
+.fl-three-column-in-mid .flexbox {
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-color: red;
+}
+
+.fl-three-column-in-mid .flex-children {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  width: 250px;
+}
+
+.fl-three-column-in-mid .flex-children > p {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  text-align: center;
+}
+
+.fl-equalrow .flexbox {
+  flex-direction: column;
+}
+
+.fl-equalrow .flex-children {
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+}

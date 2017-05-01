@@ -1,0 +1,164 @@
+@import 'all';
+
+section {
+  background-color: beige;
+  border: 1px solid red;
+  padding: 20px;
+
+  > h1 {
+    font-size: 20px; 
+  }
+}
+
+
+.flexbox {
+  display: flex;
+}
+
+.flex-children {
+  background-color: green;
+  color: white;
+
+  &:nth-child(1n){
+    background-color: green;
+  }
+  &:nth-child(2n){
+    background-color: grey;
+  }
+  &:nth-child(3n){
+    background-color: purple;
+  }
+  &:nth-child(4n){
+    background-color: blue;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.fl-playground {
+  .flexbox {
+    //row | row-reverse | column | column-reverse
+    flex-direction: row;
+
+    // nowrap | wrap | wrap-reverse;
+    flex-wrap: wrap;
+
+    // <‘flex-direction’> || <‘flex-wrap’>
+    /* flex-flow: row wrap*/
+
+    // flex-start | flex-end | center | space-between | space-around;
+    justify-content: flex-start;
+
+    // flex-start | flex-end | center | baseline | stretch
+    align-items: flex-start;
+
+    // flex-start | flex-end | center | space-between | space-around | stretch;
+    align-content: flex-start;
+  }
+
+  .flex-children {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.fl-middle-text {
+
+  .flexbox {
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    height: 400px;
+  }
+
+  .flex-children {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+.fl-navtabs {
+  .flex-children {
+    padding: 10px 40px;
+  }
+}
+
+.fl-equalcolumn {
+  .flex-children {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    min-height: 300px;
+
+    &:nth-child(1){
+      flex: 1;
+    }
+    &:nth-child(2){
+      flex: 1.5;
+    }
+    &:nth-child(3){
+      flex: 1;
+    }
+  }
+}
+
+.fl-three-object-in-mid {
+
+  .flexbox {
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 400px;
+    background-color: red
+  }
+
+  .flex-children {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+  }
+}
+
+.fl-three-column-in-mid {
+  .flexbox {
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-color: red
+  }
+
+  .flex-children {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    margin: 10px;
+    width: 250px;
+
+    > p {
+      background-color: white;
+      color: black;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+}
+
+.fl-equalrow {
+  .flexbox {
+    flex-direction: column;
+  }
+
+  .flex-children {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+  }
+}
