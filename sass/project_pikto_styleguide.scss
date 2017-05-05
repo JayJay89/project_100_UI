@@ -401,7 +401,7 @@ pre code {
 
 $sg-code-line-height: 20px;
 .sg-code-box {
-  margin: 35px 0px 20px;
+  margin: 50px 0px 20px;
   position: relative;
 
   pre {
@@ -415,6 +415,11 @@ $sg-code-line-height: 20px;
       float: left;
       line-height: $sg-code-line-height;
     }
+  }
+
+  > span {
+    position: absolute;
+    top: -20px;
   }
 }
 

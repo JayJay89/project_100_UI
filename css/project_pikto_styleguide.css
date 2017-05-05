@@ -333,7 +333,7 @@ pre code {
 }
 
 .sg-code-box {
-  margin: 35px 0px 20px;
+  margin: 50px 0px 20px;
   position: relative;
 }
 
@@ -348,6 +348,11 @@ pre code {
 .sg-code-box pre code {
   float: left;
   line-height: 20px;
+}
+
+.sg-code-box > span {
+  position: absolute;
+  top: -20px;
 }
 
 .sg-code-content {

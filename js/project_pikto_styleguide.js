@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var sg_button_list_btn = document.querySelectorAll('.sg-button-list > li > button');
   var sg_code_box = document.querySelectorAll('.sg-code-box');
   var sg_content_box = document.querySelectorAll('.sg-content-box');
+  var sg_code_content = document.querySelectorAll('.sg-code-content');
   var sg_popover_teal = document.querySelector('.sg-popover > .popover-teal-grey');
   var sg_popover_purple = document.querySelector('.sg-popover > .popover-dark-purple');
   var popover_arrow_control = document.querySelectorAll('.sg-popover-arrow-control > button');
@@ -101,6 +102,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
   /*Hide Show Function on The codebox*/
+
+  [...sg_code_content].forEach(function(elem){
+    elem.classList.add('sg-code-hidden');
+  });
+
   [...sg_code_box].forEach(function(elem){
     elem.addEventListener('click', function(e){
       
@@ -114,7 +120,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         current_codebox.classList.add('sg-code-hidden');
       }
     });
-
   });
 
   $('.sg-button-list--outer').find('li').on('click', function(){
