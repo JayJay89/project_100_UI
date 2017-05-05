@@ -103,7 +103,11 @@ strong {
 .text-capitalize     { text-transform: capitalize; }
 
 /*Hyperlinks*/
-.general-link, .attention-link, .title-link, .meta-link{
+.general-link, 
+.attention-link, 
+.title-link, 
+.meta-link, 
+.pikto-link {
   cursor: pointer;
   display: inline-block;
 }

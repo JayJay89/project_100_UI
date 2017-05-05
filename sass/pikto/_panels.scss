@@ -363,18 +363,13 @@ panel-group are used in
   }
 
   .panel-title a {
-    color: $grey-dark;
     display: table-cell;
     vertical-align: middle;
     height: 48px;
 
-    &:hover {
-      color: $white;
-    }
-
-    &:not(.collapsed) {
-      color: $white;
-    }
+    // &:not(.collapsed) {
+    //   color: $white;
+    // }
   }
 
   .tab-panel {
