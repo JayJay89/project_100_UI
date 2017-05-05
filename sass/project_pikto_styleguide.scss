@@ -420,6 +420,7 @@ $sg-code-line-height: 20px;
   > span {
     position: absolute;
     top: -20px;
+    color: $gray3;
   }
 }
 
@@ -669,6 +670,17 @@ $sg-code-line-height: 20px;
   }
 }
 
+/*Close*/
+.sg-close-section {
+  > div {
+    display: inline-block;
+    padding: 10px;
+
+    &:nth-child(2){
+      background-color: #3f3c4e;
+    }
+  }
+}
 /*Popover*/
 .sg-popover {
   padding: 20px;
@@ -775,5 +787,15 @@ $sg-code-line-height: 20px;
     padding: 10px;
     background-color: beige;
     border: 1px solid green;
+  }
+}
+
+/*Dropdown*/
+.sg-dropdown-content {
+  position: relative;
+
+  > .dropdown {
+    left: 45%;
+    display: inline-block;
   }
 }

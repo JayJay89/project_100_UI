@@ -36,7 +36,6 @@
 
 // The dropdown menu (ul)
 .dropdown-menu {
-  @include absolute(top 100% left 2px);
   z-index: $zindex-navbar-dropdown;
   /*display: none;*/ // none by default, but block on "open" of the menu, is disabled as pikto use onhover to show the dropdown instead of onclick
   float: left;
@@ -44,7 +43,8 @@
   margin: 2px 0 0; // override default ul
   list-style: none;
   font-size: $font-size-base;
-    
+  top: 20px;
+  position: absolute;
   // Ensures proper alignment if parent has it changed (e.g., modal footer)
   text-align: left; 
   background-color: $dark-purple-grey-03;
@@ -55,13 +55,6 @@
   border-radius: $border-radius-base;
   background-clip: padding-box;
   padding: 20px;
-
-  // Aligns the dropdown menu to right
-  // Deprecated as of 3.1.0 in favor of `.dropdown-menu-[dir]`
-  &.pull-right {
-    right: 0;
-    left: auto;
-  }
   
   // Dividers (basically an hr) within the dropdown
   .divider {
@@ -79,6 +72,16 @@
       line-height: $line-height-base;
       white-space: nowrap;  // prevent links from randomly breaking onto new lines
     }
+  }
+
+  &.dropdown-menu-right {
+    top: -20px;
+    right: calc(-100% - 60px - 5px);
+  }
+
+  &.dropdown-menu-left {
+    top: -20px;
+    left: calc(-100% - 60px - 5px);
   }
 }
 
@@ -272,4 +275,3 @@
     left: auto;
   }
 }
-

@@ -60,7 +60,8 @@ $alert-padding:             15px !default;
     right: -21px;
     color: $light-purple-grey-03;
     opacity: 1;
-
+    float: right;
+    
     &:hover {
       opacity: $hover-opacity;
     }

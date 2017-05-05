@@ -202,7 +202,7 @@ input.pikto-btn {
   }
 }
 /**=====================================**/
-/* 03 Button Sizes */
+/* Button Sizes */
 /**=====================================**/
 
 $wide-pd-hor: 20px;
@@ -250,4 +250,117 @@ $wide-pd-hor: 20px;
     @include border-radius;
     margin: 1px 12px 1px 1px;
   }
+}
+
+/**=====================================**/
+/* Button Groups */
+/**=====================================**/
+.btn-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  button {
+    float: left;
+    position: relative;
+    @include border-radius-removal();
+    cursor: pointer;
+
+    &:first-of-type {
+      @include border-radius("left");
+    }
+    
+    &:last-of-type {
+      @include border-radius("right");
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      z-index: 2;
+    }
+
+    &.active {
+      top: 0;
+      box-shadow: none;
+    }
+
+    > i {
+      pointer-event: none;
+    }
+  }
+}
+
+// Prevent double borders when buttons are next to each other
+// The tooltip will mess this up
+.btn-group {
+  .pikto-btn ~ .pikto-btn,
+  .pikto-btn ~ .btn-group,
+  .btn-group ~ .pikto-btn,
+  .btn-group ~ .btn-group {
+    margin-left: -1px;
+  }
+
+  // Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
+  > .pikto-btn:first-child {
+    margin-left: 0;
+    &:not(:last-child):not(.dropdown-toggle) {
+      @include border-radius-removal("right");
+    }
+  }
+  
+  // Need .dropdown-toggle since :last-child doesn't apply given a .dropdown-menu immediately after it
+  > .pikto-btn:last-child:not(:first-child),
+  > .dropdown-toggle:not(:first-child) {
+    @include border-radius-removal("left");
+  }
+}
+
+/**=====================================**/
+/* Checkbox and Radio Options */
+/**=====================================**/
+// In order to support the browser's form validation feedback, powered by the
+// `required` attribute, we have to "hide" the inputs via `clip`. We cannot use
+// `display: none;` or `visibility: hidden;` as that also hides the popover.
+// Simply visually hiding the inputs via `opacity` would leave them clickable in
+// certain cases which is prevented by using `clip` and `pointer-events`.
+// This way, we ensure a DOM element is visible to position the popover from.
+//
+// See https://github.com/twbs/bootstrap/pull/12794 and
+// https://github.com/twbs/bootstrap/pull/14559 for more information.
+
+[data-toggle="buttons"] {
+  > .pikto-btn,
+  > .btn-group > .pikto-btn {
+    input[type="radio"],
+    input[type="checkbox"] {
+      position: absolute;
+      clip: rect(0,0,0,0);
+      pointer-events: none;
+    }
+  }
+}
+
+/**=====================================**/
+/* 07 Btn Hover Dropdowns */
+/**=====================================**/
+.pikto-btn-hover {
+  display: inline-block;
+  position: relative;
+  &:hover {
+    .pikto-btn-hover-panel {
+      display: block;
+      -webkit-animation: fade-in .1s linear 1, move-up .1s linear 1;
+      -moz-animation: fade-in .1s linear 1, move-up .1s linear 1;
+      -ms-animation: fade-in .1s linear 1, move-up .1s linear 1;
+    }
+  }
+}
+
+.pikto-btn-hover-panel {
+  position: absolute;
+  display: none;
+  left: 0px;
+  bottom: -40px;
+  padding-top: 5px;
 }

@@ -353,6 +353,7 @@ pre code {
 .sg-code-box > span {
   position: absolute;
   top: -20px;
+  color: #BCBCBC;
 }
 
 .sg-code-content {
@@ -615,6 +616,16 @@ pre code {
   width: 140px;
 }
 
+/*Close*/
+.sg-close-section > div {
+  display: inline-block;
+  padding: 10px;
+}
+
+.sg-close-section > div:nth-child(2) {
+  background-color: #3f3c4e;
+}
+
 /*Popover*/
 .sg-popover {
   padding: 20px;
@@ -702,4 +713,14 @@ pre code {
   padding: 10px;
   background-color: beige;
   border: 1px solid green;
+}
+
+/*Dropdown*/
+.sg-dropdown-content {
+  position: relative;
+}
+
+.sg-dropdown-content > .dropdown {
+  left: 45%;
+  display: inline-block;
 }

@@ -78,6 +78,7 @@
                 <li><button class="sg-btn" data-target="sg_data_breadcrumbs">Breadcrumbs</button></li>
                 <li><button class="sg-btn" data-target="sg_data_button">Buttons</button></li>
                 <li><button class="sg-btn" data-target="sg_data_cards">Cards</button></li>
+                <li><button class="sg-btn" data-target="sg_data_close">Close</button></li>
                 <li><button class="sg-btn" data-target="sg_data_dropdowns">Dropdowns</button></li>
                 <li><button class="sg-btn" data-target="sg_data_file">File Selector</button></li>
                 <li><button class="sg-btn" data-target="sg_data_icon">Icons & Illustrations</button></li>
@@ -144,7 +145,7 @@
           <li>Can we include certain variables and mixins in their related files? Font mixins and font variables in their font files.</li>
           <li>HTML/CSS Convention</li>
           <li>BEM System</li>
-          <li>Hide Code</li>
+          <li style="text-decoration: line-through;">Hide Code</li>
           <li>Clean Unused Code in Bootstrap</li>
           <li>Fill in the rest of the UI</li>
           <li>Add different directions for Popover</li>
@@ -1634,7 +1635,9 @@
           <div class="sg-content-box" data-content="alert-4">
             <div class="alert alert-success alert-dismissible">
               Success 
-              <button type="button" class="close" data-dismiss="modal">×</button>
+              <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
           </div>
           <div class="sg-code-box" id="alert-4">
@@ -1993,19 +1996,27 @@
             </div>
           </div>
 
+
           <div class="sg-code-box" id="btn-9">
-            <div class="sg-code-box-sidebar"></div>
-            <pre><code class="html sg-code-syntax"></code></pre>
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
           </div>
 
           <h2 class="sg-h2">Hover Overs</h2>
           <div class="sg-content-box hover-over" data-content="btn-10">
-            <div class="hover-over-btn">
+            <div class="pikto-btn-hover">
               <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
                 <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
               </button>
 
-              <div class="btn-group  hover-over-panel" role="group" aria-label="...">
+              <div class="btn-group pikto-btn-hover-panel" role="group" aria-label="...">
                 <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
                   <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
                 </button>
@@ -2041,19 +2052,131 @@
           <p>Cards are the one show when you hovered upon a dashboard template</p>
         </section>
 
-        <section id="sg_data_dropdowns">
-          <h1 class="sg-h1">Dropdowns</h1>
+        <section id="sg_data_close">
+          <h1 class="sg-h1">Close</h1>
+          
+          <h2 class="sg-h2">Normal Close Button</h2>
+          <div class="sg-content-box sg-close-section" data-content="close-1">
+            
+            <div>
+              <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
 
-          <div class="dropdown">
-            <span class="general-link">Dropdown</span>
-
-            <div class="dropdown-menu">
-              <li><a href="#/" class="general-link">Infographics</a></li>
-              <li><a href="#/" class="general-link">Presentation</a></li>
-              <li><a href="#/" class="general-link">Reports</a></li>
+            <div>
+              <button type="button" class="close bright-close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
           </div>
 
+          <div class="sg-code-box" id="close-1">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <h2 class="sg-h2">Dismissable Alert Close</h2>
+          <div class="sg-content-box" data-content="close-2">
+            <div class="alert alert-success alert-dismissible">
+              Success 
+              <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="close-2">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sg_data_dropdowns">
+          <h1 class="sg-h1">Dropdowns</h1>
+          <p>Hovering Dropdowns</p>
+
+          <h2 class="sg-h2">Normal Dropdown</h2>
+          <div class="sg-content-box sg-dropdown-content" data-content="dropdown-1">
+            <div class="dropdown">
+              <span class="general-link">Dropdown</span>
+
+              <div class="dropdown-menu">
+                <li><a href="#/" class="general-link">Infographics</a></li>
+                <li><a href="#/" class="general-link">Presentation</a></li>
+                <li><a href="#/" class="general-link">Reports</a></li>
+              </div>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="dropdown-1">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <h2 class="sg-h2">Dropdown with Submenus</h2>
+          <div class="sg-content-box sg-dropdown-content" data-content="dropdown-2">
+            <div class="dropdown">
+              <span class="general-link">Dropdown</span>
+
+              <div class="dropdown-menu">
+                <li><a href="#/" class="general-link">Infographics</a></li>
+
+                <li class="dropdown dropdown-submenu">
+                  <a href="#/" class="general-link">Right Submenus</a>
+
+                  <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="#/" class="general-link">Right 1</a></li>
+                    <li><a href="#/" class="general-link">Right 2</a></li>
+                    <li><a href="#/" class="general-link">Right 3</a></li>
+                  </ul>
+                </li>
+                
+                <li class="dropdown dropdown-submenu">
+                  <a href="#/" class="general-link">Left Submenus</a>
+
+                  <ul class="dropdown-menu dropdown-menu-left">
+                    <li><a href="#/" class="general-link">Left 1</a></li>
+                    <li><a href="#/" class="general-link">Left 2</a></li>
+                    <li><a href="#/" class="general-link">Left 3</a></li>
+                  </ul>
+                </li>
+              </div>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="dropdown-2">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
         </section>
 
         <section id="sg_data_file" class="sg-file-selector">

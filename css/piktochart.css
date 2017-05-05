@@ -6350,7 +6350,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
 }
 
 /**=====================================**/
-/* 03 Button Sizes */
+/* Button Sizes */
 /**=====================================**/
 .pikto-btn-xl {
   padding: 16px 28px;
@@ -6411,6 +6411,100 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   background-color: #fff;
   border-radius: 2px;
   margin: 1px 12px 1px 1px;
+}
+
+/**=====================================**/
+/* Button Groups */
+/**=====================================**/
+.btn-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-group button {
+  float: left;
+  position: relative;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.btn-group button:first-of-type {
+  border-radius: 2px 0px 0px 2px;
+}
+
+.btn-group button:last-of-type {
+  border-radius: 0px 2px 2px 0px;
+}
+
+.btn-group button:hover, .btn-group button:focus, .btn-group button:active {
+  z-index: 2;
+}
+
+.btn-group button.active {
+  top: 0;
+  box-shadow: none;
+}
+
+.btn-group button > i {
+  pointer-event: none;
+}
+
+.btn-group .pikto-btn ~ .pikto-btn,
+.btn-group .pikto-btn ~ .btn-group,
+.btn-group .btn-group ~ .pikto-btn,
+.btn-group .btn-group ~ .btn-group {
+  margin-left: -1px;
+}
+
+.btn-group > .pikto-btn:first-child {
+  margin-left: 0;
+}
+
+.btn-group > .pikto-btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group > .pikto-btn:last-child:not(:first-child),
+.btn-group > .dropdown-toggle:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/**=====================================**/
+/* Checkbox and Radio Options */
+/**=====================================**/
+[data-toggle="buttons"] > .pikto-btn input[type="radio"],
+[data-toggle="buttons"] > .pikto-btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .pikto-btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .pikto-btn input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+/**=====================================**/
+/* 07 Btn Hover Dropdowns */
+/**=====================================**/
+.pikto-btn-hover {
+  display: inline-block;
+  position: relative;
+}
+
+.pikto-btn-hover:hover .pikto-btn-hover-panel {
+  display: block;
+  -webkit-animation: fade-in .1s linear 1, move-up .1s linear 1;
+  -moz-animation: fade-in .1s linear 1, move-up .1s linear 1;
+  -ms-animation: fade-in .1s linear 1, move-up .1s linear 1;
+}
+
+.pikto-btn-hover-panel {
+  position: absolute;
+  display: none;
+  left: 0px;
+  bottom: -40px;
+  padding-top: 5px;
 }
 
 /**=====================================**/
@@ -6807,18 +6901,6 @@ tbody.collapse.in {
 /**=====================================**/
 /* 01 Base */
 /**=====================================**/
-.caret {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 2px;
-  vertical-align: middle;
-  border-top: 4px dashed;
-  border-top: 4px solid \9;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
-}
-
 .dropup,
 .dropdown {
   position: relative;
@@ -6829,9 +6911,6 @@ tbody.collapse.in {
 }
 
 .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 2px;
   z-index: 999;
   /*display: none;*/
   float: left;
@@ -6839,6 +6918,8 @@ tbody.collapse.in {
   margin: 2px 0 0;
   list-style: none;
   font-size: 14px;
+  top: 20px;
+  position: absolute;
   text-align: left;
   background-color: #2c2a37;
   border: 0px solid #ccc;
@@ -6846,11 +6927,6 @@ tbody.collapse.in {
   border-radius: 2px;
   background-clip: padding-box;
   padding: 20px;
-}
-
-.dropdown-menu.pull-right {
-  right: 0;
-  left: auto;
 }
 
 .dropdown-menu .divider {
@@ -6867,6 +6943,16 @@ tbody.collapse.in {
   font-weight: normal;
   line-height: 1.42857;
   white-space: nowrap;
+}
+
+.dropdown-menu.dropdown-menu-right {
+  top: -20px;
+  right: calc(-100% - 60px - 5px);
+}
+
+.dropdown-menu.dropdown-menu-left {
+  top: -20px;
+  left: calc(-100% - 60px - 5px);
 }
 
 .dropdown-submenu {
@@ -7130,102 +7216,6 @@ tbody.collapse.in {
   margin-top: 20px;
   width: 100%;
   text-align: center;
-}
-
-/**=====================================**/
-/* 01 Base */
-/**=====================================**/
-.btn-group {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.btn-group button {
-  float: left;
-  position: relative;
-  border-radius: 0;
-  cursor: pointer;
-}
-
-.btn-group button:first-of-type {
-  border-radius: 2px 0px 0px 2px;
-}
-
-.btn-group button:last-of-type {
-  border-radius: 0px 2px 2px 0px;
-}
-
-.btn-group button:hover, .btn-group button:focus, .btn-group button:active {
-  z-index: 2;
-}
-
-.btn-group button.active {
-  top: 0;
-  box-shadow: none;
-}
-
-.btn-group button > i {
-  pointer-event: none;
-}
-
-.btn-group .pikto-btn ~ .pikto-btn,
-.btn-group .pikto-btn ~ .btn-group,
-.btn-group .btn-group ~ .pikto-btn,
-.btn-group .btn-group ~ .btn-group {
-  margin-left: -1px;
-}
-
-.btn-group > .pikto-btn:first-child {
-  margin-left: 0;
-}
-
-.btn-group > .pikto-btn:first-child:not(:last-child):not(.dropdown-toggle) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.btn-group > .pikto-btn:last-child:not(:first-child),
-.btn-group > .dropdown-toggle:not(:first-child) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-/**=====================================**/
-/* 06 Checkbox and Radio Options */
-/**=====================================**/
-[data-toggle="buttons"] > .pikto-btn input[type="radio"],
-[data-toggle="buttons"] > .pikto-btn input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .pikto-btn input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .pikto-btn input[type="checkbox"] {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  pointer-events: none;
-}
-
-/**=====================================**/
-/* 07 Btn Hover Dropdowns */
-/**=====================================**/
-.hover-over {
-  position: relative;
-}
-
-.hover-over-btn {
-  display: inline-block;
-}
-
-.hover-over-btn:hover .hover-over-panel {
-  display: block;
-  -webkit-animation: fade-in .1s linear 1, move-up .1s linear 1;
-  -moz-animation: fade-in .1s linear 1, move-up .1s linear 1;
-  -ms-animation: fade-in .1s linear 1, move-up .1s linear 1;
-}
-
-.hover-over-panel {
-  position: absolute;
-  display: none;
-  left: 0px;
-  padding-top: 5px;
 }
 
 /**=====================================**/
@@ -8972,6 +8962,7 @@ a.thumbnail.active {
   right: -21px;
   color: #5d5a6b;
   opacity: 1;
+  float: right;
 }
 
 .alert-dismissible .close:hover {
@@ -9971,7 +9962,6 @@ panel-group are used in
 /* 01 Base */
 /**=====================================**/
 .close {
-  float: right;
   font-size: 28px;
   font-weight: bold;
   line-height: 0.7;

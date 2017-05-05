@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     elem.classList.remove('slide-in');
   });
 
-  $("button[data-target='sg_data_road_map']").parent('li').addClass('active');
-  $("#sg_data_road_map").addClass('active slide-in');
+  $("button[data-target='sg_data_dropdowns']").parent('li').addClass('active');
+  $("#sg_data_dropdowns").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
