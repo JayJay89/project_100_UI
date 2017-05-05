@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var popover_arrow_control = document.querySelectorAll('.sg-popover-arrow-control > button');
 
   var sg_code_box_sidebar = document.querySelectorAll('.sg-code-box-sidebar');
+  var sg_code_box_display = document.querySelectorAll('.sg-code-box-display');
 
   /*Instantiate clipboard*/
   /*Clipboard uses a library call clipboard.min.js*/
@@ -33,8 +34,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     elem.classList.remove('active');
     elem.classList.remove('slide-in');
   });
-  $("button[data-target='sg_data_ui_combo']").parent('li').addClass('active');
-  $("#sg_data_ui_combo").addClass('active slide-in');
+
+  $("button[data-target='sg_data_road_map']").parent('li').addClass('active');
+  $("#sg_data_road_map").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
@@ -95,6 +97,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.querySelector('#' + target).classList.add('slide-in');
       }, 200)
     });
+  });
+
+
+  /*Hide Show Function on The codebox*/
+  [...sg_code_box].forEach(function(elem){
+    elem.addEventListener('click', function(e){
+      
+      var current_codebox = elem.querySelector('.sg-code-content');;
+
+      if ( e.target.className === 'sg-show-code') {
+        current_codebox.classList.remove('sg-code-hidden');
+      }
+
+      if ( e.target.className === 'sg-hide-code') {
+        current_codebox.classList.add('sg-code-hidden');
+      }
+    });
+
   });
 
   $('.sg-button-list--outer').find('li').on('click', function(){

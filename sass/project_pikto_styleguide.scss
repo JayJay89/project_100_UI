@@ -97,6 +97,8 @@ $darkblue: #0A5FAC;
 $green: #117700;
 $light-purple-grey-02: #474456;
 
+$white: #fff;
+$black: #000;
 /*Variables -- Layout*/
 $sg-sidebar-padding: 8px; 
 $sg-button-list--inner-padding-btm: 20px;
@@ -271,10 +273,6 @@ pre code {
   letter-spacing: 0.47px;
   margin-top: 55px;
   color: $darkblue;
-
-  &:first-of-type {
-    margin-top: 0px;
-  }
 }
 
 .sg-code {
@@ -401,11 +399,10 @@ pre code {
   border-radius: 2px;
 }
 
+$sg-code-line-height: 20px;
 .sg-code-box {
-  $sg-code-line-height: 20px;
-
-  @include flexbox();
-  margin: 20px 0px;
+  margin: 35px 0px 20px;
+  position: relative;
 
   pre {
     width: calc(100% - 32px);
@@ -413,27 +410,63 @@ pre code {
     border: 1px solid $gray6;
     padding: 0px;
     background-color: #fff;
+
     code {
       float: left;
       line-height: $sg-code-line-height;
     }
   }
+}
 
-  .sg-code-box-sidebar {
+.sg-code-content {
+  @include flexbox();
+  transition: height 0.2s ease;
+  overflow-y: hidden;
+
+  &.sg-code-hidden {
+    height: 1px;
+  }
+}
+
+.sg-code-box-sidebar {
+  display: block;
+  background-color: $gray5;
+  width: 32px;
+  flex: 1;
+  padding: 8px 0px;
+  border: 1px solid $gray6;
+  border-right: 0px;
+
+  > span {
+    font-family: Courier, monospace;
     display: block;
-    background-color: $gray5;
-    width: 32px;
-    flex: 1;
-    padding: 8px 0px;
-    border: 1px solid $gray6;
-    border-right: 0px;
+    line-height: $sg-code-line-height;
+    text-align: center;
+    font-size: 13px;
+  }
+}
 
-    > span {
-      font-family: Courier, monospace;
-      display: block;
-      line-height: $sg-code-line-height;
-      text-align: center;
-      font-size: 13px;
+.sg-code-box-display {
+  position: absolute;
+  top: -30px;
+  right: 0;
+
+  > button {
+    border: 1px solid $gray6;
+    background-color: $white;
+    float: left;
+    padding: 5px 12px;
+
+    &:first-child {
+      border-right: 0px;
+    }
+
+    &:hover {
+      background-color: $gray5;
+    }
+
+    &:active {
+      background-color: darken($gray5, 2%);
     }
   }
 }

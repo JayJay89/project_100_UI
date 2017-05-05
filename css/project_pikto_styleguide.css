@@ -228,10 +228,6 @@ pre code {
   color: #0A5FAC;
 }
 
-.sg-h2:first-of-type {
-  margin-top: 0px;
-}
-
 .sg-code {
   font-size: 12px;
   font-family: "Source Code Pro", monospace;
@@ -337,12 +333,8 @@ pre code {
 }
 
 .sg-code-box {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  margin: 20px 0px;
+  margin: 35px 0px 20px;
+  position: relative;
 }
 
 .sg-code-box pre {
@@ -358,7 +350,21 @@ pre code {
   line-height: 20px;
 }
 
-.sg-code-box .sg-code-box-sidebar {
+.sg-code-content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  transition: height 0.2s ease;
+  overflow-y: hidden;
+}
+
+.sg-code-content.sg-code-hidden {
+  height: 1px;
+}
+
+.sg-code-box-sidebar {
   display: block;
   background-color: #F7F7F7;
   width: 32px;
@@ -368,12 +374,37 @@ pre code {
   border-right: 0px;
 }
 
-.sg-code-box .sg-code-box-sidebar > span {
+.sg-code-box-sidebar > span {
   font-family: Courier, monospace;
   display: block;
   line-height: 20px;
   text-align: center;
   font-size: 13px;
+}
+
+.sg-code-box-display {
+  position: absolute;
+  top: -30px;
+  right: 0;
+}
+
+.sg-code-box-display > button {
+  border: 1px solid #E0E0E0;
+  background-color: #fff;
+  float: left;
+  padding: 5px 12px;
+}
+
+.sg-code-box-display > button:first-child {
+  border-right: 0px;
+}
+
+.sg-code-box-display > button:hover {
+  background-color: #F7F7F7;
+}
+
+.sg-code-box-display > button:active {
+  background-color: #f2f2f2;
 }
 
 .sg-change-this {
