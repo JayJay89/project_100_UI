@@ -36,8 +36,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     elem.classList.remove('slide-in');
   });
 
-  $("button[data-target='sg_data_dropdowns']").parent('li').addClass('active');
-  $("#sg_data_dropdowns").addClass('active slide-in');
+  /*INIT*/
+  $("button[data-target='sg_data_inputs']").parent('li').addClass('active');
+  $("#sg_data_inputs").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
@@ -100,17 +101,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
   });
 
+  var pages = document.querySelectorAll( 'section' );
+  [ ...pages ].forEach( elem =>
+    elem.addEventListener( 'transitionend', e => {
+      if ( e.propertyName !== 'opacity' ) return;
+      var codeElems = e.target.querySelectorAll( '.sg-code-content' );
+      [ ...codeElems ].forEach( elm => elm.style.height = elm.offsetHeight + 'px' );
+    })
+  );
 
   /*Hide Show Function on The codebox*/
 
-  [...sg_code_content].forEach(function(elem){
-    elem.classList.add('sg-code-hidden');
-  });
+  // [...sg_code_content].forEach(function(elem){
+  //   elem.classList.add('sg-code-hidden');
+  // });
 
   [...sg_code_box].forEach(function(elem){
+
     elem.addEventListener('click', function(e){
-      
-      var current_codebox = elem.querySelector('.sg-code-content');;
+      var current_codebox = elem.querySelector('.sg-code-content');
 
       if ( e.target.className === 'sg-show-code') {
         current_codebox.classList.remove('sg-code-hidden');

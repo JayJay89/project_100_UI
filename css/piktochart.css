@@ -5803,13 +5803,13 @@ select:-moz-focusring {
   cursor: pointer;
 }
 
-.input-inline-icon > i {
+.input-inline-icon > i, .input-inline-icon img {
   position: absolute;
   z-index: 9;
   top: 0;
 }
 
-.input-inline-icon.left-icon > i {
+.input-inline-icon.left-icon > i, .input-inline-icon.left-icon img {
   left: 5px;
 }
 
@@ -5817,7 +5817,7 @@ select:-moz-focusring {
   padding-left: 40px;
 }
 
-.input-inline-icon.right-icon > i {
+.input-inline-icon.right-icon > i, .input-inline-icon.right-icon img {
   right: 5px;
 }
 
@@ -6934,7 +6934,7 @@ tbody.collapse.in {
   margin: 2px 0 0;
   list-style: none;
   font-size: 14px;
-  top: 30px;
+  top: 20px;
   left: 0px;
   position: absolute;
   padding: 20px 0px;
@@ -6962,6 +6962,11 @@ tbody.collapse.in {
   /*This serves to prevent links from randomly breaking onto new lines but prevents longer menu titles */
 }
 
+.dropdown-menu.dropdown-menu-left {
+  top: -20px;
+  left: calc(-100% - 5px);
+}
+
 .dropdown-submenu {
   position: relative;
 }
@@ -6976,10 +6981,25 @@ tbody.collapse.in {
 }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-  color: #1cafa2;
+  color: #fff;
   text-decoration: none;
   outline: 0;
   background-color: #1e1d26;
+}
+
+/**=====================================**/
+/* 02 Disabled State */
+/**=====================================**/
+.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+  color: #e8e8e8;
+}
+
+.dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: not-allowed;
 }
 
 /**=====================================**/
@@ -7028,8 +7048,65 @@ tbody.collapse.in {
 .dropdown-menu-left {
   left: 0;
   right: auto;
-  top: -20px;
-  left: calc(-100% - 5px);
+}
+
+.dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.42857;
+  color: #e8e8e8;
+  white-space: nowrap;
+}
+
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 989;
+}
+
+.pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+.dropup .caret,
+.navbar-fixed-bottom .dropdown .caret {
+  border-top: 0;
+  border-bottom: 4px dashed;
+  border-bottom: 4px solid \9;
+  content: "";
+}
+
+.dropup .dropdown-menu,
+.navbar-fixed-bottom .dropdown .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 2px;
+}
+
+/**=====================================**/
+/* 05 Component Alignment */
+/**=====================================**/
+@media (min-width: 768px) {
+  .navbar-right .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+  .navbar-right .dropdown-menu-left {
+    left: 0;
+    right: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-right .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
 }
 
 .drag-drop-img-wrapper {
@@ -7069,7 +7146,6 @@ tbody.collapse.in {
 .drag-drop-img .pikto-spinner {
   width: 65px;
   height: 65px;
-  padding-top: 25px;
   margin: 0 auto;
   position: relative;
 }
@@ -7085,12 +7161,12 @@ tbody.collapse.in {
 
 .drag-drop-img .uploads-number-container {
   position: absolute;
-  top: 51px;
   left: 5px;
   font-size: 11px;
   color: #93a2a4;
   width: 55px;
   text-align: center;
+  line-height: 65px;
 }
 
 .drag-drop-img .pikto-upload-input {

@@ -1211,14 +1211,14 @@ select {
   position: relative;
   cursor: pointer;
 
-  > i {
+  > i, img {
     position: absolute;
     z-index: 9;
     top: 0;
   }
 
   &.left-icon {
-    > i {
+    > i, img {
       left: 5px;
     }
 
@@ -1229,7 +1229,7 @@ select {
   
   &.right-icon {
 
-    > i {
+    > i, img {
       right: 5px;
     }
 

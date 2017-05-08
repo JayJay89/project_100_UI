@@ -367,7 +367,7 @@ pre code {
 }
 
 .sg-code-content.sg-code-hidden {
-  height: 1px;
+  height: 1px !important;
 }
 
 .sg-code-box-sidebar {

@@ -430,7 +430,7 @@ $sg-code-line-height: 20px;
   overflow-y: hidden;
 
   &.sg-code-hidden {
-    height: 1px;
+    height: 1px !important;
   }
 }
 
