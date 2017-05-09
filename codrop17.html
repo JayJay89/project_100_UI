@@ -47,17 +47,22 @@
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 		<script src="jquery.min.js"></script>
 		<script>
-		$(function(){
-			$('.sdb-container > li')
-			.on('mouseenter',function(){
-				var $this = $(this);
-				$this.addClass('active');
-			})
-			.on('mouseleave',function(){
-				var $this = $(this);
-				$this.removeClass('active');
-			})
+
+		document.addEventListener('DOMContentLoaded', function(){
+			var item = document.querySelectorAll('.sdb-container > li');
+
+			[...item].forEach(function(elem){
+				
+				elem.addEventListener('mouseenter', function(e){
+					e.target.classList.add('active');
+				});
+				elem.addEventListener('mouseleave', function(e){
+					e.target.classList.remove('active');
+				});
+
+			});
 		});
+
 		</script>
 	</body>
 </html>
