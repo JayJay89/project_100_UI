@@ -84,6 +84,7 @@
                 <li><button class="sg-btn" data-target="sg_data_icon">Icons & Illustrations</button></li>
                 <li><button class="sg-btn" data-target="sg_data_label">Label/Badges</button></li>
                 <li><button class="sg-btn" data-target="sg_data_modals">Modals</button></li>
+                <li><button class="sg-btn" data-target="sg_data_navbars">Navbar</button></li>
                 <li><button class="sg-btn" data-target="sg_data_switches">On Off Switch</button></li>
                 <li><button class="sg-btn" data-target="sg_data_paginations">Paginations</button></li>
                 <li><button class="sg-btn" data-target="sg_data_picture">Picture</button></li>
@@ -165,14 +166,14 @@
             <p>Originally we had variables.scss, and mixins.scss, to accomodate new changes of this management. This is a work in progress, typography and transitions isn't modularized yet</p>
 
             <div class="sg-content-box" data-content="prequisite-1" style="display: none;">
-              @import "variables-colors";
-              @import "variables-spacings";
-              @import "variables";
-              @import "mixins-border-radii";
-              @import "mixins-color-combo";
-              @import "mixins-shadow";
-              @import "mixins-typography";
-              @import "mixins";
+            @import "variables-colors";
+            @import "variables-spacings";
+            @import "variables";
+            @import "mixins-border-radii";
+            @import "mixins-color-combo";
+            @import "mixins-shadow";
+            @import "mixins-typography";
+            @import "mixins";
             </div>
 
             <div class="sg-code-box" id="prequisite-1">
@@ -2342,7 +2343,6 @@
             </div>
           </div>
 
-
           <h2>Misc Labels</h2>
           <div class="sg-content-box sg-normal-btn" data-content="label-3">
             <span class="label label-beta">beta</span>
@@ -2586,11 +2586,8 @@
               <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  </div>
-
                   <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     This is a no header & footer modal.
                   </div>
                 </div>
@@ -2626,12 +2623,14 @@
                     <ul class="nav nav-tabs modal-subtitle" role="tablist">
                       <li class="active">
                         <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">
-                          <i class="icon-sharevia-darkpurple"></i>Subtitle One Here
+                          <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+                          Subtitle One Here
                         </a>
                       </li>
                       <li>
                         <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">
-                          <i class="icon-export-darkpurple"></i>Subtitle Two Here
+                          <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+                          Subtitle Two Here
                         </a>
                       </li>
                     </ul>
@@ -2812,6 +2811,13 @@
               <pre><code class="html sg-code-syntax"></code></pre>
             </div>
           </div>
+        </section>
+
+        <section id="sg_data_navbars" class="styleguide-modals">
+          <h1 class="sg-h1">Navbars</h1>
+          <p>Navbar for all pages</p>
+
+          <div class="navbar"></div>
         </section>
 
         <section id="sg_data_switches">

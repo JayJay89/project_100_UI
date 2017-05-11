@@ -46,6 +46,14 @@
     @include transition-transform(0.3s ease-out);
   }
   &.in .modal-dialog { @include translate(0, 0) }
+
+  .close {
+    position: absolute;
+
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 .modal-open .modal {
@@ -63,7 +71,7 @@
 /**=====================================**/
 /* 02 Actual Modal */
 /**=====================================**/
-$modal-backdrop-bg:                       $dark-purple-grey-07 !default;
+$modal-backdrop-bg: $dark-purple-grey-07 !default;
 
 .modal-content {
   position: relative;
@@ -102,16 +110,13 @@ $modal-backdrop-bg:                       $dark-purple-grey-07 !default;
   background-color: $modal-header-bg;
   padding: $modal-title-padding;
   text-align: center;
+  position: relative;
   @include border-radius("top", $modal-border-radius);
   @include clearfix;
 
   .close {
-    // Close icon
-    margin-top: -2px;
-
-    &:focus {
-      outline: none;
-    }
+    right: 10px;
+    top: 10px;
   }
 
   .level-up {
@@ -213,16 +218,15 @@ $modal-backdrop-bg:                       $dark-purple-grey-07 !default;
 /* 05a Types of Default Modal (without header, without footer, without header & footer) */
 /**=====================================**/
 .modal-noheaderfooter {
-
-  .modal-header {
-    background-color: transparent;
-    padding-bottom: 0;
-    border: none;
-  }
-
+  
   .modal-body {
-    padding-top: 0;
-    min-height: 100px;
+    padding: 20px;
+    min-height: 150px;
+
+    .close {
+      right: 10px;
+      top: 10px;
+    }
   }
 }
 
@@ -387,8 +391,8 @@ $modal-backdrop-bg:                       $dark-purple-grey-07 !default;
  }
 
  .wrapper-data {
-  width: ($modal-lg - $modal-paneltab-width - $modal-tool-previewwrapper-width);
-}
+    width: ($modal-lg - $modal-paneltab-width - $modal-tool-previewwrapper-width);
+  }
 }
 
 /**=====================================**/
@@ -548,42 +552,3 @@ $modal-backdrop-bg:                       $dark-purple-grey-07 !default;
 /**to be check & cleared after coding the  plans layout**/
 /* 05g Modals in share settings and delete account. */
 /**=====================================**/
-.bootstrap-modal {
-
-  .full-loading-icon {
-    @include relative(left 48%);
-    margin-top: 11%;
-  }
-
-  .modal-dialog {
-    margin-top: 5%;
-    @include border-radius("all", 10px);
-  }
-
-  .modal-content {
-    @include border-radius("all", 10px);
-    border: 0 none;
-
-    .modal-header {
-      background: $modal-header-bg;
-      @include border-radius("top", 8px);
-
-      h4 {
-        color: $teal-grey-light;
-        text-transform: uppercase;
-        font-size: 13px;
-      }
-    }
-
-    .modal-footer {
-      border-top: none;
-      margin-top: 0;
-      background: $teal-grey-lighter;;
-      @include border-radius("bottom", 8px);
-
-      .pikto-btn-lightgrey {
-        margin-right: 0.35em;
-      }
-    }
-  }
-}

@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   /*INIT*/
-  $("button[data-target='sg_data_inputs']").parent('li').addClass('active');
-  $("#sg_data_inputs").addClass('active slide-in');
+  $("button[data-target='sg_data_navbars']").parent('li').addClass('active');
+  $("#sg_data_navbars").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
@@ -101,14 +101,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
   });
 
-  var pages = document.querySelectorAll( 'section' );
-  [ ...pages ].forEach( elem =>
-    elem.addEventListener( 'transitionend', e => {
-      if ( e.propertyName !== 'opacity' ) return;
-      var codeElems = e.target.querySelectorAll( '.sg-code-content' );
-      [ ...codeElems ].forEach( elm => elm.style.height = elm.offsetHeight + 'px' );
-    })
-  );
+  // var pages = document.querySelectorAll( 'section' );
+  // [ ...pages ].forEach( elem =>
+  //   elem.addEventListener( 'transitionend', e => {
+  //     if ( e.propertyName !== 'opacity' ) return;
+  //     var codeElems = e.target.querySelectorAll( '.sg-code-content' );
+  //     [ ...codeElems ].forEach( elm => elm.style.height = elm.offsetHeight + 'px' );
+  //   })
+  // );
 
   /*Hide Show Function on The codebox*/
 
@@ -170,33 +170,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       });
     });
   });
-
-  
-
-  /*Slider Config*/
-  // http://codepen.io/thebabydino/pen/JoOomG?editors=0010
-  var input_sel = 'input[type=range]',
-      slider = document.querySelector(input_sel), 
-      style = document.createElement('style'), 
-      track_sel = input_sel + 
-        '::-webkit-slider-runnable-track';
-
-  document.body.appendChild(style);
-
-  slider.addEventListener('input', function() {
-    var max = this.max || 100, 
-        min = this.min || 0, 
-        val = Math.round(100*(this.value - min)/(max - min));
-    
-    style.textContent = track_sel + '{background-size:' + val + '% 50%,100%,100%}' + track_sel + ':after{content:"' + val + '%"}';
-  }, false);
-
 });
-
-$(function() {
-
-});
-
 
 
 /* Old Codes

@@ -33,16 +33,6 @@
   }
 }
 
-// Add hover effects, but only for links
-a.label {
-  &:hover,
-  &:focus {
-    color: $white;
-    text-decoration: none;
-    cursor: pointer;
-  }
-}
-
 /**=====================================**/
 /* 02 Colors */
 /**=====================================**/

@@ -80,11 +80,6 @@ input[type="checkbox"] {
   margin-top: 1px \9; // IE8-9
   line-height: normal;
 }
-
-input[type="file"] {
-  display: block;
-}
-
 textarea {
   padding: 10px;
 }
@@ -99,7 +94,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  @include tab-focus;
+  outline: none;
 }
 
 // Adjust output element
@@ -203,8 +198,6 @@ output {
 }
 
 //Error Message
-
-
 .input-has-error {
   .alert {
     margin: 0 0 10px;
@@ -219,38 +212,6 @@ output {
 textarea.form-control {
   height: auto;
 }
-
-/*textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
-  background-color: $white;
-  border: 1px solid $input-border;
-  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-  @include transition(border linear .2s, box-shadow linear .2s);
-
-  // Focus state
-  &:focus {
-    border-color: $teal;
-    outline: 0;
-    outline: thin dotted \9;
-    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6));
-  }
-}
-
-Disabled to test form css, will enable back it needed*/
 
 /**=====================================**/
 /* 04 Search inputs in iOS */

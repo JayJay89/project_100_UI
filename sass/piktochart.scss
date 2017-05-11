@@ -7,38 +7,31 @@
 // Included Scaffolding
 @import "pikto/scaffolding";
 
-// Resetand dependencies
+// Reset and dependencies
 @import "pikto/print";
 @import "pikto/sprite";
 
-// Core CSS
-// @import "pikto/type";
-@import "pikto/grid";
-@import "pikto/tables";
-@import "pikto/forms";
-@import "pikto/buttons";
-
 // Components
+@import "pikto/alerts";
+@import "pikto/breadcrumbs";
+@import "pikto/buttons";
+@import "pikto/close";
 @import "pikto/component-animations";
 @import "pikto/dropdowns";
 @import "pikto/file-selector";
-@import "pikto/input-groups";
-@import "pikto/navs";
-@import "pikto/navbar";
-@import "pikto/breadcrumbs";
-@import "pikto/pagination";
-@import "pikto/pager";
+@import "pikto/forms";
+@import "pikto/grid";
 @import "pikto/labels";
-@import "pikto/jumbotron";
-@import "pikto/thumbnails";
-@import "pikto/alerts";
-@import "pikto/progress-bars";
-@import "pikto/media";
-@import "pikto/list-group";
+@import "pikto/navbar";
+@import "pikto/navs";
+@import "pikto/pager";
+@import "pikto/pagination";
 @import "pikto/panels";
+@import "pikto/progress-bars";
 @import "pikto/responsive-embed";
+@import "pikto/tables";
+@import "pikto/thumbnails";
 @import "pikto/wells";
-@import "pikto/close";
 
 // Components w/ JavaScript
 @import "pikto/modals";
@@ -52,6 +45,3 @@
 //plugins 
 @import "pikto/plugin/handsontable";
 
-/*Only Added temporarily*/
-//glyphicons
-@import "pikto/glyphicons";
