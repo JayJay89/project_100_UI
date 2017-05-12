@@ -7202,16 +7202,15 @@ input[type=range]:focus::-ms-fill-upper {
   position: relative;
   min-height: 60px;
   border: 1px solid transparent;
-  font-size: 12px;
-}
-
-.navbar:before, .navbar:after {
-  content: " ";
-  display: table;
-}
-
-.navbar:after {
-  clear: both;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c2a37;
+  padding: 0px 25px;
 }
 
 @media (min-width: 768px) {
@@ -7220,22 +7219,39 @@ input[type=range]:focus::-ms-fill-upper {
   }
 }
 
-/**=====================================**/
-/* 02 Heading */
-/**=====================================**/
-.navbar-header:before, .navbar-header:after {
-  content: " ";
-  display: table;
+.navbar p {
+  margin: 0;
 }
 
-.navbar-header:after {
-  clear: both;
+.navbar .navbar-divider {
+  margin: 0px 25px;
+  border-right: 1px solid #4b475c;
+  border-top: 0;
+  height: 14px;
 }
 
-@media (min-width: 1053px) {
-  .navbar-header {
-    float: left;
-  }
+.navbar .navbar-divider + * {
+  margin-left: 0;
+}
+
+.navbar-section {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-section > :first-child {
+  margin-left: 0px;
+}
+
+.navbar-section > div,
+.navbar-section > button,
+.navbar-section > a, .navbar-section > i {
+  margin-left: 10px;
 }
 
 /**=====================================**/
@@ -7462,15 +7478,6 @@ input[type=range]:focus::-ms-fill-upper {
 /**=====================================**/
 /* 12 Component Alignment */
 /**=====================================**/
-@media (min-width: 768px) {
-  .navbar-left {
-    float: left !important;
-  }
-  .navbar-right {
-    float: right !important;
-  }
-}
-
 /**=====================================**/
 /* 08 Forms */
 /**=====================================**/
@@ -9708,8 +9715,8 @@ a.thumbnail.active {
 /* 05a Types of Default Modal (without header, without footer, without header & footer) */
 /**=====================================**/
 .modal-noheaderfooter .modal-body {
-  padding: 10px;
-  min-height: 100px;
+  padding: 20px;
+  min-height: 150px;
 }
 
 .modal-noheaderfooter .modal-body .close {
@@ -10020,44 +10027,6 @@ a.thumbnail.active {
 /**to be check & cleared after coding the  plans layout**/
 /* 05g Modals in share settings and delete account. */
 /**=====================================**/
-.bootstrap-modal .full-loading-icon {
-  position: relative;
-  left: 48%;
-  margin-top: 11%;
-}
-
-.bootstrap-modal .modal-dialog {
-  margin-top: 5%;
-  border-radius: 10px;
-}
-
-.bootstrap-modal .modal-content {
-  border-radius: 10px;
-  border: 0 none;
-}
-
-.bootstrap-modal .modal-content .modal-header {
-  background: #f0f0f0;
-  border-radius: 8px 8px 0px 0px;
-}
-
-.bootstrap-modal .modal-content .modal-header h4 {
-  color: #93a2a4;
-  text-transform: uppercase;
-  font-size: 13px;
-}
-
-.bootstrap-modal .modal-content .modal-footer {
-  border-top: none;
-  margin-top: 0;
-  background: #eaf2ef;
-  border-radius: 0px 0px 8px 8px;
-}
-
-.bootstrap-modal .modal-content .modal-footer .pikto-btn-lightgrey {
-  margin-right: 0.35em;
-}
-
 /**=====================================**/
 /* 01 Base class */
 /**=====================================**/
