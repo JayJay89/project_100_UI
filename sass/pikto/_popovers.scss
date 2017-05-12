@@ -146,8 +146,6 @@ $popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%
 }
 
 .popover-white {
-  font-size: 12px;
-
   $popwhite-arrow: 8px;
   $popwhite-arrow-pos: $popwhite-arrow - 1px;
 
@@ -194,10 +192,6 @@ $popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%
     font-size: 14px;
 
     @include border-radius("bottom");
-
-    > button {
-      color: $light-purple-grey-04;
-    }
   }
 }
 
@@ -266,32 +260,8 @@ $popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%
     margin-bottom: 10px;
   }
 
-  .btn-close {
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: $teal;
-    }
-
-    &:active {
-      color: $teal-dark;
-    }
-  }
-
   .tour-btn {
     margin-right: 5px;
-  }
-}
-
-.popover-md {
-  width: 440px;
-
-  .popover-image {
-    padding-right: 0px
-  }
-
-  .popover-text-content {
-    padding-left: 20px;
   }
 }
 
@@ -302,10 +272,4 @@ $popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%
   .popover-title {
     margin-bottom: 10px;
   }
-}
-
-#pikto-reuse-template {
-  display: block !important;
-  top: 50%;
-  left: 15%;
 }

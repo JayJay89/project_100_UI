@@ -701,17 +701,15 @@ pre code {
   margin-bottom: 10px;
 }
 
-/*Grid*
-.sg-grid-layout {
-  .row {
-    margin-bottom: 10px;
-  }
+/*Grid*/
+.sg-grid-layout .row {
+  margin-bottom: 10px;
+}
 
-  [class*="col-"] {
-    padding: 10px;
-    background-color: beige;
-    border: 1px solid green;
-  }
+.sg-grid-layout [class*="col-"] {
+  padding: 10px;
+  background-color: beige;
+  border: 1px solid green;
 }
 
 /*Dropdown*/

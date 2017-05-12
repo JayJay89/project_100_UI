@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   /*INIT*/
-  $("button[data-target='sg_data_ui_combo']").parent('li').addClass('active');
-  $("#sg_data_ui_combo").addClass('active slide-in');
+  $("button[data-target='sg_data_progressbar']").parent('li').addClass('active');
+  $("#sg_data_progressbar").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;

@@ -102,17 +102,10 @@ strong {
 .text-uppercase      { text-transform: uppercase; }
 .text-capitalize     { text-transform: capitalize; }
 
-/*Hyperlinks*/
-.general-link, 
-.attention-link, 
-.title-link, 
-.meta-link, 
-.pikto-link {
+@mixin generate-link($combo) {
   cursor: pointer;
   display: inline-block;
-}
-
-@mixin generate-link($combo) {
+  
   color: map-get($combo, 'col-1');
 
   &:hover {
@@ -142,6 +135,10 @@ strong {
 
 .pikto-link {
   @include generate-link($pikto-link-combo);
+}
+
+.grey-teal-link {
+  @include generate-link($grey-teal-combo);
 }
 
 /*Lists - By default, ul's and ol's properties are overwritten, this */
