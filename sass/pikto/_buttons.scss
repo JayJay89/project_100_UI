@@ -85,7 +85,7 @@ input.pikto-btn {
 /* 01 Button Constructor */
 /**=====================================**/
 /*Constructor*/
-@mixin buttonConstructor($textColor, $textColorActive, $map){
+@mixin button-constructor($textColor, $textColorActive, $map){
   background-color: map-get($map, 'col-1');
   color: $textColor;
   border-color: transparent;
@@ -99,7 +99,8 @@ input.pikto-btn {
     color: $textColor;
   }
 
-  &:active {
+  &:active,
+  &.active {
     background-color: map-get($map, 'col-3');
     color: $textColorActive;
   }
@@ -116,42 +117,42 @@ input.pikto-btn {
 /* 02 Button Color Variations */
 /**=====================================**/
 .pikto-btn-teal {
-  @include buttonConstructor($white, $white, $teal-combo);
+  @include button-constructor($white, $white, $teal-combo);
 }
 .pikto-btn-magenta {
-  @include buttonConstructor($white, $white, $magenta-combo);
+  @include button-constructor($white, $white, $magenta-combo);
 }
 .pikto-btn-lightgrey {
-  @include buttonConstructor($dark-purple-grey-03, $white, $lightgrey-combo);
+  @include button-constructor($dark-purple-grey-03, $white, $lightgrey-combo);
 }
 .pikto-btn-purplegrey {
-  @include buttonConstructor($white, $white, $purplegrey-combo);
+  @include button-constructor($white, $white, $purplegrey-combo);
 }
 .pikto-btn-grey {
-  @include buttonConstructor($white, $white, $grey-combo);
+  @include button-constructor($white, $white, $grey-combo);
 }
 .pikto-btn-red {
-  @include buttonConstructor($white, $white, $red-combo);
+  @include button-constructor($white, $white, $red-combo);
 }
 .pikto-btn-option {
-  @include buttonConstructor($dark-purple-grey-03, $dark-purple-grey-03, $grey-2-combo);
+  @include button-constructor($dark-purple-grey-03, $dark-purple-grey-03, $grey-2-combo);
   @include outline($grey-dark);
 }
 .pikto-btn-bluegrey-outline {
-  @include buttonConstructor($white, $white, $bluegrey-outline-combo);
+  @include button-constructor($white, $white, $bluegrey-outline-combo);
   @include outline($light-purple-grey-04);
 }
 .pikto-btn-success {
-  @include buttonConstructor($dark-purple-grey-03, $dark-purple-grey-03, $success-combo);
+  @include button-constructor($dark-purple-grey-03, $dark-purple-grey-03, $success-combo);
 }
 .pikto-btn-info {
-  @include buttonConstructor($dark-purple-grey-03, $dark-purple-grey-03, $info-combo);
+  @include button-constructor($dark-purple-grey-03, $dark-purple-grey-03, $info-combo);
 }
 .pikto-btn-warning {
-  @include buttonConstructor($dark-purple-grey-03, $dark-purple-grey-03, $warning-combo);
+  @include button-constructor($dark-purple-grey-03, $dark-purple-grey-03, $warning-combo);
 }
 .pikto-btn-danger {
-  @include buttonConstructor($dark-purple-grey-03, $dark-purple-grey-03, $danger-combo);
+  @include button-constructor($dark-purple-grey-03, $dark-purple-grey-03, $danger-combo);
 }
 
 /**=====================================**/
@@ -345,8 +346,8 @@ $wide-pd-hor: 20px;
 /* 07 Btn Hover Dropdowns */
 /**=====================================**/
 .pikto-btn-hover {
-  display: inline-block;
   position: relative;
+
   &:hover {
     .pikto-btn-hover-panel {
       display: block;
@@ -358,6 +359,7 @@ $wide-pd-hor: 20px;
 }
 
 .pikto-btn-hover-panel {
+  z-index: 1;
   position: absolute;
   display: none;
   left: 0px;

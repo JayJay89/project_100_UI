@@ -141,7 +141,7 @@ strong {
   @include generate-link($grey-teal-combo);
 }
 
-/*Lists - By default, ul's and ol's properties are overwritten, this */
+/*Lists - By default, ul's and ol's properties are overwritten, this brings the decimal and the disc back*/
 .pikto-ordered-list {
   list-style-type: decimal;
 }

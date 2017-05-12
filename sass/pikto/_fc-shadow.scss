@@ -4,40 +4,40 @@ $shadow-color: rgba(black, 0.2);
 $shadow-color-2: rgba(black, 0.5);
 
 /*Shadow Constructor*/
-@mixin box-shadow($shadow...) {
-  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
-  box-shadow: $shadow;
+@mixin box-shadow-constructor($shadow...) {
+  -webkit-box-shadow-constructor : $shadow; // iOS <4.3 & Android <4.1
+  box-shadow-constructor : $shadow;
 }
 
 /*Mixin*/
 @mixin inset-shadow {
-  @include box-shadow(inset 0px 2px 2px $shadow-color);
+  @include box-shadow-constructor(inset 0px 2px 2px $shadow-color);
 }
 
 @mixin outer-shadow {
-  @include box-shadow(1px 1px 4px $shadow-color);
+  @include box-shadow-constructor(1px 1px 4px $shadow-color);
 }
 
 @mixin onoff-shadow-1 {
-  @include box-shadow(2px 0px 4px 0px $shadow-color);
+  @include box-shadow-constructor(2px 0px 4px 0px $shadow-color);
 }
 
 @mixin onoff-shadow-2 {
-  @include box-shadow(-2px 0px 4px 0px $shadow-color);
+  @include box-shadow-constructor(-2px 0px 4px 0px $shadow-color);
 }
 
 @mixin modal-shadow {
-  @include box-shadow(0px 2px 10px 0px $shadow-color-2);
+  @include box-shadow-constructor(0px 2px 10px 0px $shadow-color-2);
 }
 
 @mixin no-shadow {
-  @include box-shadow(none);
+  @include box-shadow-constructor(none);
 }
 
 /*faux borders - shadows which are used to generate faux borders*/
 @mixin faux-border-1 {
   /*used in combination-color*/
-  @include box-shadow(inset 0px 0px 0px 1px $teal);
+  @include box-shadow-constructor(inset 0px 0px 0px 1px $teal);
 }
 
 /*Class*/

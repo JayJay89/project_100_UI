@@ -198,14 +198,25 @@
           </li>
 
           <li>
-            <h2 class="sg-h2">Mixins Movement</h2>
-            <p>Typography mixins are moved from mixins into _fc-typography, as they are only used in mixins.</p>
-          </li>
-
-          <li>
             <h2 class="sg-h2">Variables with one case usages are removed</h2>
             <p>We have multiple variables which are only used once. Example: $alert-border-radius is only used to defined the border-radius for alerts. This could be easily expressed without using variables as well. Other than that, to change that value, we had to search for $alert-border-radius</p>
           </li>
+
+          <li>
+            <h2 class="sg-h2">Constructor Mixins and Shared Mixins</h2>
+            <p>There are two kind of mixins, There is a constructor and a shared mixin</p>
+
+            <h2 class="sg-h2">Constructor Mixins</h2>
+            <p>They are only used to generate properties for an element from the given inputs. </p>
+            <p>Example: alert-constructor, button-constructor and label-constructor...etc</p>
+            <p>Constructors are usually placed within their related scss. For example, button-constructor are placed within buttons.scss</p>
+
+            <h2 class="sg-h2">Shared Mixins</h2>
+            <p>Shared Mixins are those which are shared and used by multiple elements.</p>
+            <p>Example: clearfix, transform, opacity...etc</p>
+            <p>These are all located in mixins.csss</p>
+          </li>
+
         </ul>
       </section>
 

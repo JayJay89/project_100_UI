@@ -72,7 +72,7 @@ $alert-padding:             15px !default;
 /* 04 Alternate Styles */
 /**=====================================**/
 // Generate contextual modifier classes for colorizing the alert.
-@mixin alert-variant($background, $text-color) {
+@mixin alert-constructor ($background, $text-color) {
   background-color: $background;
   color: $text-color;
 
@@ -86,23 +86,23 @@ $alert-padding:             15px !default;
 }
 
 .alert-success {
-  @include alert-variant($brand-success, $text-color-dark);
+  @include alert-constructor ($brand-success, $text-color-dark);
 }
 
 .alert-info {
-  @include alert-variant($brand-info, $text-color-dark);
+  @include alert-constructor ($brand-info, $text-color-dark);
 }
 
 .alert-warning {
-  @include alert-variant($brand-warning, $text-color-dark);
+  @include alert-constructor ($brand-warning, $text-color-dark);
 }
 
 .alert-attention {
-  @include alert-variant($brand-attention, $text-color-dark);
+  @include alert-constructor ($brand-attention, $text-color-dark);
 }
 
 .alert-danger {
-  @include alert-variant($brand-danger, $text-color-light);
+  @include alert-constructor ($brand-danger, $text-color-light);
 }
 
 /**=====================================**/

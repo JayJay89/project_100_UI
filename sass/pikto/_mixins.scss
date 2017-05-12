@@ -114,10 +114,6 @@
 }
 
 /**=====================================**/
-/* 01c Labels */
-/**=====================================**/
-
-/**=====================================**/
 /* 01d Opacity */
 /**=====================================**/
 @mixin opacity($opacity, $important: no) {
@@ -519,96 +515,6 @@
 /**=====================================**/
 /* 02 Components */
 /**=====================================**/
-/* 02a Alerts */
-/**=====================================**/
-@mixin alert-variant($background, $border, $text-color) {
-  background-color: $background;
-  border-color: $border;
-  color: $text-color;
-
-  hr {
-    border-top-color: darken($background, 5%);
-  }
-
-  a {
-    @include attention-link;
-  }
-}
-
-/**=====================================**/
-/* 02b Buttons */
-/**=====================================**/
-// Button variants
-// Easily pump out default styles, as well as :hover, :focus, :active,
-// and disabled options for all buttons
-
-@mixin button-variant($color, $background, $background-hover, $background-active) {
-  color: $color;
-    // border-width: 1px;
-    // border-style: solid;
-
-    @if $background == "bluegrey-outline" {
-      background-color: transparent;
-      border-color: $btn-bluegrey-outline;
-    } @else if $background == "button-icon" {
-      background-color: $btn-icon-bg;
-      border-color: $btn-icon-outline-color;
-    } @else {
-      background-color: $background;
-      border-color: transparent;
-    }
-
-    &:hover,
-    &:focus,
-    .open > &.dropdown-toggle {
-      color: $color;
-      border-color: transparent;
-
-      @if $background == "bluegrey-outline" {
-        background-color: $background-hover;
-      } @else if $background == "button-icon" {
-        background-color: $background-hover;
-        border-color: $btn-icon-outline-color;
-      } @else {
-        background-color: $background-hover;
-      }
-    }
-
-    &:active,
-    &.active,
-    .open > &.dropdown-toggle {
-
-      @if $background == "bluegrey-outline" {
-        background-color: $background-active;
-      } @else if $background == "button-icon" {
-        background-color: $background-active;
-        border-color: $btn-icon-outline-color;
-        box-shadow: none;
-      } @else {
-       background-color: $background-active;
-     }
-   }
-
-   &.disabled,
-   &[disabled],
-   fieldset[disabled] & {
-    &,
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      border-color: $border-lightbg;
-      @include box-shadow(none);
-      -webkit-appearance: none;
-    }
-  }
-
-  .badge {
-    color: $background;
-    background-color: $color;
-  }
-}
-
 
 /**=====================================**/
 /* 02c Forms (Bootstrap) */
@@ -659,7 +565,6 @@
     color: $text-color;
   }
 }
-
 
 // Form control focus state
 //
@@ -786,11 +691,6 @@
 }
 
 /**=====================================**/
-/* 02h Progress Bar */
-/**=====================================**/
-
-
-/**=====================================**/
 /* 02i Table Row (Bootstrap) */
 /**=====================================**/
 // Tables
@@ -895,8 +795,6 @@
   background-image: radial-gradient(circle, $inner-color, $outer-color);
   background-repeat: no-repeat;
 }
-
-
 
 /**=====================================**/
 /* 04 Layouts */
@@ -1168,84 +1066,6 @@
 }
 
 /**=====================================**/
-/* 05 Pikto
-/**=====================================**/
-/* 05a Links */
-/**=====================================**/
-@mixin general-link {
-  color: $link-color;
-  text-decoration: none;
-
-  &:hover {
-    color: $link-hover-color;
-  }
-}
-
-@mixin attention-link {
-  color: $attention-link-color;
-  text-decoration: none;
-
-  &:hover {
-    color: $attention-link-hover-color;
-  }
-}
-
-@mixin title-link {
-  color: $title-link-color;
-  text-decoration: none;
-
-  &:hover {
-    color: $title-link-hover-color;
-  }
-}
-
-@mixin menu-link {
-  color: $menu-link-color;
-  text-decoration: none;
-
-  &:hover {
-    color: $menu-link-hover-color;
-  }
-}
-
-@mixin meta-link {
-  color: $meta-link-color;
-  text-decoration: none;
-
-  &:hover {
-    color: $meta-link-hover-color;
-  }
-}
-
-@mixin nav-link {
-  color: $navbar-default-link-color;
-  text-decoration: none;
-
-  &:hover {
-    color: $navbar-default-link-hover-color;
-    background-color: $navbar-default-link-hover-bg;
-  }
-
-  &:active {
-    color: $navbar-default-link-active-color;
-  }
-}
-
-//eg for other type of links which is not included on the above mixin
-@mixin magic-link ($link, $hover-focus, $active-link) {
-  color: $link;
-  text-decoration: none;
-
-  &:hover {
-    color: $hover-focus;
-  }
-
-  &:active {
-    color: $active-link;
-  }
-}
-
-/**=====================================**/
 /* 05b Icon Links */
 /**=====================================**/
 @mixin icon-container-color-combination-01 {
@@ -1279,19 +1099,6 @@
 
   &:active {
     background-color: $icon-container-active-color-03;
-  }
-}
-
-//eg for other type of icon container links which is not included on the above mixin
-@mixin color-combination ($default-color, $hover-color, $active-color) {
-  background-color: $default-color;
-
-  &:hover {
-    background-color: $hover-color;
-  }
-
-  &:active {
-    background-color: $active-color;
   }
 }
 
@@ -1498,26 +1305,4 @@
 .item {
   @include flex(1 200px);
   @include order(2);
-}
-
-@mixin border-radius($side:"all", $radius:$default-base-radius) {
-  @if $side == "all"{
-    border-radius: $radius;
-  } @else if $side == "top" {
-    border-radius: $radius $radius 0px 0px;
-  } @else if $side == "bottom" {
-    border-radius: 0px 0px $radius $radius;
-  } @else if $side == "left" {
-    border-radius: $radius 0px 0px $radius;
-  } @else if $side == "right" {
-    border-radius: 0px $radius $radius 0px;
-  } @else if $side == "top-left" {
-    border-radius: $radius 0px 0px 0px;
-  } @else if $side == "top-right" {
-    border-radius: 0px $radius 0px 0px;
-  } @else if $side == "bottom-right" {
-    border-radius: 0px 0px $radius 0px;
-  } @else if $side == "bottom-left" {
-    border-radius: 0px 0px 0px $radius;
-  }
 }

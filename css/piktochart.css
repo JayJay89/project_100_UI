@@ -3855,7 +3855,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   color: #fff;
 }
 
-.pikto-btn-teal:active {
+.pikto-btn-teal:active, .pikto-btn-teal.active {
   background-color: #127169;
   color: #fff;
 }
@@ -3875,7 +3875,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   color: #fff;
 }
 
-.pikto-btn-magenta:active {
+.pikto-btn-magenta:active, .pikto-btn-magenta.active {
   background-color: #a12e41;
   color: #fff;
 }
@@ -3895,7 +3895,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   color: #2c2a37;
 }
 
-.pikto-btn-lightgrey:active {
+.pikto-btn-lightgrey:active, .pikto-btn-lightgrey.active {
   background-color: #666470;
   color: #fff;
 }
@@ -3915,7 +3915,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   color: #fff;
 }
 
-.pikto-btn-purplegrey:active {
+.pikto-btn-purplegrey:active, .pikto-btn-purplegrey.active {
   background-color: #373544;
   color: #fff;
 }
@@ -3935,7 +3935,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   color: #fff;
 }
 
-.pikto-btn-grey:active {
+.pikto-btn-grey:active, .pikto-btn-grey.active {
   background-color: #1e1d26;
   color: #fff;
 }
@@ -3955,7 +3955,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   color: #fff;
 }
 
-.pikto-btn-red:active {
+.pikto-btn-red:active, .pikto-btn-red.active {
   background-color: #8F2218;
   color: #fff;
 }
@@ -3976,7 +3976,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   color: #2c2a37;
 }
 
-.pikto-btn-option:active {
+.pikto-btn-option:active, .pikto-btn-option.active {
   background-color: #d8d8d8;
   color: #2c2a37;
 }
@@ -4002,7 +4002,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   color: #fff;
 }
 
-.pikto-btn-bluegrey-outline:active {
+.pikto-btn-bluegrey-outline:active, .pikto-btn-bluegrey-outline.active {
   background-color: #413d49;
   color: #fff;
 }
@@ -4027,7 +4027,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   color: #2c2a37;
 }
 
-.pikto-btn-success:active {
+.pikto-btn-success:active, .pikto-btn-success.active {
   background-color: #b0d28b;
   color: #2c2a37;
 }
@@ -4047,7 +4047,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   color: #2c2a37;
 }
 
-.pikto-btn-info:active {
+.pikto-btn-info:active, .pikto-btn-info.active {
   background-color: #8bc3c9;
   color: #2c2a37;
 }
@@ -4067,7 +4067,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   color: #2c2a37;
 }
 
-.pikto-btn-warning:active {
+.pikto-btn-warning:active, .pikto-btn-warning.active {
   background-color: #e8df67;
   color: #2c2a37;
 }
@@ -4087,7 +4087,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   color: #2c2a37;
 }
 
-.pikto-btn-danger:active {
+.pikto-btn-danger:active, .pikto-btn-danger.active {
   background-color: #f53636;
   color: #2c2a37;
 }
@@ -4277,7 +4277,6 @@ input.pikto-btn:focus, input.pikto-btn.focus {
 /* 07 Btn Hover Dropdowns */
 /**=====================================**/
 .pikto-btn-hover {
-  display: inline-block;
   position: relative;
 }
 
@@ -4289,6 +4288,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
 }
 
 .pikto-btn-hover-panel {
+  z-index: 1;
   position: absolute;
   display: none;
   left: 0px;
