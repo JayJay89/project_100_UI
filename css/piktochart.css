@@ -607,6 +607,32 @@ button {
   background-color: #1cafa2;
 }
 
+.grey-teal-combo > span:nth-child(1) {
+  background-color: #666470;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.grey-teal-combo > span:nth-child(1):hover {
+  background-color: #1cafa2;
+}
+
+.grey-teal-combo > span:nth-child(1):active {
+  background-color: #158379;
+}
+
+.grey-teal-combo > span:nth-child(2) {
+  background-color: #666470;
+}
+
+.grey-teal-combo > span:nth-child(3) {
+  background-color: #1cafa2;
+}
+
+.grey-teal-combo > span:nth-child(4) {
+  background-color: #158379;
+}
+
 .red-combo > span:nth-child(1) {
   background-color: #C64135;
   cursor: pointer;
@@ -8868,10 +8894,6 @@ a.thumbnail.active {
 .popover-footer {
   padding: 15px 20px;
   text-align: right;
-}
-
-.popover-image {
-  display: inline-block;
 }
 
 /**=====================================**/

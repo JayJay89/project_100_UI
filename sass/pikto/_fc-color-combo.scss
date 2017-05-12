@@ -53,6 +53,12 @@ $pikto-link-combo: (
   'col-3': $teal
 );
 
+$grey-teal-combo: (
+  'col-1': $light-purple-grey-04,
+  'col-2': $teal,
+  'col-3': $teal-dark
+);
+
 $red-combo: (
   'col-1': $red,
   'col-2': $red-dark,
@@ -161,6 +167,10 @@ $danger-combo: (
 
 .pikto-link-combo {
   @include color-combo-generator($pikto-link-combo);
+}
+
+.grey-teal-combo {
+  @include color-combo-generator($grey-teal-combo);
 }
 
 .red-combo {
