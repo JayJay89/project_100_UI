@@ -777,7 +777,7 @@ $sg-code-line-height: 20px;
   }
 }
 
-/*Grid*/
+/*Grid*
 .sg-grid-layout {
   .row {
     margin-bottom: 10px;
@@ -793,9 +793,9 @@ $sg-code-line-height: 20px;
 /*Dropdown*/
 .sg-dropdown-content {
   position: relative;
+  text-align: center;
 
   > .dropdown {
-    left: 45%;
     display: inline-block;
     background-color: #2c2a37;
     padding: 5px;

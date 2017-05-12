@@ -704,24 +704,26 @@ pre code {
   margin-bottom: 10px;
 }
 
-/*Grid*/
-.sg-grid-layout .row {
-  margin-bottom: 10px;
-}
+/*Grid*
+.sg-grid-layout {
+  .row {
+    margin-bottom: 10px;
+  }
 
-.sg-grid-layout [class*="col-"] {
-  padding: 10px;
-  background-color: beige;
-  border: 1px solid green;
+  [class*="col-"] {
+    padding: 10px;
+    background-color: beige;
+    border: 1px solid green;
+  }
 }
 
 /*Dropdown*/
 .sg-dropdown-content {
   position: relative;
+  text-align: center;
 }
 
 .sg-dropdown-content > .dropdown {
-  left: 45%;
   display: inline-block;
   background-color: #2c2a37;
   padding: 5px;
