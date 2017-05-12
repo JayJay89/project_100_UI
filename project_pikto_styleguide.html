@@ -1503,10 +1503,11 @@
         <section id="sg_data_accordion">
           <h1 class="sg-h1">Accordion</h1>
           <p>
-            <span class="sg-code">.pikto-accordion</span> is a class we will be using to overwrite bootstrap's styling.
+            <span class="sg-code">.pikto-accordion</span> is a combination of both collapse UI and panels UI
+
           </p>
           <div class="sg-content-box" data-content="accordion-1">
-            <div id="accordion" class="panel-group pikto-accordion" >
+            <div class="panel-group pikto-accordion" >
               <!--panel 1 content-->
               <div class="panel panel-default">
                 <div class="panel-heading" >
@@ -3096,91 +3097,154 @@
         </section>
 
         <section id="sg_data_popover">
-          <h1 class="sg-h1">Popover</h1>
-          <h2 class="sg-h2">Color and Position Variation</h2>
-          <p>Click the buttons below to display varying Color and Position differences </p>
-          <div class="sg-content-box sg-popover sg-popover-grey" data-content="popover-1">
-            <div class="popover popover-teal-grey top">
-              <div class="arrow"></div>
-              <div class="popover-content">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
-            </div>
-            <div class="popover popover-dark-purple top">
-              <div class="arrow"></div>
-              <div class="popover-content">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
-            </div>
-          </div>
-          <div class="sg-code-box" id="popover-1">
-            <span>code</span>
-              <div class="sg-code-box-display clearfix">
-              <button class="sg-show-code">Show</button>
-              <button class="sg-hide-code">Hide</button>
-            </div>
-            <div class="sg-code-content">
-              <div class="sg-code-box-sidebar"></div>
-              <pre><code class="html sg-code-syntax"></code></pre>
-            </div>
-          </div>
+          <!--Section 0-->
+          <section class="js-sg-popover-color">
+            <h1 class="sg-h1">Popover</h1>
+            <h2 class="sg-h2">Color Variation</h2>
 
-          <div class="sg-popover-arrow-control">
-            <button class="pikto-btn pikto-btn-teal" data-style="top">Top</button>
-            <button class="pikto-btn pikto-btn-teal" data-style="top top-left">Top Left</button>
-            <button class="pikto-btn pikto-btn-teal" data-style="top top-right">Top Right</button>
-            <button class="pikto-btn pikto-btn-teal" data-style="bottom">Bottom</button>
-            <button class="pikto-btn pikto-btn-teal" data-style="bottom bottom-left">Bottom Left</button>
-            <button class="pikto-btn pikto-btn-teal" data-style="bottom bottom-right">Bottom Right</button>
-            <button class="pikto-btn pikto-btn-teal" data-style="left">Left</button>
-            <button class="pikto-btn pikto-btn-teal" data-style="right">Right</button>
-          </div>
-
-          <h2 class="sg-h2">White Popover With Footer</h2>
-
-          <div class="sg-content-box sg-popover sg-popover-grey" data-content="popover-2">
-            <div class="popover popover-white popover-with-footer left">
-              <div class="arrow"></div>
-              <div class="popover-content">
-                <h1 class="h5">Title</h1>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, eum.
+            <div class="sg-content-box sg-popover sg-popover-grey" data-content="popover-0">
+              <div class="popover popover-teal-grey top">
+                <div class="arrow"></div>
+                <div class="popover-content">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
               </div>
-              <div class="popover-footer">
-                <button name="button" type="submit">Got It</button>
+              <div class="popover popover-dark-purple top">
+                <div class="arrow"></div>
+                <div class="popover-content">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
               </div>
             </div>
-          </div>
 
-          <div class="sg-code-box" id="popover-2">
-            <span>code</span>
-              <div class="sg-code-box-display clearfix">
-              <button class="sg-show-code">Show</button>
-              <button class="sg-hide-code">Hide</button>
+            <div class="sg-code-box" id="popover-0">
+              <span>code</span>
+                <div class="sg-code-box-display clearfix">
+                <button class="sg-show-code">Show</button>
+                <button class="sg-hide-code">Hide</button>
+              </div>
+              <div class="sg-code-content">
+                <div class="sg-code-box-sidebar"></div>
+                <pre><code class="html sg-code-syntax"></code></pre>
+              </div>
             </div>
-            <div class="sg-code-content">
-              <div class="sg-code-box-sidebar"></div>
-              <pre><code class="html sg-code-syntax"></code></pre>
-            </div>
-          </div>
+          </section>
+          <!--Section 0 END-->
 
-          <h2 class="sg-h2">White Popover With Header</h2>
-          <div class="sg-content-box sg-popover sg-popover-grey" data-content="popover-3">
-            <div class="popover popover-white popover-with-title right">
-              <div class="arrow"></div>
-              <h1 class="h5 popover-title">Take a Tour</h1>
-              <div class="popover-content">Click here to tour the Piktochart editor.</div>
+          <!--Section1-->
+          <section class="js-sg-popover-normal">
+            <h2 class="sg-h2">Position Variation</h2>
+            <p>Click the buttons below to display varying Color and Position differences </p>
+
+            <div class="sg-content-box sg-popover sg-popover-grey" data-content="popover-1">
+              <div class="popover popover-teal-grey top">
+                <div class="arrow"></div>
+                <div class="popover-content">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+              </div>
             </div>
-          </div>
-          <div class="sg-code-box" id="popover-3">
-            <span>code</span>
-              <div class="sg-code-box-display clearfix">
-              <button class="sg-show-code">Show</button>
-              <button class="sg-hide-code">Hide</button>
+
+            <div class="sg-code-box" id="popover-1">
+              <span>code</span>
+                <div class="sg-code-box-display clearfix">
+                <button class="sg-show-code">Show</button>
+                <button class="sg-hide-code">Hide</button>
+              </div>
+              <div class="sg-code-content">
+                <div class="sg-code-box-sidebar"></div>
+                <pre><code class="html sg-code-syntax"></code></pre>
+              </div>
             </div>
-            <div class="sg-code-content">
-              <div class="sg-code-box-sidebar"></div>
-              <pre><code class="html sg-code-syntax"></code></pre>
+
+            <div class="sg-popover-arrow-control">
+              <button class="pikto-btn pikto-btn-teal" data-style="top">Top</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="top top-left">Top Left</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="top top-right">Top Right</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="bottom">Bottom</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="bottom bottom-left">Bottom Left</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="bottom bottom-right">Bottom Right</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="left">Left</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="right">Right</button>
             </div>
-          </div>
+          </section>
+          <!--Section1 END-->
+
+          <!--Section2 START-->
+          <section class="js-sg-popover-footer">
+            <h2 class="sg-h2">White Popover With Footer</h2>
+
+            <div class="sg-content-box sg-popover sg-popover-grey" data-content="popover-2">
+              <div class="popover popover-white popover-with-footer top">
+                <div class="arrow"></div>
+                <div class="popover-content">
+                  <h1 class="h5">Title</h1>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, eum.
+                </div>
+                <div class="popover-footer">
+                  <button name="button" type="submit">Got It</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="sg-code-box" id="popover-2">
+              <span>code</span>
+                <div class="sg-code-box-display clearfix">
+                <button class="sg-show-code">Show</button>
+                <button class="sg-hide-code">Hide</button>
+              </div>
+              <div class="sg-code-content">
+                <div class="sg-code-box-sidebar"></div>
+                <pre><code class="html sg-code-syntax"></code></pre>
+              </div>
+            </div>
+
+            <div class="sg-popover-arrow-control">
+              <button class="pikto-btn pikto-btn-teal" data-style="top">Top</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="top top-left">Top Left</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="top top-right">Top Right</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="bottom">Bottom</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="bottom bottom-left">Bottom Left</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="bottom bottom-right">Bottom Right</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="left">Left</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="right">Right</button>
+            </div>
+          </section>
+          <!--Section2 END-->
+
+          <!--Section3 START-->
+          <section class="js-sg-popover-header">
+            <h2 class="sg-h2">White Popover With Header</h2>
+
+            <div class="sg-content-box sg-popover sg-popover-grey" data-content="popover-3">
+              <div class="popover popover-white popover-with-header top">
+                <div class="arrow"></div>
+                <h1 class="h5 popover-title">Take a Tour</h1>
+                <div class="popover-content">Click here to tour the Piktochart editor.</div>
+              </div>
+            </div>
+
+            <div class="sg-code-box" id="popover-3">
+              <span>code</span>
+                <div class="sg-code-box-display clearfix">
+                <button class="sg-show-code">Show</button>
+                <button class="sg-hide-code">Hide</button>
+              </div>
+              <div class="sg-code-content">
+                <div class="sg-code-box-sidebar"></div>
+                <pre><code class="html sg-code-syntax"></code></pre>
+              </div>
+            </div>
+
+            <div class="sg-popover-arrow-control">
+              <button class="pikto-btn pikto-btn-teal" data-style="top">Top</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="top top-left">Top Left</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="top top-right">Top Right</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="bottom">Bottom</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="bottom bottom-left">Bottom Left</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="bottom bottom-right">Bottom Right</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="left">Left</button>
+              <button class="pikto-btn pikto-btn-teal" data-style="right">Right</button>
+            </div>
+          </section>
+          <!--Section3 END-->
 
           <h2 class="sg-h2">Onboarding Popover</h4>
-            <div class="sg-content-box sg-popover sg-popover-grey" data-content="popover-4">
+            <div class="sg-content-box sg-popover sg-popover-grey js-sg-popover-header" data-content="popover-4">
               <div class="popover popover-white popover-onboarding top" role="tooltip">
                 <div class="popover-content">
                   <i class="btn-close icon-cross-greydark-big"></i>

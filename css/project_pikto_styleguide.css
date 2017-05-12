@@ -627,10 +627,6 @@ pre code {
 }
 
 /*Popover*/
-.sg-popover {
-  padding: 20px;
-}
-
 .sg-popover > .popover {
   position: relative;
   display: inline-block;
@@ -643,6 +639,7 @@ pre code {
 
 .sg-popover-grey {
   background-color: grey;
+  padding: 20px;
 }
 
 [data-content="popover-2"] > .popover,
@@ -732,4 +729,17 @@ pre code {
 /*Navbars*/
 .styleguide-navbars .navbar img {
   border-radius: 2px;
+}
+
+/*Popover*/
+.js-sg-popover-normal .sg-content-box {
+  height: 114px;
+}
+
+.js-sg-popover-footer .sg-content-box {
+  height: 204px;
+}
+
+.js-sg-popover-header .sg-content-box {
+  height: 150px;
 }

@@ -683,7 +683,6 @@ $sg-code-line-height: 20px;
 }
 /*Popover*/
 .sg-popover {
-  padding: 20px;
 
   > .popover {
     position: relative;
@@ -698,6 +697,8 @@ $sg-code-line-height: 20px;
 
 .sg-popover-grey {
   background-color: grey;
+  padding: 20px;
+
 }
 
 [data-content="popover-2"], 
@@ -809,4 +810,22 @@ $sg-code-line-height: 20px;
       border-radius: 2px;
     }
   }
+}
+
+/*Popover*/
+.js-sg-popover-normal{
+  .sg-content-box {
+    height: 114px;
+  } 
+}
+.js-sg-popover-footer {
+  .sg-content-box {
+    height: 204px;
+  } 
+}
+
+.js-sg-popover-header {
+  .sg-content-box {
+    height: 150px;
+  } 
 }

@@ -7,10 +7,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var sg_code_box = document.querySelectorAll('.sg-code-box');
   var sg_content_box = document.querySelectorAll('.sg-content-box');
   var sg_code_content = document.querySelectorAll('.sg-code-content');
-  var sg_popover_teal = document.querySelector('.sg-popover > .popover-teal-grey');
-  var sg_popover_purple = document.querySelector('.sg-popover > .popover-dark-purple');
-  var popover_arrow_control = document.querySelectorAll('.sg-popover-arrow-control > button');
-
   var sg_code_box_sidebar = document.querySelectorAll('.sg-code-box-sidebar');
   var sg_code_box_display = document.querySelectorAll('.sg-code-box-display');
 
@@ -37,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   /*INIT*/
-  $("button[data-target='sg_data_navbars']").parent('li').addClass('active');
-  $("#sg_data_navbars").addClass('active slide-in');
+  $("button[data-target='sg_data_popover']").parent('li').addClass('active');
+  $("#sg_data_popover").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
@@ -155,21 +151,32 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   /*Popover Arrow Change*/
-  [...popover_arrow_control].forEach( function(elem) {
 
-    const sg_popover = document.querySelector('.sg-popover');
+  function popover_control(selected, classes) {
+    const current_section = document.querySelector(selected);
+    const current_popover = current_section.querySelector('.popover');
+    const current_content_box = current_section.querySelector(".sg-content-box");
+    const current_codebox = current_section.querySelector('.sg-code-content pre code');
+    const sg_arrow_control = current_section.querySelectorAll('.sg-popover-arrow-control > button');
 
-    elem.addEventListener('mousedown', function(e){
-      var style = e.target.getAttribute('data-style');
-      sg_popover_teal.classList = "popover popover-teal-grey" + " " + style;
-      sg_popover_purple.classList = "popover popover-dark-purple" + " " + style;
-      injectCode(sg_popover);
-      /*reinitialized highlighting*/
-      $('.sg-popover + .sg-code-box pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
+    [...sg_arrow_control].forEach(function(elem){
+      elem.addEventListener('mousedown', function(e){
+        var pos = e.target.getAttribute("data-style");
+        current_popover.classList = classes + " " + pos;
+
+        injectCode(current_content_box);
+        /*reinitialized highlighting*/
+        $(current_codebox).each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
       });
     });
-  });
+  }
+
+  popover_control('.js-sg-popover-normal', 'popover popover-teal-grey');
+  popover_control('.js-sg-popover-footer', 'popover popover-white popover-with-footer');
+  popover_control('.js-sg-popover-header', 'popover popover-white popover-with-header');
+
 });
 
 
