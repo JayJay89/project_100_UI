@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: '';
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+.eq-height {
+  overflow: hidden;
+}
+
+.eq-height .eq-height-col {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+
+.back-button {
+  background-color: #f0f0f0;
+  padding: 5px;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+}
+
+.testbox {
+  background-color: red;
+  height: 200px;
+  width: 200px;
+  display: block;
+  content: 'test';
+  z-index: 1;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes move-in {
+  from {
+    margin-top: -10px;
+  }
+  to {
+    margin-top: 0px;
+  }
+}
+
+@-moz-keyframes move-in {
+  from {
+    margin-top: -10px;
+  }
+  to {
+    margin-top: 0px;
+  }
+}
+
+@-ms-keyframes move-in {
+  from {
+    margin-top: -10px;
+  }
+  to {
+    margin-top: 0px;
+  }
+}
+
+.cnp-wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+
+.cnp {
+  background-color: beige;
+  width: 50%;
+  height: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+}
+
+.cnp-page-list,
+.cnp-preview-list {
+  flex: 1;
+}
+
+.cn-page {
+  display: none;
+}
+
+.cn-page.active {
+  display: block;
+  -webkit-animation: fade-in 0.3s ease-in 1, move-in 0.3s ease-in 1;
+  -moz-animation: fade-in 0.3s ease-in 1, move-in 0.3s ease-in 1;
+  -ms-animation: fade-in 0.3s ease-in 1, move-in 0.3s ease-in 1;
+}
+
+.cn-page-item {
+  padding: 10px;
+  margin: 10px 10px 10px 0px;
+  background-color: green;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cn-page-item:hover {
+  background-color: #006700;
+}
+
+.cn-page-item > p, .cn-page-item > h2 {
+  pointer-events: none;
+}
+
+.cn-page-item > p {
+  height: calc(80px - 28px - (2 * 10px));
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cnp-preview-list {
+  position: relative;
+}
+
+.cnp-content {
+  position: absolute;
+  height: calc(420px - 20px);
+  background-color: purple;
+  padding: 10px;
+  display: block;
+  transition: top 0.5s ease;
+  top: -420px;
+}
+
+.cnp-content > img {
+  width: 100%;
+}
+
+.cnp-content.active {
+  top: 0px;
+}
+
+.cnp-content.bottom {
+  top: 420px;
+}
+
+.cnp-nav {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  text-align: center;
+  padding: 10px 0px;
+}

@@ -1,0 +1,123 @@
+@import 'all';
+
+@-webkit-keyframes fade-in {
+  from   { opacity: 0; }
+  to { opacity: 1; }
+}
+@-moz-keyframes fade-in {
+  from   { opacity: 0; }
+  to { opacity: 1; }
+}
+@-ms-keyframes fade-in {
+  from   { opacity: 0; }
+  to { opacity: 1; }
+}
+@-webkit-keyframes move-in {
+  from   { margin-top: -10px; }
+  to { margin-top: 0px; }
+}
+@-moz-keyframes move-in {
+  from   { margin-top: -10px; }
+  to { margin-top: 0px; }
+}
+@-ms-keyframes move-in {
+  from   { margin-top: -10px; }
+  to { margin-top: 0px; }
+}
+
+.cnp-wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+
+.cnp {
+  background-color: beige;
+  width: 50%;
+  height: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+}
+
+.cnp-page-list,
+.cnp-preview-list {
+  flex: 1;
+}
+
+.cn-page {
+  display: none;
+
+  &.active {
+    display: block;
+    -webkit-animation: fade-in 0.3s ease-in 1, move-in 0.3s ease-in 1;
+    -moz-animation: fade-in 0.3s ease-in 1, move-in 0.3s ease-in 1;
+    -ms-animation: fade-in 0.3s ease-in 1, move-in 0.3s ease-in 1;
+  }
+}
+
+.cn-page-item {
+  padding: 10px;
+  margin: 10px 10px 10px 0px;
+  background-color: green;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken(green, 5%);
+  }
+
+  > p, >h2 {
+    pointer-events: none;
+  }
+
+  > p {
+    height: calc(80px - 28px - (2 * 10px));
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+} 
+
+.cnp-preview-list {
+  position: relative;
+}
+
+.cnp-content {
+  position: absolute;
+  height: calc(420px - 20px);
+  background-color: purple;
+  padding: 10px;
+  display: block;
+  transition: top 0.5s ease;
+  top: -420px;
+  
+  > img {
+    width: 100%
+  }
+  
+  &.active {
+    top: 0px;
+  }
+
+  &.bottom {
+    top: 420px;
+  }
+}
+
+.cnp-nav {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  text-align: center;
+  padding: 10px 0px;
+}

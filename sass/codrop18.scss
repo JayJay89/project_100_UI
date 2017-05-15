@@ -1,96 +1,96 @@
 @import "all";
 
 .tng-wrapper {
-    height: 100vh;
-    width: 100%;
+  height: 100vh;
+  width: 100%;
 }
 
 .tng {
-    display: table;
-    height: inherit;
-    width: 100%;
+  display: table;
+  height: inherit;
+  width: 100%;
 }
 
 .tng-slider {
-    list-style-type: none;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: left;
+  list-style-type: none;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
 }
 
 .tng-slider-bar {
-    cursor: pointer;
-    height: 38px;
-    overflow: hidden;
-    transition: height 0.2s ease;
-    margin-bottom: 20px;
+  cursor: pointer;
+  height: 38px;
+  overflow: hidden;
+  transition: height 0.2s ease;
+  margin-bottom: 20px;
 
-    &.expand {
-        height: 190px;
-    }
+  &.expand {
+    height: 190px;
+  }
 }
 
 .tng-list-name {
-    padding: 10px 40px;
-    background-color: green;
-    display: inline-block;
+  padding: 10px 40px;
+  background-color: green;
+  display: inline-block;
 }
 
 .tng-slider-images-wrapper {
-    overflow: hidden;
-    width: 100vw;
-    border-top: 1px solid red;
-    border-bottom: 1px solid red;
+  overflow: hidden;
+  width: 100vw;
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
 }
 
 .tng-slider-images {
-    @include clearfix;
+  @include clearfix;
 
-    > li {
-        display: inline-block;
-        float: left;
+  > li {
+    display: inline-block;
+    float: left;
 
-        > span {
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
-            width: 200px;
-            height: 150px;
-            background-color: yellow;
-        }
+    > span {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      width: 200px;
+      height: 150px;
+      background-color: yellow;
     }
+  }
 
-    img {
-        width: 200px;
-        display: block;
-    }
+  img {
+    width: 200px;
+    display: block;
+  }
 
-    $color-set: (
-        1: #EAF2F8,
-        2: #D4E6F1,
-        3: #A9CCE3,
-        4: #7FB3D5,
-        5: #5499C7,
-        6: #2980B9,
-        7: #2471A3,
-        8: #1F618D,
-        9: #1A5276,
-        10: #154360,
-        11: #943126,
-        12: #78281F
+  $color-set: (
+    1: #EAF2F8,
+    2: #D4E6F1,
+    3: #A9CCE3,
+    4: #7FB3D5,
+    5: #5499C7,
+    6: #2980B9,
+    7: #2471A3,
+    8: #1F618D,
+    9: #1A5276,
+    10: #154360,
+    11: #943126,
+    12: #78281F
     );
 
-    @each $child, $bg-color in $color-set {
-        li:nth-child(#{$child}) {
-            > span {
-                background-color: $bg-color;
-            }
-        }
+  @each $child, $bg-color in $color-set {
+    li:nth-child(#{$child}) {
+      > span {
+        background-color: $bg-color;
+      }
     }
+  }
 
-    li:last-child {
-        > span {
-            background-color: red;
-        }
+  li:last-child {
+    > span {
+      background-color: red;
     }
+  }
 }

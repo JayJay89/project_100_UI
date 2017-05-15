@@ -26,6 +26,11 @@ $csn_card_width: 130px;
   border: 1px solid green;
   overflow: hidden;
   cursor: pointer;
+  transition: margin-left 0.5s ease;
+
+  &.fold {
+    margin-left: -130px;
+  }
 
   > img {
     display: block;
@@ -93,7 +98,8 @@ $card-set: (
   background-color: rgba(red, 0.8);
   position: absolute;
   display: table;
-  z-index: 999;
+  z-index: 5;
+  transition: left 0.5s ease;
 }
 
 .csn-content {

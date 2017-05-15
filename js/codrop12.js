@@ -1,117 +1,3 @@
-// $(function(){
-//   var totalImg = $('.sp-gallery-container img').length;
-//   var currentImgIndex = 0;
-
-//   var navigateTo = function(target, direction) {
-//     var $this = target;
-//     var $imgSrc = $this.attr('src');
-
-//     $('.sp-image-container img').removeClass('active');
-
-//     setTimeout(function(){
-//       $('.sp-image-container img').remove();
-//       $('.sp-image-container').append("<img src=" + $imgSrc +">");
-
-//       setTimeout(function(){
-//         $('.sp-image-container').find('img').addClass('active');
-//       },100);
-//     },500);
-
-//     if (direction == "previous") {
-//       currentImgIndex--;
-//     } else if (direction == "next") {
-//       currentImgIndex++;
-//     }
-
-//     console.log("current index is " + currentImgIndex);
-//     pointerHideShow();
-//   }
-
-//   var pointerHideShow = function(){
-//     if (currentImgIndex == 0) {
-//       $('#prev').css('display','none');
-//     } else {
-//       $('#prev').css('display','inline-block');
-//     }
-
-//     if (currentImgIndex == parseInt(totalImg - 1)) {
-//       $('#next').css('display','none');
-//     } else {
-//       $('#next').css('display','inline-block');
-//     }
-//   }
-
-//   $('.sp-gallery-container > li').on('click',function(){
-//     //this is the currently selected li
-//     var $this           = $(this); 
-//     var $thisImage      = $(this).find('img');
-//     var $thisImageSrc   = $(this).find('img').attr('src');
-
-//     currentImgIndex = $this.index();
-
-//     $($thisImage).on('load',function(){
-//       console.log('loaded');
-//     })
-
-//     $('.sp-gallery-container').stop().animate({'height':'0%'},500,function(){
-//       $(this).find('li').hide();
-//     });
-
-//     $('.sp-display-panel').stop().animate({'height':'100%'},500,function(){
-//       $('.sp-display-pointer').css('display','inline-block');
-
-//       setTimeout(function(){
-//         $('.sp-display-pointer').addClass('active');
-//       },300);
-
-//       $('.sp-image-container').append("<img src=" + $thisImageSrc +">");
-
-//       setTimeout(function(){
-//         $('.sp-image-container').find('img').addClass('active');
-//       },100);
-
-//       pointerHideShow();
-//     });
-
-//     console.log(currentImgIndex);
-//   });
-
-//   $('.sp-image-container').on('click', 'img', function(){
-
-//     var $this = $(this);
-//     $this.animate({'height':'0%'},500);
-
-//     $('.sp-gallery-container').css('z-index','1').show().find('li').show();
-
-//     $('.sp-gallery-container').stop().animate({'height':'100%'},500,function(){
-//       $('.sp-image-container').find('img').remove();
-//     });
-
-//     $('.sp-display-panel').stop().animate({'height':'0%'},500,function(){
-//       $('.sp-display-pointer').hide().removeClass('active');
-//     });
-//   });
-
-//   $('#prev').on('click', function(){
-//     var $prevImg = $('.sp-gallery-container li:nth-child('+parseInt(currentImgIndex)+') img');
-//     navigateTo($prevImg, "previous");
-//   });
-
-//   $('#next').on('click', function(){
-//     var $nextImg = $('.sp-gallery-container li:nth-child('+parseInt(currentImgIndex+2)+') img');
-//     navigateTo($nextImg, "next");
-//   });
-// });
-
-/*
-nth-child:          1  2  3  4  5
-currentImgIndex:    0  1  2  3  4
-*/
-
-/*If you are at Index2 and you want to go to the next img, that next image is the 4th-child */
-/*If you are at Index2 and you want to go to the prev img, that next image is the 2th-child */
-/*Hence the calculation above*/
-
 document.addEventListener('DOMContentLoaded', function(event){
   const gallery = document.querySelector('.sp-gallery-container');
   const gallery_li = document.querySelectorAll('.sp-gallery-container > li');
@@ -276,61 +162,117 @@ document.addEventListener('DOMContentLoaded', function(event){
   })
 });
 
-/*Lesson 1*/
-/* Event Delegation
+/*jquery*/
+// $(function(){
+//   var totalImg = $('.sp-gallery-container img').length;
+//   var currentImgIndex = 0;
 
-  image_container_image.addEventListener('click', function(e){
-    console.log(e.target);
+//   var navigateTo = function(target, direction) {
+//     var $this = target;
+//     var $imgSrc = $this.attr('src');
 
-    if (e.target.tagName.toLowerCase() === 'img') {
-      //do something
-    }
+//     $('.sp-image-container img').removeClass('active');
 
-    if(e.tagName == 'A' && e.classList.contains("someBtn")){
-      //do something
-    }
+//     setTimeout(function(){
+//       $('.sp-image-container img').remove();
+//       $('.sp-image-container').append("<img src=" + $imgSrc +">");
 
-    if ( e.target.className === 'my-button') {
-      //do something
-    }
+//       setTimeout(function(){
+//         $('.sp-image-container').find('img').addClass('active');
+//       },100);
+//     },500);
 
-    if(e.target && e.target.nodeName == "LI") {
-      //do something
-    }
-  })
-*/
+//     if (direction == "previous") {
+//       currentImgIndex--;
+//     } else if (direction == "next") {
+//       currentImgIndex++;
+//     }
 
-/*Lesson 2*/
+//     console.log("current index is " + currentImgIndex);
+//     pointerHideShow();
+//   }
+
+//   var pointerHideShow = function(){
+//     if (currentImgIndex == 0) {
+//       $('#prev').css('display','none');
+//     } else {
+//       $('#prev').css('display','inline-block');
+//     }
+
+//     if (currentImgIndex == parseInt(totalImg - 1)) {
+//       $('#next').css('display','none');
+//     } else {
+//       $('#next').css('display','inline-block');
+//     }
+//   }
+
+//   $('.sp-gallery-container > li').on('click',function(){
+//     //this is the currently selected li
+//     var $this           = $(this); 
+//     var $thisImage      = $(this).find('img');
+//     var $thisImageSrc   = $(this).find('img').attr('src');
+
+//     currentImgIndex = $this.index();
+
+//     $($thisImage).on('load',function(){
+//       console.log('loaded');
+//     })
+
+//     $('.sp-gallery-container').stop().animate({'height':'0%'},500,function(){
+//       $(this).find('li').hide();
+//     });
+
+//     $('.sp-display-panel').stop().animate({'height':'100%'},500,function(){
+//       $('.sp-display-pointer').css('display','inline-block');
+
+//       setTimeout(function(){
+//         $('.sp-display-pointer').addClass('active');
+//       },300);
+
+//       $('.sp-image-container').append("<img src=" + $thisImageSrc +">");
+
+//       setTimeout(function(){
+//         $('.sp-image-container').find('img').addClass('active');
+//       },100);
+
+//       pointerHideShow();
+//     });
+
+//     console.log(currentImgIndex);
+//   });
+
+//   $('.sp-image-container').on('click', 'img', function(){
+
+//     var $this = $(this);
+//     $this.animate({'height':'0%'},500);
+
+//     $('.sp-gallery-container').css('z-index','1').show().find('li').show();
+
+//     $('.sp-gallery-container').stop().animate({'height':'100%'},500,function(){
+//       $('.sp-image-container').find('img').remove();
+//     });
+
+//     $('.sp-display-panel').stop().animate({'height':'0%'},500,function(){
+//       $('.sp-display-pointer').hide().removeClass('active');
+//     });
+//   });
+
+//   $('#prev').on('click', function(){
+//     var $prevImg = $('.sp-gallery-container li:nth-child('+parseInt(currentImgIndex)+') img');
+//     navigateTo($prevImg, "previous");
+//   });
+
+//   $('#next').on('click', function(){
+//     var $nextImg = $('.sp-gallery-container li:nth-child('+parseInt(currentImgIndex+2)+') img');
+//     navigateTo($nextImg, "next");
+//   });
+// });
+
 /*
-
-  This won't work
-  ======================================
-  left_pointer.addEventListener('transitionend', function(){
-    closeGallery();
-  });
-  left_pointer.removeEventListener('transitionend');
-  ======================================
-
-  To remove event listeners, This'll work
-  ======================================
-  left_pointer.addEventListener('transitionend', switchDisplay);
-  left_pointer.removeEventListener('transitionend', switchDisplay);
-  ======================================
+nth-child:          1  2  3  4  5
+currentImgIndex:    0  1  2  3  4
 */
 
-/*Lesson 3 */
-/*
-  Always remember to remove event listeners after they are not in used!!!
-
-  OR 
-
-  Search for how to prevent event handlers from firing multiple times
-*/
-
-/*Lesson 4*/
-// https://developers.google.com/web/updates/2016/10/addeventlistener-once
-/*
-Instead of removing event listeners all the time, You can add a third parameter 
-to  
-  elem.addEventListener('transitionend', switchDisplay, {once: true});
-*/
+/*If you are at Index2 and you want to go to the next img, that next image is the 4th-child */
+/*If you are at Index2 and you want to go to the prev img, that next image is the 2th-child */
+/*Hence the calculation above*/

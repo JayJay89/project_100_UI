@@ -126,10 +126,9 @@ img {
 /* 08 Links (text & icon with container) */
 /**=====================================**/
 a {
-  @include general-link;
-
+  @include generate-link($teal-combo);
   &:focus {
-    @include tab-focus;
+    outline: none;
   }
 }
 

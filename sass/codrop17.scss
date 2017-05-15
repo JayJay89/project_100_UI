@@ -1,68 +1,68 @@
 @import "all";
 
 .sdb {
-    border: 1px solid blue;
-    margin-top: 200px;
+  border: 1px solid blue;
+  margin-top: 200px;
 }
 
 .sdb-container {
-    > li {
-        background-color: green;
-        border: 1px solid red;
-        cursor: pointer;
-        display: block;
-        float: left;
-        height: 100px;
-        margin-right: 10px;
-        position: relative;
-        width: 200px;
+  > li {
+    background-color: green;
+    border: 1px solid red;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 100px;
+    margin-right: 10px;
+    position: relative;
+    width: 200px;
 
-        &.active {
-            img {
-                width: 100%;
-                height: 150%;
-                left: 0%;
-            }
+    &.active {
+      img {
+        width: 100%;
+        height: 150%;
+        left: 0%;
+      }
 
-            .sdb-sliding-block {
-                top: 100%;
-            }
+      .sdb-sliding-block {
+        top: 100%;
+      }
 
-            .sdb-content {
-                top: 150%;
-            }
-        }
-
-        img {
-            display: block;
-            position: absolute;
-            left: 50%;
-            bottom: 0%;
-            width: 0%;
-            height: 0%;
-            transform-origin: 50% 50%;
-            transition: all 0.4s cubic-bezier(.55,-0.8,0.5,2);
-        }
+      .sdb-content {
+        top: 150%;
+      }
     }
+
+    img {
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: 0%;
+      width: 0%;
+      height: 0%;
+      transform-origin: 50% 50%;
+      transition: all 0.4s cubic-bezier(.55,-0.8,0.5,2);
+    }
+  }
 }
 
 .sdb-sliding-block {
-    display: block;
-    background-color: yellow;
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    top: 0%;
-    z-index: -1;
+  display: block;
+  background-color: yellow;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 0%;
+  z-index: -1;
 
-    transition: top 0.4s cubic-bezier(0,0,0.5,1.5);
+  transition: top 0.4s cubic-bezier(0,0,0.5,1.5);
 }
 
 .sdb-content {
-    position: relative;
-    top: 0%;
-    transition: top 0.4s cubic-bezier(0,0,0.5,1.5);
-    > h3 {
-        text-align: center;
-    }
+  position: relative;
+  top: 0%;
+  transition: top 0.4s cubic-bezier(0,0,0.5,1.5);
+  > h3 {
+    text-align: center;
+  }
 }
