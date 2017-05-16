@@ -143,7 +143,7 @@
 /* 01f Reset Text */
 /**=====================================**/
 @mixin reset-text() {
-  font-family: $font-family-base;
+  font-family: $proxima-regular;
   // We deliberately do NOT reset font-size.
   font-style: normal; 
   font-weight: normal;
@@ -544,20 +544,13 @@
   .form-control {
     /*border-color: $border-color;
     @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work*/
-    border-radius: $input-border-radius-small;
+    @include border-radius()
 
    /* &:focus {
       border-color: darken($border-color, 10%);
       $shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten($border-color, 20%);
       @include box-shadow($shadow);
     }*/
-  }
-
-  // Set validation states also for addons
-  .input-group-addon {
-    color: $text-color;
-    border-color: $border-color;
-    background-color: $background-color;
   }
 
   // Optional feedback icon
@@ -584,31 +577,6 @@
     border-color: $color;
     outline: 0;
     @include box-shadow(inset 0 0 0 1px $color-rgba);
-  }
-}
-
-// Form control sizing
-// Relative text size, padding, and border-radii changes for form controls. For
-// horizontal sizing, wrap controls in the predefined grid classes. `<select>`
-// element gets special love because it's special, and that's a fact!
-// [converter] $parent hack
-@mixin input-size($parent, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
-  #{$parent} {
-    height: $input-height;
-    padding: $padding-vertical $padding-horizontal;
-    font-size: $font-size;
-    line-height: $line-height;
-    border-radius: $border-radius;
-  }
-
-  select#{$parent} {
-    height: $input-height;
-    line-height: $input-height;
-  }
-
-  textarea#{$parent},
-  select[multiple]#{$parent} {
-    height: auto;
   }
 }
 
@@ -1066,43 +1034,6 @@
 }
 
 /**=====================================**/
-/* 05b Icon Links */
-/**=====================================**/
-@mixin icon-container-color-combination-01 {
-  background-color: $icon-container-default-color-01;
-
-  &:hover {
-    background-color: $icon-container-hover-color-01;
-  }
-
-  &:active {
-    background-color: $icon-container-active-color-01;
-  }
-}
-
-@mixin icon-container-color-combination-02 {
-
-  &:hover {
-    background-color: $icon-container-hover-color-02;
-  }
-
-  &:active {
-    background-color: $icon-container-active-color-02;
-  }
-}
-
-@mixin icon-container-color-combination-03 {
-
-  &:hover {
-    background-color: $icon-container-hover-color-03;
-  }
-
-  &:active {
-    background-color: $icon-container-active-color-03;
-  }
-}
-
-/**=====================================**/
 /* 05c Media Queries */
 /**=====================================**/
 @mixin min-screen($width) {
@@ -1221,7 +1152,7 @@
 /**====================================**/
 @mixin font-base {
   color: $text-color;
-  font-family: $font-family-base;
+  font-family: $proxima-regular;
   font-size: $font-size-base;
   line-height: $line-height-base;
 }

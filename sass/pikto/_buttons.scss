@@ -208,7 +208,7 @@ input.pikto-btn {
 
 $wide-pd-hor: 20px;
 
-@mixin button-size($padding-vertical, $padding-horizontal, $font-size) {
+@mixin button-size-constructor ($padding-vertical, $padding-horizontal, $font-size) {
   padding: $padding-vertical $padding-horizontal;
   font-size: $font-size;
 
@@ -218,23 +218,23 @@ $wide-pd-hor: 20px;
 }
 
 .pikto-btn-xl {
-  @include button-size(16px, 28px, 22px);
+  @include button-size-constructor (16px, 28px, 22px);
 }
 
 .pikto-btn-lg {
-  @include button-size(10px, 16px, 18px);
+  @include button-size-constructor (10px, 16px, 18px);
 }
 
 .pikto-btn-md {
-  @include button-size(8px, 16px, 16px);
+  @include button-size-constructor (8px, 16px, 16px);
 }
 
 .pikto-btn-sm {
-  @include button-size(5px, 10px, 12px);
+  @include button-size-constructor (5px, 10px, 12px);
 }
 
 .pikto-btn-xs {
-  @include button-size(2px, 5px, 10px);
+  @include button-size-constructor (2px, 5px, 10px);
 }
 
 .gplus-login {

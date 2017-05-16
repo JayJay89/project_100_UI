@@ -42,7 +42,7 @@
   // IE8 fallback
   border: 0px solid $dropdown-fallback-border; 
   border: 0px solid $dropdown-border;
-  border-radius: $border-radius-base;
+  @include border-radius() 
   background-clip: padding-box;
 
   

@@ -45,7 +45,7 @@ html {
 }
 
 body {
-  font-family: $font-family-base;
+  font-family: $proxima-regular;
   font-size: $font-size-base;
   line-height: $line-height-base;
   color: $text-color;
@@ -127,6 +127,8 @@ img {
 /**=====================================**/
 a {
   @include generate-link($teal-combo);
+  text-decoration: none;
+
   &:focus {
     outline: none;
   }

@@ -20,7 +20,7 @@
   border: 1px solid transparent;
   
   @media (min-width: $grid-float-breakpoint) {
-    border-radius: $navbar-border-radius;
+    @include border-radius();
   }
 
   @include flexbox;

@@ -38,7 +38,7 @@ panel-group are used in
 .panel-heading {
   padding: $panel-heading-padding;
   border-bottom: 1px solid transparent;
-  @include border-radius("top", ($panel-border-radius - 1));
+  @include border-radius("top", 1px);
   > .dropdown .dropdown-toggle {
     color: inherit;
   }
@@ -54,14 +54,6 @@ panel-group are used in
   margin-bottom: 0;
   font-size: ceil(($font-size-base * 1.125));
   color: inherit;
-
-  > a, 
-  > small,
-  > .small,
-  > small > a,
-  > .small > a {
-    color: inherit;
-  }
 }
 
 // Optional footer (stays gray in every modifier class)
@@ -69,7 +61,7 @@ panel-group are used in
   padding: $panel-footer-padding;
   background-color: $panel-footer-bg;
   border-top: 1px solid $panel-inner-border;
-  @include border-radius("bottom", ($panel-border-radius - 1));
+  @include border-radius("bottom", 1px);
 }
 
 /**=====================================**/
@@ -85,7 +77,7 @@ panel-group are used in
   // Tighten up margin so it's only between panels
   .panel {
     margin-bottom: 0;
-    border-radius: $panel-border-radius;
+    @include border-radius();
     overflow: hidden;
 
     + .panel {
