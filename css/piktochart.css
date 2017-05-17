@@ -7164,12 +7164,12 @@ th {
   padding: 8px;
   line-height: 1.42857;
   vertical-align: top;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #dddddd;
 }
 
 .table > thead > tr > th {
   vertical-align: bottom;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #dddddd;
 }
 
 .table > caption + thead > tr:first-child > th, .table > caption + thead > tr:first-child > td,
@@ -7181,7 +7181,7 @@ th {
 }
 
 .table > tbody + tbody {
-  border-top: 2px solid #ddd;
+  border-top: 2px solid #dddddd;
 }
 
 .table .table {
@@ -7192,7 +7192,7 @@ th {
 /* 03 Bordered Table */
 /**=====================================**/
 .table-bordered {
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
 }
 
 .table-bordered > thead > tr > th,
@@ -7201,7 +7201,7 @@ th {
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > th,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
 }
 
 .table-bordered > thead > tr > th,
@@ -7240,7 +7240,7 @@ th {
 
 @media screen and (max-width: 767px) {
   .table-responsive {
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
     margin-bottom: 15px;
     overflow-y: hidden;
     overflow-x: scroll;

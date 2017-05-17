@@ -37,7 +37,7 @@
 /* 02 Colors */
 /**=====================================**/
 // Contextual variations (linked labels get darker on :hover)
-@mixin label-variant($color) {
+@mixin label-variant-constructor($color) {
   background-color: $color;
 
   &[href] {
@@ -49,15 +49,15 @@
 }
 
 .label-default {
-  @include label-variant($light-purple-grey-04);
+  @include label-variant-constructor($light-purple-grey-04);
 }
 
-.label-primary    { @include label-variant($brand-primary); }
-.label-secondary  { @include label-variant($brand-secondary); }
-.label-success    { @include label-variant($brand-success); }
-.label-info       { @include label-variant($brand-info); }
-.label-warning    { @include label-variant($brand-warning); }
-.label-danger     { @include label-variant($brand-danger); }
+.label-primary    { @include label-variant-constructor($brand-primary); }
+.label-secondary  { @include label-variant-constructor($brand-secondary); }
+.label-success    { @include label-variant-constructor($brand-success); }
+.label-info       { @include label-variant-constructor($brand-info); }
+.label-warning    { @include label-variant-constructor($brand-warning); }
+.label-danger     { @include label-variant-constructor($brand-danger); }
 
 /**=====================================**/
 /* 03 Pikto Add-on Label */
