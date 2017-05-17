@@ -12,6 +12,21 @@
 /**=====================================**/
 $alert-padding:             15px !default;
 
+$alert-success-bg:             $brand-success !default;
+$alert-success-text:           $text-color !default;
+
+$alert-info-bg:                $brand-info !default;
+$alert-info-text:              $text-color !default;
+
+$alert-warning-bg:             $brand-warning !default;
+$alert-warning-text:           $text-color !default;
+
+$alert-danger-bg:              $brand-danger !default;
+$alert-danger-text:            $text-color !default;
+
+$alert-danger-attention-bg:    $brand-danger !default;
+$alert-danger-attention-text:  $text-color !default;
+
 .alert {
   padding: $alert-padding;
   border: 1px solid transparent;
@@ -86,23 +101,23 @@ $alert-padding:             15px !default;
 }
 
 .alert-success {
-  @include alert-constructor ($brand-success, $text-color-dark);
+  @include alert-constructor ($brand-success, $text-color);
 }
 
 .alert-info {
-  @include alert-constructor ($brand-info, $text-color-dark);
+  @include alert-constructor ($brand-info, $text-color);
 }
 
 .alert-warning {
-  @include alert-constructor ($brand-warning, $text-color-dark);
+  @include alert-constructor ($brand-warning, $text-color);
 }
 
 .alert-attention {
-  @include alert-constructor ($brand-attention, $text-color-dark);
+  @include alert-constructor ($brand-attention, $text-color);
 }
 
 .alert-danger {
-  @include alert-constructor ($brand-danger, $text-color-light);
+  @include alert-constructor ($brand-danger, $text-color-white);
 }
 
 /**=====================================**/

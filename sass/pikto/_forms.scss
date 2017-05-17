@@ -49,9 +49,9 @@ legend {
   margin-bottom: $line-height-computed;
   font-size: ($font-size-base * 1.5);
   line-height: inherit;
-  color: $legend-color;
+  color: $text-color;
   border: 0;
-  border-bottom: 1px solid $legend-border-color;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 label {
@@ -103,7 +103,7 @@ output {
   padding-top: ($padding-base-vertical + 1);
   font-size: $font-size-base;
   line-height: $line-height-base;
-  color: $input-color;
+  color: $text-color;
 }
 
 /**=====================================**/
@@ -162,7 +162,7 @@ output {
   &[disabled],
   &[readonly],
   fieldset[disabled] & {
-    background-color: $input-bg-disabled;
+    background-color: $grey;
     opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
   }
 
@@ -173,9 +173,9 @@ output {
   // [converter] extracted textarea& to textarea.form-control
 
   &:focus {
-    border: 1px solid $input-border-focus;
+    border: 1px solid $teal;
     outline: none;
-    @include box-shadow(inset 0 0 0 1px $input-border-focus);
+    @include box-shadow(inset 0 0 0 1px $teal);
   }
 
   .input-has-error & {
@@ -263,7 +263,7 @@ input[type="search"] {
 // horizontal forms, use the predefined grid classes.
 
 .form-group {
-  margin-bottom: $form-group-margin-bottom;
+  margin-bottom: 15px;
 }
 
 /**=====================================**/
@@ -448,7 +448,7 @@ input[type="checkbox"] {
     position: absolute;
     top: 3px;
     /*The border-arrangement matters*/
-    border: 2px solid $dropdown-bg;
+    border: 2px solid $dark-purple-grey-03;
     border-top: none;
     border-right: none;
   }
@@ -617,7 +617,7 @@ input[type="checkbox"] {
 /**=====================================**/
 select {
   width: 100%;
-  height: $pikto-input-height;
+  height: 35px;
   padding: 0px 12px;
   font-size: $font-size-base;
   border: 1px solid transparent;

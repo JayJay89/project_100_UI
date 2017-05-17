@@ -23,11 +23,11 @@
     > a {
       position: relative;
       display: block;
-      padding: $nav-link-padding;
+      padding: 10px 15px;
 
       &:hover, &:focus {
         text-decoration: none;
-        background-color: $nav-link-hover-bg;
+        background-color: transparent;
       }
 
       // Prevent IE8 from misplacing imgs
@@ -39,11 +39,11 @@
 
       // Disabled state sets text to gray and nukes hover/tab effects
       &.disabled > a {
-        color: $nav-disabled-link-color;
+        color: $grey;
 
         &:hover,
         &:focus {
-          color: $nav-disabled-link-color;
+          color: $grey;
           text-decoration: none;
           background-color: transparent;
           cursor: $cursor-disabled;
@@ -54,7 +54,7 @@
   // Open dropdowns
   .open > a {
     &, &:hover, &:focus {
-      background-color: $nav-link-hover-bg;
+      background-color: transparent;
       border-color: $teal;
     }
   }
@@ -103,7 +103,7 @@
     &.active > a {
       &, &:hover, &:focus {
         @include opacity(1);
-        border-bottom: 2px solid $nav-tabs-active-link-hover-border-color;
+        border-bottom: 2px solid $teal;
         cursor: default;
       }
     }

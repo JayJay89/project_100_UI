@@ -832,6 +832,7 @@ button {
 }
 
 /*Mixins -- Fonts*/
+/*Mixins -- Font Sizes*/
 /*Code*/
 h1, h2, h3, h4, h5, h6, p {
   color: inherit;
@@ -911,6 +912,7 @@ strong {
   text-transform: capitalize;
 }
 
+/*Links*/
 .general-link {
   cursor: pointer;
   display: inline-block;
@@ -1025,110 +1027,16 @@ strong {
 /* 03 Components
 /**=====================================**/
 /**=====================================**/
-/* 04 Form State and Alert
-/**=====================================**/
-/**=====================================**/
 /* 05 Media Queries Breakpoints
 /**=====================================**/
 /**=====================================**/
-/* 05a For specific case scenario
-/**=====================================**/
-/*
-  If this value is change, remember to change the value in the JS file as well
-  /app/assets/javascripts/view/output/main.js LINE 286   
-*/
-/**=====================================**/
-/* 06 Grid system
-/**=====================================**/
-/**=====================================**/
-/* 07 Typography
-/**=====================================**/
-/* 07a Base
-/**=====================================**/
-/**=====================================**/
-/* 07b Header
-/**=====================================**/
-/**=====================================**/
-/* UI Elements */
-/**=====================================**/
-/* 08 Alerts
-/**=====================================**/
-/**=====================================**/
-/* 09 Badges
-/**=====================================**/
-/**=====================================**/
-/* 10 Breadcrumbs
-/**=====================================**/
-/**=====================================**/
-/* 11 Buttons
-/**=====================================**/
-/* 11a Buttons Colour
-/**=====================================**/
-/**=====================================**/
-/* 12 Carousel
-/**=====================================**/
-/**=====================================**/
-/* 13 Close
-/**=====================================**/
-/**=====================================**/
-/* 14 Code
-/**=====================================**/
-/**=====================================**/
-/* 15 Container Sizes
-/**=====================================**/
-/**=====================================**/
-/* 16 Dropdowns
-/**=====================================**/
-/**=====================================**/
 /* 17 Forms
-/**=====================================**/
-/**=====================================**/
-/* 18 Jumbotron
-/**=====================================**/
-/**=====================================**/
-/* 19 Labels
-/**=====================================**/
-/**=====================================**/
-/* 20 List Group
-/**=====================================**/
-/**=====================================**/
-/* 21 Modals
-/**=====================================**/
-/* 21a Base
-/**=====================================**/
-/**=====================================**/
-/* 21b Modal - Charts & Maps Shared Elements
-/**=====================================**/
-/**=====================================**/
-/* 21c Modal - Charts & Maps - Handsontable Data Grid
-/**=====================================**/
-/**=====================================**/
-/* 21d Modal-Charts - Main
-/**=====================================**/
-/**=====================================**/
-/* 21e Modal-Charts - SVG library container
-/**=====================================**/
-/**=====================================**/
-/* 21f Modal-Maps v4
-/**=====================================**/
-/**=====================================**/
-/* 22 Color Picker
 /**=====================================**/
 /**=====================================**/
 /* 23 Nav
 /**=====================================**/
 /**=====================================**/
 /* 24 Navbar
-/**=====================================**/
-/*
-    _navbar-new.scss
-    certain colors have the same variable but uses different colors
-    */
-/**=====================================**/
-/* 25 Pagination
-/**=====================================**/
-/**=====================================**/
-/* 26 Pager
 /**=====================================**/
 /**=====================================**/
 /* 27 Panels
@@ -1138,9 +1046,6 @@ strong {
 /**=====================================**/
 /**=====================================**/
 /* 30 Table
-/**=====================================**/
-/**=====================================**/
-/* 31 Thumbnails
 /**=====================================**/
 /**=====================================**/
 /* 32 Tooltips
@@ -1214,6 +1119,13 @@ strong {
 /**=====================================**/
 /* 45 Responsive Notification  */
 /**=====================================**/
+/**=====================================**/
+/* 46 Output Page
+/**=====================================**/
+/*
+  If this value is change, remember to change the value in the JS file as well
+  /app/assets/javascripts/view/output/main.js LINE 286   
+*/
 /**=====================================**/
 /* 01 Utilities */
 /**=====================================**/
@@ -1448,23 +1360,6 @@ hr {
 img {
   vertical-align: middle;
   max-width: 100%;
-}
-
-/**=====================================**/
-/* 05 Image Thumbnails */
-/**=====================================**/
-.img-thumbnail {
-  padding: 4px;
-  line-height: 1.42857;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  display: inline-block;
-  max-width: 100%;
-  height: auto;
 }
 
 /**=====================================**/
@@ -4727,8 +4622,8 @@ tbody.collapse.in {
   padding: 20px 0px;
   text-align: left;
   background-color: #2c2a37;
-  border: 0px solid #ccc;
-  border: 0px solid #ccc;
+  border: 0px solid #cccccc;
+  border: 0px solid #cccccc;
   border-radius: 2px;
   background-clip: padding-box;
 }
@@ -5043,16 +4938,16 @@ output {
 }
 
 .form-control::-moz-placeholder {
-  color: #999;
+  color: #999999;
   opacity: 1;
 }
 
 .form-control:-ms-input-placeholder {
-  color: #999;
+  color: #999999;
 }
 
 .form-control::-webkit-input-placeholder {
-  color: #999;
+  color: #999999;
 }
 
 .form-control::-ms-expand {
@@ -5148,7 +5043,7 @@ input[type="search"] {
   input[type="month"].input-lg,
   .input-group-lg
   input[type="month"] {
-    line-height: 48px;
+    line-height: 46px;
   }
 }
 
@@ -5162,54 +5057,6 @@ input[type="search"] {
 /**=====================================**/
 /* 06 Checkboxes and Radios */
 /**=====================================**/
-.radio,
-.checkbox {
-  position: relative;
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.radio label,
-.checkbox label {
-  min-height: 20px;
-  padding-left: 20px;
-  margin-bottom: 0;
-  font-weight: normal;
-  cursor: pointer;
-}
-
-.radio input[type="radio"],
-.radio-inline input[type="radio"],
-.checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"] {
-  position: absolute;
-  margin-left: -20px;
-  margin-top: 4px \9;
-}
-
-.radio + .radio,
-.checkbox + .checkbox {
-  margin-top: -5px;
-}
-
-.radio-inline,
-.checkbox-inline {
-  position: relative;
-  display: inline-block;
-  padding-left: 20px;
-  margin-bottom: 0;
-  vertical-align: middle;
-  font-weight: normal;
-  cursor: pointer;
-}
-
-.radio-inline + .radio-inline,
-.checkbox-inline + .checkbox-inline {
-  margin-top: 0;
-  margin-left: 10px;
-}
-
 input[type="radio"][disabled], input[type="radio"].disabled,
 fieldset[disabled] input[type="radio"],
 input[type="checkbox"][disabled],
@@ -5219,62 +5066,9 @@ input[type="checkbox"] {
   cursor: not-allowed;
 }
 
-.radio-inline.disabled,
-fieldset[disabled] .radio-inline,
-.checkbox-inline.disabled,
-fieldset[disabled]
-.checkbox-inline {
-  cursor: not-allowed;
-}
-
-.radio.disabled label,
-fieldset[disabled] .radio label,
-.checkbox.disabled label,
-fieldset[disabled]
-.checkbox label {
-  cursor: not-allowed;
-}
-
 /**=====================================**/
 /* 09 Form control Feedback States */
 /**=====================================**/
-.has-feedback {
-  position: relative;
-}
-
-.has-feedback .form-control {
-  padding-right: 42.5px;
-}
-
-.form-control-feedback {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 2;
-  display: block;
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
-  text-align: center;
-  pointer-events: none;
-}
-
-.input-lg + .form-control-feedback,
-.input-group-lg + .form-control-feedback,
-.form-group-lg .form-control + .form-control-feedback {
-  width: 48px;
-  height: 48px;
-  line-height: 48px;
-}
-
-.input-sm + .form-control-feedback,
-.input-group-sm + .form-control-feedback,
-.form-group-sm .form-control + .form-control-feedback {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-}
-
 .has-success .help-block,
 .has-success .control-label,
 .has-success .radio,
@@ -5297,12 +5091,6 @@ fieldset[disabled]
       $shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten($border-color, 20%);
       @include box-shadow($shadow);
     }*/
-}
-
-.has-success .input-group-addon {
-  color: #2c2a37;
-  border-color: #2c2a37;
-  background-color: #d8e9c6;
 }
 
 .has-success .form-control-feedback {
@@ -5333,12 +5121,6 @@ fieldset[disabled]
     }*/
 }
 
-.has-warning .input-group-addon {
-  color: #2c2a37;
-  border-color: #2c2a37;
-  background-color: #f3eeae;
-}
-
 .has-warning .form-control-feedback {
   color: #2c2a37;
 }
@@ -5367,32 +5149,8 @@ fieldset[disabled]
     }*/
 }
 
-.input-has-error .input-group-addon {
-  color: #2c2a37;
-  border-color: #2c2a37;
-  background-color: #f98484;
-}
-
 .input-has-error .form-control-feedback {
   color: #2c2a37;
-}
-
-.has-feedback label ~ .form-control-feedback {
-  top: 25px;
-}
-
-.has-feedback label.sr-only ~ .form-control-feedback {
-  top: 0;
-}
-
-/**=====================================**/
-/* 10 Help Text */
-/**=====================================**/
-.help-block {
-  display: block;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  color: #66617f;
 }
 
 /**=====================================**/
@@ -5413,7 +5171,6 @@ fieldset[disabled]
     display: inline-table;
     vertical-align: middle;
   }
-  .form-inline .input-group .input-group-addon,
   .form-inline .input-group .input-group-btn,
   .form-inline .input-group .form-control {
     width: auto;
@@ -5447,63 +5204,6 @@ fieldset[disabled]
 }
 
 /**=====================================**/
-/* 12 Horizontal Forms */
-/**=====================================**/
-.form-horizontal .radio,
-.form-horizontal .checkbox,
-.form-horizontal .radio-inline,
-.form-horizontal .checkbox-inline {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 7px;
-}
-
-.form-horizontal .radio,
-.form-horizontal .checkbox {
-  min-height: 27px;
-}
-
-.form-horizontal .form-group {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
-.form-horizontal .form-group:before, .form-horizontal .form-group:after {
-  content: " ";
-  display: table;
-}
-
-.form-horizontal .form-group:after {
-  clear: both;
-}
-
-@media (min-width: 768px) {
-  .form-horizontal .control-label {
-    text-align: right;
-    margin-bottom: 0;
-    padding-top: 7px;
-  }
-}
-
-.form-horizontal .has-feedback .form-control-feedback {
-  right: 15px;
-}
-
-@media (min-width: 768px) {
-  .form-horizontal .form-group-lg .control-label {
-    padding-top: 11px;
-    font-size: 19px;
-  }
-}
-
-@media (min-width: 768px) {
-  .form-horizontal .form-group-sm .control-label {
-    padding-top: 6px;
-    font-size: 12px;
-  }
-}
-
-/**=====================================**/
 /* 13 Pikto Add-on Customize Form */
 /**=====================================**/
 /* 13a Pikto Style Dropdown(outline only) */
@@ -5531,127 +5231,6 @@ fieldset[disabled]
 
 .pikto-dropdown select:focus {
   outline: 0 none !important;
-}
-
-/**=====================================**/
-/* 13b Pure CSS Dropdown by Using Checkbox */
-/**=====================================**/
-span[data-acts-as-select] {
-  min-width: 200px;
-  padding: 1.2em;
-  display: inline-block;
-  position: relative;
-  color: white;
-  text-indent: 0.01px;
-  border: 1px solid #a8c0c5;
-  background-color: #2c2a37;
-  z-index: 99;
-  border-radius: 2px;
-}
-
-span[data-acts-as-select] > span {
-  display: block;
-  position: absolute;
-  top: 105%;
-  left: 0;
-  right: 0;
-  border-radius: 2px;
-  background-color: #2c2a37;
-}
-
-span[data-acts-as-select]:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 32px;
-  line-height: 23px;
-  background: image-url("v4/b/sprite/sprite.png") no-repeat -96px -96px;
-  -ms-transform: scale(0.6);
-  -webkit-transform: scale(0.6);
-  transform: scale(0.6);
-}
-
-span[data-acts-as-select] label {
-  display: none;
-  white-space: nowrap;
-  line-height: 23px;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin: 0;
-  font-weight: normal;
-}
-
-span[data-acts-as-select] label[for="papersize"], span[data-acts-as-select] label[for="web"], span[data-acts-as-select] label:first-child {
-  border-radius: 4px 4px 0 0;
-}
-
-span[data-acts-as-select] label[for="custom"], span[data-acts-as-select] label:last-child {
-  border-radius: 0 0 4px 4px;
-}
-
-span[data-acts-as-select] label:hover {
-  border-radius: 2px;
-  background-color: #5e7e84;
-}
-
-span[data-acts-as-select] label.dummy-label {
-  /* this dummy label is to put the value of the dropdown */
-  display: block;
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-}
-
-span[data-acts-as-select] label.dummy-label:hover {
-  background-color: transparent;
-}
-
-span[data-acts-as-select] input[type=radio] {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-}
-
-span[data-acts-as-select] input[type=radio]:checked + label {
-  /* selected label is no longer go up if selected, we put a highlight color instead */
-  background-color: #31494d;
-  /* note to UI : need better color for selected dropdown? */
-  border-radius: 2px;
-}
-
-span[data-acts-as-select] input[type=radio]:checked + label:hover {
-  cursor: default;
-}
-
-span[data-acts-as-select].hover label {
-  /* changed the hover css event to class so that it's controllable via javascript */
-  display: block;
-}
-
-span[data-acts-as-select] .tooltip-inner {
-  width: 150px;
-}
-
-span[data-acts-as-select].select-dark {
-  border-color: #2c2a37;
-  background-color: #2c2a37;
-}
-
-span[data-acts-as-select].select-dark > span {
-  background-color: #2c2a37;
-}
-
-span[data-acts-as-select].select-dark:after {
-  background: image-url("v4/b/sprite/sprite.png") no-repeat -96px -64px;
-  -ms-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-
-span[data-acts-as-select].select-dark label:hover {
-  background-color: #373544;
 }
 
 /**=====================================**/
@@ -6168,6 +5747,9 @@ input[type=range]:focus::-ms-fill-upper {
   background: #c2c2c2;
 }
 
+/**=====================================**/
+/* Grid Variables
+/**=====================================**/
 /**=====================================**/
 /* 01 Container Widths */
 /**=====================================**/
@@ -7257,7 +6839,7 @@ input[type=range]:focus::-ms-fill-upper {
   line-height: 1.42857;
   text-decoration: none;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   margin-left: -1px;
   /*Boot*/
   color: #1cafa2;
@@ -7278,7 +6860,7 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #c2c2c2;
   z-index: 2;
   color: #127169;
-  border-color: #ddd;
+  border-color: #dddddd;
 }
 
 .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus,
@@ -7296,47 +6878,13 @@ input[type=range]:focus::-ms-fill-upper {
 .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
   color: #e8e8e8;
   background-color: #fff;
-  border-color: #ddd;
+  border-color: #dddddd;
   cursor: not-allowed;
 }
 
 /**=====================================**/
 /* Sizing */
 /**=====================================**/
-.pagination-lg > li > a,
-.pagination-lg > li > span {
-  padding: 10px 16px;
-  font-size: 19px;
-  line-height: 1.33333;
-}
-
-.pagination-lg > li:first-child > a,
-.pagination-lg > li:first-child > span {
-  border-radius: 2px 0 0 2px;
-}
-
-.pagination-lg > li:last-child > a,
-.pagination-lg > li:last-child > span {
-  border-radius: 0 2px 2px 0;
-}
-
-.pagination-sm > li > a,
-.pagination-sm > li > span {
-  padding: 5px 10px;
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-.pagination-sm > li:first-child > a,
-.pagination-sm > li:first-child > span {
-  border-radius: 2px 0 0 2px;
-}
-
-.pagination-sm > li:last-child > a,
-.pagination-sm > li:last-child > span {
-  border-radius: 0 2px 2px 0;
-}
-
 .pagination-load-more {
   width: 90%;
   color: #fff;
@@ -7402,14 +6950,6 @@ panel-group are used in
   margin-top: 0;
   margin-bottom: 0;
   font-size: 16px;
-  color: inherit;
-}
-
-.panel-title > a,
-.panel-title > small,
-.panel-title > .small,
-.panel-title > small > a,
-.panel-title > .small > a {
   color: inherit;
 }
 
@@ -8258,6 +7798,7 @@ table th[class*="col-"] {
 
 .modal-tool .panel-tab {
   background-color: #2c2a37;
+  border-radius: 0 0 2px 0;
 }
 
 .modal-tool .panel-tab li {
@@ -8325,6 +7866,7 @@ table th[class*="col-"] {
 
 .modal-preview .wrapper-preview {
   width: 980px;
+  border-radius: 0 0 2px 0;
   text-align: center;
   padding: 0px;
 }

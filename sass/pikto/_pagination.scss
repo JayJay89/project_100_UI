@@ -24,12 +24,12 @@
       padding: $padding-base-vertical $padding-base-horizontal;
       line-height: $line-height-base;
       text-decoration: none;
-      background-color: $pagination-bg;
-      border: 1px solid $pagination-border;
+      background-color: $white;
+      border: 1px solid $grey-alternate-3c;
       margin-left: -1px;
 
       /*Boot*/
-      color: $pagination-color;
+      color: $teal;
     }
 
     &:first-child {
@@ -49,10 +49,10 @@
   > li > a,
   > li > span {
     &:hover, &:focus {
-      background-color: $pagination-hover-bg;
+      background-color: $grey-darker;
       z-index: 2;
-      color: $pagination-hover-color;
-      border-color: $pagination-hover-border;
+      color: $teal-darker;
+      border-color: $grey-alternate-3c;
     }
   }
 
@@ -60,9 +60,9 @@
   > .active > span {
     &, &:hover, &:focus {
       z-index: 3;
-      color: $pagination-active-color;
-      background-color: $pagination-active-bg;
-      border-color: $pagination-active-border;
+      color: $white;
+      background-color: $brand-primary;
+      border-color: $brand-primary;
       cursor: default;
     }
   }
@@ -70,9 +70,9 @@
   > .disabled {
     > span, > span:hover, > span:focus,
     > a, > a:hover, > a:focus {
-      color: $pagination-disabled-color;
-      background-color: $pagination-disabled-bg;
-      border-color: $pagination-disabled-border;
+      color: $grey;
+      background-color: $white;
+      border-color: $grey-alternate-3c;
       cursor: $cursor-disabled;
     }
   }

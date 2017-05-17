@@ -184,7 +184,7 @@
 /**=====================================**/
 #modal-generic {
   /* for the used of generic(transparent) modal eg: chart when import excel n csv, just a overlay with loading */;
-  background-color: rgba(50 , 46 , 66 , $modal-backdrop-opacity); //$modal-backdrop-bg
+  background-color: rgba(50 , 46 , 66 , 0.7); //$modal-backdrop-bg
 
   .modal-dialog {
     @include box-shadow(none);

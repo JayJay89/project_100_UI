@@ -40,15 +40,15 @@
   background-color: $dark-purple-grey-03;
   
   // IE8 fallback
-  border: 0px solid $dropdown-fallback-border; 
-  border: 0px solid $dropdown-border;
+  border: 0px solid $grey-alternate-6; 
+  border: 0px solid $grey-alternate-6;
   @include border-radius() 
   background-clip: padding-box;
 
   
   // Dividers (basically an hr) within the dropdown
   .divider {
-    @include nav-divider($dropdown-divider-bg);
+    @include nav-divider($light-purple-grey-04);
   }
 
   // Links within the dropdown menu
@@ -102,7 +102,7 @@
 .dropdown-menu > li > a {
 
   &:hover {
-    background-color: $dropdown-link-hover-bg;
+    background-color: $dark-purple-grey-01;
   }
 }
 
@@ -112,10 +112,10 @@
   &,
   &:hover,
   &:focus {
-    color: $dropdown-link-active-color;
+    color: $white;
     text-decoration: none;
     outline: 0;
-    background-color: $dropdown-link-active-bg;
+    background-color: $dark-purple-grey-01;
   }
 }
 
