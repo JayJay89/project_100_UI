@@ -24,6 +24,7 @@ $default-base-radius: 2px;
 }
 
 //@include border-radius()            --> all border-radius = 2px;
+//@include border-radius("top")       --> top border-radius = 2px;
 //@include border-radius("top", 3px)  --> top-right and top-left border-radius = 3px;
 
 @mixin border-radius-special($properties...) {

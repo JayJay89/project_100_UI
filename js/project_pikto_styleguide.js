@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   /*INIT*/
-  $("button[data-target='sg_data_inputs']").parent('li').addClass('active');
-  $("#sg_data_inputs").addClass('active slide-in');
+  $("button[data-target='sg_data_ui_colour']").parent('li').addClass('active');
+  $("#sg_data_ui_colour").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     $('.sg-color-copy-label').addClass('fade-in');
     setTimeout(function(){
       $('.sg-color-copy-label').removeClass('fade-in');
-    }, 500)
+    }, 1000)
   });
 
   /*Popover Arrow Change*/

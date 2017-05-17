@@ -141,13 +141,16 @@ pre code {
 
 .sg-color-copy-label {
   background-color: beige;
-  padding: 10px;
+  padding: 20px;
+  font-size: 20px;
   position: fixed;
   display: inline-block;
   left: 50%;
-  transform: translate(-50%, 0%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.2s ease;
+  z-index: 1;
 
   &.fade-in {
     opacity: 1
@@ -368,17 +371,7 @@ pre code {
       float: left;
       margin-right: 24px;
       margin-bottom: 35px;
-
-      > span {
-        margin-top: 6px;
-        display: block; 
-        font-size: 10px;
-        text-align: left;
-        border: 1px solid $lightblue3;
-        color: $purple-gray;
-        @include sourceCode(regular);
-
-      }
+      font-size: 12px;
     }
   }
 }
@@ -394,9 +387,24 @@ pre code {
   display: table-cell;
   cursor: pointer;
   z-index: 1;
-  color: $lightblue2;
   font-size: 14px;
   border-radius: 2px;
+  text-transform: uppercase;
+  color: $white;
+
+  &.dark-text {
+    color: $purple-gray;
+  }
+
+  + span {
+    margin-top: 6px;
+    display: block; 
+    font-size: 10px;
+    text-align: left;
+    border: 1px solid $lightblue3;
+    color: $purple-gray;
+    @include sourceCode(regular);
+  }
 }
 
 $sg-code-line-height: 20px;

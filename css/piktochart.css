@@ -4138,7 +4138,8 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   font-weight: bold;
   line-height: 0.7;
   color: #000;
-  text-shadow: 0 1px 0 #fff;
+  -webkit-box-shadow-constructor: 0px 1px 0px #fff;
+  box-shadow-constructor: 0px 1px 0px #fff;
   opacity: 0.3;
   filter: alpha(opacity=30);
 }
@@ -4313,13 +4314,6 @@ tbody.collapse.in {
 }
 */
 .animation-properties {
-  /*
-  width: 97%;
-  width: calc(100% - 4px);
-  border-radius: 4px;
-  margin: 2px 2px;
-  padding: 2px 4px;
-  */
   width: 100%;
   padding-bottom: 4px;
 }
