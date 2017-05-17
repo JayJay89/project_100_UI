@@ -5,6 +5,9 @@
 ////// 03 Arrows
 ////////////////////////////////////
 
+$tooltip-arrow-width:         5px !default;
+$tooltip-arrow-color:         $black !default;
+
 /**=====================================**/
 /* 01 Base class */
 /**=====================================**/
@@ -23,7 +26,7 @@
   @include reset-text;
 
   &.in { 
-    @include opacity($tooltip-opacity);
+    @include opacity(0.9);
   }
 
   &.top { 
@@ -135,12 +138,12 @@
 /* 02 Wrapper for the tooltip content */
 /**=====================================**/
 .tooltip-inner {
-  max-width: $tooltip-max-width;
+  max-width: 200px;
   padding: 3px 8px;
-  color: $tooltip-color;
+  color: $white;
   text-align: center;
   text-decoration: none;
-  background-color: $tooltip-bg;
+  background-color: $black;
   @include border-radius;
 }
 

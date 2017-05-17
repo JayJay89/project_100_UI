@@ -8,6 +8,10 @@
 /**=====================================**/
 /* 01 Base */
 /**=====================================**/
+// Basics of a navbar
+$navbar-height:                    60px !default;
+$navbar-default-bg:                $dark-purple-grey-03 !default;
+$navbar-menu-collapse-bp:           950px;
 
 // Wrapper and base class
 // Provide a static navbar from which we expand to create full-width, fixed, and

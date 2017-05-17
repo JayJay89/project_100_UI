@@ -78,7 +78,7 @@ $alert-danger-attention-text:  $text-color !default;
     float: right;
     
     &:hover {
-      opacity: $hover-opacity;
+      opacity: 0.5;
     }
   }
 }

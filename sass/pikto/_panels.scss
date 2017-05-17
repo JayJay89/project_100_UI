@@ -17,13 +17,19 @@ panel-group are used in
 */
 
 /**=====================================**/
+/* 27 Panels
+/**=====================================**/
+// Border color for elements within panels
+$panel-inner-border:          $grey-alternate-3c !default;
+
+/**=====================================**/
 /* Panels */
 /**=====================================**/
 /* 01 Base Class */
 /**=====================================**/
 .panel {
   margin-bottom: $line-height-computed;
-  background-color: $panel-bg;
+  background-color: $white;
   border: 1px solid transparent;
   @include border-radius;
   @include box-shadow(0 1px 1px rgba(0,0,0,.05));
@@ -36,7 +42,7 @@ panel-group are used in
 
 // Optional Heading
 .panel-heading {
-  padding: $panel-heading-padding;
+  padding: 10px 0 10px 10px;
   border-bottom: 1px solid transparent;
   @include border-radius("top", 1px);
   > .dropdown .dropdown-toggle {
@@ -58,8 +64,8 @@ panel-group are used in
 
 // Optional footer (stays gray in every modifier class)
 .panel-footer {
-  padding: $panel-footer-padding;
-  background-color: $panel-footer-bg;
+  padding: 10px 0 10px 10px;
+  background-color: $grey-alternate-3a;
   border-top: 1px solid $panel-inner-border;
   @include border-radius("bottom", 1px);
 }

@@ -11,6 +11,14 @@
 ////// 09 Zebra Striping
 ////////////////////////////////////
 
+$table-cell-padding:            8px !default;
+$table-condensed-cell-padding:  5px !default;
+$table-bg:                      transparent !default;
+$table-bg-accent:               #f9f9f9 !default;
+$table-bg-hover:                #f5f5f5 !default;
+$table-bg-active:               $table-bg-hover !default;
+$table-border-color:            #ddd !default;
+
 /**=====================================**/
 /* 01 Main */
 /**=====================================**/
@@ -23,7 +31,7 @@ table {
 caption /*Boot*/ {
   padding-top: $table-cell-padding;
   padding-bottom: $table-cell-padding;
-  color: $text-muted;
+  color: $teal-grey;
   text-align: left;
 }
 

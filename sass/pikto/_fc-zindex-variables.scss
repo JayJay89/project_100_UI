@@ -1,0 +1,16 @@
+/**=====================================**/
+/* 35 Z-index Master List
+/**=====================================**/
+$zindex-properties-popover:            998 !default; //for elements such as colour box, properties bar dropdown
+$zindex-navbar:                        999 !default;
+$zindex-navbar-dropdown:               999 !default;
+$zindex-navbar-fixed:                  999 !default;
+$zindex-triggerbasedonbording-popover: 1000 !default;
+$zindex-dashboard-popover:             1000 !default;
+$zindex-needhelp:                      1002 !default;
+$zindex-modal-background:              1030 !default; //eg: loading overlay
+$zindex-modal:                         1040 !default;
+$zindex-popover:                       1060 !default;
+$zindex-modal-content:                 1060 !default; //elements on top of modal content
+$zindex-tooltip:                       1070 !default;
+$zindex-responsive-notify:             1080 !default;
