@@ -1207,7 +1207,6 @@ strong {
   Currently this means that there are 9 rows and 8 columns
 */
 /*account page*/
-/*These maps are storing sprite bgpositions*/
 /**=====================================**/
 /* 40 Output/Presentation Page SCSS
 /**=====================================**/
@@ -3206,6 +3205,7 @@ If the size of the svg sprite sheet changed,
 Please change the row and column size in _VARIABLES.scss under signup poll section
 Find icon-x, icon-y
 */
+/*These maps are storing sprite bgpositions*/
 [class^="svgicon-"],
 [class*=" svgicon-"] {
   /*position: relative;*/

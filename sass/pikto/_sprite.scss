@@ -1432,13 +1432,91 @@
 /******************************
 18 Sign Up Poll
 ******************************/
-
 /*
 Important:
 If the size of the svg sprite sheet changed,
 Please change the row and column size in _VARIABLES.scss under signup poll section
 Find icon-x, icon-y
 */
+
+/*These maps are storing sprite bgpositions*/
+$signup-poll-svgmap: (
+  (education, 1 , 0),
+  (enterprise, 1 , 1),
+  (sme, 1 , 2),
+  (startup-sme, 1 , 3),
+  (private, 1 , 4),
+  (self-employed, 1 , 5),
+  (ngo, 1 , 6),
+  (government, 1 , 7),
+  (other, 1 , 8),
+  (teacher, 3 , 0),
+  (tutor, 3 , 1),
+  (student, 3 , 2),
+  (librarian, 3 , 3),
+  (admin, 3 , 4),
+  // 3,5 used to be c-level icon (which had been changed to 5,0)
+  (product-manager, 3 , 6),
+  (sales-manager, 3 , 7),
+  (marketing, 3 , 8),
+  (c-level, 5 , 0),
+  (representative, 5 , 0),
+  (founder, 5 , 1),
+  (project-manager, 5 , 2),
+  (freelance-designer, 5 , 3),
+  (freelance-marketer, 5 , 4),
+  (blogger, 5 , 5),
+  (business-consultant, 5 , 6),
+  (fundraising, 5 , 7),
+  (operation, 5 , 8),
+  (signup-poll-success, 6 , 3),
+  (signup-poll-user, 6 , 4),
+  (hr, 7 , 0),
+  (management, 7 , 1),
+  (signup-poll-question, 6 , 2),
+  (age-group-3-5, 7 , 5),
+  (age-group-6-12, 7 , 6),
+  (age-group-13-17, 7 , 7),
+  (age-group-18plus, 7 , 8)
+);
+
+$signup-poll-active-map: (
+  (education, 0 , 0),
+  (enterprise, 0 , 1),
+  (sme, 0 , 2),
+  (startup-sme, 0 , 3),
+  (private, 0 , 4),
+  (self-employed, 0 , 5),
+  (ngo, 0 , 6),
+  (government, 0 , 7),
+  (other, 0 , 8),
+  (teacher, 2 , 0),
+  (tutor, 2 , 1),
+  (student, 2 , 2),
+  (librarian, 2 , 3),
+  (admin, 2 , 4),
+  // 2,5 used to be c-level icon (which had been changed to 4,0)
+  (product-manager, 2 , 6),
+  (sales-manager, 2 , 7),
+  (marketing, 2 , 8),
+  (c-level, 4 , 0),
+  (representative, 4 , 0),
+  (founder, 4 , 1),
+  (project-manager, 4 , 2),
+  (freelance-designer, 4 , 3),
+  (freelance-marketer, 4 , 4),
+  (blogger, 4 , 5),
+  (business-consultant, 4 , 6),
+  (fundraising, 4 , 7),
+  (operation, 4 , 8),
+  (hr, 6 , 0),
+  (management, 6 , 1),
+  (signup-poll-question, 6 , 2),
+  (age-group-3-5, 6 , 5),
+  (age-group-6-12, 6 , 6),
+  (age-group-13-17, 6 , 7),
+  (age-group-18plus, 6 , 8)
+);
 
 [class^="svgicon-"],
 [class*=" svgicon-"] {

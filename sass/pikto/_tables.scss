@@ -14,10 +14,10 @@
 $table-cell-padding:            8px !default;
 $table-condensed-cell-padding:  5px !default;
 $table-bg:                      transparent !default;
-$table-bg-accent:               #f9f9f9 !default;
-$table-bg-hover:                #f5f5f5 !default;
+$table-bg-accent:               $grey-alternate-1 !default;
+$table-bg-hover:                $grey-alternate-3a !default;
 $table-bg-active:               $table-bg-hover !default;
-$table-border-color:            #ddd !default;
+$table-border-color:            $grey-alternate-3c !default;
 
 /**=====================================**/
 /* 01 Main */
@@ -241,7 +241,7 @@ th {
 .table > thead > .active > th,
 .table > tbody > .active > th,
 .table > tfoot > .active > th {
-  background-color: #f5f5f5;
+  background-color: $grey-alternate-3a;
 }
 .table-hover > tbody > tr > .active:hover,
 .table-hover > tbody > .active:hover > td,

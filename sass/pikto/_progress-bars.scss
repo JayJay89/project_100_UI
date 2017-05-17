@@ -5,6 +5,10 @@
 ////// 03 Variations
 ////////////////////////////////////
 
+$bar-color-darkbg:            $grey-light !default;
+$bar-color-lightbg:           $grey-dark !default;
+$progress-bar-bg:             $brand-primary;
+
 /**=====================================**/
 /* Progress Bar */
 /**=====================================**/
@@ -25,11 +29,6 @@
 /**=====================================**/
 /* 02 Bar itself */
 /**=====================================**/
-
-$bar-color-darkbg:            $grey-light !default;
-$bar-color-lightbg:           $grey-dark !default;
-$progress-bar-bg:             $brand-primary;
-
 @mixin gradient-striped($color: rgba(255,255,255,.15), $angle: 45deg) {
   background-image: -webkit-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
