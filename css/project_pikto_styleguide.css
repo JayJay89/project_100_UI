@@ -324,6 +324,7 @@ pre code {
   border-radius: 2px;
   text-transform: uppercase;
   color: #fff;
+  letter-spacing: 0.78px;
 }
 
 .sg-colorbox.dark-text {
@@ -333,7 +334,7 @@ pre code {
 .sg-colorbox + span {
   margin-top: 6px;
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   text-align: left;
   border: 1px solid #EAEEF1;
   color: #262442;
