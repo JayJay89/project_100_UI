@@ -108,12 +108,12 @@ pre code {
 
 .sg-sidebar {
   background-color: #EAEEF1;
-  width: 275px;
+  width: 395px;
   height: 100vh;
   display: inline-block;
   float: left;
   overflow: auto;
-  padding: 30px;
+  padding: 30px 30px 30px 150px;
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 400;
 }
@@ -179,7 +179,7 @@ pre code {
 }
 
 .sg-main-container {
-  width: calc(100% - 275px);
+  width: calc(100% - 395px);
   display: inline-block;
   float: left;
   position: relative;
@@ -313,7 +313,7 @@ pre code {
 .sg-colorbox {
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 400;
-  width: 144px;
+  width: 155px;
   height: 60px;
   text-align: center;
   vertical-align: middle;

@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var sg_code_content = document.querySelectorAll('.sg-code-content');
   var sg_code_box_sidebar = document.querySelectorAll('.sg-code-box-sidebar');
   var sg_code_box_display = document.querySelectorAll('.sg-code-box-display');
+  var sg_nav_tabs = document.querySelector('.js-sg-nav-tabs');
+  var sg_nav_tabs_li = document.querySelectorAll('.js-sg-nav-tabs > li');
 
   /*Instantiate clipboard*/
   /*Clipboard uses a library call clipboard.min.js*/
@@ -33,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   /*INIT*/
-  $("button[data-target='sg_data_ui_colour']").parent('li').addClass('active');
-  $("#sg_data_ui_colour").addClass('active slide-in');
+  $("button[data-target='sg_data_navs']").parent('li').addClass('active');
+  $("#sg_data_navs").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
@@ -177,6 +179,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
   popover_control('.js-sg-popover-footer', 'popover popover-white popover-with-footer');
   popover_control('.js-sg-popover-header', 'popover popover-white popover-with-header');
 
+  // console.log(sg_nav_tabs);
+
+  sg_nav_tabs.addEventListener('click', function(e){
+    if (e.target && e.target.nodeName == "A" ) {
+      [...sg_nav_tabs_li].forEach(function(elem){
+        elem.classList.remove('active');
+      });
+
+      e.target.parentNode.classList.add('active');
+    }
+  });
 });
 
 
