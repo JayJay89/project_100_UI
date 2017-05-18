@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var sg_code_box_sidebar = document.querySelectorAll('.sg-code-box-sidebar');
   var sg_code_box_display = document.querySelectorAll('.sg-code-box-display');
   var sg_nav_tabs = document.querySelector('.js-sg-nav-tabs');
-  var sg_nav_tabs_li = document.querySelectorAll('.js-sg-nav-tabs > li');
+  var sg_nav_tabs_li = document.querySelectorAll('.js-sg-nav-tabs li');
 
   /*Instantiate clipboard*/
   /*Clipboard uses a library call clipboard.min.js*/
@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   /*INIT*/
-  $("button[data-target='sg_data_navs']").parent('li').addClass('active');
-  $("#sg_data_navs").addClass('active slide-in');
+  $("button[data-target='sg_data_navtabs']").parent('li').addClass('active');
+  $("#sg_data_navtabs").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
@@ -110,9 +110,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   /*Hide Show Function on The codebox*/
 
-  // [...sg_code_content].forEach(function(elem){
-  //   elem.classList.add('sg-code-hidden');
-  // });
+  /*Instantiate - Hide all Codes on loade*/
+  [...sg_code_content].forEach(function(elem){
+    elem.classList.add('sg-code-hidden');
+  });
 
   [...sg_code_box].forEach(function(elem){
 

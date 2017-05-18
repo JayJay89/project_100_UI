@@ -6778,7 +6778,7 @@ input[type=range]:focus::-ms-fill-upper {
   width: 1px;
   height: 15px;
   margin: 0px 15px;
-  background-color: red;
+  background-color: black;
 }
 
 .nav-tabs > hr + li {
