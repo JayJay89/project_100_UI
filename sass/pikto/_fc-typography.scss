@@ -92,8 +92,26 @@ p {
   font-size: $font-size-base;
 }
 
-strong {
+/*Font Style and Decoration*/
+.text-bold {
   @include proxima(semibold);
+}
+.text-italic {
+  font-style: italic;
+}
+.text-underline {
+  text-decoration: underline;
+}
+.text-strikethrough {
+  text-decoration: line-through;
+}
+.text-quote {
+  &::before {
+    content: open-quote;
+  }
+  &::after {
+    content: close-quote;
+  }
 }
 
 /*Font-sizes*/
@@ -170,4 +188,12 @@ strong {
 .pikto-unordered-list {
   display: block;
   padding-left: 15px;
+}
+
+/*hr*/
+.hr-dark {
+  border-top: 1px solid $grey-darkest;
+}
+.hr-light {
+  border-top: 1px solid $grey;
 }

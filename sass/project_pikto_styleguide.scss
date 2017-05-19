@@ -364,7 +364,7 @@ pre code {
 
 .sg-color-palette {
 
-  > div {
+  > ul {
     @include clearfix();
 
     > li {
@@ -380,7 +380,7 @@ pre code {
   // The background-color is generated with JS from HTML content,
   // Changing the content, will change the background-color.
   @include montserrat(regular);
-  width: 155px;
+  width: 162px;
   height: 60px;
   text-align: center;
   vertical-align: middle;
@@ -397,7 +397,7 @@ pre code {
     color: $purple-gray;
   }
 
-  + span {
+  ~ span {
     margin-top: 6px;
     display: block; 
     font-size: 12px;

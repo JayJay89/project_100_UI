@@ -294,16 +294,16 @@ pre code {
   display: none;
 }
 
-.sg-color-palette > div:before, .sg-color-palette > div:after {
+.sg-color-palette > ul:before, .sg-color-palette > ul:after {
   content: " ";
   display: table;
 }
 
-.sg-color-palette > div:after {
+.sg-color-palette > ul:after {
   clear: both;
 }
 
-.sg-color-palette > div > li {
+.sg-color-palette > ul > li {
   float: left;
   margin-right: 24px;
   margin-bottom: 35px;
@@ -313,7 +313,7 @@ pre code {
 .sg-colorbox {
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 400;
-  width: 155px;
+  width: 162px;
   height: 60px;
   text-align: center;
   vertical-align: middle;
@@ -331,7 +331,7 @@ pre code {
   color: #262442;
 }
 
-.sg-colorbox + span {
+.sg-colorbox ~ span {
   margin-top: 6px;
   display: block;
   font-size: 12px;

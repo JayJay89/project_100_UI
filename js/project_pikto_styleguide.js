@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   /*INIT*/
-  $("button[data-target='sg_data_navtabs']").parent('li').addClass('active');
-  $("#sg_data_navtabs").addClass('active slide-in');
+  $("button[data-target='sg_data_typography']").parent('li').addClass('active');
+  $("#sg_data_typography").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
@@ -99,6 +99,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
   });
 
+  /*Hide Show Function on The codebox*/
+
+  /*Animate the show hide boxes*/
   // var pages = document.querySelectorAll( 'section' );
   // [ ...pages ].forEach( elem =>
   //   elem.addEventListener( 'transitionend', e => {
@@ -108,13 +111,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
   //   })
   // );
 
-  /*Hide Show Function on The codebox*/
-
   /*Instantiate - Hide all Codes on loade*/
   [...sg_code_content].forEach(function(elem){
     elem.classList.add('sg-code-hidden');
   });
 
+  /*Hide Show function for all the codeboxes*/
   [...sg_code_box].forEach(function(elem){
 
     elem.addEventListener('click', function(e){
@@ -154,7 +156,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   /*Popover Arrow Change*/
-
   function popover_control(selected, classes) {
     const current_section = document.querySelector(selected);
     const current_popover = current_section.querySelector('.popover');

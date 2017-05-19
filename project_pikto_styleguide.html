@@ -266,12 +266,13 @@
 
         <section class="sg-ui-color" id="sg_data_ui_colour">
           <h1 class="sg-h1">UI Colour Palette</h1>
-          <h2>Primary Palette</h2>
+          <h2 class="sg-h2">Primary Palette</h2>
           <ul class="sg-color-palette clearfix">
-            <div>
+            <ul>
               <li>
                 <div class="sg-colorbox" data-clipboard-text="#1cafa2"></div>
                 <span>$teal</span>
+                <span>$brand-primary</span>
               </li>
               <li>
                 <div class="sg-colorbox" data-clipboard-text="#158379"></div>
@@ -281,12 +282,13 @@
                 <div class="sg-colorbox" data-clipboard-text="#127169"></div>
                 <span>$teal-darker</span>
               </li>
-            </div>
+            </ul>
 
-            <div>
+            <ul>
               <li>
                 <div class="sg-colorbox" data-clipboard-text="#f16078"></div>
                 <span>$magenta</span>
+                <span>$brand-secondary</span>
               </li>
               <li>
                 <div class="sg-colorbox" data-clipboard-text="#cb3f56"></div>
@@ -296,13 +298,26 @@
                 <div class="sg-colorbox" data-clipboard-text="#a12e41"></div>
                 <span>$magenta-darker</span>
               </li>
-            </div>
+            </ul>
           </ul>
 
-          <h2>Secondary Colours</h2>
-          <ul class="sg-color-palette clearfix">
+          <h2 class="sg-h2">Secondary Colours</h2>
+          <div class="sg-color-palette clearfix">
 
-            <div>
+          <h2 class="sg-h2">Black and White</h2>
+          <ul>
+            <li>
+              <div class="sg-colorbox" data-clipboard-text="#000000"></div>
+              <span>$black</span>
+            </li>
+            <li>
+              <div class="sg-colorbox dark-text" data-clipboard-text="#ffffff"></div>
+              <span>$white</span>
+            </li>
+          </ul>
+
+            <h2 class="sg-h2">Greys</h2>
+            <ul>
               <li>
                 <div class="sg-colorbox dark-text" data-clipboard-text="#e8e8e8"></div>
                 <span>$grey</span>
@@ -327,9 +342,10 @@
                 <div class="sg-colorbox" data-clipboard-text="#828282"></div>
                 <span>$grey-darkest</span>
               </li>
-            </div>
+            </ul>
 
-            <div>
+            <h2 class="sg-h2">Alternate Greys</h2>
+            <ul>
               <li>
                 <div class="sg-colorbox dark-text" data-clipboard-text="#f9f9f9"></div>
                 <span>$grey-alternate-1</span>
@@ -362,9 +378,10 @@
                 <div class="sg-colorbox dark-text" data-clipboard-text="#cccccc"></div>
                 <span>$grey-alternate-6</span>
               </li>
-            </div>
-
-            <div>
+            </ul>
+            
+            <h2 class="sg-h2">Teal Greys</h2>
+            <ul>
               <li>
                 <div class="sg-colorbox" data-clipboard-text="#485456"></div>
                 <span>$teal-grey</span>
@@ -377,9 +394,10 @@
                 <div class="sg-colorbox dark-text" data-clipboard-text="#eaf2ef"></div>
                 <span>$teal-grey-lighter</span>
               </li>
-            </div>
+            </ul>
 
-            <div>
+            <h2 class="sg-h2">Light Blue Greys</h2>
+            <ul>
               <li>
                 <div class="sg-colorbox dark-text" data-clipboard-text="#f1f4f5"></div>
                 <span>$light-blue-grey-01</span>
@@ -416,9 +434,10 @@
                 <div class="sg-colorbox dark-text" data-clipboard-text="#c0d1d4"></div>
                 <span>$light-blue-grey-09</span>
               </li>
-            </div>
+            </ul>
 
-            <div>
+            <h2 class="sg-h2">Dark Blue Greys</h2>
+            <ul>
               <li>
                 <div class="sg-colorbox" data-clipboard-text="#1e2527"></div>
                 <span>$dark-blue-grey-01</span>
@@ -439,9 +458,10 @@
                 <div class="sg-colorbox" data-clipboard-text="#809a9f"></div>
                 <span>$dark-blue-grey-05</span>
               </li>
-            </div>
+            </ul>
 
-            <div>
+            <h2 class="sg-h2">Dark Purple Greys</h2>
+            <ul>
               <li>
                 <div class="sg-colorbox" data-clipboard-text="#1e1d26"></div>
                 <span>$dark-purple-grey-01</span>
@@ -486,9 +506,10 @@
                 <div class="sg-colorbox" data-clipboard-text="#6C677B"></div>
                 <span>$dark-purple-grey-10</span>
               </li>
-            </div>
+            </ul>
 
-            <div>
+            <h2 class="sg-h2">Light Purple Greys</h2>
+            <ul>
               <li>
                 <div class="sg-colorbox" data-clipboard-text="#413d49"></div>
                 <span>$light-purple-grey-01</span>
@@ -517,9 +538,10 @@
                 <div class="sg-colorbox" data-clipboard-text="#bcbac7"></div>
                 <span>$light-purple-grey-07</span>
               </li>
-            </div>
+            </ul>
 
-            <div>
+            <h2 class="sg-h2">Social Media Colors</h2>
+            <ul>
               <li>
                 <div class="sg-colorbox" data-clipboard-text="#5272af"></div>
                 <span>$fb-color</span>
@@ -540,9 +562,39 @@
                 <div class="sg-colorbox" data-clipboard-text="#ca2127"></div>
                 <span>$pinterest-color</span>
               </li>
-            </div>
+            </ul>
 
-            <div>
+            <h2 class="sg-h2">State Colors</h2>
+            <ul>
+              <li>
+                <div class="sg-colorbox dark-text" data-clipboard-text="#d8e9c6"></div>
+                <span>$light-green</span>
+                <span>$brand-success</span>
+              </li>
+              <li>
+                <div class="sg-colorbox dark-text" data-clipboard-text="#c3e0e3"></div>
+                <span>$light-blue</span>
+                <span>$brand-info</span>
+              </li>
+              <li>
+                <div class="sg-colorbox dark-text" data-clipboard-text="#f3eeae"></div>
+                <span>$light-yellow</span>
+                <span>$brand-warning</span>
+              </li>
+              <li>
+                <div class="sg-colorbox dark-text" data-clipboard-text="#f8c8c8"></div>
+                <span>$light-red</span>
+                <span>$light-attention</span>
+              </li>
+              <li>
+                <div class="sg-colorbox dark-text" data-clipboard-text="#f98484"></div>
+                <span>$light-red-2</span>
+                <span>$light-danger</span>
+              </li>
+            </ul>
+
+            <h2 class="sg-h2">Misc Colors</h2>
+            <ul>
               <li>
                 <div class="sg-colorbox" data-clipboard-text="#fc6940"></div>
                 <span>$orange</span>
@@ -551,28 +603,8 @@
                 <div class="sg-colorbox dark-text" data-clipboard-text="#dde2e8"></div>
                 <span>$mercury-grey</span>
               </li>
-              <li>
-                <div class="sg-colorbox dark-text" data-clipboard-text="#d8e9c6"></div>
-                <span>$light-green</span>
-              </li>
-              <li>
-                <div class="sg-colorbox dark-text" data-clipboard-text="#c3e0e3"></div>
-                <span>$light-blue</span>
-              </li>
-              <li>
-                <div class="sg-colorbox dark-text" data-clipboard-text="#f3eeae"></div>
-                <span>$light-yellow</span>
-              </li>
-              <li>
-                <div class="sg-colorbox dark-text" data-clipboard-text="#f8c8c8"></div>
-                <span>$light-red</span>
-              </li>
-              <li>
-                <div class="sg-colorbox dark-text" data-clipboard-text="#f98484"></div>
-                <span>$light-red-2</span>
-              </li>
-            </div>
-          </ul>
+            </ul>
+          </div>
         </section>
 
         <section class="sg-color-combo" id="sg_data_ui_combo">
@@ -776,7 +808,7 @@
             </section>
           </div>
 
-          <h2>Generating Elements with color combo sets</h2>
+          <h2 class="sg-h2">Generating Elements with color combo sets</h2>
           <a class="general-link" href="#/">Teal Link</a>
           <a class="attention-link" href="#/">Magenta Link</a>
           
@@ -903,7 +935,7 @@
         <section class="sg-shadows" id="sg_data_shadow">
           <h1 class="sg-h1">Shadows</h1>
           
-          <h2>Constructor</h2>
+          <h2 class="sg-h2">Constructor</h2>
 
           <div class="sg-content-box" data-content="shadow-1" style="display: none;">
             @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
@@ -931,7 +963,7 @@
             </div>
           </div>
 
-          <h2>Applying As Classes</h2>
+          <h2 class="sg-h2">Applying As Classes</h2>
           <div class="sg-content-box" data-content="shadow-2" style="display: none;">
             .inset-shadow {
               @include box-shadow (0px 2px 1px 0px rgba(black, 0.2) inset);
@@ -974,7 +1006,7 @@
             </div>
           </div>
 
-          <h2>Applying As Mixins</h2>
+          <h2 class="sg-h2">Applying As Mixins</h2>
           <p>box shadows can be applied on UI components through the use of mixins</p>
           <div class="sg-content-box" data-content="shadow-4" style="display: none;">
             @mixin inset-shadow {
@@ -999,7 +1031,7 @@
             </div>
           </div>
 
-          <h2>Applying on button as Mixins</h2>
+          <h2 class="sg-h2">Applying on button as Mixins</h2>
           <button class="pikto-btn pikto-btn-teal">Click Me!</button>
           <div class="sg-content-box" data-content="shadow-5" style="display: none;">
             .pikto-btn {
@@ -1022,7 +1054,7 @@
             </div>
           </div>
 
-          <h2>Applying on popover as Mixins</h2>
+          <h2 class="sg-h2">Applying on popover as Mixins</h2>
           <div class="popover popover-teal-grey top">
             <div class="arrow"></div>
             <div class="popover-content">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
@@ -1045,7 +1077,7 @@
             </div>
           </div>
 
-          <h2>Applying Shadows on popover arrows</h2>
+          <h2 class="sg-h2">Applying Shadows on popover arrows</h2>
           <p>WIP</p>
         </section>
 
@@ -1389,14 +1421,23 @@
           </section>
 
           <section>
-            <h2 class="sg-h2">Bold and Italic</h2>
-            <p>For bold text, we'll be using <class class="sg-code">&lt;strong&gt;</class> and <span class="sg-code">&lt;em&gt;</span> for italic</p>
+            <h2 class="sg-h2">Text Styles and Decorations</h2>
+            <!-- <p>For bold text, we'll be using <class class="sg-code">&lt;strong&gt;</class> and <span class="sg-code">&lt;em&gt;</span> for italic</p> -->
 
-            <div class="sg-content-box" data-content="type-bold-italic-1">
-              <p>Lorem ipsum dolor sit amet, <strong>bold</strong> adipisicing elit. Atque, suscipit culpa <em>italic</em>, excepturi inventore quo.</p>
+            <div class="sg-content-box" data-content="typo-2">
+            <p>This is <span class="text-bold">Bold Strong Text</span></p>
+            <p>This is <span class="text-italic">Long Italic Text</span></p>
+            <p>This is <span class="text-underline">Underlined Texts</span></p>
+            <p>This is <span class="text-strikethrough">Strikethrough Deleted Texts</span></p>
+            <p>This is a <a class="general-link" href="#/">general-link</a></p>
+            <p>This is <sup>Superscript</sup></p>
+            <p>This is <sub>Subscript</sub></p>
+            <p>This is <abbr title="Cascading Style Sheets">CSS</abbr></p>
+            <p>This is <blockquote cite="http://www.worldwildlife.org/who/index.html"> A blockquote with some words</blockquote></p>
+            <p>this is <span class="text-quote">quoted Text</span></p>
             </div>
 
-            <div class="sg-code-box" id="type-bold-italic-1" >
+            <div class="sg-code-box" id="typo-2" >
               <span>code</span>
               <div class="sg-code-box-display clearfix">
                 <button class="sg-show-code">Show</button>
@@ -1407,6 +1448,7 @@
                 <pre><code class="html sg-code-syntax"></code></pre>
               </div>
             </div>
+
           </section>
 
           <section>
@@ -1495,6 +1537,25 @@
               <li><a class="grey-teal-link" href="#/">Grey Teal link</a></li>
             </ul>
           </section>
+
+          <section>
+            <h2 class="sg-h2">Horizontal Rule</h2>
+            <p>Dark Version</p>
+            <div style="padding: 20px;">
+              <p>Some text Above</p>
+              <hr class="hr-dark">
+              <p>Some text Below</p>
+            </div>
+            <p>Light Version</p>
+            <div style="background-color: #6A6887; padding: 20px;">
+              <p>Some text Above</p>
+              <hr class="hr-light">
+              <p>Some text Below</p>
+            </div>
+          </section>
+
+          <h2 class="sg-h2">Text Capitalization</h2>
+          <h2 class="sg-h2">1, 2, 3 Columns</h2>
 
         </section>
 
@@ -2368,7 +2429,7 @@
 
         <section id="sg_data_label">
           <h1 class="sg-h1">Labels</h1>
-          <h2>General Labels</h2>
+          <h2 class="sg-h2">General Labels</h2>
           <div class="sg-change-this">Removed label featured because their are basically label-primary. Rename label new to label magenta</div>
           <div class="sg-change-this">Need to identify what's beta and pro label. Don't add href unless it's a lvlup btn</div>
 
