@@ -278,6 +278,14 @@ pre code {
   color: $darkblue;
 }
 
+.sg-h3 {
+  @include montserrat(regular);
+  font-size: 12px;
+  letter-spacing: 0.47px;
+  margin-top: 35px;
+  color: $darkblue;
+}
+
 .sg-code {
   font-size: 12px;
   @include sourceCode(regular);
@@ -654,6 +662,12 @@ $sg-code-line-height: 20px;
 }
 
 /*Alert*/
+.sg-alerts {
+  > .sg-content-box {
+    text-align: center;
+  }
+}
+
 .sg-alert-container {
   .alert {
     margin-bottom: 10px;
@@ -693,7 +707,7 @@ $sg-code-line-height: 20px;
 /*Popover*/
 .sg-popover {
 
-  > .popover {
+  .popover {
     position: relative;
     display: inline-block;
     margin: 20px;
@@ -707,7 +721,6 @@ $sg-code-line-height: 20px;
 .sg-popover-grey {
   background-color: grey;
   padding: 20px;
-
 }
 
 [data-content="popover-2"], 
@@ -838,4 +851,11 @@ $sg-code-line-height: 20px;
   .sg-content-box {
     height: 150px;
   } 
+}
+
+/*Image Slider*/
+.sg-img-slider-container {
+  width: 100%;
+  background-color: grey;
+  height: 500px;
 }

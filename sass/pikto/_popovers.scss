@@ -271,3 +271,81 @@ $popover-arrow-outer-fallback-color:  darken($grey-alternate-6, 20%) !default;
     margin-bottom: 10px;
   }
 }
+
+.pikto-icon-popup-preview {
+  position: absolute;
+  z-index: 1060;/*to fix its being overlay by the chart modal*/
+  @include border-radius(4px);
+  @include box-shadow(0 0 5px 0px rgba(0,0,0,0.3));
+  background-color: $light-purple-grey-07;
+  max-width: initial;
+
+  &.img, & > img {
+    max-width: 400px;
+    max-height: 300px;
+  }
+
+  &.svg{
+    @include size(300px);
+
+    div {
+      background-repeat: no-repeat;
+    }
+  }
+
+  &.svg-library {
+    background-color: $grey-darker;
+
+    .popup-preview-title {
+      background-color: $grey-darkest;
+    }
+  }
+
+  &.bgimage {
+    @include size(300px, 225px);
+  }
+
+  img, div {
+    @include size(100%);
+    @include border-radius("top", 4px);
+    display: block;
+  }
+
+  /* i had to put color here for div with svg background
+  /* the svg background will keep repeating for no reason if color isn't specified */
+  &.svg div {
+    background-color: $light-purple-grey-07;
+  }
+
+  .onload {
+    @include size(30px);
+    background-image : image-url('v4/b/loading.gif');
+    background-size : contain;
+  }
+
+  .popup-preview-title {
+    position: relative;
+    display: block;
+    width: inherit;
+    background-color: $dark-purple-grey-05;
+    word-break : break-word;
+    color: $white;
+    padding: 5px 8px;
+    @include border-radius(0 0 4px 4px);
+    @include box-shadow(0 0 5px 0px rgba(0,0,0,0.3));
+  }
+  .onload ~ .popup-preview-title {
+    display: none;
+  }
+
+  .pikto-leftpane-preview-padding {
+    padding: 20px;
+    @include border-radius-removal("bottom");
+    background-color: $light-purple-grey-07;
+
+    .popup-preview-title {
+      left: -20px;
+      margin-top: 20px;
+    }
+  }
+}

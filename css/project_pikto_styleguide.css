@@ -231,6 +231,15 @@ pre code {
   color: #0A5FAC;
 }
 
+.sg-h3 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.47px;
+  margin-top: 35px;
+  color: #0A5FAC;
+}
+
 .sg-code {
   font-size: 12px;
   font-family: "Source Code Pro", monospace;
@@ -609,6 +618,10 @@ pre code {
 }
 
 /*Alert*/
+.sg-alerts > .sg-content-box {
+  text-align: center;
+}
+
 .sg-alert-container .alert {
   margin-bottom: 10px;
 }
@@ -637,7 +650,7 @@ pre code {
 }
 
 /*Popover*/
-.sg-popover > .popover {
+.sg-popover .popover {
   position: relative;
   display: inline-block;
   margin: 20px;
@@ -750,4 +763,11 @@ pre code {
 
 .js-sg-popover-header .sg-content-box {
   height: 150px;
+}
+
+/*Image Slider*/
+.sg-img-slider-container {
+  width: 100%;
+  background-color: grey;
+  height: 500px;
 }

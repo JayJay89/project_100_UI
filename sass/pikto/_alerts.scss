@@ -33,6 +33,7 @@ $alert-danger-attention-text:  $text-color !default;
   position: relative;
   font-size: 13px;
   word-wrap: break-word;
+  display: inline-block;
   @include border-radius();
 
   .alert-title {
@@ -44,10 +45,8 @@ $alert-danger-attention-text:  $text-color !default;
 /* 02 Size Variation */
 /**=====================================**/
 
-.alert-nonfullwidth {
-  text-align: center;
-  width: 60%;
-  margin: auto;
+.alert-fullwidth {
+  display: block;
 
   span {
     font-weight: bold;
@@ -93,10 +92,6 @@ $alert-danger-attention-text:  $text-color !default;
 
   hr {
     border-top-color: darken($background, 5%);
-  }
-
-  a {
-    @include generate-link($magenta-combo);
   }
 }
 

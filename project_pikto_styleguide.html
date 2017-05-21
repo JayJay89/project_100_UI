@@ -37,7 +37,7 @@
         <img class="sg-sidebar-logo" src="images/pikto_styleguide/logo2.svg" alt="">
 
         <div class="sg-brand-kit">
-          <h2>Brand Kit</h2>
+          <h2 class="sg-h2">Brand Kit</h2>
           <ul class="sg-button-list sg-button-list--outer">
             <li><button class="sg-btn" data-target="sg_data_road_map">Road Map</button></li>
             <li><button class="sg-btn" data-target="sg_data_logo">Logo</button></li>
@@ -47,7 +47,7 @@
         </div>
         <em></em>
         <div class="sg-ui-kit">
-          <h2>UI Kit</h2>
+          <h2 class="sg-h2">UI Kit</h2>
           <ul class="sg-button-list sg-button-list--outer">
 
             <li><button class="sg-btn" data-target="sg_data_reset">Reset</button></li>
@@ -260,8 +260,8 @@
           <h1 class="sg-h1">Website Colour Palette</h1>
           <p>This is the primary and secondary colour palettes as described in the PSD styleguide and in variables.scss</p>
 
-          <h2>Primary Colours</h2>
-          <h2>Secondary Colours</h2>
+          <h2 class="sg-h2">Primary Colours</h2>
+          <h2 class="sg-h2">Secondary Colours</h2>
         </section>
 
         <section class="sg-ui-color" id="sg_data_ui_colour">
@@ -1304,7 +1304,7 @@
           <h1 class="sg-h1">Typography</h1>
 
           <p>
-            All type related scss are defined in _fc-typography.scss. Note that Bootstrap's _type.scss has a lot of other type elements such as address, blockquote, dl, etc. These are not included here unless we find a need for them.
+            All type related scss are defined in <span class="sg-code">_fc-typography.scss</span>. Note that Bootstrap's <span class="sg-code">_type.scss</span> has a lot of other type elements such as <span class="sg-code">address, blockquote, dl</span> etc. These are not included here unless we find a need for them.
           </p>
 
           <section class="sg-typo-types clearfix">
@@ -1338,9 +1338,12 @@
 
           <section class="sg-typo-size-height clearfix">
             <h2 class="sg-h2">On Tags and Classes</h2>
-
-            <p>HTML tags denotes the hierarchy of the headers. Example &lt;h1&gt; tag are use for the main header, and &lt;h2&gt; is for secondary headers. They are used semantically rather than as a mean to define the font-size. Classes will be used to define font-sizes.</p>
-
+        
+            <p>For our typography, HTML tags denotes the hierarchy of the headers. As an example <span class="sg-code">&lt;h1&gt;</span> tag are use for the main header, and <span class="sg-code">&lt;h2&gt;</span> is for secondary headers. They are used semantically rather than as a mean to define the font-size.</p>
+            <p>So how do we define our font sizes units? We use classes instead.</p>
+            <p><span class="sg-code">.h1</span> is the largest font-size and <span class="sg-code">.h6</span> is the smallest one </p>
+            
+            <br>
             <p>This results in the following possibilities:</p>
             <h1 class="h1">header 1 with .h1 class</h1>
             <h1 class="h2">header 1 with .h2 class</h1>
@@ -1421,7 +1424,7 @@
           </section>
 
           <section>
-            <h2 class="sg-h2">Text Styles and Decorations</h2>
+            <h2 class="sg-h2">Inline Elements - Text Styles and Decorations</h2>
             <!-- <p>For bold text, we'll be using <class class="sg-code">&lt;strong&gt;</class> and <span class="sg-code">&lt;em&gt;</span> for italic</p> -->
 
             <div class="sg-content-box" data-content="typo-2">
@@ -1491,7 +1494,7 @@
 
           <section class="sg-type-list clearfix">
             <h2 class="sg-h2">List</h2>
-            <p>By default, &lt;ul&gt; or &lt;ol&gt; won't have have bullets or decimals because the browser defaults had been overwritten. To bring the decimals or bullets back, attach the classes stated below.</p>
+            <p>By default, <span class="sg-code">&lt;ul&gt;</span> or <span class="sg-code">&lt;ol&gt;</span> won't have have bullets or decimals because the browser defaults had been overwritten. To bring the decimals or bullets back, attach the classes stated below.</p>
             <div>
               <h2 class="sg-h2">Ordered list</h2>
               <p class="sg-code">.pikto-ordered-list</p>
@@ -1554,8 +1557,84 @@
             </div>
           </section>
 
-          <h2 class="sg-h2">Text Capitalization</h2>
-          <h2 class="sg-h2">1, 2, 3 Columns</h2>
+          <section>
+            <h2 class="sg-h2">Paragraphs</h2>
+            <p>For Column Layouts, we are sticking to using bootstrap grid layouts</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis iure labore debitis quo inventore reprehenderit nemo est voluptatum perspiciatis sit. Similique dicta blanditiis facilis error asperiores, quae doloremque, itaque temporibus veniam repellat architecto magni ducimus accusantium dolore voluptates ut obcaecati et reprehenderit molestias possimus a? Ex animi quisquam et consectetur a, adipisci quos labore corporis provident nemo possimus quo veniam minima suscipit saepe voluptas voluptatibus sunt inventore eos aliquid pariatur consequuntur amet distinctio hic ducimus. Officia dignissimos magnam fuga mollitia aliquam tempore pariatur in, quasi cum error eius alias numquam, est, saepe, ipsum accusamus. Quasi vel repudiandae temporibus excepturi nostrum.</p>
+
+            <h2 class="sg-h2">Two Columns</h2>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis iure labore debitis quo inventore reprehenderit nemo est voluptatum perspiciatis sit. Similique dicta blanditiis facilis error asperiores, quae doloremque, itaque temporibus veniam repellat architecto magni ducimus accusantium dolore voluptates ut obcaecati et reprehenderit molestias possimus a? Ex animi quisquam et consectetur a, adipisci quos labore corporis provident nemo possimus quo veniam minima suscipit saepe voluptas voluptatibus sunt inventore eos aliquid pariatur consequuntur amet distinctio hic ducimus. Officia dignissimos magnam fuga mollitia aliquam tempore pariatur in, quasi cum error eius alias numquam, est, saepe, ipsum accusamus. Quasi vel repudiandae temporibus excepturi nostrum.
+              </div>
+              <div class="col-xs-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis iure labore debitis quo inventore reprehenderit nemo est voluptatum perspiciatis sit. Similique dicta blanditiis facilis error asperiores, quae doloremque, itaque temporibus veniam repellat architecto magni ducimus accusantium dolore voluptates ut obcaecati et reprehenderit molestias possimus a? Ex animi quisquam et consectetur a, adipisci quos labore corporis provident nemo possimus quo veniam minima suscipit saepe voluptas voluptatibus sunt inventore eos aliquid pariatur consequuntur amet distinctio hic ducimus. Officia dignissimos magnam fuga mollitia aliquam tempore pariatur in, quasi cum error eius alias numquam, est, saepe, ipsum accusamus. Quasi vel repudiandae temporibus excepturi nostrum.
+              </div>
+            </div>
+
+            <h2 class="sg-h2">Three Columns</h2>
+
+            <div class="row">
+              <div class="col-xs-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis iure labore debitis quo inventore reprehenderit nemo est voluptatum perspiciatis sit. Similique dicta blanditiis facilis error asperiores, quae doloremque, itaque temporibus veniam repellat architecto magni ducimus accusantium dolore voluptates ut obcaecati et reprehenderit molestias possimus a? Ex animi quisquam et consectetur a, adipisci quos labore corporis provident nemo possimus quo veniam minima suscipit saepe voluptas voluptatibus sunt inventore eos aliquid pariatur consequuntur amet distinctio hic ducimus. Officia dignissimos magnam fuga mollitia aliquam tempore pariatur in, quasi cum error eius alias numquam, est, saepe, ipsum accusamus. Quasi vel repudiandae temporibus excepturi nostrum.
+              </div>
+              <div class="col-xs-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis iure labore debitis quo inventore reprehenderit nemo est voluptatum perspiciatis sit. Similique dicta blanditiis facilis error asperiores, quae doloremque, itaque temporibus veniam repellat architecto magni ducimus accusantium dolore voluptates ut obcaecati et reprehenderit molestias possimus a? Ex animi quisquam et consectetur a, adipisci quos labore corporis provident nemo possimus quo veniam minima suscipit saepe voluptas voluptatibus sunt inventore eos aliquid pariatur consequuntur amet distinctio hic ducimus. Officia dignissimos magnam fuga mollitia aliquam tempore pariatur in, quasi cum error eius alias numquam, est, saepe, ipsum accusamus. Quasi vel repudiandae temporibus excepturi nostrum.
+              </div>
+              <div class="col-xs-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis iure labore debitis quo inventore reprehenderit nemo est voluptatum perspiciatis sit. Similique dicta blanditiis facilis error asperiores, quae doloremque, itaque temporibus veniam repellat architecto magni ducimus accusantium dolore voluptates ut obcaecati et reprehenderit molestias possimus a? Ex animi quisquam et consectetur a, adipisci quos labore corporis provident nemo possimus quo veniam minima suscipit saepe voluptas voluptatibus sunt inventore eos aliquid pariatur consequuntur amet distinctio hic ducimus. Officia dignissimos magnam fuga mollitia aliquam tempore pariatur in, quasi cum error eius alias numquam, est, saepe, ipsum accusamus. Quasi vel repudiandae temporibus excepturi nostrum.
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="sg-h1">Text Capitalization</h2>
+            <a class="general-link" href="https://trello.com/c/R5ohS7Ph/564-sync-all-the-text-capitalization" target="_blank">Trello Card for more info</a>
+            <p>This section covers the elements and letter capitalizations </p>
+
+            <div>
+              <h2 class="sg-h2">Buttons</h2>
+              <button class="pikto-btn pikto-btn-teal">Submit</button>
+              <button class="pikto-btn pikto-btn-magenta">Cancel</button>
+            </div>
+
+            <div>
+              <h2 class="sg-h2">Labels</h2>
+              <span class="label label-default">default</span>
+              <a href="#/" class="label label-secondary label-levelup"> </a>
+            </div>
+
+            <div>
+              <h2 class="sg-h2">Links</h2>
+              <div><a href="#/" class="general-link">View Pricing Page</a></div>
+              <div><a href="#/" class="attention-link">User Page</a></div>
+            </div>
+
+            <div>
+              <h2 class="sg-h2">Short Sentences</h2>
+              <p>New Here? Create an Account?</p>
+              <p>Perfect for viewing on computer</p>
+            </div>
+
+            <div>
+              <h2 class="sg-h2">Phrases</h2>
+              <p>Loading Infographic…</p>
+              <p>Saving Infographic…</p>
+            </div>
+
+            <div>
+              <h2 class="sg-h2">File Formats</h2>
+              <p>PNG, JPG, MB, ZIP</p>
+            </div>
+
+            <div>
+              <h2 class="sg-h2">Modal Titles</h2>
+              <h2 class="sg-h2">Download Modal</h2>
+              <h2 class="sg-h2">Share Modal</h2>
+            </div>
+          </section>
 
         </section>
 
@@ -1669,17 +1748,17 @@
           </div>
         </section>
 
-        <section id="sg_data_alerts">
+        <section id="sg_data_alerts" class="sg-alerts">
           <h1 class="sg-h1">Alerts/Feedbacks</h1>
-
+          <p>By default, all alerts doesn't have fullwidth unless defined.</p>
           <h2 class="sg-h2">Color Variations</h2>
 
           <div class="sg-content-box sg-alert-container" data-content="alert-1">
-            <div class="alert alert-success">Success</div>
-            <div class="alert alert-info">Info</div>
-            <div class="alert alert-warning">Warning</div>
-            <div class="alert alert-attention">Attention</div>
-            <div class="alert alert-danger">Danger</div>
+            <div class="alert alert-fullwidth alert-success">Success</div>
+            <div class="alert alert-fullwidth alert-info">Info</div>
+            <div class="alert alert-fullwidth alert-warning">Warning</div>
+            <div class="alert alert-fullwidth alert-attention">Attention</div>
+            <div class="alert alert-fullwidth alert-danger">Danger</div>
           </div>
 
           <div class="sg-code-box" id="alert-1" >
@@ -1696,7 +1775,7 @@
 
           <h2 class="sg-h2">Size Variation</h2>
           <div class="sg-content-box" data-content="alert-2">
-            <div class="alert alert-success alert-nonfullwidth">Success</div>
+            <div class="alert alert-success alert-fullwidth">Success</div>
           </div>
           <div class="sg-code-box" id="alert-2">
             <span>code</span>
@@ -1726,8 +1805,14 @@
           </div>
 
           <h2 class="sg-h2">Dismissible Variation</h2>
-          <div class="sg-content-box" data-content="alert-4">
+          <div class="sg-content-box sg-alert-container" data-content="alert-4">
             <div class="alert alert-success alert-dismissible">
+              Success 
+              <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="alert alert-success alert-fullwidth alert-dismissible">
               Success 
               <button type="button" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -1746,7 +1831,7 @@
             </div>
           </div>
 
-          <h2 class="sg-h2">Flash Message</h2>
+          <h2 class="sg-h2">Flash Message - inline width</h2>
           <span class="sg-change-this">
             Change this in piktodev! In piktodev, flash-message uses span tag, it should be change to div tag and given an inline-blockdisplay 
           </span>
@@ -1767,10 +1852,10 @@
 
           <h2 class="sg-h2">Expanded Variation</h2>
           <div class="sg-content-box" data-content="alert-6">
-            <div class="alert alert-success">
+            <div class="alert alert-success alert-fullwidth">
               <span class="alert-title">Success! This is the title! </span>
               <hr> 
-              more Success!
+              <span>more Success!</span>
             </div>
           </div>
           <div class="sg-code-box" id="alert-6">
@@ -1789,7 +1874,7 @@
           <p>We are currently not using any alerts with links on production at the moment</p>
           <div class="sg-content-box" data-content="alert-7">
             <div class="alert alert-success">
-              <a href="#/">Success? Click here!</a>
+              <a class="general-link" href="#/">Success? Click here!</a>
             </div>
           </div>
           <div class="sg-code-box" id="alert-7">
@@ -1805,9 +1890,12 @@
           </div>
 
           <h2 class="sg-h2">Error Message Variation</h2>
-          <div class="sg-content-box" data-content="alert-8">
-            <div class="alert alert-danger alert-arrow">
-              Error! Invalid email or password.
+          <div class="sg-content-box" data-content="alert-8" style="text-align: left;">
+            <div class="input-has-error">
+              <input class="form-control" placeholder="Form with Error" type="text">
+              <div class="alert alert-danger alert-arrow alert-fullwidth">
+                Error! Invalid email or password.
+              </div>
             </div>
           </div>
           <div class="sg-code-box" id="alert-8">
@@ -1932,10 +2020,21 @@
             </div>
           </div>
 
-          <h2 class="sg-h2">Button with icon only</h2>
+          <h2 class="sg-h2">Button with icon and text</h2>
           <div class="sg-content-box" data-content="btn-4b">
             <button class="pikto-btn pikto-btn-teal pikto-btn-icon">
               <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+            </button>
+            <button class="pikto-btn pikto-btn-magenta pikto-btn-icon">
+              <img class="sg-icon" src="images/icon_white.svg" alt="icon">
+            </button>
+            <button class="pikto-btn pikto-btn-teal pikto-btn-icon">
+              <span>Saved</span>
+              <img class="sg-icon" src="images/icon_white.svg" alt="icon">
+            </button>
+            <button class="pikto-btn pikto-btn-teal pikto-btn-icon">
+              <img class="sg-icon" src="images/icon_white.svg" alt="icon">
+              <span>Saving...</span>
             </button>
           </div>
           <div class="sg-code-box" id="btn-4b">
@@ -2139,6 +2238,35 @@
             </div>
           </div>
 
+          <h2 class="sg-h2">Special Buttons</h2>
+          <div class="sg-content-box hover-over" data-content="btn-11">
+            <p class="sg-h3">Button with the appearance of a link</p>
+            <div>
+              <button class="general-link">Button as Link</button>
+            </div>
+
+            <p class="sg-h3">Input with the appearance of a button</p>
+            <div>
+              <input class="pikto-btn pikto-btn-teal" type="submit" value="Input as Button">
+            </div>
+
+            <p class="sg-h3">Output Presentation button</p>
+            <div>
+              <button class="pikto-btn pikto-btn-teal pikto-btn-xl pikto-btn-block">Present</button>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="btn-11">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
         </section>
 
         <section id="sg_data_cards">
@@ -2430,8 +2558,9 @@
         <section id="sg_data_label">
           <h1 class="sg-h1">Labels</h1>
           <h2 class="sg-h2">General Labels</h2>
-          <div class="sg-change-this">Removed label featured because their are basically label-primary. Rename label new to label magenta</div>
-          <div class="sg-change-this">Need to identify what's beta and pro label. Don't add href unless it's a lvlup btn</div>
+
+<!--           <div class="sg-change-this">Removed label featured because their are basically label-primary. Rename label new to label magenta</div>
+          <div class="sg-change-this">Need to identify what's beta and pro label. Don't add href unless it's a lvlup btn</div> -->
 
           <div class="sg-content-box sg-normal-btn" data-content="label-1">
 
@@ -2455,7 +2584,7 @@
             </div>
           </div>
 
-          <h2>Level Up Label</h2>
+          <h2 class="sg-h2">Level Up Label</h2>
           <div class="sg-content-box sg-normal-btn" data-content="label-2">
             <a href="#/" class="label label-secondary label-levelup"> </a> 
           </div>
@@ -2471,12 +2600,29 @@
             </div>
           </div>
 
-          <h2>Misc Labels</h2>
+          <h2 class="sg-h2">Misc Labels</h2>
           <div class="sg-content-box sg-normal-btn" data-content="label-3">
             <span class="label label-beta">beta</span>
             <span class="label label-pro">pro</span>
           </div>
           <div class="sg-code-box" id="label-3">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <h2 class="sg-h2">Use Cases</h2>
+          <div class="sg-content-box sg-normal-btn" data-content="label-4">
+            <span class="label label-primary">featured</span>
+            <span class="label label-secondary">new</span>
+          </div>
+          <div class="sg-code-box" id="label-4">
             <span>code</span>
               <div class="sg-code-box-display clearfix">
               <button class="sg-show-code">Show</button>
@@ -3175,6 +3321,7 @@
         <section id="sg_data_paginations">
           <h1 class="sg-h1">Paginations</h1>
 
+          <p>Note: Website is using paginations but the style is different from what the default bootstrap's</p>
           <div class="sg-content-box" data-content="pagination-1">
             <nav aria-label="Page navigation example">
               <ul class="pagination">
@@ -3225,6 +3372,7 @@
         </section>
 
         <section id="sg_data_popover">
+
           <!--Section 0-->
           <section class="js-sg-popover-color">
             <h1 class="sg-h1">Popover</h1>
@@ -3370,8 +3518,10 @@
             </div>
           </section>
           <!--Section3 END-->
-
-          <h2 class="sg-h2">Onboarding Popover</h4>
+          
+          <!--Section4 START-->
+          <section>
+            <h2 class="sg-h2">Onboarding Popover</h2>
             <div class="sg-content-box sg-popover sg-popover-grey js-sg-popover-header" data-content="popover-4">
               <div class="popover popover-white popover-onboarding top" role="tooltip">
                 <div class="popover-content">
@@ -3397,7 +3547,11 @@
                 <pre><code class="html sg-code-syntax"></code></pre>
               </div>
             </div>
+          </section>
+          <!--Section4 END-->
 
+          <!--Section5 START-->
+          <section>
             <div class="sg-content-box sg-popover sg-popover-grey" data-content="popover-5">
               <div class="popover popover-white popover-onboarding bottom" role="tooltip">
                 <div class="popover-content">
@@ -3427,8 +3581,53 @@
                 <pre><code class="html sg-code-syntax"></code></pre>
               </div>
             </div>
-            
           </section>
+          <!--Section5 END-->
+
+          <!--Section6 START-->
+          <section>
+            <h2 class="sg-h2">Editor Sidepane Popovers</h2>
+            <div class="sg-content-box sg-popover sg-popover-grey" data-content="popover-6">
+              
+              <section>
+                <div class="popover pikto-icon-popup-preview svg">
+                  <div class="pikto-leftpane-preview-padding">
+                    <img src="http://placehold.it/350x150">
+                  </div>
+                  <span class="popup-preview-title">cop car, crime, criminal, line, police car</span>
+                </div>
+              </section>
+
+              <section>
+                <div class="popover pikto-icon-popup-preview bgimage">
+                  <img src="http://placehold.it/350x150">
+                  <span class="popup-preview-title">cop car, crime, criminal, line, police car</span>
+                </div>
+              </section>
+
+              <section>
+                <div class="popover pikto-icon-popup-preview img">
+                  <div class="pikto-leftpane-preview-padding">
+                    <img src="http://placehold.it/350x150">
+                  </div>
+                </div>
+              </section>
+
+            </div>
+
+            <div class="sg-code-box" id="popover-6">
+              <span>code</span>
+              <div class="sg-code-box-display clearfix">
+                <button class="sg-show-code">Show</button>
+                <button class="sg-hide-code">Hide</button>
+              </div>
+              <div class="sg-code-content">
+                <div class="sg-code-box-sidebar"></div>
+                <pre><code class="html sg-code-syntax"></code></pre>
+              </div>
+            </div>
+          </section>
+          <!--Section6 END-->
         </section>
 
         <section id="sg_data_preloader">
@@ -3816,7 +4015,7 @@
           <div class="sg-content-box" data-content="input-6b">
             <div class="input-has-error">
               <input class="form-control" placeholder="Form with Error" type="text">
-              <div class="alert alert-danger alert-arrow input-error-msg">
+              <div class="alert alert-danger alert-arrow">
                 Error! Invalid email or password.
               </div>
             </div>

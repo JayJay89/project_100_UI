@@ -21,9 +21,11 @@
   white-space: nowrap;
   vertical-align: baseline;
   text-transform: uppercase;
+  font-size: 10px;
+  padding: 3px 12px;
 
   @include small-text
-  @include border-radius("all", 4px);
+  @include border-radius("all", 2px);
 
   // [converter] extracted a& to a.label
 
@@ -37,8 +39,9 @@
 /* 02 Colors */
 /**=====================================**/
 // Contextual variations (linked labels get darker on :hover)
-@mixin label-variant-constructor($color) {
+@mixin label-variant-constructor($color, $text-color:$text-color-white) {
   background-color: $color;
+  color: $text-color;
 
   &[href] {
     &:hover,
@@ -54,10 +57,11 @@
 
 .label-primary    { @include label-variant-constructor($brand-primary); }
 .label-secondary  { @include label-variant-constructor($brand-secondary); }
-.label-success    { @include label-variant-constructor($brand-success); }
-.label-info       { @include label-variant-constructor($brand-info); }
-.label-warning    { @include label-variant-constructor($brand-warning); }
-.label-danger     { @include label-variant-constructor($brand-danger); }
+.label-success    { @include label-variant-constructor($brand-success, $text-color); }
+.label-info       { @include label-variant-constructor($brand-info, $text-color); }
+.label-warning    { @include label-variant-constructor($brand-warning, $text-color); }
+.label-danger     { @include label-variant-constructor($brand-danger, $text-color); }
+
 
 /**=====================================**/
 /* 03 Pikto Add-on Label */
@@ -82,6 +86,10 @@
     content: "level up";
     text-transform: uppercase;
     cursor: pointer;
+  }
+
+  &:hover, &:active {
+    color:$white;
   }
 }
 
