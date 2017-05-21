@@ -12,17 +12,73 @@
   from   { opacity: 0; }
   to { opacity: 1; }
 }
-@-webkit-keyframes move-in {
+@-webkit-keyframes cn-page-move-in {
   from   { margin-top: -10px; }
   to { margin-top: 0px; }
 }
-@-moz-keyframes move-in {
+@-moz-keyframes cn-page-move-in {
   from   { margin-top: -10px; }
   to { margin-top: 0px; }
 }
-@-ms-keyframes move-in {
+@-ms-keyframes cn-page-move-in {
   from   { margin-top: -10px; }
   to { margin-top: 0px; }
+}
+
+/*Move Up to Hide*/
+@-webkit-keyframes move-up-hide {
+  from {top: 0px; }
+  to   {top: -420px; }
+}
+@-moz-keyframes move-up-hide {
+  from {top: 0px; }
+  to   {top: -420px; }
+}
+@-ms-keyframes move-up-hide {
+  from {top: 0px; }
+  to   {top: -420px; }
+}
+
+/*Move Up to Show*/
+@-webkit-keyframes move-up-show {
+  from {top: 420px; }
+  to   {top: 0px; }
+}
+@-moz-keyframes move-up-show {
+  from {top: 420px; }
+  to   {top: 0px; }
+}
+@-ms-keyframes move-up-show {
+  from {top: 420px; }
+  to   {top: 0px; }
+}
+
+/*Move Down to Hide*/
+@-webkit-keyframes move-down-hide {
+  from {top: 0px; }
+  to   {top: 420px; }
+}
+@-moz-keyframes move-down-hide {
+  from {top: 0px; }
+  to   {top: 420px; }
+}
+@-ms-keyframes move-down-hide {
+  from {top: 0px; }
+  to   {top: 420px; }
+}
+
+/*Move Down to Show*/
+@-webkit-keyframes move-down-show {
+  from {top: -420px; }
+  to   {top: 0px; }
+}
+@-moz-keyframes move-down-show {
+  from {top: -420px; }
+  to   {top: 0px; }
+}
+@-ms-keyframes move-down-show {
+  from {top: -420px; }
+  to   {top: 0px; }
 }
 
 .cnp-wrapper {
@@ -57,9 +113,9 @@
 
   &.active {
     display: block;
-    -webkit-animation: fade-in 0.3s ease-in 1, move-in 0.3s ease-in 1;
-    -moz-animation: fade-in 0.3s ease-in 1, move-in 0.3s ease-in 1;
-    -ms-animation: fade-in 0.3s ease-in 1, move-in 0.3s ease-in 1;
+    -webkit-animation: fade-in 0.3s ease-in 1, cn-page-move-in 0.3s ease-in 1;
+    -moz-animation: fade-in 0.3s ease-in 1, cn-page-move-in 0.3s ease-in 1;
+    animation: fade-in 0.3s ease-in 1, cn-page-move-in 0.3s ease-in 1;
   }
 }
 
@@ -97,19 +153,46 @@
   background-color: purple;
   padding: 10px;
   display: block;
-  transition: top 0.5s ease;
   top: -420px;
   
   > img {
     width: 100%
   }
-  
-  &.active {
+
+  &.currentActive {
     top: 0px;
   }
 
-  &.bottom {
-    top: 420px;
+  &.move-up-hide {
+    -webkit-animation: move-up-hide 0.3s ease-in 1;
+    -moz-animation: move-up-hide 0.3s ease-in 1;
+    animation: move-up-hide 0.3s ease-in 1;
+  }
+
+  &.move-up-show {
+    -webkit-animation: move-up-show 0.3s ease-in 1;
+    -moz-animation: move-up-show 0.3s ease-in 1;
+    animation: move-up-show 0.3s ease-in 1;
+  }
+
+  &.move-down-hide {
+    -webkit-animation: move-down-hide 0.3s ease-in 1;
+    -moz-animation: move-down-hide 0.3s ease-in 1;
+    animation: move-down-hide 0.3s ease-in 1;
+  }
+
+  &.move-down-show {
+    -webkit-animation: move-down-show 0.3s ease-in 1;
+    -moz-animation: move-down-show 0.3s ease-in 1;
+    animation: move-down-show 0.3s ease-in 1;
+  }
+
+  &.move-up-hide,
+  &.move-up-show,
+  &.move-down-show,
+  &.move-down-hide {
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
   }
 }
 

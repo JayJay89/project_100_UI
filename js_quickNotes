@@ -1,4 +1,20 @@
 /*Lesson 1*/
+
+/* Adding Classes*/
+/*
+  image_container.addEventListener('mouseenter', function(){
+    /*Method - 1 Add a new class hover to it*/
+    // tools.className += " hover";
+
+    /*Method - 2 Decide what classes remains when we hovered */
+    nav_bar.className = "bar nav-bar hover";
+
+    /*Method - 3 Add a new class hover to it*/
+    tools.classList.add("hover");
+  });
+*/
+
+
 /* Event Delegation
 
   image_container_image.addEventListener('click', function(e){

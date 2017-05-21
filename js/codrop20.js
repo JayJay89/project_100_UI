@@ -46,22 +46,25 @@ document.addEventListener('DOMContentLoaded',function(){
   [...cn_page].forEach(function(elem){
     elem.addEventListener('click', function(e){
       if(e.target.className === 'cn-page-item') {
-        var target_index = e.target.getAttribute('data-index');
+        var target_index = parseInt(e.target.getAttribute('data-index'))
 
         var current = cn_preview_list.querySelector('.cnp-content:nth-child( ' + currentPagePreview  + ')');
         var selected = cn_preview_list.querySelector('.cnp-content:nth-child( ' + target_index  + ')');
 
-        if (target_index > currentPagePreview) {
+        console.log(currentPagePreview, target_index);
 
-          selected.style.top = "420px"; // > 0px
-          current.style.top = "0px"; // > -420px
-          console.log("movedown");
+        if (target_index > currentPagePreview) {
+          
+          selected.className = "cnp-content move-up-show";
+          current.className = "cnp-content move-up-hide";
+
+          console.log("moveup");
 
         } else if (currentPagePreview > target_index) {
           
-          selected.style.top = "-420px"; // > 0px
-          current.style.top = "0px"; // > 420px
-          console.log("moveup");
+          selected.className = "cnp-content move-down-show";
+          current.className = "cnp-content move-down-hide";
+          console.log("movedown");
           
         } else {
           return;
