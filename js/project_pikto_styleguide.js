@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   /*INIT*/
-  $("button[data-target='sg_data_modals']").parent('li').addClass('active');
-  $("#sg_data_modals").addClass('active slide-in');
+  $("button[data-target='sg_data_logo']").parent('li').addClass('active');
+  $("#sg_data_logo").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
