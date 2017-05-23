@@ -151,6 +151,7 @@ pre code {
   opacity: 0;
   transition: opacity 0.2s ease;
   z-index: 1;
+  pointer-events: none;
 
   &.fade-in {
     opacity: 1
@@ -858,4 +859,14 @@ $sg-code-line-height: 20px;
   width: 100%;
   background-color: grey;
   height: 500px;
+}
+
+.sg-modals {
+  button[data-toggle="modal"] {
+    margin-top: 80px;
+
+    &:first-of-type {
+      margin-top: 40px;
+    }
+  }
 }

@@ -100,6 +100,7 @@ pre code {
   opacity: 0;
   transition: opacity 0.2s ease;
   z-index: 1;
+  pointer-events: none;
 }
 
 .sg-color-copy-label.fade-in {
@@ -770,4 +771,12 @@ pre code {
   width: 100%;
   background-color: grey;
   height: 500px;
+}
+
+.sg-modals button[data-toggle="modal"] {
+  margin-top: 80px;
+}
+
+.sg-modals button[data-toggle="modal"]:first-of-type {
+  margin-top: 40px;
 }

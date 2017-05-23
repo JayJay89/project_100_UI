@@ -229,15 +229,6 @@
         <!--Branding-->
         <section id="sg_data_logo" class="active slide-in">
           <h1 class="sg-h1">Logo</h1>
-            <div class="pikto-slider-container">
-              <input type="range"/>
-            </div>
-
-          <div class="input-with-btn right-btn">
-            <input class="form-control input-full-width" type="text" placeholder="Search for...">
-            <button class="pikto-btn pikto-btn-teal" type="button">Go!</button>
-          </div>
-
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolore, reiciendis nostrum blanditiis possimus nesciunt consequatur rerum. Autem, eaque vero omnis, tenetur, nemo suscipit praesentium adipisci perspiciatis doloremque vel veniam?</p>
           <!--Indentation had to be pushed back--> 
         </section>
@@ -2638,7 +2629,7 @@
           </div>
         </section>
 
-        <section id="sg_data_modals" class="styleguide-modals">
+        <section id="sg_data_modals" class="sg-modals">
           <h1 class="sg-h1">Modals</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
 
@@ -2653,7 +2644,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Default Modal</h4>
+                    <h1 class="h4 modal-title">Default Modal</h1>
                   </div>
                   <div class="modal-body">
                     This is a default modal.
@@ -2689,7 +2680,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Small Modal</h4>
+                    <h1 class="h4 modal-title">Small Modal</h1>
                   </div>
                   <div class="modal-body">
                     This is a small modal.
@@ -2726,7 +2717,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Medium Modal</h4>
+                    <h1 class="h4 modal-title">Medium Modal</h1>
                   </div>
                   <div class="modal-body">
                     This is a medium modal.
@@ -2762,7 +2753,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Large Modal</h4>
+                    <h1 class="h4 modal-title">Large Modal</h1>
                   </div>
                   <div class="modal-body">
                    This is a large modal.
@@ -2791,6 +2782,8 @@
           <button type="button" class="pikto-btn pikto-btn-info pikto-btn-md" data-toggle="modal" data-target="#myModalNoHeader">
             Open Modal without Header
           </button>
+
+          <p>This Modal is usually used on generic Modals</p>
 
           <div class="sg-content-box" data-content="modal-5">
             <div class="modal fade" id="myModalNoHeader" role="dialog">
@@ -2832,7 +2825,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Default Modal</h4>
+                    <h1 class="h4 modal-title">Default Modal</h1>
                   </div>
                   <div class="modal-body">
                     This is a no footer modal.
@@ -2843,6 +2836,50 @@
           </div>
 
           <div class="sg-code-box" id="modal-6">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <button type="button" class="pikto-btn pikto-btn-info pikto-btn-md" data-toggle="modal" data-target="#myModalNewVersion">
+            Open New Version Modal
+          </button>
+
+          <div class="sg-content-box" data-content="modal-6b">
+            <div class="modal-new-version modal fade" id="myModalNewVersion" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h1 class="h4 modal-title">Newer Version Found</h1>
+                  </div>
+                  <div class="modal-body">
+                    <p>The server copy of your infogaphic contains changes you made in another window!</p>
+                    <div>
+                      <button class="pikto-btn">Save New</button>
+                      <button class="pikto-btn">Overwrite</button>
+                      <button class="pikto-btn">Reload</button>
+                    </div>
+
+                    <div class="alert alert-info">
+                      <p><span class="text-bold">Save New</span> will save your current work as a new file. (recommended)</p>
+                      <p><span class="text-bold">Overwrite</span> will save your current work, overwriting the server copy.</p>
+                      <p><span class="text-bold">Reload</span> will discard your current work and load the version stored on the server.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="modal-6b">
             <span>code</span>
               <div class="sg-code-box-display clearfix">
               <button class="sg-show-code">Show</button>
@@ -2896,7 +2933,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Functions Modal</h4>
+                    <h1 class="h4 modal-title">Functions Modal</h1>
                     <ul class="nav nav-tabs modal-subtitle" role="tablist">
                       <li class="active">
                         <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">
@@ -2952,7 +2989,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h4 class="modal-title">BT Payment Modal</h4>
+                    <h1 class="h4 modal-title">BT Payment Modal</h1>
                   </div>
 
                   <div class="modal-body">
@@ -2993,7 +3030,7 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                   <div class="modal-header clearfix">
-                    <h5 class="modal-title pull-left">Tool Modal</h5>
+                    <h1 class="h4 modal-title pull-left">Tool Modal</h1>
                     <div class="pull-right">
                       <button type="button" class="pikto-btn pikto-btn-grey" data-dismiss="modal">Cancel</button>
                       <button type="button" class="pikto-btn pikto-btn-teal">Insert</button>
@@ -3058,9 +3095,7 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                   <div class="modal-header clearfix">
-                    <h5 class="modal-title pull-left">
-                      Preview Modal
-                    </h5>
+                    <h1 class="h4 modal-title pull-left">Preview Modal</h1>
                     <div class="pull-right">
                       <button type="button" class="pikto-btn pikto-btn-icon" data-dismiss="modal">
                         X

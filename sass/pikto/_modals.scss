@@ -153,6 +153,8 @@ $container-arrow-circle-size:             100px;
   line-height: $line-height-base;
   word-spacing: 2px;
   font-weight: normal;
+  color: $dark-purple-grey-03;
+  @include proxima(semibold);
 }
 
 // Modal body
@@ -160,6 +162,7 @@ $container-arrow-circle-size:             100px;
 .modal-body {
   position: relative;
   padding: $modal-inner-padding;
+  min-height: 130px;
 }
 
 // Footer (for actions)
@@ -571,3 +574,21 @@ $container-arrow-circle-size:             100px;
 /**to be check & cleared after coding the  plans layout**/
 /* 05g Modals in share settings and delete account. */
 /**=====================================**/
+.modal-new-version {
+  .pikto-btn {
+    margin-right: 15px;
+  }
+
+  .modal-body {
+    > p, div {
+      margin-bottom: 20px;
+    }
+  }
+
+  .alert {
+    > p {
+      font-size: 13px;
+      margin: 0;
+    }
+  }
+}

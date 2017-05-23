@@ -7580,11 +7580,14 @@ table th[class*="col-"] {
   line-height: 1.42857;
   word-spacing: 2px;
   font-weight: normal;
+  color: #2c2a37;
+  font-family: "ProximaNova-Semibold", Arial, sans-serif;
 }
 
 .modal-body {
   position: relative;
   padding: 20px;
+  min-height: 130px;
 }
 
 .modal-footer {
@@ -7973,6 +7976,19 @@ table th[class*="col-"] {
 /**to be check & cleared after coding the  plans layout**/
 /* 05g Modals in share settings and delete account. */
 /**=====================================**/
+.modal-new-version .pikto-btn {
+  margin-right: 15px;
+}
+
+.modal-new-version .modal-body > p, .modal-new-version .modal-body div {
+  margin-bottom: 20px;
+}
+
+.modal-new-version .alert > p {
+  font-size: 13px;
+  margin: 0;
+}
+
 /**=====================================**/
 /* 01 Base class */
 /**=====================================**/
