@@ -439,9 +439,8 @@ pre code {
 }
 
 .sg-icon {
-  width: 32px;
-  height: 32px;
-  padding: 10px;
+  width: 15px;
+  height: 15px;
 }
 
 /*Section Specific*/
@@ -773,10 +772,6 @@ pre code {
   height: 500px;
 }
 
-.sg-modals button[data-toggle="modal"] {
+.sg-modals > .sg-code-box + .pikto-btn-md {
   margin-top: 80px;
-}
-
-.sg-modals button[data-toggle="modal"]:first-of-type {
-  margin-top: 40px;
 }

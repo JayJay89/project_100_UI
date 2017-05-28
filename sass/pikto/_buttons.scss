@@ -172,6 +172,12 @@ input.pikto-btn {
 /**=====================================**/
 .pikto-btn-icon {
   padding: 0px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  @include border-radius();
 
   > i {
     top: 0px;
@@ -196,6 +202,8 @@ input.pikto-btn {
 .pikto-btn-inline-icon {
   padding: 0;
   border-width: 0;
+  display: inline-flex;
+  align-items: center;
 
   > i, > img {
     top: 0;
@@ -204,19 +212,27 @@ input.pikto-btn {
   }
   
   > span {
-    line-height: 32px;
     display: inline-block;
     width: 100px;
+  }
+
+  > .pikto-btn-icon {
+    width: 30px;
+    height: 30px;
+    margin: 1px;
   }
 }
 
 .pikto-btn-inline-icon--bordered {
-  > i, > img {
-    margin: 0px;
+  > .pikto-btn-icon {
+    @include border-radius-removal();
     border-right: 1px solid darken($teal, 5%);
-    @include border-radius("left");
+    width: 32px;
+    height: 32px;
+    margin: 0px;
   }
-}
+} 
+
 /**=====================================**/
 /* Button Sizes */
 /**=====================================**/
@@ -273,20 +289,21 @@ $wide-pd-hor: 20px;
 /**=====================================**/
 .btn-group {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   vertical-align: middle;
+  margin-left: 1px;
 
   button {
-    float: left;
     position: relative;
+    margin-left: -1px;
     @include border-radius-removal();
     cursor: pointer;
 
-    &:first-of-type {
+    &:first-child {
       @include border-radius("left");
     }
     
-    &:last-of-type {
+    &:last-child {
       @include border-radius("right");
     }
 
@@ -303,6 +320,22 @@ $wide-pd-hor: 20px;
 
     > i {
       pointer-event: none;
+    }
+  }
+
+  .pikto-btn-hover:first-child {
+    > button {
+      @include border-radius("left");
+    }
+  }
+  .pikto-btn-hover:last-child {
+    > button {
+      @include border-radius("right");
+    }
+  }
+  .pikto-btn-hover {
+    > button {
+      @include border-radius-removal();
     }
   }
 }
@@ -362,13 +395,15 @@ $wide-pd-hor: 20px;
 /**=====================================**/
 .pikto-btn-hover {
   position: relative;
-
+  display: inline-block;
+  
   &:hover {
     .pikto-btn-hover-panel {
-      display: block;
-      -webkit-animation: fade-in .1s linear 1, move-up .1s linear 1;
-      -moz-animation: fade-in .1s linear 1, move-up .1s linear 1;
-      -ms-animation: fade-in .1s linear 1, move-up .1s linear 1;
+      display: flex;
+      -webkit-animation: fade-in .2s linear 1, move-down .2s linear 1;
+      -moz-animation: fade-in .2s linear 1, move-down .2s linear 1;
+      -ms-animation: fade-in .2s linear 1, move-down .2s linear 1;
+      animation-fill-mode: forwards;
     }
   }
 }
@@ -378,6 +413,5 @@ $wide-pd-hor: 20px;
   position: absolute;
   display: none;
   left: 0px;
-  bottom: -40px;
-  padding-top: 5px;
+  top: 32px;
 }

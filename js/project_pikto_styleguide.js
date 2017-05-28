@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var sg_code_box_display = document.querySelectorAll('.sg-code-box-display');
   var sg_nav_tabs = document.querySelector('.js-sg-nav-tabs');
   var sg_nav_tabs_li = document.querySelectorAll('.js-sg-nav-tabs li');
+  var sg_onboarding_overlay_btn = document.querySelector('#myOnboardingLayoutBtn');
+  var sg_onboarding_overlay_close = document.querySelector('#myOnboardingLayoutClose');
+  var sg_onboarding_overlay = document.querySelector('#myOnboardingLayout');
 
   /*Instantiate clipboard*/
   /*Clipboard uses a library call clipboard.min.js*/
@@ -35,8 +38,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   /*INIT*/
-  $("button[data-target='sg_data_modals']").parent('li').addClass('active');
-  $("#sg_data_modals").addClass('active slide-in');
+  $("button[data-target='sg_data_button']").parent('li').addClass('active');
+  $("#sg_data_button").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;
@@ -191,6 +194,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       e.target.parentNode.classList.add('active');
     }
+  });
+
+  sg_onboarding_overlay_btn.addEventListener('click', function(e){
+    sg_onboarding_overlay.classList.add('active');
+  });
+
+  sg_onboarding_overlay_close.addEventListener('click', function(e){
+    sg_onboarding_overlay.classList.remove('active');
   });
 });
 

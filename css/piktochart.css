@@ -282,57 +282,30 @@ button {
   }
 }
 
-@-webkit-keyframes move-up {
-  from {
-    bottom: -100%;
-  }
-  to {
-    bottom: -115%;
-  }
-}
-
-@-moz-keyframes move-up {
-  from {
-    bottom: -100%;
-  }
-  to {
-    bottom: -115%;
-  }
-}
-
-@-ms-keyframes move-up {
-  from {
-    bottom: -100%;
-  }
-  to {
-    bottom: -115%;
-  }
-}
-
 @-webkit-keyframes move-down {
   from {
-    bottom: 30px;
+    transform: translateY(-10px);
   }
   to {
-    bottom: 42px;
+    transform: translateY(0px);
   }
 }
 
 @-moz-keyframes move-down {
   from {
-    bottom: 30px;
+    transform: translateY(-10px);
   }
   to {
-    bottom: 42px;
+    transform: translateY(0px);
   }
 }
 
 @-ms-keyframes move-down {
   from {
-    bottom: 30px;
+    transform: translateY(-10px);
   }
   to {
-    bottom: 42px;
+    transform: translateY(0px);
   }
 }
 
@@ -3902,6 +3875,12 @@ input.pikto-btn:focus, input.pikto-btn.focus {
 /**=====================================**/
 .pikto-btn-icon {
   padding: 0px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
 }
 
 .pikto-btn-icon > i {
@@ -3926,6 +3905,8 @@ input.pikto-btn:focus, input.pikto-btn.focus {
 .pikto-btn-inline-icon {
   padding: 0;
   border-width: 0;
+  display: inline-flex;
+  align-items: center;
 }
 
 .pikto-btn-inline-icon > i, .pikto-btn-inline-icon > img {
@@ -3935,15 +3916,22 @@ input.pikto-btn:focus, input.pikto-btn.focus {
 }
 
 .pikto-btn-inline-icon > span {
-  line-height: 32px;
   display: inline-block;
   width: 100px;
 }
 
-.pikto-btn-inline-icon--bordered > i, .pikto-btn-inline-icon--bordered > img {
-  margin: 0px;
+.pikto-btn-inline-icon > .pikto-btn-icon {
+  width: 30px;
+  height: 30px;
+  margin: 1px;
+}
+
+.pikto-btn-inline-icon--bordered > .pikto-btn-icon {
+  border-radius: 0;
   border-right: 1px solid #18998e;
-  border-radius: 2px 0 0 2px;
+  width: 32px;
+  height: 32px;
+  margin: 0px;
 }
 
 /**=====================================**/
@@ -4015,22 +4003,23 @@ input.pikto-btn:focus, input.pikto-btn.focus {
 /**=====================================**/
 .btn-group {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   vertical-align: middle;
+  margin-right: -1px;
 }
 
 .btn-group button {
-  float: left;
   position: relative;
+  margin-left: -1px;
   border-radius: 0;
   cursor: pointer;
 }
 
-.btn-group button:first-of-type {
+.btn-group button:first-child {
   border-radius: 2px 0 0 2px;
 }
 
-.btn-group button:last-of-type {
+.btn-group button:last-child {
   border-radius: 0 2px 2px 0;
 }
 
@@ -4045,6 +4034,18 @@ input.pikto-btn:focus, input.pikto-btn.focus {
 
 .btn-group button > i {
   pointer-event: none;
+}
+
+.btn-group .pikto-btn-hover:first-child > button {
+  border-radius: 2px 0 0 2px;
+}
+
+.btn-group .pikto-btn-hover:last-child > button {
+  border-radius: 0 2px 2px 0;
+}
+
+.btn-group .pikto-btn-hover > button {
+  border-radius: 0;
 }
 
 .btn-group .pikto-btn ~ .pikto-btn,
@@ -4086,13 +4087,15 @@ input.pikto-btn:focus, input.pikto-btn.focus {
 /**=====================================**/
 .pikto-btn-hover {
   position: relative;
+  display: inline-block;
 }
 
 .pikto-btn-hover:hover .pikto-btn-hover-panel {
-  display: block;
-  -webkit-animation: fade-in .1s linear 1, move-up .1s linear 1;
-  -moz-animation: fade-in .1s linear 1, move-up .1s linear 1;
-  -ms-animation: fade-in .1s linear 1, move-up .1s linear 1;
+  display: flex;
+  -webkit-animation: fade-in .2s linear 1, move-down .2s linear 1;
+  -moz-animation: fade-in .2s linear 1, move-down .2s linear 1;
+  -ms-animation: fade-in .2s linear 1, move-down .2s linear 1;
+  animation-fill-mode: forwards;
 }
 
 .pikto-btn-hover-panel {
@@ -4100,8 +4103,7 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   position: absolute;
   display: none;
   left: 0px;
-  bottom: -40px;
-  padding-top: 5px;
+  top: 32px;
 }
 
 /**=====================================**/
@@ -7450,6 +7452,388 @@ table th[class*="col-"] {
   background-color: #f9f9f9;
 }
 
+.pricing-plans .plans-header {
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.pricing-plans .plans-header > h1 {
+  margin: 0px;
+}
+
+.pricing-table-container {
+  padding: 50px 0px;
+}
+
+.pricing-table-container .panel {
+  border: 0;
+}
+
+.pricing-table-container .promo {
+  background-color: #f16078;
+  padding: 7px;
+  color: #fff;
+  margin-top: -33px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 992px) {
+  .pricing-table-container .promo {
+    margin-top: 40px;
+  }
+}
+
+.pricing-table-container .promo-empty {
+  padding: 5px;
+}
+
+.pricing-table-container .nav-tabs {
+  border-bottom: 0;
+}
+
+.pricing-table-container .tab-content {
+  border-top: 0;
+  padding: 0;
+}
+
+.pricing-table-container .nav > li > a {
+  padding: 0px 35px;
+}
+
+.pricing-table {
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 36px;
+  padding-left: 5%;
+  padding-right: 5%;
+  box-shadow: none;
+}
+
+.pricing-table .col-md-4, .pricing-table .col-sm-4 {
+  padding: 0px;
+}
+
+.pricing-table .col-md-4 .panel, .pricing-table .col-sm-4 .panel {
+  border: 0px;
+  box-shadow: none;
+  margin-bottom: 0;
+  border-style: solid;
+  border-color: #e8e8e8;
+}
+
+@media screen and (max-width: 884px) {
+  .pricing-table .col-md-4 .panel, .pricing-table .col-sm-4 .panel {
+    margin-bottom: 30px;
+  }
+}
+
+.pricing-table .col-md-4 .panel.lite-column, .pricing-table .col-sm-4 .panel.lite-column {
+  border-width: 1px;
+}
+
+.pricing-table .col-md-4 .panel.pro-column, .pricing-table .col-sm-4 .panel.pro-column {
+  border-width: 1px 1px 1px 0px;
+}
+
+@media screen and (max-width: 884px) {
+  .pricing-table .col-md-4 .panel.pro-column, .pricing-table .col-sm-4 .panel.pro-column {
+    border-width: 1px;
+  }
+}
+
+.pricing-table .col-md-4 .panel.team-column, .pricing-table .col-sm-4 .panel.team-column {
+  border-width: 1px 1px 1px 0px;
+}
+
+@media screen and (max-width: 884px) {
+  .pricing-table .col-md-4 .panel.team-column, .pricing-table .col-sm-4 .panel.team-column {
+    border-width: 1px;
+  }
+}
+
+@media screen and (max-width: 884px) {
+  .pricing-table .col-sm-4 {
+    width: 100%;
+  }
+}
+
+.pricing-table .panel > .list-group .list-group-item {
+  background-color: #f4f4f4;
+  border: 0;
+  padding: 17px 15px;
+}
+
+.pricing-table .panel-footer {
+  border-top: 1px solid #e8e8e8;
+  padding: 20px 0px 20px 0px;
+  background-color: inherit;
+}
+
+.pricing-info-container, .pricing-lite {
+  margin-right: -3px;
+}
+
+.pricing-list > li {
+  display: block;
+  padding: 17px 20px;
+  font-size: 15px;
+  white-space: initial;
+  cursor: default;
+  min-height: 56px;
+  text-align: left;
+}
+
+.pricing-list > li .disabled {
+  opacity: 0.2;
+}
+
+.pricing-list > li.content-emphasize {
+  font-family: "ProximaNova-Semibold", Arial, sans-serif;
+}
+
+.pricing-list > li .list-icon {
+  margin-right: 16px;
+  margin-top: -5px;
+  margin-bottom: 20px;
+  float: left;
+}
+
+.pricing-list > li:nth-of-type(2n) {
+  background-color: #F9F9F9;
+}
+
+.pricing-list > li .list-comments {
+  overflow: hidden;
+  display: block;
+}
+
+@media screen and (max-width: 1086px) {
+  .pricing-list.pricing-desc > li:nth-of-type(1) {
+    min-height: 76px;
+  }
+}
+
+@media screen and (max-width: 1579px) {
+  .pricing-list.pricing-desc > li:nth-of-type(2) {
+    min-height: 76px;
+  }
+}
+
+@media screen and (max-width: 1027px) {
+  .pricing-list.pricing-desc > li:nth-of-type(2) {
+    min-height: 97px;
+  }
+}
+
+@media screen and (max-width: 1503px) {
+  .pricing-list.pricing-desc > li:nth-of-type(3) {
+    min-height: 76px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .pricing-list.pricing-desc > li:nth-of-type(3) {
+    min-height: 97px;
+  }
+}
+
+@media screen and (max-width: 1399px) {
+  .pricing-list.pricing-desc > li:nth-of-type(4) {
+    min-height: 76px;
+  }
+}
+
+@media screen and (max-width: 944px) {
+  .pricing-list.pricing-desc > li:nth-of-type(4) {
+    min-height: 97px;
+  }
+}
+
+@media screen and (max-width: 1133px) {
+  .pricing-list.pricing-desc > li:nth-of-type(5) {
+    min-height: 76px;
+  }
+}
+
+@media screen and (max-width: 1206px) {
+  .pricing-list.pricing-desc > li:nth-of-type(6) {
+    min-height: 76px;
+  }
+}
+
+@media screen and (max-width: 932px) {
+  .pricing-list.pricing-desc > li:nth-of-type(6) {
+    min-height: 97px;
+  }
+}
+
+@media screen and (max-width: 1533px) {
+  .pricing-list.pricing-desc > li:nth-of-type(7) {
+    min-height: 76px;
+  }
+}
+
+@media screen and (max-width: 1018px) {
+  .pricing-list.pricing-desc > li:nth-of-type(7) {
+    min-height: 97px;
+  }
+}
+
+@media screen and (max-width: 1348px) {
+  .pricing-list.pricing-desc > li:nth-of-type(8) {
+    min-height: 76px;
+  }
+}
+
+@media screen and (max-width: 1009px) {
+  .pricing-list.pricing-desc > li:nth-of-type(8) {
+    min-height: 97px;
+  }
+}
+
+@media screen and (max-width: 884px) {
+  .pricing-list.pricing-desc > li:nth-child(n) {
+    min-height: 56px;
+  }
+}
+
+.pricing-heading-block {
+  padding: 10px;
+  background-color: #373544;
+  color: #fff;
+  position: relative;
+  display: table;
+  width: 100%;
+  min-height: 270px;
+}
+
+.pricing-heading-block.heading-pro-team {
+  background: #4b475c;
+}
+
+.pricing-heading-block .triangle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 57px solid #1cafa2;
+  border-left: 57px solid transparent;
+}
+
+.pricing-heading-block .triangle .star {
+  color: #fff;
+  font-size: 20px;
+  margin-left: -30px;
+  margin-top: -50px;
+}
+
+.pricing-heading-block h1, .pricing-heading-block h4 {
+  color: #fff;
+  padding: 0;
+}
+
+.pricing-heading-block h5 {
+  margin-bottom: 20px;
+}
+
+.pricing-heading-block .panel-heading {
+  padding: 0px;
+}
+
+.pricing-heading-block .price-currency {
+  font-size: 20px;
+  margin: 0;
+}
+
+.pricing-heading-block .price-number {
+  font-size: 70px;
+  margin: 0;
+  line-height: normal;
+  position: relative;
+}
+
+.pricing-heading-block .price-number-new {
+  position: absolute;
+  top: -5%;
+  right: -70%;
+  font-size: 45px;
+}
+
+.pricing-heading-block .cross {
+  position: relative;
+  display: inline-block;
+}
+
+.pricing-heading-block .cross::before, .pricing-heading-block .cross::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.pricing-heading-block .cross::before {
+  border-bottom: 2px solid red;
+  transform: skewY(-17deg);
+  width: 100%;
+  left: 0;
+}
+
+.pricing-heading-block .price-number-smaller {
+  font-size: 60px !important;
+}
+
+.pricing-heading-block hr {
+  width: 40%;
+  border-top: 1px solid #3f3d48;
+}
+
+.pricing-heading-block hr.pro-team-divider {
+  border-top: 1px solid #6C677B;
+}
+
+.pricing-heading-block .promo-main-content {
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  margin-bottom: 7px;
+  margin-top: 20px;
+}
+
+.pricing-heading-block .promo-sub-content {
+  line-height: 1.42857;
+  text-align: center;
+  padding-bottom: 55px;
+}
+
+.pricing-heading-block .promo {
+  position: absolute;
+  background-color: #f16078;
+  top: -29px;
+  left: 0%;
+  width: 100%;
+  padding: 5px 0px;
+}
+
+.pricing-heading-block-inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.pricing-heading-block-empty {
+  background-color: #fff;
+}
+
+.pricing-footer-label {
+  margin-bottom: 36px;
+}
+
+.pricing-heading-block-seperator {
+  border-right: 1px solid #fff;
+}
+
 /**to be check & cleared after coding the  plans layout**/
 /**=====================================**/
 /* 01 Base */
@@ -7550,18 +7934,11 @@ table th[class*="col-"] {
 .modal-header {
   background-color: #f0f0f0;
   padding: 15px;
-  text-align: center;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 2px 2px 0 0;
-}
-
-.modal-header:before, .modal-header:after {
-  content: " ";
-  display: table;
-}
-
-.modal-header:after {
-  clear: both;
 }
 
 .modal-header .close {
@@ -7684,6 +8061,7 @@ table th[class*="col-"] {
 
 .modal-function .modal-header {
   padding-bottom: 0;
+  flex-direction: column;
 }
 
 .modal-function .modal-header .modal-subtitle {
@@ -7691,11 +8069,16 @@ table th[class*="col-"] {
 }
 
 .modal-function .nav-tabs > li {
-  margin-right: 35px;
+  margin-right: 15px;
+  padding: 0px;
 }
 
 .modal-function .nav-tabs > li:last-of-type {
   margin: 0;
+}
+
+.modal-function .nav-tabs > li > a {
+  padding-left: 0px;
 }
 
 .modal-function .tab-content > .tab-pane {
@@ -7783,6 +8166,8 @@ table th[class*="col-"] {
   display: block;
   width: 55px;
   text-align: center;
+  margin: 0px;
+  padding: 0px;
 }
 
 .modal-tool .panel-tab li > a {
@@ -7815,6 +8200,10 @@ table th[class*="col-"] {
 
 .modal-tool .wrapper-data {
   width: 525px;
+}
+
+.modal-tool .nav-tabs {
+  flex-direction: column;
 }
 
 /**=====================================**/
@@ -7956,11 +8345,12 @@ table th[class*="col-"] {
 .modal-tool .modal-header, .modal-preview .modal-header {
   background-color: #2c2a37;
   border-bottom: 0;
+  text-align: initial;
+  justify-content: space-between;
 }
 
 .modal-tool .modal-header .modal-title, .modal-preview .modal-header .modal-title {
   color: #fff;
-  line-height: 2;
 }
 
 .modal-tool .modal-body, .modal-preview .modal-body {
@@ -7987,6 +8377,47 @@ table th[class*="col-"] {
 .modal-new-version .alert > p {
   font-size: 13px;
   margin: 0;
+}
+
+/**=====================================**/
+/* 05h Overlays*/
+/**=====================================**/
+.pikto-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  display: none;
+  z-index: 1;
+}
+
+.pikto-overlay.active {
+  display: block;
+}
+
+.pikto-overlay .pikto-onboarding-tabs {
+  border: 2px dotted #fff;
+  position: absolute;
+  overflow: visible;
+  width: 300px;
+  height: 480px;
+  left: 90px;
+  top: 68px;
+}
+
+.pikto-overlay span {
+  font-size: 14px;
+}
+
+.pikto-overlay .close {
+  font-size: 28px;
+  position: absolute;
+  top: 30px;
+  right: 20px;
 }
 
 /**=====================================**/
