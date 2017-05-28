@@ -5155,8 +5155,6 @@ input.pikto-btn:focus, input.pikto-btn.focus {
   font-weight: bold;
   line-height: 0.7;
   color: #000;
-  -webkit-box-shadow: 0px 1px 0px #fff;
-  box-shadow: 0px 1px 0px #fff;
   opacity: 0.3;
   filter: alpha(opacity=30);
 }
@@ -10397,16 +10395,23 @@ http://nicolasgallagher.com/micro-clearfix-hack/
   justify-content: center;
   background-color: white;
   height: 35px;
-  width: 140px;
+  padding: 0px 10px;
 }
 
 .toolbar-slider input[type="range"] {
   width: 80px;
-  margin-right: 5px;
 }
 
 .toolbar-slider input[type="text"] {
   width: 40px;
+}
+
+.toolbar-slider span, .toolbar-slider input {
+  margin-right: 5px;
+}
+
+.toolbar-slider span:last-child, .toolbar-slider input:last-child {
+  margin: 0;
 }
 
 .toolbar-dropdown {

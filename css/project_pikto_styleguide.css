@@ -784,3 +784,39 @@ input[type="range"] {
 .sg-modals > .sg-code-box + .pikto-btn-md {
   margin-top: 80px;
 }
+
+/*To Do List*/
+.sg-to-do-list {
+  background-color: #E0E0E0;
+  padding: 10px;
+}
+
+.sg-to-do-list > li {
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.sg-to-do-list > li.done {
+  text-decoration: line-through;
+  background-color: #1CAFA2;
+  color: #fff;
+}
+
+.sg-to-do-list > li:last-child {
+  margin-bottom: 0px;
+}
+
+.sg-to-do-list > hr {
+  margin: 10px 0px;
+  border-top: 1px solid #6F6F6F;
+}
+
+.sg-to-do-list .sg-h2 {
+  margin-top: 40px;
+}
+
+.sg-to-do-list .sg-h2:first-of-type {
+  margin-top: 0px;
+}

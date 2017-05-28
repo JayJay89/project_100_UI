@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   /*INIT*/
-  $("button[data-target='sg_data_selects']").parent('li').addClass('active');
-  $("#sg_data_selects").addClass('active slide-in');
+  $("button[data-target='sg_data_road_map']").parent('li').addClass('active');
+  $("#sg_data_road_map").addClass('active slide-in');
 
   function injectCode (contentbox){
     var current_content = contentbox.innerHTML;

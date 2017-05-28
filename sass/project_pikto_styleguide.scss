@@ -877,3 +877,40 @@ $sg-code-line-height: 20px;
   }
 }
 
+/*To Do List*/
+.sg-to-do-list {
+  background-color: $gray6;
+  padding: 10px;
+
+  > li {
+    padding: 5px; 
+    margin-bottom: 5px;
+    background-color: #fff;
+    border-radius: 2px;
+
+    &.done {
+      text-decoration: line-through;
+      background-color: $teal;
+      color: $white;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  > hr {
+    margin: 10px 0px;
+    border-top: 1px solid $gray1;
+  }
+  
+  .sg-h2 {
+    margin-top: 40px;
+
+    &:first-of-type {
+    margin-top: 0px;
+
+    }
+  }
+}
+

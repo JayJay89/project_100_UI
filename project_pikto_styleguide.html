@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title> </title>
+  <title>Pikto Design System</title>
   <!-- Bootstrap -->
 
   <!-- Base Pikto File-->
@@ -139,32 +139,49 @@
       <div class="sg-main-container" id="sg_main_container">
       <section id="sg_data_road_map">
         <h1 class="sg-h1">Road Map</h1>
-        <h2 class="sg-h2">Changelogs</h2>
-        <p>Changes made for the design system</p>
+        <h2 class="sg-h2" style="margin-top: 0px">To Do List</h2>
 
-        <ul class="sg-list">
-        To do list
-          <li style="text-decoration: line-through;">Include variables and mixins in their related files</li>
-          <li>HTML/CSS Convention</li>
-          <li>BEM System</li>
-          <li style="text-decoration: line-through;">Hide Code</li>
-          <li><span style="text-decoration: line-through;">Clean Unused Code in Bootstrap</span> More or less</li>
+        <ul class="sg-list sg-to-do-list">
+          <h2 class="sg-h2">Main to do</h2>
+          <hr>
           <li>Fill all UI according to <a href="https://docs.google.com/document/d/11V4Hu4PeGfL2FYE_FCTHptPjkKMEIgfQFof9SC6y6K0/edit">list</a> </li>
-          <li style="text-decoration: line-through;">Add different directions for Popover</li>
+          <li class="done">Include variables and mixins in their related files</li>
+          <li class="done">Add different directions for Popover</li>
+          <li class="done">Hide Code</li>
+          <li class="done">Clean Unused Code in Bootstrap More or less</li>
           <li>Browser Compatibility - especially flex</li>
-          <li>JS - Modularize the code display system. There's a lot of repetition at the the moment.</li>
           <li>Make the hierarchy clear, atom, molecules, components...</li>
           <li>Modularize Modals parts</li>
           <li>Modularize Pagination parts with btns</li>
           <li>Modularize Flex Classes</li>
-          <li>Left Panel - Color Scheme</li>
           <li>Disabled Classes</li>
           <li>Modularize height sizing into 32px 35px 40px</li>
+          <li>Animations and Transitions</li>
+
+          <h2 class="sg-h2">Styleguide JS Optimization</h2>
+          <hr>
+          <li>JS - Modularize the code display system. There's a lot of repetition at the the moment.</li>
+
+          <h2 class="sg-h2">Elements to be build</h2>
+          <hr>
+          <li>Icons - SVGs</li>
+          <li>Cards</li>
+          <li>Left Panel - Color Schemes</li>
+          <li>Picture</li>
+          <li>Preloader</li>
+          <li>Layout - External</li>
+
+          <h2 class="sg-h2">Conventions</h2>
+          <hr>
+          <li>HTML/CSS Convention</li>
+          <li>BEM System</li>
         </ul>
 
+
+        <h1 class="sg-h1" style="margin-top: 55px">Change Log</h1>
         <ul class="sg-list">
           <li>
-            <h2 class="sg-h2">Introduction of Foundational Components</h2>
+            <h2 class="sg-h2" style="margin-top: 0px;">Introduction of Foundational Components</h2>
             <p>Colors, Shadows, Border-radii, Spacings, Typography, Transitions, Animations</p>
             <p>These are the basic modular components used in the constructions of complex elements such as buttons, accordions, labels, etc. Each complex element will be formed from the variables and mixins defined for the foundational components</p>
             <p>The general idea is that having a set of foundational components which follows well-defined rules. Our complex components can be composed from foundational components, and would the overall result is a much more cohesive system. Modularization is the key attribute in the project.</p>
@@ -212,24 +229,26 @@
           </li>
 
           <li>
-            <h2 class="sg-h2">Constructor Mixins and Shared Mixins</h2>
-            <p>There are two kind of mixins, There is a constructor and a shared mixin</p>
-
             <h2 class="sg-h2">Constructor Mixins</h2>
-            <p>They are only used to generate properties for an element from the given inputs. </p>
+            <p>These mixins are only <strong>used to generate properties</strong> for an element from the given inputs. Constructors are usually placed within their related scss. For example, button-constructor are placed within buttons.scss</p>
             <p>Example: alert-constructor, button-constructor and label-constructor...etc</p>
-            <p>Constructors are usually placed within their related scss. For example, button-constructor are placed within buttons.scss</p>
-
-            <h2 class="sg-h2">Shared Mixins</h2>
-            <p>Shared Mixins are those which are shared and used by multiple elements.</p>
-            <p>Example: clearfix, transform, opacity...etc</p>
-            <p>These are all located in mixins.csss</p>
           </li>
 
           <li>
-            <h2 class="sg-h2">Variables</h2>
+            <h2 class="sg-h2">Shared Mixins</h2>
+            <p>This are the usual mixins we been using. Shared Mixins are those which are shared and used by multiple elements. These are all located in mixins.css</p>
+            <p>Example: clearfix, transform, opacity...etc</p>
+          </li>
+
+          <li>
+            <h2 class="sg-h2">Max Variables Linking</h2>
             <p>For Variable linking the max variable links will be: 4</p>
             <p>danger-button > danger-state > red > #ff0000</p>
+          </li>
+
+          <li>
+            <h2 class="sg-h2">From Blocks to Flex</h2>
+            <p>Most display properties will be change from block, inline-block, tables to flex, and inline-flex</p>
           </li>
         </ul>
       </section>
@@ -2820,7 +2839,7 @@
           <div class="sg-content-box" data-content="leftpanel-1">
             <div class="left-panel">
               <h1 class="h6">Shapes</h1>
-              <ul class="left-panel-assets-list list-gray">
+              <ul class="left-panel-assets-list list-small list-gray">
                 <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:50px; height:50px;"></li>
                 <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:60px; height:60px;"></li>
                 <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:70px; height:70px;"></li>
@@ -2828,7 +2847,7 @@
                 <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:45px; height:45px;"></li>
               </ul>
               <h1 class="h6">Lines</h1>
-              <ul class="left-panel-assets-list list-gray">
+              <ul class="left-panel-assets-list list-small list-gray">
                 <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:50px; height:50px;"></li>
                 <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:60px; height:60px;"></li>
                 <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:45px; height:45px;"></li>
@@ -4446,10 +4465,15 @@
           <p>ToDo: Refine the animation and spacing</p>
 
           <h2 class="sg-h2">Slider Toolbar</h2>
-          <div class="sg-content-box" data-content="toolbar-1">
-            <div class="toolbar-slider">
+          <div class="sg-content-box" style="display:flex;" data-content="toolbar-1">
+            <div class="toolbar-slider" style="margin-right: 10px;">
               <input type="range">
               <input type="text">
+            </div>
+            <div class="toolbar-slider">
+              <span>75 dpi</span>
+              <input type="range">
+              <span>300 dpi</span>
             </div>
           </div>
           
@@ -5081,7 +5105,7 @@
             </div>
           </div>
 
-          <h1 class="sg-h1">Size Variations</h1>
+          <h2 class="sg-h2">Size Variations</h2>
           <div class="sg-content-box sg-select-container" data-content="select-2">
             <select class="pikto-select-light pikto-select-small">
               <option>Option 1</option>
@@ -5089,13 +5113,13 @@
               <option>Option 3</option>
             </select>
 
-            <select class="pikto-select-dark">
+            <select class="pikto-select-light">
               <option>Option 1</option>
               <option>Option 2</option>
               <option>Option 3</option>
             </select>
 
-            <select class="pikto-select-dark pikto-select-big">
+            <select class="pikto-select-light pikto-select-big">
               <option>Option 1</option>
               <option>Option 2</option>
               <option>Option 3</option>

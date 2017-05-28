@@ -9,14 +9,21 @@ $toolbar-height: 35px;
   justify-content: center;
   background-color: white;
   height: $toolbar-height;
-  width: 140px;
+  padding: 0px 10px;
 
   input[type="range"] {
     width: 80px;
-    margin-right: 5px;
   }
   input[type="text"] {
     width: 40px;
+  }
+
+  span, input {
+    margin-right: 5px;
+
+    &:last-child {
+      margin: 0;
+    }
   }
 }
 
