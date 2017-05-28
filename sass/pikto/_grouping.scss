@@ -1,0 +1,83 @@
+/*Grouping must come before buttons*/
+
+.pikto-group-horizontal {
+  display: inline-flex;
+  position: relative;
+  vertical-align: middle;
+  margin-left: 1px;
+
+  > div,
+  > button {
+    margin: 0px 0px 0px -1px;
+    @include border-radius-removal();
+  }
+
+  > div > input {
+    @include border-radius-removal();
+  }
+
+  > div:first-child,
+  > button:first-child {
+    @include border-radius("left");
+  }
+
+  > div:last-child,
+  > button:last-child {
+    @include border-radius("right");
+  }
+
+  /*pikto-btn-hover sets*/
+  .pikto-btn-hover:first-child {
+    > button {
+      @include border-radius("left");
+    }
+  }
+  .pikto-btn-hover:last-child {
+    > button {
+      @include border-radius("right");
+    }
+  }
+  .pikto-btn-hover {
+    > button {
+      @include border-radius-removal();
+    }
+  }
+
+  /*toolbar-dropdown-set*/
+  .toolbar-dropdown {
+    border-right: 2px solid $grey-dark;
+
+    &:last-child {
+      border: 0px;
+
+      input{
+        @include border-radius("right");
+      }
+    }
+  }
+}
+
+.pikto-group-vertical {
+  display: inline-flex;
+  flex-direction: column;
+
+  > div,
+  > button {
+    margin: 0px 0px 0px -1px;
+    @include border-radius-removal();
+  }
+
+  > div > input {
+    @include border-radius-removal();
+  }
+
+  > div:first-child,
+  > button:first-child {
+    @include border-radius("top");
+  }
+
+  > div:last-child,
+  > button:last-child {
+    @include border-radius("bottom");
+  }
+}

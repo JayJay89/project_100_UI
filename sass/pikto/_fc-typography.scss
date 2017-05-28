@@ -9,12 +9,26 @@ $proxima-bold:      "ProximaNova-Bold", Arial, sans-serif !default;
 $source-code-pro:   "Source Code Pro", monospace !default; 
 $montserrat:        "Montserrat", Arial, sans-serif !default;
 
-$font-size-xlarge:       22px;
-$font-size-large:        18px;
-$font-size-medium:       16px;
+$font-size-large-xxx:    32px;
+$font-size-large-xx:     28px;
+$font-size-large-x:      24px;
+
+$font-size-large:        22px;
+$font-size-medium:       18px;
 $font-size-base:         14px;
+
 $font-size-small:        12px;
 $font-size-xsmall:       10px;
+
+/*Font-sizes*/
+.h1 { font-size: $font-size-large-xxx;}
+.h2 { font-size: $font-size-large-xx;}
+.h3 { font-size: $font-size-large-x; }
+.h4 { font-size: $font-size-large; }
+.h5 { font-size: $font-size-medium; }
+.h6 { font-size: $font-size-base; }
+.text-small {font-size: $font-size-small;}
+.mini-text {font-size: $font-size-xsmall;}
 
 $font-weight-base:        400 !default;
 // Unit-less `line-height` for use in components like buttons.
@@ -69,26 +83,11 @@ $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
   }
 }
 
-/*Mixins -- Font Sizes*/
-@mixin h1 {font-size: 32px;}
-@mixin h2 {font-size: 28px;}
-@mixin h3 {font-size: 24px;}
-@mixin h4 {font-size: 20px;}
-@mixin h5 {font-size: 16px;}
-@mixin h6 {font-size: 12px;}
-@mixin small-text {font-size: 10px;}
-
-@mixin base-size {font-size: 14px;}
-
 /*Code*/
 h1, h2, h3, h4, h5, h6, p {
   color: inherit;
   line-height: normal;
   margin: 0px 0px 10px;
-}
-
-p {
-  line-height: 20px;
   font-size: $font-size-base;
 }
 
@@ -114,14 +113,9 @@ p {
   }
 }
 
-/*Font-sizes*/
-.h1 { @include h1; }
-.h2 { @include h2; }
-.h3 { @include h3; }
-.h4 { @include h4; }
-.h5 { @include h5; }
-.h6 { @include h6; }
-.small-text {@include small-text;}
+@mixin base-size {font-size: 14px;}
+
+
 
 /*Alignment*/
 .text-left           { text-align: left; }

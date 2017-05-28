@@ -85,23 +85,23 @@ input.pikto-btn {
 /* 01 Button Constructor */
 /**=====================================**/
 /*Constructor*/
-@mixin button-constructor($textColor, $textColorActive, $map){
-  background-color: map-get($map, 'col-1');
+@mixin button-constructor($textColor, $textColorActive, $backgroundColor, $borderColor:transparent){
+  background-color: map-get($backgroundColor, 'col-1');
   color: $textColor;
-  border-color: transparent;
+  border-color: $borderColor;
 
   &:focus {
-    background-color: map-get($map, 'col-1');;
+    background-color: map-get($backgroundColor, 'col-1');;
   }
 
   &:hover {
-    background-color: map-get($map, 'col-2');
+    background-color: map-get($backgroundColor, 'col-2');
     color: $textColor;
   }
 
   &:active,
   &.active {
-    background-color: map-get($map, 'col-3');
+    background-color: map-get($backgroundColor, 'col-3');
     color: $textColorActive;
   }
 }
@@ -285,112 +285,6 @@ $wide-pd-hor: 20px;
 }
 
 /**=====================================**/
-/* Button Groups */
-/**=====================================**/
-.btn-group {
-  position: relative;
-  display: inline-flex;
-  vertical-align: middle;
-  margin-left: 1px;
-
-  button {
-    position: relative;
-    margin-left: -1px;
-    @include border-radius-removal();
-    cursor: pointer;
-
-    &:first-child {
-      @include border-radius("left");
-    }
-    
-    &:last-child {
-      @include border-radius("right");
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      z-index: 2;
-    }
-
-    &.active {
-      top: 0;
-      box-shadow: none;
-    }
-
-    > i {
-      pointer-event: none;
-    }
-  }
-
-  .pikto-btn-hover:first-child {
-    > button {
-      @include border-radius("left");
-    }
-  }
-  .pikto-btn-hover:last-child {
-    > button {
-      @include border-radius("right");
-    }
-  }
-  .pikto-btn-hover {
-    > button {
-      @include border-radius-removal();
-    }
-  }
-}
-
-// Prevent double borders when buttons are next to each other
-// The tooltip will mess this up
-.btn-group {
-  .pikto-btn ~ .pikto-btn,
-  .pikto-btn ~ .btn-group,
-  .btn-group ~ .pikto-btn,
-  .btn-group ~ .btn-group {
-    margin-left: -1px;
-  }
-
-  // Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
-  > .pikto-btn:first-child {
-    margin-left: 0;
-    &:not(:last-child):not(.dropdown-toggle) {
-      @include border-radius-removal("right");
-    }
-  }
-  
-  // Need .dropdown-toggle since :last-child doesn't apply given a .dropdown-menu immediately after it
-  > .pikto-btn:last-child:not(:first-child),
-  > .dropdown-toggle:not(:first-child) {
-    @include border-radius-removal("left");
-  }
-}
-
-/**=====================================**/
-/* Checkbox and Radio Options */
-/**=====================================**/
-// In order to support the browser's form validation feedback, powered by the
-// `required` attribute, we have to "hide" the inputs via `clip`. We cannot use
-// `display: none;` or `visibility: hidden;` as that also hides the popover.
-// Simply visually hiding the inputs via `opacity` would leave them clickable in
-// certain cases which is prevented by using `clip` and `pointer-events`.
-// This way, we ensure a DOM element is visible to position the popover from.
-//
-// See https://github.com/twbs/bootstrap/pull/12794 and
-// https://github.com/twbs/bootstrap/pull/14559 for more information.
-
-[data-toggle="buttons"] {
-  > .pikto-btn,
-  > .btn-group > .pikto-btn {
-    input[type="radio"],
-    input[type="checkbox"] {
-      position: absolute;
-      clip: rect(0,0,0,0);
-      pointer-events: none;
-    }
-  }
-}
-
-/**=====================================**/
 /* 07 Btn Hover Dropdowns */
 /**=====================================**/
 .pikto-btn-hover {
@@ -406,12 +300,17 @@ $wide-pd-hor: 20px;
       animation-fill-mode: forwards;
     }
   }
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
 }
 
 .pikto-btn-hover-panel {
   z-index: 1;
   position: absolute;
   display: none;
-  left: 0px;
+  left: -1px;
   top: 32px;
 }

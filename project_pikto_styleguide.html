@@ -73,19 +73,15 @@
               <input id="styleguide_ui" type="radio" name="tabs">
               <label for="styleguide_ui">UI Elements</label>
               <ul class="sg-button-list sg-button-list--inner">
-                <li><button class="sg-btn" data-target="sg_data_accordion">Accordion</button></li>
                 <li><button class="sg-btn" data-target="sg_data_alerts">Alerts</button></li>
                 <li><button class="sg-btn" data-target="sg_data_breadcrumbs">Breadcrumbs</button></li>
                 <li><button class="sg-btn" data-target="sg_data_button">Buttons</button></li>
                 <li><button class="sg-btn" data-target="sg_data_cards">Cards</button></li>
                 <li><button class="sg-btn" data-target="sg_data_close">Close</button></li>
                 <li><button class="sg-btn" data-target="sg_data_dropdowns">Dropdowns</button></li>
-                <li><button class="sg-btn" data-target="sg_data_file">File Selector</button></li>
                 <li><button class="sg-btn" data-target="sg_data_icon">Icons & Illustrations</button></li>
                 <li><button class="sg-btn" data-target="sg_data_label">Label/Badges</button></li>
-                <li><button class="sg-btn" data-target="sg_data_modals">Modals</button></li>
                 <li><button class="sg-btn" data-target="sg_data_navtabs">Navtabs</button></li>
-                <li><button class="sg-btn" data-target="sg_data_navbars">Navbar</button></li>
                 <li><button class="sg-btn" data-target="sg_data_switches">On Off Switch</button></li>
                 <li><button class="sg-btn" data-target="sg_data_paginations">Paginations</button></li>
                 <li><button class="sg-btn" data-target="sg_data_picture">Picture</button></li>
@@ -93,7 +89,6 @@
                 <li><button class="sg-btn" data-target="sg_data_preloader">Preloader</button></li>
                 <li><button class="sg-btn" data-target="sg_data_progressbar">Progress Bar</button></li>
                 <li><button class="sg-btn" data-target="sg_data_tables">Tables</button></li>
-                <li><button class="sg-btn" data-target="sg_data_toolbar">Toolbar</button></li>
                 <li><button class="sg-btn" data-target="sg_data_tooltip">Tooltip</button></li>
               </ul>
             </li>
@@ -112,11 +107,16 @@
 
             <li class="sg-dropdown">
               <input id="styleguide_nav" type="radio" name="tabs">
-              <label for="styleguide_nav">Navigations</label>
+              <label for="styleguide_nav">UI Components</label>
               <ul class="sg-button-list sg-button-list--inner">
-                <li><button class="sg-btn" data-target="sg_data_nav_1">Nav 1</button></li>
-                <li><button class="sg-btn" data-target="sg_data_nav_2">Nav 2</button></li>
-                <li><button class="sg-btn" data-target="sg_data_nav_3">Nav 3</button></li>
+                <li><button class="sg-btn" data-target="sg_data_accordion">Accordion</button></li>
+                <li><button class="sg-btn" data-target="sg_data_file">File Selector</button></li>
+                <li><button class="sg-btn" data-target="sg_data_leftpanel">Left Panel</button></li>
+                <li><button class="sg-btn" data-target="sg_data_modals">Modals</button></li>
+                <li><button class="sg-btn" data-target="sg_data_navbars">Navbar</button></li>
+                <li><button class="sg-btn" data-target="sg_data_pricing">Pricing Tables</button></li>
+                <li><button class="sg-btn" data-target="sg_data_toolbar">Toolbar</button></li>
+
               </ul>
             </li>
 
@@ -144,14 +144,22 @@
 
         <ul class="sg-list">
         To do list
-          <li style="text-decoration: line-through;">Include  variables and mixins in their related files</li>
+          <li style="text-decoration: line-through;">Include variables and mixins in their related files</li>
           <li>HTML/CSS Convention</li>
           <li>BEM System</li>
           <li style="text-decoration: line-through;">Hide Code</li>
-          <li><span  style="text-decoration: line-through;">Clean Unused Code in Bootstrap</span> More or less</li>
-          <li>Fill in the rest of the UI</li>
+          <li><span style="text-decoration: line-through;">Clean Unused Code in Bootstrap</span> More or less</li>
+          <li>Fill all UI according to <a href="https://docs.google.com/document/d/11V4Hu4PeGfL2FYE_FCTHptPjkKMEIgfQFof9SC6y6K0/edit">list</a> </li>
           <li style="text-decoration: line-through;">Add different directions for Popover</li>
-          <li>Refine UI like color boxes and their text</li>
+          <li>Browser Compatibility - especially flex</li>
+          <li>JS - Modularize the code display system. There's a lot of repetition at the the moment.</li>
+          <li>Make the hierarchy clear, atom, molecules, components...</li>
+          <li>Modularize Modals parts</li>
+          <li>Modularize Pagination parts with btns</li>
+          <li>Modularize Flex Classes</li>
+          <li>Left Panel - Color Scheme</li>
+          <li>Disabled Classes</li>
+          <li>Modularize height sizing into 32px 35px 40px</li>
         </ul>
 
         <ul class="sg-list">
@@ -1664,7 +1672,6 @@
             </div>
         </section>
         
-        <!-- UI Components -->
         <section id="sg_data_accordion">
           <h1 class="sg-h1">Accordion</h1>
           <p>
@@ -2131,9 +2138,9 @@
             </div>
           </div>
 
-          <h2 class="sg-h2">Button Groups</h2>
+          <h2 class="sg-h2">Button Groups With Text</h2>
           <div class="sg-content-box sg-normal-btn" data-content="btn-8">
-            <div class="btn-group" role="group" aria-label="...">
+            <div class="pikto-group-horizontal" role="group" aria-label="...">
               <button type="button" class="pikto-btn pikto-btn-option">One</button>
               <button type="button" class="pikto-btn pikto-btn-option">Two</button>
               <button type="button" class="pikto-btn pikto-btn-option">Three</button>
@@ -2154,9 +2161,9 @@
             </div>
           </div>
 
-          <h2 class="sg-h2">Button Groups</h2>
+          <h2 class="sg-h2">Button Groups With Icons (Horizontal)</h2>
           <div class="sg-content-box sg-normal-btn" data-content="btn-9">
-            <div class="btn-group " role="group" aria-label="...">
+            <div class="pikto-group-horizontal" role="group" aria-label="...">
               <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
                 <img class="sg-icon" src="images/icon_black.svg" alt="icon">
               </button>
@@ -2174,7 +2181,7 @@
               </button>
             </div>
 
-            <div class="btn-group " role="group" aria-label="...">
+            <div class="pikto-group-horizontal " role="group" aria-label="...">
               <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
                 <img class="sg-icon" src="images/icon_black.svg" alt="icon">
               </button>
@@ -2199,6 +2206,39 @@
             </div>
           </div>
 
+          <h2 class="sg-h2">Button Groups With Icons (Vertical)</h2>
+          <div class="sg-content-box sg-normal-btn" data-content="btn-9b">
+            <div class="pikto-group-vertical" role="group" aria-label="...">
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+              </button>
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+              </button>
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+              </button>
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon active">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+              </button>
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+              </button>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="btn-9b">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
           <h2 class="sg-h2">Hover Overs</h2>
           <div class="sg-content-box hover-over" data-content="btn-10">
             <div class="pikto-btn-hover">
@@ -2206,7 +2246,7 @@
                 <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
               </button>
 
-              <div class="btn-group pikto-btn-hover-panel" role="group" aria-label="...">
+              <div class="pikto-group-horizontal pikto-btn-hover-panel" role="group" aria-label="...">
                 <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
                   <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
                 </button>
@@ -2238,13 +2278,13 @@
           <h2 class="sg-h2">Button Groups with Hover Overs</h2>
           <div class="sg-content-box hover-over" data-content="btn-10b">
             
-          <div class="btn-group " role="group" aria-label="...">
+          <div class="pikto-group-horizontal " role="group" aria-label="...">
 
             <div class="pikto-btn-hover">
               <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
                 <img class="sg-icon" src="images/icon_black.svg" alt="icon">
               </button>
-              <div class="btn-group pikto-btn-hover-panel" role="group" aria-label="...">
+              <div class="pikto-group-horizontal pikto-btn-hover-panel" role="group" aria-label="...">
                 <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
                   <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
                 </button>
@@ -2268,7 +2308,7 @@
               <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
                 <img class="sg-icon" src="images/icon_black.svg" alt="icon">
               </button>
-              <div class="btn-group pikto-btn-hover-panel" role="group" aria-label="...">
+              <div class="pikto-group-horizontal pikto-btn-hover-panel" role="group" aria-label="...">
                 <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
                   <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
                 </button>
@@ -2292,7 +2332,7 @@
               <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
                 <img class="sg-icon" src="images/icon_black.svg" alt="icon">
               </button>
-              <div class="btn-group pikto-btn-hover-panel" role="group" aria-label="...">
+              <div class="pikto-group-horizontal pikto-btn-hover-panel" role="group" aria-label="...">
                 <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
                   <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
                 </button>
@@ -2418,6 +2458,27 @@
           <p>Hovering Dropdowns</p>
 
           <h2 class="sg-h2">Normal Dropdown</h2>
+          <div class="sg-content-box sg-dropdown-content" data-content="dropdown-0">
+            <div class="dropdown-menu" style="position: relative; top: 0px; left: 0px;">
+              <li class="active"><a href="#/" class="pikto-link">Infographics</a></li>
+              <li><a href="#/" class="pikto-link">Presentation</a></li>
+              <li><a href="#/" class="pikto-link">Reports</a></li>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="dropdown-0">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <h2 class="sg-h2">Normal Dropdown</h2>
           <div class="sg-content-box sg-dropdown-content" data-content="dropdown-1">
             <div class="dropdown">
               <span class="pikto-link">Dropdown</span>
@@ -2509,6 +2570,43 @@
           </div>
 
           <div class="sg-code-box" id="dropdown-3">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <h2 class="sg-h2">Dropdown List</h2>
+          <div class="sg-content-box sg-dropdown-content" data-content="dropdown-4">
+            <ul class="dropdown-list dropdown-list-small">
+              <li class="active">ALS Script</li>
+              <li>Aaux Next</li>
+              <li>Abel</li>
+              <li>ALS Script</li>
+              <li>Aaux Next</li>
+            </ul>
+            <ul class="dropdown-list">
+              <li class="active">ALS Script</li>
+              <li>Aaux Next</li>
+              <li>Abel</li>
+              <li>ALS Script</li>
+              <li>Aaux Next</li>
+            </ul>
+            <ul class="dropdown-list dropdown-list-large">
+              <li class="active">ALS Script</li>
+              <li>Aaux Next</li>
+              <li>Abel</li>
+              <li>ALS Script</li>
+              <li>Aaux Next</li>
+            </ul>
+          </div>
+
+          <div class="sg-code-box" id="dropdown-4">
             <span>code</span>
               <div class="sg-code-box-display clearfix">
               <button class="sg-show-code">Show</button>
@@ -2704,6 +2802,186 @@
             <span class="label label-secondary">new</span>
           </div>
           <div class="sg-code-box" id="label-4">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sg_data_leftpanel">
+          <h1 class="sg-h1">Left Panel Components</h1>
+          <h2 class="sg-h2">Assets List (SVG, Shapes, Lines, Icons)</h1>
+          <div class="sg-content-box" data-content="leftpanel-1">
+            <div class="left-panel">
+              <h1 class="h6">Shapes</h1>
+              <ul class="left-panel-assets-list list-gray">
+                <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:50px; height:50px;"></li>
+                <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:60px; height:60px;"></li>
+                <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:70px; height:70px;"></li>
+                <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:30px; height:30px;"></li>
+                <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:45px; height:45px;"></li>
+              </ul>
+              <h1 class="h6">Lines</h1>
+              <ul class="left-panel-assets-list list-gray">
+                <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:50px; height:50px;"></li>
+                <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:60px; height:60px;"></li>
+                <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:45px; height:45px;"></li>
+              </ul>
+
+              <h1 class="h6">Tools</h1>
+              <ul class="left-panel-assets-list list-big list-purple-gray">
+                <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:50px; height:50px;"></li>
+                <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:60px; height:60px;"></li>
+                <li><img class="sg-icon" src="images/icon_black.svg" alt="icon" style="width:45px; height:45px;"></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="leftpanel-1">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <h2 class="sg-h2">Forms</h1>
+          <div class="sg-content-box" data-content="leftpanel-2">
+            <div class="left-panel">
+              <h1 class="h6">Shapes</h1>
+              <input class="form-control" type="search" placeholder="Search...">
+              <select class="pikto-select-light">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </select>
+              <ul class="nav-tabs left-panel-nav-tabs">
+                <li class="active">
+                  <a href="#">All</a>
+                </li>
+                <li>
+                  <a href="#">Color</a>
+                </li>
+                <li>
+                  <a href="#">Mono</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="leftpanel-2">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <h2 class="sg-h2">Panels</h1>
+          <div class="sg-content-box" data-content="leftpanel-3">
+            <div class="left-panel">
+
+              <div class="left-panel-box">
+                <div class="flex-row">
+                  <h1 class="h6">Uploaded Images</h1>
+                  <a href="#/" class="label label-secondary label-levelup" data-placement="bottom" data-toggle="tooltip" data-original-title="LEVEL UP Storage"> </a>
+                </div>
+
+                <p class="text-small">2.39 MB space used out of 40 MB</p>
+
+                <div class="progress progress-bg-white">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100" style="width: 6%;">
+                    <span class="sr-only">6%</span>
+                  </div>
+                </div>                
+              </div>
+
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="leftpanel-3">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <div class="sg-content-box" data-content="leftpanel-4">
+            <div class="left-panel">
+              <div class="left-panel-box flex-row-start">
+                <span class="text-small">Color</span>
+                <button class="pikto-btn pikto-btn-option pikto-btn-icon">
+                  <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+                </button>
+                <input class="form-control" type="search" placeholder="Hex Code" style="width: 80px; height: 32px">
+              </div>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="leftpanel-4">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <div class="sg-content-box" data-content="leftpanel-5">
+            <div class="left-panel">
+              <div class="left-panel-box flex-row-start">
+                <span class="text-small">Opacity</span>
+                <input type="range" style="width: 110px;">
+                <input class="form-control" type="search" placeholder="Hex Code" style="width: 40px; height: 32px">
+              </div>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="leftpanel-5">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <div class="sg-content-box" data-content="leftpanel-6">
+            <div class="left-panel">
+              <ul class="left-panel-panel-list">
+                <li>Title</li>
+                <li>Subtitle</li>
+                <li>Subtitle 2</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sg-code-box" id="leftpanel-6">
             <span>code</span>
               <div class="sg-code-box-display clearfix">
               <button class="sg-show-code">Show</button>
@@ -3216,7 +3494,7 @@
           </button>
 
           <div class="sg-content-box" data-content="modal-12">
-            <div class="pikto-overlay active" id="myOnboardingLayout" role="dialog">
+            <div class="pikto-overlay" id="myOnboardingLayout" role="dialog">
               
               <div class="pikto-onboarding-tabs"></div>
               <button id="myOnboardingLayoutClose" type="button" class="close bright-close" aria-label="Close">
@@ -3255,7 +3533,7 @@
                 <a href="#">PRO Templates</a>
               </li>
               <hr>
-              <li>
+              <li class="pikto-disabled">
                 <a href="#">Team Templates</a>
               </li>
             </ul>
@@ -3418,6 +3696,190 @@
           </div>
         </section>
 
+        <section id="sg_data_pricing">
+          <h1 class="sg-h1">Pricing Tables</h1>
+          <div class="pricing-table">
+            <div class="col-md-4 col-sm-4 pricing-outer-container">
+              <div class="panel lite-column">
+                <div class="pricing-heading-block invisible-pricing-box">
+                  <div class="pricing-heading-block-inner">
+
+                    <div class="panel-heading">
+                      <h5>LITE</h5>
+                      <hr>
+                    </div>
+
+                    <div class="panel-body">
+                      <p class="price-currency">USD</p>
+                      <p class="price-number">150</p>
+                      <p>Yearly</p>
+                    </div>
+                  </div>
+                </div>
+
+                <ul class="pricing-list pricing-desc parent-toggle-feature">
+                  <li>
+                    <i class="icon-tick-teal list-icon"></i>
+                    Access to all 600+ templates
+                  </li>
+                  <li>
+                    <i class="icon-tick-teal list-icon"></i>
+                    Upload up to 100MB of your own photos
+                  </li>
+                  <li>
+                    <i class="icon-tick-teal list-icon"></i>
+                    Download projects as standard quality images
+                  </li>
+                  <li data-toggle="tooltip" data-original-title="" title="">
+                    <div class="disabled">
+                      <i class="icon-tick-teal list-icon"></i>
+                      Download projects as print quality images
+                    </div>
+                  </li>
+                  <li data-toggle="tooltip" data-original-title="" title="">
+                    <div class="disabled">
+                      <i class="icon-tick-teal list-icon"></i>
+                      Download projects as PDFs
+                    </div>
+                  </li>
+                  <li data-toggle="tooltip" data-original-title="" title="">
+                    <div class="disabled">
+                      <i class="icon-tick-teal list-icon"></i>
+                      Remove the Piktochart watermark
+                    </div>
+                  </li>
+                  <li data-toggle="tooltip" data-original-title="" title="">
+                    <div class="disabled">
+                      <i class="icon-tick-teal list-icon"></i>
+                      Password protect or make your projects private
+                    </div>
+                  </li>
+                  <li data-toggle="tooltip" data-original-title="" title="">
+                    <div class="disabled">
+                      <i class="icon-tick-teal list-icon"></i>
+                      Export your presentations to SlideShare
+                    </div>
+                  </li>
+                </ul>
+                <div class="panel-footer text-center">
+                  <button id="lite-yearly" class="payment-method-btn pikto-btn pikto-btn-teal pikto-plan-btn">Get It Now</button>
+                </div>
+              </div>
+            </div>  
+            <div class="col-md-4 col-sm-4 pricing-outer-container">
+              <div class="panel pro-column">
+                <div class="pricing-heading-block invisible-pricing-box">
+                  <div class="triangle">
+                    <div class="star">★</div>
+                  </div>
+                  <div class="pricing-heading-block-inner">
+
+                    <div class="panel-heading">
+                      <h5>PRO</h5>
+                      <hr>
+                    </div>
+
+                    <div class="panel-body">
+                      <p class="price-currency">USD</p>
+                      <p class="price-number">290</p>
+
+                      <p>Yearly</p>
+                    </div>
+                  </div>
+                </div>
+
+                <ul class="pricing-list pricing-desc">
+                  <li>
+                    <i class="icon-tick-teal list-icon"></i>
+                    Access to all 600+ templates
+                  </li>
+                  <li class="list-item-expand-top">
+                    <i class="icon-tick-teal list-icon"></i>
+                    Upload up to 400MB of your own photos
+                  </li>
+                  <li>
+                    <i class="icon-tick-teal list-icon"></i>
+                    Download projects as standard quality images
+                  </li>
+                  <li>
+                    <i class="icon-tick-teal list-icon"></i>
+                    Download projects as print quality images
+                  </li>
+                  <li class="list-item-expand">
+                    <i class="icon-tick-teal list-icon"></i>
+                    Download projects as PDFs
+                  </li>
+                  <li>
+                    <i class="icon-tick-teal list-icon"></i>
+                    Remove the Piktochart watermark
+                  </li>
+                  <li>
+                    <i class="icon-tick-teal list-icon"></i>
+                    Password protect or make your projects private
+                  </li>
+                  <li>
+                    <i class="icon-tick-teal list-icon"></i>
+                    Export your presentations to SlideShare
+                  </li>
+                </ul>
+                <div class="panel-footer text-center">
+                  <button class="payment-method-btn pikto-btn-teal pikto-plan-btn pikto-btn disabled" href="https://magic.piktochart.com/pricing">Current Plan</button>
+                  <!--appears only when there is a resubscribe ongoing plan scenario-->
+                </div>
+              </div>
+            </div>  
+            <div class="col-md-4 col-sm-4 pricing-outer-container">
+              <div class="panel team-column">
+                <div class="pricing-heading-block heading-pro-team invisible-pricing-box">
+                  <div class="pricing-heading-block-inner">
+                    <div class="panel-heading">
+                      <h5>PRO TEAM</h5>
+                      <hr class="pro-team-divider">
+                    </div>
+                    <div class="panel-body">
+                      <p class="promo-main-content">COMING MID 2017</p>
+                      <p class="promo-sub-content">Share, review and collaborate</p>
+                    </div>
+                  </div>
+                </div>
+                <ul class="pricing-list pricing-desc">
+                  <li class="content-emphasize">
+                    <i class="icon-tick-teal list-icon"></i>
+                    Access to all PRO features
+                  </li>
+                  <li>
+                    <i class="icon-plus-teal-sm list-icon"></i>
+                    Create templates that your team can use and edit
+                  </li>
+                  <li>
+                    <i class="icon-plus-teal-sm list-icon"></i>
+                    Invite team members to edit your projects
+                  </li>
+                  <li>
+                    <span class="icon-plus-teal-sm list-icon"></span>
+                    Leave comments on shared projects
+                  </li>
+                  <li>
+                    <span class="icon-plus-teal-sm list-icon"></span>
+                    Assign roles to team members
+                  </li>
+                  <li class="content-emphasize">
+                    <i class="icon-plus-teal-sm list-icon"></i>
+                    More features to come!
+                  </li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div class="panel-footer text-center">
+                  <button class="payment-method-btn pikto-btn pikto-btn-teal pikto-plan-btn pikto-pro-team-btn" data-toggle="modal" data-target="#modal_piktoteam_beta_signup">
+                    Get Early Access
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="sg_data_switches">
           <h1 class="sg-h1">On Off Switches</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ad ea cumque, vel quis quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quos.</p>
@@ -3467,12 +3929,10 @@
               <pre><code class="html sg-code-syntax"></code></pre>
             </div>
           </div>
-
         </section>
 
         <section id="sg_data_paginations">
           <h1 class="sg-h1">Paginations</h1>
-
           <p>Note: Website is using paginations but the style is different from what the default bootstrap's</p>
           <div class="sg-content-box" data-content="pagination-1">
             <nav aria-label="Page navigation example">
@@ -3515,7 +3975,6 @@
               <pre><code class="html sg-code-syntax"></code></pre>
             </div>
           </div>
-
         </section>
 
         <section id="sg_data_picture">
@@ -3937,187 +4396,6 @@
             </tr>
           </table>
 
-          <h2 class="sg-h2">Pricing Tables</h2>
-          <div class="pricing-table">
-            <div class="col-md-4 col-sm-4 pricing-outer-container">
-              <div class="panel lite-column">
-                <div class="pricing-heading-block invisible-pricing-box">
-                  <div class="pricing-heading-block-inner">
-
-                    <div class="panel-heading">
-                      <h5>LITE</h5>
-                      <hr>
-                    </div>
-
-                    <div class="panel-body">
-                      <p class="price-currency">USD</p>
-                      <p class="price-number">150</p>
-                      <p>Yearly</p>
-                    </div>
-                  </div>
-                </div>
-
-                <ul class="pricing-list pricing-desc parent-toggle-feature">
-                  <li>
-                    <i class="icon-tick-teal list-icon"></i>
-                    Access to all 600+ templates
-                  </li>
-                  <li>
-                    <i class="icon-tick-teal list-icon"></i>
-                    Upload up to 100MB of your own photos
-                  </li>
-                  <li>
-                    <i class="icon-tick-teal list-icon"></i>
-                    Download projects as standard quality images
-                  </li>
-                  <li data-toggle="tooltip" data-original-title="" title="">
-                    <div class="disabled">
-                      <i class="icon-tick-teal list-icon"></i>
-                      Download projects as print quality images
-                    </div>
-                  </li>
-                  <li data-toggle="tooltip" data-original-title="" title="">
-                    <div class="disabled">
-                      <i class="icon-tick-teal list-icon"></i>
-                      Download projects as PDFs
-                    </div>
-                  </li>
-                  <li data-toggle="tooltip" data-original-title="" title="">
-                    <div class="disabled">
-                      <i class="icon-tick-teal list-icon"></i>
-                      Remove the Piktochart watermark
-                    </div>
-                  </li>
-                  <li data-toggle="tooltip" data-original-title="" title="">
-                    <div class="disabled">
-                      <i class="icon-tick-teal list-icon"></i>
-                      Password protect or make your projects private
-                    </div>
-                  </li>
-                  <li data-toggle="tooltip" data-original-title="" title="">
-                    <div class="disabled">
-                      <i class="icon-tick-teal list-icon"></i>
-                      Export your presentations to SlideShare
-                    </div>
-                  </li>
-                </ul>
-                <div class="panel-footer text-center">
-                  <button id="lite-yearly" class="payment-method-btn pikto-btn pikto-btn-teal pikto-plan-btn">Get It Now</button>
-                </div>
-              </div>
-            </div>  
-            <div class="col-md-4 col-sm-4 pricing-outer-container">
-              <div class="panel pro-column">
-                <div class="pricing-heading-block invisible-pricing-box">
-                  <div class="triangle">
-                    <div class="star">★</div>
-                  </div>
-                  <div class="pricing-heading-block-inner">
-
-                    <div class="panel-heading">
-                      <h5>PRO</h5>
-                      <hr>
-                    </div>
-
-                    <div class="panel-body">
-                      <p class="price-currency">USD</p>
-                      <p class="price-number">290</p>
-
-                      <p>Yearly</p>
-                    </div>
-                  </div>
-                </div>
-
-                <ul class="pricing-list pricing-desc">
-                  <li>
-                    <i class="icon-tick-teal list-icon"></i>
-                    Access to all 600+ templates
-                  </li>
-                  <li class="list-item-expand-top">
-                    <i class="icon-tick-teal list-icon"></i>
-                    Upload up to 400MB of your own photos
-                  </li>
-                  <li>
-                    <i class="icon-tick-teal list-icon"></i>
-                    Download projects as standard quality images
-                  </li>
-                  <li>
-                    <i class="icon-tick-teal list-icon"></i>
-                    Download projects as print quality images
-                  </li>
-                  <li class="list-item-expand">
-                    <i class="icon-tick-teal list-icon"></i>
-                    Download projects as PDFs
-                  </li>
-                  <li>
-                    <i class="icon-tick-teal list-icon"></i>
-                    Remove the Piktochart watermark
-                  </li>
-                  <li>
-                    <i class="icon-tick-teal list-icon"></i>
-                    Password protect or make your projects private
-                  </li>
-                  <li>
-                    <i class="icon-tick-teal list-icon"></i>
-                    Export your presentations to SlideShare
-                  </li>
-                </ul>
-                <div class="panel-footer text-center">
-                  <button class="payment-method-btn pikto-btn-teal pikto-plan-btn pikto-btn disabled" href="https://magic.piktochart.com/pricing">Current Plan</button>
-                  <!--appears only when there is a resubscribe ongoing plan scenario-->
-                </div>
-              </div>
-            </div>  
-            <div class="col-md-4 col-sm-4 pricing-outer-container">
-              <div class="panel team-column">
-                <div class="pricing-heading-block heading-pro-team invisible-pricing-box">
-                  <div class="pricing-heading-block-inner">
-                    <div class="panel-heading">
-                      <h5>PRO TEAM</h5>
-                      <hr class="pro-team-divider">
-                    </div>
-                    <div class="panel-body">
-                      <p class="promo-main-content">COMING MID 2017</p>
-                      <p class="promo-sub-content">Share, review and collaborate</p>
-                    </div>
-                  </div>
-                </div>
-                <ul class="pricing-list pricing-desc">
-                  <li class="content-emphasize">
-                    <i class="icon-tick-teal list-icon"></i>
-                    Access to all PRO features
-                  </li>
-                  <li>
-                    <i class="icon-plus-teal-sm list-icon"></i>
-                    Create templates that your team can use and edit
-                  </li>
-                  <li>
-                    <i class="icon-plus-teal-sm list-icon"></i>
-                    Invite team members to edit your projects
-                  </li>
-                  <li>
-                    <span class="icon-plus-teal-sm list-icon"></span>
-                    Leave comments on shared projects
-                  </li>
-                  <li>
-                    <span class="icon-plus-teal-sm list-icon"></span>
-                    Assign roles to team members
-                  </li>
-                  <li class="content-emphasize">
-                    <i class="icon-plus-teal-sm list-icon"></i>
-                    More features to come!
-                  </li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <div class="panel-footer text-center">
-                  <button class="payment-method-btn pikto-btn pikto-btn-teal pikto-plan-btn pikto-pro-team-btn" data-toggle="modal" data-target="#modal_piktoteam_beta_signup">
-                    Get Early Access
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
         <section id="sg_data_tooltip" class="sg-tooltips">
@@ -4164,22 +4442,14 @@
         <section id="sg_data_toolbar">
           <h1 class="sg-h1">Toolbar</h1>
           <p>The toolbar is a combination of buttons, button-groups, tooltips and icons</p>
-          <p>Currently the toolbar on the editor was written using another class call pblist. Suggest to change to those into btn-groups</p>
+          <p>Currently the toolbar on the editor was written using another class call pblist. Suggest to change to those into pikto-groups</p>
+          <p>ToDo: Refine the animation and spacing</p>
 
+          <h2 class="sg-h2">Slider Toolbar</h2>
           <div class="sg-content-box" data-content="toolbar-1">
-            <div class="btn-group " role="group" aria-label="...">
-              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
-                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
-              </button>
-              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
-                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
-              </button>
-              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
-                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
-              </button>
-              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
-                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
-              </button>
+            <div class="toolbar-slider">
+              <input type="range">
+              <input type="text">
             </div>
           </div>
           
@@ -4194,6 +4464,243 @@
               <pre><code class="html sg-code-syntax"></code></pre>
             </div>
           </div>
+
+          <h2 class="sg-h2">List Dropdown Toolbar</h2>
+          <div class="sg-content-box" data-content="toolbar-2">
+            <div class="toolbar-dropdown" style="z-index:2;">
+
+              <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+              <input placeholder="Font">
+
+              <ul class="dropdown-list">
+                <li class="active">ALS Script</li>
+                <li>Aaux Next</li>
+                <li>Abel</li>
+                <li>ALS Script</li>
+                <li>Aaux Next</li>
+                <li>Abel</li>
+                <li>ALS Script</li>
+                <li>Aaux Next</li>
+                <li>Abel</li>
+                <li>ALS Script</li>
+                <li>Aaux Next</li>
+                <li>Abel</li>
+                <li>ALS Script</li>
+                <li>Aaux Next</li>
+                <li>Abel</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="sg-code-box" id="toolbar-2">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <h2 class="sg-h2">List Dropdown Toolbar Group</h2>
+          <div class="sg-content-box" data-content="toolbar-3">
+
+            <div class="pikto-group-horizontal">
+              <div class="toolbar-dropdown">
+
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+                <input placeholder="Font" style="width: 100px">
+
+                <ul class="dropdown-list">
+                  <li class="active">ALS Script</li>
+                  <li>Aaux Next</li>
+                  <li>Abel</li>
+                  <li>ALS Script</li>
+                </ul>
+              </div>
+              <div class="toolbar-dropdown">
+
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+                <input placeholder="Font Size" style="width: 70px">
+
+                <ul class="dropdown-list">
+                  <li class="active">10</li>
+                  <li>11</li>
+                  <li>12</li>
+                  <li>13</li>
+                </ul>
+              </div>
+              <div class="toolbar-dropdown">
+
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+                <input placeholder="Font Style" style="width: 100px">
+
+                <ul class="dropdown-list">
+                  <li class="active">Bold</li>
+                  <li>Italic</li>
+                  <li>Light</li>
+                  <li>Semi</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="sg-code-box" id="toolbar-3">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <h2 class="sg-h2">Button Group Toolbar</h2>
+          <div class="sg-content-box" data-content="toolbar-4">
+            <div class="pikto-group-horizontal toolbar-buttons" role="group" aria-label="...">
+
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+              </button>
+
+              <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+              </button>
+
+              <div class="pikto-btn-hover">
+                <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                  <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                </button>
+
+                <div class="pikto-group-horizontal pikto-btn-hover-panel" role="group" aria-label="...">
+                  <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon active" data-placement="bottom" data-toggle="tooltip" data-original-title="Copy">
+                    <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                  </button>
+                  <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                    <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                  </button>
+                  <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                    <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                  </button>
+                  <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                    <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                  </button>
+                </div>
+              </div>
+
+              <div class="pikto-btn-hover">
+                <button type="button" class="pikto-btn pikto-btn-option pikto-btn-icon">
+                  <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                </button>
+
+                <div class="pikto-group-horizontal pikto-btn-hover-panel" role="group" aria-label="...">
+                  <div class="toolbar-slider">
+                    <input type="range">
+                    <input type="text">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="sg-code-box" id="toolbar-4">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <h2 class="sg-h2">Block Settings Toolbar</h2>
+          <div class="sg-content-box" data-content="toolbar-5">
+            <div class="toolbar-blocksettings" role="group" aria-label="...">
+
+              <button type="button" class="pikto-btn pikto-btn-icon">
+                <img class="sg-icon" src="images/icon_white.svg" alt="icon"> 
+              </button>
+
+              <div class="pikto-group-vertical" role="group" aria-label="...">
+                <button type="button" class="pikto-btn pikto-btn-icon">
+                  <img class="sg-icon" src="images/icon_white.svg" alt="icon"> 
+                </button>
+                <button type="button" class="pikto-btn pikto-btn-icon">
+                  <img class="sg-icon" src="images/icon_white.svg" alt="icon"> 
+                </button>
+                <button type="button" class="pikto-btn pikto-btn-icon">
+                  <img class="sg-icon" src="images/icon_white.svg" alt="icon"> 
+                </button>
+              </div>
+
+              <div class="pikto-group-vertical" role="group" aria-label="...">
+                <button type="button" class="pikto-btn pikto-btn-icon">
+                  <img class="sg-icon" src="images/icon_white.svg" alt="icon"> 
+                </button>
+                <button type="button" class="pikto-btn pikto-btn-icon">
+                  <img class="sg-icon" src="images/icon_white.svg" alt="icon"> 
+                </button>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="sg-code-box" id="toolbar-5">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <h2 class="sg-h2">Context Menu Toolbar</h2>
+          <div class="sg-content-box" data-content="toolbar-6">
+            <ul class="toolbar-contextmenu">
+              <li>
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                <span>Undo</span>
+              </li>
+              <li class="context-border">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                <span>Redo</span>
+              </li>
+              <li>
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon">
+                 <span>Cut</span>
+              </li>
+              <li >
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                <span>Copy</span>
+              </li>
+              <li class="context-border">
+                <img class="sg-icon" src="images/icon_black.svg" alt="icon"> 
+                <span>Delete</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="sg-code-box" id="toolbar-6">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
         </section>
 
         <section id="sg_data_nav_1">
@@ -4215,6 +4722,7 @@
           <h1 class="sg-h1">Inputs</h1>
           <p>All inputs are standardized with a <span class="sg-code">.form-control</span> class</p>
           <p>By default, all inputs will stretch 100% width. Unless defined otherwise</p>
+          <p>Add <span>.pikto-disabled</span> to inputs to disable them</p>
 
           <h2 class="sg-h2">Standard Input</h2>
           <div class="sg-content-box" data-content="input-1">
@@ -4562,6 +5070,39 @@
           </div>
 
           <div class="sg-code-box" id="select-1">
+            <span>code</span>
+              <div class="sg-code-box-display clearfix">
+              <button class="sg-show-code">Show</button>
+              <button class="sg-hide-code">Hide</button>
+            </div>
+            <div class="sg-code-content">
+              <div class="sg-code-box-sidebar"></div>
+              <pre><code class="html sg-code-syntax"></code></pre>
+            </div>
+          </div>
+
+          <h1 class="sg-h1">Size Variations</h1>
+          <div class="sg-content-box sg-select-container" data-content="select-2">
+            <select class="pikto-select-light pikto-select-small">
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+
+            <select class="pikto-select-dark">
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+
+            <select class="pikto-select-dark pikto-select-big">
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </div>
+
+          <div class="sg-code-box" id="select-2">
             <span>code</span>
               <div class="sg-code-box-display clearfix">
               <button class="sg-show-code">Show</button>

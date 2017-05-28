@@ -69,6 +69,8 @@ label {
 // is required to ensure optimum display with or without those classes to better
 // address browser inconsistencies.
 
+
+
 // Override content-box in Normalize (* isn't specific enough)
 input[type="search"] {
   @include box-sizing(border-box);
@@ -88,6 +90,10 @@ textarea {
 select[multiple],
 select[size] {
   height: auto;
+}
+
+input:focus {
+  outline: none;
 }
 
 // Focus for file, radio, and checkbox
@@ -199,12 +205,9 @@ output {
 
 //Error Message
 .input-has-error {
-  .alert {
+  div:first-child,
+  input:first-child {
     margin: 0 0 10px;
-  }
-
-  .alert-arrow {
-    margin: 10px 0 0;
   }
 }
 
@@ -646,8 +649,12 @@ select {
 }
 
 .pikto-select-small {
-  padding: 0px 8px;
-} 
+  height: 32px;
+}
+
+.pikto-select-big {
+  height: 40px;
+}
 
 .pikto-select-dark {
   background-color: $light-purple-grey-07;
@@ -753,12 +760,13 @@ select {
   > i, img {
     position: absolute;
     z-index: 9;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &.left-icon {
     > i, img {
-      left: 5px;
+      left: 10px;
     }
 
     input {
@@ -769,7 +777,7 @@ select {
   &.right-icon {
 
     > i, img {
-      right: 5px;
+      right: 10px;
     }
 
     input {

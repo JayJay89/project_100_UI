@@ -1,0 +1,167 @@
+/*
+  All this should belong to editor left panel
+*/
+
+.left-panel {
+  width: 282px;
+  height: 100%;
+  background: $light-purple-grey-02;
+  overflow: hidden;
+  padding: 12px 20px;
+
+  > h1 {
+    color: #c2c2c2;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $dark-purple-grey-05;
+    margin: 10px 0px;
+
+    &:first-child {
+      margin: 0px 0px 10px 0px;
+    }
+  }
+
+  > input, select, div {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.left-panel-assets-list {
+  
+  $margin: 5px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  > li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0px $margin $margin 0px;
+    width: calc((100% - (#{$margin} * 2)) / 3);
+    height: 77.33px; // this is generated from calculating the width above, not the optimized yet
+    @include border-radius();
+
+    &:nth-child(3n){
+      margin: 0px 0px $margin 0px;
+    }
+  }
+  
+  &.list-big {
+    > li {
+      width: calc((100% - (#{$margin} * 1)) / 2);
+      height: 118.5px; // this is generated from calculating the width above, not the optimized yet
+
+      &:nth-child(2n){
+        margin: 0px 0px $margin 0px;
+      }
+    }
+  }
+
+  &.list-gray {
+    > li {
+      background-color: $light-purple-grey-05;
+
+      &:hover {
+        background-color: $light-purple-grey-07;
+      }
+    }
+  }
+
+  &.list-purple-gray {
+    > li {
+      background-color: $light-purple-grey-03;
+
+      &:hover {
+        background-color: $light-purple-grey-05;
+      }
+    }
+  }
+}
+
+
+.left-panel-nav-tabs {
+  display: flex;
+  border-bottom: 0px;
+
+  > li {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0px;
+    margin: 0;
+    border-bottom: 1px solid $dark-purple-grey-05;
+    position: relative;
+
+    &:hover,
+    &:active,
+    &.active {
+      > a {
+        color: $white;
+      }
+    }
+
+    > a {
+      color: $grey-alternate-6;
+    }
+
+    &.active {
+      border-bottom: 0px;
+
+      &:after {
+        opacity: 1;
+        @include transform (scale3d(1,1,1));
+      }
+    }
+
+    &:after {
+      content: "";
+      height: 2px;
+      background-color: $teal;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      @include transition (opacity 0.2s, transform 0.2s ease-in-out);
+      @include transform (scale3d(0, 1, 1));
+    }
+  }
+}
+
+.left-panel-box {
+  background-color: $dark-purple-grey-03;
+  padding: 10px;
+  color: $white;
+  @include border-radius("all", 4px);
+
+  h1, p {
+    margin: 0;
+  }
+}
+
+.left-panel-panel-list {
+  > li {
+    height: 55px;
+    padding: 0px 12px;
+    background-color: $light-purple-grey-03;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color: $white;
+    cursor: pointer;
+    @include border-radius();
+    
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    &:hover {
+      background-color: $light-purple-grey-05;
+    }
+  }
+}
+

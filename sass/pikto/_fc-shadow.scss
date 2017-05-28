@@ -5,8 +5,8 @@ $shadow-color-2: rgba(black, 0.5);
 
 /*Shadow Constructor*/
 @mixin box-shadow-constructor($shadow...) {
-  -webkit-box-shadow-constructor : $shadow; // iOS <4.3 & Android <4.1
-  box-shadow-constructor : $shadow;
+  -webkit-box-shadow : $shadow; // iOS <4.3 & Android <4.1
+  box-shadow : $shadow;
 }
 
 /*Mixin*/

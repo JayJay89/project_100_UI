@@ -1,0 +1,142 @@
+/*
+  All this should belong to shared layouts
+*/
+$toolbar-height: 35px;
+
+.toolbar-slider {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: $toolbar-height;
+  width: 140px;
+
+  input[type="range"] {
+    width: 80px;
+    margin-right: 5px;
+  }
+  input[type="text"] {
+    width: 40px;
+  }
+}
+
+.toolbar-dropdown {
+  display: inline-flex;
+  background-color: white;
+  height: $toolbar-height;
+  align-items: center;
+  position: relative;
+  padding: 0px 0px 0px 10px;
+  z-index: 1;
+  @include border-radius(left);
+
+  input {
+    margin-left: 10px;
+    height: 100%;
+    text-overflow: ellipsis;
+    border-color: transparent;
+    border: 1px solid transparent;
+    @include border-radius(right);
+
+    &:focus {
+      border: 1px solid $teal;
+
+      + .dropdown-list {
+        display: block;
+      }
+    }
+  }
+
+  > .dropdown-list {
+    display: none;
+    position: absolute;
+    top: $toolbar-height;
+    left: 0px;
+    width: 100%;
+  }
+}
+
+.toolbar-buttons {
+  button {
+    height: $toolbar-height;
+    width: $toolbar-height;
+  }
+}
+
+.toolbar-blocksettings {
+  $blocksetting-height: 28px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    height: $blocksetting-height;
+    width: $blocksetting-height;
+    border-bottom: 1px solid $dark-purple-grey-05;
+    background-color: $dark-purple-grey-08;
+    
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $dark-purple-grey-03;
+    }
+
+    &:active {
+      top: 0px;
+      @include no-shadow;
+    }
+  }
+
+  > button,
+  > div {
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0px
+    }
+  }
+}
+
+.toolbar-contextmenu {
+  background-color: $white;
+  width: 150px;
+  display: inline-block;
+  
+  > li {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    cursor: pointer;
+
+    > img {
+      margin-right: 10px;
+    }
+
+    &:first-child {
+      @include border-radius("left");
+    }
+
+    &:last-child {
+      @include border-radius("right");
+    }
+
+    $backgroundColor: $grey-2-combo;
+    
+    &:focus {
+      background-color: map-get($backgroundColor, 'col-1');;
+    }
+
+    &:hover {
+      background-color: map-get($backgroundColor, 'col-2');
+    }
+
+    &:active {
+      background-color: map-get($backgroundColor, 'col-3');
+    }
+
+    &.context-border {
+      border-top: 1px solid $grey;
+    }
+  }
+}

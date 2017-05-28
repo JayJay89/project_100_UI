@@ -11,6 +11,14 @@
 @import "pikto/print";
 @import "pikto/sprite";
 
+// Utilities
+@import "pikto/grouping";
+@import "pikto/utilities";
+
+// Layouts
+@import "pikto/flex";
+@import "pikto/grid";
+
 // Components
 @import "pikto/alerts";
 @import "pikto/breadcrumbs";
@@ -20,24 +28,23 @@
 @import "pikto/dropdowns";
 @import "pikto/file-selector";
 @import "pikto/forms";
-@import "pikto/grid";
 @import "pikto/labels";
-@import "pikto/navbar";
 @import "pikto/navs";
 @import "pikto/pagination";
 @import "pikto/panels";
 @import "pikto/progress-bars";
 @import "pikto/tables";
-@import "pikto/pricing-table";
 
 // Components w/ JavaScript
-@import "pikto/modals";
 @import "pikto/tooltip";
 @import "pikto/popovers";
-
-// Utility classes
-@import "pikto/utilities";
 
 //plugins 
 @import "pikto/plugin/handsontable";
 
+//UI Components
+@import "pikto/left-panel";
+@import "pikto/modals";
+@import "pikto/navbar";
+@import "pikto/toolbar";
+@import "pikto/pricing-table"; 

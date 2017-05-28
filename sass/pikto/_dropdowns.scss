@@ -25,7 +25,6 @@
 .dropdown-menu {
   z-index: $zindex-navbar-dropdown;
   /*display: none;*/ // none by default, but block on "open" of the menu, is disabled as pikto use onhover to show the dropdown instead of onclick
-  float: left;
   width: 160px;
   margin: 2px 0 0; // override default ul
   list-style: none;
@@ -122,19 +121,6 @@
 /**=====================================**/
 /* 03 Dropdown Menu Open State */
 /**=====================================**/
-  // Open state for the dropdown (from bootstrap)
-  .open { 
-    // Show the menu
-    > .dropdown-menu {
-      display: block;
-    }
-
-    // Remove the outline when :focus is triggered
-    > a {
-      outline: 0;
-    }
-  }
-
 // Hide/show and animation of dropdown menus and submenus.
 // The transition and/or delay durations are needed so that a menu won't appear or disappear *immediately* when the user enters or leaves the hover element.
 // This prevents the menu from popping up unwanted when the user is moving their mouse *over* the element to try to reach something else.
@@ -159,4 +145,42 @@
   visibility: visible;
   @include opacity(1);
   @include transition (all 0.1s linear 0.2s);
+}
+
+.dropdown-list {
+  background-color: white;
+  max-height: 350px;
+  overflow: auto;
+  width: 150px;
+  display: block;
+
+  > li {
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    padding: 0px 10px;
+    height: 40px;
+    font-size: $font-size-base;
+
+    &:hover {
+      background-color: $grey-light;
+    }
+    &.active {
+      background-color: $grey-dark;
+    }
+  }
+}
+
+.dropdown-list-small { 
+  > li {
+    height: 30px;
+    font-size: $font-size-small;
+  }
+}
+
+.dropdown-list-large { 
+  > li {
+    height: 50px;
+    font-size: $font-size-medium;
+  }
 }
