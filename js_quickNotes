@@ -126,3 +126,42 @@ function findIndex(node) {
   var index = Array.prototype.indexOf.call(parent.children, node);
   return (index + 1);
 }
+
+/*Lesson 7*/
+For this case I want to check if all the results are true, if only one of them is false, it'll return false
+
+const validationResult = {
+  name_valid: false,
+  email_valid: false,
+  tele_valid: true
+}
+
+/*
+  If i run this, what happens is that upon finding the first true result, the loop will return a true and stops
+  Hence, it doesn't check for other results. A `true false false` will still return a true;
+*/
+
+function checkResult(result) {
+  for (var validity in result) {
+    if (result[validity] === false ) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
+
+/*
+  The fix is this, loop through all the results first.
+  If the result is valid, do nothing, if false , return false
+  if all the results are valid then return true
+*/
+
+function checkResult(result) {
+  for (var validity in result) {
+    if (result[validity] === false ) {
+      return false;
+    } 
+  }
+  return true;
+}
